@@ -1,82 +1,81 @@
 @import "tailwindcss";
 
+/* 🌈 THEME VARIABLES (Replaces tailwind.config.js) */
 @theme {
-  --color-primary: #1b3168;
-  --color-secondary: #c21d41;
-  --color-gold: #ea7121;
-  --color-accent: #2a9d8f;
-  --color-neutral-bg: #F9FAFB;
-  --color-surface: rgba(255, 255, 255, 0.9);
-  
-  --font-outfit: var(--font-outfit);
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  /* Colors */
+  --color-navy: #175190;
+  --color-crimson: #A41546;
+  --color-mauve: #896B85;
+  --color-sand: #D6D1CF;
+  --color-off-white: #f8f7f6;
+  --color-dark: #0e0e0e;
+  --color-text-base: #2c2c2c;
+  --color-text-light: #5a5a5a;
+  --color-navy-dark: #0e3d6e;
+  --color-navy-deeper: #0a1f3a;
+  --color-crimson-dark: #8a1239;
+  --color-crimson-deeper: #7a0f35;
+  --color-navy-light: #eef4fc;
 
-  /* Editorial Elevation System */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.08);
-  --shadow-editorial: 0 20px 80px -10px rgba(0, 0, 0, 0.05), 0 10px 30px -5px rgba(0, 0, 0, 0.02);
-  --shadow-premium-hover: 0 40px 100px -20px rgba(23, 81, 144, 0.15);
-  
+  /* Fonts */
+  --font-playfair: "Playfair Display", serif;
+  --font-dm: "DM Sans", sans-serif;
+  --font-sans: var(--font-dm);
+
+  /* Standard radii and shadows for consistency */
   --radius-premium: 3.5rem;
   --radius-button: 1.25rem;
   --radius-card: 2.5rem;
-
-  /* Animation Tokens */
-  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --shadow-editorial: 0 20px 80px -10px rgba(0, 0, 0, 0.05), 0 10px 30px -5px rgba(0, 0, 0, 0.02);
 }
 
+/* 🌍 GLOBAL BASE STYLES */
 @layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
   body {
-    @apply bg-neutral-bg text-neutral-950 transition-colors duration-700 antialiased;
+    font-family: var(--font-dm);
+    color: var(--color-text-base);
+    background-color: var(--color-off-white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair);
+    color: var(--color-navy-deeper);
   }
 }
 
-@utility glass-white {
-  @apply backdrop-blur-2xl bg-white/80 border border-white/40 shadow-editorial;
-}
+/* 🎯 CUSTOM UTILITIES */
+@layer utilities {
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-@utility glass-primary {
-  @apply backdrop-blur-2xl bg-primary/95 text-white border border-white/10 shadow-editorial;
-}
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
 
-@utility noise-bg {
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  filter: contrast(150%) brightness(100%);
-}
+  /* Keep legacy utilities that might be used elsewhere */
+  .glass-white {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-editorial);
+  }
 
-@utility shadow-editorial {
-  box-shadow: var(--shadow-editorial);
-}
-
-@utility rounded-premium {
-  border-radius: var(--radius-premium);
-}
-
-@utility text-label {
-  @apply text-[11px] font-black uppercase tracking-[0.4em] text-secondary;
-}
-
-@utility text-heading {
-  @apply text-neutral-950 tracking-tighter leading-[1.1] font-black italic font-serif;
-}
-
-@utility mesh-gradient {
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(23, 81, 144, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(164, 21, 70, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(137, 107, 133, 0.05) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(23, 81, 144, 0.05) 0px, transparent 50%);
-}
-
-:root {
-  --background: var(--color-neutral-bg);
-  --foreground: #09090b;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+  .mesh-gradient {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(23, 81, 144, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(164, 21, 70, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(137, 107, 133, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(23, 81, 144, 0.05) 0px, transparent 50%);
+  }
 }

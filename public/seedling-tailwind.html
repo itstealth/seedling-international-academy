@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seedling Public School – Best CBSE School in Jaipur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#175190',
+          crimson: '#A41546',
+          mauve: '#896B85',
+          sand: '#D6D1CF',
+          'off-white': '#f8f7f6',
+          dark: '#0e0e0e',
+          'text-base': '#2c2c2c',
+          'text-light': '#5a5a5a',
+          'navy-dark': '#0e3d6e',
+          'navy-deeper': '#0a1f3a',
+          'crimson-dark': '#8a1239',
+          'crimson-deeper': '#7a0f35',
+          'navy-light': '#eef4fc',
+        },
+        fontFamily: {
+          playfair: ['"Playfair Display"', 'serif'],
+          dm: ['"DM Sans"', 'sans-serif'],
+        },
+        keyframes: {
+          marquee: {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(-50%)' },
+          }
+        },
+        animation: {
+          marquee: 'marquee 28s linear infinite',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'DM Sans', sans-serif; color: #2c2c2c; background: #fff; overflow-x: hidden; }
+  .font-playfair { font-family: 'Playfair Display', serif; }
+  .font-dm { font-family: 'DM Sans', sans-serif; }
+
+  /* Hero slides */
+  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; background-size: cover; background-position: center; }
+  .hero-slide.active { opacity: 1; }
+  .hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(23,81,144,0.82) 0%, rgba(23,81,144,0.3) 60%, rgba(164,21,70,0.25) 100%); }
+  .hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80'); }
+  .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80'); }
+  .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80'); }
+
+  /* Dropdown */
+  .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown { opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; }
+
+  /* Tab panels */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Gallery overlay */
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay { opacity: 0; transition: opacity 0.3s; }
+
+  /* Gallery grid */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 200px 200px; gap: 14px; }
+  .gallery-item:first-child { grid-column: 1 / 3; grid-row: 1 / 3; }
+  .gallery-item:nth-child(4) { grid-column: 3 / 5; }
+
+  /* About images grid */
+  .about-images { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 14px; position: relative; }
+  .about-img:first-child { grid-row: 1 / 3; border-radius: 20px; }
+
+  /* Instagram feed */
+  .instagram-feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+
+  /* Marquee */
+  .marquee-track { display: flex; gap: 60px; animation: marquee 28s linear infinite; white-space: nowrap; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Hero dot active */
+  .hero-dot.active { background: white; width: 24px; border-radius: 4px; }
+
+  /* Sports section decorative */
+  .sports-section::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; border-radius: 50%; background: rgba(164,21,70,0.12); }
+  .sports-section::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: rgba(137,107,133,0.15); }
+
+  /* Admission section decorative */
+  .admission-section::before { content: ''; position: absolute; top: -100px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+
+  /* Mobile menu */
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: block; }
+
+  /* Stat cards */
+  .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border-top: 1px solid rgba(255,255,255,0.25); border-left: 1px solid rgba(255,255,255,0.15); padding: 20px 28px; text-align: center; color: white; }
+
+  /* Hero dot */
+  .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s; border: none; }
+
+  /* Updates grid */
+  .updates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+
+  /* Footer grid */
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+
+  /* About features grid */
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+
+  /* Infra grid */
+  .infra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+  /* Sports grid */
+  .sports-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; position: relative; z-index: 2; }
+
+  /* Testi grid */
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  /* Why grid */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+  /* About grid */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+  @media (max-width: 1024px) {
+    .about-grid, .why-grid, .updates-grid { grid-template-columns: 1fr; }
+    .sports-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .infra-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-stats { display: none; }
+  }
+  @media (max-width: 768px) {
+    .nav-links-wrap { display: none; }
+    .hamburger-btn { display: flex; }
+    .about-images { grid-template-rows: 180px 180px; }
+    .testi-grid, .sports-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item:first-child { grid-column: 1 / 3; grid-row: auto; }
+    .gallery-item:nth-child(4) { grid-column: auto; }
+    .admission-content { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .infra-grid { grid-template-columns: 1fr; }
+    .updates-grid { grid-template-columns: 1fr; }
+    .instagram-feed { grid-template-columns: repeat(3, 1fr); }
+    .tab-bar { width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .hero-section { height: 100svh; }
+  }
+
+  /* Nav links default show on desktop */
+  .hamburger-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="bg-navy py-1.5">
+  <div class="max-w-[1280px] mx-auto px-6 flex justify-between items-center flex-wrap gap-1.5">
+    <div class="flex gap-5 flex-wrap">
+      <a href="tel:+917413012351" class="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">📞 SPS: +91 74130 12351</a>
+      <a href="tel:+918306991636" class="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">📞 SMHS: +91 8306991636</a>
+    </div>
+    <div class="hidden sm:flex gap-4">
+      <a href="#" class="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">ERP Login</a>
+      <a href="#" class="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">Alumni</a>
+      <a href="#" class="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="bg-white sticky top-0 z-[1000] shadow-[0_2px_20px_rgba(23,81,144,0.10)]">
+  <div class="max-w-[1280px] mx-auto px-6 flex items-center justify-between h-[74px]">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 no-underline">
+      <div class="w-[52px] h-[52px] bg-navy rounded-xl flex items-center justify-center font-playfair text-white text-2xl font-black tracking-tight flex-shrink-0">S</div>
+      <div class="flex flex-col">
+        <span class="font-playfair text-[1.1rem] font-bold text-navy leading-[1.1]">Seedling Public School</span>
+        <span class="text-[0.65rem] text-crimson font-semibold tracking-[1.5px] uppercase">CBSE Affiliated · Est. 1994</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links-wrap flex items-center gap-1 list-none">
+      <li class="nav-item relative">
+        <a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">About Us ▾</a>
+        <div class="dropdown absolute top-[calc(100%+6px)] left-0 bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] min-w-[210px] p-2 z-[200]">
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Introduction</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling Legacy</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Vision &amp; Mission</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Leadership</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Affiliation &amp; Accreditations</a>
+        </div>
+      </li>
+      <li class="nav-item relative">
+        <a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Schools ▾</a>
+        <div class="dropdown absolute top-[calc(100%+6px)] left-0 bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] min-w-[210px] p-2 z-[200]">
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling Public School (SPS)</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling Modern High School</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling International Academy</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling Modern International Academy</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Seedling Wonderland Kids League</a>
+        </div>
+      </li>
+      <li class="nav-item relative">
+        <a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Academics ▾</a>
+        <div class="dropdown absolute top-[calc(100%+6px)] left-0 bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] min-w-[210px] p-2 z-[200]">
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Curriculum</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Faculty</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Library</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Results</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">School Calendar</a>
+        </div>
+      </li>
+      <li class="nav-item relative">
+        <a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Beyond Academics ▾</a>
+        <div class="dropdown absolute top-[calc(100%+6px)] left-0 bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] min-w-[210px] p-2 z-[200]">
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Sports</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Arts &amp; Culture</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Student Leadership</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Clubs &amp; Activities</a>
+        </div>
+      </li>
+      <li class="nav-item relative">
+        <a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Admissions ▾</a>
+        <div class="dropdown absolute top-[calc(100%+6px)] left-0 bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] min-w-[210px] p-2 z-[200]">
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Admission Procedure</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Online Form</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Fee Structure</a>
+          <a href="#" class="block px-3.5 py-2.5 text-[0.85rem] text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-colors">Scholarship</a>
+        </div>
+      </li>
+      <li><a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Media</a></li>
+      <li><a href="#" class="block px-3.5 py-2.5 text-[0.88rem] font-medium text-text-base no-underline rounded-lg hover:bg-navy-light hover:text-navy transition-all">Career</a></li>
+    </ul>
+
+    <a href="#admission" class="bg-crimson text-white px-[22px] py-2.5 rounded-full text-[0.88rem] font-semibold no-underline transition-all hover:bg-crimson-dark hover:-translate-y-px whitespace-nowrap">Enquire Now</a>
+
+    <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-navy rounded-sm transition-all"></span>
+      <span class="block w-6 h-0.5 bg-navy rounded-sm transition-all"></span>
+      <span class="block w-6 h-0.5 bg-navy rounded-sm transition-all"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu bg-white border-t border-sand px-6 pb-6 pt-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)]" id="mobileMenu">
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">About Us</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Schools</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Academics</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Sports &amp; Activities</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Admissions</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Media</a>
+    <a href="#" class="block py-3 border-b border-sand text-text-base no-underline text-[0.92rem] font-medium">Career</a>
+    <a href="#admission" class="block py-3 text-crimson no-underline text-[0.92rem] font-bold">Enquire Now →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section relative h-[94vh] min-h-[560px] overflow-hidden flex items-center">
+  <div class="hero-slides absolute inset-0">
+    <div class="hero-slide hero-slide-1 active"></div>
+    <div class="hero-slide hero-slide-2"></div>
+    <div class="hero-slide hero-slide-3"></div>
+  </div>
+  <div class="relative z-10 max-w-[1280px] mx-auto px-6 w-full">
+    <div class="inline-block bg-white/[0.18] backdrop-blur-md border border-white/35 text-white text-[0.75rem] font-semibold tracking-[2px] uppercase px-4 py-1.5 rounded-full mb-5">🎓 CBSE Affiliated · Jawahar Nagar, Jaipur</div>
+    <h1 class="font-playfair text-[clamp(2.4rem,6vw,4.6rem)] text-white leading-[1.12] font-black max-w-[700px] mb-5">Where Every Child Finds Their <span class="text-[#ffcfde]">Wings</span></h1>
+    <p class="text-white/90 text-[clamp(1rem,1.5vw,1.15rem)] max-w-[520px] leading-[1.7] mb-9">Seedling Public School nurtures young minds with holistic education, world-class infrastructure, and a culture of excellence — shaping tomorrow's leaders since 1994.</p>
+    <div class="flex gap-3.5 flex-wrap">
+      <a href="#admission" class="bg-crimson text-white px-7 py-3.5 rounded-full font-semibold text-[0.95rem] no-underline transition-all shadow-[0_4px_20px_rgba(164,21,70,0.4)] hover:bg-crimson-dark hover:-translate-y-0.5">Apply for Admission 2025–26</a>
+      <a href="#about" class="bg-white/15 backdrop-blur-md border-2 border-white/50 text-white px-7 py-3 rounded-full font-semibold text-[0.95rem] no-underline transition-all hover:bg-white/25">Explore School →</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hero-stats absolute bottom-0 right-0 z-10 flex">
+    <div class="stat-card"><strong class="block text-[1.9rem] font-bold font-playfair">30+</strong><span class="text-[0.75rem] font-medium opacity-80 tracking-[0.5px]">Years of Excellence</span></div>
+    <div class="stat-card"><strong class="block text-[1.9rem] font-bold font-playfair">5000+</strong><span class="text-[0.75rem] font-medium opacity-80 tracking-[0.5px]">Happy Students</span></div>
+    <div class="stat-card"><strong class="block text-[1.9rem] font-bold font-playfair">150+</strong><span class="text-[0.75rem] font-medium opacity-80 tracking-[0.5px]">Qualified Faculty</span></div>
+    <div class="stat-card"><strong class="block text-[1.9rem] font-bold font-playfair">100%</strong><span class="text-[0.75rem] font-medium opacity-80 tracking-[0.5px]">CBSE Results</span></div>
+  </div>
+
+  <!-- Dots -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    <button class="hero-dot active" onclick="goToSlide(0)"></button>
+    <button class="hero-dot" onclick="goToSlide(1)"></button>
+    <button class="hero-dot" onclick="goToSlide(2)"></button>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-navy py-3 overflow-hidden">
+  <div class="overflow-hidden">
+    <div class="marquee-track">
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Admissions Open for 2025–26 Academic Session</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Early Bird Benefits for Registrations Before March 31</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Scholarship Available for Meritorious Students in Academics &amp; Sports</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Parent Counselling Available Online &amp; Offline</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Results 2024: 100% Pass Rate · Multiple School Toppers</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Annual Sports Day – March 2025</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Admissions Open for 2025–26 Academic Session</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Early Bird Benefits for Registrations Before March 31</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Scholarship Available for Meritorious Students in Academics &amp; Sports</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Parent Counselling Available Online &amp; Offline</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Results 2024: 100% Pass Rate · Multiple School Toppers</span>
+      <span class="text-sand text-[0.85rem] font-medium flex items-center gap-2.5 before:content-['●'] before:text-crimson before:text-[0.5rem]">Annual Sports Day – March 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SCHOOL -->
+<section class="bg-off-white py-20" id="about">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="about-grid">
+      <!-- Images -->
+      <div class="about-images">
+        <div class="about-img overflow-hidden rounded-[20px]">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="School Building" class="w-full h-full object-cover block">
+        </div>
+        <div class="about-img overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Classroom" class="w-full h-full object-cover block">
+        </div>
+        <div class="about-img overflow-hidden rounded-2xl relative">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Students" class="w-full h-full object-cover block">
+          <span class="absolute bottom-[-18px] left-1/2 -translate-x-1/2 bg-crimson text-white px-[22px] py-3 rounded-full text-[0.82rem] font-bold whitespace-nowrap shadow-[0_4px_20px_rgba(164,21,70,0.35)] tracking-[0.5px]">✦ CBSE Affiliated School</span>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">About Seedling Public School</span>
+        <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Nurturing Excellence Since 1994 in Jaipur</h2>
+        <p class="text-[1rem] text-text-light leading-[1.7] max-w-[600px]">Seedling Public School stands as one of Jaipur's most trusted CBSE-affiliated institutions. Our student-centric approach blends rigorous academics with emotional intelligence, creativity, and leadership — raising confident, compassionate, future-ready individuals.</p>
+
+        <div class="features-grid">
+          <div class="flex gap-3 items-start p-3.5 bg-white rounded-xl border-l-[3px] border-navy">
+            <div class="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-base flex-shrink-0">📚</div>
+            <div>
+              <h4 class="text-[0.82rem] font-semibold text-navy mb-0.5">CBSE Curriculum</h4>
+              <p class="text-[0.75rem] text-text-light leading-[1.5]">Comprehensive, future-aligned syllabus with critical thinking at core.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start p-3.5 bg-white rounded-xl border-l-[3px] border-navy">
+            <div class="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-base flex-shrink-0">🏆</div>
+            <div>
+              <h4 class="text-[0.82rem] font-semibold text-navy mb-0.5">Award-Winning</h4>
+              <p class="text-[0.75rem] text-text-light leading-[1.5]">Recognized among Rajasthan's top CBSE schools for academic outcomes.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start p-3.5 bg-white rounded-xl border-l-[3px] border-navy">
+            <div class="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-base flex-shrink-0">🤝</div>
+            <div>
+              <h4 class="text-[0.82rem] font-semibold text-navy mb-0.5">Holistic Growth</h4>
+              <p class="text-[0.75rem] text-text-light leading-[1.5]">Sports, arts, and life skills integrated alongside academics.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start p-3.5 bg-white rounded-xl border-l-[3px] border-navy">
+            <div class="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-base flex-shrink-0">🧠</div>
+            <div>
+              <h4 class="text-[0.82rem] font-semibold text-navy mb-0.5">Mental Wellness</h4>
+              <p class="text-[0.75rem] text-text-light leading-[1.5]">Dedicated counsellors ensuring a stress-free, happy learning space.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-7 flex gap-3.5 flex-wrap">
+          <a href="#" class="bg-navy text-white px-6 py-3 rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy-dark hover:-translate-y-px">Our Story</a>
+          <a href="#admission" class="border-2 border-navy text-navy px-6 py-[10px] rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy hover:text-white">Book a School Tour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE / CAMPUS TABS -->
+<section class="bg-white py-20" id="campus">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="mb-[50px]">
+      <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Our Infrastructure</span>
+      <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">World-Class Campus &amp; Facilities</h2>
+      <p class="text-[1rem] text-text-light leading-[1.7] max-w-[600px]">Every space at Seedling is thoughtfully designed to inspire curiosity, collaboration, and growth.</p>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar flex rounded-xl overflow-hidden border-2 border-sand mb-11 w-fit flex-wrap">
+      <button class="tab-btn active px-6 py-3 border-none bg-white text-text-light text-[0.88rem] font-semibold cursor-pointer transition-all font-dm hover:bg-navy-light hover:text-navy" onclick="switchTab(event,'campus')">🏫 Campus</button>
+      <button class="tab-btn px-6 py-3 border-none bg-white text-text-light text-[0.88rem] font-semibold cursor-pointer transition-all font-dm hover:bg-navy-light hover:text-navy" onclick="switchTab(event,'labs')">🔬 Labs &amp; Tech</button>
+      <button class="tab-btn px-6 py-3 border-none bg-white text-text-light text-[0.88rem] font-semibold cursor-pointer transition-all font-dm hover:bg-navy-light hover:text-navy" onclick="switchTab(event,'sports')">⚽ Sports Facilities</button>
+      <button class="tab-btn px-6 py-3 border-none bg-white text-text-light text-[0.88rem] font-semibold cursor-pointer transition-all font-dm hover:bg-navy-light hover:text-navy" onclick="switchTab(event,'arts')">🎨 Arts &amp; Culture</button>
+    </div>
+
+    <!-- Campus Tab -->
+    <div class="tab-panel active" id="tab-campus">
+      <div class="infra-grid">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" alt="School Campus" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Campus</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Sprawling Green Campus</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="Classrooms" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Classrooms</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Smart Digital Classrooms</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt="Library" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Library</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Resource-Rich Library</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Labs Tab -->
+    <div class="tab-panel" id="tab-labs">
+      <div class="infra-grid">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Science Lab" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Science</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Advanced Science Labs</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Physics, Chemistry, and Biology labs equipped with latest apparatus enabling hands-on experimental learning.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Computer Lab" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Technology</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">AI &amp; Robotics Lab</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">State-of-the-art computer and robotics lab introducing students to coding, AI tools, and future technologies.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Auditorium" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Facilities</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Modern Auditorium</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">A fully equipped 800-seat auditorium for cultural events, seminars, and inter-school competitions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sports Facilities Tab -->
+    <div class="tab-panel" id="tab-sports">
+      <div class="infra-grid">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Sports Ground" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Outdoor</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Multi-Sport Ground</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Dedicated grounds for cricket, football, athletics, and kabaddi — built to national standards.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Swimming Pool" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Aquatics</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Swimming Pool</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Olympic-standard swimming pool with qualified coaches for beginner and advanced swimmers from Grade 3 onwards.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Indoor Sports" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Indoor</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Indoor Sports Complex</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Badminton, table tennis, chess, and yoga facilities in a fully air-conditioned indoor sports complex.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arts Tab -->
+    <div class="tab-panel" id="tab-arts">
+      <div class="infra-grid">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&q=80" alt="Music Room" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Music</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Music &amp; Dance Studio</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Fully equipped studios for classical and contemporary music, dance, and performing arts for all grades.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80" alt="Art Studio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Visual Arts</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Art &amp; Craft Studio</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Creative spaces where students explore painting, sculpture, pottery, and digital design under expert guidance.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
+          <div class="h-[200px] overflow-hidden"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Drama" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]"></div>
+          <div class="p-[18px]">
+            <span class="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">Theatre</span>
+            <h3 class="text-[1rem] font-bold text-navy mb-1.5">Drama &amp; Theatre Club</h3>
+            <p class="text-[0.82rem] text-text-light leading-[1.6]">Annual theatre productions, inter-school drama contests, and storytelling workshops for confident self-expression.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORTS -->
+<section class="sports-section bg-navy py-20 relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="mb-[50px]">
+      <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-[#ffcfde] mb-2.5 block">Sports &amp; Athletics</span>
+      <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.2] mb-3.5">Champions On &amp; Off the Field</h2>
+      <p class="text-[1rem] text-white/75 leading-[1.7] max-w-[600px]">At Seedling, sports are as important as academics. We train discipline, teamwork, and leadership through every game and competition.</p>
+    </div>
+    <div class="sports-grid">
+      <div class="bg-white/[0.08] border border-white/[0.14] rounded-2xl overflow-hidden transition-all hover:bg-white/15 hover:-translate-y-1 backdrop-blur-md">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=400&q=80" alt="Cricket" class="w-full h-full object-cover"></div>
+        <div class="p-4">
+          <h3 class="text-white text-[0.95rem] font-bold mb-1">🏏 Cricket</h3>
+          <p class="text-white/65 text-[0.78rem] leading-[1.5]">BCCI-standard cricket ground with professional coaching and inter-school tournament participation.</p>
+        </div>
+      </div>
+      <div class="bg-white/[0.08] border border-white/[0.14] rounded-2xl overflow-hidden transition-all hover:bg-white/15 hover:-translate-y-1 backdrop-blur-md">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80" alt="Football" class="w-full h-full object-cover"></div>
+        <div class="p-4">
+          <h3 class="text-white text-[0.95rem] font-bold mb-1">⚽ Football</h3>
+          <p class="text-white/65 text-[0.78rem] leading-[1.5]">Full-size football pitch with certified coaches. Students represent Rajasthan at state-level tournaments.</p>
+        </div>
+      </div>
+      <div class="bg-white/[0.08] border border-white/[0.14] rounded-2xl overflow-hidden transition-all hover:bg-white/15 hover:-translate-y-1 backdrop-blur-md">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" alt="Athletics" class="w-full h-full object-cover"></div>
+        <div class="p-4">
+          <h3 class="text-white text-[0.95rem] font-bold mb-1">🏃 Athletics</h3>
+          <p class="text-white/65 text-[0.78rem] leading-[1.5]">400m track and field facility. Multiple district and state champions nurtured every year.</p>
+        </div>
+      </div>
+      <div class="bg-white/[0.08] border border-white/[0.14] rounded-2xl overflow-hidden transition-all hover:bg-white/15 hover:-translate-y-1 backdrop-blur-md">
+        <div class="h-40 overflow-hidden"><img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80" alt="Badminton" class="w-full h-full object-cover"></div>
+        <div class="p-4">
+          <h3 class="text-white text-[0.95rem] font-bold mb-1">🏸 Badminton</h3>
+          <p class="text-white/65 text-[0.78rem] leading-[1.5]">Indoor courts for both singles and doubles play. Regular coaching and interschool competitions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SEEDLING -->
+<section class="bg-off-white py-20">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="why-grid">
+      <div>
+        <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Why Choose Us</span>
+        <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Start Your Child's Joyride at Seedling</h2>
+        <p class="text-[1rem] text-text-light leading-[1.7] max-w-[600px] mb-7">Every decision here is made with one goal — your child's brightest future.</p>
+        <div class="flex flex-col gap-3.5">
+          <div class="flex gap-4 items-start p-[18px_20px] bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all hover:translate-x-1.5 hover:shadow-[0_4px_20px_rgba(23,81,144,0.10)]">
+            <div class="w-10 h-10 rounded-[10px] bg-navy text-white flex items-center justify-center font-extrabold text-[0.9rem] flex-shrink-0">01</div>
+            <div>
+              <h4 class="text-[0.95rem] font-bold text-navy mb-1">Personalized Learning Journeys</h4>
+              <p class="text-[0.82rem] text-text-light leading-[1.5]">Tailored teaching approaches catering to each child's learning pace, strengths, and aspirations.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start p-[18px_20px] bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all hover:translate-x-1.5 hover:shadow-[0_4px_20px_rgba(23,81,144,0.10)]">
+            <div class="w-10 h-10 rounded-[10px] bg-navy text-white flex items-center justify-center font-extrabold text-[0.9rem] flex-shrink-0">02</div>
+            <div>
+              <h4 class="text-[0.95rem] font-bold text-navy mb-1">Future-Ready Skills</h4>
+              <p class="text-[0.82rem] text-text-light leading-[1.5]">AI literacy, sustainability education, critical thinking, and ethical leadership woven into the curriculum.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start p-[18px_20px] bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all hover:translate-x-1.5 hover:shadow-[0_4px_20px_rgba(23,81,144,0.10)]">
+            <div class="w-10 h-10 rounded-[10px] bg-navy text-white flex items-center justify-center font-extrabold text-[0.9rem] flex-shrink-0">03</div>
+            <div>
+              <h4 class="text-[0.95rem] font-bold text-navy mb-1">Global Mindset with Indian Values</h4>
+              <p class="text-[0.82rem] text-text-light leading-[1.5]">International exposure through exchange programs and competitions while staying rooted in cultural values.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start p-[18px_20px] bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all hover:translate-x-1.5 hover:shadow-[0_4px_20px_rgba(23,81,144,0.10)]">
+            <div class="w-10 h-10 rounded-[10px] bg-navy text-white flex items-center justify-center font-extrabold text-[0.9rem] flex-shrink-0">04</div>
+            <div>
+              <h4 class="text-[0.95rem] font-bold text-navy mb-1">Career Counselling from Grade 8</h4>
+              <p class="text-[0.82rem] text-text-light leading-[1.5]">Expert guidance for academic and career choices ensuring students are always prepared for tomorrow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden h-[420px]">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Students Learning" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute bottom-[-20px] left-[-20px] bg-crimson text-white rounded-2xl p-[20px_24px] shadow-[0_8px_30px_rgba(164,21,70,0.35)]">
+          <strong class="block text-[2rem] font-playfair">30+</strong>
+          <span class="text-[0.78rem] font-medium opacity-90">Years of Academic<br>Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT GALLERY -->
+<section class="bg-white py-20">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="flex justify-between items-end flex-wrap gap-4 mb-[50px]">
+      <div>
+        <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Campus Life</span>
+        <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2]">Life at Seedling — Full of Colour</h2>
+      </div>
+      <a href="#" class="bg-navy text-white px-6 py-3 rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy-dark hover:-translate-y-px flex-shrink-0">View All Photos</a>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item rounded-xl overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80" alt="School Life" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]">
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5"><span class="text-white text-[0.82rem] font-semibold">School Campus</span></div>
+      </div>
+      <div class="gallery-item rounded-xl overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Classroom" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]">
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5"><span class="text-white text-[0.82rem] font-semibold">Smart Classrooms</span></div>
+      </div>
+      <div class="gallery-item rounded-xl overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Sports" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]">
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5"><span class="text-white text-[0.82rem] font-semibold">Sports &amp; Athletics</span></div>
+      </div>
+      <div class="gallery-item rounded-xl overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1545830790-b1804d18d5ff?w=800&q=80" alt="Group Activity" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]">
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5"><span class="text-white text-[0.82rem] font-semibold">Group Activities</span></div>
+      </div>
+      <div class="gallery-item rounded-xl overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=400&q=80" alt="Cultural Events" class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]">
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5"><span class="text-white text-[0.82rem] font-semibold">Cultural Events</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="bg-off-white py-20">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-[50px]">
+      <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Parent Testimonials</span>
+      <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Voices from the Seedling Family</h2>
+      <p class="text-[1rem] text-text-light leading-[1.7] max-w-[600px] mx-auto">Real stories from parents and students who've experienced the Seedling difference.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="bg-white rounded-[18px] p-[30px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] relative transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(23,81,144,0.12)]">
+        <span class="block text-[3.5rem] leading-[0.6] text-sand font-playfair mb-3">"</span>
+        <div class="text-[#f5a623] text-[0.8rem] mb-0.5">★★★★★</div>
+        <p class="text-[0.9rem] text-text-light leading-[1.7] mb-5">Seedling transformed my daughter's confidence completely. The teachers genuinely care — she went from being shy to performing on stage at the Annual Day. The balance of studies and activities is remarkable.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-[46px] h-[46px] rounded-full overflow-hidden flex-shrink-0 border-2 border-sand"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Parent" class="w-full h-full object-cover"></div>
+          <div>
+            <div class="text-[0.88rem] font-bold text-navy">Sunita Sharma</div>
+            <div class="text-[0.75rem] text-text-light">Parent of Grade 8 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-[18px] p-[30px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] relative transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(23,81,144,0.12)]">
+        <span class="block text-[3.5rem] leading-[0.6] text-sand font-playfair mb-3">"</span>
+        <div class="text-[#f5a623] text-[0.8rem] mb-0.5">★★★★★</div>
+        <p class="text-[0.9rem] text-text-light leading-[1.7] mb-5">My son has been at Seedling since Grade 1. Now in Grade 11, he's represented Rajasthan in cricket AND secured 94% in his boards. The school walks the talk on holistic development.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-[46px] h-[46px] rounded-full overflow-hidden flex-shrink-0 border-2 border-sand"><img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Parent" class="w-full h-full object-cover"></div>
+          <div>
+            <div class="text-[0.88rem] font-bold text-navy">Rajesh Gupta</div>
+            <div class="text-[0.75rem] text-text-light">Parent of Grade 11 student</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-[18px] p-[30px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] relative transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(23,81,144,0.12)]">
+        <span class="block text-[3.5rem] leading-[0.6] text-sand font-playfair mb-3">"</span>
+        <div class="text-[#f5a623] text-[0.8rem] mb-0.5">★★★★★</div>
+        <p class="text-[0.9rem] text-text-light leading-[1.7] mb-5">The parent-teacher communication is excellent. I always know how my child is progressing. The counselling sessions helped our family understand our child's learning style so much better.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-[46px] h-[46px] rounded-full overflow-hidden flex-shrink-0 border-2 border-sand"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Parent" class="w-full h-full object-cover"></div>
+          <div>
+            <div class="text-[0.88rem] font-bold text-navy">Priya Mehta</div>
+            <div class="text-[0.75rem] text-text-light">Parent of Grade 4 student</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING UPDATES + INSTAGRAM -->
+<section class="bg-navy py-20">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="flex items-end justify-between flex-wrap gap-4">
+      <div>
+        <span class="text-[0.72rem] font-bold tracking-[3px] uppercase text-[#ffcfde] mb-2.5 block">Latest at Seedling</span>
+        <h2 class="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.2]">Trending Updates &amp; News</h2>
+      </div>
+      <a href="#" class="bg-white/15 backdrop-blur-md border-2 border-white/50 text-white px-7 py-3 rounded-full font-semibold text-[0.95rem] no-underline transition-all hover:bg-white/25">All Updates →</a>
+    </div>
+    <div class="updates-grid">
+      <div>
+        <div class="flex gap-4 items-start pb-5 border-b border-white/10 mb-2">
+          <div class="bg-crimson text-white p-2 px-3 rounded-xl text-center flex-shrink-0 min-w-[52px]"><strong class="block text-[1.2rem] font-playfair leading-none">12</strong><span class="text-[0.65rem] tracking-[1px] uppercase">APR</span></div>
+          <div>
+            <h4 class="text-white text-[0.92rem] font-bold mb-1">Annual Sports Day 2025 – A Grand Celebration</h4>
+            <p class="text-white/65 text-[0.8rem] leading-[1.5]">Over 2,000 students participated in track &amp; field events, team sports, and the marquee relay championship.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start pb-5 border-b border-white/10 mb-2">
+          <div class="bg-crimson text-white p-2 px-3 rounded-xl text-center flex-shrink-0 min-w-[52px]"><strong class="block text-[1.2rem] font-playfair leading-none">05</strong><span class="text-[0.65rem] tracking-[1px] uppercase">APR</span></div>
+          <div>
+            <h4 class="text-white text-[0.92rem] font-bold mb-1">Board Results 2024 – 100% Pass, Multiple Merit Ranks</h4>
+            <p class="text-white/65 text-[0.8rem] leading-[1.5]">Seedling students shine yet again with 14 students scoring above 95% in CBSE Class 12 examinations.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start pb-5 border-b border-white/10 mb-2">
+          <div class="bg-crimson text-white p-2 px-3 rounded-xl text-center flex-shrink-0 min-w-[52px]"><strong class="block text-[1.2rem] font-playfair leading-none">28</strong><span class="text-[0.65rem] tracking-[1px] uppercase">MAR</span></div>
+          <div>
+            <h4 class="text-white text-[0.92rem] font-bold mb-1">Admissions Open – 2025-26 Early Bird Offer</h4>
+            <p class="text-white/65 text-[0.8rem] leading-[1.5]">Register before April 30 and avail exclusive early bird benefits including fee concessions and priority class allocation.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start pb-5 border-b border-white/10 mb-2">
+          <div class="bg-crimson text-white p-2 px-3 rounded-xl text-center flex-shrink-0 min-w-[52px]"><strong class="block text-[1.2rem] font-playfair leading-none">15</strong><span class="text-[0.65rem] tracking-[1px] uppercase">MAR</span></div>
+          <div>
+            <h4 class="text-white text-[0.92rem] font-bold mb-1">Science Fair Winners – District Level Recognition</h4>
+            <p class="text-white/65 text-[0.8rem] leading-[1.5]">Three Seedling teams won gold at the District Science Exhibition for their projects on sustainable energy.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="text-white text-[0.85rem] font-semibold mb-2.5 flex items-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Follow us @seedlingschoolsjaipur
+        </div>
+        <div class="instagram-feed">
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=300&q=80" alt="IG 1" class="w-full h-full object-cover"></div>
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80" alt="IG 2" class="w-full h-full object-cover"></div>
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=300&q=80" alt="IG 3" class="w-full h-full object-cover"></div>
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80" alt="IG 4" class="w-full h-full object-cover"></div>
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80" alt="IG 5" class="w-full h-full object-cover"></div>
+          <div class="rounded-xl overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=300&q=80" alt="IG 6" class="w-full h-full object-cover"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION CTA -->
+<section class="admission-section py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #A41546 0%, #7a0f35 100%);" id="admission">
+  <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+    <div class="admission-content flex items-center justify-between gap-10 flex-wrap">
+      <div>
+        <h2 class="font-playfair text-[clamp(1.6rem,3vw,2.4rem)] text-white font-bold mb-2.5">Join the Seedling Family — Enroll Your Child Today!</h2>
+        <p class="text-white/85 text-[1rem] max-w-[500px] leading-[1.6]">Admissions for 2025–26 are now open. Experience the difference of a school that truly cares about every child's growth, happiness, and future.</p>
+        <div class="mt-7 flex flex-col gap-3">
+          <div class="flex items-center gap-3 text-white/90 text-[0.9rem]"><span class="text-[1.2rem]">✓</span> Early Bird Benefits for Early Registrations</div>
+          <div class="flex items-center gap-3 text-white/90 text-[0.9rem]"><span class="text-[1.2rem]">✓</span> Scholarships for Meritorious Students</div>
+          <div class="flex items-center gap-3 text-white/90 text-[0.9rem]"><span class="text-[1.2rem]">✓</span> Parent Counselling Available Online &amp; Offline</div>
+          <div class="flex items-center gap-3 text-white/90 text-[0.9rem]"><span class="text-[1.2rem]">✓</span> Flexible Fee Payment Options</div>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl min-w-[320px] flex-shrink-0">
+        <h3 class="text-navy text-[1.1rem] font-bold mb-5">Request a Callback</h3>
+        <div class="mb-3.5">
+          <input type="text" placeholder="Name of Child" class="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white">
+        </div>
+        <div class="mb-3.5">
+          <select class="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white">
+            <option value="">Select Grade / Class</option>
+            <option>Nursery / LKG / UKG</option>
+            <option>Grade 1–5</option>
+            <option>Grade 6–8</option>
+            <option>Grade 9–10</option>
+            <option>Grade 11–12</option>
+          </select>
+        </div>
+        <div class="mb-3.5">
+          <input type="email" placeholder="Parent's Email Address" class="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white">
+        </div>
+        <div class="mb-3.5">
+          <input type="tel" placeholder="Contact Number" class="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white">
+        </div>
+        <button class="w-full bg-navy text-white border-none py-3.5 rounded-full text-[0.92rem] font-bold cursor-pointer transition-all font-dm tracking-[0.5px] hover:bg-navy-dark">Submit Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #0a1f3a; color: rgba(255,255,255,0.75);">
+  <div class="max-w-[1280px] mx-auto px-6 pt-[60px] pb-10 border-b border-white/[0.08]">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="flex items-center gap-3 no-underline mb-3.5">
+          <div class="w-[52px] h-[52px] bg-crimson rounded-xl flex items-center justify-center font-playfair text-white text-2xl font-black tracking-tight flex-shrink-0">S</div>
+          <div class="flex flex-col">
+            <span class="font-playfair text-[1.1rem] font-bold text-white leading-[1.1]">Seedling Public School</span>
+            <span class="text-[0.65rem] text-sand font-semibold tracking-[1.5px] uppercase">CBSE Affiliated</span>
+          </div>
+        </a>
+        <p class="text-[0.85rem] leading-[1.7] mt-3.5 mb-5">Nurturing excellence, fostering creativity, and shaping tomorrow's leaders — one student at a time — since 1994.</p>
+        <div class="flex gap-2.5">
+          <a href="#" title="Facebook" class="w-9 h-9 rounded-lg bg-white/[0.08] flex items-center justify-center text-white/70 no-underline text-[0.85rem] transition-all hover:bg-crimson hover:text-white">f</a>
+          <a href="#" title="Instagram" class="w-9 h-9 rounded-lg bg-white/[0.08] flex items-center justify-center text-white/70 no-underline text-[0.85rem] transition-all hover:bg-crimson hover:text-white">ig</a>
+          <a href="#" title="YouTube" class="w-9 h-9 rounded-lg bg-white/[0.08] flex items-center justify-center text-white/70 no-underline text-[0.85rem] transition-all hover:bg-crimson hover:text-white">▶</a>
+          <a href="#" title="Twitter" class="w-9 h-9 rounded-lg bg-white/[0.08] flex items-center justify-center text-white/70 no-underline text-[0.85rem] transition-all hover:bg-crimson hover:text-white">✕</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">Quick Links</h4>
+        <ul class="list-none flex flex-col gap-2.5">
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">About Us</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Vision &amp; Mission</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Leadership</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Media Gallery</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Career</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Blog</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Alumni Network</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">Our Schools</h4>
+        <ul class="list-none flex flex-col gap-2.5">
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Seedling Public School (SPS)</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Seedling Modern High School</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Seedling International Academy</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">SMIA</a></li>
+          <li><a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">Seedling Wonderland Kids</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">SPS &amp; SIA Campus</h4>
+        <div class="flex flex-col gap-2">
+          <a href="#" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📍 Bank St, Sector 4, Jawahar Nagar, Jaipur 302004</a>
+          <a href="tel:01413623000" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📞 0141-3623000</a>
+          <a href="tel:+917413012351" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📞 +91 74130 12351</a>
+          <a href="mailto:seedlingacademy@hotmail.com" class="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">✉ seedlingacademy@hotmail.com</a>
+        </div>
+        <div class="mt-4">
+          <a href="#" class="bg-navy text-white no-underline text-[0.8rem] px-[18px] py-2 rounded-full font-semibold transition-all hover:bg-navy-dark">ERP Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-[1280px] mx-auto px-6 py-5 flex justify-between items-center flex-wrap gap-2.5 text-[0.78rem]">
+    <span>© 2025 Seedling Public School, Jaipur. All rights reserved.</span>
+    <div class="flex gap-5">
+      <a href="#" class="text-white/50 no-underline hover:text-sand">Privacy Policy</a>
+      <a href="#" class="text-white/50 no-underline hover:text-sand">Terms &amp; Conditions</a>
+      <a href="#" class="text-white/50 no-underline hover:text-sand">Mandatory Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTON -->
+<a href="#admission" class="fixed right-5 bottom-[30px] z-[999] bg-crimson text-white px-[22px] py-3.5 rounded-full text-[0.88rem] font-bold no-underline shadow-[0_6px_30px_rgba(164,21,70,0.45)] transition-all flex items-center gap-2 hover:bg-crimson-dark hover:-translate-y-0.5 before:content-['✉'] before:text-base">Enquire Now</a>
+
+<!-- Tab button active state CSS -->
+<style>
+  .tab-btn.active { background: #175190 !important; color: white !important; }
+</style>
+
+<script>
+  // Hero Slider
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+
+  // Mobile Menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Tab Switching
+  function switchTab(e, tabName) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    e.target.classList.add('active');
+    document.getElementById('tab-' + tabName).classList.add('active');
+  }
+
+  // Sticky Nav Shadow
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.boxShadow = window.scrollY > 10
+      ? '0 4px 30px rgba(23,81,144,0.15)'
+      : '0 2px 20px rgba(23,81,144,0.10)';
+  });
+</script>
+</body>
+</html>

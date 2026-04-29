@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 
 const navItems = [
@@ -54,17 +55,14 @@ export default function Navbar() {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center font-black text-2xl tracking-tighter shadow-sm bg-primary text-white">
-                    S
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-black text-xl leading-none tracking-tight text-neutral-950">
-                      Seedling
-                    </span>
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-black text-secondary">
-                      Group of Schools
-                    </span>
-                  </div>
+                  <Image 
+                    src="/SPS_Logo.png" 
+                    alt="Seedling Schools Logo" 
+                    width={200} 
+                    height={60} 
+                    className="h-14 w-auto object-contain"
+                    priority
+                  />
                 </Link>
               </div>
 
@@ -129,11 +127,13 @@ export default function Navbar() {
               <div className="flex flex-col h-full relative z-10">
                 <div className="flex items-center justify-between p-8 border-b border-black/5">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center font-black text-xl">S</div>
-                    <div className="flex flex-col">
-                      <span className="font-black text-xl leading-tight text-neutral-950 tracking-tight">Seedling</span>
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-secondary font-black">Group of Schools</span>
-                    </div>
+                    <Image 
+                      src="/SPS_Logo.png" 
+                      alt="Seedling Schools Logo" 
+                      width={160} 
+                      height={48} 
+                      className="h-12 w-auto object-contain"
+                    />
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
