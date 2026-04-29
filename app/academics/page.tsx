@@ -43,9 +43,14 @@ function Reveal({
 }
 
 // ─── Tag / Label ──────────────────────────────────────────────────────────────
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, color = "navy" }: { children: React.ReactNode, color?: "navy" | "crimson" | "mauve" }) {
+  const styles = {
+    navy: "bg-navy-light text-navy border-navy/20",
+    crimson: "bg-crimson/10 text-crimson border-crimson/20",
+    mauve: "bg-mauve/10 text-mauve border-mauve/20",
+  };
   return (
-    <span className="inline-block bg-sky-50 text-sky-700 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-sky-200 mb-4 font-sans">
+    <span className={`inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4 font-dm ${styles[color]}`}>
       {children}
     </span>
   );
@@ -62,7 +67,7 @@ const curricula = [
     border: "border-orange-200",
     accent: "bg-orange-500",
     text: "text-orange-600",
-    desc: "Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum that balances academic rigour with holistic development, empathy, and future-ready skills.",
+    desc: "Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.",
     highlights: ["NEP Aligned", "100% Board Results", "Personalised Learning"],
   },
   {
@@ -73,7 +78,7 @@ const curricula = [
     border: "border-sky-200",
     accent: "bg-sky-600",
     text: "text-sky-700",
-    desc: "Internationally benchmarked Cambridge Primary, Lower Secondary, and IGCSE programmes delivered by an experienced, continuously trained faculty. Worldwide status and credibility, with a strong focus on critical thinking and independent research.",
+    desc: "Your gateway to a holistic education under the esteemed Cambridge IGCSE Board. Our experienced faculty, state-of-the-art facilities, and a curriculum that promotes critical thinking and creativity create a stimulating learning environment where every student thrives and gains worldwide credibility.",
     highlights: ["Cambridge Primary → IGCSE", "Global Credibility", "University Counselling"],
   },
   {
@@ -84,58 +89,58 @@ const curricula = [
     border: "border-emerald-200",
     accent: "bg-emerald-600",
     text: "text-emerald-700",
-    desc: "A thoughtfully designed early-years environment at both Jawahar Nagar and Durgapura campuses. Play is the most powerful form of learning — every activity is intentional, joyful, and developmental.",
+    desc: "A thoughtfully designed early-years environment at both Jawahar Nagar and Durgapura campuses. Play is the most powerful form of learning — every activity is intentional, joyful, and developmental, nurturing curiosity and creativity from the very first day.",
     highlights: ["Play-Based Learning", "Dual Campus", "Age 2–6 Years"],
   },
 ];
 
 const learningApproaches = [
   {
-    title: "Experiential & Hands-On Learning",
-    body: "Learning comes alive through practical experiments, outdoor excursions, and interactive projects. We foster critical thinking, problem-solving, and a genuine love for discovery. Our students don't just read about the world — they engage with it.",
-    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+    title: "Aligned With National Education Policy (NEP)",
+    body: "Our curriculum is thoughtfully designed to align with the latest educational standards and practices outlined by the NEP, ensuring our students receive a relevant and future-ready education. We focus on critical thinking, creativity, and empathy — preparing every student for the dynamic challenges of tomorrow.",
+    img: "https://seedlingschools.com/assets/img/feature-1.jpg",
     tag: "Learning Philosophy",
   },
   {
-    title: "Technology-Integrated Classrooms",
-    body: "Our classrooms are equipped with interactive whiteboards and we integrate educational apps and online resources. Students receive online performance tracking and are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
-    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80",
+    title: "Technology Integrated Innovative Education",
+    body: "We embrace the power of technology in education. Our classrooms are equipped with interactive whiteboards, and we integrate educational apps and online resources to create an engaging and dynamic learning experience. Students are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
+    img: "https://seedlingschools.com/assets/img/techintegrate.jpg",
     tag: "Innovation",
   },
   {
-    title: "Trust-Based, Student-Centred Approach",
-    body: "We believe every child's voice deserves to be heard and their individuality celebrated. Our broad, balanced curriculum is flexible and tailored to individual needs. School-driven formative assessments replace exam anxiety with continuous, meaningful growth.",
-    img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
+    title: "Thrust on Experiential Learning",
+    body: "We believe that learning should be immersive and hands-on. Through experiential learning activities — practical experiments, outdoor excursions, and interactive projects — we foster critical thinking, problem-solving skills, and a genuine love for learning in every student.",
+    img: "https://seedlingschools.com/assets/img/feature-4.jpg",
     tag: "Student Wellbeing",
   },
   {
-    title: "Strong School–Parent Partnership",
-    body: "Education is a community endeavour. We maintain open communication channels, conduct regular parent counselling (available both online and offline), and provide parents with timely updates on student progress — ensuring families and school move forward together.",
-    img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
+    title: "Effective Feedback & Parent Partnership",
+    body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
+    img: "https://seedlingschools.com/assets/img/feature-5.jpg",
     tag: "Community",
   },
 ];
 
 const programs = [
   {
-    level: "Primary",
-    range: "Classes I – V",
-    desc: "Building strong foundations in literacy, numeracy, and curiosity. Early introduction to independent research, collaborative projects, and reflective thinking.",
-    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=80",
+    level: "Early Years & Primary",
+    range: "Playgroup – Class V",
+    desc: "Building strong foundations in literacy, numeracy, and curiosity. At Seedling Wonderland Kids League and our primary wings, play-based and inquiry-led learning nurture a genuine love for discovery from the very beginning.",
+    img: "https://seedlingschools.com/assets/img/swkl.jpg",
     color: "from-amber-500/80",
   },
   {
     level: "Middle School",
     range: "Classes VI – VIII",
-    desc: "Deepening knowledge across disciplines while nurturing self-confidence, ethical reasoning, and a global outlook. Students become engaged, responsible, and innovative thinkers.",
-    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80",
+    desc: "Deepening knowledge across disciplines while nurturing self-confidence, ethical reasoning, and a global outlook. Students participate in Olympiads, academic challenges, and collaborative projects — becoming engaged, responsible, and innovative thinkers.",
+    img: "https://seedlingschools.com/assets/img/sps-school.jpg",
     color: "from-sky-700/80",
   },
   {
     level: "Senior Secondary",
     range: "Classes IX – XII",
-    desc: "Rigorous CBSE and Cambridge IGCSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams and global higher education.",
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80",
+    desc: "Rigorous CBSE and Cambridge IGCSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams. Our consistent 100% board results speak to the academic rigour and dedication of our students and faculty.",
+    img: "https://seedlingschools.com/assets/img/sia.jpg",
     color: "from-emerald-700/80",
   },
 ];
@@ -150,35 +155,35 @@ const achievements = [
 ];
 
 const learnerProfile = [
-  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪" },
-  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞" },
-  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝" },
-  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡" },
-  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥" },
+  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "https://seedlingschools.com/assets/img/confident.jpg" },
+  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "https://seedlingschools.com/assets/img/reflective.jpg" },
+  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "https://seedlingschools.com/assets/img/responsible.jpg" },
+  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "https://seedlingschools.com/assets/img/innovative.jpg" },
+  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥", img: "https://seedlingschools.com/assets/img/engaged.jpg" },
 ];
 
 const faculty = [
-  { name: "Ms. Priya Sharma", subject: "Mathematics", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" },
-  { name: "Mr. Arjun Mehta", subject: "Science & Physics", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" },
-  { name: "Dr. Sunita Rathore", subject: "English Literature", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" },
-  { name: "Mr. Vikram Singh", subject: "Social Studies", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" },
-  { name: "Ms. Kavita Joshi", subject: "Cambridge IGCSE", img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80" },
-  { name: "Mr. Rahul Gupta", subject: "Computer Science", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" },
+  { name: "CBSE Faculty", subject: "Seedling Public School", img: "https://seedlingschools.com/assets/img/feature-3.jpg" },
+  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "https://seedlingschools.com/assets/img/sia-faculty.jpg" },
+  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "https://seedlingschools.com/assets/img/smhs-sports.jpg" },
+  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "https://seedlingschools.com/assets/img/feature-6.jpg" },
+  { name: "Science & Labs", subject: "Practical Learning Wing", img: "https://seedlingschools.com/assets/img/feature-2.jpg" },
+  { name: "Admissions & Counselling", subject: "All Schools", img: "https://seedlingschools.com/assets/img/counselling-1.jpg" },
 ];
 
 const joyride = [
-  "Personalised Learning Journeys — tailored to individual student needs and strengths",
+  "Personalised Learning Journeys — tailored to meet individual student needs and strengths",
   "Academic Rigor — comprehensive CBSE curriculum with critical knowledge and skills",
   "Emotional Intelligence — integrated into all aspects of learning for holistic growth",
   "Future-Ready Skills — AI, ethics, and sustainability for tomorrow's challenges",
-  "Mental Wellness Focus — regular mental health support sessions",
+  "Holistic Development — prioritising both academic success and personal growth",
+  "Sports & Extracurricular Activities — diverse opportunities for all-round development",
+  "Mental Wellness Focus — regular mental health support sessions for all students",
+  "Safe & Nurturing Environment — a 'Happy School' atmosphere promoting emotional security",
   "Global Outlook — promoting international-mindedness and cultural awareness",
-  "Career Counselling — personalised guidance for future academic and career paths",
-  "Early Bird Incentives — for early registrations each session",
-  "Scholarships — for meritorious students in academics and sports",
-  "Safe, Secure Campus — 24/7 surveillance at all campuses",
-  "University Counselling — structured pathways to top global universities",
+  "Innovative Teaching Methods — combining traditional and modern mindfulness tools",
   "Parent–Teacher Collaboration — regular, transparent updates on student progress",
+  "Career Counselling — personalised guidance for future academic and career paths",
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -195,38 +200,38 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-[92vh] min-h-[640px] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?w=1800&q=85"
-          alt="Academic Excellence"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          src="https://seedlingschools.com/assets/img/sps-banner.jpg"
+          alt="Academic Excellence at Seedling Schools"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-[ken-burns_20s_ease_infinite]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/85 via-[#0a1628]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <Reveal>
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 bg-sky-400 rounded-full animate-pulse" />
+            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6 backdrop-blur-sm font-dm">
+              <span className="w-1.5 h-1.5 bg-sand rounded-full animate-pulse" />
               Seedling Group of Schools · Academic Programmes
             </span>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="serif text-white font-light text-6xl md:text-8xl leading-[1.05] max-w-3xl mb-6">
+            <h1 className="serif text-white font-light text-4xl md:text-5xl leading-[1.05] max-w-4xl mb-6">
               Academic<br />
-              <em className="font-semibold">Excellence</em><br />
-              <span className="text-sky-300">Redefined.</span>
+              <em className="font-semibold text-sand">Excellence</em><br />
+              <span className="text-white/90">& Future-Ready Learning.</span>
             </h1>
           </Reveal>
           <Reveal delay={220}>
-            <p className="text-white/65 text-lg max-w-xl leading-relaxed mb-10">
-              From Playgroup to University — CBSE and Cambridge programmes designed to nurture confident, reflective, and globally-minded learners across 5 schools in Jaipur.
+            <p className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-dm font-light">
+              NEP-aligned CBSE and Cambridge programmes designed to nurture confident, reflective, and globally-minded learners — across 5 schools in Jaipur, since 1992.
             </p>
           </Reveal>
           <Reveal delay={340}>
             <div className="flex gap-4 flex-wrap">
-              <a href="/admission-procedure" className="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-sky-800/40">
+              <a href="/admission-procedure" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-navy-deeper/40 font-dm">
                 Explore Programmes
               </a>
-              <a href="/admission-online" className="bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#1A1A1A] px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 backdrop-blur-sm">
+              <a href="/admission-online" className="bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 backdrop-blur-sm font-dm">
                 Apply Now
               </a>
             </div>
@@ -234,11 +239,11 @@ export default function AcademicsPage() {
         </div>
 
         {/* floating stat pills */}
-        <div className="absolute bottom-10 right-8 z-10 hidden lg:flex flex-col gap-3">
+        <div className="absolute bottom-12 right-12 z-10 hidden lg:flex flex-col gap-4">
           {[["100%", "Board Results"], ["20K+", "Students"], ["15:1", "Teacher Ratio"]].map(([v, l]) => (
-            <div key={l} className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-3 rounded-xl">
-              <span className="serif text-2xl font-semibold text-sky-300">{v}</span>
-              <span className="text-xs text-white/60 tracking-wide">{l}</span>
+            <div key={l} className="flex items-center gap-4 bg-navy-deeper/40 backdrop-blur-xl border border-white/10 text-white px-6 py-4 rounded-2xl shadow-2xl">
+              <span className="serif text-3xl font-semibold text-sand">{v}</span>
+              <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase font-dm">{l}</span>
             </div>
           ))}
         </div>
@@ -249,37 +254,41 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="py-32 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
-          <Tag>Curriculum Overview</Tag>
-          <h2 className="serif text-5xl md:text-6xl font-light text-[#1A1A1A]">
+          <Tag color="navy">Curriculum Overview</Tag>
+          <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
             Two Boards.<br />
-            <em className="font-semibold">One Vision.</em>
+            <em className="font-semibold text-crimson">One Vision.</em>
           </h2>
-          <p className="text-[#666] mt-5 max-w-xl mx-auto leading-relaxed">
-            Whether CBSE or Cambridge, every Seedling programme is built on the same foundation: joyful learning, holistic development, and genuine academic rigour.
+          <p className="text-text-light mt-6 max-w-2xl mx-auto leading-relaxed text-lg font-dm font-light">
+            Whether CBSE or Cambridge, every Seedling programme is built on the same foundation: joyful learning, holistic development, and genuine academic rigour — aligned with the National Education Policy.
           </p>
         </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {curricula.map((c, i) => (
+          {[
+            { ...curricula[0], color: "from-navy-light/50 to-white", border: "border-navy/10", accent: "bg-navy", text: "text-navy" },
+            { ...curricula[1], color: "from-mauve/10 to-white", border: "border-mauve/20", accent: "bg-mauve", text: "text-mauve" },
+            { ...curricula[2], color: "from-sand/20 to-white", border: "border-sand/40", accent: "bg-crimson", text: "text-crimson" },
+          ].map((c, i) => (
             <Reveal key={c.board} delay={i * 120}>
-              <div className={`group relative rounded-2xl p-8 h-full border ${c.border} bg-gradient-to-br ${c.color} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}>
-                <div className={`absolute top-0 left-6 right-6 h-0.5 ${c.accent} rounded-full`} />
-                <div className="text-5xl mb-5">{c.icon}</div>
-                <div className={`inline-block ${c.text} text-xs font-bold tracking-widest uppercase mb-2 border ${c.border} px-3 py-1 rounded-full`}>
+              <div className={`group relative rounded-3xl p-10 h-full border ${c.border} bg-gradient-to-br ${c.color} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}>
+                <div className={`absolute top-0 left-10 right-10 h-1 ${c.accent} rounded-full`} />
+                <div className="text-6xl mb-6">{c.icon}</div>
+                <div className={`inline-block ${c.text} text-[10px] font-black tracking-[0.2em] uppercase mb-4 border ${c.border} px-4 py-1 rounded-full font-dm`}>
                   {c.board}
                 </div>
-                <div className="mt-3 mb-5 space-y-1">
+                <div className="mt-3 mb-6 space-y-2">
                   {c.schools.map((s) => (
-                    <p key={s} className="text-sm text-[#444] font-medium flex items-center gap-2">
+                    <p key={s} className="text-sm text-text-base font-bold flex items-center gap-2 font-dm">
                       <span className={`w-1.5 h-1.5 rounded-full ${c.accent} inline-block`} />
                       {s}
                     </p>
                   ))}
                 </div>
-                <p className="text-[#555] text-sm leading-[1.9] mb-7">{c.desc}</p>
+                <p className="text-text-light text-base leading-[1.8] mb-8 font-dm font-light">{c.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {c.highlights.map((h) => (
-                    <span key={h} className={`text-xs ${c.text} border ${c.border} px-3 py-1 rounded-full font-medium`}>{h}</span>
+                    <span key={h} className={`text-[10px] ${c.text} border ${c.border} px-3 py-1 rounded-full font-black tracking-widest uppercase font-dm bg-white/50`}>{h}</span>
                   ))}
                 </div>
               </div>
@@ -291,33 +300,33 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           3. LEARNING APPROACH (ZIG-ZAG)
       ══════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-white">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-20">
-            <Tag>How We Teach</Tag>
-            <h2 className="serif text-5xl md:text-6xl font-light">
-              Our Learning <em className="font-semibold">Approach</em>
+          <Reveal className="text-center mb-24">
+            <Tag color="crimson">How We Teach</Tag>
+            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
+              Our Learning <em className="font-semibold text-navy">Approach</em>
             </h2>
           </Reveal>
 
-          <div className="space-y-28">
+          <div className="space-y-32">
             {learningApproaches.map((item, i) => (
               <Reveal key={item.title} delay={60}>
-                <div className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}>
+                <div className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}>
                   <div className={i % 2 === 1 ? "[direction:ltr]" : ""}>
-                    <div className="overflow-hidden rounded-2xl shadow-xl group">
+                    <div className="overflow-hidden rounded-3xl shadow-editorial group border border-sand/30">
                       <img
                         src={item.img}
                         alt={item.title}
-                        className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110"
                       />
                     </div>
                   </div>
                   <div className={i % 2 === 1 ? "[direction:ltr]" : ""}>
-                    <Tag>{item.tag}</Tag>
-                    <h3 className="serif text-3xl md:text-4xl font-semibold text-[#1A1A1A] mb-5 leading-snug">{item.title}</h3>
-                    <p className="text-[#555] leading-[1.9] text-base">{item.body}</p>
-                    <div className="mt-8 w-12 h-0.5 bg-sky-500" />
+                    <Tag color={i % 2 === 1 ? "mauve" : "navy"}>{item.tag}</Tag>
+                    <h3 className="serif text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">{item.title}</h3>
+                    <p className="text-text-light leading-[1.9] text-lg font-dm font-light">{item.body}</p>
+                    <div className="mt-10 w-16 h-1 bg-sand rounded-full" />
                   </div>
                 </div>
               </Reveal>
@@ -329,24 +338,35 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           CAMBRIDGE LEARNER PROFILE
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-[#0e1e3a] text-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-32 bg-navy-deeper text-white relative overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <Reveal className="text-center mb-20">
-            <span className="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-sky-500/30 mb-4">
+            <span className="inline-block bg-sand/10 text-sand text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
               Cambridge Learner Profile
             </span>
             <h2 className="serif text-5xl md:text-6xl font-light">
-              We Shape <em className="font-semibold text-sky-300">5 Kinds</em><br />of Learners
+              We Shape <em className="font-semibold text-sand">5 Kinds</em><br />of Learners
             </h2>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {learnerProfile.map((lp, i) => (
               <Reveal key={lp.trait} delay={i * 80}>
-                <div className="group bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-sky-500/40 transition-all duration-300 hover:-translate-y-1 text-center">
-                  <span className="text-5xl mb-4 block">{lp.emoji}</span>
-                  <h4 className="serif text-xl font-semibold text-sky-300 mb-3">{lp.trait}</h4>
-                  <p className="text-white/55 text-xs leading-[1.8]">{lp.desc}</p>
+                <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 text-center pb-8">
+                  <div className="h-44 overflow-hidden relative">
+                    <img
+                      src={lp.img}
+                      alt={lp.trait}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 to-transparent" />
+                  </div>
+                  <div className="p-6 px-4">
+                    <span className="text-4xl mb-4 block group-hover:scale-125 transition-transform duration-500">{lp.emoji}</span>
+                    <h4 className="serif text-2xl font-semibold text-sand mb-3">{lp.trait}</h4>
+                    <p className="text-white/60 text-xs leading-relaxed font-dm font-light">{lp.desc}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -359,32 +379,36 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="py-32 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
-          <Tag>Programme Levels</Tag>
-          <h2 className="serif text-5xl md:text-6xl font-light">
+          <Tag color="mauve">Programme Levels</Tag>
+          <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
             A Journey From<br />
-            <em className="font-semibold">First Steps to Future Paths</em>
+            <em className="font-semibold text-crimson">First Steps to Future Paths</em>
           </h2>
         </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {programs.map((p, i) => (
+          {[
+            { ...programs[0], color: "from-mauve/90" },
+            { ...programs[1], color: "from-navy-deeper/90" },
+            { ...programs[2], color: "from-crimson/90" },
+          ].map((p, i) => (
             <Reveal key={p.level} delay={i * 120}>
-              <div className="group relative h-[480px] rounded-2xl overflow-hidden shadow-xl cursor-pointer">
+              <div className="group relative h-[520px] rounded-[2.5rem] overflow-hidden shadow-editorial cursor-pointer">
                 <img
                   src={p.img}
                   alt={p.level}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${p.color} to-black/20`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t ${p.color} via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <span className="text-white/60 text-xs tracking-[0.2em] uppercase mb-2 block">{p.range}</span>
-                  <h3 className="serif text-4xl font-semibold mb-3">{p.level}</h3>
-                  <p className="text-white/70 text-sm leading-[1.8] opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-white/60 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
+                  <h3 className="serif text-4xl font-semibold mb-5 leading-tight">{p.level}</h3>
+                  <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
                     {p.desc}
                   </p>
-                  <div className="mt-4 w-8 h-0.5 bg-white/60 group-hover:w-16 transition-all duration-500" />
+                  <div className="mt-8 w-12 h-1 bg-white/60 group-hover:w-24 transition-all duration-500 rounded-full" />
                 </div>
               </div>
             </Reveal>
@@ -395,30 +419,31 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           5. ACHIEVEMENTS
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-gradient-to-br from-sky-600 to-blue-800 text-white relative overflow-hidden">
-        {/* decorative circles */}
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/5 rounded-full" />
-        <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-white/5 rounded-full" />
+      <section className="py-32 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
+        {/* decorative layers */}
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-mauve/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <Reveal className="text-center mb-20">
-            <span className="inline-block bg-white/15 text-white text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-white/20 mb-4">
+          <Reveal className="text-center mb-24">
+            <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
               Roll of Honour
             </span>
-            <h2 className="serif text-5xl md:text-6xl font-light">
+            <h2 className="serif text-5xl md:text-7xl font-light">
               Numbers That<br />
-              <em className="font-semibold">Tell Our Story</em>
+              <em className="font-semibold text-sand">Tell Our Story</em>
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {achievements.map((a, i) => (
               <Reveal key={a.label} delay={i * 80}>
-                <div className="group bg-white/10 border border-white/15 rounded-2xl p-8 text-center hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl backdrop-blur-sm">
-                  <div className="text-4xl mb-4">{a.icon}</div>
-                  <p className="serif text-5xl font-semibold text-white mb-2">{a.value}</p>
-                  <p className="text-white/90 font-semibold text-base mb-1">{a.label}</p>
-                  <p className="text-white/50 text-xs tracking-wide">{a.sub}</p>
+                <div className="group bg-white/5 border border-white/10 rounded-3xl p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">{a.icon}</div>
+                  <p className="serif text-5xl md:text-6xl font-semibold text-sand mb-3">{a.value}</p>
+                  <p className="text-white font-bold text-lg mb-2 font-dm tracking-tight">{a.label}</p>
+                  <p className="text-white/40 text-xs tracking-widest uppercase font-dm font-bold">{a.sub}</p>
                 </div>
               </Reveal>
             ))}
@@ -426,16 +451,17 @@ export default function AcademicsPage() {
 
           {/* Full-width 100% results banner */}
           <Reveal delay={200}>
-            <div className="mt-16 bg-white/10 border border-white/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-sm">
-              <div>
-                <p className="text-white/60 text-sm tracking-widest uppercase mb-2">Our Pride</p>
-                <h3 className="serif text-4xl md:text-5xl font-semibold">100% Board Results</h3>
-                <p className="text-white/65 mt-3 max-w-lg">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses.</p>
+            <div className="mt-20 bg-navy-deeper/60 border border-white/10 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
+              <div className="relative z-10">
+                <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
+                <h3 className="serif text-5xl md:text-6xl font-semibold mb-6">100% Board Results</h3>
+                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 bg-white/15 rounded-full flex flex-col items-center justify-center border-2 border-white/30">
-                  <span className="serif text-4xl font-bold">100%</span>
-                  <span className="text-xs text-white/60 mt-1">Every Year</span>
+              <div className="flex-shrink-0 relative z-10">
+                <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">
+                  <span className="serif text-5xl font-bold">100%</span>
+                  <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
                 </div>
               </div>
             </div>
@@ -446,21 +472,21 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           JOYRIDE — WHAT SEEDLING OFFERS
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-20 items-center">
             <Reveal>
-              <Tag>Start Your Joyride</Tag>
-              <h2 className="serif text-5xl font-light leading-tight mb-6">
+              <Tag color="crimson">Start Your Joyride</Tag>
+              <h2 className="serif text-5xl font-light leading-tight mb-8 text-navy-deeper">
                 12 Reasons to Choose<br />
-                <em className="font-semibold">Seedling Schools</em>
+                <em className="font-semibold text-navy">Seedling Schools</em>
               </h2>
-              <p className="text-[#666] leading-relaxed mb-10">
-                Every element of the Seedling experience is intentionally designed to prepare students not just academically, but for life's challenges — with confidence, compassion, and curiosity.
+              <p className="text-text-light leading-relaxed mb-10 text-lg font-dm font-light">
+                Every element of the Seedling experience is intentionally designed to prepare students not just academically, but for life's challenges — with confidence, compassion, and curiosity. Come feel the Buzz!
               </p>
-              <a href="/admission-procedure" className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-full text-sm font-semibold transition-all duration-300">
+              <a href="/admission-procedure" className="inline-flex items-center gap-3 bg-navy hover:bg-navy-dark text-white px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-navy/40">
                 Begin Enrolment
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
@@ -469,13 +495,13 @@ export default function AcademicsPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {joyride.map((item, i) => (
                 <Reveal key={i} delay={i * 40}>
-                  <div className="flex gap-3 p-4 rounded-xl bg-[#F8F8F6] border border-[#EEECEA] hover:bg-sky-50 hover:border-sky-200 transition-all duration-300 group">
-                    <span className="w-5 h-5 rounded-full bg-sky-600 text-white flex-shrink-0 flex items-center justify-center mt-0.5">
+                  <div className="flex gap-4 p-5 rounded-2xl bg-white border border-sand/40 hover:bg-navy-light/30 hover:border-navy/20 transition-all duration-300 group shadow-sm hover:shadow-md">
+                    <span className="w-6 h-6 rounded-full bg-navy text-white flex-shrink-0 flex items-center justify-center mt-0.5">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    <p className="text-[#444] text-xs leading-[1.7]">{item}</p>
+                    <p className="text-text-base text-xs leading-[1.8] font-dm font-bold">{item}</p>
                   </div>
                 </Reveal>
               ))}
@@ -487,35 +513,35 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           6. FACULTY
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-[#F8F8F6]">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-20">
-            <Tag>Our Educators</Tag>
-            <h2 className="serif text-5xl md:text-6xl font-light">
+          <Reveal className="text-center mb-24">
+            <Tag color="mauve">Our Educators</Tag>
+            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
               Faculty Who<br />
-              <em className="font-semibold">Inspire, Not Just Instruct</em>
+              <em className="font-semibold text-crimson">Inspire, Not Just Instruct</em>
             </h2>
-            <p className="text-[#666] mt-5 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-text-light mt-6 max-w-3xl mx-auto leading-relaxed text-lg font-dm font-light">
               Our dedicated teachers create a nurturing environment for student success. They foster rapport, understand individual needs, and set high standards for both character and academic achievement — preparing students not just for exams, but for life.
             </p>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
             {faculty.map((f, i) => (
               <Reveal key={f.name} delay={i * 80}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[#EEECEA]">
-                  <div className="relative overflow-hidden h-64">
+                <div className="group bg-off-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-sand/40">
+                  <div className="relative overflow-hidden h-72">
                     <img
                       src={f.img}
                       alt={f.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  <div className="p-6">
-                    <h4 className="serif text-xl font-semibold text-[#1A1A1A] mb-1">{f.name}</h4>
-                    <p className="text-sky-600 text-sm font-medium">{f.subject}</p>
-                    <div className="mt-4 w-8 h-0.5 bg-sky-200 group-hover:w-14 group-hover:bg-sky-500 transition-all duration-300" />
+                  <div className="p-8">
+                    <h4 className="serif text-2xl font-semibold text-navy-deeper mb-2">{f.name}</h4>
+                    <p className="text-crimson text-sm font-black tracking-widest uppercase font-dm">{f.subject}</p>
+                    <div className="mt-6 w-10 h-1 bg-sand group-hover:w-20 group-hover:bg-navy transition-all duration-500 rounded-full" />
                   </div>
                 </div>
               </Reveal>
@@ -526,9 +552,9 @@ export default function AcademicsPage() {
           <Reveal delay={100}>
             <div className="mt-16 grid md:grid-cols-3 gap-6">
               {[
-                { icon: "📚", title: "Experienced & Qualified", desc: "Faculty members are continuously trained, experienced, and deeply passionate about teaching — with ongoing professional development." },
-                { icon: "🎯", title: "Student-Centric", desc: "A personalised, inclusive approach ensures every child receives individual attention, guidance, and care for both academics and well-being." },
-                { icon: "🔄", title: "Mentors, Not Just Teachers", desc: "Our teachers go beyond knowledge delivery — they build confidence, nurture personality, and create an environment where students feel valued." },
+                { icon: "📚", title: "Experienced & Qualified", desc: "Faculty members are continuously trained, experienced, and deeply passionate about teaching. Regular tests, remedial classes, and doubt-clearing sessions help students strengthen their understanding." },
+                { icon: "🎯", title: "Student-Centric Approach", desc: "A personalised, inclusive approach ensures every child receives individual attention and guidance. Our teachers promote inquiry, fellowship, and joy — setting high standards for character and discipline." },
+                { icon: "🔄", title: "Mentors, Not Just Teachers", desc: "Our teachers go beyond knowledge delivery — they build confidence, nurture personality, and create a positive atmosphere where every student feels valued, motivated, and ready for life's challenges." },
               ].map((item) => (
                 <div key={item.title} className="bg-white border border-[#EEECEA] rounded-2xl p-7 flex gap-5 items-start">
                   <span className="text-3xl">{item.icon}</span>
@@ -546,41 +572,42 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           7. CTA
       ══════════════════════════════════════════════════════ */}
-      <section className="relative py-40 overflow-hidden">
+      <section className="relative py-48 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1800&q=80"
-          alt="Join Seedling"
+          src="https://seedlingschools.com/assets/img/life-at-sps.jpg"
+          alt="Join Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0e1e3a]/90 via-[#0e1e3a]/75 to-sky-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-navy-dark/70" />
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <span className="inline-block bg-sky-500/25 text-sky-200 text-xs tracking-[0.2em] uppercase px-4 py-1.5 rounded-full border border-sky-400/30 mb-6">
+            <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
               Admissions Open 2026–27
             </span>
-            <h2 className="serif text-5xl md:text-7xl font-light mb-6">
+            <h2 className="serif text-5xl md:text-8xl font-light mb-8">
               Join the<br />
-              <em className="font-semibold text-sky-300">Seedling Family</em>
+              <em className="font-semibold text-sand">Seedling Family</em>
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-              Come feel the buzz. Parent counselling is available both online and offline. Early bird incentives and scholarships for meritorious students are available. Where every student matters.
+            <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-dm font-light">
+              Come feel the Buzz! Parent counselling is available both online and offline. Early bird incentives and scholarships for meritorious students in academics and sports are available. Where every student matters — prioritising well-being since 1992.
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex gap-6 justify-center flex-wrap">
               <a
                 href="/admission-online"
-                className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-10 py-5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-2xl hover:shadow-sky-800/50 hover:gap-4"
+                className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/50 hover:gap-6 font-dm"
               >
                 Apply Now
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
                 href="/admission-procedure"
-                className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#1A1A1A] px-10 py-5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 backdrop-blur-sm"
+                className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
               >
                 Enquire Now
               </a>
@@ -588,11 +615,11 @@ export default function AcademicsPage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+            <div className="mt-24 grid grid-cols-3 gap-12 max-w-2xl mx-auto border-t border-white/10 pt-16">
               {[["🎓", "University\nCounselling"], ["🏅", "Merit\nScholarships"], ["🤝", "Parent\nPartnerships"]].map(([icon, label]) => (
-                <div key={label} className="text-center">
-                  <span className="text-3xl block mb-2">{icon}</span>
-                  <p className="text-white/50 text-xs leading-[1.6] whitespace-pre-line">{label}</p>
+                <div key={label} className="text-center group cursor-default">
+                  <span className="text-5xl block mb-4 group-hover:scale-125 transition-transform duration-500">{icon}</span>
+                  <p className="text-white/50 text-[10px] tracking-[0.3em] uppercase font-black leading-loose whitespace-pre-line font-dm">{label}</p>
                 </div>
               ))}
             </div>

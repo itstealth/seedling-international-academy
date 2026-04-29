@@ -8,117 +8,31 @@ type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
 
 // ─── Global Styles (injected via <style> tag in JSX) ────────────────────────
 const globalStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-
-  body { font-family: 'DM Sans', sans-serif; color: #2c2c2c; background: #fff; overflow-x: hidden; }
-  .font-playfair { font-family: 'Playfair Display', serif; }
-  .font-dm { font-family: 'DM Sans', sans-serif; }
-
-  /* Hero slides */
-  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; background-size: cover; background-position: center; }
-  .hero-slide.active { opacity: 1; }
-  .hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(23,81,144,0.82) 0%, rgba(23,81,144,0.3) 60%, rgba(164,21,70,0.25) 100%); }
+  @keyframes ken-burns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+  .hero-slide { 
+    position: absolute; 
+    inset: 0; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+    background-size: cover; 
+    background-position: center; 
+  }
+  .hero-slide.active { 
+    opacity: 1; 
+    animation: ken-burns 20s ease infinite alternate;
+  }
+  .hero-slide::after { 
+    content: ''; 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(135deg, var(--color-navy-deeper) 0%, rgba(10, 31, 58, 0.4) 60%, rgba(164, 21, 70, 0.3) 100%); 
+  }
   .hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80'); }
   .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80'); }
   .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80'); }
-
-  /* Dropdown */
-  .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  .dropdown { opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; }
-
-  /* Gallery overlay */
-  .gallery-item:hover .gallery-overlay { opacity: 1; }
-  .gallery-overlay { opacity: 0; transition: opacity 0.3s; }
-
-  /* Gallery grid */
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 200px 200px; gap: 14px; }
-  .gallery-item:first-child { grid-column: 1 / 3; grid-row: 1 / 3; }
-  .gallery-item:nth-child(4) { grid-column: 3 / 5; }
-
-  /* About images grid */
-  .about-images { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 14px; position: relative; }
-  .about-img:first-child { grid-row: 1 / 3; border-radius: 20px; }
-
-  /* Instagram feed */
-  .instagram-feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
-
-  /* Marquee */
-  .marquee-track { display: flex; gap: 60px; animation: marquee 28s linear infinite; white-space: nowrap; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  /* Hero dot */
-  .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s; border: none; }
-  .hero-dot.active { background: white; width: 24px; border-radius: 4px; }
-
-  /* Sports section decorative */
-  .sports-section::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; border-radius: 50%; background: rgba(164,21,70,0.12); }
-  .sports-section::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: rgba(137,107,133,0.15); }
-
-  /* Admission section decorative */
-  .admission-section::before { content: ''; position: absolute; top: -100px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.06); }
-
-  /* Stat cards */
-  .stat-card { background: rgba(255,255,255,0.12); backdrop-filter: blur(16px); border-top: 1px solid rgba(255,255,255,0.25); border-left: 1px solid rgba(255,255,255,0.15); padding: 20px 28px; text-align: center; color: white; }
-
-  /* Updates grid */
-  .updates-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
-
-  /* Footer grid */
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-
-  /* About features grid */
-  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
-
-  /* Infra grid */
-  .infra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-
-  /* Sports grid */
-  .sports-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; position: relative; z-index: 2; }
-
-  /* Testi grid */
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-  /* Why grid */
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-
-  /* About grid */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-
-  /* Tab button active */
-  .tab-btn.active { background: #175190 !important; color: white !important; }
-
-  /* Hamburger hidden by default on desktop */
-  .hamburger-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
-
-  @media (max-width: 1024px) {
-    .about-grid, .why-grid, .updates-grid { grid-template-columns: 1fr; }
-    .sports-grid { grid-template-columns: repeat(2, 1fr); }
-    .testi-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .infra-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-stats { display: none; }
-  }
-
-  @media (max-width: 768px) {
-    .nav-links-wrap { display: none; }
-    .hamburger-btn { display: flex; }
-    .about-images { grid-template-rows: 180px 180px; }
-    .testi-grid, .sports-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-    .gallery-item:first-child { grid-column: 1 / 3; grid-row: auto; }
-    .gallery-item:nth-child(4) { grid-column: auto; }
-    .admission-content { flex-direction: column; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .infra-grid { grid-template-columns: 1fr; }
-    .updates-grid { grid-template-columns: 1fr; }
-    .instagram-feed { grid-template-columns: repeat(3, 1fr); }
-    .tab-bar { width: 100%; }
-  }
-
-  @media (max-width: 480px) {
-    .hero-section { height: 100svh; }
-  }
 `;
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
@@ -199,33 +113,13 @@ export default function SeedlingPage(): React.JSX.Element {
   };
 
   return (
-    <>
-      <Head>
-        <title>Seedling Public School – Best CBSE School in Jaipur</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* Inject global styles */}
       <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
 
-      {/* ─── TOP BAR ─── */}
-      <div className="bg-navy py-1.5">
-        <div className="max-w-[1280px] mx-auto px-6 flex justify-between items-center flex-wrap gap-1.5">
-          <div className="flex gap-5 flex-wrap">
-            <a href="tel:+917413012351" className="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">📞 SPS: +91 74130 12351</a>
-            <a href="tel:+918306991636" className="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">📞 SMHS: +91 8306991636</a>
-          </div>
-          <div className="hidden sm:flex gap-4">
-            <a href="#" className="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">ERP Login</a>
-            <a href="#" className="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">Alumni</a>
-            <a href="#" className="text-[#cde0f7] text-[0.78rem] font-medium no-underline hover:text-sand transition-colors">Contact Us</a>
-          </div>
-        </div>
-      </div>
 
       {/* ─── HERO ─── */}
-      <section className="hero-section relative h-[94vh] min-h-[560px] overflow-hidden flex items-center">
+      <section className="relative h-screen min-h-[640px] overflow-hidden flex items-center">
         <div className="hero-slides absolute inset-0">
           {[1, 2, 3].map((n) => (
             <div
@@ -234,43 +128,49 @@ export default function SeedlingPage(): React.JSX.Element {
             />
           ))}
         </div>
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 w-full">
-          <div className="inline-block bg-white/[0.18] backdrop-blur-md border border-white/35 text-white text-[0.75rem] font-semibold tracking-[2px] uppercase px-4 py-1.5 rounded-full mb-5">
-            🎓 CBSE Affiliated · Jawahar Nagar, Jaipur
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.75rem] font-black tracking-[0.2em] uppercase px-5 py-2 rounded-full mb-8">
+            <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
+            CBSE Affiliated · Jaipur
           </div>
-          <h1 className="font-playfair text-[clamp(2.4rem,6vw,4.6rem)] text-white leading-[1.12] font-black max-w-[700px] mb-5">
-            Where Every Child Finds Their <span className="text-[#ffcfde]">Wings</span>
+          <h1 className="serif text-[clamp(2.5rem,7vw,5.5rem)] text-white leading-[1] font-light max-w-4xl mb-8">
+            Where Every Child Finds Their <br />
+            <em className="font-semibold text-sand italic">Wings</em>
           </h1>
-          <p className="text-white/90 text-[clamp(1rem,1.5vw,1.15rem)] max-w-[520px] leading-[1.7] mb-9">
-            Seedling Public School nurtures young minds with holistic education, world-class infrastructure, and a culture of excellence — shaping tomorrow&apos;s leaders since 1994.
+          <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
+            Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1994.
           </p>
-          <div className="flex gap-3.5 flex-wrap">
-            <a href="#admission" className="bg-crimson text-white px-7 py-3.5 rounded-full font-semibold text-[0.95rem] no-underline transition-all shadow-[0_4px_20px_rgba(164,21,70,0.4)] hover:bg-crimson-dark hover:-translate-y-0.5">Apply for Admission 2025–26</a>
-            <a href="#about" className="bg-white/15 backdrop-blur-md border-2 border-white/50 text-white px-7 py-3 rounded-full font-semibold text-[0.95rem] no-underline transition-all hover:bg-white/25">Explore School →</a>
+          <div className="flex gap-4 flex-wrap">
+            <a href="/admissions" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
+              Apply Now 2026
+            </a>
+            <a href="/about" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">
+              Explore School
+            </a>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="hero-stats absolute bottom-0 right-0 z-10 flex">
+        <div className="absolute bottom-0 right-0 z-10 hidden lg:flex">
           {[
             { val: '30+', label: 'Years of Excellence' },
-            { val: '5000+', label: 'Happy Students' },
-            { val: '150+', label: 'Qualified Faculty' },
-            { val: '100%', label: 'CBSE Results' },
+            { val: '5000+', label: 'Students' },
+            { val: '150+', label: 'Faculty' },
+            { val: '100%', label: 'Results' },
           ].map(({ val, label }) => (
-            <div key={label} className="stat-card">
-              <strong className="block text-[1.9rem] font-bold font-playfair">{val}</strong>
-              <span className="text-[0.75rem] font-medium opacity-80 tracking-[0.5px]">{label}</span>
+            <div key={label} className="bg-navy-deeper/40 backdrop-blur-2xl border-l border-white/10 p-10 text-center text-white min-w-[180px]">
+              <strong className="block text-4xl font-semibold serif text-sand mb-2">{val}</strong>
+              <span className="text-[10px] font-black tracking-widest uppercase opacity-60">{label}</span>
             </div>
           ))}
         </div>
 
         {/* Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-10">
           {[0, 1, 2].map((n) => (
             <button
               key={n}
-              className={`hero-dot${currentSlide === n ? ' active' : ''}`}
+              className={`w-3 h-3 rounded-full transition-all duration-500 ${currentSlide === n ? 'bg-sand w-10' : 'bg-white/40'}`}
               onClick={() => goToSlide(n)}
               aria-label={`Slide ${n + 1}`}
             />
@@ -279,69 +179,71 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ANNOUNCEMENT MARQUEE ─── */}
-      <div className="bg-navy py-3 overflow-hidden">
-        <div className="overflow-hidden">
-          <div className="marquee-track">
-            {marqueeItems.map((text, i) => (
-              <span
-                key={i}
-                className="text-sand text-[0.85rem] font-medium flex items-center gap-2.5"
-                style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
-              >
-                <span style={{ color: '#A41546', fontSize: '0.5rem' }}>●</span>
-                {text}
-              </span>
-            ))}
-          </div>
+      <div className="bg-navy py-4 overflow-hidden border-y border-white/10">
+        <div className="marquee-track flex gap-16 animate-[marquee_40s_linear_infinite] whitespace-nowrap">
+          {marqueeItems.concat(marqueeItems).map((text, i) => (
+            <span
+              key={i}
+              className="text-sand text-sm font-black tracking-widest uppercase flex items-center gap-4"
+            >
+              <span className="w-2 h-2 bg-crimson rounded-full" />
+              {text}
+            </span>
+          ))}
         </div>
       </div>
 
       {/* ─── ABOUT SCHOOL ─── */}
-      <section className="bg-off-white py-20" id="about">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="about-grid">
+      <section className="bg-off-white py-32" id="about">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
             {/* Images */}
-            <div className="about-images">
-              <div className="about-img overflow-hidden rounded-[20px]">
-                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="School Building" className="w-full h-full object-cover block" />
+            <div className="relative">
+              <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[560px]">
+                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
+                  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
+                  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
+                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
               </div>
-              <div className="about-img overflow-hidden rounded-2xl">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Classroom" className="w-full h-full object-cover block" />
-              </div>
-              <div className="about-img overflow-hidden rounded-2xl relative">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Students" className="w-full h-full object-cover block" />
-                <span className="absolute bottom-[-18px] left-1/2 -translate-x-1/2 bg-crimson text-white px-[22px] py-3 rounded-full text-[0.82rem] font-bold whitespace-nowrap shadow-[0_4px_20px_rgba(164,21,70,0.35)] tracking-[0.5px]">
-                  ✦ CBSE Affiliated School
-                </span>
+              <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
+                <span className="block text-3xl font-semibold serif leading-none mb-1">CBSE</span>
+                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
               </div>
             </div>
 
             {/* Text */}
             <div>
-              <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">About Seedling Public School</span>
-              <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Nurturing Excellence Since 1994 in Jaipur</h2>
-              <p className="text-[1rem] text-text-light leading-[1.7] max-w-[600px]">
-                Seedling Public School stands as one of Jaipur&apos;s most trusted CBSE-affiliated institutions. Our student-centric approach blends rigorous academics with emotional intelligence, creativity, and leadership — raising confident, compassionate, future-ready individuals.
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
+              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-8">
+                Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1994.
+              </h2>
+              <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
+                Seedling Public School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.
               </p>
-              <div className="features-grid">
+              <div className="grid sm:grid-cols-2 gap-6 mb-12">
                 {[
-                  { icon: '📚', title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus with critical thinking at core.' },
-                  { icon: '🏆', title: 'Award-Winning', desc: "Recognized among Rajasthan's top CBSE schools for academic outcomes." },
-                  { icon: '🤝', title: 'Holistic Growth', desc: 'Sports, arts, and life skills integrated alongside academics.' },
-                  { icon: '🧠', title: 'Mental Wellness', desc: 'Dedicated counsellors ensuring a stress-free, happy learning space.' },
+                  { icon: '📚', title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
+                  { icon: '🏆', title: 'Award-Winning', desc: "Rajasthan's top CBSE academic outcomes." },
+                  { icon: '🤝', title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
+                  { icon: '🧠', title: 'Mental Wellness', desc: 'Dedicated professional counsellors.' },
                 ].map(({ icon, title, desc }) => (
-                  <div key={title} className="flex gap-3 items-start p-3.5 bg-white rounded-xl border-l-[3px] border-navy">
-                    <div className="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-base flex-shrink-0">{icon}</div>
+                  <div key={title} className="flex gap-4 items-start p-6 bg-white rounded-3xl shadow-sm border border-sand/30 hover:border-navy/20 transition-all group">
+                    <div className="w-12 h-12 rounded-2xl bg-navy-light text-navy flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{icon}</div>
                     <div>
-                      <h4 className="text-[0.82rem] font-semibold text-navy mb-0.5">{title}</h4>
-                      <p className="text-[0.75rem] text-text-light leading-[1.5]">{desc}</p>
+                      <h4 className="text-sm font-black text-navy-deeper mb-1 uppercase tracking-tight">{title}</h4>
+                      <p className="text-xs text-text-light leading-relaxed font-light">{desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-7 flex gap-3.5 flex-wrap">
-                <a href="#" className="bg-navy text-white px-6 py-3 rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy-dark hover:-translate-y-px">Our Story</a>
-                <a href="#admission" className="border-2 border-navy text-navy px-6 py-[10px] rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy hover:text-white">Book a School Tour</a>
+              <div className="flex gap-4 flex-wrap">
+                <a href="/about" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">Our Story</a>
+                <a href="#admission" className="border-2 border-navy text-navy px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy hover:text-white">Book a Tour</a>
               </div>
             </div>
           </div>
@@ -349,25 +251,26 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── INFRASTRUCTURE / CAMPUS TABS ─── */}
-      <section className="bg-white py-20" id="campus">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="mb-[50px]">
-            <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Our Infrastructure</span>
-            <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">World-Class Campus &amp; Facilities</h2>
-            <p className="text-[1rem] text-text-light leading-[1.7] max-w-[600px]">Every space at Seedling is thoughtfully designed to inspire curiosity, collaboration, and growth.</p>
+      <section className="bg-white py-32" id="campus">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
+            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+              World-Class <em className="font-semibold text-navy">Facilities</em>
+            </h2>
           </div>
 
           {/* Tab Bar */}
-          <div className="tab-bar flex rounded-xl overflow-hidden border-2 border-sand mb-11 w-fit flex-wrap">
+          <div className="flex flex-wrap gap-4 mb-16 border-b border-sand/40">
             {([
               { key: 'campus', label: '🏫 Campus' },
               { key: 'labs', label: '🔬 Labs & Tech' },
-              { key: 'sports', label: '⚽ Sports Facilities' },
-              { key: 'arts', label: '🎨 Arts & Culture' },
+              { key: 'sports', label: '⚽ Sports' },
+              { key: 'arts', label: '🎨 Arts' },
             ] as { key: TabKey; label: string }[]).map(({ key, label }) => (
               <button
                 key={key}
-                className={`tab-btn px-6 py-3 border-none bg-white text-text-light text-[0.88rem] font-semibold cursor-pointer transition-all font-dm hover:bg-navy-light hover:text-navy${activeTab === key ? ' active' : ''}`}
+                className={`pb-4 px-6 text-sm font-black tracking-widest uppercase cursor-pointer transition-all border-b-4 ${activeTab === key ? 'border-navy text-navy' : 'border-transparent text-text-light hover:text-navy'}`}
                 onClick={() => handleTabSwitch(key)}
               >
                 {label}
@@ -376,88 +279,51 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           {/* Tab Content */}
-          <div className={`tab-panel${activeTab === 'campus' ? ' active' : ''}`} id="tab-campus">
-            <div className="infra-grid">
-              {infraData.campus.map(({ img, alt, tag, title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
-                  <div className="h-[200px] overflow-hidden"><img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]" /></div>
-                  <div className="p-[18px]">
-                    <span className="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">{tag}</span>
-                    <h3 className="text-[1rem] font-bold text-navy mb-1.5">{title}</h3>
-                    <p className="text-[0.82rem] text-text-light leading-[1.6]">{desc}</p>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {infraData[activeTab].map(({ img, alt, tag, title, desc }) => (
+              <div key={title} className="group bg-off-white rounded-[2rem] overflow-hidden border border-sand/40 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
+                <div className="h-64 overflow-hidden">
+                  <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={`tab-panel${activeTab === 'labs' ? ' active' : ''}`} id="tab-labs">
-            <div className="infra-grid">
-              {infraData.labs.map(({ img, alt, tag, title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
-                  <div className="h-[200px] overflow-hidden"><img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]" /></div>
-                  <div className="p-[18px]">
-                    <span className="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">{tag}</span>
-                    <h3 className="text-[1rem] font-bold text-navy mb-1.5">{title}</h3>
-                    <p className="text-[0.82rem] text-text-light leading-[1.6]">{desc}</p>
-                  </div>
+                <div className="p-8">
+                  <span className="inline-block bg-navy-light text-navy text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-full mb-4 border border-navy/10">{tag}</span>
+                  <h3 className="serif text-2xl font-semibold text-navy-deeper mb-3">{title}</h3>
+                  <p className="text-sm text-text-light leading-relaxed font-light">{desc}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={`tab-panel${activeTab === 'sports' ? ' active' : ''}`} id="tab-sports">
-            <div className="infra-grid">
-              {infraData.sports.map(({ img, alt, tag, title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
-                  <div className="h-[200px] overflow-hidden"><img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]" /></div>
-                  <div className="p-[18px]">
-                    <span className="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">{tag}</span>
-                    <h3 className="text-[1rem] font-bold text-navy mb-1.5">{title}</h3>
-                    <p className="text-[0.82rem] text-text-light leading-[1.6]">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={`tab-panel${activeTab === 'arts' ? ' active' : ''}`} id="tab-arts">
-            <div className="infra-grid">
-              {infraData.arts.map(({ img, alt, tag, title, desc }) => (
-                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(23,81,144,0.14)]">
-                  <div className="h-[200px] overflow-hidden"><img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.06]" /></div>
-                  <div className="p-[18px]">
-                    <span className="inline-block bg-navy-light text-navy text-[0.7rem] font-bold tracking-[1px] px-2.5 py-0.5 rounded-full mb-2 uppercase">{tag}</span>
-                    <h3 className="text-[1rem] font-bold text-navy mb-1.5">{title}</h3>
-                    <p className="text-[0.82rem] text-text-light leading-[1.6]">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ─── SPORTS ─── */}
-      <section className="sports-section bg-navy py-20 relative overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="mb-[50px]">
-            <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-[#ffcfde] mb-2.5 block">Sports &amp; Athletics</span>
-            <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.2] mb-3.5">Champions On &amp; Off the Field</h2>
-            <p className="text-[1rem] text-white/75 leading-[1.7] max-w-[600px]">At Seedling, sports are as important as academics. We train discipline, teamwork, and leadership through every game and competition.</p>
+      <section className="bg-navy-deeper py-32 relative overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-20">
+            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
+            <h2 className="serif text-5xl md:text-6xl font-light text-white leading-tight">
+              Champions <em className="font-semibold text-sand italic">Everywhere</em>
+            </h2>
           </div>
-          <div className="sports-grid">
+          <div className="grid md:grid-cols-4 gap-6">
             {[
-              { img: 'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=400&q=80', alt: 'Cricket', emoji: '🏏', name: 'Cricket', desc: 'BCCI-standard cricket ground with professional coaching and inter-school tournament participation.' },
-              { img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80', alt: 'Football', emoji: '⚽', name: 'Football', desc: 'Full-size football pitch with certified coaches. Students represent Rajasthan at state-level tournaments.' },
-              { img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80', alt: 'Athletics', emoji: '🏃', name: 'Athletics', desc: '400m track and field facility. Multiple district and state champions nurtured every year.' },
-              { img: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80', alt: 'Badminton', emoji: '🏸', name: 'Badminton', desc: 'Indoor courts for both singles and doubles play. Regular coaching and interschool competitions.' },
-            ].map(({ img, alt, emoji, name, desc }) => (
-              <div key={name} className="bg-white/[0.08] border border-white/[0.14] rounded-2xl overflow-hidden transition-all hover:bg-white/15 hover:-translate-y-1 backdrop-blur-md">
-                <div className="h-40 overflow-hidden"><img src={img} alt={alt} className="w-full h-full object-cover" /></div>
-                <div className="p-4">
-                  <h3 className="text-white text-[0.95rem] font-bold mb-1">{emoji} {name}</h3>
-                  <p className="text-white/65 text-[0.78rem] leading-[1.5]">{desc}</p>
+              { img: 'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=400&q=80', emoji: '🏏', name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
+              { img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80', emoji: '⚽', name: 'Football', desc: 'State-level pitch and certified training.' },
+              { img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80', emoji: '🏃', name: 'Athletics', desc: '400m track nurturing state champions.' },
+              { img: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80', emoji: '🏸', name: 'Badminton', desc: 'Premium indoor courts for all levels.' },
+            ].map(({ img, emoji, name, desc }) => (
+              <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
+                <div className="h-44 overflow-hidden relative">
+                  <img src={img} alt={name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-navy-deeper/40 group-hover:opacity-0 transition-opacity" />
+                </div>
+                <div className="p-8">
+                  <h3 className="serif text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <span className="text-2xl">{emoji}</span>
+                    {name}
+                  </h3>
+                  <p className="text-white/60 text-xs leading-relaxed font-light">{desc}</p>
                 </div>
               </div>
             ))}
@@ -466,37 +332,38 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── WHY SEEDLING ─── */}
-      <section className="bg-off-white py-20">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="why-grid">
+      <section className="bg-off-white py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-              <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Why Choose Us</span>
-              <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Start Your Child&apos;s Joyride at Seedling</h2>
-              <p className="text-[1rem] text-text-light leading-[1.7] max-w-[600px] mb-7">Every decision here is made with one goal — your child&apos;s brightest future.</p>
-              <div className="flex flex-col gap-3.5">
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
+              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-12">
+                Start Your Child's <em className="font-semibold text-navy italic">Joyride</em>.
+              </h2>
+              <div className="flex flex-col gap-6">
                 {[
-                  { num: '01', title: 'Personalized Learning Journeys', desc: "Tailored teaching approaches catering to each child's learning pace, strengths, and aspirations." },
-                  { num: '02', title: 'Future-Ready Skills', desc: 'AI literacy, sustainability education, critical thinking, and ethical leadership woven into the curriculum.' },
-                  { num: '03', title: 'Global Mindset with Indian Values', desc: 'International exposure through exchange programs and competitions while staying rooted in cultural values.' },
-                  { num: '04', title: 'Career Counselling from Grade 8', desc: 'Expert guidance for academic and career choices ensuring students are always prepared for tomorrow.' },
+                  { num: '01', title: 'Personalized Journeys', desc: "Tailored approaches for each child's strengths." },
+                  { num: '02', title: 'Future-Ready Skills', desc: 'AI literacy and critical thinking integrated.' },
+                  { num: '03', title: 'Global Mindset', desc: 'International exposure with Indian values.' },
+                  { num: '04', title: 'Career Guidance', desc: 'Expert counselling from Grade 8 onwards.' },
                 ].map(({ num, title, desc }) => (
-                  <div key={num} className="flex gap-4 items-start p-[18px_20px] bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all hover:translate-x-1.5 hover:shadow-[0_4px_20px_rgba(23,81,144,0.10)]">
-                    <div className="w-10 h-10 rounded-[10px] bg-navy text-white flex items-center justify-center font-extrabold text-[0.9rem] flex-shrink-0">{num}</div>
+                  <div key={num} className="flex gap-6 items-start p-8 bg-white rounded-[2rem] shadow-sm border border-sand/30 hover:shadow-editorial hover:border-navy/20 transition-all group">
+                    <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{num}</div>
                     <div>
-                      <h4 className="text-[0.95rem] font-bold text-navy mb-1">{title}</h4>
-                      <p className="text-[0.82rem] text-text-light leading-[1.5]">{desc}</p>
+                      <h4 className="text-lg font-black text-navy-deeper mb-1 uppercase tracking-tight font-dm">{title}</h4>
+                      <p className="text-sm text-text-light leading-relaxed font-light">{desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden h-[420px]">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Students Learning" className="w-full h-full object-cover" />
+              <div className="rounded-[3rem] overflow-hidden h-[600px] shadow-editorial border-8 border-white">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110" />
               </div>
-              <div className="absolute bottom-[-20px] left-[-20px] bg-crimson text-white rounded-2xl p-[20px_24px] shadow-[0_8px_30px_rgba(164,21,70,0.35)]">
-                <strong className="block text-[2rem] font-playfair">30+</strong>
-                <span className="text-[0.78rem] font-medium opacity-90">Years of Academic<br />Excellence</span>
+              <div className="absolute -bottom-10 -left-10 bg-navy-deeper text-white rounded-[2rem] p-12 shadow-2xl z-10 border-4 border-white">
+                <strong className="block text-6xl serif text-sand mb-2">30+</strong>
+                <span className="text-xs font-black tracking-widest uppercase opacity-60">Years of Academic<br />Excellence</span>
               </div>
             </div>
           </div>
@@ -504,27 +371,28 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── STUDENT GALLERY ─── */}
-      <section className="bg-white py-20">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="flex justify-between items-end flex-wrap gap-4 mb-[50px]">
+      <section className="bg-white py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Campus Life</span>
-              <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2]">Life at Seedling — Full of Colour</h2>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Campus Life</span>
+              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+                Vibrant <em className="font-semibold text-navy italic">Memories</em>.
+              </h2>
             </div>
-            <a href="#" className="bg-navy text-white px-6 py-3 rounded-full font-semibold text-[0.9rem] no-underline transition-all hover:bg-navy-dark hover:-translate-y-px flex-shrink-0">View All Photos</a>
+            <a href="/campus-highlights" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">View Gallery</a>
           </div>
-          <div className="gallery-grid">
+          <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
             {[
-              { src: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80', alt: 'School Life', label: 'School Campus' },
-              { src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80', alt: 'Classroom', label: 'Smart Classrooms' },
-              { src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80', alt: 'Sports', label: 'Sports & Athletics' },
-              { src: 'https://images.unsplash.com/photo-1545830790-b1804d18d5ff?w=800&q=80', alt: 'Group Activity', label: 'Group Activities' },
-              { src: 'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=400&q=80', alt: 'Cultural Events', label: 'Cultural Events' },
-            ].map(({ src, alt, label }) => (
-              <div key={label} className="gallery-item rounded-xl overflow-hidden relative">
-                <img src={src} alt={alt} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.07]" />
-                <div className="gallery-overlay absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent flex items-end p-3.5">
-                  <span className="text-white text-[0.82rem] font-semibold">{label}</span>
+              { src: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80', label: 'School Campus', className: 'col-span-2 row-span-2' },
+              { src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80', label: 'Smart Classrooms' },
+              { src: 'https://images.unsplash.com/photo-1545830790-b1804d18d5ff?w=800&q=80', label: 'Activities', className: 'col-span-2' },
+              { src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80', label: 'Sports' },
+            ].map(({ src, label, className = "" }) => (
+              <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
+                <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                  <span className="text-white text-lg font-semibold serif">{label}</span>
                 </div>
               </div>
             ))}
@@ -533,30 +401,30 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-off-white py-20">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="text-center mb-[50px]">
-            <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-crimson mb-2.5 block">Parent Testimonials</span>
-            <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-navy leading-[1.2] mb-3.5">Voices from the Seedling Family</h2>
-            <p className="text-[1rem] text-text-light leading-[1.7] max-w-[600px] mx-auto">Real stories from parents and students who&apos;ve experienced the Seedling difference.</p>
+      <section className="bg-off-white py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
+            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
+              Voices from the <em className="font-semibold text-navy italic">Family</em>.
+            </h2>
           </div>
-          <div className="testi-grid">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { avatar: 'https://randomuser.me/api/portraits/women/44.jpg', name: 'Sunita Sharma', role: 'Parent of Grade 8 student', text: "Seedling transformed my daughter's confidence completely. The teachers genuinely care — she went from being shy to performing on stage at the Annual Day. The balance of studies and activities is remarkable." },
-              { avatar: 'https://randomuser.me/api/portraits/men/46.jpg', name: 'Rajesh Gupta', role: 'Parent of Grade 11 student', text: "My son has been at Seedling since Grade 1. Now in Grade 11, he's represented Rajasthan in cricket AND secured 94% in his boards. The school walks the talk on holistic development." },
-              { avatar: 'https://randomuser.me/api/portraits/women/68.jpg', name: 'Priya Mehta', role: 'Parent of Grade 4 student', text: "The parent-teacher communication is excellent. I always know how my child is progressing. The counselling sessions helped our family understand our child's learning style so much better." },
+              { avatar: 'https://randomuser.me/api/portraits/women/44.jpg', name: 'Sunita Sharma', role: 'Parent of Grade 8 student', text: "Seedling transformed my daughter's confidence completely. The teachers genuinely care — she went from being shy to performing on stage." },
+              { avatar: 'https://randomuser.me/api/portraits/men/46.jpg', name: 'Rajesh Gupta', role: 'Parent of Grade 11 student', text: "My son has been at Seedling since Grade 1. Now in Grade 11, he's represented Rajasthan in cricket AND secured 94% in his boards." },
+              { avatar: 'https://randomuser.me/api/portraits/women/68.jpg', name: 'Priya Mehta', role: 'Parent of Grade 4 student', text: "The parent-teacher communication is excellent. I always know how my child is progressing. The counselling sessions helped so much." },
             ].map(({ avatar, name, role, text }) => (
-              <div key={name} className="bg-white rounded-[18px] p-[30px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] relative transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(23,81,144,0.12)]">
-                <span className="block text-[3.5rem] leading-[0.6] text-sand font-playfair mb-3">&quot;</span>
-                <div className="text-[#f5a623] text-[0.8rem] mb-0.5">★★★★★</div>
-                <p className="text-[0.9rem] text-text-light leading-[1.7] mb-5">{text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-[46px] h-[46px] rounded-full overflow-hidden flex-shrink-0 border-2 border-sand">
+              <div key={name} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
+                <span className="block text-7xl leading-none text-sand serif mb-4 group-hover:scale-110 transition-transform">"</span>
+                <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
+                <div className="flex items-center gap-4 border-t border-sand/40 pt-8">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50">
                     <img src={avatar} alt={name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <div className="text-[0.88rem] font-bold text-navy">{name}</div>
-                    <div className="text-[0.75rem] text-text-light">{role}</div>
+                    <div className="text-lg font-black text-navy-deeper font-dm">{name}</div>
+                    <div className="text-xs font-black tracking-widest uppercase text-text-light opacity-60">{role}</div>
                   </div>
                 </div>
               </div>
@@ -566,43 +434,43 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-navy py-20">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <div className="flex items-end justify-between flex-wrap gap-4">
+      <section className="bg-navy-deeper py-32 relative overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex items-end justify-between mb-20">
             <div>
-              <span className="text-[0.72rem] font-bold tracking-[3px] uppercase text-[#ffcfde] mb-2.5 block">Latest at Seedling</span>
-              <h2 className="font-playfair text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-white leading-[1.2]">Trending Updates &amp; News</h2>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Latest at Seedling</span>
+              <h2 className="serif text-5xl md:text-6xl font-light text-white leading-tight">
+                Trending <em className="font-semibold text-sand italic">Updates</em>.
+              </h2>
             </div>
-            <a href="#" className="bg-white/15 backdrop-blur-md border-2 border-white/50 text-white px-7 py-3 rounded-full font-semibold text-[0.95rem] no-underline transition-all hover:bg-white/25">All Updates →</a>
+            <a href="/blog" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">All Updates</a>
           </div>
-          <div className="updates-grid">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-20">
+            <div className="space-y-8">
               {[
-                { day: '12', month: 'APR', title: 'Annual Sports Day 2025 – A Grand Celebration', desc: 'Over 2,000 students participated in track & field events, team sports, and the marquee relay championship.' },
-                { day: '05', month: 'APR', title: 'Board Results 2024 – 100% Pass, Multiple Merit Ranks', desc: 'Seedling students shine yet again with 14 students scoring above 95% in CBSE Class 12 examinations.' },
-                { day: '28', month: 'MAR', title: 'Admissions Open – 2025-26 Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird benefits including fee concessions and priority class allocation.' },
-                { day: '15', month: 'MAR', title: 'Science Fair Winners – District Level Recognition', desc: 'Three Seedling teams won gold at the District Science Exhibition for their projects on sustainable energy.' },
+                { day: '12', month: 'APR', title: 'Annual Sports Day 2025', desc: 'Over 2,000 students participated in team sports and the relay championship.' },
+                { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
+                { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
               ].map(({ day, month, title, desc }) => (
-                <div key={title} className="flex gap-4 items-start pb-5 border-b border-white/10 mb-2">
-                  <div className="bg-crimson text-white p-2 px-3 rounded-xl text-center flex-shrink-0 min-w-[52px]">
-                    <strong className="block text-[1.2rem] font-playfair leading-none">{day}</strong>
-                    <span className="text-[0.65rem] tracking-[1px] uppercase">{month}</span>
+                <div key={title} className="flex gap-8 items-start pb-8 border-b border-white/10 group cursor-pointer">
+                  <div className="bg-crimson text-white w-20 h-20 rounded-3xl flex flex-col items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <strong className="block text-2xl serif leading-none">{day}</strong>
+                    <span className="text-[10px] font-black tracking-widest uppercase mt-1">{month}</span>
                   </div>
                   <div>
-                    <h4 className="text-white text-[0.92rem] font-bold mb-1">{title}</h4>
-                    <p className="text-white/65 text-[0.8rem] leading-[1.5]">{desc}</p>
+                    <h4 className="text-white text-xl font-bold mb-2 serif group-hover:text-sand transition-colors">{title}</h4>
+                    <p className="text-white/60 text-sm leading-relaxed font-light">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
             <div>
-              <div className="text-white text-[0.85rem] font-semibold mb-2.5 flex items-center gap-2">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-                Follow us @seedlingschoolsjaipur
+              <div className="text-white text-sm font-black tracking-widest uppercase mb-6 flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-sand" />
+                Follow @seedlingschoolsjaipur
               </div>
-              <div className="instagram-feed">
+              <div className="grid grid-cols-3 gap-4">
                 {[
                   'https://images.unsplash.com/photo-1588072432836-e10032774350?w=300&q=80',
                   'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80',
@@ -611,8 +479,8 @@ export default function SeedlingPage(): React.JSX.Element {
                   'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80',
                   'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=300&q=80',
                 ].map((src, i) => (
-                  <div key={i} className="rounded-xl overflow-hidden aspect-square">
-                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full object-cover" />
+                  <div key={i} className="rounded-2xl overflow-hidden aspect-square border border-white/5 hover:border-sand/30 transition-all duration-500 group">
+                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </div>
@@ -622,129 +490,61 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section
-        className="admission-section py-20 relative overflow-hidden"
-        id="admission"
-        style={{ background: 'linear-gradient(135deg, #A41546 0%, #7a0f35 100%)' }}
-      >
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-          <div className="admission-content flex items-center justify-between gap-10 flex-wrap">
+      <section className="relative py-48 overflow-hidden bg-navy-deeper">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-              <h2 className="font-playfair text-[clamp(1.6rem,3vw,2.4rem)] text-white font-bold mb-2.5">Join the Seedling Family — Enroll Your Child Today!</h2>
-              <p className="text-white/85 text-[1rem] max-w-[500px] leading-[1.6]">Admissions for 2025–26 are now open. Experience the difference of a school that truly cares about every child&apos;s growth, happiness, and future.</p>
-              <div className="mt-7 flex flex-col gap-3">
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
+              <h2 className="serif text-5xl md:text-7xl font-light text-white leading-tight mb-8">
+                Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
+              </h2>
+              <p className="text-xl text-white/70 leading-relaxed mb-12 font-light">
+                Admissions for 2026–27 are now open. Experience the difference of a school that truly cares about every child's growth and happiness.
+              </p>
+              <div className="space-y-4">
                 {[
-                  'Early Bird Benefits for Early Registrations',
+                  'Early Bird Benefits for Registrations',
                   'Scholarships for Meritorious Students',
-                  'Parent Counselling Available Online & Offline',
+                  'Counselling Available Online & Offline',
                   'Flexible Fee Payment Options',
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-white/90 text-[0.9rem]">
-                    <span className="text-[1.2rem]">✓</span> {item}
+                  <div key={item} className="flex items-center gap-4 text-white font-bold text-sm uppercase tracking-widest">
+                    <span className="w-6 h-6 rounded-full bg-crimson flex items-center justify-center text-[10px]">✓</span> {item}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl min-w-[320px] flex-shrink-0">
-              <h3 className="text-navy text-[1.1rem] font-bold mb-5">Request a Callback</h3>
-              <div className="mb-3.5">
-                <input type="text" placeholder="Name of Child" className="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white" />
-              </div>
-              <div className="mb-3.5">
-                <select className="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white">
+            <div className="bg-white p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
+              <h3 className="serif text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
+              <div className="space-y-4">
+                <input type="text" placeholder="Name of Child" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
+                <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
                   <option value="">Select Grade / Class</option>
                   <option>Nursery / LKG / UKG</option>
                   <option>Grade 1–5</option>
                   <option>Grade 6–8</option>
-                  <option>Grade 9–10</option>
-                  <option>Grade 11–12</option>
+                  <option>Grade 9–12</option>
                 </select>
+                <input type="email" placeholder="Email Address" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
+                <input type="tel" placeholder="Contact Number" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
+                <button className="w-full bg-navy hover:bg-navy-dark text-white py-6 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">
+                  Submit Enquiry
+                </button>
               </div>
-              <div className="mb-3.5">
-                <input type="email" placeholder="Parent's Email Address" className="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white" />
-              </div>
-              <div className="mb-3.5">
-                <input type="tel" placeholder="Contact Number" className="w-full px-4 py-3 border-[1.5px] border-sand rounded-xl text-[0.88rem] font-dm text-text-base transition-colors focus:outline-none focus:border-navy bg-white" />
-              </div>
-              <button className="w-full bg-navy text-white border-none py-3.5 rounded-full text-[0.92rem] font-bold cursor-pointer transition-all font-dm tracking-[0.5px] hover:bg-navy-dark">Submit Enquiry →</button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer style={{ background: '#0a1f3a', color: 'rgba(255,255,255,0.75)' }}>
-        <div className="max-w-[1280px] mx-auto px-6 pt-[60px] pb-10 border-b border-white/[0.08]">
-          <div className="footer-grid">
-            {/* Brand */}
-            <div>
-              <a href="#" className="flex items-center gap-3 no-underline mb-3.5">
-                <div className="w-[52px] h-[52px] bg-crimson rounded-xl flex items-center justify-center font-playfair text-white text-2xl font-black tracking-tight flex-shrink-0">S</div>
-                <div className="flex flex-col">
-                  <span className="font-playfair text-[1.1rem] font-bold text-white leading-[1.1]">Seedling Public School</span>
-                  <span className="text-[0.65rem] text-sand font-semibold tracking-[1.5px] uppercase">CBSE Affiliated</span>
-                </div>
-              </a>
-              <p className="text-[0.85rem] leading-[1.7] mt-3.5 mb-5">Nurturing excellence, fostering creativity, and shaping tomorrow&apos;s leaders — one student at a time — since 1994.</p>
-              <div className="flex gap-2.5">
-                {[{ label: 'f', title: 'Facebook' }, { label: 'ig', title: 'Instagram' }, { label: '▶', title: 'YouTube' }, { label: '✕', title: 'Twitter' }].map(({ label, title }) => (
-                  <a key={title} href="#" title={title} className="w-9 h-9 rounded-lg bg-white/[0.08] flex items-center justify-center text-white/70 no-underline text-[0.85rem] transition-all hover:bg-crimson hover:text-white">{label}</a>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">Quick Links</h4>
-              <ul className="list-none flex flex-col gap-2.5 m-0 p-0">
-                {['About Us', 'Vision & Mission', 'Leadership', 'Media Gallery', 'Career', 'Blog', 'Alumni Network'].map((item) => (
-                  <li key={item}><a href="#" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Our Schools */}
-            <div>
-              <h4 className="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">Our Schools</h4>
-              <ul className="list-none flex flex-col gap-2.5 m-0 p-0">
-                {['Seedling Public School (SPS)', 'Seedling Modern High School', 'Seedling International Academy', 'SMIA', 'Seedling Wonderland Kids'].map((item) => (
-                  <li key={item}><a href="#" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="text-white text-[0.88rem] font-bold mb-4 tracking-[0.5px]">SPS &amp; SIA Campus</h4>
-              <div className="flex flex-col gap-2">
-                <a href="#" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📍 Bank St, Sector 4, Jawahar Nagar, Jaipur 302004</a>
-                <a href="tel:01413623000" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📞 0141-3623000</a>
-                <a href="tel:+917413012351" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">📞 +91 74130 12351</a>
-                <a href="mailto:seedlingacademy@hotmail.com" className="text-white/65 no-underline text-[0.83rem] transition-colors hover:text-sand flex items-start gap-2">✉ seedlingacademy@hotmail.com</a>
-              </div>
-              <div className="mt-4">
-                <a href="#" className="bg-navy text-white no-underline text-[0.8rem] px-[18px] py-2 rounded-full font-semibold transition-all hover:bg-navy-dark">ERP Login</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[1280px] mx-auto px-6 py-5 flex justify-between items-center flex-wrap gap-2.5 text-[0.78rem]">
-          <span>© 2025 Seedling Public School, Jaipur. All rights reserved.</span>
-          <div className="flex gap-5">
-            <a href="#" className="text-white/50 no-underline hover:text-sand">Privacy Policy</a>
-            <a href="#" className="text-white/50 no-underline hover:text-sand">Terms &amp; Conditions</a>
-            <a href="#" className="text-white/50 no-underline hover:text-sand">Mandatory Disclosure</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* ─── FLOATING ENQUIRE BUTTON ─── */}
+      {/* Floating Button */}
       <a
         href="#admission"
-        className="fixed right-5 bottom-[30px] z-[999] bg-crimson text-white px-[22px] py-3.5 rounded-full text-[0.88rem] font-bold no-underline shadow-[0_6px_30px_rgba(164,21,70,0.45)] transition-all flex items-center gap-2 hover:bg-crimson-dark hover:-translate-y-0.5"
+        className="fixed right-8 bottom-8 z-[99] bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full font-black text-sm tracking-widest uppercase shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105"
       >
         ✉ Enquire Now
       </a>
-    </>
+    </main>
   );
 }

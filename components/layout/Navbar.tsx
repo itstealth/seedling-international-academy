@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-linear-to-r from-primary via-secondary to-primary origin-left z-[60]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-linear-to-r from-navy via-crimson to-navy origin-left z-[60]"
         style={{ scaleX }}
       />
 
@@ -72,7 +72,7 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-2.5 text-[14px] font-bold transition-all whitespace-nowrap ${pathname === item.href ? "text-primary" : "text-neutral-700 hover:text-primary"}`}
+                    className={`px-3 py-2.5 text-[14px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${pathname === item.href ? "text-navy" : "text-text-base hover:text-navy"}`}
                   >
                     {item.name}
                   </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
               <div className="hidden xl:flex items-center gap-4">
                 <Link
                   href="/admissions"
-                  className="px-6 py-3 font-bold text-sm rounded-md transition-all shadow-sm hover:shadow-md active:scale-95 whitespace-nowrap flex-shrink-0 bg-primary text-white hover:bg-primary/90"
+                  className="px-6 py-3 font-bold text-sm rounded-full transition-all shadow-lg hover:shadow-crimson/30 active:scale-95 whitespace-nowrap flex-shrink-0 bg-crimson text-white hover:bg-crimson-dark uppercase tracking-widest"
                 >
                   Apply Now &apos;26
                 </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
               <div className="xl:hidden flex items-center">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="p-2 rounded-lg bg-neutral-100 text-neutral-900 transition-colors hover:bg-neutral-200"
+                  className="p-2 rounded-lg bg-navy-light/50 text-navy-deeper transition-colors hover:bg-navy-light"
                   aria-label="Open menu"
                 >
                   <Menu className="w-6 h-6" />
@@ -112,7 +112,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-neutral-950/40 backdrop-blur-md xl:hidden"
+              className="fixed inset-0 z-50 bg-navy-deeper/40 backdrop-blur-md xl:hidden"
               onClick={() => setIsOpen(false)}
             />
             <motion.div
@@ -137,7 +137,7 @@ export default function Navbar() {
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-3 text-neutral-500 hover:text-neutral-950 transition-colors bg-neutral-100 rounded-full"
+                    className="p-3 text-text-light hover:text-navy-deeper transition-colors bg-navy-light/50 rounded-full"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -150,7 +150,7 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`py-5 text-xl font-black ${pathname === item.href ? "text-primary" : "text-neutral-950"}`}
+                        className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-navy" : "text-navy-deeper"}`}
                       >
                         {item.name}
                       </Link>
@@ -158,13 +158,13 @@ export default function Navbar() {
                   </div>
                 </div>
                 
-                <div className="p-10 bg-neutral-50 border-t border-black/5 mt-auto">
+                <div className="p-10 bg-off-white border-t border-black/5 mt-auto">
                    <Link
                     href="/admissions"
                     onClick={() => setIsOpen(false)}
-                    className="flex justify-center items-center gap-4 w-full h-20 bg-neutral-950 text-white font-black text-xl rounded-3xl shadow-editorial hover:bg-primary transition-all"
+                    className="flex justify-center items-center gap-4 w-full h-20 bg-navy-deeper text-white font-black text-xl rounded-3xl shadow-editorial hover:bg-navy transition-all uppercase tracking-widest"
                   >
-                    Apply for Admission 2026
+                    Apply Now 2026
                     <ArrowRight className="w-6 h-6" />
                   </Link>
                 </div>
