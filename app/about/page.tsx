@@ -51,49 +51,49 @@ const timeline = [
     year: "1992",
     title: "The Seed is Planted",
     desc: "Late Ms. Mohini Bakshi founded Seedling Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
-    img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/about-banner.jpg",
     side: "right",
   },
   {
     year: "1998",
     title: "Growing Roots in Jawahar Nagar",
     desc: "Seedling Public School (CBSE) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/sps-banner.jpg",
     side: "left",
   },
   {
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/sps-1.jpg",
     side: "right",
   },
   {
     year: "2010",
     title: "Going Global — Cambridge Curriculum",
     desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
-    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/sps-2.jpg",
     side: "left",
   },
   {
     year: "2015",
     title: "Seedling Modern International Academy",
     desc: "A second Cambridge-affiliated institution — Seedling Modern International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
-    img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/sps-3.jpg",
     side: "right",
   },
   {
     year: "2018",
     title: "Nurturing the Youngest Minds",
     desc: "Seedling Wonderland Kids League was born — a thoughtfully designed early-years environment at both campuses that recognises play as the most powerful form of learning.",
-    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/admission.jpg",
     side: "left",
   },
   {
     year: "Today",
     title: "20,000+ Lives Shaped & Counting",
     desc: "Today the Seedling Group spans 5 schools, 2 campuses, CBSE and Cambridge boards, and serves over 20,000 students — with alumni spread across 50+ nations and a 100% board result record.",
-    img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80",
+    img: "https://seedlingschools.com/assets/img/empowering-about.png",
     side: "right",
   },
 ];
@@ -104,15 +104,15 @@ const leaders = [
     role: "Founder Director",
     sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+    img: "https://seedlingschools.com/assets/img/mohini.png",
     tag: "Legacy",
   },
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
     sub: "Seedling Group of Institutions",
-    quote: "Teach young people to grow their own plants rather than giving them cut flowers.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+    quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
+    img: "https://seedlingschools.com/assets/img/sandeep.png",
     tag: "Forever New Frontiers",
   },
   {
@@ -120,7 +120,7 @@ const leaders = [
     role: "Executive Director",
     sub: "Seedling Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+    img: "https://seedlingschools.com/assets/img/preeti.png",
     tag: "Creating Fresh Pathways",
   },
   {
@@ -128,7 +128,7 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
-    img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80",
+    img: "https://seedlingschools.com/assets/img/akansha.png",
     tag: "Engagement that Empowers",
   },
   {
@@ -136,18 +136,18 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
-    img: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400&q=80",
+    img: "https://seedlingschools.com/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
   },
 ];
 
 const campusImages = [
-  { src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80", label: "Main Campus", span: "col-span-2 row-span-2" },
-  { src: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80", label: "Science Labs", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80", label: "Library", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80", label: "Sports Ground", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80", label: "Kindergarten", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80", label: "Classrooms", span: "col-span-2 row-span-1" },
+  { src: "https://seedlingschools.com/assets/img/about-banner.jpg", label: "Main Campus", span: "col-span-2 row-span-2" },
+  { src: "https://seedlingschools.com/assets/img/sps-2.jpg", label: "Science Labs", span: "col-span-1 row-span-1" },
+  { src: "https://seedlingschools.com/assets/img/feature-3.jpg", label: "Library", span: "col-span-1 row-span-1" },
+  { src: "https://seedlingschools.com/assets/img/smhs-sports.jpg", label: "Sports Ground", span: "col-span-1 row-span-1" },
+  { src: "https://seedlingschools.com/assets/img/admission.jpg", label: "Kindergarten", span: "col-span-1 row-span-1" },
+  { src: "https://seedlingschools.com/assets/img/sps-3.jpg", label: "Classrooms", span: "col-span-2 row-span-1" },
 ];
 
 const stats = [
@@ -188,8 +188,8 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1800&q=85"
-          alt="Students at Seedling"
+          src="https://seedlingschools.com/assets/img/about-banner.jpg"
+          alt="Seedling Group of Schools Campus"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-100"
         />
         {/* gradient layers */}
@@ -203,14 +203,15 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={150}>
-            <h1 className="display text-white font-light leading-[1.05] text-6xl md:text-8xl lg:text-[7rem] max-w-4xl">
-              Where Every<br />
-              <em className="font-semibold">Student</em> Matters
+            <h1 className="display text-white font-light leading-[1.05] text-3xl md:text-4xl lg:text-5xl max-w-4xl">
+              Welcome To<br />
+              <em className="font-semibold">Seedling Group</em><br />
+              Of Schools
             </h1>
           </Reveal>
           <Reveal delay={300}>
             <p className="text-white/70 text-lg md:text-xl mt-6 max-w-xl font-light leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Seedling Group of Schools has nurtured over 20,000 young minds across Jaipur — from playgroup to university — for more than three decades.
+              Committed to nurturing young minds with a perfect blend of academic excellence and strong moral values — creating confident, responsible and compassionate individuals since 1992.
             </p>
           </Reveal>
           <Reveal delay={450}>
@@ -226,7 +227,7 @@ export default function AboutPage() {
                 </svg>
               </a>
               <a
-                href="#admissions"
+                href="/admission-procedure"
                 className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
@@ -262,12 +263,12 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           2. WHO WE ARE
       ══════════════════════════════════════════════════════════════ */}
-      <section id="story" className="py-32 max-w-7xl mx-auto px-6">
+      <section id="story" className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <Reveal>
               <p className="display text-emerald-600 text-xl italic mb-4">Who We Are</p>
-              <h2 className="display text-5xl md:text-6xl font-light leading-tight mb-8">
+              <h2 className="display text-4xl md:text-5xl font-light leading-tight mb-8">
                 A Family. <br />
                 <em className="font-semibold">A Movement.</em><br />
                 A Legacy.
@@ -275,7 +276,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-[#555] leading-[1.9] text-lg mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                Founded in 1992 by the visionary Late Ms. Mohini Bakshi, the Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1992 by the visionary Late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               <p className="text-[#555] leading-[1.9] text-lg" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses — offering both CBSE and Cambridge curriculums from playgroup through senior secondary.
@@ -286,8 +287,8 @@ export default function AboutPage() {
               <div className="mt-12 space-y-5">
                 {[
                   { icon: "🌱", title: "Holistic Development", desc: "Intellectual, social, moral, spiritual, emotional and physical growth for every child." },
-                  { icon: "🌍", title: "International Standards", desc: "Cambridge and CBSE boards, aligned with NEP, serving alumni across 50+ nations." },
-                  { icon: "❤️", title: "Community First", desc: "We measure success by the well-being of students, parents, and staff alike." },
+                  { icon: "🌍", title: "NEP Aligned Curriculum", desc: "Thoughtfully designed to align with the National Education Policy — ensuring students receive a relevant, future-ready education." },
+                  { icon: "❤️", title: "Student Well-being First", desc: "A safe, inclusive and stimulating learning environment where every student feels confident, respected and motivated to grow." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4 p-4 rounded-2xl hover:bg-emerald-50 transition-colors duration-300">
                     <span className="text-2xl mt-1">{item.icon}</span>
@@ -305,13 +306,13 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80"
-                alt="Students learning"
+                src="https://seedlingschools.com/assets/img/empowering-about.png"
+                alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl"
               />
               <img
-                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80"
-                alt="Campus life"
+                src="https://seedlingschools.com/assets/img/admission.jpg"
+                alt="Seedling Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-emerald-600 text-white rounded-2xl px-6 py-4 shadow-xl">
@@ -326,11 +327,11 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           3. TIMELINE
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      <section className="py-16 bg-white md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <p className="display text-emerald-600 text-xl italic mb-3">Our Journey</p>
-            <h2 className="display text-5xl md:text-7xl font-light">
+            <h2 className="display text-4xl md:text-5xl font-light">
               From <em className="font-semibold">Nursery</em><br />to University
             </h2>
             <div className="w-16 h-px bg-emerald-500 mx-auto mt-8" />
@@ -375,10 +376,10 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           4. PHILOSOPHY (FULL-WIDTH PARALLAX)
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-48 overflow-hidden">
+      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1800&q=80"
-          alt="Philosophy"
+          src="https://seedlingschools.com/assets/img/feature-education.png"
+          alt="Seedling Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-emerald-950/60 to-black/70" />
@@ -410,7 +411,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           5. VISION & MISSION
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      <section className="py-10 sm:py-16  max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal className="text-center mb-20">
           <p className="display text-emerald-600 text-xl italic mb-3">Direction & Purpose</p>
           <h2 className="display text-5xl md:text-6xl font-light">
@@ -429,7 +430,7 @@ export default function AboutPage() {
               ),
               label: "Our Vision",
               title: "Wisdom & Comprehension",
-              body: "To be a beacon of wisdom — nurturing young minds that can comprehend, question, and contribute meaningfully to the world. We envision graduates who are life-ready and life-worthy.",
+              body: "To be a beacon of wisdom — nurturing young minds that can comprehend, question, and contribute meaningfully to the world. We envision graduates who are life-ready and life-worthy, open to noble thoughts from every direction.",
               accent: "bg-emerald-600",
             },
             {
@@ -440,7 +441,7 @@ export default function AboutPage() {
               ),
               label: "Our Mission",
               title: "Joyful, Whole-Child Learning",
-              body: "To provide a joyful learning environment that empowers students to reach their educational and personal potential, nurturing self-confidence, resilience, and adaptability — alongside intellectual excellence.",
+              body: "To provide a joyful learning environment that empowers students to reach their educational and personal potential while nurturing self-confidence and self-esteem — developing resilient, adaptable, socially responsible adults.",
               accent: "bg-amber-500",
             },
             {
@@ -451,7 +452,7 @@ export default function AboutPage() {
               ),
               label: "Our Promise",
               title: "Community & Collaboration",
-              body: "Every stakeholder — student, parent, teacher — matters. We commit to active communication, holistic well-being, and an environment where every child feels seen, valued, and motivated to grow.",
+              body: "Every stakeholder — student, parent, teacher — matters. We commit to active communication, holistic well-being, and an environment where every child feels seen, valued, and motivated to grow into their fullest potential.",
               accent: "bg-rose-500",
             },
           ].map((card, i) => (
@@ -473,22 +474,22 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           NEP ALIGNMENT BAND
       ══════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F5F0E8] py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-[#F5F0E8] py-10 sm:py-16 px-5 sm:px-6">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="text-center mb-16">
             <p className="display text-emerald-600 text-xl italic mb-3">What Makes Us Special</p>
             <h2 className="display text-5xl font-light">
-              Six Pillars of <em className="font-semibold">Excellence</em>
+              Seedling's <em className="font-semibold">Differentiators</em>
             </h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { emoji: "📋", title: "Aligned with NEP", desc: "Our curriculum is thoughtfully designed to align with the National Education Policy — ensuring students receive a relevant, future-ready education." },
-              { emoji: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, well-equipped science labs, and inspiring outdoor spaces that enhance the learning experience and encourage curiosity." },
-              { emoji: "💻", title: "Technology-Integrated Learning", desc: "Interactive whiteboards, educational apps, and online resources create an engaging and dynamic learning experience every day." },
-              { emoji: "🔬", title: "Experiential Learning", desc: "Hands-on experiments, outdoor excursions, and interactive projects foster critical thinking, problem-solving, and a genuine love for discovery." },
-              { emoji: "💬", title: "Effective Feedback", desc: "Timely, constructive feedback and open parent–teacher communication ensure the continuous growth and development of each child." },
-              { emoji: "🌿", title: "Holistic Well-being", desc: "We nurture not only academic growth but emotional, social, and physical well-being — for students, parents, and staff alike." },
+              { emoji: "📋", title: "Aligned with NEP", desc: "Our curriculum is thoughtfully designed to align with the National Education Policy — ensuring students receive a relevant, future-ready education with global standards." },
+              { emoji: "🏛️", title: "State-of-the-Art Facilities", desc: "Spacious modern classrooms, well-equipped science laboratories, a well-stocked library, and inspiring outdoor spaces that enhance the learning experience." },
+              { emoji: "💻", title: "Technology-Integrated Learning", desc: "Interactive whiteboards, AI-integrated tools, educational apps, and online resources create an engaging and dynamic learning experience every single day." },
+              { emoji: "🔬", title: "Experiential Learning", desc: "Hands-on experiments, outdoor excursions, and interactive projects foster critical thinking, problem-solving, and a genuine love for discovery beyond textbooks." },
+              { emoji: "💬", title: "Student-Centred Approach", desc: "Personalised attention with continuous assessment, timely feedback, and open parent–teacher communication ensure the continuous growth of each child." },
+              { emoji: "🌿", title: "Holistic Well-being", desc: "We nurture not only academic growth but emotional, social, and physical well-being — for students, parents, and staff alike. Integrity, Respect, Empathy at our core." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <div className="bg-white rounded-2xl p-7 h-full hover:shadow-lg transition-shadow duration-300 border border-[#E8E3DA]">
@@ -505,13 +506,13 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           DIRECTOR'S MESSAGE
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80"
-                alt="Director"
+                src="https://seedlingschools.com/assets/img/messanger.jpg"
+                alt="Dr. Sandeep Bakshi, Director Seedling Group"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-[#F0EDE8]">
@@ -534,7 +535,7 @@ export default function AboutPage() {
                 As we dynamise our movement into a post-pandemic world, we sense opportunity at our doorstep. For us, it is a chance to rewrite the narrative of school — to make it more relevant to the realities of the world today. A place where learning happens not from a textbook or worksheet, but through contextual, real-life problem-solving.
               </p>
               <p className="text-[#555] leading-[1.9] text-base mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. It will take community, collaboration, courage, conviction, and optimism to resist the pull of the status quo.
+                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. Homes and families must move forward together with the school — being relevant, optimistic, and forever focused on the larger purpose and collective well-being.
               </p>
               <p className="text-[#555] leading-[1.9] text-base" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
@@ -553,9 +554,9 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           6. LEADERSHIP
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-20">
+      <section className="py-10 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <Reveal className="text-center mb-16">
             <p className="display text-emerald-600 text-xl italic mb-3">Our Torchbearers</p>
             <h2 className="display text-5xl md:text-6xl font-light">
               The <em className="font-semibold">Leadership</em><br />Behind the Legacy
@@ -595,9 +596,9 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           7. CAMPUS GLIMPSES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-[#1C1C1E]">
-        <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-20">
+      <section className="py-10 sm:py-16  bg-[#1C1C1E]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <Reveal className="text-center mb-16">
             <p className="display text-emerald-400 text-xl italic mb-3">Campus Life</p>
             <h2 className="display text-5xl md:text-6xl font-light text-white">
               A Glimpse of<br />
