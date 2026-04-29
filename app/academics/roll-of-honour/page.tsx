@@ -82,7 +82,10 @@ export default function RollOfHonourPage() {
               className="glass-white p-16 rounded-[4rem] border-white/60 group hover:shadow-premium-hover transition-all duration-700 text-center"
             >
                <div className={`w-24 h-24 rounded-3xl bg-${item.color}/5 flex items-center justify-center text-${item.color} mx-auto mb-12 shadow-inner group-hover:scale-110 group-hover:bg-${item.color} group-hover:text-white transition-all duration-700`}>
-                  <item.icon className="w-12 h-12" />
+                  {(() => {
+                    const Icon = item.icon;
+                    return <Icon className="w-12 h-12" />;
+                  })()}
                </div>
                <div className="text-6xl font-black text-neutral-950 mb-6 tracking-tighter">{item.stat}</div>
                <h3 className="text-2xl font-black text-neutral-950 mb-6 tracking-tight">{item.title}</h3>

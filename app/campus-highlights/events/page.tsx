@@ -49,6 +49,7 @@ const events = [
 ];
 
 export default function EventsPage() {
+  const FeaturedIcon = events[0].icon;
   return (
     <main className="bg-neutral-bg min-h-screen">
       <PageHero 
@@ -87,7 +88,7 @@ export default function EventsPage() {
           </div>
           <div className="lg:w-1/2 p-12 md:p-20 flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-6">
-              <events[0].icon className="text-secondary w-6 h-6" />
+              <FeaturedIcon className="text-secondary w-6 h-6" />
               <span className="text-label text-neutral-400">{events[0].category}</span>
             </div>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight group-hover:text-primary transition-colors">
@@ -128,7 +129,10 @@ export default function EventsPage() {
                 <Image src={event.image} alt={event.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute top-6 right-6">
                   <div className="w-12 h-12 rounded-2xl glass-white flex items-center justify-center text-primary shadow-lg">
-                    <event.icon className="w-6 h-6" />
+                    {(() => {
+                      const EventIcon = event.icon;
+                      return <EventIcon className="w-6 h-6" />;
+                    })()}
                   </div>
                 </div>
               </div>

@@ -70,7 +70,10 @@ export default function AffiliationPage() {
                 
                 <div className="flex justify-between items-start mb-12">
                   <div className={`w-24 h-24 rounded-3xl bg-linear-to-br ${item.color} text-white flex items-center justify-center shadow-xl shadow-primary/20 group-hover:scale-110 transition-transform`}>
-                    <item.icon className="w-12 h-12" />
+                    {(() => {
+                      const Icon = item.icon;
+                      return <Icon className="w-12 h-12" />;
+                    })()}
                   </div>
                   <span className="text-5xl font-black text-black/2 tracking-tighter">
                     {item.acronym}

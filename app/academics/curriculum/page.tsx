@@ -164,7 +164,10 @@ export default function CurriculumPage() {
                         {activeContent.features.map((feature, i) => (
                           <div key={i} className="flex gap-8 group">
                             <div className="shrink-0 w-20 h-20 rounded-[1.5rem] bg-neutral-50 shadow-inner flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-700">
-                              <feature.icon className="w-8 h-8" />
+                              {(() => {
+                                const Icon = feature.icon;
+                                return <Icon className="w-8 h-8" />;
+                              })()}
                             </div>
                             <div>
                               <h4 className="text-xl font-black text-neutral-950 mb-3 tracking-tight">{feature.title}</h4>

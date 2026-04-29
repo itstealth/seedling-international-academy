@@ -225,7 +225,10 @@ export default function AboutPage() {
                   className="bg-white/5 backdrop-blur-2xl p-16 rounded-[4rem] border border-white/5 group hover:bg-primary transition-all duration-700"
                 >
                    <div className="w-20 h-20 rounded-3xl bg-secondary flex items-center justify-center text-white mb-12 shadow-2xl group-hover:scale-110 transition-transform">
-                      <value.icon className="w-10 h-10" />
+                      {(() => {
+                         const Icon = value.icon;
+                         return <Icon className="w-10 h-10" />;
+                       })()}
                    </div>
                    <h3 className="text-3xl font-black text-white mb-6 tracking-tighter">{value.title}</h3>
                    <p className="text-lg text-white/50 leading-relaxed font-medium group-hover:text-white/90 transition-colors">

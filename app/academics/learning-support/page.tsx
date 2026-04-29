@@ -103,7 +103,10 @@ export default function LearningSupportPage() {
                 <Image src={system.image} alt={system.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-transparent transition-all duration-700" />
                 <div className="absolute top-12 left-12 w-20 h-20 rounded-3xl glass-white flex items-center justify-center text-primary shadow-2xl">
-                   <system.icon className="w-10 h-10" />
+                   {(() => {
+                     const Icon = system.icon;
+                     return <Icon className="w-10 h-10" />;
+                   })()}
                 </div>
               </div>
 

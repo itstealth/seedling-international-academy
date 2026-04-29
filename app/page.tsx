@@ -102,7 +102,10 @@ export default function HomePage() {
               >
                 <div className="relative inline-block mb-6">
                   <div className={`absolute inset-0 bg-${stat.color}/5 rounded-full blur-2xl group-hover:bg-${stat.color}/10 transition-colors`} />
-                  <stat.icon className={`w-10 h-10 text-${stat.color} relative z-10 mx-auto group-hover:scale-110 transition-transform`} />
+                  {(() => {
+                    const StatIcon = stat.icon;
+                    return <StatIcon className={`w-10 h-10 text-${stat.color} relative z-10 mx-auto group-hover:scale-110 transition-transform`} />;
+                  })()}
                 </div>
                 <div className="text-5xl font-black text-neutral-950 mb-3 tracking-tighter">{stat.val}</div>
                 <div className="text-label mb-2">{stat.label}</div>
@@ -231,7 +234,10 @@ export default function HomePage() {
                     className="p-12 rounded-[3rem] border border-white/5 transition-all group"
                   >
                      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all mb-10">
-                        <pillar.icon className="w-8 h-8" />
+                        {(() => {
+                          const PillarIcon = pillar.icon;
+                          return <PillarIcon className="w-8 h-8" />;
+                        })()}
                      </div>
                      <h4 className="text-2xl font-black text-white mb-4 tracking-tight">{pillar.title}</h4>
                      <p className="text-sm font-medium text-white/50 leading-relaxed">{pillar.desc}</p>

@@ -89,7 +89,10 @@ export default function FeeStructurePage() {
           ].map((note, i) => (
             <div key={i} className="p-10 rounded-[3rem] bg-white border border-black/5 shadow-sm hover:shadow-editorial transition-all duration-700">
               <div className="w-14 h-14 rounded-2xl bg-neutral-50 flex items-center justify-center text-primary mb-8 shadow-inner">
-                <note.icon className="w-7 h-7" />
+                {(() => {
+                  const Icon = note.icon;
+                  return <Icon className="w-7 h-7" />;
+                })()}
               </div>
               <h4 className="text-xl font-black text-neutral-950 mb-4 tracking-tight">{note.title}</h4>
               <p className="text-sm font-medium text-neutral-500 leading-relaxed">{note.desc}</p>

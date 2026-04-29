@@ -63,7 +63,10 @@ export default function AdmissionProcessPage() {
               </div>
               
               <div className="w-20 h-20 rounded-3xl bg-neutral-50 flex items-center justify-center text-primary mb-10 shadow-inner group-hover:bg-primary group-hover:text-white transition-all duration-700">
-                <step.icon className="w-10 h-10" />
+                {(() => {
+                  const Icon = step.icon;
+                  return <Icon className="w-10 h-10" />;
+                })()}
               </div>
               
               <h3 className="text-2xl font-black text-neutral-950 mb-6 tracking-tight">{step.title}</h3>

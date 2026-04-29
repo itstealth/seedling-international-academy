@@ -171,7 +171,10 @@ export default function FacultyPage() {
                   className="bg-white p-10 rounded-[3rem] border border-black/5 flex flex-col items-center text-center group hover:bg-primary transition-all duration-700 shadow-editorial"
                >
                   <div className="w-16 h-16 rounded-2xl bg-neutral-50 flex items-center justify-center text-primary mb-6 group-hover:bg-white/10 group-hover:text-white transition-all shadow-inner">
-                     <stat.icon className="w-8 h-8" />
+                     {(() => {
+                       const Icon = stat.icon;
+                       return <Icon className="w-8 h-8" />;
+                     })()}
                   </div>
                   <div className="text-4xl md:text-5xl font-black text-neutral-950 mb-2 tracking-tighter group-hover:text-white transition-all">{stat.value}</div>
                   <div className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 group-hover:text-white/60 transition-all">{stat.label}</div>

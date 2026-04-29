@@ -42,7 +42,10 @@ export default function VisionPage() {
               className="bg-white p-16 rounded-[4rem] border border-black/5 shadow-editorial hover:bg-primary group transition-all duration-700"
             >
               <div className="w-20 h-20 rounded-3xl bg-neutral-50 flex items-center justify-center text-secondary mb-12 shadow-inner group-hover:bg-white group-hover:scale-110 transition-all">
-                <pillar.icon className="w-10 h-10" />
+                {(() => {
+                  const Icon = pillar.icon;
+                  return <Icon className="w-10 h-10" />;
+                })()}
               </div>
               <h3 className="text-3xl font-black text-neutral-950 mb-6 tracking-tighter group-hover:text-white transition-colors">{pillar.title}</h3>
               <p className="text-lg text-neutral-500 font-medium leading-relaxed group-hover:text-white/70 transition-colors">

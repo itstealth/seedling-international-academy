@@ -45,7 +45,10 @@ export default function CareerPage() {
               ].map((benefit, i) => (
                 <div key={i} className="space-y-4">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
-                    <benefit.icon className="w-6 h-6" />
+                    {(() => {
+                      const Icon = benefit.icon;
+                      return <Icon className="w-6 h-6" />;
+                    })()}
                   </div>
                   <h4 className="text-lg font-black text-neutral-950 tracking-tight">{benefit.title}</h4>
                   <p className="text-sm text-neutral-500 font-medium leading-relaxed">{benefit.desc}</p>
