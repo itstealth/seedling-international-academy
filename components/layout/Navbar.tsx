@@ -3,57 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X, ArrowUpRight, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 
 const navItems = [
-  {
-    name: "About",
-    href: "/about",
-    subLinks: [
-      { name: "Intro", href: "/about" },
-      { name: "Legacy", href: "/about/legacy" },
-      { name: "Vision", href: "/about/vision" },
-      { name: "Leadership", href: "/about/leadership" },
-      { name: "Affiliation", href: "/about/affiliation" },
-    ],
-  },
-  {
-    name: "Academics",
-    href: "/academics",
-    subLinks: [
-      { name: "Curriculum", href: "/academics/curriculum" },
-      { name: "Learning Support", href: "/academics/learning-support" },
-      { name: "Roll of Honour", href: "/academics/roll-of-honour" },
-      { name: "Faculty", href: "/academics/faculty" },
-    ],
-  },
-  {
-    name: "School Life",
-    href: "/school-life",
-    subLinks: [
-      { name: "Media", href: "/school-life/media" },
-      { name: "Sports", href: "/school-life/sports" },
-      { name: "Beyond Academics", href: "/school-life/beyond-academics" },
-    ],
-  },
-  {
-    name: "Campus Highlights",
-    href: "/campus-highlights",
-    subLinks: [
-      { name: "News", href: "/campus-highlights/news" },
-      { name: "Events", href: "/campus-highlights/events" },
-    ],
-  },
-  {
-    name: "Admissions",
-    href: "/admissions",
-    subLinks: [
-      { name: "Process", href: "/admissions/process" },
-      { name: "Fee Structure", href: "/admissions/fee-structure" },
-      { name: "Transport", href: "/admissions/transport" },
-    ],
-  },
+  { name: "About", href: "/about" },
+  { name: "Academics", href: "/academics" },
+  { name: "School Life", href: "/school-life" },
+  { name: "Campus Highlights", href: "/campus-highlights" },
+  { name: "Admissions", href: "/admissions" },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
   { name: "Blog", href: "/blog" },
@@ -62,7 +20,6 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -81,9 +38,7 @@ export default function Navbar() {
     restDelta: 0.001
   });
 
-  const toggleAccordion = (name: string) => {
-    setActiveAccordion(activeAccordion === name ? null : name);
-  };
+
 
   return (
     <>
@@ -116,45 +71,13 @@ export default function Navbar() {
               {/* Desktop Navigation */}
               <nav className="hidden xl:flex items-center gap-1">
                 {navItems.map((item) => (
-                  <div key={item.name} className="relative group">
-                    {item.subLinks ? (
-                      <button className="flex items-center gap-1 px-3 py-2.5 text-[14px] font-bold transition-all hover:text-primary whitespace-nowrap text-neutral-700">
-                        {item.name}
-                        <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180 opacity-60" />
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`px-3 py-2.5 text-[14px] font-bold transition-all whitespace-nowrap ${pathname === item.href ? "text-primary" : "text-neutral-700 hover:text-primary"}`}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-
-                    {/* Dropdown Menu */}
-                    {item.subLinks && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-[280px]">
-                        <div className="relative bg-white border border-black/5 shadow-xl overflow-hidden p-3 rounded-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <div className="flex flex-col gap-1">
-                            {item.subLinks.map((subLink) => (
-                              <Link
-                                key={subLink.name}
-                                href={subLink.href}
-                                className={`flex items-center justify-between px-6 py-4 text-[14px] font-bold rounded-xl transition-all ${
-                                  pathname === subLink.href
-                                    ? "bg-primary/5 text-primary"
-                                    : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950"
-                                }`}
-                              >
-                                {subLink.name}
-                                <ArrowUpRight className={`w-4 h-4 transition-all ${pathname === subLink.href ? "opacity-100" : "opacity-0 group-hover/sub:opacity-100"}`} />
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`px-3 py-2.5 text-[14px] font-bold transition-all whitespace-nowrap ${pathname === item.href ? "text-primary" : "text-neutral-700 hover:text-primary"}`}
+                  >
+                    {item.name}
+                  </Link>
                 ))}
               </nav>
 
@@ -223,51 +146,14 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto px-8 py-10">
                   <div className="flex flex-col gap-2">
                     {navItems.map((item) => (
-                      <div key={item.name} className="flex flex-col">
-                        {item.subLinks ? (
-                          <>
-                            <button
-                              onClick={() => toggleAccordion(item.name)}
-                              className={`flex items-center justify-between py-5 text-xl font-black transition-colors ${activeAccordion === item.name ? "text-primary" : "text-neutral-950"}`}
-                            >
-                              {item.name}
-                              <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${activeAccordion === item.name ? "rotate-180" : "opacity-30"}`} />
-                            </button>
-                            <AnimatePresence>
-                              {activeAccordion === item.name && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: "auto", opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="flex flex-col gap-2 pb-6 pl-6 border-l-2 border-primary/20 ml-2">
-                                    {item.subLinks.map((subLink) => (
-                                      <Link 
-                                        key={subLink.name}
-                                        href={subLink.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className={`flex items-center justify-between p-5 rounded-2xl transition-all ${pathname === subLink.href ? "bg-primary/5 text-primary font-black" : "text-neutral-600 hover:bg-neutral-50"}`}
-                                      >
-                                        <span className="text-lg">{subLink.name}</span>
-                                        <ArrowUpRight className="w-5 h-5 opacity-40" />
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </>
-                        ) : (
-                          <Link
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className="py-5 text-xl font-black text-neutral-950"
-                          >
-                            {item.name}
-                          </Link>
-                        )}
-                      </div>
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`py-5 text-xl font-black ${pathname === item.href ? "text-primary" : "text-neutral-950"}`}
+                      >
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                 </div>
