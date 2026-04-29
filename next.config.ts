@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'seedlingschools.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'pplx-res.cloudinary.com',
+      },
     ],
   },
 };
