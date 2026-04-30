@@ -349,20 +349,66 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             <a href="/campus-highlights" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a>
           </div>
-          <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
-            {[
-              { src: '/assets/DIWALI DANCE BEATS/1.webp', label: 'Diwali Dance Beats', className: 'col-span-2 row-span-2' },
-              { src: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip', className: '' },
-              { src: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing', className: 'col-span-2' },
-              { src: '/assets/SPORTS DAY/3.webp', label: 'Sports Day', className: '' },
-            ].map(({ src, label, className = "" }) => (
-              <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
-                <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+          <div className="space-y-4">
+            {/* Row 1 - Left big, Right stacked */}
+            <div className="grid grid-cols-3 gap-4 h-[280px]">
+              <div className="col-span-2 row-span-2 group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/ANNUAL FUNCTION/5.webp" alt="Annual Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <span className="text-white text-lg font-semibold font-playfair">{label}</span>
+                  <span className="text-white text-lg font-semibold font-playfair">Annual Day</span>
                 </div>
               </div>
-            ))}
+              <div className="group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/STELLAR SATURDAYS/2.webp" alt="Stellar Saturdays" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Stellar Saturdays</span>
+                </div>
+              </div>
+              <div className="group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/JAISELMER TRIP/1.webp" alt="Jaiselmer Trip" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Jaiselmer Trip</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2 - Wide left, 1 image right */}
+            <div className="grid grid-cols-3 gap-4 h-[280px]">
+              <div className="col-span-2 group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/BOOT CAMP/1.webp" alt="Boot Camp" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Boot Camp</span>
+                </div>
+              </div>
+              <div className="col-span-1 row-span-2 group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/DIWALI DANCE BEATS/1.webp" alt="Diwali Dance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Diwali Dance</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3 - Stacked left, 1 image right */}
+            <div className="grid grid-cols-3 gap-4 h-[280px]">
+              <div className="group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/SPORTS DAY/2.webp" alt="Sports Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Sports Day</span>
+                </div>
+              </div>
+              <div className="group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/PRIMARY OUTING/1.webp" alt="Primary Outing" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Primary Outing</span>
+                </div>
+              </div>
+              <div className="group relative rounded-[2rem] overflow-hidden">
+                <img src="/assets/SPARKLE FEST/1.webp" alt="Sparkle Fest" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <span className="text-white text-sm font-semibold font-playfair">Sparkle Fest</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
