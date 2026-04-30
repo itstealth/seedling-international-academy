@@ -244,9 +244,9 @@ export default function AboutPage() {
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
                 Founded in 1992 by the visionary Late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
-              <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
+              {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
-              </p>
+              </p> */}
             </Reveal>
 
             <Reveal delay={200}>
@@ -343,11 +343,11 @@ export default function AboutPage() {
           4. PHILOSOPHY (FULL-WIDTH PARALLAX)
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
-        <img
+        {/* <img
           src="/assets/about/feature-education.png"
           alt="Seedling Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
-        />
+        /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-navy-deeper/60 to-black/70" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
