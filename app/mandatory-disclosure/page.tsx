@@ -214,5 +214,3 @@ const MandatoryDisclosure = () => {
 };
 
 export default MandatoryDisclosure;
-
-export default MandatoryDisclosure;

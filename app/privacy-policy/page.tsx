@@ -406,7 +406,7 @@ export default function PrivacyPolicy() {
   )
 }
 
-function Text({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+function Text({ children, className = "", variant }: { children: React.ReactNode, className?: string, variant?: string }) {
   return <p className={`text-text-light leading-relaxed font-light ${className}`}>{children}</p>;
 }
 
