@@ -383,7 +383,7 @@ export default function AdmissionsPage() {
       <section className="py-32 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-24">
           <Tag>Why Seedling</Tag>
-          <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
             Six Reasons Parents<br />
             <span className="text-crimson">Choose Us</span>
           </h2>
@@ -414,7 +414,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag>Admission Process</Tag>
-            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Six Simple Steps<br />
               <span className="text-crimson">to Join Us</span>
             </h2>
@@ -491,7 +491,7 @@ export default function AdmissionsPage() {
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
-            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] mb-8 tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] mb-8 tracking-tight">
               Documents<br />
               <span className="text-crimson">Required</span>
             </h2>
@@ -539,7 +539,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Fee Structure</Tag>
-            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Transparent &<br />
               <span className="text-crimson">Straightforward</span>
             </h2>
@@ -614,7 +614,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-20">
             <Tag>Transport Facility</Tag>
-            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Safe & Reliable<br />
               <span className="text-crimson">School Transport</span>
             </h2>
@@ -770,7 +770,7 @@ export default function AdmissionsPage() {
       <section className="py-32 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Common Questions</Tag>
-          <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
             Parents Ask,<br />
             <span className="text-crimson">We Answer</span>
           </h2>

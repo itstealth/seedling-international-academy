@@ -36,17 +36,17 @@ const SCHOOLS = [
 
 const STATS = [
   { value: '20,000+', label: 'Students' },
-  { value: '15:1',    label: 'Student-Teacher Ratio' },
-  { value: '5,000+',  label: 'Alumni Network' },
-  { value: '100%',    label: 'Board Results' },
-  { value: '30+',     label: 'Years of Excellence' },
+  { value: '15:1', label: 'Student-Teacher Ratio' },
+  { value: '5,000+', label: 'Alumni Network' },
+  { value: '100%', label: 'Board Results' },
+  { value: '30+', label: 'Years of Excellence' },
 ]
 
 const HOURS = [
   { day: 'Monday – Friday', time: '8:30 AM – 6:30 PM', open: true },
-  { day: 'Saturday',        time: '8:30 AM – 2:00 PM', open: true },
-  { day: 'Sunday',          time: 'Closed',            open: false },
-  { day: 'Public Holidays', time: 'Closed',            open: false },
+  { day: 'Saturday', time: '8:30 AM – 2:00 PM', open: true },
+  { day: 'Sunday', time: 'Closed', open: false },
+  { day: 'Public Holidays', time: 'Closed', open: false },
 ]
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
@@ -158,17 +158,17 @@ const inputCls = (hasError?: boolean) =>
   `w-full rounded-xl px-4 py-3 text-text-base text-sm placeholder-sand border bg-white
    transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm
    ${hasError
-     ? 'border-crimson bg-crimson/5'
-     : 'border-sand/40 hover:border-sand focus:border-navy'
-   }`
+    ? 'border-crimson bg-crimson/5'
+    : 'border-sand/40 hover:border-sand focus:border-navy'
+  }`
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
   const [activeMap, setActiveMap] = useState(0)
-  const [form, setForm]           = useState<FormData>({ name: '', email: '', phone: '', school: '', message: '' })
-  const [errors, setErrors]       = useState<FormErrors>({})
-  const [status, setStatus]       = useState<SubmitStatus>('idle')
+  const [form, setForm] = useState<FormData>({ name: '', email: '', phone: '', school: '', message: '' })
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [status, setStatus] = useState<SubmitStatus>('idle')
 
   const setField = (key: keyof FormData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -176,10 +176,10 @@ export default function ContactPage() {
 
   const validate = (): boolean => {
     const e: FormErrors = {}
-    if (!form.name.trim())                                e.name    = 'Your name is required.'
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email   = 'A valid email is required.'
-    if (!/^[0-9+\s\-(]{7,15}$/.test(form.phone))        e.phone   = 'Enter a valid phone number.'
-    if (form.message.trim().length < 10)                  e.message = 'Please write at least 10 characters.'
+    if (!form.name.trim()) e.name = 'Your name is required.'
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'A valid email is required.'
+    if (!/^[0-9+\s\-(]{7,15}$/.test(form.phone)) e.phone = 'Enter a valid phone number.'
+    if (form.message.trim().length < 10) e.message = 'Please write at least 10 characters.'
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -231,7 +231,7 @@ export default function ContactPage() {
               </div>
 
               <h1
-                className="font-playfair text-5xl md:text-6xl font-bold text-navy-deeper leading-tight tracking-tight mb-5"
+                className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight tracking-tight mb-5"
               >
                 We&apos;d love to<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">hear from you.</span>
@@ -436,106 +436,106 @@ export default function ContactPage() {
             </div>
 
             {/* Right form */}
-              {status === 'success' ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center mx-auto">
-                    <CheckIcon className="w-7 h-7 text-navy" />
-                  </div>
-                  <h3
-                    className="font-playfair text-2xl font-bold text-navy-deeper"
-                  >
-                    Message received!
-                  </h3>
-                  <p className="text-text-light text-sm max-w-xs font-dm font-light">
-                    Thank you for reaching out. Our team will respond within one working day.
-                  </p>
-                  <button
-                    onClick={resetForm}
-                    className="mt-2 text-[10px] font-black text-navy uppercase tracking-widest underline underline-offset-4 hover:text-navy-dark transition-colors font-dm"
-                  >
-                    Send another message
-                  </button>
+            {status === 'success' ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center mx-auto">
+                  <CheckIcon className="w-7 h-7 text-navy" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                <h3
+                  className="font-playfair text-2xl font-bold text-navy-deeper"
+                >
+                  Message received!
+                </h3>
+                <p className="text-text-light text-sm max-w-xs font-dm font-light">
+                  Thank you for reaching out. Our team will respond within one working day.
+                </p>
+                <button
+                  onClick={resetForm}
+                  className="mt-2 text-[10px] font-black text-navy uppercase tracking-widest underline underline-offset-4 hover:text-navy-dark transition-colors font-dm"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate className="space-y-5">
 
-                  <InputField label="Full Name" required error={errors.name}>
+                <InputField label="Full Name" required error={errors.name}>
+                  <input
+                    type="text"
+                    value={form.name}
+                    onChange={setField('name')}
+                    placeholder="Your full name"
+                    className={inputCls(!!errors.name)}
+                  />
+                </InputField>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <InputField label="Email" required error={errors.email}>
                     <input
-                      type="text"
-                      value={form.name}
-                      onChange={setField('name')}
-                      placeholder="Your full name"
-                      className={inputCls(!!errors.name)}
+                      type="email"
+                      value={form.email}
+                      onChange={setField('email')}
+                      placeholder="you@example.com"
+                      className={inputCls(!!errors.email)}
                     />
                   </InputField>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <InputField label="Email" required error={errors.email}>
-                      <input
-                        type="email"
-                        value={form.email}
-                        onChange={setField('email')}
-                        placeholder="you@example.com"
-                        className={inputCls(!!errors.email)}
-                      />
-                    </InputField>
-                    <InputField label="Phone" required error={errors.phone}>
-                      <input
-                        type="tel"
-                        value={form.phone}
-                        onChange={setField('phone')}
-                        placeholder="+91 98765 00000"
-                        className={inputCls(!!errors.phone)}
-                      />
-                    </InputField>
-                  </div>
-
-                  <InputField label="School of Interest">
-                    <select
-                      value={form.school}
-                      onChange={setField('school')}
-                      className={inputCls() + ' cursor-pointer'}
-                    >
-                      <option value="">Select a school (optional)</option>
-                      {SCHOOLS.map((s) => <option key={s}>{s}</option>)}
-                    </select>
-                  </InputField>
-
-                  <InputField label="Message" required error={errors.message}>
-                    <textarea
-                      rows={4}
-                      value={form.message}
-                      onChange={setField('message')}
-                      placeholder="Tell us how we can help you..."
-                      className={inputCls(!!errors.message) + ' resize-none'}
+                  <InputField label="Phone" required error={errors.phone}>
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={setField('phone')}
+                      placeholder="+91 98765 00000"
+                      className={inputCls(!!errors.phone)}
                     />
-                    <p className="text-right text-xs text-stone-400 mt-1">
-                      {form.message.length} chars
-                    </p>
                   </InputField>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="w-full flex items-center justify-center gap-2.5 font-black text-[11px] uppercase tracking-widest py-4 rounded-full bg-navy hover:bg-navy-dark text-white shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed font-dm"
+                <InputField label="School of Interest">
+                  <select
+                    value={form.school}
+                    onChange={setField('school')}
+                    className={inputCls() + ' cursor-pointer'}
                   >
-                    {status === 'loading' ? (
-                      <>
-                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        <SendIcon className="w-4 h-4" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
+                    <option value="">Select a school (optional)</option>
+                    {SCHOOLS.map((s) => <option key={s}>{s}</option>)}
+                  </select>
+                </InputField>
 
-                </form>
-              )}
-            </div>
+                <InputField label="Message" required error={errors.message}>
+                  <textarea
+                    rows={4}
+                    value={form.message}
+                    onChange={setField('message')}
+                    placeholder="Tell us how we can help you..."
+                    className={inputCls(!!errors.message) + ' resize-none'}
+                  />
+                  <p className="text-right text-xs text-stone-400 mt-1">
+                    {form.message.length} chars
+                  </p>
+                </InputField>
+
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full flex items-center justify-center gap-2.5 font-black text-[11px] uppercase tracking-widest py-4 rounded-full bg-navy hover:bg-navy-dark text-white shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed font-dm"
+                >
+                  {status === 'loading' ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      <SendIcon className="w-4 h-4" />
+                      Send Message
+                    </>
+                  )}
+                </button>
+
+              </form>
+            )}
           </div>
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
@@ -576,7 +576,7 @@ export default function ContactPage() {
 
           <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl h-80 md:h-96 bg-sand/10">
             <iframe
-              key={currentMap.id}           
+              key={currentMap.id}
               src={currentMap.src}
               width="100%"
               height="100%"
@@ -603,7 +603,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOURS
       ══════════════════════════════════════════════════════════════════════ */}
-    <section className="py-12 md:py-16 bg-white border-t border-sand/40">
+      <section className="py-12 md:py-16 bg-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 

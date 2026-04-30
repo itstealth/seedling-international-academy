@@ -108,9 +108,9 @@ export default function SeedlingPage(): React.JSX.Element {
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
             CBSE Affiliated · Jaipur
           </div>
-          
+
           <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
-            Where Every Child Finds Their 
+            Where Every Child Finds Their
             <em className="font-semibold text-sand italic ml-2">Wings</em>
 
           </h1>
@@ -184,7 +184,7 @@ export default function SeedlingPage(): React.JSX.Element {
             {/* Text */}
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
-              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-8">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1994.
               </h2>
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
@@ -222,7 +222,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
               World-Class <em className="font-semibold text-navy">Facilities</em>
             </h2>
           </div>
@@ -269,7 +269,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light text-white leading-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
               Champions <em className="font-semibold text-sand italic">Everywhere</em>
             </h2>
           </div>
@@ -304,7 +304,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
-              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-12">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-12">
                 Start Your Child's <em className="font-semibold text-navy italic">Joyride</em>.
               </h2>
               <div className="flex flex-col gap-6">
@@ -343,7 +343,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex justify-between items-end mb-16">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Campus Life</span>
-              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
                 Vibrant <em className="font-semibold text-navy italic">Memories</em>.
               </h2>
             </div>
@@ -418,7 +418,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-6">
               Voices from the <em className="font-semibold text-navy italic">Family</em>.
             </h2>
           </div>
@@ -462,7 +462,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex items-end justify-between mb-20">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Latest at Seedling</span>
-              <h2 className="font-playfair text-5xl md:text-6xl font-light text-white leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
                 Trending <em className="font-semibold text-sand italic">Updates</em>.
               </h2>
             </div>
@@ -518,7 +518,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
-              <h2 className="font-playfair text-5xl md:text-7xl font-light text-white leading-tight mb-8">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-8">
                 Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
               </h2>
               <p className="text-xl text-white/70 leading-relaxed mb-12 font-light">

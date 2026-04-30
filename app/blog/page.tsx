@@ -330,8 +330,8 @@ const CategoryBadge = ({ category, active, onClick }: { category: string, active
     aria-selected={active}
     onClick={onClick}
     className={`px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-200 font-dm
-      ${active 
-        ? "bg-navy-deeper text-white shadow-lg" 
+      ${active
+        ? "bg-navy-deeper text-white shadow-lg"
         : "bg-white text-navy-deeper border border-sand/40 hover:border-navy hover:bg-navy/5"
       }`}
   >
@@ -379,24 +379,24 @@ export default function BlogPage() {
   // ─────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-off-white font-dm">
-      
+
       {/* ══════════════════ HERO ══════════════════ */}
       <section className="relative py-20 md:py-28 px-6 overflow-hidden border-b border-sand/20">
         {/* Background elements */}
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.03]" 
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
           style={{ backgroundImage: 'radial-gradient(circle, #175190 1px, transparent 1px)', backgroundSize: '32px 32px' }}
-          aria-hidden="true" 
+          aria-hidden="true"
         />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-light/30 to-transparent pointer-events-none" aria-hidden="true" />
-        
+
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="fade-up">
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="w-8 h-0.5 bg-crimson" />
               <span className="text-crimson text-[10px] font-black tracking-[0.3em] uppercase">Seedling Schools Blog</span>
             </div>
-            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-navy-deeper leading-[1.1] mb-6">
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-7xl font-bold text-navy-deeper leading-[1.1] mb-6">
               Stories, Ideas<br />
               <span className="text-sand">&amp; </span>
               <em className="italic font-medium text-navy">Insights</em>
@@ -450,10 +450,10 @@ export default function BlogPage() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative aspect-[16/10] lg:aspect-auto overflow-hidden">
-              <img 
-                src={FEATURED.img} 
-                alt={FEATURED.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              <img
+                src={FEATURED.img}
+                alt={FEATURED.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
               <div className="absolute top-6 left-6 flex gap-2">
@@ -494,11 +494,11 @@ export default function BlogPage() {
         {/* Filters */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
           {ALL_CATEGORIES.map((cat) => (
-            <CategoryBadge 
-              key={cat} 
-              category={cat} 
-              active={activeCategory === cat} 
-              onClick={() => handleCategoryChange(cat)} 
+            <CategoryBadge
+              key={cat}
+              category={cat}
+              active={activeCategory === cat}
+              onClick={() => handleCategoryChange(cat)}
             />
           ))}
         </div>
@@ -560,8 +560,8 @@ export default function BlogPage() {
               <button
                 key={page}
                 className={`w-10 h-10 flex items-center justify-center rounded-full text-[11px] font-black transition-all duration-200
-                  ${currentPage === page 
-                    ? "bg-navy-deeper text-white shadow-lg" 
+                  ${currentPage === page
+                    ? "bg-navy-deeper text-white shadow-lg"
                     : "text-navy-deeper hover:bg-navy-light border border-transparent"
                   }`}
                 onClick={() => setCurrentPage(page)}
@@ -586,7 +586,7 @@ export default function BlogPage() {
           {/* Decorative glows */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-crimson/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/4" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
-          
+
           <div className="relative z-10 max-w-2xl mx-auto">
             <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/20">
               <MailIcon />
@@ -596,7 +596,7 @@ export default function BlogPage() {
             <p className="text-white/70 text-lg font-light leading-relaxed mb-10">
               Get the latest articles on education, child development, and school life delivered straight to your inbox.
             </p>
-            
+
             {subscribed ? (
               <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-white font-bold">
                 <CheckIcon /> You&apos;re subscribed — thank you!

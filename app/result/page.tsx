@@ -74,7 +74,7 @@ export default function ResultPage() {
             <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
               Roll of Honour
             </span>
-            <h2 className="font-playfair text-5xl md:text-7xl font-light text-white">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               Numbers That<br />
               <em className="font-semibold text-sand">Tell Our Story</em>
             </h2>

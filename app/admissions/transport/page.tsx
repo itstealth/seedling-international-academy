@@ -70,7 +70,7 @@ export default function TransportFacilityPage() {
         {/* Coverage Grid */}
         <div className="text-center mb-24">
           <span className="text-label mb-6 block uppercase">Extensive Network</span>
-          <h2 className="text-heading text-5xl md:text-7xl">City Coverage.</h2>
+          <h2 className="text-heading text-4xl md:text-5xl">City Coverage.</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
