@@ -75,6 +75,7 @@ export default function Footer() {
             </div>
           </div>
 
+          
           {/* Column 4: Reach Out (Desktop Spans 2) */}
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-crimson/10 pb-4">Contact</h3>
