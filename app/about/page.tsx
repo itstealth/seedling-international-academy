@@ -89,13 +89,6 @@ const timeline = [
     img: "/assets/PRIMARY OUTING/1.webp",
     side: "left",
   },
-  {
-    year: "Today",
-    title: "20,000+ Lives Shaped & Counting",
-    desc: "Today the Seedling Group spans 5 schools, 2 campuses, CBSE and Cambridge boards, and serves over 20,000 students — with alumni spread across 50+ nations and a 100% board result record.",
-    img: "/assets/ANNUAL FUNCTION/1.webp",
-    side: "right",
-  },
 ];
 
 const leaders = [
@@ -159,6 +152,53 @@ const stats = [
   { value: "1992", label: "Year Established" },
 ];
 
+function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
+  return (
+    <section className="relative w-full h-[500px] overflow-hidden">
+      {/* Background image with parallax feel */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        style={{
+          backgroundImage:
+            "url('/assets/Home/classroom.jpg')",
+        }}
+      />
+
+      {/* Multi-layer gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
+
+      {/* Decorative geometry */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
+          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
+          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
+        </svg>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
+          About{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
+            Us
+          </span>
+        </h1>
+      </div>
+    </section>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
@@ -167,66 +207,13 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <img
-          src="/assets/Home/classroom.jpg"
-          alt="Seedling Group of Schools Campus"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-100"
-        />
-        {/* gradient layers */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/50 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-24 w-full">
-          <Reveal>
-            <p className="font-playfair text-sand text-xl italic tracking-widest mb-4 uppercase">
-              Est. 1992 · Jaipur, India
-            </p>
-          </Reveal>
-          <Reveal delay={150}>
-            <h1 className="font-playfair text-white font-light leading-[1.05] text-3xl md:text-4xl lg:text-5xl max-w-4xl">
-              Welcome To<br />
-              <em className="font-semibold text-sand">Seedling Group</em><br />
-              Of Schools
-            </h1>
-          </Reveal>
-          <Reveal delay={300}>
-            <p className="text-white/80 text-lg md:text-xl mt-6 max-w-xl font-light leading-relaxed font-dm">
-              Committed to nurturing young minds with a perfect blend of academic excellence and strong moral values — creating confident, responsible and compassionate individuals since 1992.
-            </p>
-          </Reveal>
-          <Reveal delay={450}>
-            <div className="mt-10 flex gap-4 flex-wrap">
-              <a
-                href="#story"
-                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-crimson/40 font-dm"
-              >
-                Explore Our Story
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-              <a
-                href="/admission-procedure"
-                className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 font-dm"
-              >
-                Admissions 2026–27
-              </a>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* scroll indicator */}
-        <div className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-2">
-          <span className="text-white/40 text-xs tracking-[0.2em] uppercase rotate-90 mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</span>
-          <div className="w-px h-16 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
-        </div>
-      </section>
+      <Hero />
 
       {/* ══════════════════════════════════════════════════════════════
           STATS BAND
       ══════════════════════════════════════════════════════════════ */}
-      <section className="bg-navy-deeper text-white py-12 border-y border-sand/20">
+      {/* <section className="bg-navy-deeper text-white py-12 border-y border-sand/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
             {stats.map((s) => (
@@ -237,7 +224,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════════════════
           2. WHO WE ARE
@@ -479,96 +466,6 @@ export default function AboutPage() {
                   <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">{p.emoji}</span>
                   <h4 className="font-playfair text-2xl font-semibold mb-4 text-navy">{p.title}</h4>
                   <p className="text-text-light text-sm leading-[1.9] font-dm">{p.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════
-          DIRECTOR'S MESSAGE
-      ══════════════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <Reveal>
-            <div className="relative">
-              <img
-                src="/assets/Home/smart-classroom.jpg"
-                alt="Dr. Sandeep Bakshi, Director Seedling Group"
-                className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
-                <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
-                <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div>
-            <Reveal>
-              <p className="font-playfair text-navy text-xl italic mb-4">Director's Communiqué</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
-                "Life Ready<br />
-                &amp; <em className="font-semibold">Life Worthy"</em>
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                As we dynamise our movement into a post-pandemic world, we sense opportunity at our doorstep. For us, it is a chance to rewrite the narrative of school — to make it more relevant to the realities of the world today. A place where learning happens not from a textbook or worksheet, but through contextual, real-life problem-solving.
-              </p>
-              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. Homes and families must move forward together with the school — being relevant, optimistic, and forever focused on the larger purpose and collective well-being.
-              </p>
-              <p className="text-text-light leading-[1.9] text-base font-dm">
-                From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
-              </p>
-            </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-navy" />
-                <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════
-          6. LEADERSHIP
-      ══════════════════════════════════════════════════════════════ */}
-      <section className="py-10 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <Reveal className="text-center mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light">
-              The <em className="font-semibold">Leadership</em><br />Behind the Legacy
-            </h2>
-          </Reveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {leaders.map((l, i) => (
-              <Reveal key={l.name} delay={i * 100}>
-                <div className="group bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sand">
-                  <div className="relative overflow-hidden h-72">
-                    <img
-                      src={l.img}
-                      alt={l.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
-                      {l.tag}
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
-                    <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
-                    <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
-                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
-                      "{l.quote}"
-                    </blockquote>
-                  </div>
                 </div>
               </Reveal>
             ))}

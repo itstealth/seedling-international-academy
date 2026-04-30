@@ -38,7 +38,7 @@ export default function AdmissionProcessPage() {
       <PageHero 
         title="Admission Process"
         subtitle="Your pathway to excellence starts here. A seamless four-step journey to join the Seedling family."
-        image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80"
+        image="/assets/Home/classroom.jpg"
       />
 
       {/* Steps Section */}

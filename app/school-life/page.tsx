@@ -227,7 +227,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen min-h-[700px] overflow-hidden">
+    <section className="relative w-full h-[500px] overflow-hidden">
       {/* Background image with parallax feel */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
@@ -250,64 +250,15 @@ function Hero() {
         </svg>
       </div>
 
-      {/* Floating badge top-left */}
-      <div className="absolute top-10 left-10 hidden lg:flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-3 animate-fade-in">
-        <span className="w-2 h-2 rounded-full bg-sand animate-pulse" />
-        <span className="text-white/90 text-sm font-light tracking-widest uppercase">Est. 1992</span>
-      </div>
-
-      {/* Stats floating right */}
-      <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden xl:flex flex-col gap-6">
-        {[
-          { num: "5000+", label: "Students" },
-          { num: "5", label: "Campuses" },
-          { num: "30+", label: "Years" },
-        ].map((s) => (
-          <div key={s.label} className="text-right animate-fade-in-right">
-            <div className="text-sand text-3xl font-bold tracking-tight">{s.num}</div>
-            <div className="text-white/60 text-xs uppercase tracking-widest">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <div className="mb-6 inline-flex items-center gap-2 bg-sand/20 border border-sand/40 rounded-full px-6 py-2 text-sand text-sm uppercase tracking-[0.3em] animate-fade-in-down">
-          <span>Seedling Group of Schools</span>
-        </div>
 
-        <h1 className="font-playfair text-4xl md:text-5xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
           Life at{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
             Seedling
           </span>
         </h1>
-
-        <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto font-dm font-light leading-relaxed mb-12 animate-fade-in">
-          A journey of growth, discovery, and endless possibility — since 1992.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-          <a
-            href="https://seedlingschools.com/admission-procedure.php"
-            className="group relative px-10 py-4 bg-crimson text-white font-bold text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/30 hover:scale-105"
-          >
-            <span className="relative z-10">Apply Now 2026–27</span>
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
-          </a>
-          <a
-            href="#gallery"
-            className="px-10 py-4 border border-white/30 text-white font-light text-sm uppercase tracking-widest rounded-full hover:bg-white/10 hover:border-white/60 transition-all duration-300"
-          >
-            Explore Life
-          </a>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <div className="w-px h-16 bg-gradient-to-b from-white/0 to-white/50" />
-        <span className="text-white/40 text-xs uppercase tracking-widest">Scroll</span>
       </div>
     </section>
   );
