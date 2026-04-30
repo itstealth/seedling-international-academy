@@ -20,7 +20,7 @@ export default function FeeStructurePage() {
       <PageHero 
         title="Fee Structure"
         subtitle="Transparent and straightforward. Investing in your child's future with clarity and trust."
-        image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80"
+        image="/assets/Home/classroom.jpg"
       />
 
       <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">

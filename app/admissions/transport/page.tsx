@@ -19,7 +19,7 @@ export default function TransportFacilityPage() {
       <PageHero 
         title="Transport Facility"
         subtitle="Safety first, comfort always. A reliable network of modern buses connecting all corners of Jaipur."
-        image="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80"
+        image="/assets/PRIMARY OUTING/1.webp"
       />
 
       <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
@@ -59,7 +59,7 @@ export default function TransportFacilityPage() {
             className="relative aspect-video rounded-[4rem] overflow-hidden shadow-editorial"
           >
             <img 
-              src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80" 
+              src="/assets/PRIMARY OUTING/2.webp" 
               alt="School Bus" 
               className="object-cover w-full h-full"
             />

@@ -717,7 +717,7 @@ export default function AdmissionsPage() {
       ══════════════════════════════════════════════════ */}
       <section className="relative py-40 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1800&q=80"
+          src="/assets/Home/smart-classroom.jpg"
           alt="Book a campus visit"
           className="absolute inset-0 w-full h-full object-cover scale-105"
         />
@@ -805,7 +805,7 @@ export default function AdmissionsPage() {
       ══════════════════════════════════════════════════ */}
       <section className="py-40 bg-navy-deeper relative overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=80"
+          src="/assets/Home/library.jpg"
           alt="Join Seedling"
           className="absolute inset-0 w-full h-full object-cover opacity-15"
         />

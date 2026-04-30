@@ -1,132 +1,185 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Quote, Plus, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+// ─── Scroll Reveal Hook ───────────────────────────────────────────────────────
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.12 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, visible };
+}
+
+// ─── Reveal Wrapper ───────────────────────────────────────────────────────────
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const { ref, visible } = useScrollReveal();
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
 const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
-    title: "Founder Director",
+    role: "Founder Director",
+    sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    role: "Visionary",
+    img: "https://seedlingschools.com/assets/img/mohini.png",
+    tag: "Legacy",
   },
   {
     name: "Dr. Sandeep Bakshi",
-    title: "CEO & Director",
+    role: "CEO & Director",
+    sub: "Seedling Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
-    role: "Steward",
+    img: "https://seedlingschools.com/assets/img/sandeep.png",
+    tag: "Forever New Frontiers",
   },
   {
     name: "Dr. Preeti Bakshi",
-    title: "Executive Director",
-    quote: "Give the Pupils Something to do, not something to learn; and the doing is of such a nature as to demand thinking; learning naturally results.",
-    role: "Innovator",
+    role: "Executive Director",
+    sub: "Seedling Group of Institutions",
+    quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
+    img: "https://seedlingschools.com/assets/img/preeti.png",
+    tag: "Creating Fresh Pathways",
   },
   {
     name: "Ms. Akansha Bakshi",
-    title: "Joint Director",
-    quote: "Adaptability to change is itself a hallmark of Successful education.",
-    role: "Strategist",
+    role: "Joint Director",
+    sub: "Seedling Group of Institutions",
+    quote: "Adaptability to change is itself a hallmark of successful education.",
+    img: "https://seedlingschools.com/assets/img/akansha.png",
+    tag: "Engagement that Empowers",
   },
   {
     name: "Ms. Aishwarya Bakshi",
-    title: "Joint Director",
-    quote: "The only person who is educated is the one who has Learned how to learn...and change.",
-    role: "Mentor",
-  }
+    role: "Joint Director",
+    sub: "Seedling Group of Institutions",
+    quote: "The only person who is educated is the one who has learned how to learn and change.",
+    img: "https://seedlingschools.com/assets/img/aishwarya.png",
+    tag: "Promoting Global Citizenship",
+  },
 ];
 
 export default function LeadershipPage() {
   return (
-    <div className="min-h-screen bg-white text-neutral-950 pt-24 pb-40 relative overflow-hidden">
-      
-      {/* Dynamic Background Image */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-         <Image 
-           src="/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/leadership_abstract_portrait_bg_1776852505928.png"
-           alt="Leadership Abstract Background"
-           fill
-           className="object-cover scale-110 blur-sm"
-         />
-      </div>
-
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Header Segment */}
-        <div className="max-w-3xl mb-32">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-6 block">The Architects of Excellence</span>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 text-neutral-950 leading-[0.9]">
-              Our Visionary <br /> Leadership
-            </h1>
-            <p className="text-xl text-neutral-600 font-medium leading-relaxed">
-              Guided by a legacy of three decades, our leaders blend traditional wisdom with modern innovation to build a future-proof educational sanctuary.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Floating Leadership Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          {leaders.map((leader, index) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative"
-            >
-              {/* Main Card */}
-              <div className="relative h-full p-10 rounded-[3rem] bg-neutral-50 border border-black/3 transition-all duration-700 hover:bg-white hover:shadow-2xl hover:shadow-black/2 overflow-hidden flex flex-col">
-                
-                {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                <div className="mb-10 flex justify-between items-start">
-                   <div className="w-20 h-20 rounded-3xl bg-linear-to-br from-neutral-200 to-neutral-100 p-px shadow-xl">
-                      <div className="w-full h-full rounded-[calc(1.5rem-1px)] bg-white flex items-center justify-center">
-                         <span className="text-2xl font-bold text-neutral-300">{leader.name[0]}</span>
-                      </div>
-                   </div>
-                   <div className="px-4 py-1.5 rounded-full border border-black/10 text-[10px] font-bold uppercase tracking-widest text-neutral-500 group-hover:text-secondary group-hover:border-secondary transition-colors">
-                      {leader.role}
-                   </div>
-                </div>
-
-                <div className="flex-1">
-                   <h3 className="text-3xl font-black text-neutral-950 tracking-tighter mb-2 group-hover:text-primary transition-colors italic">
-                      {leader.name}
-                   </h3>
-                   <p className="text-neutral-500 font-bold text-sm tracking-wide mb-8 uppercase">
-                      {leader.title}
-                   </p>
-                   
-                   <div className="relative mt-auto">
-                      <Quote className="absolute -top-6 -left-6 w-12 h-12 text-black/[0.02]" />
-                      <p className="relative z-10 text-neutral-600 font-serif italic text-lg leading-relaxed">
-                         &quot;{leader.quote}&quot;
-                      </p>
-                   </div>
-                </div>
-
-                {/* Interactive Link */}
-                <div className="mt-12 flex items-center justify-between text-neutral-400 group-hover:text-primary transition-colors">
-                   <span className="text-xs font-bold uppercase tracking-widest">Full Profile</span>
-                   <div className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-lg">
-                      <ArrowRight className="w-5 h-5" />
-                   </div>
-                </div>
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm pt-24 pb-16">
+      {/* ══════════════════════════════════════════════════════════════
+          DIRECTOR'S MESSAGE
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <Reveal>
+            <div className="relative">
+              <img
+                src="https://seedlingschools.com/assets/img/sandeep.png"
+                alt="Dr. Sandeep Bakshi, Director Seedling Group"
+                className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
+                <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </Reveal>
 
-      </div>
-    </div>
+          <div>
+            <Reveal>
+              <p className="font-playfair text-navy text-xl italic mb-4">Director's Communiqué</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
+                "Life Ready<br />
+                &amp; <em className="font-semibold">Life Worthy"</em>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
+                As we dynamise our movement into a post-pandemic world, we sense opportunity at our doorstep. For us, it is a chance to rewrite the narrative of school — to make it more relevant to the realities of the world today. A place where learning happens not from a textbook or worksheet, but through contextual, real-life problem-solving.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
+                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. Homes and families must move forward together with the school — being relevant, optimistic, and forever focused on the larger purpose and collective well-being.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base font-dm">
+                From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="mt-10 flex items-center gap-4">
+                <div className="w-12 h-px bg-navy" />
+                <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          LEADERSHIP
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <Reveal className="text-center mb-16">
+            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
+            <h2 className="font-playfair text-5xl md:text-6xl font-light">
+              The <em className="font-semibold">Leadership</em><br />Behind the Legacy
+            </h2>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {leaders.map((l, i) => (
+              <Reveal key={l.name} delay={i * 100}>
+                <div className="group bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sand">
+                  <div className="relative overflow-hidden h-72">
+                    <img
+                      src={l.img}
+                      alt={l.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
+                      {l.tag}
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
+                    <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
+                    <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
+                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
+                      "{l.quote}"
+                    </blockquote>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

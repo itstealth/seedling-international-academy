@@ -31,7 +31,7 @@ const ALL_POSTS: Post[] = [
     date: "10 Mar 2025",
     dateISO: "2025-03-10",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/Home/classroom.jpg",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const ALL_POSTS: Post[] = [
     date: "09 Mar 2025",
     dateISO: "2025-03-09",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/Home/smart-classroom.jpg",
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const ALL_POSTS: Post[] = [
     date: "02 Mar 2025",
     dateISO: "2025-03-02",
     readMin: 6,
-    img: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/Home/library.jpg",
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ const ALL_POSTS: Post[] = [
     date: "10 Feb 2025",
     dateISO: "2025-02-10",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/ANNUAL FUNCTION/1.webp",
   },
   {
     id: 5,
@@ -87,7 +87,7 @@ const ALL_POSTS: Post[] = [
     date: "06 Feb 2025",
     dateISO: "2025-02-06",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/BOOT CAMP/1.webp",
   },
   {
     id: 6,
@@ -99,7 +99,7 @@ const ALL_POSTS: Post[] = [
     date: "03 Feb 2025",
     dateISO: "2025-02-03",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/CRICKET FEVER/1.webp",
   },
   {
     id: 7,
@@ -111,7 +111,7 @@ const ALL_POSTS: Post[] = [
     date: "28 Jan 2025",
     dateISO: "2025-01-28",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/DIWALI DANCE BEATS/1.webp",
   },
   {
     id: 8,
@@ -123,7 +123,7 @@ const ALL_POSTS: Post[] = [
     date: "22 Jan 2025",
     dateISO: "2025-01-22",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/FRENCH CUISINE/1.webp",
   },
   {
     id: 9,
@@ -135,7 +135,7 @@ const ALL_POSTS: Post[] = [
     date: "29 Dec 2024",
     dateISO: "2024-12-29",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/JAISELMER TRIP/1.webp",
   },
   {
     id: 10,
@@ -147,7 +147,7 @@ const ALL_POSTS: Post[] = [
     date: "25 Dec 2024",
     dateISO: "2024-12-25",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/MOTHER CHILD COOK OFF/1.webp",
   },
   {
     id: 11,
@@ -159,7 +159,7 @@ const ALL_POSTS: Post[] = [
     date: "20 Nov 2024",
     dateISO: "2024-11-20",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/MOTHER_S DAY/1.webp",
   },
   {
     id: 12,
@@ -171,7 +171,7 @@ const ALL_POSTS: Post[] = [
     date: "27 Oct 2024",
     dateISO: "2024-10-27",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/PRIMARY OUTING/1.webp",
   },
   {
     id: 13,
@@ -183,7 +183,7 @@ const ALL_POSTS: Post[] = [
     date: "25 Oct 2024",
     dateISO: "2024-10-25",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/RANGOLI MAKING/1.webp",
   },
   {
     id: 14,
@@ -195,7 +195,7 @@ const ALL_POSTS: Post[] = [
     date: "22 Oct 2024",
     dateISO: "2024-10-22",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/SARASWATI INSTALLATION/1.webp",
   },
   {
     id: 15,
@@ -207,7 +207,7 @@ const ALL_POSTS: Post[] = [
     date: "18 Oct 2024",
     dateISO: "2024-10-18",
     readMin: 6,
-    img: "https://images.unsplash.com/photo-1434030216411-0b793f4b6f96?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/SPARKLE FEST/1.webp",
   },
   {
     id: 16,
@@ -219,7 +219,7 @@ const ALL_POSTS: Post[] = [
     date: "12 Sep 2024",
     dateISO: "2024-09-12",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/SPORTS DAY/1.webp",
   },
   {
     id: 17,
@@ -231,7 +231,7 @@ const ALL_POSTS: Post[] = [
     date: "08 Sep 2024",
     dateISO: "2024-09-08",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/STELLAR SATURDAYS/1.webp",
   },
   {
     id: 18,
@@ -243,7 +243,7 @@ const ALL_POSTS: Post[] = [
     date: "25 Aug 2024",
     dateISO: "2024-08-25",
     readMin: 5,
-    img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/SUSTAINABLE FASHION SHOW/1.webp",
   },
   {
     id: 19,
@@ -255,7 +255,7 @@ const ALL_POSTS: Post[] = [
     date: "25 Aug 2024",
     dateISO: "2024-08-25",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/WHISPERS OF WELLNESS/1.webp",
   },
   {
     id: 20,
@@ -267,7 +267,7 @@ const ALL_POSTS: Post[] = [
     date: "23 Aug 2024",
     dateISO: "2024-08-23",
     readMin: 4,
-    img: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=900&q=80&auto=format&fit=crop",
+    img: "/assets/XMAS CARNIVAL/1.webp",
   },
 ];
 

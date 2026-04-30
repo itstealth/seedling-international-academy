@@ -11,7 +11,7 @@ const alumniList = [
   {
     name: "Harshil Mathur",
     role: "CEO of Razorpay",
-    image: "https://seedlingschools.com/assets/img/harshil.png",
+    image: "/assets/alumni/harshil.png",
     tags: ["Entrepreneurship", "Fintech"],
     accent: "from-navy to-navy-deeper",
     bg: "bg-off-white",
@@ -19,7 +19,7 @@ const alumniList = [
   {
     name: "Abhishek Tripathi",
     role: "Wing Commander",
-    image: "https://seedlingschools.com/assets/img/abhishek.png",
+    image: "/assets/alumni/abhishek.png",
     tags: ["Defence", "Leadership"],
     accent: "from-crimson to-crimson-dark",
     bg: "bg-off-white",
@@ -27,7 +27,7 @@ const alumniList = [
   {
     name: "Shashank Jain",
     role: "Head of Architecture & Design",
-    image: "https://seedlingschools.com/assets/img/shashank.png",
+    image: "/assets/alumni/shashank.png",
     tags: ["Architecture", "Design"],
     accent: "from-sand to-sand",
     bg: "bg-off-white",
@@ -98,19 +98,19 @@ const achievements = [
 
 const networkCards = [
   {
-    icon: "https://seedlingschools.com/assets/img/news.png",
+    icon: "/assets/alumni/news.png",
     title: "Share News",
     body: "Share your latest achievements, milestones, and updates with your alma mater and fellow alumni to inspire and stay connected.",
     cta: "Spread the word",
   },
   {
-    icon: "https://seedlingschools.com/assets/img/classmate.png",
+    icon: "/assets/alumni/classmate.png",
     title: "Find Your Classmate",
     body: "Find and reconnect with classmates through alumni associations, social media, or class reunion events to strengthen old bonds.",
     cta: "Reconnect now",
   },
   {
-    icon: "https://seedlingschools.com/assets/img/involved.png",
+    icon: "/assets/alumni/involved.png",
     title: "Get Involved",
     body: "Stay engaged with your alma mater by attending alumni events, reunions, networking opportunities, and cultural activities.",
     cta: "Connect & learn",
@@ -120,27 +120,27 @@ const networkCards = [
 const studentsList = [
   {
     name: "Krishika Jain",
-    image: "https://seedlingschools.com/assets/img/krishika.jpg",
+    image: "/assets/alumni/krishika.jpg",
   },
   {
     name: "Rafiya Khan",
-    image: "https://seedlingschools.com/assets/img/rafiya.jpg",
+    image: "/assets/alumni/rafiya.jpg",
   },
   {
     name: "Dr. Shubhangni Mathur",
-    image: "https://seedlingschools.com/assets/img/shubhangni.jpg",
+    image: "/assets/alumni/shubhangni.jpg",
   },
   {
     name: "Priyam Sodhia",
-    image: "https://seedlingschools.com/assets/img/priyam.jpg",
+    image: "/assets/alumni/priyam.jpg",
   },
   {
     name: "Abhijeet Agnihotri",
-    image: "https://seedlingschools.com/assets/img/abhijeet.jpg",
+    image: "/assets/alumni/abhijeet.jpg",
   },
   {
     name: "Diksha Khatwani",
-    image: "https://seedlingschools.com/assets/img/diksha.jpg",
+    image: "/assets/alumni/diksha.jpg",
   },
 ];
 
@@ -370,7 +370,7 @@ function FeaturedAlumni() {
           <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-navy-deeper">
             <div className="relative min-h-[420px] md:min-h-[560px] overflow-hidden group">
               <Image
-                src="https://seedlingschools.com/assets/img/harshil.png"
+                src="/assets/alumni/harshil.png"
                 alt="Harshil Mathur – CEO of Razorpay"
                 fill
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-105"

@@ -274,7 +274,7 @@ export default function ContactPage() {
             <div className="relative hidden lg:block">
               <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/d34f609b962b72ddb80ea49a40a4529dd2d64d1a.jpg"
+                  src="/assets/Home/smart-classroom.jpg"
                   alt="Students at Seedling International Academy, Jawahar Nagar"
                   fill
                   className="object-cover"
@@ -431,7 +431,7 @@ export default function ContactPage() {
               {/* Classroom photo */}
               <div className="relative rounded-2xl overflow-hidden h-52 border border-sand/40 shadow-sm">
                 <Image
-                  src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f67bfd96544781b29c5739c8b31aa924899055d7.jpg"
+                  src="/assets/Home/classroom.jpg"
                   alt="Students in a Seedling School classroom"
                   fill
                   className="object-cover"

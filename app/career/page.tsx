@@ -162,13 +162,13 @@ const whyWork = [
 const testimonials = [
   {
     name: "Ms. Ishita Mendiratta",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
+    img: "/assets/testimonial/aditi-sharma.jpg",
     quote:
       "Our aim was clear as we transitioned to the virtual platform. Academic engagement was one aspect, but most important was to keep kids involved and spare them from anxiety. Seeing them smile on screen and participate enthusiastically is truly a heartwarming feeling.",
   },
   {
     name: "Ms. Topcee Ahuja",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
+    img: "/assets/testimonial/Bhanupriya-Singh.jpg",
     quote:
       "The pandemic made us consider things we never thought about before. Sometimes, it takes major disruptions to force us to change. Being able to come together and connect has been so meaningful, exciting, and challenging — but we're definitely all set to deal with the 'new normal' flexibly and successfully.",
   },
