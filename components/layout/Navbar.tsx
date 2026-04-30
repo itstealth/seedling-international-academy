@@ -17,6 +17,7 @@ const navItems = [
     { name: "Curriculum", href: "/curriculum" },
     { name: "Result", href: "/result" },
     { name: "Faculty", href: "/faculty" },
+    { name: "Learning Support", href: "/learning-support" },
   ]},
   { name: "School Life", href: "/school-life" },
   { name: "Campus", href: "/campus-highlights" },
