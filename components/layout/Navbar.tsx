@@ -10,7 +10,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about", dropdown: [
-    { name: "About Us", href: "/about" },
+    { name: "About Seedling", href: "/about" },
     { name: "Leadership", href: "/about/leadership" },
   ]},
   { name: "Academics", href: "/academics", dropdown: [
