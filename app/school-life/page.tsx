@@ -269,7 +269,7 @@ function MasonryGallery() {
   const [lightbox, setLightbox] = useState<(typeof galleryItems)[0] | null>(null);
 
   return (
-    <section id="gallery" className="py-24 bg-navy-deeper relative overflow-hidden">
+    <section id="gallery" className="py-16 pb-8 bg-navy-deeper relative overflow-hidden">
       {/* Subtle background texture */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -385,7 +385,7 @@ function MasonryGallery() {
 
 function SportsSection() {
   return (
-    <section className="py-24 bg-off-white relative overflow-hidden">
+    <section className="py-16 pb-8 bg-off-white relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-sand/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-navy-deeper/5 rounded-full translate-x-1/3 translate-y-1/3" />
@@ -470,7 +470,7 @@ function SportsSection() {
 
 function ActivitiesGrid() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-16 pb-8 bg-white relative">
       {/* Large decorative text */}
       <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
         <span className="text-[10rem] font-black text-navy-deeper/[0.03] leading-none font-playfair">BEYOND</span>
@@ -540,7 +540,7 @@ function ExperienceSection() {
   const current = experiences[active];
 
   return (
-    <section className="py-24 bg-navy-deeper relative overflow-hidden">
+    <section className="py-16 pb-8 bg-navy-deeper relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <svg viewBox="0 0 600 800" className="w-full h-full">
@@ -638,10 +638,10 @@ function GalleryStrip() {
   };
 
   return (
-    <section className="py-24 bg-off-white relative overflow-hidden">
+    <section className="py-16 pb-8 bg-off-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex items-end justify-between mb-8">
           <div>
             <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
               Highlight Reel
@@ -705,9 +705,9 @@ function GalleryStrip() {
 
 function FeaturesSection() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="pt-10 pb-8 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Our Difference
           </span>
@@ -749,7 +749,7 @@ function FeaturesSection() {
 
 function CTASection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
