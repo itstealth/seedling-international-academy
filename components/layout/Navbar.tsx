@@ -8,6 +8,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 
 const navItems = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about", dropdown: [
     { name: "About Us", href: "/about" },
     { name: "Leadership", href: "/about/leadership" },

@@ -8,8 +8,8 @@ export default function Footer() {
       {/* Mesh Gradient Decoration */}
       <div className="absolute top-0 right-0 w-[60%] h-[60%] mesh-gradient opacity-[0.03] pointer-events-none" />
       
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-14 md:pt-32 pb-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-24 mb-8">
           
           {/* Column 1: Brand (Desktop Spans 4) */}
           <div className="lg:col-span-5 space-y-12">

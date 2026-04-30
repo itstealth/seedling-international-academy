@@ -159,12 +159,12 @@ export default function SeedlingPage(): React.JSX.Element {
       </div>
 
       {/* ─── ABOUT SCHOOL ─── */}
-      <section className="bg-off-white pt-16 pb-8" id="about">
+      <section className="bg-off-white py-8 md:pt-16 md:pb-8" id="about">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             {/* Images */}
             <div className="relative">
-              <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[560px]">
+              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
                   <img src="/assets/SPARKLE FEST/3.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
@@ -175,8 +175,8 @@ export default function SeedlingPage(): React.JSX.Element {
                   <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
-                <span className="block text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
+              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
+                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
                 <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function SeedlingPage(): React.JSX.Element {
       {/* ─── WHY SEEDLING ─── */}
       <section className="bg-off-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
               <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-12">
@@ -512,7 +512,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative py-48 overflow-hidden bg-navy-deeper">
+      <section className="relative py-24 md:py-48 overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
