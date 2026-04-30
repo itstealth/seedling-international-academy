@@ -168,7 +168,7 @@ function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
         style={{
           backgroundImage:
-            "url('/assets/Home/classroom.jpg')",
+            "url('/assets/about/about-banner.jpg')",
         }}
       />
 
@@ -272,12 +272,12 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="/assets/ANNUAL FUNCTION/1.webp"
+                src="/assets/about/empowering-about.png"
                 alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
               />
               <img
-                src="/assets/PRIMARY OUTING/1.webp"
+                src="/assets/about/grow.jpg"
                 alt="Seedling Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
@@ -344,7 +344,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/feature-education.png"
+          src="/assets/about/feature-education.png"
           alt="Seedling Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
