@@ -46,9 +46,9 @@ export default function SeedlingPage(): React.JSX.Element {
   // Infrastructure tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
+      { img: '/assets/Home/smart-classroom.jpg', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
       { img: '/assets/ANNUAL FUNCTION/1.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
-      { img: '/assets/STELLAR SATURDAYS/2.webp', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
-      { img: '/assets/STELLAR SATURDAYS/3.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
+      { img: '/assets/Home/library.jpg', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
       { img: '/assets/BOOT CAMP/2.webp', alt: 'Science Lab', tag: 'Science', title: 'Advanced Science Labs', desc: 'Physics, Chemistry, and Biology labs equipped with latest apparatus enabling hands-on experimental learning.' },
@@ -87,9 +87,11 @@ export default function SeedlingPage(): React.JSX.Element {
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
             CBSE Affiliated · Jaipur
           </div>
-          <h1 className="font-playfair text-[clamp(2.5rem,7vw,5.5rem)] text-white leading-[1] font-light max-w-4xl mb-8">
-            Where Every Child Finds Their <br />
-            <em className="font-semibold text-sand italic">Wings</em>
+<
+          <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
+            Where Every Child Finds Their 
+            <em className="font-semibold text-sand italic ml-2">Wings</em>
+
           </h1>
           <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
             Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1994.
@@ -143,13 +145,13 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative">
               <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[560px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/ANNUAL FUNCTION/1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/SPARKLE FEST/3.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
                   <img src="/assets/STELLAR SATURDAYS/6.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="/assets/SPORTS DAY/3.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
@@ -326,10 +328,10 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
           <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
             {[
-              { src: '/assets/ANNUAL FUNCTION/6.webp', label: 'School Campus', className: 'col-span-2 row-span-2' },
-              { src: '/assets/STELLAR SATURDAYS/3.webp', label: 'Smart Classrooms' },
-              { src: '/assets/BOOT CAMP/4.webp', label: 'Activities', className: 'col-span-2' },
-              { src: '/assets/SPORTS DAY/1.webp', label: 'Sports' },
+              { src: '/assets/DIWALI DANCE BEATS/1.webp', label: 'Diwali Dance Beats', className: 'col-span-2 row-span-2' },
+              { src: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip', className: '' },
+              { src: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing', className: 'col-span-2' },
+              { src: '/assets/SPORTS DAY/3.webp', label: 'Sports Day', className: '' },
             ].map(({ src, label, className = "" }) => (
               <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
                 <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
