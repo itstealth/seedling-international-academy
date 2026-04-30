@@ -290,7 +290,104 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CORE VALUES OF SEEDLINGS */}
+      {/* ══════════════════════════════════════════════════════════════
+          CORE VALUES
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 md:py-24 bg-navy-light/10 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-sand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+          <Reveal className="text-center mb-16">
+            <p className="font-playfair text-crimson text-xl italic mb-3">Our Guiding Principles</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+              Core Values of <em className="font-semibold text-navy">Seedlings</em>
+            </h2>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                title: "Integrity",
+                desc: "Being honest and ethical in all actions.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                color: "text-crimson",
+                bg: "bg-crimson/10",
+              },
+              {
+                title: "Respect",
+                desc: "Valuing self, others, and the environment.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                ),
+                color: "text-navy",
+                bg: "bg-navy/10",
+              },
+              {
+                title: "Responsibility",
+                desc: "Taking ownership of actions and duties.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                color: "text-mauve",
+                bg: "bg-mauve/10",
+              },
+              {
+                title: "Excellence",
+                desc: "Striving to achieve the best in everything.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                ),
+                color: "text-sand",
+                bg: "bg-sand/10",
+              },
+              {
+                title: "Empathy",
+                desc: "Understanding and caring for others.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                ),
+                color: "text-crimson",
+                bg: "bg-crimson/10",
+              },
+              {
+                title: "Discipline",
+                desc: "Maintaining consistency and self-control.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                ),
+                color: "text-navy",
+                bg: "bg-navy/10",
+              },
+            ].map((value, i) => (
+              <Reveal key={value.title} delay={i * 100}>
+                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-off-white hover:border-sand/40 group h-full flex flex-col items-center text-center">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${value.bg} ${value.color} group-hover:scale-110 transition-transform duration-500`}>
+                    {value.icon}
+                  </div>
+                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-navy-deeper">{value.title}</h3>
+                  <p className="text-text-light text-base leading-relaxed font-dm">{value.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════════════════
           3. TIMELINE
