@@ -12,6 +12,7 @@ const navItems = [
   { name: "Academics", href: "/academics", dropdown: [
     { name: "Academics", href: "/academics" },
     { name: "Result", href: "/result" },
+    { name: "Faculty", href: "/faculty" },
   ]},
   { name: "School Life", href: "/school-life" },
   { name: "Campus", href: "/campus-highlights" },

@@ -374,8 +374,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           5. ACHIEVEMENTS
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
-        {/* decorative layers */}
+      {/* <section className="py-32 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-mauve/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
@@ -404,7 +403,6 @@ export default function AcademicsPage() {
             ))}
           </div>
 
-          {/* Full-width 100% results banner */}
           <Reveal delay={200}>
             <div className="mt-20 bg-navy-deeper/60 border border-white/10 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
@@ -422,7 +420,7 @@ export default function AcademicsPage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════════
           JOYRIDE — WHAT SEEDLING OFFERS
@@ -468,7 +466,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           6. FACULTY
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      {/* <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>
@@ -503,7 +501,6 @@ export default function AcademicsPage() {
             ))}
           </div>
 
-          {/* faculty descriptor */}
           <Reveal delay={100}>
             <div className="mt-16 grid md:grid-cols-3 gap-6">
               {[
@@ -522,7 +519,7 @@ export default function AcademicsPage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════════
           7. CTA
