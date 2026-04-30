@@ -33,9 +33,8 @@ function Reveal({
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${className}`}
+      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        } ${className}`}
     >
       {children}
     </div>
@@ -98,25 +97,25 @@ const learningApproaches = [
   {
     title: "Aligned With National Education Policy (NEP)",
     body: "Our curriculum is thoughtfully designed to align with the latest educational standards and practices outlined by the NEP, ensuring our students receive a relevant and future-ready education. We focus on critical thinking, creativity, and empathy — preparing every student for the dynamic challenges of tomorrow.",
-    img: "https://seedlingschools.com/assets/img/feature-1.jpg",
+    img: "/assets/Home/classroom.jpg",
     tag: "Learning Philosophy",
   },
   {
     title: "Technology Integrated Innovative Education",
     body: "We embrace the power of technology in education. Our classrooms are equipped with interactive whiteboards, and we integrate educational apps and online resources to create an engaging and dynamic learning experience. Students are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
-    img: "https://seedlingschools.com/assets/img/techintegrate.jpg",
+    img: "/assets/Home/smart-classroom.jpg",
     tag: "Innovation",
   },
   {
     title: "Thrust on Experiential Learning",
     body: "We believe that learning should be immersive and hands-on. Through experiential learning activities — practical experiments, outdoor excursions, and interactive projects — we foster critical thinking, problem-solving skills, and a genuine love for learning in every student.",
-    img: "https://seedlingschools.com/assets/img/feature-4.jpg",
+    img: "/assets/BOOT CAMP/2.webp",
     tag: "Student Wellbeing",
   },
   {
     title: "Effective Feedback & Parent Partnership",
     body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
-    img: "https://seedlingschools.com/assets/img/feature-5.jpg",
+    img: "/assets/Home/library.jpg",
     tag: "Community",
   },
 ];
@@ -126,21 +125,21 @@ const programs = [
     level: "Early Years & Primary",
     range: "Playgroup – Class V",
     desc: "Building strong foundations in literacy, numeracy, and curiosity. At Seedling Wonderland Kids League and our primary wings, play-based and inquiry-led learning nurture a genuine love for discovery from the very beginning.",
-    img: "https://seedlingschools.com/assets/img/swkl.jpg",
+    img: "/assets/PRIMARY OUTING/2.webp",
     color: "from-amber-500/80",
   },
   {
     level: "Middle School",
     range: "Classes VI – VIII",
     desc: "Deepening knowledge across disciplines while nurturing self-confidence, ethical reasoning, and a global outlook. Students participate in Olympiads, academic challenges, and collaborative projects — becoming engaged, responsible, and innovative thinkers.",
-    img: "https://seedlingschools.com/assets/img/sps-school.jpg",
+    img: "/assets/Home/classroom.jpg",
     color: "from-sky-700/80",
   },
   {
     level: "Senior Secondary",
     range: "Classes IX – XII",
     desc: "Rigorous CBSE and Cambridge IGCSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams. Our consistent 100% board results speak to the academic rigour and dedication of our students and faculty.",
-    img: "https://seedlingschools.com/assets/img/sia.jpg",
+    img: "/assets/Home/smart-classroom.jpg",
     color: "from-emerald-700/80",
   },
 ];
@@ -341,7 +340,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
               Cambridge Learner Profile
             </span>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-white">
               We Shape <em className="font-semibold text-sand">5 Kinds</em><br />of Learners
             </h2>
           </Reveal>
@@ -426,7 +425,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
               Roll of Honour
             </span>
-            <h2 className="font-playfair text-5xl md:text-7xl font-light">
+            <h2 className="font-playfair text-5xl md:text-7xl font-light text-white">
               Numbers That<br />
               <em className="font-semibold text-sand">Tell Our Story</em>
             </h2>
@@ -582,7 +581,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
               Admissions Open 2026–27
             </span>
-            <h2 className="font-playfair text-5xl md:text-8xl font-light mb-8">
+            <h2 className="font-playfair text-5xl md:text-8xl font-light mb-8 text-white">
               Join the<br />
               <em className="font-semibold text-sand">Seedling Family</em>
             </h2>

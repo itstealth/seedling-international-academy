@@ -51,49 +51,49 @@ const timeline = [
     year: "1992",
     title: "The Seed is Planted",
     desc: "Late Ms. Mohini Bakshi founded Seedling Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
-    img: "https://seedlingschools.com/assets/img/about-banner.jpg",
+    img: "/assets/Home/classroom.jpg",
     side: "right",
   },
   {
     year: "1998",
     title: "Growing Roots in Jawahar Nagar",
     desc: "Seedling Public School (CBSE) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
-    img: "https://seedlingschools.com/assets/img/sps-banner.jpg",
+    img: "/assets/ANNUAL FUNCTION/7.webp",
     side: "left",
   },
   {
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "https://seedlingschools.com/assets/img/sps-1.jpg",
+    img: "/assets/SPORTS DAY/2.webp",
     side: "right",
   },
   {
     year: "2010",
     title: "Going Global — Cambridge Curriculum",
     desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
-    img: "https://seedlingschools.com/assets/img/sps-2.jpg",
+    img: "/assets/Home/smart-classroom.jpg",
     side: "left",
   },
   {
     year: "2015",
     title: "Seedling Modern International Academy",
     desc: "A second Cambridge-affiliated institution — Seedling Modern International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
-    img: "https://seedlingschools.com/assets/img/sps-3.jpg",
+    img: "/assets/Home/library.jpg",
     side: "right",
   },
   {
     year: "2018",
     title: "Nurturing the Youngest Minds",
     desc: "Seedling Wonderland Kids League was born — a thoughtfully designed early-years environment at both campuses that recognises play as the most powerful form of learning.",
-    img: "https://seedlingschools.com/assets/img/admission.jpg",
+    img: "/assets/PRIMARY OUTING/1.webp",
     side: "left",
   },
   {
     year: "Today",
     title: "20,000+ Lives Shaped & Counting",
     desc: "Today the Seedling Group spans 5 schools, 2 campuses, CBSE and Cambridge boards, and serves over 20,000 students — with alumni spread across 50+ nations and a 100% board result record.",
-    img: "https://seedlingschools.com/assets/img/empowering-about.png",
+    img: "/assets/ANNUAL FUNCTION/1.webp",
     side: "right",
   },
 ];
@@ -142,12 +142,12 @@ const leaders = [
 ];
 
 const campusImages = [
-  { src: "https://seedlingschools.com/assets/img/about-banner.jpg", label: "Main Campus", span: "col-span-2 row-span-2" },
-  { src: "https://seedlingschools.com/assets/img/sps-2.jpg", label: "Science Labs", span: "col-span-1 row-span-1" },
-  { src: "https://seedlingschools.com/assets/img/feature-3.jpg", label: "Library", span: "col-span-1 row-span-1" },
-  { src: "https://seedlingschools.com/assets/img/smhs-sports.jpg", label: "Sports Ground", span: "col-span-1 row-span-1" },
-  { src: "https://seedlingschools.com/assets/img/admission.jpg", label: "Kindergarten", span: "col-span-1 row-span-1" },
-  { src: "https://seedlingschools.com/assets/img/sps-3.jpg", label: "Classrooms", span: "col-span-2 row-span-1" },
+  { src: "/assets/Home/classroom.jpg", label: "Main Campus", span: "col-span-2 row-span-2" },
+  { src: "/assets/Home/smart-classroom.jpg", label: "Science Labs", span: "col-span-1 row-span-1" },
+  { src: "/assets/Home/library.jpg", label: "Library", span: "col-span-1 row-span-1" },
+  { src: "/assets/SPORTS DAY/1.webp", label: "Sports Ground", span: "col-span-1 row-span-1" },
+  { src: "/assets/PRIMARY OUTING/2.webp", label: "Kindergarten", span: "col-span-1 row-span-1" },
+  { src: "/assets/Home/classroom.jpg", label: "Classrooms", span: "col-span-2 row-span-1" },
 ];
 
 const stats = [
@@ -169,7 +169,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/about-banner.jpg"
+          src="/assets/Home/classroom.jpg"
           alt="Seedling Group of Schools Campus"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-100"
         />
@@ -285,12 +285,12 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="https://seedlingschools.com/assets/img/empowering-about.png"
+                src="/assets/ANNUAL FUNCTION/1.webp"
                 alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
               />
               <img
-                src="https://seedlingschools.com/assets/img/admission.jpg"
+                src="/assets/PRIMARY OUTING/1.webp"
                 alt="Seedling Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
@@ -494,7 +494,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative">
               <img
-                src="https://seedlingschools.com/assets/img/messanger.jpg"
+                src="/assets/Home/smart-classroom.jpg"
                 alt="Dr. Sandeep Bakshi, Director Seedling Group"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
               />
