@@ -220,8 +220,8 @@ export default function AcademicsPage() {
         <Reveal className="text-center mb-16">
           {/* <Tag color="navy">Curriculum Overview</Tag> */}
           <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
-            Two Boards
-            <em className="font-semibold text-crimson ml-2">One Vision</em>
+            About
+            <em className="font-semibold text-crimson ml-2">Curriculum</em>
           </h2>
         </Reveal>
 
@@ -354,7 +354,7 @@ export default function AcademicsPage() {
                   alt={p.level}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/80 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
                   <span className="text-white/70 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
@@ -523,7 +523,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           7. CTA
       ══════════════════════════════════════════════════════ */}
-      <section className="relative py-48 overflow-hidden">
+      <section className="relative md:py-24 py-16 overflow-hidden">
         <img
           src="https://seedlingschools.com/assets/img/life-at-sps.jpg"
           alt="Join Seedling Schools"
@@ -537,7 +537,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
               Admissions Open 2026–27
             </span>
-            <h2 className="font-playfair text-5xl md:text-8xl font-light mb-8 text-white">
+            <h2 className="font-playfair text-3xl md:text-5xl font-light mb-8 text-white">
               Join the<br />
               <em className="font-semibold text-sand">Seedling Family</em>
             </h2>
