@@ -306,7 +306,7 @@ export default function AboutPage() {
           <div className="relative timeline-line">
             {timeline.map((item, i) => (
               <Reveal key={item.year} delay={i * 60}>
-                <div className={`relative flex flex-col md:flex-row items-center gap-8 mb-24 ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
+                <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i===5 ? "mb-4" : "mb-24"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
                   {/* dot */}
                   <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy rounded-full ring-4 ring-navy-light z-10 hidden md:block" />
 
