@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 // ─── Scroll Reveal ────────────────────────────────────────────────────────────
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
+function useReveal<T extends HTMLElement = HTMLDivElement>() {
+  const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -516,7 +516,7 @@ const newsItems = [
 ];
 
 function NewsCard({ item = newsItems[0], large = false, delay = 0 }: { item?: (typeof newsItems)[0]; large?: boolean; delay?: number }) {
-  const { ref, visible } = useReveal();
+  const { ref, visible } = useReveal<HTMLAnchorElement>();
   return (
     <a
       href="#"
