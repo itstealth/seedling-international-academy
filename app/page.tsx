@@ -11,6 +11,26 @@ export default function SeedlingPage(): React.JSX.Element {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
+  const [currentTestimonial, setCurrentTestimonial] = useState<number>(0);
+
+  // Auto-scroll testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 3));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const testimonials = [
+    { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta & Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
+    { avatar: '/assets/testimonial/Soniya-Yadav.jpg', name: 'Narendra Kumar Sharma & Soniya Yadav', role: 'Parents · Vaishali Nagar', text: 'The school provides holistic education, nurturing academic growth, creativity, and confidence. Teachers go beyond teaching and create a motivating environment for children.' },
+    { avatar: '/assets/testimonial/Bhanupriya-Singh.jpg', name: 'Bhanupriya Singh', role: 'Parent · MI Road', text: 'The academic programme is well planned and balanced with co-curricular activities. Teachers and management are doing a great job in grooming children.' },
+    { avatar: '/assets/testimonial/Anita-Gupta.jpg', name: 'Mrs. Anita Gupta', role: 'Parent · Raja Park', text: 'The curriculum and teaching methods are impressive. Worksheets and activities help children think beyond textbooks.' },
+    { avatar: '/assets/testimonial/ibha-chadra.jpg', name: 'Ibha Chhabra', role: 'Parent · Jhotwara', text: 'We are grateful for the care, dedication, and guidance provided by the teachers and school management.' },
+    { avatar: '/assets/testimonial/aditi-sharma.jpg', name: 'Aditi Sharma', role: 'Parent · Vaishali Nagar', text: "Aligned with NEP, the school provides modern and relevant education, giving us confidence in our child's future." },
+    { avatar: '/assets/testimonial/Sweta-Shrivastava.jpg', name: 'Sweta Shrivastava', role: 'Parent · MI Road', text: 'Technology integration makes learning interactive and helps children build essential digital skills for the future.' },
+    { avatar: '/assets/testimonial/Muskan-Rupani.jpg', name: 'Muskan Rupani', role: 'Parent · Jaipur', text: 'The school sets high standards in education with skilled teachers ensuring overall personality development.' },
+  ];
 
   // Sticky nav shadow on scroll
   useEffect(() => {
@@ -139,7 +159,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </div>
 
       {/* ─── ABOUT SCHOOL ─── */}
-      <section className="bg-off-white py-32" id="about">
+      <section className="bg-off-white pt-16 pb-8" id="about">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             {/* Images */}
@@ -196,7 +216,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── INFRASTRUCTURE / CAMPUS TABS ─── */}
-      <section className="bg-white py-32" id="campus">
+      <section className="bg-white pt-16 pb-8" id="campus">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
@@ -242,7 +262,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── SPORTS ─── */}
-      <section className="bg-navy-deeper py-32 relative overflow-hidden">
+      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-20">
@@ -277,7 +297,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── WHY SEEDLING ─── */}
-      <section className="bg-off-white py-32">
+      <section className="bg-off-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
@@ -316,7 +336,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── STUDENT GALLERY ─── */}
-      <section className="bg-white py-32">
+      <section className="bg-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -346,7 +366,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-off-white py-32">
+      <section className="bg-off-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
@@ -354,13 +374,11 @@ export default function SeedlingPage(): React.JSX.Element {
               Voices from the <em className="font-semibold text-navy italic">Family</em>.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { avatar: 'https://randomuser.me/api/portraits/women/44.jpg', name: 'Sunita Sharma', role: 'Parent of Grade 8 student', text: "Seedling transformed my daughter's confidence completely. The teachers genuinely care — she went from being shy to performing on stage." },
-              { avatar: 'https://randomuser.me/api/portraits/men/46.jpg', name: 'Rajesh Gupta', role: 'Parent of Grade 11 student', text: "My son has been at Seedling since Grade 1. Now in Grade 11, he's represented Rajasthan in cricket AND secured 94% in his boards." },
-              { avatar: 'https://randomuser.me/api/portraits/women/68.jpg', name: 'Priya Mehta', role: 'Parent of Grade 4 student', text: "The parent-teacher communication is excellent. I always know how my child is progressing. The counselling sessions helped so much." },
-            ].map(({ avatar, name, role, text }) => (
-              <div key={name} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
+
+          {/* Cards Grid - showing 3 at a time with auto-scroll */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {testimonials.slice(currentTestimonial, currentTestimonial + 3).map(({ avatar, name, role, text }, i) => (
+              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
                 <span className="block text-7xl leading-none text-sand font-playfair mb-4 group-hover:scale-110 transition-transform">"</span>
                 <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
                 <div className="flex items-center gap-4 border-t border-sand/40 pt-8">
@@ -375,11 +393,22 @@ export default function SeedlingPage(): React.JSX.Element {
               </div>
             ))}
           </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-3 mt-10">
+            {[0, 3].map((startIdx) => (
+              <button
+                key={startIdx}
+                onClick={() => setCurrentTestimonial(startIdx)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === startIdx ? 'bg-navy w-8' : 'bg-sand/40 hover:bg-sand'}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-navy-deeper py-32 relative overflow-hidden">
+      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex items-end justify-between mb-20">
