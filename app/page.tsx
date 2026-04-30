@@ -46,9 +46,9 @@ export default function SeedlingPage(): React.JSX.Element {
   // Infrastructure tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
+      { img: '/assets/Home/smart-classroom.jpg', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
       { img: '/assets/ANNUAL FUNCTION/1.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
-      { img: '/assets/STELLAR SATURDAYS/2.webp', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
-      { img: '/assets/STELLAR SATURDAYS/3.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
+      { img: '/assets/Home/library.jpg', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
       { img: '/assets/BOOT CAMP/2.webp', alt: 'Science Lab', tag: 'Science', title: 'Advanced Science Labs', desc: 'Physics, Chemistry, and Biology labs equipped with latest apparatus enabling hands-on experimental learning.' },
@@ -143,13 +143,13 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative">
               <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[560px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/ANNUAL FUNCTION/1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/SPARKLE FEST/3.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
                   <img src="/assets/STELLAR SATURDAYS/6.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="/assets/SPORTS DAY/3.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
