@@ -345,7 +345,7 @@ function ApplyModal({
                 <input
                   required type="text" placeholder="Your full name"
                   value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                 />
               </div>
 
@@ -357,7 +357,7 @@ function ApplyModal({
                 <select
                   required value={form.qualification}
                   onChange={(e) => setForm({ ...form, qualification: e.target.value })}
-                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                 >
                   <option value="">Select qualification</option>
                   {qualifications.map((q) => (
@@ -375,7 +375,7 @@ function ApplyModal({
                   <input
                     required type="email" placeholder="your@email.com"
                     value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                   />
                 </div>
                 <div>
@@ -385,7 +385,7 @@ function ApplyModal({
                   <input
                     required type="tel" placeholder="+91 XXXXX XXXXX"
                     value={form.mobile} onChange={(e) => setForm({ ...form, mobile: e.target.value })}
-                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                   />
                 </div>
               </div>
@@ -398,7 +398,7 @@ function ApplyModal({
                 <select
                   required value={form.experience}
                   onChange={(e) => setForm({ ...form, experience: e.target.value })}
-                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                 >
                   <option value="">Select experience</option>
                   {experiences.map((ex) => (
@@ -416,7 +416,7 @@ function ApplyModal({
                 <input
                   type="text" placeholder="e.g. Mathematics, Science, English…"
                   value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                  className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#CCC] focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                 />
               </div>
 
@@ -429,7 +429,7 @@ function ApplyModal({
                   <select
                     required value={form.board}
                     onChange={(e) => setForm({ ...form, board: e.target.value })}
-                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                   >
                     <option value="">Select</option>
                     <option>CBSE</option>
@@ -444,7 +444,7 @@ function ApplyModal({
                   <select
                     value={form.classes}
                     onChange={(e) => setForm({ ...form, classes: e.target.value })}
-                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                    className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                   >
                     <option value="">Select</option>
                     <option>Primary (I–V)</option>
@@ -460,9 +460,9 @@ function ApplyModal({
                 <label className="block text-xs font-semibold text-[#555] tracking-wide uppercase mb-1.5">
                   Upload CV / Resume *
                 </label>
-                <label className="flex items-center gap-4 border-2 border-dashed border-[#E8E3DA] hover:border-emerald-300 rounded-xl px-5 py-4 cursor-pointer transition-colors duration-200 group">
-                  <div className="w-10 h-10 bg-emerald-50 group-hover:bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-200">
-                    <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label className="flex items-center gap-4 border-2 border-dashed border-[#E8E3DA] hover:border-navy-light rounded-xl px-5 py-4 cursor-pointer transition-colors duration-200 group">
+                  <div className="w-10 h-10 bg-navy/5 group-hover:bg-navy/10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+                    <svg className="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
@@ -528,7 +528,7 @@ export default function CareersPage() {
       ══════════════════════════════════════════════════ */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?w=1800&q=85"
+          src="/assets/Home/classroom.jpg"
           alt="Careers at Seedling"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-100"
         />
@@ -808,7 +808,7 @@ export default function CareersPage() {
                     phone: "+91 74130 12351",
                     landline: "0141-3623000",
                     email: "seedlingacademy@hotmail.com",
-                    color: "border-l-emerald-500",
+                    color: "border-l-navy",
                   },
                   {
                     campus: "Durgapura Campus",
@@ -817,7 +817,7 @@ export default function CareersPage() {
                     phone: "+91 95877 72837",
                     landline: "0141-3624000",
                     email: "smhsjaipur@jnujaipur.ac.in",
-                    color: "border-l-sky-500",
+                    color: "border-l-crimson",
                   },
                 ].map((campus) => (
                   <div
@@ -825,7 +825,7 @@ export default function CareersPage() {
                     className={`bg-white border border-[#E8E3DA] border-l-4 ${campus.color} rounded-2xl p-6 hover:shadow-md transition-shadow duration-300`}
                   >
                     <p className="display font-semibold text-lg text-[#1C1C1E] mb-0.5">{campus.campus}</p>
-                    <p className="text-emerald-600 text-xs font-semibold mb-4">{campus.schools}</p>
+                    <p className="text-navy text-xs font-semibold mb-4">{campus.schools}</p>
                     <div className="space-y-2 text-sm text-[#666]">
                       <p className="flex gap-2 items-start">
                         <span className="mt-0.5 flex-shrink-0">📍</span>
@@ -833,7 +833,7 @@ export default function CareersPage() {
                       </p>
                       <p className="flex gap-2 items-center">
                         <span>📞</span>
-                        <a href={`tel:${campus.phone}`} className="text-emerald-700 hover:underline font-medium">{campus.phone}</a>
+                        <a href={`tel:${campus.phone}`} className="text-navy hover:underline font-medium">{campus.phone}</a>
                       </p>
                       <p className="flex gap-2 items-center">
                         <span>☎️</span>
@@ -841,7 +841,7 @@ export default function CareersPage() {
                       </p>
                       <p className="flex gap-2 items-center">
                         <span>✉️</span>
-                        <a href={`mailto:${campus.email}`} className="text-emerald-700 hover:underline">{campus.email}</a>
+                        <a href={`mailto:${campus.email}`} className="text-navy hover:underline">{campus.email}</a>
                       </p>
                     </div>
                   </div>
@@ -864,21 +864,21 @@ export default function CareersPage() {
       ══════════════════════════════════════════════════ */}
       <section className="py-40 bg-[#1C1C1E] relative overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1800&q=80"
+          src="/assets/Home/smart-classroom.jpg"
           alt="Join the Seedling team"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1C1C1E]/95 to-emerald-950/70" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-emerald-600/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 to-crimson-dark/70" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-navy/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-emerald-400 text-xl italic mb-4 tracking-wide">
+            <p className="font-playfair text-sand text-xl italic mb-4 tracking-wide">
               Join the League
             </p>
-            <h2 className="display text-6xl md:text-7xl font-light leading-[1.05] mb-6">
+            <h2 className="font-playfair text-6xl md:text-7xl font-light leading-[1.05] mb-6">
               Reimagine<br />
-              <em className="font-semibold text-emerald-400">Education</em><br />
+              <em className="font-semibold text-sand">Education</em><br />
               With Us.
             </h2>
             <p className="text-white/55 text-lg leading-relaxed mb-12 max-w-md mx-auto">
@@ -889,7 +889,7 @@ export default function CareersPage() {
             <div className="flex gap-4 justify-center flex-wrap">
               <button
                 onClick={() => setOpenGeneral(true)}
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-full text-sm tracking-widest uppercase font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/30 hover:gap-4"
+                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full text-sm tracking-widest uppercase font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/30 hover:gap-4"
               >
                 Submit Interest Form
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

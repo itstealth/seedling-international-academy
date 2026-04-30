@@ -35,22 +35,22 @@ const pageStyles = `
 // ==========================================
 
 const galleryItems = [
-  { id: 1, src: "https://seedlingschools.com/assets/img/founderday18.jpg", title: "Founders Day", category: "Events", size: "large" },
-  { id: 2, src: "https://seedlingschools.com/assets/img/Mothersday9.jpg", title: "Mother's Day", category: "Celebrations", size: "small" },
-  { id: 3, src: "https://seedlingschools.com/assets/img/yoga1.jpg", title: "Yoga & Meditation", category: "Wellness", size: "small" },
-  { id: 4, src: "https://seedlingschools.com/assets/img/smhs-sport-carnival.jpg", title: "Sports Carnival", category: "Sports", size: "wide" },
-  { id: 5, src: "https://seedlingschools.com/assets/img/SMHS-Annual-Day.jpg", title: "SMHS Annual Day", category: "Events", size: "small" },
-  { id: 6, src: "https://seedlingschools.com/assets/img/Sps-annual-day.jpg", title: "SPS Annual Day", category: "Events", size: "large" },
-  { id: 7, src: "https://seedlingschools.com/assets/img/skaters.jpg", title: "Skaters Sunday Bash", category: "Activities", size: "small" },
-  { id: 8, src: "https://seedlingschools.com/assets/img/Christmas.jpeg", title: "Christmas Celebrations", category: "Festivals", size: "small" },
-  { id: 9, src: "https://seedlingschools.com/assets/img/cbse-result.jpg", title: "CBSE Result Celebrations", category: "Academics", size: "wide" },
-  { id: 10, src: "https://seedlingschools.com/assets/img/smhs-farewell.jpg", title: "SMHS Farewell", category: "Events", size: "small" },
-  { id: 11, src: "https://seedlingschools.com/assets/img/farewell-feature.jpg", title: "SPS Farewell Programme", category: "Events", size: "small" },
+  { id: 1, src: "/assets/ANNUAL FUNCTION/1.webp", title: "Founders Day", category: "Events", size: "large" },
+  { id: 2, src: "/assets/MOTHER_S DAY/2.webp", title: "Mother's Day", category: "Celebrations", size: "small" },
+  { id: 3, src: "/assets/WHISPERS OF WELLNESS/1.webp", title: "Yoga & Meditation", category: "Wellness", size: "small" },
+  { id: 4, src: "/assets/SPORTS DAY/1.webp", title: "Sports Carnival", category: "Sports", size: "wide" },
+  { id: 5, src: "/assets/ANNUAL FUNCTION/2.webp", title: "SMHS Annual Day", category: "Events", size: "small" },
+  { id: 6, src: "/assets/ANNUAL FUNCTION/3.webp", title: "SPS Annual Day", category: "Events", size: "large" },
+  { id: 7, src: "/assets/STELLAR SATURDAYS/1.webp", title: "Stellar Saturday", category: "Activities", size: "small" },
+  { id: 8, src: "/assets/XMAS CARNIVAL/1.webp", title: "Christmas Celebrations", category: "Festivals", size: "small" },
+  { id: 9, src: "/assets/CRICKET FEVER/1.webp", title: "Cricket Fever", category: "Sports", size: "wide" },
+  { id: 10, src: "/assets/ANNUAL FUNCTION/4.webp", title: "SMHS Farewell", category: "Events", size: "small" },
+  { id: 11, src: "/assets/ANNUAL FUNCTION/5.webp", title: "SPS Farewell Programme", category: "Events", size: "small" },
 ];
 
 const sportBlocks = [
   {
-    image: "https://seedlingschools.com/assets/img/smhs-sports.jpg",
+    image: "/assets/SPORTS DAY/2.webp",
     tag: "Athletics",
     title: "Sports at Par with Academics",
     body: "At Seedling Schools, sports remain at par with academics, instilling qualities of confidence, teamwork, responsibility, discipline, and leadership. Our organized sports events span from intra-school to national levels, showcasing tremendous growth in students' techniques and performance.",
@@ -58,7 +58,7 @@ const sportBlocks = [
     reverse: false,
   },
   {
-    image: "https://seedlingschools.com/assets/img/sportday-sps.jpg",
+    image: "/assets/SPORTS DAY/3.webp",
     tag: "Sports Day",
     title: "SPS Sports Day",
     body: "With a diverse range of sports activities, including traditional and contemporary options, we cater to every student's interests and needs. Our dedicated coaches shape well-rounded individuals, fostering a passion for sports and achieving notable success in tournaments.",
@@ -66,7 +66,7 @@ const sportBlocks = [
     reverse: true,
   },
   {
-    image: "https://seedlingschools.com/assets/img/smhs-sport-carnival.jpg",
+    image: "/assets/CRICKET FEVER/2.webp",
     tag: "Carnival",
     title: "SMHS Sports Carnival",
     body: "The SMHS Sports Carnival is a spectacular celebration of physical excellence and team spirit. Students from all grades come together in a festival of friendly competition, showcasing their athletic talents and boundless energy.",
@@ -179,37 +179,37 @@ const features = [
     icon: "📚",
     title: "Aligned With NEP",
     desc: "Our curriculum is thoughtfully designed to align with the National Education Policy, ensuring students receive future-ready education.",
-    image: "https://seedlingschools.com/assets/img/feature-1.jpg",
+    image: "/assets/Home/classroom.jpg",
   },
   {
     icon: "🔬",
     title: "State-of-the-Art Facilities",
     desc: "Modern classrooms, well-equipped science labs, and engaging outdoor spaces create an environment that enhances learning.",
-    image: "https://seedlingschools.com/assets/img/feature-2.jpg",
+    image: "/assets/Home/library.jpg",
   },
   {
     icon: "💻",
     title: "Technology Integrated Education",
     desc: "Interactive whiteboards, educational apps, and online resources create an engaging and dynamic learning experience.",
-    image: "https://seedlingschools.com/assets/img/techintegrate.jpg",
+    image: "/assets/Home/smart-classroom.jpg",
   },
   {
     icon: "🤝",
     title: "Experiential Learning",
     desc: "Practical experiments, outdoor excursions, and interactive projects foster critical thinking and a love for learning.",
-    image: "https://seedlingschools.com/assets/img/feature-4.jpg",
+    image: "/assets/BOOT CAMP/2.webp",
   },
   {
     icon: "💬",
     title: "Effective Feedback",
     desc: "Timely and constructive feedback from teachers maintains open communication with parents for continuous growth.",
-    image: "https://seedlingschools.com/assets/img/feature-5.jpg",
+    image: "/assets/BOOT CAMP/3.webp",
   },
   {
     icon: "🌱",
     title: "Holistic Well-being",
     desc: "We prioritize emotional, social, and physical well-being — nurturing every student, parent, and staff member.",
-    image: "https://seedlingschools.com/assets/img/feature-6.jpg",
+    image: "/assets/WHISPERS OF WELLNESS/3.webp",
   },
 ];
 
