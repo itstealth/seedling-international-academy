@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Trophy, Users, Music, Medal } from 'lucide-react';
+import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain } from 'lucide-react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -192,13 +192,15 @@ export default function SeedlingPage(): React.JSX.Element {
               </p>
               <div className="grid sm:grid-cols-2 gap-6 mb-12">
                 {[
-                  { icon: '📚', title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
-                  { icon: '🏆', title: 'Award-Winning', desc: "Rajasthan's top CBSE academic outcomes." },
-                  { icon: '🤝', title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
-                  { icon: '🧠', title: 'Mental Wellness', desc: 'Dedicated professional counsellors.' },
-                ].map(({ icon, title, desc }) => (
+                  { icon: BookOpen, title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
+                  { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top CBSE academic outcomes." },
+                  { icon: Heart, title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
+                  { icon: Brain, title: 'Mental Wellness', desc: 'Dedicated professional counsellors.' },
+                ].map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="flex gap-4 items-start p-6 bg-white rounded-3xl shadow-sm border border-sand/30 hover:border-navy/20 transition-all group">
-                    <div className="w-12 h-12 rounded-2xl bg-navy-light text-navy flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{icon}</div>
+                    <div className="w-12 h-12 rounded-2xl bg-navy-light text-navy flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Icon size={22} strokeWidth={2} />
+                    </div>
                     <div>
                       <h4 className="text-sm font-black text-navy-deeper mb-1 uppercase tracking-tight">{title}</h4>
                       <p className="text-xs text-text-light leading-relaxed font-light">{desc}</p>
@@ -368,7 +370,7 @@ export default function SeedlingPage(): React.JSX.Element {
       {/* ─── TESTIMONIALS ─── */}
       <section className="bg-off-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-14">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
             <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
               Voices from the <em className="font-semibold text-navy italic">Family</em>.
