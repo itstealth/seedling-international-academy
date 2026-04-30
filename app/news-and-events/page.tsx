@@ -99,8 +99,8 @@ export default function CampusHighlightsPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
           <Reveal delay={100}>
             <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
-              Campus<br />
-              <em className="font-semibold text-sand">Highlights</em>
+              News &<br />
+              <em className="font-semibold text-sand">Events</em>
             </h1>
           </Reveal>
         </div>

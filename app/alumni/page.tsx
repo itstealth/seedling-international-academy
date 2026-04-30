@@ -295,7 +295,7 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="font-playfair text-6xl md:text-8xl font-bold text-navy-deeper leading-[1.05] mb-6 tracking-tight">
+        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-[1.05] mb-6 tracking-tight">
           Celebrating Our{" "}
           <span className="relative inline-block">
             <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">

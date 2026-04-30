@@ -17,7 +17,7 @@ const pillars = [
 export default function VisionPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
+      <PageHero
         title="Vision & Mission"
         subtitle="The philosophical core of Seedling. Defining our purpose and the impact we strive to make on every student."
         image="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80"
@@ -76,8 +76,8 @@ export default function VisionPage() {
       {/* Final Journey CTA */}
       <section className="py-32 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-heading text-6xl md:text-8xl mb-16 italic font-serif">Experience <br /> <span className="text-primary tracking-tighter">Growth.</span></h2>
-          <Link 
+          <h2 className="text-heading text-4xl md:text-5xl mb-16 italic font-serif">Experience <br /> <span className="text-primary tracking-tighter">Growth.</span></h2>
+          <Link
             href="/admissions"
             className="inline-flex h-24 px-16 bg-neutral-950 text-white rounded-full items-center justify-center font-black text-2xl shadow-editorial hover:bg-primary transition-all group"
           >

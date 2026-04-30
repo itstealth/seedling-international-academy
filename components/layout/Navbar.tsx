@@ -20,7 +20,7 @@ const navItems = [
     { name: "Learning Support", href: "/learning-support" },
   ]},
   { name: "School Life", href: "/school-life" },
-  { name: "Campus", href: "/campus-highlights" },
+  { name: "News & Events", href: "/news-and-events" },
   { name: "Admissions", href: "/admissions" },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },

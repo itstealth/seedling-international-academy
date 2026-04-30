@@ -850,7 +850,7 @@ export default function SchoolLifePage() {
       
       <Hero />
       <MasonryGallery />
-      <SportsSection />
+      {/* <SportsSection /> */}
       <ActivitiesGrid />
       <ExperienceSection />
       <GalleryStrip />

@@ -35,9 +35,8 @@ function Reveal({
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${className}`}
+      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        } ${className}`}
     >
       {children}
     </div>
@@ -205,11 +204,10 @@ function JobCard({
               Urgent
             </span>
           )}
-          <span className={`text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border ${
-            role.type === "Teaching"
+          <span className={`text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border ${role.type === "Teaching"
               ? "bg-navy-light text-navy border-navy/20"
               : "bg-mauve/10 text-mauve border-mauve/20"
-          }`}>
+            }`}>
             {role.type}
           </span>
         </div>
@@ -542,7 +540,7 @@ export default function CareersPage() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="font-playfair text-white font-light leading-[1.05] text-6xl md:text-7xl lg:text-[6rem] max-w-3xl mb-6">
+            <h1 className="font-playfair text-white font-light leading-[1.05] text-4xl md:text-5xl lg:text-[6rem] max-w-3xl mb-6">
               The Hunt<br />
               <em className="font-semibold text-sand italic">Is On.</em>
             </h1>
@@ -674,11 +672,10 @@ export default function CareersPage() {
             {["All Roles", "Teaching", "Administrative", "CBSE", "Cambridge"].map((f, i) => (
               <button
                 key={f}
-                className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${
-                  i === 0
+                className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${i === 0
                     ? "bg-navy-deeper text-white border-navy-deeper"
                     : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
-                }`}
+                  }`}
               >
                 {f}
               </button>
@@ -876,7 +873,7 @@ export default function CareersPage() {
             <p className="font-playfair text-sand text-xl italic mb-4 tracking-wide">
               Join the League
             </p>
-            <h2 className="font-playfair text-6xl md:text-7xl font-light leading-[1.05] mb-6">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.05] mb-6">
               Reimagine<br />
               <em className="font-semibold text-sand">Education</em><br />
               With Us.

@@ -16,7 +16,7 @@ const routes = [
 export default function TransportFacilityPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
+      <PageHero
         title="Transport Facility"
         subtitle="Safety first, comfort always. A reliable network of modern buses connecting all corners of Jaipur."
         image="/assets/PRIMARY OUTING/1.webp"
@@ -24,13 +24,13 @@ export default function TransportFacilityPage() {
 
       <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
             <span className="text-label mb-8 block uppercase">Safe & Secure Transit</span>
-            <h2 className="text-heading text-6xl md:text-8xl mb-12">The Seedling <br /> Fleet.</h2>
+            <h2 className="text-heading text-4xl md:text-5xl mb-12">The Seedling <br /> Fleet.</h2>
             <p className="text-xl text-neutral-600 font-medium leading-relaxed mb-10">
               Our transportation system is managed with the highest standards of safety. Every bus is equipped with GPS tracking and is manned by trained staff.
             </p>
@@ -51,16 +51,16 @@ export default function TransportFacilityPage() {
               ))}
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="relative aspect-video rounded-[4rem] overflow-hidden shadow-editorial"
           >
-            <img 
-              src="/assets/PRIMARY OUTING/2.webp" 
-              alt="School Bus" 
+            <img
+              src="/assets/PRIMARY OUTING/2.webp"
+              alt="School Bus"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-primary/10" />
@@ -75,7 +75,7 @@ export default function TransportFacilityPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {routes.map((route, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,14 +114,14 @@ export default function TransportFacilityPage() {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-10 text-center">
           <ShieldCheck className="w-20 h-20 text-secondary mx-auto mb-12 drop-shadow-2xl" />
-          <h2 className="text-heading text-white text-6xl md:text-8xl mb-12 italic font-serif leading-tight">
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif leading-tight">
             Transport <br /> <span className="text-secondary tracking-tighter">Assistance.</span>
           </h2>
           <p className="text-white/60 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
             Need details for a specific lane or timing? Our transport helpdesk is available from 8 AM to 6 PM.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <a 
+            <a
               href="tel:+917413012351"
               className="h-24 px-12 bg-white text-neutral-950 rounded-full font-black text-xl flex items-center gap-4 hover:scale-105 transition-all shadow-editorial group"
             >
