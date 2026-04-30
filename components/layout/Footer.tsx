@@ -8,7 +8,7 @@ export default function Footer() {
       {/* Mesh Gradient Decoration */}
       <div className="absolute top-0 right-0 w-[60%] h-[60%] mesh-gradient opacity-[0.03] pointer-events-none" />
       
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-14 md:pt-32 pb-16 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-14 md:pt-20 pb-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-24 mb-8">
           
           {/* Column 1: Brand (Desktop Spans 4) */}
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Dynamic Bottom Bar */}
-        <div className="pt-16 border-t border-black/5 flex flex-col lg:flex-row justify-between items-center gap-10">
+        <div className="md:pt-6 pt-4 border-t border-black/5 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="flex items-center gap-6">
              <div className="w-12 h-12 rounded-xl bg-navy-light/10 border border-black/5 flex items-center justify-center font-black text-sand">©</div>
              <p className="text-sm font-black text-text-light opacity-60">
