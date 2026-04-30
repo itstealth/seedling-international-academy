@@ -322,7 +322,22 @@ const CheckIcon = () => (
   <svg width={14} height={14} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
   </svg>
-);
+)
+
+const CategoryBadge = ({ category, active, onClick }: { category: string, active: boolean, onClick: () => void }) => (
+  <button
+    role="tab"
+    aria-selected={active}
+    onClick={onClick}
+    className={`px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-200 font-dm
+      ${active 
+        ? "bg-navy-deeper text-white shadow-lg" 
+        : "bg-white text-navy-deeper border border-sand/40 hover:border-navy hover:bg-navy/5"
+      }`}
+  >
+    {category}
+  </button>
+)
 
 // ─────────────────────────────────────────────
 // PAGE COMPONENT
@@ -363,370 +378,253 @@ export default function BlogPage() {
   // RENDER
   // ─────────────────────────────────────────────
   return (
-    <>
-      {/* ── Google Fonts */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap');
+    <div className="min-h-screen bg-off-white font-dm">
+      
+      {/* ══════════════════ HERO ══════════════════ */}
+      <section className="relative py-20 md:py-28 px-6 overflow-hidden border-b border-sand/20">
+        {/* Background elements */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.03]" 
+          style={{ backgroundImage: 'radial-gradient(circle, #175190 1px, transparent 1px)', backgroundSize: '32px 32px' }}
+          aria-hidden="true" 
+        />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-light/30 to-transparent pointer-events-none" aria-hidden="true" />
         
-        .blog-container {
-          --serif: 'Lora', Georgia, serif;
-          --sans: 'Outfit', system-ui, sans-serif;
-          --green: #059669;
-          --green-light: #d1fae5;
-          --green-dark: #047857;
-          --stone-50: #fafaf9;
-          --stone-100: #f5f5f4;
-          --stone-200: #e7e5e4;
-          --stone-300: #d6d3d1;
-          --stone-400: #a8a29e;
-          --stone-500: #78716c;
-          --stone-600: #57534e;
-          --stone-800: #292524;
-          --stone-900: #1c1917;
-          --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-          --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
-          --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
-
-          font-family: var(--sans);
-          background: var(--stone-50);
-          color: var(--stone-900);
-          -webkit-font-smoothing: antialiased;
-        }
-
-        .blog-container * {
-          box-sizing: border-box;
-        }
-
-        .blog-container .serif { font-family: var(--serif); }
-        .blog-container img { display: block; max-width: 100%; }
-
-        /* hero */
-        .blog-container .hero { padding: 72px 24px 56px; position: relative; overflow: hidden; border-bottom: 1px solid var(--stone-100); }
-        .blog-container .hero-bg-dots { position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, var(--stone-200) 1px, transparent 0); background-size: 30px 30px; opacity: .5; pointer-events: none; }
-        .blog-container .hero-glow { position: absolute; right: 0; top: 0; width: 480px; height: 100%; background: radial-gradient(ellipse at 90% 50%, rgba(209,250,229,0.45) 0%, transparent 70%); pointer-events: none; }
-        .blog-container .hero-inner { position: relative; max-width: 1152px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
-        .blog-container .hero-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
-        .blog-container .hero-kicker-bar { width: 32px; height: 2px; background: var(--green); border-radius: 1px; }
-        .blog-container .hero-kicker-text { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green-dark); }
-        .blog-container .hero-h1 { font-family: var(--serif); font-size: clamp(38px, 5vw, 58px); font-weight: 700; line-height: 1.07; letter-spacing: -.02em; color: var(--stone-900); margin-bottom: 16px; }
-        .blog-container .hero-h1 em { font-style: italic; font-weight: 400; color: var(--stone-400); }
-        .blog-container .hero-desc { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--stone-500); max-width: 460px; margin-bottom: 32px; }
-        .blog-container .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
-        .blog-container .hero-stat-num { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--stone-900); line-height: 1; }
-        .blog-container .hero-stat-label { font-size: 12px; color: var(--stone-400); margin-top: 2px; font-weight: 500; }
-        .blog-container .hero-right { display: flex; flex-direction: column; gap: 10px; }
-        .blog-container .hero-pill { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--stone-100); border-radius: 40px; padding: 8px 14px; box-shadow: var(--shadow-sm); white-space: nowrap; }
-        .blog-container .hero-pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-        .blog-container .hero-pill-text { font-size: 12px; font-weight: 500; color: var(--stone-600); }
-        @media (max-width: 760px) { .blog-container .hero-right { display: none; } .blog-container .hero-inner { grid-template-columns: 1fr; } }
-
-        /* section label */
-        .blog-container .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
-        .blog-container .sl-text { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--stone-400); white-space: nowrap; }
-        .blog-container .sl-line { flex: 1; height: 1px; background: var(--stone-100); }
-
-        /* featured */
-        .blog-container .featured-section { padding: 48px 24px 40px; max-width: 1152px; margin: 0 auto; }
-        .blog-container .featured-card { display: grid; grid-template-columns: 55% 1fr; border-radius: 20px; overflow: hidden; background: white; border: 1px solid var(--stone-100); box-shadow: var(--shadow-sm); transition: box-shadow .4s; cursor: pointer; text-decoration: none; color: inherit; }
-        .blog-container .featured-card:hover { box-shadow: var(--shadow-lg); }
-        .blog-container .featured-img { position: relative; min-height: 380px; overflow: hidden; }
-        .blog-container .featured-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.25,.46,.45,.94); }
-        .blog-container .featured-card:hover .featured-img img { transform: scale(1.05); }
-        .blog-container .featured-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.18) 0%, transparent 60%); }
-        .blog-container .featured-badge-wrap { position: absolute; top: 20px; left: 20px; display: flex; gap: 6px; flex-wrap: wrap; }
-        .blog-container .badge { background: rgba(255,255,255,0.94); backdrop-filter: blur(4px); color: var(--stone-700, #44403c); font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 20px; letter-spacing: .05em; }
-        .blog-container .badge-green { background: var(--green); color: white; }
-        .blog-container .featured-content { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; }
-        .blog-container .featured-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-        .blog-container .meta-date { font-size: 12px; color: var(--stone-400); font-weight: 500; }
-        .blog-container .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--stone-300); }
-        .blog-container .meta-read { font-size: 12px; color: var(--stone-400); font-weight: 500; }
-        .blog-container .featured-title { font-family: var(--serif); font-size: clamp(20px, 2.4vw, 28px); font-weight: 700; line-height: 1.25; letter-spacing: -.01em; color: var(--stone-900); margin-bottom: 16px; transition: color .3s; }
-        .blog-container .featured-card:hover .featured-title { color: var(--green-dark); }
-        .blog-container .featured-excerpt { font-size: 14px; font-weight: 300; line-height: 1.78; color: var(--stone-500); margin-bottom: 32px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-        .blog-container .cta-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--green); transition: gap .25s; }
-        .blog-container .featured-card:hover .cta-link { gap: 12px; }
-        @media (max-width: 720px) { .blog-container .featured-card { grid-template-columns: 1fr; } .blog-container .featured-img { min-height: 240px; } .blog-container .featured-content { padding: 28px 24px; } }
-
-        /* grid section */
-        .blog-container .grid-section { max-width: 1152px; margin: 0 auto; padding: 0 24px 72px; }
-
-        /* filters */
-        .blog-container .filters-bar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 36px; }
-        .blog-container .filter-btn { padding: 8px 16px; border-radius: 24px; font-size: 12px; font-weight: 500; font-family: var(--sans); border: none; cursor: pointer; transition: all .2s; white-space: nowrap; }
-        .blog-container .filter-btn.inactive { background: var(--stone-100); color: var(--stone-500); }
-        .blog-container .filter-btn.inactive:hover { background: var(--stone-200); color: var(--stone-800); }
-        .blog-container .filter-btn.active { background: var(--stone-900); color: white; box-shadow: var(--shadow-sm); }
-
-        /* blog grid */
-        .blog-container .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        @media (max-width: 960px) { .blog-container .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 560px) { .blog-container .blog-grid { grid-template-columns: 1fr; } }
-
-        /* blog card */
-        .blog-container .blog-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid var(--stone-100); box-shadow: var(--shadow-sm); transition: box-shadow .3s, transform .3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-        .blog-container .blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-        .blog-container .card-img { position: relative; height: 196px; overflow: hidden; background: var(--stone-100); flex-shrink: 0; }
-        .blog-container .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-        .blog-container .blog-card:hover .card-img img { transform: scale(1.06); }
-        .blog-container .card-cat { position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); color: var(--stone-600); font-size: 9px; font-weight: 700; padding: 4px 9px; border-radius: 12px; letter-spacing: .05em; max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .blog-container .card-body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
-        .blog-container .card-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
-        .blog-container .card-date, .blog-container .card-read { font-size: 11px; color: var(--stone-400); font-weight: 500; }
-        .blog-container .card-dot { width: 2px; height: 2px; border-radius: 50%; background: var(--stone-300); }
-        .blog-container .card-title { font-family: var(--serif); font-size: 15.5px; font-weight: 600; line-height: 1.38; letter-spacing: -.005em; color: var(--stone-900); margin-bottom: 9px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color .25s; }
-        .blog-container .blog-card:hover .card-title { color: var(--green-dark); }
-        .blog-container .card-excerpt { font-size: 13px; font-weight: 300; line-height: 1.68; color: var(--stone-500); margin-bottom: 18px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .blog-container .card-cta { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--green); margin-top: auto; transition: gap .25s; }
-        .blog-container .blog-card:hover .card-cta { gap: 8px; }
-
-        /* empty state */
-        .blog-container .empty-state { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--stone-400); font-size: 15px; }
-
-        /* pagination */
-        .blog-container .pagination { display: flex; align-items: center; justify-content: center; gap: 6px; padding-top: 48px; flex-wrap: wrap; }
-        .blog-container .page-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--stone-200); background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--stone-500); font-family: var(--sans); transition: all .2s; }
-        .blog-container .page-btn:hover:not(:disabled) { border-color: var(--stone-400); color: var(--stone-900); }
-        .blog-container .page-btn.active { background: var(--stone-900); border-color: var(--stone-900); color: white; }
-        .blog-container .page-btn:disabled { opacity: .3; cursor: not-allowed; }
-        .blog-container .page-btn.nav-arrow { background: none; }
-
-        /* CTA */
-        .blog-container .cta-section { padding: 16px 24px 56px; max-width: 1152px; margin: 0 auto; }
-        .blog-container .cta-box { background: linear-gradient(140deg, #111827 0%, #1c1917 100%); border-radius: 24px; padding: 64px 48px; text-align: center; position: relative; overflow: hidden; }
-        .blog-container .cta-glow-1 { position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(5,150,105,0.15), transparent 70%); pointer-events: none; }
-        .blog-container .cta-glow-2 { position: absolute; bottom: -40px; left: -40px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(52,211,153,0.08), transparent 70%); pointer-events: none; }
-        .blog-container .cta-icon-wrap { width: 48px; height: 48px; border-radius: 14px; background: rgba(16,185,129,.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-        .blog-container .cta-kicker { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #34d399; margin-bottom: 14px; }
-        .blog-container .cta-title { font-family: var(--serif); font-size: clamp(26px,4vw,36px); font-weight: 700; color: white; letter-spacing: -.02em; margin-bottom: 12px; }
-        .blog-container .cta-desc { font-size: 14px; font-weight: 300; color: #9ca3af; line-height: 1.72; max-width: 380px; margin: 0 auto 32px; }
-        .blog-container .cta-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
-        .blog-container .cta-input { flex: 1; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: white; font-size: 13px; font-family: var(--sans); padding: 12px 18px; border-radius: 12px; outline: none; transition: border-color .2s; }
-        .blog-container .cta-input::placeholder { color: #6b7280; }
-        .blog-container .cta-input:focus { border-color: var(--green); }
-        .blog-container .cta-submit { background: var(--green); color: white; font-size: 13px; font-weight: 600; font-family: var(--sans); padding: 12px 24px; border-radius: 12px; border: none; cursor: pointer; transition: background .2s; white-space: nowrap; }
-        .blog-container .cta-submit:hover { background: #10b981; }
-        .blog-container .cta-success { display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,.15); color: #34d399; padding: 12px 24px; border-radius: 20px; font-size: 14px; font-weight: 600; border: 1px solid rgba(52,211,153,.25); }
-        @media (max-width: 520px) { .blog-container .cta-form { flex-direction: column; } .blog-container .cta-box { padding: 40px 24px; } }
-
-        /* fade-in animation */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-        .blog-container .fade-up { animation: fadeUp .5s ease both; }
-        .blog-container .delay-1 { animation-delay: .08s; }
-        .blog-container .delay-2 { animation-delay: .16s; }
-        .blog-container .delay-3 { animation-delay: .24s; }
-      `}</style>
-
-      <div className="blog-container" style={{ minHeight: "100vh" }}>
-
-        {/* ══════════════════ HERO ══════════════════ */}
-        <section className="hero">
-          <div className="hero-bg-dots" aria-hidden="true" />
-          <div className="hero-glow" aria-hidden="true" />
-          <div className="hero-inner">
-            <div className="hero-left fade-up">
-              <div className="hero-kicker">
-                <span className="hero-kicker-bar" />
-                <span className="hero-kicker-text">Seedling Schools Blog</span>
-              </div>
-              <h1 className="hero-h1 serif">
-                Stories, Ideas<br />&amp; <em>Insights</em>
-              </h1>
-              <p className="hero-desc">
-                Perspectives on education, child development, and the future of learning — thoughtfully curated for parents, educators, and curious minds across Jaipur.
-              </p>
-              <div className="hero-stats">
-                {[
-                  { num: "20+", label: "Articles Published" },
-                  { num: "20k+", label: "Students Served" },
-                  { num: "3 Decades", label: "Of Excellence" },
-                ].map(({ num, label }) => (
-                  <div key={label}>
-                    <div className="hero-stat-num serif">{num}</div>
-                    <div className="hero-stat-label">{label}</div>
-                  </div>
-                ))}
-              </div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="fade-up">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <span className="w-8 h-0.5 bg-crimson" />
+              <span className="text-crimson text-[10px] font-black tracking-[0.3em] uppercase">Seedling Schools Blog</span>
             </div>
-            <div className="hero-right fade-up delay-2">
+            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-navy-deeper leading-[1.1] mb-6">
+              Stories, Ideas<br />
+              <span className="text-sand">&amp; </span>
+              <em className="italic font-medium text-navy">Insights</em>
+            </h1>
+            <p className="text-text-light text-lg leading-relaxed mb-10 max-w-lg font-light">
+              Perspectives on education, child development, and the future of learning — thoughtfully curated for parents, educators, and curious minds across Jaipur.
+            </p>
+            <div className="flex flex-wrap gap-8">
               {[
-                { color: "#059669", label: "Student Development" },
-                { color: "#0284c7", label: "Cambridge Learning" },
-                { color: "#d97706", label: "Parental Resources" },
-                { color: "#7c3aed", label: "Mental Wellbeing" },
-                { color: "#db2777", label: "Early Education" },
-              ].map(({ color, label }) => (
-                <div key={label} className="hero-pill">
-                  <div className="hero-pill-dot" style={{ background: color }} />
-                  <span className="hero-pill-text">{label}</span>
+                { num: "20+", label: "Articles Published" },
+                { num: "20k+", label: "Students Served" },
+                { num: "3 Decades", label: "Of Excellence" },
+              ].map(({ num, label }) => (
+                <div key={label}>
+                  <div className="font-playfair text-3xl font-bold text-navy-deeper">{num}</div>
+                  <div className="text-[10px] text-text-light font-black uppercase tracking-widest mt-1">{label}</div>
                 </div>
               ))}
             </div>
           </div>
-        </section>
 
-        {/* ══════════════════ FEATURED POST ══════════════════ */}
-        <section className="featured-section fade-up delay-1">
-          <div className="section-label">
-            <span className="sl-text">Featured Story</span>
-            <div className="sl-line" />
-          </div>
-          <a
-            href={postUrl(FEATURED.slug)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="featured-card"
-          >
-            <div className="featured-img">
-              <img src={FEATURED.img} alt={FEATURED.title} />
-              <div className="featured-img-overlay" aria-hidden="true" />
-              <div className="featured-badge-wrap">
-                <span className="badge badge-green">Featured</span>
-                {FEATURED.categories.slice(0, 1).map((c) => (
-                  <span key={c} className="badge">{c}</span>
-                ))}
+          <div className="hidden lg:flex flex-col gap-3 fade-up delay-150">
+            {[
+              { color: "bg-navy", label: "Student Development" },
+              { color: "bg-crimson", label: "Cambridge Learning" },
+              { color: "bg-sand", label: "Parental Resources" },
+              { color: "bg-navy-dark", label: "Mental Wellbeing" },
+              { color: "bg-crimson-dark", label: "Early Education" },
+            ].map(({ color, label }) => (
+              <div key={label} className="inline-flex items-center gap-3 bg-white border border-sand/30 rounded-full px-5 py-3 shadow-sm self-start transition-transform hover:-translate-x-2 duration-300">
+                <div className={`w-2 h-2 rounded-full ${color}`} />
+                <span className="text-[11px] font-black text-navy-deeper uppercase tracking-widest">{label}</span>
               </div>
-            </div>
-            <div className="featured-content">
-              <div className="featured-meta">
-                <time dateTime={FEATURED.dateISO} className="meta-date">{FEATURED.date}</time>
-                <span className="meta-dot" aria-hidden="true" />
-                <span className="meta-read">{FEATURED.readMin} min read</span>
-              </div>
-              <h2 className="featured-title serif">{FEATURED.title}</h2>
-              <p className="featured-excerpt">{FEATURED.excerpt}</p>
-              <span className="cta-link">
-                Read Full Article <ArrowRight />
-              </span>
-            </div>
-          </a>
-        </section>
-
-        {/* ══════════════════ GRID + FILTERS ══════════════════ */}
-        <section className="grid-section">
-          <div className="section-label">
-            <div className="sl-line" />
-            <span className="sl-text">All Articles</span>
-            <div className="sl-line" />
-          </div>
-
-          {/* Category Filters */}
-          <div className="filters-bar" role="tablist" aria-label="Filter by category">
-            {ALL_CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                role="tab"
-                aria-selected={activeCategory === cat}
-                className={`filter-btn ${activeCategory === cat ? "active" : "inactive"}`}
-                onClick={() => handleCategoryChange(cat)}
-              >
-                {cat}
-              </button>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Blog Grid */}
-          <div className="blog-grid">
-            {paginated.length === 0 ? (
-              <div className="empty-state">No articles found in this category.</div>
-            ) : (
-              paginated.map((post, idx) => (
-                <a
-                  key={post.id}
-                  href={postUrl(post.slug)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="blog-card fade-up"
-                  style={{ animationDelay: `${idx * 0.06}s` }}
-                >
-                  <div className="card-img">
-                    <img src={post.img} alt={post.title} loading="lazy" />
-                    <span className="card-cat">{post.categories[0]}</span>
-                  </div>
-                  <div className="card-body">
-                    <div className="card-meta">
-                      <time dateTime={post.dateISO} className="card-date">{post.date}</time>
-                      <span className="card-dot" aria-hidden="true" />
-                      <span className="card-read">{post.readMin} min read</span>
-                    </div>
-                    <h3 className="card-title serif">{post.title}</h3>
-                    <p className="card-excerpt">{post.excerpt}</p>
-                    <span className="card-cta">
-                      Read More <ArrowRight size={13} />
-                    </span>
-                  </div>
-                </a>
-              ))
-            )}
+      {/* ══════════════════ FEATURED POST ══════════════════ */}
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="flex items-center gap-4 mb-10">
+          <span className="text-[10px] font-black text-text-light uppercase tracking-[0.3em] whitespace-nowrap">Featured Story</span>
+          <div className="h-px bg-sand/30 flex-1" />
+        </div>
+
+        <a
+          href={postUrl(FEATURED.slug)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block bg-white rounded-[2.5rem] overflow-hidden border border-sand/40 shadow-xl hover:shadow-2xl transition-all duration-500"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="relative aspect-[16/10] lg:aspect-auto overflow-hidden">
+              <img 
+                src={FEATURED.img} 
+                alt={FEATURED.title} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
+              <div className="absolute top-6 left-6 flex gap-2">
+                <span className="bg-crimson text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">Featured</span>
+                <span className="bg-white/90 backdrop-blur-sm text-navy-deeper text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                  {FEATURED.categories[0]}
+                </span>
+              </div>
+            </div>
+            <div className="p-10 md:p-16 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                <time className="text-text-light text-[11px] font-black uppercase tracking-widest">{FEATURED.date}</time>
+                <span className="w-1 h-1 rounded-full bg-sand" />
+                <span className="text-text-light text-[11px] font-black uppercase tracking-widest">{FEATURED.readMin} min read</span>
+              </div>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper leading-tight mb-6 group-hover:text-crimson transition-colors duration-300">
+                {FEATURED.title}
+              </h2>
+              <p className="text-text-light text-base leading-relaxed mb-10 font-light line-clamp-3">
+                {FEATURED.excerpt}
+              </p>
+              <div className="inline-flex items-center gap-2 text-crimson text-[11px] font-black uppercase tracking-[0.2em] group-hover:gap-4 transition-all duration-300">
+                Read Full Article <ArrowRight size={14} />
+              </div>
+            </div>
           </div>
+        </a>
+      </section>
 
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <nav className="pagination" aria-label="Pagination">
-              <button
-                className="page-btn nav-arrow"
-                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                disabled={currentPage === 1}
-                aria-label="Previous page"
+      {/* ══════════════════ GRID + FILTERS ══════════════════ */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="h-px bg-sand/30 flex-1" />
+          <span className="text-[10px] font-black text-text-light uppercase tracking-[0.3em] whitespace-nowrap">Explore All Articles</span>
+          <div className="h-px bg-sand/30 flex-1" />
+        </div>
+
+        {/* Filters */}
+        <div className="flex flex-wrap gap-2 mb-12 justify-center">
+          {ALL_CATEGORIES.map((cat) => (
+            <CategoryBadge 
+              key={cat} 
+              category={cat} 
+              active={activeCategory === cat} 
+              onClick={() => handleCategoryChange(cat)} 
+            />
+          ))}
+        </div>
+
+        {/* Blog Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {paginated.length === 0 ? (
+            <div className="col-span-full py-20 text-center text-text-light font-light italic">
+              No articles found in this category.
+            </div>
+          ) : (
+            paginated.map((post, idx) => (
+              <a
+                key={post.id}
+                href={postUrl(post.slug)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-sand/40 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up"
+                style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <ChevronLeft />
-              </button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  className={`page-btn${currentPage === page ? " active" : ""}`}
-                  onClick={() => setCurrentPage(page)}
-                  aria-label={`Page ${page}`}
-                  aria-current={currentPage === page ? "page" : undefined}
-                >
-                  {page}
-                </button>
-              ))}
-              <button
-                className="page-btn nav-arrow"
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                disabled={currentPage === totalPages}
-                aria-label="Next page"
-              >
-                <ChevronRight />
-              </button>
-            </nav>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img src={post.img} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-navy-deeper text-[8px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest">
+                    {post.categories[0]}
+                  </span>
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-4">
+                    <time className="text-text-light text-[10px] font-black uppercase tracking-widest">{post.date}</time>
+                    <span className="w-1 h-1 rounded-full bg-sand/40" />
+                    <span className="text-text-light text-[10px] font-black uppercase tracking-widest">{post.readMin} min read</span>
+                  </div>
+                  <h3 className="font-playfair text-xl font-bold text-navy-deeper leading-tight mb-4 group-hover:text-crimson transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                  <p className="text-text-light text-sm leading-relaxed mb-8 font-light line-clamp-3 flex-1">
+                    {post.excerpt}
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-navy text-[10px] font-black uppercase tracking-widest group-hover:gap-3 transition-all duration-300">
+                    Read More <ArrowRight size={12} />
+                  </div>
+                </div>
+              </a>
+            ))
           )}
-        </section>
+        </div>
 
-        {/* ══════════════════ NEWSLETTER CTA ══════════════════ */}
-        <section className="cta-section">
-          <div className="cta-box">
-            <div className="cta-glow-1" aria-hidden="true" />
-            <div className="cta-glow-2" aria-hidden="true" />
-            <div className="cta-icon-wrap"><MailIcon /></div>
-            <p className="cta-kicker">Stay in the Loop</p>
-            <h2 className="cta-title serif">Never Miss an Update</h2>
-            <p className="cta-desc">
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <nav className="flex items-center justify-center gap-2 mt-16" aria-label="Pagination">
+            <button
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-navy-deeper hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                className={`w-10 h-10 flex items-center justify-center rounded-full text-[11px] font-black transition-all duration-200
+                  ${currentPage === page 
+                    ? "bg-navy-deeper text-white shadow-lg" 
+                    : "text-navy-deeper hover:bg-navy-light border border-transparent"
+                  }`}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-navy-deeper hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+            >
+              <ChevronRight />
+            </button>
+          </nav>
+        )}
+      </section>
+
+      {/* ══════════════════ NEWSLETTER CTA ══════════════════ */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="relative bg-navy-deeper rounded-[3rem] p-10 md:p-20 text-center overflow-hidden">
+          {/* Decorative glows */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-crimson/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/20">
+              <MailIcon />
+            </div>
+            <p className="text-sand text-[10px] font-black uppercase tracking-[0.4em] mb-4">Stay in the Loop</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6">Never Miss an Update</h2>
+            <p className="text-white/70 text-lg font-light leading-relaxed mb-10">
               Get the latest articles on education, child development, and school life delivered straight to your inbox.
             </p>
+            
             {subscribed ? (
-              <div className="cta-success">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-white font-bold">
                 <CheckIcon /> You&apos;re subscribed — thank you!
               </div>
             ) : (
-              <form className="cta-form" onSubmit={handleSubscribe}>
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={handleSubscribe}>
                 <input
-                  className="cta-input"
+                  className="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-sand transition-colors font-dm"
                   type="email"
                   required
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  aria-label="Email address"
                 />
-                <button type="submit" className="cta-submit">Subscribe</button>
+                <button type="submit" className="bg-sand hover:bg-white text-navy-deeper font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300">
+                  Subscribe
+                </button>
               </form>
             )}
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
-    </>
+      <footer className="py-12 text-center">
+        <p className="text-text-light text-[10px] font-black uppercase tracking-widest">
+          © 2026 Seedling Group of Schools, Jaipur. All rights reserved.
+        </p>
+      </footer>
+    </div>
   );
 }

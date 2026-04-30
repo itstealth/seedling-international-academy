@@ -162,26 +162,7 @@ const stats = [
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
-    <main className="bg-off-white text-text-base font-playfair overflow-x-hidden">
-
-      {/* ── Google Font Import ── */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-        body { font-family: 'DM Sans', sans-serif; }
-        .display { font-family: 'Playfair Display', serif; }
-        .timeline-line::before {
-          content: '';
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          top: 0; bottom: 0;
-          width: 1px;
-          background: linear-gradient(to bottom, transparent, var(--color-navy) 10%, var(--color-navy) 90%, transparent);
-        }
-        @media (max-width: 768px) {
-          .timeline-line::before { left: 20px; }
-        }
-      `}</style>
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ══════════════════════════════════════════════════════════════
           1. HERO
@@ -198,12 +179,12 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-24 w-full">
           <Reveal>
-            <p className="display text-sand text-xl italic tracking-widest mb-4 uppercase">
+            <p className="font-playfair text-sand text-xl italic tracking-widest mb-4 uppercase">
               Est. 1992 · Jaipur, India
             </p>
           </Reveal>
           <Reveal delay={150}>
-            <h1 className="display text-white font-light leading-[1.05] text-3xl md:text-4xl lg:text-5xl max-w-4xl">
+            <h1 className="font-playfair text-white font-light leading-[1.05] text-3xl md:text-4xl lg:text-5xl max-w-4xl">
               Welcome To<br />
               <em className="font-semibold text-sand">Seedling Group</em><br />
               Of Schools
@@ -218,7 +199,7 @@ export default function AboutPage() {
             <div className="mt-10 flex gap-4 flex-wrap">
               <a
                 href="#story"
-                className="inline-flex items-center gap-2 bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-navy-deeper/40 font-dm"
+                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-crimson/40 font-dm"
               >
                 Explore Our Story
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -250,7 +231,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
             {stats.map((s) => (
               <div key={s.label} className="px-6 py-4 text-center">
-                <p className="display text-3xl md:text-5xl font-semibold text-sand">{s.value}</p>
+                <p className="font-playfair text-3xl md:text-5xl font-semibold text-sand">{s.value}</p>
                 <p className="text-white/60 text-xs mt-2 tracking-widest uppercase font-dm">{s.label}</p>
               </div>
             ))}
@@ -265,8 +246,8 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <Reveal>
-              <p className="display text-crimson text-xl italic mb-4">Who We Are</p>
-              <h2 className="display text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
+              <p className="font-playfair text-crimson text-xl italic mb-4">Who We Are</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
                 A Family. <br />
                 <em className="font-semibold text-navy">A Movement.</em><br />
                 A Legacy.
@@ -291,7 +272,7 @@ export default function AboutPage() {
                   <div key={item.title} className="flex gap-4 p-4 rounded-2xl hover:bg-navy-light transition-colors duration-300">
                     <span className="text-2xl mt-1">{item.icon}</span>
                     <div>
-                      <h4 className="display font-semibold text-xl mb-1">{item.title}</h4>
+                      <h4 className="font-playfair font-semibold text-xl mb-1">{item.title}</h4>
                       <p className="text-text-light text-sm leading-relaxed font-dm">{item.desc}</p>
                     </div>
                   </div>
@@ -314,7 +295,7 @@ export default function AboutPage() {
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-crimson text-white rounded-2xl px-6 py-4 shadow-xl">
-                <p className="display text-4xl font-semibold">30+</p>
+                <p className="font-playfair text-4xl font-semibold">30+</p>
                 <p className="text-white/80 text-xs tracking-widest uppercase font-dm">Years of Excellence</p>
               </div>
             </div>
@@ -328,8 +309,8 @@ export default function AboutPage() {
       <section className="py-16 bg-white md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
-            <p className="display text-mauve text-xl italic mb-3">Our Journey</p>
-            <h2 className="display text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-mauve text-xl italic mb-3">Our Journey</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               From <em className="font-semibold text-crimson">Nursery</em><br />to University
             </h2>
             <div className="w-16 h-px bg-sand mx-auto mt-8" />
@@ -359,8 +340,8 @@ export default function AboutPage() {
                   {/* text */}
                   <div className="md:w-5/12">
                     <div className={`${item.side === "left" ? "md:text-right" : ""}`}>
-                      <span className="display text-7xl font-light text-sand/40 leading-none block">{item.year}</span>
-                      <h3 className="display text-3xl font-semibold mt-2 mb-4 text-navy-deeper">{item.title}</h3>
+                      <span className="font-playfair text-7xl font-light text-sand/40 leading-none block">{item.year}</span>
+                      <h3 className="font-playfair text-3xl font-semibold mt-2 mb-4 text-navy-deeper">{item.title}</h3>
                       <p className="text-text-light leading-[1.9] text-base font-dm">{item.desc}</p>
                     </div>
                   </div>
@@ -384,11 +365,11 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-sand text-3xl italic mb-6 tracking-wide">Our Philosophy</p>
-            <blockquote className="display text-5xl md:text-7xl font-light leading-[1.1] mb-10 text-white">
+            <p className="font-playfair text-sand text-3xl italic mb-6 tracking-wide">Our Philosophy</p>
+            <blockquote className="font-playfair text-5xl md:text-7xl font-light leading-[1.1] mb-10 text-white">
               "हस्ये नयतु नः ब्रह्मज्ञानं"
             </blockquote>
-            <p className="display text-2xl font-light italic text-sand mb-12">
+            <p className="font-playfair text-2xl font-light italic text-sand mb-12">
               We aim at wisdom and the ability to comprehend.
             </p>
           </Reveal>
@@ -397,7 +378,7 @@ export default function AboutPage() {
               We believe education must be joyful, reflective, and creative — developing students who are resilient, adaptable, and equipped to continue learning long after they leave our halls.
             </p>
             <div className="h-px w-24 bg-crimson mx-auto mb-10" />
-            <p className="display text-2xl italic text-sand">
+            <p className="font-playfair text-2xl italic text-sand">
               "उप नो सश्रा कृतवो यन्तु विश्रमः"
             </p>
             <p className="text-white/50 text-sm mt-2 tracking-wider uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -412,8 +393,8 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-10 sm:py-16  max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal className="text-center mb-20">
-          <p className="display text-navy text-xl italic mb-3">Direction & Purpose</p>
-          <h2 className="display text-5xl md:text-6xl font-light">
+          <p className="font-playfair text-navy text-xl italic mb-3">Direction & Purpose</p>
+          <h2 className="font-playfair text-5xl md:text-6xl font-light">
             Vision &amp; <em className="font-semibold">Mission</em>
           </h2>
         </Reveal>
@@ -462,7 +443,7 @@ export default function AboutPage() {
                   {card.icon}
                 </div>
                 <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">{card.label}</p>
-                <h3 className="display text-2xl font-semibold mb-4 text-text-base">{card.title}</h3>
+                <h3 className="font-playfair text-2xl font-semibold mb-4 text-text-base">{card.title}</h3>
                 <p className="text-text-light leading-[1.9] text-sm font-dm">{card.body}</p>
               </div>
             </Reveal>
@@ -479,8 +460,8 @@ export default function AboutPage() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="display text-navy text-xl italic mb-3">What Makes Us Special</p>
-            <h2 className="display text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl italic mb-3">What Makes Us Special</p>
+            <h2 className="font-playfair text-5xl font-light text-navy-deeper">
               Seedling's <em className="font-semibold text-mauve">Differentiators</em>
             </h2>
           </Reveal>
@@ -496,7 +477,7 @@ export default function AboutPage() {
               <Reveal key={p.title} delay={i * 80}>
                 <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group">
                   <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">{p.emoji}</span>
-                  <h4 className="display text-2xl font-semibold mb-4 text-navy">{p.title}</h4>
+                  <h4 className="font-playfair text-2xl font-semibold mb-4 text-navy">{p.title}</h4>
                   <p className="text-text-light text-sm leading-[1.9] font-dm">{p.desc}</p>
                 </div>
               </Reveal>
@@ -518,7 +499,7 @@ export default function AboutPage() {
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
-                <p className="display text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
+                <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
                 <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group</p>
               </div>
             </div>
@@ -526,8 +507,8 @@ export default function AboutPage() {
 
           <div>
             <Reveal>
-              <p className="display text-navy text-xl italic mb-4">Director's Communiqué</p>
-              <h2 className="display text-4xl md:text-5xl font-light leading-tight mb-8">
+              <p className="font-playfair text-navy text-xl italic mb-4">Director's Communiqué</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
                 "Life Ready<br />
                 &amp; <em className="font-semibold">Life Worthy"</em>
               </h2>
@@ -546,7 +527,7 @@ export default function AboutPage() {
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
                 <div className="w-12 h-px bg-navy" />
-                <span className="display italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
+                <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
               </div>
             </Reveal>
           </div>
@@ -559,8 +540,8 @@ export default function AboutPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <Reveal className="text-center mb-16">
-            <p className="display text-navy text-xl italic mb-3">Our Torchbearers</p>
-            <h2 className="display text-5xl md:text-6xl font-light">
+            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
+            <h2 className="font-playfair text-5xl md:text-6xl font-light">
               The <em className="font-semibold">Leadership</em><br />Behind the Legacy
             </h2>
           </Reveal>
@@ -581,10 +562,10 @@ export default function AboutPage() {
                     </span>
                   </div>
                   <div className="p-7">
-                    <h3 className="display text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
+                    <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
                     <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
                     <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
-                    <blockquote className="display italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
+                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
                       "{l.quote}"
                     </blockquote>
                   </div>
@@ -602,8 +583,8 @@ export default function AboutPage() {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="display text-sand text-xl italic mb-3">Campus Life</p>
-            <h2 className="display text-5xl md:text-6xl font-light text-white">
+            <p className="font-playfair text-sand text-xl italic mb-3">Campus Life</p>
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-white">
               A Glimpse of<br />
               <em className="font-semibold text-crimson">Our World</em>
             </h2>
@@ -633,7 +614,7 @@ export default function AboutPage() {
         {/* Bottom CTA */}
         <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
           <Reveal>
-            <h2 className="display text-5xl md:text-7xl font-light text-white mb-8">
+            <h2 className="font-playfair text-5xl md:text-7xl font-light text-white mb-8">
               Ready to Join the<br />
               <em className="font-semibold text-sand">Seedling Family?</em>
             </h2>

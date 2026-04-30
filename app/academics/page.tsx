@@ -189,11 +189,7 @@ const joyride = [
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AcademicsPage() {
   return (
-    <main className="bg-[#F8F8F6] text-[#1A1A1A] overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
-        .serif { font-family: 'Playfair Display', serif; }
-      `}</style>
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ══════════════════════════════════════════════════════
           1. HERO
@@ -215,7 +211,7 @@ export default function AcademicsPage() {
             </span>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="serif text-white font-light text-4xl md:text-5xl leading-[1.05] max-w-4xl mb-6">
+            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] max-w-4xl mb-6">
               Academic<br />
               <em className="font-semibold text-sand">Excellence</em><br />
               <span className="text-white/90">& Future-Ready Learning.</span>
@@ -242,7 +238,7 @@ export default function AcademicsPage() {
         <div className="absolute bottom-12 right-12 z-10 hidden lg:flex flex-col gap-4">
           {[["100%", "Board Results"], ["20K+", "Students"], ["15:1", "Teacher Ratio"]].map(([v, l]) => (
             <div key={l} className="flex items-center gap-4 bg-navy-deeper/40 backdrop-blur-xl border border-white/10 text-white px-6 py-4 rounded-2xl shadow-2xl">
-              <span className="serif text-3xl font-semibold text-sand">{v}</span>
+              <span className="font-playfair text-3xl font-semibold text-sand">{v}</span>
               <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase font-dm">{l}</span>
             </div>
           ))}
@@ -255,7 +251,7 @@ export default function AcademicsPage() {
       <section className="py-32 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag color="navy">Curriculum Overview</Tag>
-          <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
             Two Boards.<br />
             <em className="font-semibold text-crimson">One Vision.</em>
           </h2>
@@ -304,7 +300,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="crimson">How We Teach</Tag>
-            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
               Our Learning <em className="font-semibold text-navy">Approach</em>
             </h2>
           </Reveal>
@@ -324,7 +320,7 @@ export default function AcademicsPage() {
                   </div>
                   <div className={i % 2 === 1 ? "[direction:ltr]" : ""}>
                     <Tag color={i % 2 === 1 ? "mauve" : "navy"}>{item.tag}</Tag>
-                    <h3 className="serif text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">{item.title}</h3>
+                    <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">{item.title}</h3>
                     <p className="text-text-light leading-[1.9] text-lg font-dm font-light">{item.body}</p>
                     <div className="mt-10 w-16 h-1 bg-sand rounded-full" />
                   </div>
@@ -345,7 +341,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
               Cambridge Learner Profile
             </span>
-            <h2 className="serif text-5xl md:text-6xl font-light">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light">
               We Shape <em className="font-semibold text-sand">5 Kinds</em><br />of Learners
             </h2>
           </Reveal>
@@ -364,7 +360,7 @@ export default function AcademicsPage() {
                   </div>
                   <div className="p-6 px-4">
                     <span className="text-4xl mb-4 block group-hover:scale-125 transition-transform duration-500">{lp.emoji}</span>
-                    <h4 className="serif text-2xl font-semibold text-sand mb-3">{lp.trait}</h4>
+                    <h4 className="font-playfair text-2xl font-semibold text-sand mb-3">{lp.trait}</h4>
                     <p className="text-white/60 text-xs leading-relaxed font-dm font-light">{lp.desc}</p>
                   </div>
                 </div>
@@ -380,7 +376,7 @@ export default function AcademicsPage() {
       <section className="py-32 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag color="mauve">Programme Levels</Tag>
-          <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
             A Journey From<br />
             <em className="font-semibold text-crimson">First Steps to Future Paths</em>
           </h2>
@@ -404,7 +400,7 @@ export default function AcademicsPage() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-white/60 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
-                  <h3 className="serif text-4xl font-semibold mb-5 leading-tight">{p.level}</h3>
+                  <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight">{p.level}</h3>
                   <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
                     {p.desc}
                   </p>
@@ -430,7 +426,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
               Roll of Honour
             </span>
-            <h2 className="serif text-5xl md:text-7xl font-light">
+            <h2 className="font-playfair text-5xl md:text-7xl font-light">
               Numbers That<br />
               <em className="font-semibold text-sand">Tell Our Story</em>
             </h2>
@@ -441,7 +437,7 @@ export default function AcademicsPage() {
               <Reveal key={a.label} delay={i * 80}>
                 <div className="group bg-white/5 border border-white/10 rounded-3xl p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
                   <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">{a.icon}</div>
-                  <p className="serif text-5xl md:text-6xl font-semibold text-sand mb-3">{a.value}</p>
+                  <p className="font-playfair text-5xl md:text-6xl font-semibold text-sand mb-3">{a.value}</p>
                   <p className="text-white font-bold text-lg mb-2 font-dm tracking-tight">{a.label}</p>
                   <p className="text-white/40 text-xs tracking-widest uppercase font-dm font-bold">{a.sub}</p>
                 </div>
@@ -455,12 +451,12 @@ export default function AcademicsPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="serif text-5xl md:text-6xl font-semibold mb-6">100% Board Results</h3>
+                <h3 className="font-playfair text-5xl md:text-6xl font-semibold mb-6">100% Board Results</h3>
                 <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
                 <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">
-                  <span className="serif text-5xl font-bold">100%</span>
+                  <span className="font-playfair text-5xl font-bold">100%</span>
                   <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
                 </div>
               </div>
@@ -477,7 +473,7 @@ export default function AcademicsPage() {
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <Reveal>
               <Tag color="crimson">Start Your Joyride</Tag>
-              <h2 className="serif text-5xl font-light leading-tight mb-8 text-navy-deeper">
+              <h2 className="font-playfair text-5xl font-light leading-tight mb-8 text-navy-deeper">
                 12 Reasons to Choose<br />
                 <em className="font-semibold text-navy">Seedling Schools</em>
               </h2>
@@ -517,7 +513,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>
-            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
               Faculty Who<br />
               <em className="font-semibold text-crimson">Inspire, Not Just Instruct</em>
             </h2>
@@ -539,7 +535,7 @@ export default function AcademicsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-8">
-                    <h4 className="serif text-2xl font-semibold text-navy-deeper mb-2">{f.name}</h4>
+                    <h4 className="font-playfair text-2xl font-semibold text-navy-deeper mb-2">{f.name}</h4>
                     <p className="text-crimson text-sm font-black tracking-widest uppercase font-dm">{f.subject}</p>
                     <div className="mt-6 w-10 h-1 bg-sand group-hover:w-20 group-hover:bg-navy transition-all duration-500 rounded-full" />
                   </div>
@@ -559,7 +555,7 @@ export default function AcademicsPage() {
                 <div key={item.title} className="bg-white border border-[#EEECEA] rounded-2xl p-7 flex gap-5 items-start">
                   <span className="text-3xl">{item.icon}</span>
                   <div>
-                    <h4 className="serif text-lg font-semibold mb-2">{item.title}</h4>
+                    <h4 className="font-playfair text-lg font-semibold mb-2">{item.title}</h4>
                     <p className="text-[#666] text-sm leading-[1.8]">{item.desc}</p>
                   </div>
                 </div>
@@ -586,7 +582,7 @@ export default function AcademicsPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
               Admissions Open 2026–27
             </span>
-            <h2 className="serif text-5xl md:text-8xl font-light mb-8">
+            <h2 className="font-playfair text-5xl md:text-8xl font-light mb-8">
               Join the<br />
               <em className="font-semibold text-sand">Seedling Family</em>
             </h2>

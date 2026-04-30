@@ -1,9 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Heading, Text } from "@/components/ui/Typography";
-import { Section, Container } from "@/components/ui/Layout";
-import { Button } from "@/components/ui/Button";
-import { Card, CardHeader, CardContent } from "@/components/ui/Card";
+import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Seedling Group of Schools",
@@ -325,47 +322,30 @@ const sections = [
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-neutral-bg selection:bg-secondary/20">
-      {/* Hero Section */}
-      <Section 
-        padding="hero" 
-        className="bg-gradient-to-br from-primary via-primary/95 to-accent overflow-hidden"
-        containerClassName="relative z-10 text-center"
-      >
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-3xl" />
-          <div className="absolute -bottom-8 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-30" />
-        </div>
-        
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-white text-[10px] font-black uppercase tracking-[0.3em] shadow-lg shadow-secondary/30 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          Compliance Policy
-        </div>
-        <Heading className="text-white mb-8 uppercase italic">
-          Privacy <span className="text-white/40 not-italic font-light tracking-widest">Policy</span>
-        </Heading>
-        <Text variant="lead" className="max-w-3xl mx-auto text-white/90">
-          Your privacy is our priority. This document outlines how Seedling School handles data 
-          with transparency, security, and integrity across all our digital platforms.
-        </Text>
-      </Section>
+    <div className="min-h-screen bg-off-white font-dm selection:bg-navy/10">
+      
+      <PageHero 
+        title="Privacy Policy"
+        subtitle="Your privacy is our priority. This document outlines how Seedling School handles data with transparency and security."
+        image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80"
+      />
 
-      {/* Main Content Area */}
-      <Container className="py-16 md:py-24">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <main className="max-w-7xl mx-auto px-6 py-20">
+        <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* Sticky Sidebar Navigation */}
+          {/* Sidebar Navigation */}
           <aside className="lg:w-1/4">
-            <div className="sticky top-24 space-y-2 bg-white p-8 rounded-premium border border-neutral-bg/50 shadow-premium hidden lg:block overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
-              <div className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-8">
+            <div className="sticky top-32 space-y-2 hidden lg:block">
+              <div className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
+                <span className="w-8 h-px bg-navy" />
                 Table of Contents
               </div>
-              <nav className="space-y-1.5 relative z-10">
+              <nav className="space-y-1">
                 {sections.map((section) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="block px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest text-accent hover:text-primary hover:bg-slate-50 transition-all duration-300"
+                    className="block px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-text-light hover:text-navy hover:bg-navy/5 transition-all duration-300 border border-transparent hover:border-sand/30"
                   >
                     {section.title}
                   </a>
@@ -374,88 +354,78 @@ export default function PrivacyPolicy() {
             </div>
           </aside>
 
-          {/* Content Sections */}
-          <main className="lg:w-3/4 space-y-12 pb-20">
+          {/* Content Area */}
+          <div className="lg:w-3/4 space-y-16">
             {sections.map((section, idx) => (
-              <section 
-                key={section.id} 
-                id={section.id} 
-                className="scroll-mt-32 group"
-              >
-                <Card padding="none" className="hover:shadow-premium-hover translation-all duration-500">
-                  <CardHeader className="bg-primary/95 group-hover:bg-primary transition-colors duration-500 p-6 flex items-center gap-6">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center text-white font-black text-lg shadow-xl shadow-black/20">
-                      {idx + 1}
-                    </div>
-                    <Heading variant="h3" className="text-white text-xl md:text-2xl uppercase tracking-[0.2em] italic font-black">
-                      {section.title}
-                    </Heading>
-                  </CardHeader>
-                  <CardContent className="p-8 md:p-12">
-                    <div className="max-w-none">
-                      {section.content}
-                    </div>
-                  </CardContent>
-                </Card>
+              <section key={section.id} id={section.id} className="scroll-mt-32">
+                <div className="flex items-start gap-6 mb-8">
+                  <span className="font-playfair text-4xl font-bold text-sand/40 tabular-nums">{(idx + 1).toString().padStart(2, '0')}</span>
+                  <h2 className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper mt-2">{section.title}</h2>
+                </div>
+                <div className="prose prose-slate max-w-none prose-p:text-text-light prose-p:leading-relaxed prose-p:font-light prose-strong:text-navy-deeper prose-li:text-text-light">
+                  {section.content}
+                </div>
+                {idx < sections.length - 1 && <div className="mt-16 h-px bg-sand/30 w-full" />}
               </section>
             ))}
 
-            {/* Final CTA */}
-            <Card variant="primary" className="mt-16 text-center space-y-8 p-12 md:p-20 relative group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-secondary rounded-full blur-[100px] opacity-20 -mr-32 -mt-32 group-hover:opacity-30 transition-opacity"></div>
+            {/* Final Contact Card */}
+            <div className="bg-navy-deeper rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden mt-20">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/10 blur-[80px] rounded-full -mr-20 -mt-20" />
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/20">
+                <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/20">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <Heading variant="h2" className="text-white mb-6 uppercase italic font-black tracking-tighter">
-                  Privacy Secured
-                </Heading>
-                <Text className="text-white/70 max-w-xl mx-auto mb-10 font-bold">
-                  We are committed to maintaining the highest standards of data protection. 
-                  If you have concerns, our team is here to help.
-                </Text>
+                <h3 className="font-playfair text-4xl font-bold text-white mb-6">Need Clarification?</h3>
+                <p className="text-white/70 text-lg font-light leading-relaxed mb-10 max-w-xl mx-auto">
+                  Our compliance team is here to help you understand how we protect your information. 
+                  Reach out to us for any privacy-related queries.
+                </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <a href="mailto:seedlingacademy@hotmail.com">
-                    <Button variant="secondary">Contact Support</Button>
+                  <a href="mailto:seedlingacademy@hotmail.com" className="bg-sand hover:bg-white text-navy-deeper px-8 py-4 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300">
+                    Email Support
                   </a>
-                  <a href="/terms-and-conditions">
-                    <Button variant="ghost" className="text-white hover:bg-white/10">Terms of Service</Button>
+                  <a href="tel:01413623000" className="border-2 border-white/20 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300">
+                    Call: 0141-3623000
                   </a>
                 </div>
               </div>
-            </Card>
-          </main>
+            </div>
+          </div>
         </div>
-      </Container>
+      </main>
 
-      {/* Footer Section */}
-      <footer className="bg-primary py-16 px-6 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-secondary blur-3xl" />
-        </div>
-        <Container className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
-          <div className="flex items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center p-2 shadow-2xl">
-              <div className="w-full h-full bg-primary rounded-xl flex items-center justify-center text-white font-black uppercase tracking-widest text-lg italic">
-                S
-              </div>
-            </div>
-            <div>
-              <span className="block font-black text-xl text-white uppercase italic tracking-tighter">Seedling Schools</span>
-              <span className="text-white/40 text-[10px] font-black tracking-[0.4em] uppercase">Compliance Division</span>
-            </div>
-          </div>
-          <div className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] text-center md:text-left">
-            © {new Date().getFullYear()} | Mandatory Disclosure Compliant | Jaipur • Rajasthan
-          </div>
-          <div className="flex gap-8">
-            <a href="/terms-and-conditions" className="text-[10px] font-black text-white/40 hover:text-white uppercase tracking-[0.3em] transition-colors">Terms</a>
-            <a href="#introduction" className="text-[10px] font-black text-white/40 hover:text-white uppercase tracking-[0.3em] transition-colors">Top</a>
-          </div>
-        </Container>
+      <footer className="py-12 text-center border-t border-sand/30">
+        <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">
+          © Seedling Group of Schools | Compliance Division | Privacy Policy v2.0
+        </p>
       </footer>
     </div>
-  );
+  )
+}
+
+function Text({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+  return <p className={`text-text-light leading-relaxed font-light ${className}`}>{children}</p>;
+}
+
+function Heading({ children, className = "" }: { children: React.ReactNode, className?: string, variant?: string }) {
+  return <h4 className={`font-playfair font-bold text-navy-deeper ${className}`}>{children}</h4>;
+}
+
+function Button({ children, className = "" }: { children: React.ReactNode, className?: string, variant?: string, size?: string }) {
+  return <button className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${className}`}>{children}</button>;
+}
+
+function Card({ children, className = "" }: { children: React.ReactNode, className?: string, variant?: string, padding?: string }) {
+  return <div className={`rounded-2xl border border-sand/40 bg-white ${className}`}>{children}</div>;
+}
+
+function CardHeader({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+  return <div className={`p-6 border-b border-sand/40 ${className}`}>{children}</div>;
+}
+
+function CardContent({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+  return <div className={`p-6 ${className}`}>{children}</div>;
 }

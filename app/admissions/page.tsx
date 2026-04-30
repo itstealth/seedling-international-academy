@@ -40,7 +40,7 @@ function Reveal({
 ───────────────────────────────────────────── */
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-emerald-200 mb-4">
+    <span className="inline-block bg-sand/10 text-crimson text-xs font-black tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
       {children}
     </span>
   );
@@ -52,18 +52,18 @@ function Tag({ children }: { children: React.ReactNode }) {
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={`border border-[#E8E3DA] rounded-2xl overflow-hidden transition-all duration-300 ${open ? "shadow-md" : "shadow-sm"}`}>
+    <div className={`border border-sand/20 rounded-2xl overflow-hidden transition-all duration-300 ${open ? "shadow-xl border-sand/40" : "shadow-sm"}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left bg-white hover:bg-emerald-50 transition-colors duration-200"
+        className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left bg-white hover:bg-off-white transition-colors duration-200"
       >
-        <span className="display font-semibold text-[#1C1C1E] text-lg leading-snug">{q}</span>
-        <span className={`flex-shrink-0 w-8 h-8 rounded-full border-2 ${open ? "border-emerald-600 bg-emerald-600 text-white rotate-45" : "border-[#DDD] text-[#999]"} flex items-center justify-center transition-all duration-300 text-lg font-light`}>
+        <span className="font-playfair font-black text-navy-deeper text-lg leading-snug">{q}</span>
+        <span className={`flex-shrink-0 w-8 h-8 rounded-full border-2 ${open ? "border-crimson bg-crimson text-white rotate-45" : "border-sand/40 text-sand"} flex items-center justify-center transition-all duration-300 text-lg font-light`}>
           +
         </span>
       </button>
       <div className={`overflow-hidden transition-all duration-400 ${open ? "max-h-64" : "max-h-0"}`}>
-        <p className="px-7 pb-6 text-[#555] leading-[1.9] text-sm bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="px-7 pb-6 text-text-light leading-[1.9] text-sm bg-white font-dm">
           {a}
         </p>
       </div>
@@ -210,26 +210,24 @@ export default function AdmissionsPage() {
   };
 
   return (
-    <main className="bg-[#FAFAF7] text-[#1C1C1E] overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
-        .display { font-family: 'Cormorant Garamond', serif; }
         .duration-400 { transition-duration: 400ms; }
       `}</style>
 
       {/* ── STICKY CTA BAR ── */}
       <div className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${sticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
-        <div className="bg-white border-t border-[#E8E3DA] shadow-2xl px-6 py-4">
+        <div className="bg-white border-t border-sand/30 shadow-2xl px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <p className="display font-semibold text-lg text-[#1C1C1E]">Admissions Open 2026–27</p>
-              <p className="text-[#777] text-xs mt-0.5">Seats are limited — early bird incentives available</p>
+              <p className="font-playfair font-black text-xl text-navy-deeper tracking-tight">Admissions Open 2026–27</p>
+              <p className="text-text-light text-xs mt-0.5 font-dm font-medium">Seats are limited — early bird incentives available</p>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <a href="#enquire" className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg">
+              <a href="#enquire" className="bg-crimson hover:bg-crimson-dark text-white px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
                 Apply Now
               </a>
-              <a href="tel:+917413012351" className="border border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+              <a href="tel:+917413012351" className="border-2 border-crimson text-crimson hover:bg-crimson/5 px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300">
                 Call Us
               </a>
             </div>
@@ -246,38 +244,38 @@ export default function AdmissionsPage() {
           alt="Admissions at Seedling"
           className="absolute inset-0 w-full h-full object-cover object-top scale-105 transition-transform duration-[10s] hover:scale-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/95 via-navy-deeper/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-32 grid md:grid-cols-2 gap-16 items-center">
           {/* Left — headline */}
           <div>
             <Reveal>
-              <p className="display text-emerald-400 text-xl italic tracking-widest mb-4 uppercase">
+              <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-4 uppercase">
                 Admissions Open · 2026–27
               </p>
             </Reveal>
             <Reveal delay={120}>
-              <h1 className="display text-white font-light leading-[1.05] text-6xl md:text-7xl lg:text-[5.5rem] mb-6">
+              <h1 className="font-playfair text-white font-black leading-[1.05] text-6xl md:text-7xl lg:text-[6.5rem] mb-8 tracking-tighter">
                 Begin Your<br />
-                <em className="font-semibold">Seedling</em><br />
+                <span className="text-sand">Seedling</span><br />
                 Journey.
               </h1>
             </Reveal>
             <Reveal delay={240}>
-              <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
+              <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
                 Seedling Group of Schools — 5 schools, 2 campuses, CBSE & Cambridge boards. Prioritising student well-being and community interests since 1992.
               </p>
             </Reveal>
             <Reveal delay={360}>
               <div className="flex gap-4 flex-wrap">
-                <a href="#process" className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30">
+                <a href="#process" className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40">
                   How to Apply
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
-                <a href="#enquire" className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-[#1C1C1E] px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300">
+                <a href="#enquire" className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-navy-deeper px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
                   Enquire Now
                 </a>
               </div>
@@ -285,9 +283,9 @@ export default function AdmissionsPage() {
 
             {/* trust micro-badges */}
             <Reveal delay={480}>
-              <div className="flex gap-4 flex-wrap mt-10">
+              <div className="flex gap-4 flex-wrap mt-12">
                 {["100% Board Results", "Est. 1992", "20,000+ Students", "CBSE & Cambridge"].map((b) => (
-                  <span key={b} className="bg-white/10 border border-white/20 text-white/80 text-xs px-4 py-2 rounded-full backdrop-blur-sm">
+                  <span key={b} className="bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md">
                     {b}
                   </span>
                 ))}
@@ -358,20 +356,21 @@ export default function AdmissionsPage() {
       </section>
 
       {/* STATS BAND — matches About page exactly */}
-      <section className="bg-[#2D6A4F] text-white py-8">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-white/20">
+      <section className="bg-navy-deeper text-white py-12 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-white/10">
             {[
-              { value: "20,000+", label: "Students" },
-              { value: "15:1", label: "Teacher Ratio" },
-              { value: "5,000+", label: "Alumni" },
-              { value: "100%", label: "Board Results" },
+              { value: "20k+", label: "Students" },
+              { value: "15:1", label: "Ratio" },
+              { value: "5k+", label: "Alumni" },
+              { value: "100%", label: "Results" },
               { value: "50+", label: "Nations" },
               { value: "1992", label: "Est." },
             ].map((s) => (
-              <div key={s.label} className="px-4 py-4 text-center">
-                <p className="display text-3xl md:text-4xl font-semibold">{s.value}</p>
-                <p className="text-white/60 text-xs mt-1 tracking-widest uppercase">{s.label}</p>
+              <div key={s.label} className="px-4 text-center">
+                <p className="font-playfair text-4xl font-black text-sand mb-1">{s.value}</p>
+                <p className="text-white/40 text-[10px] font-black tracking-[0.25em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -382,22 +381,26 @@ export default function AdmissionsPage() {
           2. WHY CHOOSE US
       ══════════════════════════════════════════════════ */}
       <section className="py-32 max-w-6xl mx-auto px-6">
-        <Reveal className="text-center mb-20">
+        <Reveal className="text-center mb-24">
           <Tag>Why Seedling</Tag>
-          <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+          <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
             Six Reasons Parents<br />
-            <em className="font-semibold">Choose Us</em>
+            <span className="text-crimson">Choose Us</span>
           </h2>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {whyUs.map((w, i) => (
             <Reveal key={w.title} delay={i * 80}>
-              <div className="group bg-white border border-[#E8E3DA] rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                <span className="text-4xl mb-5 block">{w.icon}</span>
-                <h4 className="display text-xl font-semibold text-[#1C1C1E] mb-3">{w.title}</h4>
-                <p className="text-[#666] text-sm leading-[1.9]">{w.desc}</p>
-                <div className="mt-5 w-8 h-0.5 bg-emerald-400 group-hover:w-14 transition-all duration-300" />
+              <div className="group bg-white border border-sand/20 rounded-3xl p-10 hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.1)] hover:-translate-y-2 transition-all duration-500 h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-sand/5 rounded-bl-full transition-transform duration-500 group-hover:scale-110" />
+                <span className="text-5xl mb-8 block grayscale group-hover:grayscale-0 transition-all duration-300">{w.icon}</span>
+                <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-4 tracking-tight">{w.title}</h4>
+                <p className="text-text-light text-sm leading-[1.8] font-dm">{w.desc}</p>
+                <div className="mt-8 flex items-center gap-3">
+                  <div className="w-10 h-0.5 bg-crimson transform origin-left transition-all duration-500 group-hover:w-16" />
+                  <span className="text-crimson text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-500">Excellence</span>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -409,13 +412,13 @@ export default function AdmissionsPage() {
       ══════════════════════════════════════════════════ */}
       <section id="process" className="py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <Reveal className="text-center mb-20">
+          <Reveal className="text-center mb-24">
             <Tag>Admission Process</Tag>
-            <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Six Simple Steps<br />
-              <em className="font-semibold">to Join Us</em>
+              <span className="text-crimson">to Join Us</span>
             </h2>
-            <p className="text-[#666] mt-5 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-light mt-6 max-w-xl mx-auto leading-relaxed font-dm">
               We've made the admission process as clear and frictionless as possible. Our team is with you at every step.
             </p>
           </Reveal>
@@ -423,30 +426,30 @@ export default function AdmissionsPage() {
           {/* Vertical timeline */}
           <div className="relative">
             {/* connecting line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-200 via-emerald-400 to-emerald-200 md:-translate-x-px hidden sm:block" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sand/20 via-sand to-sand/20 md:-translate-x-px hidden sm:block" />
 
-            <div className="space-y-12">
+            <div className="space-y-16">
               {steps.map((step, i) => (
                 <Reveal key={step.num} delay={i * 80}>
                   <div className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                     {/* dot */}
-                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-5 h-5 bg-emerald-600 rounded-full ring-4 ring-emerald-100 z-10 hidden sm:block" />
+                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-crimson rounded-full ring-8 ring-crimson/10 z-10 hidden sm:block" />
 
                     {/* card — left or right */}
                     <div className="md:w-5/12">
-                      <div className={`bg-[#FAFAF7] border border-[#E8E3DA] rounded-2xl p-7 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 group ${i % 2 === 1 ? "md:ml-auto" : ""}`}>
-                        <div className="flex items-start gap-4">
+                      <div className={`bg-off-white border border-sand/20 rounded-3xl p-8 hover:shadow-xl hover:border-sand/40 transition-all duration-500 group ${i % 2 === 1 ? "md:ml-auto" : ""}`}>
+                        <div className="flex items-start gap-6">
                           <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center justify-center text-2xl">
+                            <div className="w-14 h-14 bg-white border border-sand/10 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-500">
                               {step.icon}
                             </div>
                           </div>
                           <div>
-                            <div className="flex items-center gap-3 mb-2">
-                              <span className="display text-4xl font-light text-emerald-100 leading-none">{step.num}</span>
-                              <h3 className="display text-xl font-semibold text-[#1C1C1E]">{step.title}</h3>
+                            <div className="flex items-center gap-3 mb-3">
+                              <span className="font-playfair text-5xl font-black text-navy-deeper/10 leading-none group-hover:text-crimson/10 transition-colors duration-500">{step.num}</span>
+                              <h3 className="font-playfair text-2xl font-black text-navy-deeper group-hover:text-crimson transition-colors duration-500">{step.title}</h3>
                             </div>
-                            <p className="text-[#666] text-sm leading-[1.9]">{step.desc}</p>
+                            <p className="text-text-light text-sm leading-[1.8] font-dm">{step.desc}</p>
                           </div>
                         </div>
                       </div>
@@ -462,16 +465,17 @@ export default function AdmissionsPage() {
           </div>
 
           {/* inline CTA after process */}
-          <Reveal className="mt-20 text-center">
-            <div className="bg-emerald-600 rounded-3xl p-10 text-white">
-              <p className="display italic text-xl text-emerald-200 mb-2">Ready to take the first step?</p>
-              <h3 className="display text-4xl font-semibold mb-6">Start Your Application Today</h3>
+          <Reveal className="mt-24 text-center">
+            <div className="bg-navy-deeper rounded-[2.5rem] p-12 text-white relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-sand opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
+              <p className="font-dm text-sand text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
+              <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight">Start Your Application Today</h3>
               <div className="flex gap-4 justify-center flex-wrap">
                 <a href="https://seedlingschools.com/admission-online.php" target="_blank" rel="noopener noreferrer"
-                  className="bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg">
+                  className="bg-crimson text-white hover:bg-crimson-dark px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40">
                   Fill Online Form
                 </a>
-                <a href="tel:+917413012351" className="border border-white/40 text-white hover:bg-white/10 px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">
+                <a href="tel:+917413012351" className="border-2 border-white/20 text-white hover:bg-white hover:text-navy-deeper px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300">
                   Call +91 74130 12351
                 </a>
               </div>
@@ -484,42 +488,43 @@ export default function AdmissionsPage() {
           4. DOCUMENTS REQUIRED
       ══════════════════════════════════════════════════ */}
       <section className="py-32 max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
-            <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E] mb-6">
+            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] mb-8 tracking-tight">
               Documents<br />
-              <em className="font-semibold">Required</em>
+              <span className="text-crimson">Required</span>
             </h2>
-            <p className="text-[#666] leading-[1.9] mb-8">
+            <p className="text-text-light leading-[1.9] mb-10 font-dm">
               Please keep the following documents ready at the time of admission. For Class I and above, bring the marksheet or report card from the previous school. Original documents must be presented for verification.
             </p>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
-              <p className="display text-lg font-semibold text-emerald-700 mb-3">📌 Important Notes</p>
-              <ul className="space-y-2 text-sm text-[#555] leading-relaxed">
-                <li className="flex gap-2"><span className="text-emerald-500 mt-0.5">•</span>All applications must be submitted on the prescribed form with a non-refundable amount.</li>
-                <li className="flex gap-2"><span className="text-emerald-500 mt-0.5">•</span>Re-admission is done in Class XI. All Class X students must re-apply.</li>
-                <li className="flex gap-2"><span className="text-emerald-500 mt-0.5">•</span>Minimum age for Nursery/Playgroup: 3 years as of 31st March of the admission year.</li>
-                <li className="flex gap-2"><span className="text-emerald-500 mt-0.5">•</span>Parent counselling is available both online and offline — we're here to help.</li>
+            <div className="bg-sand/10 border border-sand/20 rounded-3xl p-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-crimson" />
+              <p className="font-playfair text-2xl font-black text-navy-deeper mb-6 tracking-tight">📌 Important Notes</p>
+              <ul className="space-y-4 text-sm text-text-light leading-relaxed font-dm">
+                <li className="flex gap-3"><span className="text-crimson font-black">01</span>All applications must be submitted on the prescribed form with a non-refundable amount.</li>
+                <li className="flex gap-3"><span className="text-crimson font-black">02</span>Re-admission is done in Class XI. All Class X students must re-apply.</li>
+                <li className="flex gap-3"><span className="text-crimson font-black">03</span>Minimum age for Nursery/Playgroup: 3 years as of 31st March of the admission year.</li>
+                <li className="flex gap-3"><span className="text-crimson font-black">04</span>Parent counselling is available both online and offline — we're here to help.</li>
               </ul>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 gap-4">
               {documents.map((d, i) => (
                 <div key={d.doc}
-                  className="flex items-center gap-4 bg-white border border-[#E8E3DA] rounded-xl px-5 py-4 hover:border-emerald-200 hover:bg-emerald-50 transition-all duration-200 group">
-                  <div className="w-8 h-8 bg-emerald-100 group-hover:bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                    <svg className="w-4 h-4 text-emerald-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  className="flex items-center gap-5 bg-white border border-sand/10 rounded-2xl px-6 py-5 hover:border-crimson hover:bg-off-white transition-all duration-300 group shadow-sm hover:shadow-lg">
+                  <div className="w-10 h-10 bg-sand/10 group-hover:bg-crimson rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500">
+                    <svg className="w-5 h-5 text-crimson group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <p className="text-[#1C1C1E] text-sm font-semibold">{d.doc}</p>
-                    <p className="text-[#999] text-xs mt-0.5">{d.note}</p>
+                    <p className="text-navy-deeper text-base font-black font-playfair tracking-tight">{d.doc}</p>
+                    <p className="text-text-light text-xs mt-0.5 font-dm">{d.note}</p>
                   </div>
-                  <span className="text-xs text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full font-medium flex-shrink-0">Required</span>
+                  <span className="text-[10px] text-crimson bg-crimson/5 border border-crimson/10 px-3 py-1 rounded-full font-black uppercase tracking-widest flex-shrink-0">Required</span>
                 </div>
               ))}
             </div>
@@ -530,69 +535,71 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           5. FEE STRUCTURE
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Fee Structure</Tag>
-            <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Transparent &<br />
-              <em className="font-semibold">Straightforward</em>
+              <span className="text-crimson">Straightforward</span>
             </h2>
-            <p className="text-[#666] mt-5 max-w-lg mx-auto leading-relaxed">
+            <p className="text-text-light mt-6 max-w-lg mx-auto leading-relaxed font-dm">
               Indicative fee structure for 2025–26. Current fees may vary — contact the school office for the latest confirmed schedule. Early bird discounts and merit scholarships are available.
             </p>
           </Reveal>
 
           <Reveal>
-            <div className="overflow-x-auto rounded-2xl border border-[#E8E3DA] shadow-md">
-              <table className="w-full min-w-[720px] text-sm">
+            <div className="overflow-x-auto rounded-3xl border border-sand/20 shadow-xl">
+              <table className="w-full min-w-[800px] text-sm font-dm">
                 <thead>
-                  <tr className="bg-[#2D6A4F] text-white">
-                    <th className="text-left px-6 py-5 font-semibold tracking-wide display text-base">School</th>
-                    <th className="text-left px-5 py-5 font-semibold tracking-wide">Level</th>
-                    <th className="text-center px-5 py-5 font-semibold tracking-wide">Annual Fee</th>
-                    <th className="text-center px-5 py-5 font-semibold tracking-wide">Admission Fee</th>
-                    <th className="text-center px-5 py-5 font-semibold tracking-wide">Transport</th>
+                  <tr className="bg-navy-deeper text-white">
+                    <th className="text-left px-8 py-6 font-black tracking-widest uppercase text-[10px]">School</th>
+                    <th className="text-left px-6 py-6 font-black tracking-widest uppercase text-[10px]">Level</th>
+                    <th className="text-center px-6 py-6 font-black tracking-widest uppercase text-[10px]">Annual Fee</th>
+                    <th className="text-center px-6 py-6 font-black tracking-widest uppercase text-[10px]">Admission Fee</th>
+                    <th className="text-center px-6 py-6 font-black tracking-widest uppercase text-[10px]">Transport</th>
                   </tr>
                 </thead>
                 <tbody>
                   {feeRows.map((row, i) => (
                     <tr key={row.school}
-                      className={`border-t border-[#F0EDE8] transition-colors duration-200 hover:bg-emerald-50 ${i % 2 === 0 ? "bg-white" : "bg-[#FAFAF7]"}`}>
-                      <td className="px-6 py-5">
-                        <p className="font-semibold text-[#1C1C1E] leading-snug">{row.school}</p>
-                        {row.note && <p className="text-emerald-600 text-xs mt-1">{row.note}</p>}
+                      className={`border-t border-sand/10 transition-colors duration-300 hover:bg-sand/5 ${i % 2 === 0 ? "bg-white" : "bg-off-white"}`}>
+                      <td className="px-8 py-6">
+                        <p className="font-black text-navy-deeper font-playfair text-lg tracking-tight leading-snug">{row.school}</p>
+                        {row.note && <p className="text-crimson text-[10px] font-black uppercase tracking-widest mt-1.5">{row.note}</p>}
                       </td>
-                      <td className="px-5 py-5 text-[#666]">{row.level}</td>
-                      <td className="px-5 py-5 text-center">
-                        <span className="display text-lg font-semibold text-emerald-700">{row.annual}</span>
+                      <td className="px-6 py-6 text-text-light font-medium">{row.level}</td>
+                      <td className="px-6 py-6 text-center">
+                        <span className="font-playfair text-xl font-black text-navy-deeper">{row.annual}</span>
                       </td>
-                      <td className="px-5 py-5 text-center text-[#666]">{row.admission}</td>
-                      <td className="px-5 py-5 text-center">
-                        <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-3 py-1 rounded-full font-medium">{row.transport}</span>
+                      <td className="px-6 py-6 text-center text-text-light font-medium">{row.admission}</td>
+                      <td className="px-6 py-6 text-center">
+                        <span className="bg-sand/10 text-navy-deeper border border-sand/20 text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest">{row.transport}</span>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-[#AAA] text-xs mt-4 text-center">
-              * Fees are indicative and subject to revision. Contact the school office for the current, confirmed fee schedule. · Scholarships available for meritorious students.
+            <p className="text-sand text-[10px] font-black uppercase tracking-[0.2em] mt-6 text-center">
+              * Fees are indicative and subject to revision. Contact the school office for confirmed schedules.
             </p>
           </Reveal>
 
           {/* scholarship highlight */}
           <Reveal delay={100}>
-            <div className="mt-10 grid md:grid-cols-3 gap-6">
+            <div className="mt-16 grid md:grid-cols-3 gap-8">
               {[
-                { icon: "🥇", title: "Merit Scholarships", desc: "Available for academically outstanding students across all schools. Contact the admissions office for eligibility criteria and application process." },
+                { icon: "🥇", title: "Merit Scholarships", desc: "Available for academically outstanding students across all schools. Contact the admissions office for eligibility criteria." },
                 { icon: "🏅", title: "Sports Scholarships", desc: "Exceptional athletes may be eligible for fee concessions. Seedling values sports performance at par with academic achievement." },
                 { icon: "⏰", title: "Early Bird Incentive", desc: "Register early in the admission season to benefit from early bird incentives. Seats are limited — don't wait!" },
               ].map((s) => (
-                <div key={s.title} className="bg-[#FAFAF7] border border-[#E8E3DA] rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
-                  <span className="text-3xl mb-4 block">{s.icon}</span>
-                  <h4 className="display text-xl font-semibold text-[#1C1C1E] mb-2">{s.title}</h4>
-                  <p className="text-[#666] text-sm leading-[1.8]">{s.desc}</p>
+                <div key={s.title} className="bg-white border border-sand/20 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 group">
+                  <div className="w-16 h-16 bg-off-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                    {s.icon}
+                  </div>
+                  <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-3 tracking-tight">{s.title}</h4>
+                  <p className="text-text-light text-sm leading-[1.8] font-dm">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -603,24 +610,24 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           6. TRANSPORT
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-[#FAFAF7]">
+      <section className="py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <Reveal className="text-center mb-16">
+          <Reveal className="text-center mb-20">
             <Tag>Transport Facility</Tag>
-            <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+            <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Safe & Reliable<br />
-              <em className="font-semibold">School Transport</em>
+              <span className="text-crimson">School Transport</span>
             </h2>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-14">
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
             {transport.map((t, i) => (
               <Reveal key={t.title} delay={i * 80}>
-                <div className="bg-white border border-[#E8E3DA] rounded-2xl p-7 flex gap-5 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 group">
-                  <span className="text-4xl flex-shrink-0">{t.icon}</span>
+                <div className="bg-off-white border border-sand/20 rounded-3xl p-10 flex gap-8 hover:shadow-xl hover:border-sand/40 transition-all duration-500 group">
+                  <span className="text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-500">{t.icon}</span>
                   <div>
-                    <h4 className="display text-xl font-semibold text-[#1C1C1E] mb-2">{t.title}</h4>
-                    <p className="text-[#666] text-sm leading-[1.9]">{t.desc}</p>
+                    <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-3 tracking-tight">{t.title}</h4>
+                    <p className="text-text-light text-sm leading-[1.9] font-dm">{t.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -629,13 +636,13 @@ export default function AdmissionsPage() {
 
           {/* Campus Maps — tabbed */}
           <Reveal>
-            <div className="bg-white border border-[#E8E3DA] rounded-3xl overflow-hidden shadow-md">
+            <div className="bg-white border border-sand/20 rounded-[2.5rem] overflow-hidden shadow-2xl">
               {/* tab switcher */}
-              <div className="flex border-b border-[#E8E3DA]">
+              <div className="flex border-b border-sand/10">
                 {campusLocations.map((campus, i) => (
                   <button key={campus.name} onClick={() => setActiveTab(i)}
-                    className={`flex-1 px-6 py-5 text-sm font-semibold transition-all duration-200 text-left ${activeTab === i ? "bg-emerald-600 text-white" : "bg-white text-[#555] hover:bg-emerald-50"}`}>
-                    <span className="block text-xs opacity-70 uppercase tracking-widest mb-0.5">Campus</span>
+                    className={`flex-1 px-8 py-6 text-sm font-black transition-all duration-300 text-left uppercase tracking-widest ${activeTab === i ? "bg-navy-deeper text-white" : "bg-white text-text-light hover:bg-off-white"}`}>
+                    <span className="block text-[10px] opacity-60 mb-1">Campus</span>
                     {campus.name}
                   </button>
                 ))}
@@ -643,54 +650,58 @@ export default function AdmissionsPage() {
 
               <div className="grid md:grid-cols-2">
                 {/* map iframe placeholder */}
-                <div className="h-72 md:h-80 bg-[#EAF2EF] relative overflow-hidden">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center p-6">
-                    <span className="text-5xl">📍</span>
-                    <p className="display text-2xl font-semibold text-[#2D6A4F]">{campusLocations[activeTab].name}</p>
-                    <p className="text-[#555] text-sm leading-relaxed max-w-xs">{campusLocations[activeTab].address}</p>
+                <div className="h-80 md:h-[500px] bg-navy-deeper relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-[url('https://seedlingschools.com/assets/img/sps-banner.jpg')] bg-cover bg-center opacity-20 transition-transform duration-[10s] group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper via-navy-deeper/80 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center p-8 z-10">
+                    <div className="w-20 h-20 bg-sand/10 rounded-full flex items-center justify-center mb-2">
+                      <span className="text-4xl">📍</span>
+                    </div>
+                    <p className="font-playfair text-3xl font-black text-white tracking-tight">{campusLocations[activeTab].name}</p>
+                    <p className="text-white/60 text-sm leading-relaxed max-w-xs font-dm">{campusLocations[activeTab].address}</p>
                     <a href={`https://www.google.com/maps/search/${encodeURIComponent(campusLocations[activeTab].address)}`}
                       target="_blank" rel="noopener noreferrer"
-                      className="mt-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-5 py-2.5 rounded-full font-semibold tracking-wide transition-all duration-200">
+                      className="mt-4 bg-sand text-navy-deeper hover:bg-white text-[10px] px-8 py-3.5 rounded-full font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl">
                       Open in Google Maps ↗
                     </a>
                   </div>
                 </div>
 
                 {/* campus info */}
-                <div className="p-8 flex flex-col justify-between">
+                <div className="p-12 flex flex-col justify-between bg-white">
                   <div>
-                    <p className="display text-2xl font-semibold text-[#1C1C1E] mb-5">{campusLocations[activeTab].name}</p>
-                    <div className="space-y-4 mb-6">
-                      <div className="flex gap-3">
-                        <span className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 text-sm">📍</span>
-                        <p className="text-[#555] text-sm leading-relaxed">{campusLocations[activeTab].address}</p>
+                    <p className="font-playfair text-4xl font-black text-navy-deeper mb-8 tracking-tight">{campusLocations[activeTab].name}</p>
+                    <div className="space-y-6 mb-10">
+                      <div className="flex gap-4 items-start">
+                        <span className="w-10 h-10 bg-off-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10">📍</span>
+                        <p className="text-text-light text-base leading-relaxed font-dm">{campusLocations[activeTab].address}</p>
                       </div>
-                      <div className="flex gap-3">
-                        <span className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 text-sm">📞</span>
-                        <a href={`tel:${campusLocations[activeTab].phone}`} className="text-emerald-700 font-semibold text-sm hover:underline">
+                      <div className="flex gap-4 items-start">
+                        <span className="w-10 h-10 bg-off-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10">📞</span>
+                        <a href={`tel:${campusLocations[activeTab].phone}`} className="text-crimson font-black text-lg font-playfair tracking-tight hover:text-crimson-dark transition-colors">
                           {campusLocations[activeTab].phone}
                         </a>
                       </div>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold tracking-widest uppercase text-[#999] mb-3">Schools at this campus</p>
-                      <div className="space-y-2">
+                      <p className="text-[10px] font-black tracking-[0.3em] uppercase text-sand mb-5">Schools at this campus</p>
+                      <div className="space-y-3">
                         {campusLocations[activeTab].schools.map(s => (
-                          <div key={s} className="flex items-center gap-2 text-sm text-[#444]">
-                            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0" />
+                          <div key={s} className="flex items-center gap-3 text-sm text-text-base font-dm font-medium">
+                            <span className="w-2 h-2 bg-crimson rounded-full flex-shrink-0" />
                             {s}
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                  <div className="mt-6 pt-6 border-t border-[#F0EDE8] flex gap-3">
+                  <div className="mt-12 pt-8 border-t border-sand/10 flex gap-4">
                     <a href={`tel:${campusLocations[activeTab].phone}`}
-                      className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl text-sm font-semibold text-center transition-all duration-200">
+                      className="flex-1 bg-navy-deeper hover:bg-navy-dark text-white py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
                       Call Campus
                     </a>
                     <a href="#enquire"
-                      className="flex-1 border border-emerald-600 text-emerald-700 hover:bg-emerald-50 py-3 rounded-xl text-sm font-semibold text-center transition-all duration-200">
+                      className="flex-1 border-2 border-crimson text-crimson hover:bg-crimson/5 py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
                       Enquire
                     </a>
                   </div>
@@ -704,48 +715,48 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           7. CAMPUS VISIT CTA
       ══════════════════════════════════════════════════ */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-40 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1800&q=80"
           alt="Book a campus visit"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/90 via-[#1a4030]/80 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-crimson/20" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-emerald-300 text-2xl italic mb-4">Experience Seedling Firsthand</p>
-            <h2 className="display text-5xl md:text-7xl font-light leading-[1.05] mb-6">
+            <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-6 uppercase">Experience Seedling Firsthand</p>
+            <h2 className="font-playfair text-6xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter">
               Book a<br />
-              <em className="font-semibold">Campus Visit</em>
+              <span className="text-sand">Campus Visit</span>
             </h2>
-            <p className="text-white/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-xl mx-auto font-dm font-light">
               Walk through our campuses, meet our teachers, and feel the Seedling difference. Parent counselling is available both online and offline. Come feel the buzz.
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex gap-6 justify-center flex-wrap">
               <a href="tel:+917413012351"
-                className="inline-flex items-center gap-2 bg-white text-[#2D6A4F] hover:bg-emerald-50 px-10 py-5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-2xl">
-                📞 Call to Book a Visit
+                className="inline-flex items-center gap-3 bg-white text-navy-deeper hover:bg-sand px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-2xl">
+                📞 Book a Visit
               </a>
               <a href="#enquire"
-                className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white/10 px-10 py-5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300">
+                className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-navy-deeper px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
                 Enquire Online
               </a>
             </div>
           </Reveal>
           <Reveal delay={200}>
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               {[
                 ["🏫", "In-Person", "Campus Tour"],
                 ["💻", "Online", "Counselling"],
                 ["📅", "Flexible", "Scheduling"],
                 ["🆓", "Completely", "Free"],
               ].map(([icon, line1, line2]) => (
-                <div key={line2} className="text-center">
-                  <span className="text-3xl block mb-2">{icon}</span>
-                  <p className="text-white/50 text-xs leading-[1.6]">{line1}<br />{line2}</p>
+                <div key={line2} className="text-center group">
+                  <div className="text-4xl block mb-3 group-hover:scale-125 transition-transform duration-500">{icon}</div>
+                  <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] leading-relaxed">{line1}<br />{line2}</p>
                 </div>
               ))}
             </div>
@@ -757,18 +768,18 @@ export default function AdmissionsPage() {
           8. FAQ
       ══════════════════════════════════════════════════ */}
       <section className="py-32 max-w-6xl mx-auto px-6">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-20">
           <Tag>Common Questions</Tag>
-          <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+          <h2 className="font-playfair text-5xl md:text-7xl font-black text-navy-deeper leading-[1.1] tracking-tight">
             Parents Ask,<br />
-            <em className="font-semibold">We Answer</em>
+            <span className="text-crimson">We Answer</span>
           </h2>
-          <p className="text-[#666] mt-5 max-w-lg mx-auto leading-relaxed">
+          <p className="text-text-light mt-6 max-w-lg mx-auto leading-relaxed font-dm">
             Everything you need to know before making your decision. Can't find your answer? Call us directly.
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {faqs.map((faq) => (
             <Reveal key={faq.q}>
               <FAQItem q={faq.q} a={faq.a} />
@@ -776,13 +787,13 @@ export default function AdmissionsPage() {
           ))}
         </div>
 
-        <Reveal className="mt-12 text-center">
-          <p className="text-[#777] text-sm mb-4">Still have questions? We'd love to talk.</p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <a href="tel:+917413012351" className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg">
+        <Reveal className="mt-16 text-center">
+          <p className="text-text-light text-sm mb-6 font-dm font-medium">Still have questions? We'd love to talk.</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a href="tel:+917413012351" className="inline-flex items-center gap-3 bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 hover:shadow-xl">
               📞 +91 74130 12351 (Jawahar Nagar)
             </a>
-            <a href="tel:+919587772837" className="inline-flex items-center gap-2 border border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+            <a href="tel:+919587772837" className="inline-flex items-center gap-3 border-2 border-navy-deeper/20 text-navy-deeper hover:bg-off-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300">
               📞 +91 95877 72837 (Durgapura)
             </a>
           </div>
