@@ -470,7 +470,7 @@ function SportsSection() {
 
 function ActivitiesGrid() {
   return (
-    <section className="py-16 pb-8 bg-white relative">
+    <section className="py-16 pb-8 bg-white relative overflow-hidden">
       {/* Large decorative text */}
       <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
         <span className="text-[10rem] font-black text-navy-deeper/[0.03] leading-none font-playfair">BEYOND</span>
@@ -854,7 +854,7 @@ export default function SchoolLifePage() {
       <ActivitiesGrid />
       <ExperienceSection />
       <GalleryStrip />
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
       <CTASection />
     </main>
   );
