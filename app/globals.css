@@ -18,8 +18,8 @@
   --color-navy-light: #eef4fc;
 
   /* Fonts */
-  --font-playfair: "Playfair Display", serif;
-  --font-dm: "DM Sans", sans-serif;
+  --font-playfair: var(--font-playfair);
+  --font-dm: var(--font-dm);
   --font-sans: var(--font-dm);
 
   /* Standard radii and shadows for consistency */
@@ -32,8 +32,6 @@
 
 /* 🌍 GLOBAL BASE STYLES */
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-
   body {
     font-family: var(--font-dm);
     color: var(--color-text-base);
