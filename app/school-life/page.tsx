@@ -65,14 +65,14 @@ const sportBlocks = [
     highlights: ["Track & Field", "Team Sports", "Individual Events"],
     reverse: true,
   },
-  {
-    image: "/assets/CRICKET FEVER/2.webp",
-    tag: "Carnival",
-    title: "SMHS Sports Carnival",
-    body: "The SMHS Sports Carnival is a spectacular celebration of physical excellence and team spirit. Students from all grades come together in a festival of friendly competition, showcasing their athletic talents and boundless energy.",
-    highlights: ["Multi-Sport Format", "House Competitions", "Award Ceremony"],
-    reverse: false,
-  },
+  // {
+  //   image: "/assets/CRICKET FEVER/2.webp",
+  //   tag: "Carnival",
+  //   title: "SMHS Sports Carnival",
+  //   body: "The SMHS Sports Carnival is a spectacular celebration of physical excellence and team spirit. Students from all grades come together in a festival of friendly competition, showcasing their athletic talents and boundless energy.",
+  //   highlights: ["Multi-Sport Format", "House Competitions", "Award Ceremony"],
+  //   reverse: false,
+  // },
 ];
 
 const activities = [

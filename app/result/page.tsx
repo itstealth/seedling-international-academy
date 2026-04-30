@@ -70,7 +70,7 @@ export default function ResultPage() {
         <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <Reveal className="text-center mb-24">
+          <Reveal className="text-center mb-10 md:mb-24">
             <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
               Roll of Honour
             </span>
@@ -80,7 +80,7 @@ export default function ResultPage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {achievements.map((a, i) => (
               <Reveal key={a.label} delay={i * 80}>
                 <div className="group bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
