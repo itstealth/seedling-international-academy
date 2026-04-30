@@ -17,7 +17,7 @@ const feeData = [
 export default function FeeStructurePage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
+      <PageHero
         title="Fee Structure"
         subtitle="Transparent and straightforward. Investing in your child's future with clarity and trust."
         image="/assets/Home/classroom.jpg"
@@ -27,7 +27,7 @@ export default function FeeStructurePage() {
         <div className="flex flex-col lg:flex-row gap-20 mb-32 items-end">
           <div className="flex-1">
             <span className="text-label mb-8 block uppercase">Academic Session 2026-27</span>
-            <h2 className="text-heading text-6xl md:text-8xl mb-12">Clarity in <br /> Investment.</h2>
+            <h2 className="text-heading text-4xl md:text-5xl mb-12">Clarity in <br /> Investment.</h2>
             <p className="text-xl text-neutral-600 font-medium leading-relaxed max-w-xl">
               Our fee structure is designed to reflect the premium educational experience and world-class facilities provided at Seedling Schools.
             </p>
@@ -46,7 +46,7 @@ export default function FeeStructurePage() {
         </div>
 
         {/* Fee Table */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -105,13 +105,13 @@ export default function FeeStructurePage() {
       <section className="py-48 text-center bg-neutral-950 rounded-t-[5rem] mx-4 md:mx-8 mt-20 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="text-heading text-white text-6xl md:text-8xl mb-16 italic font-serif">
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-16 italic font-serif">
             Financial <br /> <span className="text-secondary tracking-tighter">Assistance.</span>
           </h2>
           <p className="text-white/60 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
             Have specific questions about scholarships or payment plans? Our accounts team is ready to assist you.
           </p>
-          <Link 
+          <Link
             href="/contact-us"
             className="inline-flex h-24 px-16 bg-white text-neutral-950 rounded-full items-center justify-center font-black text-2xl shadow-editorial hover:bg-primary hover:text-white transition-all group"
           >

@@ -35,7 +35,7 @@ const steps = [
 export default function AdmissionProcessPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
+      <PageHero
         title="Admission Process"
         subtitle="Your pathway to excellence starts here. A seamless four-step journey to join the Seedling family."
         image="/assets/Home/classroom.jpg"
@@ -61,19 +61,19 @@ export default function AdmissionProcessPage() {
               <div className="absolute top-0 right-0 p-10 text-7xl font-black text-black/[0.03] select-none font-serif italic group-hover:text-primary/[0.05] transition-colors">
                 0{i + 1}
               </div>
-              
+
               <div className="w-20 h-20 rounded-3xl bg-neutral-50 flex items-center justify-center text-primary mb-10 shadow-inner group-hover:bg-primary group-hover:text-white transition-all duration-700">
                 {(() => {
                   const Icon = step.icon;
                   return <Icon className="w-10 h-10" />;
                 })()}
               </div>
-              
+
               <h3 className="text-2xl font-black text-neutral-950 mb-6 tracking-tight">{step.title}</h3>
               <p className="text-neutral-500 font-medium leading-relaxed mb-8">
                 {step.desc}
               </p>
-              
+
               <ul className="space-y-4">
                 {step.details.map((detail, di) => (
                   <li key={di} className="flex items-center gap-3 text-sm font-black text-neutral-900">
@@ -93,11 +93,11 @@ export default function AdmissionProcessPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <span className="text-label mb-8 block uppercase">Essential Paperwork</span>
-              <h2 className="text-heading text-6xl md:text-8xl mb-12">Required <br /> Documents.</h2>
+              <h2 className="text-heading text-4xl md:text-5xl mb-12">Required <br /> Documents.</h2>
               <p className="text-xl text-neutral-600 font-medium leading-relaxed mb-10">
                 Please ensure you have the following documents ready for the admission process to ensure a smooth transition.
               </p>
-              <Link 
+              <Link
                 href="/admissions/contact"
                 className="inline-flex h-20 px-10 bg-neutral-950 text-white rounded-full items-center font-black hover:bg-primary transition-all group"
               >
@@ -105,7 +105,7 @@ export default function AdmissionProcessPage() {
                 <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 "Birth Certificate",
@@ -115,7 +115,7 @@ export default function AdmissionProcessPage() {
                 "Aadhar Card Copy",
                 "Residence Proof"
               ].map((doc, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   whileHover={{ x: 10 }}
                   className="p-8 rounded-3xl bg-neutral-50 border border-black/5 flex items-center gap-4 transition-all"
@@ -134,7 +134,7 @@ export default function AdmissionProcessPage() {
       {/* Final CTA */}
       <section className="py-48 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-heading text-6xl md:text-8xl mb-16">
+          <h2 className="text-heading text-4xl md:text-5xl mb-16">
             Ready to <br /> <span className="text-primary tracking-tighter">Begin?</span>
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -142,7 +142,7 @@ export default function AdmissionProcessPage() {
               Register Online
               <ArrowRight className="ml-4 w-8 h-8 group-hover:translate-x-1 transition-transform" />
             </button>
-            <Link 
+            <Link
               href="/contact-us"
               className="text-xl font-black text-neutral-950 hover:text-primary transition-colors border-b-2 border-primary/20 hover:border-primary pb-2"
             >

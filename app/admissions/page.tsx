@@ -726,7 +726,7 @@ export default function AdmissionsPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
           <Reveal>
             <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-6 uppercase">Experience Seedling Firsthand</p>
-            <h2 className="font-playfair text-6xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter text-white">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black leading-[1.05] mb-8 tracking-tighter text-white">
               Book a<br />
               <span className="text-sand">Campus Visit</span>
             </h2>
@@ -815,7 +815,7 @@ export default function AdmissionsPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
             <p className="display text-sand text-xl italic mb-4">The Seedling Family Awaits</p>
-            <h2 className="display text-6xl md:text-8xl font-light leading-[1.0] mb-6 text-white">
+            <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-white">
               Where Every<br />
               <em className="font-semibold text-sand">Student</em><br />
               Matters.
