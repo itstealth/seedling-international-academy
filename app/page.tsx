@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { Trophy, Users, Music, Medal } from 'lucide-react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -252,11 +253,11 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { img: '/assets/CRICKET FEVER/1.webp', emoji: '🏏', name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
-              { img: '/assets/SPORTS DAY/2.webp', emoji: '⚽', name: 'Football', desc: 'State-level pitch and certified training.' },
-              { img: '/assets/SPORTS DAY/3.webp', emoji: '🏃', name: 'Athletics', desc: '400m track nurturing state champions.' },
-              { img: '/assets/SPORTS DAY/1.webp', emoji: '🏸', name: 'Badminton', desc: 'Premium indoor courts for all levels.' },
-            ].map(({ img, emoji, name, desc }) => (
+              { img: '/assets/CRICKET FEVER/1.webp', Icon: Medal, name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
+              { img: '/assets/SPORTS DAY/2.webp', Icon: Trophy, name: 'Formation Drill', desc: 'State-level pitch and certified training.' },
+              { img: '/assets/SPORTS DAY/3.webp', Icon: Users, name: 'Performances', desc: '400m track nurturing state champions.' },
+              { img: '/assets/SPORTS DAY/1.webp', Icon: Music, name: 'Group Dance', desc: 'Premium indoor courts for all levels.' },
+            ].map(({ img, Icon, name, desc }) => (
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
                   <img src={img} alt={name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -264,7 +265,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
                 <div className="p-8">
                   <h3 className="font-playfair text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <span className="text-2xl">{emoji}</span>
+                    <Icon size={24} className="text-sand" />
                     {name}
                   </h3>
                   <p className="text-white/60 text-xs leading-relaxed font-light">{desc}</p>
