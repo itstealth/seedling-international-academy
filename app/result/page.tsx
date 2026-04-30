@@ -64,7 +64,7 @@ export default function ResultPage() {
       </section>
 
       {/* Numbers That Tell Our Story */}
-      <section className="py-32 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
+      <section className="md:py-32 py-16 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-mauve/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
@@ -80,14 +80,14 @@ export default function ResultPage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {achievements.map((a, i) => (
               <Reveal key={a.label} delay={i * 80}>
-                <div className="group bg-white/5 border border-white/10 rounded-3xl p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
-                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">{a.icon}</div>
-                  <p className="font-playfair text-5xl md:text-6xl font-semibold text-sand mb-3">{a.value}</p>
-                  <p className="text-white font-bold text-lg mb-2 font-dm tracking-tight">{a.label}</p>
-                  <p className="text-white/40 text-xs tracking-widest uppercase font-dm font-bold">{a.sub}</p>
+                <div className="group bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
+                  <div className="text-3xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-500">{a.icon}</div>
+                  <p className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold text-sand mb-2 md:mb-3">{a.value}</p>
+                  <p className="text-white font-bold text-sm md:text-lg mb-1 md:mb-2 font-dm tracking-tight">{a.label}</p>
+                  <p className="text-white/40 text-[10px] md:text-xs tracking-widest uppercase font-dm font-bold">{a.sub}</p>
                 </div>
               </Reveal>
             ))}
@@ -99,7 +99,7 @@ export default function ResultPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="font-playfair text-5xl md:text-6xl font-semibold mb-6">100% Board Results</h3>
+                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-white">100% Board Results</h3>
                 <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
