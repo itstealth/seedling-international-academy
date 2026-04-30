@@ -3,13 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 
 const navItems = [
   { name: "About", href: "/about" },
-  { name: "Academics", href: "/academics" },
+  { name: "Academics", href: "/academics", dropdown: [
+    { name: "Academics", href: "/academics" },
+    { name: "Result", href: "/result" },
+  ]},
   { name: "School Life", href: "/school-life" },
   { name: "Campus", href: "/campus-highlights" },
   { name: "Admissions", href: "/admissions" },
@@ -69,13 +72,34 @@ export default function Navbar() {
               {/* Desktop Navigation */}
               <nav className="hidden xl:flex items-center">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-sand" : "text-white/80 hover:text-white"}`}
-                  >
-                    {item.name}
-                  </Link>
+                  <div key={item.name} className="relative group">
+                    {item.dropdown ? (
+                      <>
+                        <button className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname.startsWith(item.href) ? "text-sand" : "text-white/80 hover:text-white"}`}>
+                          {item.name}
+                          <ChevronDown className="w-3 h-3" />
+                        </button>
+                        <div className="absolute top-full left-0 mt-2 w-48 bg-navy-deeper/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
+                          {item.dropdown.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              className={`block px-5 py-3 text-sm font-bold uppercase tracking-wider transition-colors ${pathname === sub.href ? "text-sand" : "text-white/80 hover:text-white hover:bg-white/5"}`}
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-sand" : "text-white/80 hover:text-white"}`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
                 ))}
               </nav>
 
@@ -146,14 +170,29 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto px-8 py-10">
                   <div className="flex flex-col gap-2">
                     {navItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-sand" : "text-white/80"}`}
-                      >
-                        {item.name}
-                      </Link>
+                      <div key={item.name}>
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-sand" : "text-white/80"}`}
+                        >
+                          {item.name}
+                        </Link>
+                        {item.dropdown && (
+                          <div className="pl-4 flex flex-col gap-1">
+                            {item.dropdown.map((sub) => (
+                              <Link
+                                key={sub.name}
+                                href={sub.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`py-3 text-base font-bold uppercase tracking-wider ${pathname === sub.href ? "text-sand" : "text-white/60"}`}
+                              >
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
