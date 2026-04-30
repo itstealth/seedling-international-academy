@@ -193,7 +193,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════════════════ */}
-      <section className="relative h-[92vh] min-h-[640px] flex items-center overflow-hidden">
+      <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
         <img
           src="https://seedlingschools.com/assets/img/sps-banner.jpg"
           alt="Academic Excellence at Seedling Schools"
@@ -202,100 +202,60 @@ export default function AcademicsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <Reveal>
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6 backdrop-blur-sm font-dm">
-              <span className="w-1.5 h-1.5 bg-sand rounded-full animate-pulse" />
-              Seedling Group of Schools · Academic Programmes
-            </span>
-          </Reveal>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
           <Reveal delay={100}>
-            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] max-w-4xl mb-6">
+            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
               Academic<br />
               <em className="font-semibold text-sand">Excellence</em><br />
               <span className="text-white/90">& Future-Ready Learning.</span>
             </h1>
           </Reveal>
-          <Reveal delay={220}>
-            <p className="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-dm font-light">
-              NEP-aligned CBSE and Cambridge programmes designed to nurture confident, reflective, and globally-minded learners — across 5 schools in Jaipur, since 1992.
-            </p>
-          </Reveal>
-          <Reveal delay={340}>
-            <div className="flex gap-4 flex-wrap">
-              <a href="/admission-procedure" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-navy-deeper/40 font-dm">
-                Explore Programmes
-              </a>
-              <a href="/admission-online" className="bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 backdrop-blur-sm font-dm">
-                Apply Now
-              </a>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* floating stat pills */}
-        <div className="absolute bottom-12 right-12 z-10 hidden lg:flex flex-col gap-4">
-          {[["100%", "Board Results"], ["20K+", "Students"], ["15:1", "Teacher Ratio"]].map(([v, l]) => (
-            <div key={l} className="flex items-center gap-4 bg-navy-deeper/40 backdrop-blur-xl border border-white/10 text-white px-6 py-4 rounded-2xl shadow-2xl">
-              <span className="font-playfair text-3xl font-semibold text-sand">{v}</span>
-              <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase font-dm">{l}</span>
-            </div>
-          ))}
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
           2. CURRICULUM OVERVIEW
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <Reveal className="text-center mb-20">
+      <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
+        <Reveal className="text-center mb-16">
           <Tag color="navy">Curriculum Overview</Tag>
           <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
-            Two Boards.<br />
-            <em className="font-semibold text-crimson">One Vision.</em>
+            Two Boards
+            <em className="font-semibold text-crimson ml-2">One Vision</em>
           </h2>
-          <p className="text-text-light mt-6 max-w-2xl mx-auto leading-relaxed text-lg font-dm font-light">
-            Whether CBSE or Cambridge, every Seedling programme is built on the same foundation: joyful learning, holistic development, and genuine academic rigour — aligned with the National Education Policy.
-          </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { ...curricula[0], color: "from-navy-light/50 to-white", border: "border-navy/10", accent: "bg-navy", text: "text-navy" },
-            { ...curricula[1], color: "from-mauve/10 to-white", border: "border-mauve/20", accent: "bg-mauve", text: "text-mauve" },
-            { ...curricula[2], color: "from-sand/20 to-white", border: "border-sand/40", accent: "bg-crimson", text: "text-crimson" },
-          ].map((c, i) => (
-            <Reveal key={c.board} delay={i * 120}>
-              <div className={`group relative rounded-3xl p-10 h-full border ${c.border} bg-gradient-to-br ${c.color} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}>
-                <div className={`absolute top-0 left-10 right-10 h-1 ${c.accent} rounded-full`} />
-                <div className="text-6xl mb-6">{c.icon}</div>
-                <div className={`inline-block ${c.text} text-[10px] font-black tracking-[0.2em] uppercase mb-4 border ${c.border} px-4 py-1 rounded-full font-dm`}>
-                  {c.board}
-                </div>
-                <div className="mt-3 mb-6 space-y-2">
-                  {c.schools.map((s) => (
-                    <p key={s} className="text-sm text-text-base font-bold flex items-center gap-2 font-dm">
-                      <span className={`w-1.5 h-1.5 rounded-full ${c.accent} inline-block`} />
-                      {s}
-                    </p>
-                  ))}
-                </div>
-                <p className="text-text-light text-base leading-[1.8] mb-8 font-dm font-light">{c.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {c.highlights.map((h) => (
-                    <span key={h} className={`text-[10px] ${c.text} border ${c.border} px-3 py-1 rounded-full font-black tracking-widest uppercase font-dm bg-white/50`}>{h}</span>
-                  ))}
-                </div>
+        <Reveal>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="overflow-hidden rounded-3xl shadow-editorial">
+              <img
+                src="/assets/Home/classroom.jpg"
+                alt="CBSE Curriculum at Seedling Schools"
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+            <div>
+              {/* <div className="inline-block text-navy text-[10px] font-black tracking-[0.2em] uppercase mb-4 border border-navy/10 px-4 py-1 rounded-full font-dm">
+                CBSE
+              </div> */}
+              <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">Central Board of Secondary Education</h3>
+              <p className="text-text-light leading-[1.9] text-lg font-dm font-light mb-8">
+                Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["NEP Aligned", "100% Board Results", "Personalised Learning"].map((h) => (
+                  <span key={h} className="text-[10px] text-navy border border-navy/10 px-4 py-2 rounded-full font-black tracking-widest uppercase font-dm bg-white/50">{h}</span>
+                ))}
               </div>
-            </Reveal>
-          ))}
-        </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* ══════════════════════════════════════════════════════
           3. LEARNING APPROACH (ZIG-ZAG)
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="crimson">How We Teach</Tag>
@@ -333,7 +293,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           CAMBRIDGE LEARNER PROFILE
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-navy-deeper text-white relative overflow-hidden">
+      <section className="py-20 bg-navy-deeper text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <Reveal className="text-center mb-20">
@@ -397,10 +357,10 @@ export default function AcademicsPage() {
                 <div className={`absolute inset-0 bg-gradient-to-t ${p.color} via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-0 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-white/60 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
                   <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight">{p.level}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
+                  <p className="text-white/80 text-sm leading-relaxed opacity-100 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
                     {p.desc}
                   </p>
                   <div className="mt-8 w-12 h-1 bg-white/60 group-hover:w-24 transition-all duration-500 rounded-full" />
@@ -467,7 +427,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           JOYRIDE — WHAT SEEDLING OFFERS
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 bg-off-white">
+      {/* <section className="py-32 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <Reveal>
@@ -503,7 +463,7 @@ export default function AcademicsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════════
           6. FACULTY
