@@ -13,7 +13,7 @@ const navItems = [
     { name: "Leadership", href: "/about/leadership" },
   ]},
   { name: "Academics", href: "/academics", dropdown: [
-    { name: "Academics", href: "/academics" },
+    { name: "Curriculum", href: "/curriculum" },
     { name: "Result", href: "/result" },
     { name: "Faculty", href: "/faculty" },
   ]},

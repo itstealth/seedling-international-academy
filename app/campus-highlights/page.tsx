@@ -25,7 +25,7 @@ function FeaturedArticle() {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-off-white" ref={heroRef}>
+    <section className="pt-24 pb-8 md:pt-24 md:pb-14 bg-off-white" ref={heroRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Label */}
         <div className="fade-up opacity-0 translate-y-6 transition-all duration-700 ease-out mb-10 flex items-center gap-4">
@@ -281,7 +281,7 @@ function NewsGrid() {
   }, []);
 
   return (
-    <section className="py-24 bg-sand/10" ref={sectionRef}>
+    <section className="pt-8 md:pt-20 md:pb-8 bg-sand/10" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 transition-all duration-700 ease-out mb-12 flex items-end justify-between">
@@ -408,7 +408,7 @@ function EventCards() {
   }, []);
 
   return (
-    <section className="py-24 bg-[#FAFAF8]" ref={sectionRef}>
+    <section className="pt-8 pb-12 md:pt-20 md:pb-8 bg-[#FAFAF8]" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-12">
@@ -527,7 +527,7 @@ function HighlightRow() {
   }, []);
 
   return (
-    <section className="py-24 bg-navy-deeper overflow-hidden" ref={sectionRef}>
+    <section className="md:pt-20 md:pb-8 py-8 bg-navy-deeper overflow-hidden" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-14 text-center">
@@ -577,7 +577,7 @@ function HighlightRow() {
 
         {/* Quote */}
         <div
-          className="fade-up opacity-0 translate-y-6 mt-16 border-t border-white/10 pt-12 text-center"
+          className="fade-up opacity-0 translate-y-6 mt-8 md:mt-16 border-t border-white/10 pt-12 text-center"
           style={{ transitionDelay: "500ms" }}
         >
           <blockquote className="font-playfair text-xl md:text-2xl text-white italic max-w-3xl mx-auto leading-relaxed">
@@ -623,7 +623,7 @@ function GalleryStrip() {
   }, []);
 
   return (
-    <section className="py-24 bg-off-white" ref={sectionRef}>
+    <section className="pt-8 pb-12 bg-off-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-12">
@@ -700,7 +700,7 @@ function CTASection() {
   }, []);
 
   return (
-    <section className="py-24 bg-sand/10 relative overflow-hidden" ref={sectionRef}>
+    <section className="pt-8 md:pt-16 md:pb-8 bg-sand/10 relative overflow-hidden" ref={sectionRef}>
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-navy/10 opacity-50 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-crimson/5 opacity-50 blur-3xl pointer-events-none" />
 
