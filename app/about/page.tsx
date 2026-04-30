@@ -36,9 +36,8 @@ function Reveal({
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      } ${className}`}
+      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } ${className}`}
     >
       {children}
     </div>
@@ -157,7 +156,7 @@ function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -405,7 +404,7 @@ export default function AboutPage() {
           <div className="relative timeline-line">
             {timeline.map((item, i) => (
               <Reveal key={item.year} delay={i * 60}>
-                <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i===5 ? "mb-4" : "mb-24"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
+                <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i === 5 ? "mb-4" : "mb-24"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
                   {/* dot */}
                   <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy rounded-full ring-4 ring-navy-light z-10 hidden md:block" />
 
@@ -452,7 +451,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
             <p className="font-playfair text-sand text-3xl italic mb-6 tracking-wide">Our Philosophy</p>
-            <blockquote className="font-playfair text-5xl md:text-7xl font-light leading-[1.1] mb-10 text-white">
+            <blockquote className="font-playfair text-4xl md:text-5xl font-light leading-[1.1] mb-10 text-white">
               "हस्ये नयतु नः ब्रह्मज्ञानं"
             </blockquote>
             <p className="font-playfair text-2xl font-light italic text-sand mb-12">
@@ -480,7 +479,7 @@ export default function AboutPage() {
       <section className="py-10 sm:py-16  max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal className="text-center mb-20">
           <p className="font-playfair text-navy text-xl italic mb-3">Direction & Purpose</p>
-          <h2 className="font-playfair text-5xl md:text-6xl font-light">
+          <h2 className="font-playfair text-4xl md:text-5xl font-light">
             Vision &amp; <em className="font-semibold">Mission</em>
           </h2>
         </Reveal>
@@ -543,7 +542,7 @@ export default function AboutPage() {
       <section className="bg-navy-light/40 py-24 px-5 sm:px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl -mr-48 -mt-48" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/20 rounded-full blur-3xl -ml-48 -mb-48" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-navy text-xl italic mb-3">What Makes Us Special</p>
@@ -580,7 +579,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-sand text-xl italic mb-3">Campus Life</p>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light text-white">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               A Glimpse of<br />
               <em className="font-semibold text-crimson">Our World</em>
             </h2>

@@ -81,7 +81,7 @@ export default function FacultyPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               Faculty Who<br />
               <em className="font-semibold text-crimson">Inspire, Not Just Instruct</em>
             </h2>

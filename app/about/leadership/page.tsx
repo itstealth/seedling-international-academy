@@ -26,7 +26,7 @@ function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -83,9 +83,8 @@ function Reveal({
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      } ${className}`}
+      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        } ${className}`}
     >
       {children}
     </div>
@@ -149,7 +148,7 @@ export default function LeadershipPage() {
               <img
                 src="https://seedlingschools.com/assets/img/sandeep.png"
                 alt="Dr. Sandeep Bakshi, Director Seedling Group"
-                className="w-full h-[560px] object-cover rounded-2xl shadow-2xl object-top"
+                className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
                 <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
@@ -194,7 +193,7 @@ export default function LeadershipPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
-            <h2 className="font-playfair text-5xl md:text-6xl font-light">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light">
               The <em className="font-semibold">Leadership</em><br />Behind the Legacy
             </h2>
           </Reveal>

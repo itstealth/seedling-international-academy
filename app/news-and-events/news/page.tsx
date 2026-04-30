@@ -40,7 +40,7 @@ const newsItems = [
 export default function NewsCoveragePage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
+      <PageHero
         title="News Coverage"
         subtitle="Seedling in the headlines. Celebrating our achievements and milestones recognized by the leading media."
         image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"
@@ -49,12 +49,12 @@ export default function NewsCoveragePage() {
       <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="flex items-center gap-4 mb-20">
           <Newspaper className="text-secondary w-10 h-10" />
-          <h2 className="text-heading text-5xl md:text-7xl">Media Highlights.</h2>
+          <h2 className="text-heading text-4xl md:text-5xl">Media Highlights.</h2>
         </div>
 
         {/* Featured News */}
         {newsItems.filter(item => item.featured).map((news, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function NewsCoveragePage() {
           >
             <Image src={news.image} alt={news.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
-            
+
             <div className="absolute inset-0 p-12 md:p-20 flex flex-col justify-end text-white max-w-4xl">
               <div className="flex items-center gap-4 mb-8">
                 <span className="px-6 py-2 rounded-full bg-secondary text-white text-xs font-black uppercase tracking-widest">Featured News</span>
@@ -90,7 +90,7 @@ export default function NewsCoveragePage() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {newsItems.filter(item => !item.featured).map((news, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function NewsCoveragePage() {
                 <Image src={news.image} alt={news.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-all" />
               </div>
-              
+
               <div className="flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-label text-neutral-400">{news.date}</span>
@@ -132,7 +132,7 @@ export default function NewsCoveragePage() {
       <section className="py-48 bg-neutral-950 text-white rounded-t-[5rem] mx-4 md:mx-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Calendar className="w-16 h-16 text-secondary mx-auto mb-10" />
-          <h2 className="text-heading text-white text-5xl md:text-7xl mb-12 italic font-serif">News Archives.</h2>
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif">News Archives.</h2>
           <p className="text-white/50 text-xl font-medium mb-16 max-w-xl mx-auto leading-relaxed">
             Looking for older milestones? Explore our complete library of press releases and media clippings since 1992.
           </p>

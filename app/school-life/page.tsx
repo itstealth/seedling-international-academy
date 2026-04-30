@@ -222,7 +222,7 @@ function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -287,7 +287,7 @@ function MasonryGallery() {
             <span className="text-sand text-sm uppercase tracking-[0.3em] font-light">
               Visual Journal
             </span>
-            <h2 className="font-playfair text-5xl md:text-6xl font-black text-white mt-2">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-2">
               Snippets of
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
@@ -307,8 +307,8 @@ function MasonryGallery() {
               item.size === "large"
                 ? "h-80"
                 : item.size === "wide"
-                ? "h-56"
-                : "h-44";
+                  ? "h-56"
+                  : "h-44";
 
             return (
               <div
@@ -327,17 +327,15 @@ function MasonryGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Category badge */}
                 <div
-                  className={`absolute top-3 left-3 bg-sand text-navy-deeper text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${
-                    activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
-                  }`}
+                  className={`absolute top-3 left-3 bg-sand text-navy-deeper text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+                    }`}
                 >
                   {item.category}
                 </div>
                 {/* Title */}
                 <div
-                  className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-300 ${
-                    activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
+                  className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-300 ${activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    }`}
                 >
                   <p className="text-white font-semibold text-sm font-dm">{item.title}</p>
                   <div className="flex items-center gap-1 mt-1">
@@ -396,7 +394,7 @@ function SportsSection() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Physical Excellence
           </span>
-          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
             Sports & Physical
             <span className="text-crimson"> Activities</span>
           </h2>
@@ -408,16 +406,14 @@ function SportsSection() {
           {sportBlocks.map((block, i) => (
             <div
               key={i}
-              className={`flex flex-col ${
-                block.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-              } gap-12 items-center`}
+              className={`flex flex-col ${block.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+                } gap-12 items-center`}
             >
               {/* Image side */}
               <div className="w-full lg:w-[55%] relative group">
                 <div
-                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-navy-deeper/10 transition-all duration-500 group-hover:scale-[1.02] ${
-                    block.reverse ? "-right-4 left-auto" : "-left-4 right-auto"
-                  }`}
+                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-navy-deeper/10 transition-all duration-500 group-hover:scale-[1.02] ${block.reverse ? "-right-4 left-auto" : "-left-4 right-auto"
+                    }`}
                 />
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
                   <img
@@ -482,7 +478,7 @@ function ActivitiesGrid() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Holistic Growth
           </span>
-          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
             Beyond
             <span className="text-crimson"> Academics</span>
           </h2>
@@ -557,7 +553,7 @@ function ExperienceSection() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Voices of Seedling
           </span>
-          <h2 className="font-playfair text-5xl md:text-6xl font-black text-white mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
             Student
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
               {" "}Experiences
@@ -609,11 +605,10 @@ function ExperienceSection() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`relative overflow-hidden rounded-full transition-all duration-300 ${
-                active === i
-                  ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-navy-deeper"
-                  : "w-12 h-12 opacity-50 hover:opacity-80"
-              }`}
+              className={`relative overflow-hidden rounded-full transition-all duration-300 ${active === i
+                ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-navy-deeper"
+                : "w-12 h-12 opacity-50 hover:opacity-80"
+                }`}
             >
               <img
                 src={exp.image}
@@ -711,7 +706,7 @@ function FeaturesSection() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Our Difference
           </span>
-          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
             What Makes Us
             <span className="text-crimson"> Special</span>
           </h2>
@@ -771,7 +766,7 @@ function CTASection() {
           Admissions Open 2026–27
         </div>
 
-        <h2 className="font-playfair text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
+        <h2 className="font-playfair text-4xl md:text-5xl font-black text-white leading-tight mb-6 tracking-tight">
           Join the
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
@@ -847,7 +842,7 @@ export default function SchoolLifePage() {
         100% self-contained when you move it to another project.
       */}
       <style dangerouslySetInnerHTML={{ __html: pageStyles }} />
-      
+
       <Hero />
       <MasonryGallery />
       {/* <SportsSection /> */}

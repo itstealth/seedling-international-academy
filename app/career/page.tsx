@@ -205,8 +205,8 @@ function JobCard({
             </span>
           )}
           <span className={`text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border ${role.type === "Teaching"
-              ? "bg-navy-light text-navy border-navy/20"
-              : "bg-mauve/10 text-mauve border-mauve/20"
+            ? "bg-navy-light text-navy border-navy/20"
+            : "bg-mauve/10 text-mauve border-mauve/20"
             }`}>
             {role.type}
           </span>
@@ -616,7 +616,7 @@ export default function CareersPage() {
       <section className="py-32 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Why Seedling</Tag>
-          <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
             Why Work<br />
             <em className="font-semibold text-crimson">With Us</em>
           </h2>
@@ -653,7 +653,7 @@ export default function CareersPage() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
               <Tag>Current Openings</Tag>
-              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
                 Open<br />
                 <em className="font-semibold text-navy">Positions</em>
               </h2>
@@ -673,8 +673,8 @@ export default function CareersPage() {
               <button
                 key={f}
                 className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${i === 0
-                    ? "bg-navy-deeper text-white border-navy-deeper"
-                    : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
+                  ? "bg-navy-deeper text-white border-navy-deeper"
+                  : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
                   }`}
               >
                 {f}
