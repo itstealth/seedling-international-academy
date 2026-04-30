@@ -87,9 +87,9 @@ export default function SeedlingPage(): React.JSX.Element {
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
             CBSE Affiliated · Jaipur
           </div>
-          <h1 className="serif text-[clamp(2.5rem,7vw,5.5rem)] text-white leading-[1] font-light max-w-4xl mb-8">
-            Where Every Child Finds Their <br />
-            <em className="font-semibold text-sand italic">Wings</em>
+          <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
+            Where Every Child Finds Their 
+            <em className="font-semibold text-sand italic ml-2">Wings</em>
           </h1>
           <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
             Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1994.
@@ -326,10 +326,10 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
           <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
             {[
-              { src: '/assets/ANNUAL FUNCTION/6.webp', label: 'School Campus', className: 'col-span-2 row-span-2' },
-              { src: '/assets/STELLAR SATURDAYS/3.webp', label: 'Smart Classrooms' },
-              { src: '/assets/BOOT CAMP/4.webp', label: 'Activities', className: 'col-span-2' },
-              { src: '/assets/SPORTS DAY/1.webp', label: 'Sports' },
+              { src: '/assets/DIWALI DANCE BEATS/1.webp', label: 'Diwali Dance Beats', className: 'col-span-2 row-span-2' },
+              { src: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip', className: '' },
+              { src: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing', className: 'col-span-2' },
+              { src: '/assets/SPORTS DAY/3.webp', label: 'Sports Day', className: '' },
             ].map(({ src, label, className = "" }) => (
               <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
                 <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
