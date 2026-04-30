@@ -43,13 +43,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Explore (Desktop Spans 2) */}
+          {/* Column 2: Quick Overview (Desktop Spans 2) */}
           <div className="lg:col-span-2 space-y-10">
-            <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-crimson/10 pb-4">Explore</h3>
+            <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-crimson/10 pb-4">Quick Overview</h3>
             <ul className="space-y-6">
-              {['About Seedling', 'Academic Paths', 'Roll of Honour', 'Global Faculty', 'Career'].map((item) => (
+              {[ 'Policies', 'Mandatory Disclosures', 'Brochure', 'ERP Login', 'Terms & Conditions'].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase().split(' ')[0]}`} className="group flex items-center text-sm font-black text-text-light hover:text-navy transition-colors font-dm">
+                  <Link href={`/${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="group flex items-center text-sm font-black text-text-light hover:text-navy transition-colors font-dm">
                     <MoveRight className="w-5 h-5 mr-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 text-navy" />
                     <span>{item}</span>
                   </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
             </div>
           </div>
 
-          
+
           {/* Column 4: Reach Out (Desktop Spans 2) */}
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-crimson/10 pb-4">Contact</h3>
