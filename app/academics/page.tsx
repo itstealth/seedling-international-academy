@@ -218,7 +218,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-16">
-          <Tag color="navy">Curriculum Overview</Tag>
+          {/* <Tag color="navy">Curriculum Overview</Tag> */}
           <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
             Two Boards
             <em className="font-semibold text-crimson ml-2">One Vision</em>
@@ -229,7 +229,7 @@ export default function AcademicsPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="overflow-hidden rounded-3xl shadow-editorial">
               <img
-                src="/assets/Home/classroom.jpg"
+                src="/assets/WHISPERS OF WELLNESS/2.webp"
                 alt="CBSE Curriculum at Seedling Schools"
                 className="w-full h-[400px] object-cover"
               />
@@ -264,7 +264,7 @@ export default function AcademicsPage() {
             </h2>
           </Reveal>
 
-          <div className="space-y-32">
+          <div className="space-y-20">
             {learningApproaches.map((item, i) => (
               <Reveal key={item.title} delay={60}>
                 <div className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}>
@@ -332,9 +332,9 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           4. PROGRAMME LEVELS
       ══════════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
-          <Tag color="mauve">Programme Levels</Tag>
+          {/* <Tag color="mauve">Programme Levels</Tag> */}
           <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
             A Journey From<br />
             <em className="font-semibold text-crimson">First Steps to Future Paths</em>
@@ -359,7 +359,7 @@ export default function AcademicsPage() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-0 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="text-white/60 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
-                  <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight">{p.level}</h3>
+                  <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight text-white">{p.level}</h3>
                   <p className="text-white/80 text-sm leading-relaxed opacity-100 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
                     {p.desc}
                   </p>
