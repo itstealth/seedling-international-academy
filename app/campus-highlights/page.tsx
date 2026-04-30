@@ -54,20 +54,21 @@ function FeaturedArticle() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
-                  <span className="inline-block bg-crimson text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-4 font-dm">
-                    Annual Event
+                  <span className="inline-block bg-navy text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-4 font-dm">
+                    Campus Overview
                   </span>
                   <h1 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
-                    Founders Day Celebration
+                    School Campus: A Vibrant Space to Grow
                   </h1>
-                  <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-2 font-dm font-light">
-                    A landmark celebration marking the legacy of Seedling Group of Schools — honouring three decades
-                    of educational excellence, innovation, and community in Jaipur.
+                  <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-3 font-dm font-light">
+                    Seedling Public School Jawahar Nagar reflects a harmonious blend of modern infrastructure and a nurturing environment. 
+                    Spread across a well-planned area, the campus is designed to provide a safe, stimulating, and engaging atmosphere 
+                    conducive to learning and holistic development.
                   </p>
                   <div className="mt-5 flex items-center gap-4 font-dm">
-                    <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Since 1992</span>
+                    <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Jawahar Nagar, Jaipur</span>
                     <span className="w-1 h-1 rounded-full bg-sand/50" />
-                    <span className="text-sand text-[10px] font-black uppercase tracking-widest group-hover:underline">Read more →</span>
+                    <span className="text-sand text-[10px] font-black uppercase tracking-widest group-hover:underline">Explore Campus →</span>
                   </div>
                 </div>
               </div>
@@ -167,7 +168,7 @@ const newsItems = [
     excerpt:
       "In a world where differences often turn into divisions, the true power to build peace lies not in politics — but in education.",
     date: "10 Mar 2025",
-    image: "https://seedlingschools.com/assets/img/feature-1.jpg",
+    image: "/assets/BOOT CAMP/1.webp",
     large: true,
     color: "bg-navy",
   },
@@ -178,7 +179,7 @@ const newsItems = [
     excerpt:
       "What helps, what hurts, and what to do instead — in today's digital age, screens are everywhere.",
     date: "09 Mar 2025",
-    image: "https://seedlingschools.com/assets/img/feature-5.jpg",
+    image: "/assets/WHISPERS OF WELLNESS/1.webp",
     large: false,
     color: "bg-crimson",
   },
@@ -189,7 +190,7 @@ const newsItems = [
     excerpt:
       "Parents today want a learning system that builds confidence, critical thinking, and global awareness.",
     date: "10 Feb 2025",
-    image: "https://seedlingschools.com/assets/img/feature-2.jpg",
+    image: "/assets/Home/smart-classroom.jpg",
     large: false,
     color: "bg-navy-dark",
   },
@@ -200,7 +201,7 @@ const newsItems = [
     excerpt:
       "Today's parents want schools that go beyond academics and build well-rounded, confident learners.",
     date: "06 Feb 2025",
-    image: "https://seedlingschools.com/assets/img/feature-4.jpg",
+    image: "/assets/SPARKLE FEST/1.webp",
     large: false,
     color: "bg-crimson-dark",
   },
@@ -211,7 +212,7 @@ const newsItems = [
     excerpt:
       "Choosing the best CBSE school means looking for schools that focus on integrated, holistic development.",
     date: "03 Feb 2025",
-    image: "https://seedlingschools.com/assets/img/feature-6.jpg",
+    image: "/assets/Home/classroom.jpg",
     large: false,
     color: "bg-sand",
   },
@@ -329,7 +330,7 @@ const events = [
     year: "2025",
     description:
       "Students and staff embrace mindfulness and physical well-being with guided yoga and meditation sessions across all campuses.",
-    image: "https://seedlingschools.com/assets/img/yoga1.jpg",
+    image: "/assets/WHISPERS OF WELLNESS/2.webp",
     tag: "Wellness",
     tagColor: "bg-navy",
   },
@@ -340,7 +341,7 @@ const events = [
     year: "2025",
     description:
       "A heartfelt tribute to all the mothers — featuring performances, handmade gifts, and moments of love shared by students.",
-    image: "https://seedlingschools.com/assets/img/Mothersday9.jpg",
+    image: "/assets/MOTHER_S DAY/1.webp",
     tag: "Community",
     tagColor: "bg-crimson",
   },
@@ -351,7 +352,7 @@ const events = [
     year: "2025",
     description:
       "Bidding farewell to the graduating class with an evening of nostalgia, awards, and cherished memories.",
-    image: "https://seedlingschools.com/assets/img/farewell-feature.jpg",
+    image: "/assets/ANNUAL FUNCTION/2.webp",
     tag: "Milestone",
     tagColor: "bg-sand",
   },
@@ -362,7 +363,7 @@ const events = [
     year: "2024",
     description:
       "A high-energy carnival celebrating athletic talent, team spirit, and the joy of healthy competition.",
-    image: "https://seedlingschools.com/assets/img/smhs-sport-carnival.jpg",
+    image: "/assets/SPORTS DAY/1.webp",
     tag: "Sports",
     tagColor: "bg-navy-dark",
   },
@@ -373,7 +374,7 @@ const events = [
     year: "2025",
     description:
       "100% results year after year — celebrating the outstanding academic achievements of Seedling students.",
-    image: "https://seedlingschools.com/assets/img/cbse-result.jpg",
+    image: "/assets/STELLAR SATURDAYS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",
   },
@@ -384,7 +385,7 @@ const events = [
     year: "2024",
     description:
       "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling community.",
-    image: "https://seedlingschools.com/assets/img/Christmas.jpeg",
+    image: "/assets/XMAS CARNIVAL/1.webp",
     tag: "Festival",
     tagColor: "bg-navy-deeper",
   },
@@ -477,35 +478,35 @@ function EventCards() {
 const highlights = [
   {
     id: 1,
-    title: "Aligned With National Education Policy (NEP)",
+    title: "Academic Block & Smart Classes",
     excerpt:
-      "Our curriculum is thoughtfully designed to align with the latest educational standards ensuring our students receive a future-ready education.",
-    image: "https://seedlingschools.com/assets/img/feature-1.jpg",
-    icon: "📋",
-  },
-  {
-    id: 2,
-    title: "State Of The Art Facilities",
-    excerpt:
-      "From modern classrooms to well-equipped science labs and engaging outdoor spaces — an environment that enhances learning and encourages curiosity.",
-    image: "https://seedlingschools.com/assets/img/feature-2.jpg",
+      "Fully air-conditioned classrooms equipped with smart boards and digital tools, fostering technology-enabled interactive and experiential learning.",
+    image: "/assets/Home/classroom.jpg",
     icon: "🏫",
   },
   {
-    id: 3,
-    title: "Technology Integrated Innovative Education",
+    id: 2,
+    title: "The Knowledge Hub (Library)",
     excerpt:
-      "Interactive whiteboards, educational apps, and online resources create an engaging and dynamic learning experience for every student.",
-    image: "https://seedlingschools.com/assets/img/techintegrate.jpg",
-    icon: "💻",
+      "A well-stocked library encouraging reading habits and independent learning, serving as a hub for academic resources and literature.",
+    image: "/assets/Home/library.jpg",
+    icon: "📚",
+  },
+  {
+    id: 3,
+    title: "Sports & Physical Education",
+    excerpt:
+      "A dedicated playground and facilities for various sports including basketball, helping inculcate discipline, teamwork, and leadership.",
+    image: "/assets/SPORTS DAY/2.webp",
+    icon: "🏀",
   },
   {
     id: 4,
-    title: "Thrust On Experiential Learning",
+    title: "Safety & Well-being First",
     excerpt:
-      "Practical experiments, outdoor excursions, and interactive projects foster critical thinking, problem-solving skills, and a love for learning.",
-    image: "https://seedlingschools.com/assets/img/feature-4.jpg",
-    icon: "🔬",
+      "A secure environment with proper supervision, first-aid facilities, and transport services, ensuring a balanced space for personal growth.",
+    image: "/assets/Home/smart-classroom.jpg",
+    icon: "🛡️",
   },
 ];
 
@@ -596,13 +597,13 @@ function HighlightRow() {
    5. GALLERY STRIP
 ───────────────────────────────────────────── */
 const snapshots = [
-  { src: "https://seedlingschools.com/assets/img/founderday18.jpg", label: "Founders Day", aspect: "aspect-[4/5]" },
-  { src: "https://seedlingschools.com/assets/img/sportday-sps.jpg", label: "SPS Sportsday", aspect: "aspect-[4/3]" },
-  { src: "https://seedlingschools.com/assets/img/skaters.jpg", label: "Skaters Sunday Bash", aspect: "aspect-[4/5]" },
-  { src: "https://seedlingschools.com/assets/img/sandeep-birthday.jpg", label: "Sandeep Sir Birthday", aspect: "aspect-[4/3]" },
-  { src: "https://seedlingschools.com/assets/img/smhs-farewell.jpg", label: "SMHS Farewell", aspect: "aspect-[4/5]" },
-  { src: "https://seedlingschools.com/assets/img/christmas-smhs.jpg", label: "Christmas SMHS", aspect: "aspect-[4/3]" },
-  { src: "https://seedlingschools.com/assets/img/Mothersday9.jpg", label: "Mother's Day", aspect: "aspect-[4/5]" },
+  { src: "/assets/ANNUAL FUNCTION/3.webp", label: "Founders Day", aspect: "aspect-[4/5]" },
+  { src: "/assets/SPORTS DAY/3.webp", label: "SPS Sportsday", aspect: "aspect-[4/3]" },
+  { src: "/assets/BOOT CAMP/3.webp", label: "Boot Camp Activity", aspect: "aspect-[4/5]" },
+  { src: "/assets/STELLAR SATURDAYS/2.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]" },
+  { src: "/assets/ANNUAL FUNCTION/4.webp", label: "SMHS Farewell", aspect: "aspect-[4/5]" },
+  { src: "/assets/XMAS CARNIVAL/2.webp", label: "Christmas Carnival", aspect: "aspect-[4/3]" },
+  { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Mother Child Cook Off", aspect: "aspect-[4/5]" },
 ];
 
 function GalleryStrip() {

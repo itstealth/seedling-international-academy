@@ -240,7 +240,7 @@ export default function AdmissionsPage() {
       ══════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1900&q=85"
+          src="/assets/Home/classroom.jpg"
           alt="Admissions at Seedling"
           className="absolute inset-0 w-full h-full object-cover object-top scale-105 transition-transform duration-[10s] hover:scale-100"
         />
@@ -256,7 +256,7 @@ export default function AdmissionsPage() {
               </p>
             </Reveal>
             <Reveal delay={120}>
-              <h1 className="font-playfair text-white font-black leading-[1.05] text-6xl md:text-7xl lg:text-[6.5rem] mb-8 tracking-tighter">
+              <h1 className="font-playfair text-white font-black leading-[1.05] text-4xl md:text-5xl mb-8 tracking-tighter">
                 Begin Your<br />
                 <span className="text-sand">Seedling</span><br />
                 Journey.
@@ -303,7 +303,7 @@ export default function AdmissionsPage() {
               {submitted ? (
                 <div className="text-center py-8">
                   <span className="text-5xl block mb-4">✅</span>
-                  <p className="display text-2xl font-semibold text-emerald-700 mb-2">Thank You!</p>
+                  <p className="display text-2xl font-semibold text-navy mb-2">Thank You!</p>
                   <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Seedling family!</p>
                 </div>
               ) : (
@@ -312,23 +312,23 @@ export default function AdmissionsPage() {
                     <div>
                       <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Parent Name *</label>
                       <input required type="text" placeholder="Your name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200" />
+                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Phone *</label>
                       <input required type="tel" placeholder="+91 XXXXX XXXXX" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200" />
+                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                     </div>
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Email</label>
                     <input type="email" placeholder="your@email.com" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200" />
+                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Select School *</label>
                     <select required value={formData.school} onChange={e => setFormData({ ...formData, school: e.target.value })}
-                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200 bg-white">
+                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 bg-white">
                       <option value="">Choose a school…</option>
                       {schools.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
@@ -336,9 +336,9 @@ export default function AdmissionsPage() {
                   <div>
                     <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Message</label>
                     <textarea placeholder="Any specific queries?" rows={3} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all duration-200 resize-none" />
+                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 resize-none" />
                   </div>
-                  <button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-xl font-semibold tracking-wide text-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-200">
+                  <button type="submit" className="w-full bg-crimson hover:bg-crimson-dark text-white py-4 rounded-xl font-semibold tracking-wide text-sm transition-all duration-300 hover:shadow-lg hover:shadow-crimson/20">
                     Send Enquiry →
                   </button>
                   <p className="text-[#AAA] text-xs text-center">We typically respond within 24 hours · No spam, ever</p>
@@ -726,7 +726,7 @@ export default function AdmissionsPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
           <Reveal>
             <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-6 uppercase">Experience Seedling Firsthand</p>
-            <h2 className="font-playfair text-6xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter">
+            <h2 className="font-playfair text-6xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter text-white">
               Book a<br />
               <span className="text-sand">Campus Visit</span>
             </h2>
@@ -803,21 +803,21 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           9. FINAL CTA
       ══════════════════════════════════════════════════ */}
-      <section className="py-40 bg-[#1C1C1E] relative overflow-hidden">
+      <section className="py-40 bg-navy-deeper relative overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=80"
           alt="Join Seedling"
           className="absolute inset-0 w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1C1C1E]/90 to-emerald-950/60" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-600/8 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/90 to-navy/60" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sand/10 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-emerald-400 text-xl italic mb-4">The Seedling Family Awaits</p>
-            <h2 className="display text-6xl md:text-8xl font-light leading-[1.0] mb-6">
+            <p className="display text-sand text-xl italic mb-4">The Seedling Family Awaits</p>
+            <h2 className="display text-6xl md:text-8xl font-light leading-[1.0] mb-6 text-white">
               Where Every<br />
-              <em className="font-semibold text-emerald-400">Student</em><br />
+              <em className="font-semibold text-sand">Student</em><br />
               Matters.
             </h2>
             <p className="text-white/55 text-lg leading-relaxed mb-12 max-w-xl mx-auto">
@@ -827,14 +827,14 @@ export default function AdmissionsPage() {
           <Reveal delay={120}>
             <div className="flex gap-4 justify-center flex-wrap">
               <a href="https://seedlingschools.com/admission-online.php" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/30 hover:gap-4">
+                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/30 hover:gap-4">
                 Apply Now
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a href="tel:+917413012351"
-                className="inline-flex items-center gap-2 border border-white/30 text-white hover:bg-white hover:text-[#1C1C1E] px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300">
+                className="inline-flex items-center gap-2 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300">
                 Call Us Now
               </a>
             </div>

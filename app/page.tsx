@@ -87,7 +87,6 @@ export default function SeedlingPage(): React.JSX.Element {
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
             CBSE Affiliated · Jaipur
           </div>
-<
           <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
             Where Every Child Finds Their 
             <em className="font-semibold text-sand italic ml-2">Wings</em>

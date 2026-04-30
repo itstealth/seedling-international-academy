@@ -48,7 +48,7 @@ export default function Navbar() {
         style={{ scaleX }}
       />
 
-      <header className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5 transition-all duration-300`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
           <nav className="relative py-3">
             <div className="flex items-center justify-between h-14">
@@ -60,7 +60,7 @@ export default function Navbar() {
                     alt="Seedling Schools Logo" 
                     width={200} 
                     height={60} 
-                    className="h-14 w-auto object-contain"
+                    className="h-20 w-auto object-contain"
                     priority
                   />
                 </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-navy" : "text-text-base hover:text-navy"}`}
+                    className={`px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-sand" : "text-white/80 hover:text-white"}`}
                   >
                     {item.name}
                   </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
               <div className="xl:hidden flex items-center">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="p-2.5 rounded-xl bg-navy-light/50 text-navy-deeper transition-colors hover:bg-navy-light"
+                  className="p-2.5 rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
                   aria-label="Open menu"
                 >
                   <Menu className="w-6 h-6" />
@@ -120,7 +120,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-[400px] bg-white xl:hidden overflow-hidden flex flex-col rounded-l-[3.5rem] shadow-editorial"
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-[400px] bg-navy-deeper xl:hidden overflow-hidden flex flex-col rounded-l-[3.5rem] shadow-editorial"
             >
               <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
               
@@ -137,7 +137,7 @@ export default function Navbar() {
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-3 text-text-light hover:text-navy-deeper transition-colors bg-navy-light/50 rounded-full"
+                    className="p-3 text-white/60 hover:text-white transition-colors bg-white/10 rounded-full"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -150,7 +150,7 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-navy" : "text-navy-deeper"}`}
+                        className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-sand" : "text-white/80"}`}
                       >
                         {item.name}
                       </Link>
