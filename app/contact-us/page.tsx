@@ -21,27 +21,17 @@ type SubmitStatus = 'idle' | 'loading' | 'success'
 const CAMPUS_MAPS = [
   {
     id: 0,
-    label: 'SPS & SIA — Jawahar Nagar',
+    label: 'SPS — Jawahar Nagar',
     address: 'Bank St, Sector 4, Jawahar Nagar, Jaipur, Rajasthan 302004',
     src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.783!3d26.943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1a!2sSeedling%20Public%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin',
     link: 'https://maps.google.com/?q=Seedling+Public+School+Jawahar+Nagar+Jaipur',
-  },
-  {
-    id: 1,
-    label: 'SMHS & SMIA — Durgapura',
-    address: 'Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur 302018',
-    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.1!2d75.797!3d26.851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5b5b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sSeedling%20Modern%20High%20School!5e0!3m2!1sen!2sin!4v1690000000001!5m2!1sen!2sin',
-    link: 'https://maps.google.com/?q=Seedling+Modern+High+School+Durgapura+Jaipur',
   },
 ]
 
 const SCHOOLS = [
   'Seedling Public School (CBSE), Jawahar Nagar',
-  'Seedling International Academy (Cambridge), Jawahar Nagar',
   'Seedling Modern High School (CBSE), Durgapura',
-  'Seedling Modern International Academy (Cambridge), Durgapura',
   'Seedling Wonderland Kids League, Jawahar Nagar',
-  'Seedling Wonderland Kids League, Durgapura',
 ]
 
 const STATS = [
@@ -230,7 +220,7 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <div className="relative max-w-6xl mx-auto px-6 py-12 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Left copy */}
@@ -318,7 +308,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT INFO CARDS
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-off-white">
+      {/* <section className="py-20 md:py-24 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-12">
             <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">
@@ -390,12 +380,12 @@ export default function ContactPage() {
 
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT FORM
       ══════════════════════════════════════════════════════════════════════ */}
-      <section id="contact-form" className="py-20 md:py-24 bg-white border-y border-sand/40 scroll-mt-6">
+      <section id="contact-form" className="py-12 md:py-16 bg-white border-y border-sand/40 scroll-mt-6">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
@@ -551,9 +541,9 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           MAP
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-off-white">
+      <section className="py-12 md:py-16 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-10">
+          <div className="mb-6">
             <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Our Locations</p>
             <h2
               className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper"
@@ -613,12 +603,12 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOURS
       ══════════════════════════════════════════════════════════════════════ */}
-    <section className="py-20 md:py-24 bg-white border-t border-sand/40">
+    <section className="py-12 md:py-16 bg-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
             <div>
-              <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-3 font-dm">Availability</p>
+              <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Availability</p>
               <h2
                 className="font-playfair text-3xl font-bold text-navy-deeper mb-4 leading-tight"
               >
@@ -676,10 +666,10 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CTA
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-off-white border-t border-sand/40">
+      <section className="py-12 md:py-16 bg-off-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div
-            className="relative bg-navy-deeper rounded-[3rem] overflow-hidden px-8 md:px-14 py-14 text-white"
+            className="relative bg-navy-deeper rounded-[2rem] overflow-hidden px-8 md:px-14 py-12 md:py-14 text-white"
             style={{
               backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
               backgroundSize: '20px 20px',
