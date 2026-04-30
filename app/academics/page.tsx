@@ -139,7 +139,7 @@ const programs = [
     level: "Senior Secondary",
     range: "Classes IX – XII",
     desc: "Rigorous CBSE and Cambridge IGCSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams. Our consistent 100% board results speak to the academic rigour and dedication of our students and faculty.",
-    img: "/assets/Home/smart-classroom.jpg",
+    img: "/assets/Home/senior.jpg",
     color: "from-emerald-700/80",
   },
 ];
@@ -354,13 +354,12 @@ export default function AcademicsPage() {
                   alt={p.level}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${p.color} via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-10 text-white translate-y-0 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-white/60 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
+                <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
+                  <span className="text-white/70 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
                   <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight text-white">{p.level}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed opacity-100 group-hover:opacity-100 transition-opacity duration-500 font-dm font-light">
+                  <p className="text-white/85 text-sm leading-relaxed font-dm font-light">
                     {p.desc}
                   </p>
                   <div className="mt-8 w-12 h-1 bg-white/60 group-hover:w-24 transition-all duration-500 rounded-full" />
