@@ -11,12 +11,12 @@ const navItems = [
   { name: "About", href: "/about" },
   { name: "Academics", href: "/academics" },
   { name: "School Life", href: "/school-life" },
-  { name: "Campus Highlights", href: "/campus-highlights" },
+  { name: "Campus", href: "/campus-highlights" },
   { name: "Admissions", href: "/admissions" },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "Contact", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -48,10 +48,10 @@ export default function Navbar() {
         style={{ scaleX }}
       />
 
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-black/5 transition-all">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <header className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5 transition-all duration-300`}>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
           <nav className="relative py-3">
-            <div className="flex items-center justify-between h-14 md:h-16">
+            <div className="flex items-center justify-between h-14">
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center gap-4 group">
@@ -67,12 +67,12 @@ export default function Navbar() {
               </div>
 
               {/* Desktop Navigation */}
-              <nav className="hidden xl:flex items-center gap-1">
+              <nav className="hidden xl:flex items-center">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-2.5 text-[14px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${pathname === item.href ? "text-navy" : "text-text-base hover:text-navy"}`}
+                    className={`px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-navy" : "text-text-base hover:text-navy"}`}
                   >
                     {item.name}
                   </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
               <div className="hidden xl:flex items-center gap-4">
                 <Link
                   href="/admissions"
-                  className="px-6 py-3 font-bold text-sm rounded-full transition-all shadow-lg hover:shadow-crimson/30 active:scale-95 whitespace-nowrap flex-shrink-0 bg-crimson text-white hover:bg-crimson-dark uppercase tracking-widest"
+                  className="px-5 py-3 font-black text-[12px] rounded-full transition-all shadow-lg hover:shadow-crimson/30 active:scale-95 whitespace-nowrap flex-shrink-0 bg-crimson text-white hover:bg-crimson-dark uppercase tracking-widest"
                 >
                   Apply Now &apos;26
                 </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
               <div className="xl:hidden flex items-center">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="p-2 rounded-lg bg-navy-light/50 text-navy-deeper transition-colors hover:bg-navy-light"
+                  className="p-2.5 rounded-xl bg-navy-light/50 text-navy-deeper transition-colors hover:bg-navy-light"
                   aria-label="Open menu"
                 >
                   <Menu className="w-6 h-6" />
