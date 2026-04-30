@@ -1,60 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
 
-// ─── Global Styles (injected via <style> tag in JSX) ────────────────────────
-const globalStyles = `
-  @keyframes ken-burns {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-  }
-  .hero-slide { 
-    position: absolute; 
-    inset: 0; 
-    opacity: 0; 
-    transition: opacity 1.5s ease-in-out; 
-    background-size: cover; 
-    background-position: center; 
-  }
-  .hero-slide.active { 
-    opacity: 1; 
-    animation: ken-burns 20s ease infinite alternate;
-  }
-  .hero-slide::after { 
-    content: ''; 
-    position: absolute; 
-    inset: 0; 
-    background: linear-gradient(135deg, var(--color-navy-deeper) 0%, rgba(10, 31, 58, 0.4) 60%, rgba(164, 21, 70, 0.3) 100%); 
-  }
-  .hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80'); }
-  .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80'); }
-  .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80'); }
-`;
-
 // ─── Main Page Component ─────────────────────────────────────────────────────
 export default function SeedlingPage(): React.JSX.Element {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
-
-  const totalSlides = 3;
-
-  const goToSlide = useCallback((n: number): void => {
-    setCurrentSlide(n);
-  }, []);
-
-  // Auto-advance hero slider
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Sticky nav shadow on scroll
   useEffect(() => {
@@ -91,43 +46,42 @@ export default function SeedlingPage(): React.JSX.Element {
   // Infrastructure tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
-      { img: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
-      { img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
-      { img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
+      { img: '/assets/ANNUAL FUNCTION/1.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+      { img: '/assets/STELLAR SATURDAYS/2.webp', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
+      { img: '/assets/STELLAR SATURDAYS/3.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
-      { img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80', alt: 'Science Lab', tag: 'Science', title: 'Advanced Science Labs', desc: 'Physics, Chemistry, and Biology labs equipped with latest apparatus enabling hands-on experimental learning.' },
-      { img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80', alt: 'Computer Lab', tag: 'Technology', title: 'AI & Robotics Lab', desc: 'State-of-the-art computer and robotics lab introducing students to coding, AI tools, and future technologies.' },
-      { img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80', alt: 'Auditorium', tag: 'Facilities', title: 'Modern Auditorium', desc: 'A fully equipped 800-seat auditorium for cultural events, seminars, and inter-school competitions.' },
+      { img: '/assets/BOOT CAMP/2.webp', alt: 'Science Lab', tag: 'Science', title: 'Advanced Science Labs', desc: 'Physics, Chemistry, and Biology labs equipped with latest apparatus enabling hands-on experimental learning.' },
+      { img: '/assets/ANNUAL FUNCTION/3.webp', alt: 'Computer Lab', tag: 'Technology', title: 'AI & Robotics Lab', desc: 'State-of-the-art computer and robotics lab introducing students to coding, AI tools, and future technologies.' },
+      { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Auditorium', tag: 'Facilities', title: 'Modern Auditorium', desc: 'A fully equipped 800-seat auditorium for cultural events, seminars, and inter-school competitions.' },
     ],
     sports: [
-      { img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80', alt: 'Sports Ground', tag: 'Outdoor', title: 'Multi-Sport Ground', desc: 'Dedicated grounds for cricket, football, athletics, and kabaddi — built to national standards.' },
-      { img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80', alt: 'Swimming Pool', tag: 'Aquatics', title: 'Swimming Pool', desc: 'Olympic-standard swimming pool with qualified coaches for beginner and advanced swimmers from Grade 3 onwards.' },
-      { img: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80', alt: 'Indoor Sports', tag: 'Indoor', title: 'Indoor Sports Complex', desc: 'Badminton, table tennis, chess, and yoga facilities in a fully air-conditioned indoor sports complex.' },
+      { img: '/assets/SPORTS DAY/1.webp', alt: 'Sports Ground', tag: 'Outdoor', title: 'Multi-Sport Ground', desc: 'Dedicated grounds for cricket, football, athletics, and kabaddi — built to national standards.' },
+      { img: '/assets/SPORTS DAY/2.webp', alt: 'Swimming Pool', tag: 'Aquatics', title: 'Swimming Pool', desc: 'Olympic-standard swimming pool with qualified coaches for beginner and advanced swimmers from Grade 3 onwards.' },
+      { img: '/assets/CRICKET FEVER/1.webp', alt: 'Indoor Sports', tag: 'Indoor', title: 'Indoor Sports Complex', desc: 'Badminton, table tennis, chess, and yoga facilities in a fully air-conditioned indoor sports complex.' },
     ],
     arts: [
-      { img: 'https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&q=80', alt: 'Music Room', tag: 'Music', title: 'Music & Dance Studio', desc: 'Fully equipped studios for classical and contemporary music, dance, and performing arts for all grades.' },
-      { img: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80', alt: 'Art Studio', tag: 'Visual Arts', title: 'Art & Craft Studio', desc: 'Creative spaces where students explore painting, sculpture, pottery, and digital design under expert guidance.' },
-      { img: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80', alt: 'Drama', tag: 'Theatre', title: 'Drama & Theatre Club', desc: 'Annual theatre productions, inter-school drama contests, and storytelling workshops for confident self-expression.' },
+      { img: '/assets/ANNUAL FUNCTION/5.webp', alt: 'Music Room', tag: 'Music', title: 'Music & Dance Studio', desc: 'Fully equipped studios for classical and contemporary music, dance, and performing arts for all grades.' },
+      { img: '/assets/BOOT CAMP/3.webp', alt: 'Art Studio', tag: 'Visual Arts', title: 'Art & Craft Studio', desc: 'Creative spaces where students explore painting, sculpture, pottery, and digital design under expert guidance.' },
+      { img: '/assets/ANNUAL FUNCTION/4.webp', alt: 'Drama', tag: 'Theatre', title: 'Drama & Theatre Club', desc: 'Annual theatre productions, inter-school drama contests, and storytelling workshops for confident self-expression.' },
     ],
   };
 
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      {/* Inject global styles */}
-      <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
-
 
       {/* ─── HERO ─── */}
       <section className="relative h-screen min-h-[640px] overflow-hidden flex items-center">
-        <div className="hero-slides absolute inset-0">
-          {[1, 2, 3].map((n) => (
-            <div
-              key={n}
-              className={`hero-slide hero-slide-${n}${currentSlide === n - 1 ? ' active' : ''}`}
-            />
-          ))}
-        </div>
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/assets/Home/banner-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-navy-deeper/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.75rem] font-black tracking-[0.2em] uppercase px-5 py-2 rounded-full mb-8">
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
@@ -164,18 +118,6 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
           ))}
         </div>
-
-        {/* Dots */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-10">
-          {[0, 1, 2].map((n) => (
-            <button
-              key={n}
-              className={`w-3 h-3 rounded-full transition-all duration-500 ${currentSlide === n ? 'bg-sand w-10' : 'bg-white/40'}`}
-              onClick={() => goToSlide(n)}
-              aria-label={`Slide ${n + 1}`}
-            />
-          ))}
-        </div>
       </section>
 
       {/* ─── ANNOUNCEMENT MARQUEE ─── */}
@@ -201,13 +143,13 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative">
               <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[560px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/ANNUAL FUNCTION/1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
-                  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/STELLAR SATURDAYS/6.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/SPORTS DAY/3.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
@@ -308,10 +250,10 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { img: 'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=400&q=80', emoji: '🏏', name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
-              { img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80', emoji: '⚽', name: 'Football', desc: 'State-level pitch and certified training.' },
-              { img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80', emoji: '🏃', name: 'Athletics', desc: '400m track nurturing state champions.' },
-              { img: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80', emoji: '🏸', name: 'Badminton', desc: 'Premium indoor courts for all levels.' },
+              { img: '/assets/CRICKET FEVER/1.webp', emoji: '🏏', name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
+              { img: '/assets/SPORTS DAY/2.webp', emoji: '⚽', name: 'Football', desc: 'State-level pitch and certified training.' },
+              { img: '/assets/SPORTS DAY/3.webp', emoji: '🏃', name: 'Athletics', desc: '400m track nurturing state champions.' },
+              { img: '/assets/SPORTS DAY/1.webp', emoji: '🏸', name: 'Badminton', desc: 'Premium indoor courts for all levels.' },
             ].map(({ img, emoji, name, desc }) => (
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
@@ -359,7 +301,7 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             <div className="relative">
               <div className="rounded-[3rem] overflow-hidden h-[600px] shadow-editorial border-8 border-white">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110" />
+                <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110" />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-navy-deeper text-white rounded-[2rem] p-12 shadow-2xl z-10 border-4 border-white">
                 <strong className="block text-6xl serif text-sand mb-2">30+</strong>
@@ -384,10 +326,10 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
           <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
             {[
-              { src: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80', label: 'School Campus', className: 'col-span-2 row-span-2' },
-              { src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80', label: 'Smart Classrooms' },
-              { src: 'https://images.unsplash.com/photo-1545830790-b1804d18d5ff?w=800&q=80', label: 'Activities', className: 'col-span-2' },
-              { src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80', label: 'Sports' },
+              { src: '/assets/ANNUAL FUNCTION/6.webp', label: 'School Campus', className: 'col-span-2 row-span-2' },
+              { src: '/assets/STELLAR SATURDAYS/3.webp', label: 'Smart Classrooms' },
+              { src: '/assets/BOOT CAMP/4.webp', label: 'Activities', className: 'col-span-2' },
+              { src: '/assets/SPORTS DAY/1.webp', label: 'Sports' },
             ].map(({ src, label, className = "" }) => (
               <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
                 <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -472,12 +414,12 @@ export default function SeedlingPage(): React.JSX.Element {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  'https://images.unsplash.com/photo-1588072432836-e10032774350?w=300&q=80',
-                  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80',
-                  'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=300&q=80',
-                  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80',
-                  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&q=80',
-                  'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?w=300&q=80',
+                  '/assets/ANNUAL FUNCTION/3.webp',
+                  '/assets/STELLAR SATURDAYS/4.webp',
+                  '/assets/BOOT CAMP/1.webp',
+                  '/assets/SPORTS DAY/2.webp',
+                  '/assets/ANNUAL FUNCTION/7.webp',
+                  '/assets/STELLAR SATURDAYS/5.webp',
                 ].map((src, i) => (
                   <div key={i} className="rounded-2xl overflow-hidden aspect-square border border-white/5 hover:border-sand/30 transition-all duration-500 group">
                     <img src={src} alt={`IG ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
