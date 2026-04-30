@@ -274,7 +274,7 @@ export default function AboutPage() {
               <img
                 src="/assets/about/empowering-about.png"
                 alt="Seedling Students Learning"
-                className="w-full h-[560px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
               <img
                 src="/assets/about/grow.jpg"
@@ -511,7 +511,7 @@ export default function AboutPage() {
         {/* Bottom CTA */}
         <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
           <Reveal>
-            <h2 className="font-playfair text-5xl md:text-7xl font-light text-white mb-8">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
               <em className="font-semibold text-sand">Seedling Family?</em>
             </h2>
