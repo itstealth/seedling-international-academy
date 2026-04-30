@@ -87,7 +87,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
             CBSE Affiliated · Jaipur
           </div>
-          <h1 className="serif text-[clamp(2.5rem,7vw,5.5rem)] text-white leading-[1] font-light max-w-4xl mb-8">
+          <h1 className="font-playfair text-[clamp(2.5rem,7vw,5.5rem)] text-white leading-[1] font-light max-w-4xl mb-8">
             Where Every Child Finds Their <br />
             <em className="font-semibold text-sand italic">Wings</em>
           </h1>
@@ -113,7 +113,7 @@ export default function SeedlingPage(): React.JSX.Element {
             { val: '100%', label: 'Results' },
           ].map(({ val, label }) => (
             <div key={label} className="bg-navy-deeper/40 backdrop-blur-2xl border-l border-white/10 p-10 text-center text-white min-w-[180px]">
-              <strong className="block text-4xl font-semibold serif text-sand mb-2">{val}</strong>
+              <strong className="block text-4xl font-semibold font-playfair text-sand mb-2">{val}</strong>
               <span className="text-[10px] font-black tracking-widest uppercase opacity-60">{label}</span>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ANNOUNCEMENT MARQUEE ─── */}
-      <div className="bg-navy py-4 overflow-hidden border-y border-white/10">
+      <div className="bg-navy-deeper py-4 overflow-hidden border-y border-white/10">
         <div className="marquee-track flex gap-16 animate-[marquee_40s_linear_infinite] whitespace-nowrap">
           {marqueeItems.concat(marqueeItems).map((text, i) => (
             <span
@@ -153,7 +153,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-crimson text-white px-8 py-5 rounded-2xl shadow-2xl z-10">
-                <span className="block text-3xl font-semibold serif leading-none mb-1">CBSE</span>
+                <span className="block text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
                 <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function SeedlingPage(): React.JSX.Element {
             {/* Text */}
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
-              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-8">
+              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1994.
               </h2>
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
@@ -184,8 +184,8 @@ export default function SeedlingPage(): React.JSX.Element {
                 ))}
               </div>
               <div className="flex gap-4 flex-wrap">
-                <a href="/about" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">Our Story</a>
-                <a href="#admission" className="border-2 border-navy text-navy px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy hover:text-white">Book a Tour</a>
+                <a href="/about" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">Our Story</a>
+                <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a>
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
-            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
               World-Class <em className="font-semibold text-navy">Facilities</em>
             </h2>
           </div>
@@ -229,7 +229,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
                 <div className="p-8">
                   <span className="inline-block bg-navy-light text-navy text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-full mb-4 border border-navy/10">{tag}</span>
-                  <h3 className="serif text-2xl font-semibold text-navy-deeper mb-3">{title}</h3>
+                  <h3 className="font-playfair text-2xl font-semibold text-navy-deeper mb-3">{title}</h3>
                   <p className="text-sm text-text-light leading-relaxed font-light">{desc}</p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
-            <h2 className="serif text-5xl md:text-6xl font-light text-white leading-tight">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-white leading-tight">
               Champions <em className="font-semibold text-sand italic">Everywhere</em>
             </h2>
           </div>
@@ -261,7 +261,7 @@ export default function SeedlingPage(): React.JSX.Element {
                   <div className="absolute inset-0 bg-navy-deeper/40 group-hover:opacity-0 transition-opacity" />
                 </div>
                 <div className="p-8">
-                  <h3 className="serif text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  <h3 className="font-playfair text-xl font-bold text-white mb-3 flex items-center gap-2">
                     <span className="text-2xl">{emoji}</span>
                     {name}
                   </h3>
@@ -279,7 +279,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
-              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-12">
+              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-12">
                 Start Your Child's <em className="font-semibold text-navy italic">Joyride</em>.
               </h2>
               <div className="flex flex-col gap-6">
@@ -304,7 +304,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110" />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-navy-deeper text-white rounded-[2rem] p-12 shadow-2xl z-10 border-4 border-white">
-                <strong className="block text-6xl serif text-sand mb-2">30+</strong>
+                <strong className="block text-6xl font-playfair text-sand mb-2">30+</strong>
                 <span className="text-xs font-black tracking-widest uppercase opacity-60">Years of Academic<br />Excellence</span>
               </div>
             </div>
@@ -318,11 +318,11 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex justify-between items-end mb-16">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Campus Life</span>
-              <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
+              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight">
                 Vibrant <em className="font-semibold text-navy italic">Memories</em>.
               </h2>
             </div>
-            <a href="/campus-highlights" className="bg-navy hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">View Gallery</a>
+            <a href="/campus-highlights" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a>
           </div>
           <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
             {[
@@ -334,7 +334,7 @@ export default function SeedlingPage(): React.JSX.Element {
               <div key={label} className={`group relative rounded-[2rem] overflow-hidden ${className}`}>
                 <img src={src} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <span className="text-white text-lg font-semibold serif">{label}</span>
+                  <span className="text-white text-lg font-semibold font-playfair">{label}</span>
                 </div>
               </div>
             ))}
@@ -347,7 +347,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
-            <h2 className="serif text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
+            <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
               Voices from the <em className="font-semibold text-navy italic">Family</em>.
             </h2>
           </div>
@@ -358,7 +358,7 @@ export default function SeedlingPage(): React.JSX.Element {
               { avatar: 'https://randomuser.me/api/portraits/women/68.jpg', name: 'Priya Mehta', role: 'Parent of Grade 4 student', text: "The parent-teacher communication is excellent. I always know how my child is progressing. The counselling sessions helped so much." },
             ].map(({ avatar, name, role, text }) => (
               <div key={name} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
-                <span className="block text-7xl leading-none text-sand serif mb-4 group-hover:scale-110 transition-transform">"</span>
+                <span className="block text-7xl leading-none text-sand font-playfair mb-4 group-hover:scale-110 transition-transform">"</span>
                 <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
                 <div className="flex items-center gap-4 border-t border-sand/40 pt-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50">
@@ -382,7 +382,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex items-end justify-between mb-20">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Latest at Seedling</span>
-              <h2 className="serif text-5xl md:text-6xl font-light text-white leading-tight">
+              <h2 className="font-playfair text-5xl md:text-6xl font-light text-white leading-tight">
                 Trending <em className="font-semibold text-sand italic">Updates</em>.
               </h2>
             </div>
@@ -397,11 +397,11 @@ export default function SeedlingPage(): React.JSX.Element {
               ].map(({ day, month, title, desc }) => (
                 <div key={title} className="flex gap-8 items-start pb-8 border-b border-white/10 group cursor-pointer">
                   <div className="bg-crimson text-white w-20 h-20 rounded-3xl flex flex-col items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <strong className="block text-2xl serif leading-none">{day}</strong>
+                    <strong className="block text-2xl font-playfair leading-none">{day}</strong>
                     <span className="text-[10px] font-black tracking-widest uppercase mt-1">{month}</span>
                   </div>
                   <div>
-                    <h4 className="text-white text-xl font-bold mb-2 serif group-hover:text-sand transition-colors">{title}</h4>
+                    <h4 className="text-white text-xl font-bold mb-2 font-playfair group-hover:text-sand transition-colors">{title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed font-light">{desc}</p>
                   </div>
                 </div>
@@ -438,7 +438,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
-              <h2 className="serif text-5xl md:text-7xl font-light text-white leading-tight mb-8">
+              <h2 className="font-playfair text-5xl md:text-7xl font-light text-white leading-tight mb-8">
                 Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
               </h2>
               <p className="text-xl text-white/70 leading-relaxed mb-12 font-light">
@@ -459,7 +459,7 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             <div className="bg-white p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <h3 className="serif text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
+              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
               <div className="space-y-4">
                 <input type="text" placeholder="Name of Child" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
                 <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
@@ -471,7 +471,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </select>
                 <input type="email" placeholder="Email Address" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
                 <input type="tel" placeholder="Contact Number" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
-                <button className="w-full bg-navy hover:bg-navy-dark text-white py-6 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy/40">
+                <button className="w-full bg-navy-deeper hover:bg-navy-dark text-white py-6 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">
                   Submit Enquiry
                 </button>
               </div>

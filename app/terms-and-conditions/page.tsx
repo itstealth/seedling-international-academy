@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-// import { Playfair_Display, DM_Sans } from "next/font/google"; // Assuming standard setup, but will use tailwind arbitrary for now to be safe
-
-/* 
-  Note: In a standard Next.js project, you would define fonts in layout.tsx or here.
-  For this standalone component, I will use Tailwind's arbitrary values or local class mappings
-  to ensure the premium typography requested is applied.
-*/
+import PageHero from "@/components/ui/PageHero";
 
 const sections = [
   { id: "s1", title: "1. Website Information Disclaimer", content: "Seedling Group of Schools makes every effort to ensure that the information provided on this website is accurate and up to date. However, the School gives no warranty or guarantee regarding the accuracy, completeness, or suitability of the information for any specific purpose. The content available on this website does not constitute legal, professional, or educational advice.", callout: "All implied warranties and conditions are excluded to the fullest extent permitted by law. The School shall not be liable for any direct or indirect loss, damage, or inconvenience arising from the use of, or reliance upon, the information contained on this website, except in cases of death or personal injury caused by negligence." },
@@ -49,62 +43,36 @@ export default function TermsAndConditions() {
   }, []);
 
   return (
-    <div className="relative z-10 min-h-screen bg-[#F5F3F2] text-[#222] font-sans selection:bg-[#A41546]/20 scroll-smooth">
-      {/* Noise Texture Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.025]" 
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }}>
-      </div>
+    <div className="min-h-screen bg-off-white font-dm selection:bg-navy/10 scroll-smooth">
+      
+      <PageHero 
+        title="Terms & Conditions"
+        subtitle="By accessing this website, you accept and agree to be bound by these Terms and Conditions. Discontinue use immediately if you disagree."
+        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80"
+      />
 
-      {/* Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-[#175190] via-[#1a5fa8] to-[#896B85] z-10">
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-20 lg:py-24 text-center md:text-left">
-          <div className="animate-in fade-in slide-in-from-bottom-5 duration-700 flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6">
-            <div className="flex items-center gap-2 text-white/70 text-sm font-medium">
-              <a href="/" className="hover:text-white transition-colors">Seedling Group of Schools</a>
-              <span className="opacity-50">›</span>
-              <span className="text-white">Terms & Conditions</span>
-            </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A41546] text-white text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg shadow-[#A41546]/30">
-              Legal Document
-            </div>
-          </div>
-
-          <div className="animate-in fade-in slide-in-from-bottom-5 duration-700 delay-150 flex flex-col md:flex-row md:items-center md:gap-12">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-none flex-shrink-0 uppercase">
-              Terms <span className="block text-[#D6D1CF]/40">& Conditions</span>
-            </h1>
-            <div className="mt-8 md:mt-0 md:border-l md:border-white/10 md:pl-12 max-w-xl">
-              <p className="text-white/80 text-lg md:text-xl leading-relaxed antialiased font-light">
-                By accessing this website, you accept and agree to be bound by these Terms and Conditions. Discontinue use immediately if you disagree.
-              </p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Layout: Sidebar + Main Content */}
-      <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <main className="max-w-7xl mx-auto px-6 py-20">
+        <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* Sidebar TOC */}
-          <aside className="lg:w-80 flex-shrink-0 relative z-20">
-            <div className="lg:sticky lg:top-10 space-y-6">
+          {/* Sidebar Navigation */}
+          <aside className="lg:w-80 flex-shrink-0">
+            <div className="lg:sticky lg:top-32 space-y-6">
               
               <button 
                 onClick={() => setIsTocOpen(!isTocOpen)}
-                className="w-full lg:hidden flex items-center justify-between bg-white border border-[#D6D1CF] rounded-2xl px-6 py-5 font-bold text-[#175190] shadow-xl"
+                className="w-full lg:hidden flex items-center justify-between bg-white border border-sand/40 rounded-2xl px-6 py-4 font-bold text-navy-deeper shadow-sm"
               >
-                <span className="flex items-center gap-2 uppercase tracking-widest text-xs">
-                  Table of Contents
-                </span>
-                <svg className={`w-5 h-5 transition-transform duration-300 ${isTocOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+                <span className="uppercase tracking-widest text-[10px] font-black">Table of Contents</span>
+                <svg className={`w-4 h-4 transition-transform duration-300 ${isTocOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                </svg>
               </button>
 
-              <div className={`${isTocOpen ? 'block' : 'hidden'} lg:block animate-in fade-in zoom-in-95 lg:animate-none`}>
-                <div className="bg-white border border-[#D6D1CF]/50 rounded-[2rem] p-8 shadow-2xl shadow-black/5">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-1.5 h-6 rounded-full bg-[#175190]"></div>
-                    <span className="font-bold text-xs text-[#175190] uppercase tracking-[0.2em]">Navigation</span>
+              <div className={`${isTocOpen ? 'block' : 'hidden'} lg:block space-y-6`}>
+                <div className="bg-white border border-sand/30 rounded-[2rem] p-8 shadow-sm">
+                  <div className="text-[10px] font-black text-navy uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+                    <span className="w-6 h-px bg-navy" />
+                    Navigation
                   </div>
 
                   <nav className="space-y-1">
@@ -112,79 +80,67 @@ export default function TermsAndConditions() {
                       <a
                         key={sec.id}
                         href={`#${sec.id}`}
-                        className={`group flex items-center gap-3 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xl px-4 ${
+                        className={`block px-4 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
                           activeSection === sec.id 
-                            ? 'text-white bg-[#175190] shadow-lg shadow-[#175190]/20' 
-                            : 'text-[#896B85] hover:text-[#175190] hover:bg-[#F0F4F9]'
+                            ? 'text-white bg-navy-deeper border-navy-deeper shadow-lg shadow-navy/20' 
+                            : 'text-text-light hover:text-navy hover:bg-navy/5 border-transparent'
                         }`}
                       >
-                        <span className="line-clamp-1">{sec.title}</span>
+                        {sec.title}
                       </a>
                     ))}
                   </nav>
 
-                  {/* Progress Indicator */}
-                  <div className="mt-10 pt-8 border-t border-[#F5F3F2]">
-                    <div className="flex items-center justify-between text-[10px] font-bold text-[#175190] uppercase tracking-widest mb-3">
+                  {/* Progress */}
+                  <div className="mt-10 pt-8 border-t border-sand/20">
+                    <div className="flex items-center justify-between text-[9px] font-black text-navy-deeper uppercase tracking-widest mb-3">
                       <span>Read Progress</span>
-                      <span className="text-[#A41546]">{progress}%</span>
+                      <span className="text-crimson">{progress}%</span>
                     </div>
-                    <div className="w-full h-1.5 bg-[#F5F3F2] rounded-full overflow-hidden">
+                    <div className="w-full h-1 bg-off-white rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gradient-to-r from-[#175190] to-[#A41546] rounded-full transition-all duration-500 ease-out" 
+                        className="h-full bg-navy transition-all duration-500 ease-out" 
                         style={{ width: `${progress}%` }}
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Quick Info Card */}
-                <div className="mt-6 bg-[#A41546] rounded-[2rem] p-8 text-white shadow-xl shadow-[#A41546]/20">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 mb-6">Legal Notice</div>
-                  <div className="space-y-4 text-xs font-bold uppercase tracking-widest">
-                    <div className="flex items-center gap-3 text-white">
-                      <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                      </div>
-                      Laws of India
-                    </div>
-                  </div>
+                <div className="bg-crimson rounded-[2rem] p-8 text-white shadow-xl shadow-crimson/20">
+                  <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/60 mb-4">Legal Framework</p>
+                  <p className="text-sm font-bold uppercase tracking-widest leading-relaxed">
+                    Governed by the<br /><span className="text-2xl font-playfair lowercase italic font-light tracking-normal">laws of India</span>
+                  </p>
                 </div>
               </div>
             </div>
           </aside>
 
-          {/* Main Content Sections */}
-          <main className="flex-1 min-w-0 space-y-12 lg:space-y-16 relative z-10">
+          {/* Content */}
+          <div className="flex-1 space-y-16">
             {sections.map((sec, idx) => (
-              <section 
-                key={sec.id} 
-                id={sec.id} 
-                className="scroll-mt-32"
-              >
-                <div className="bg-white border border-[#D6D1CF]/50 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/5 hover:shadow-black/10 transition-all duration-500">
-                  <div className="bg-[#175190] p-6 lg:px-12 flex items-center gap-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#A41546] flex items-center justify-center text-white font-bold text-lg shadow-xl">
-                      {idx + 1}
-                    </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase">
+              <section key={sec.id} id={sec.id} className="scroll-mt-32 group">
+                <div className="bg-white border border-sand/30 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500">
+                  <div className="bg-navy-deeper px-8 py-6 flex items-center gap-6">
+                    <span className="font-playfair text-xl font-bold text-sand/60">{(idx + 1).toString().padStart(2, '0')}</span>
+                    <h2 className="font-playfair text-xl md:text-2xl font-bold text-white tracking-widest uppercase">
                       {sec.title.split('. ')[1] || sec.title}
                     </h2>
                   </div>
 
-                  <div className="p-8 md:p-12 space-y-6">
+                  <div className="p-8 md:p-12 space-y-8">
                     {sec.subtitle && (
-                      <h3 className="text-sm font-bold text-[#A41546] uppercase tracking-[0.3em]">
+                      <h3 className="text-[10px] font-black text-crimson uppercase tracking-[0.3em]">
                         {sec.subtitle}
                       </h3>
                     )}
 
-                    <p className="text-[#444] leading-[1.8] text-base md:text-lg font-medium opacity-90">
+                    <p className="text-text-light leading-relaxed text-lg font-light opacity-90">
                       {sec.content}
                     </p>
 
                     {sec.callout && (
-                      <div className="p-6 bg-[#F5F3F2] border-l-4 border-[#A41546] rounded-r-2xl font-bold text-[#175190] text-sm md:text-base leading-relaxed tracking-wide">
+                      <div className="p-6 bg-off-white border-l-4 border-crimson rounded-r-2xl font-bold text-navy-deeper text-sm md:text-base leading-relaxed tracking-wide">
                         {sec.callout}
                       </div>
                     )}
@@ -192,9 +148,9 @@ export default function TermsAndConditions() {
                     {sec.list && (
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {sec.list.map((item, i) => (
-                          <li key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-[#F0F4F9]/50 border border-[#D6D1CF]/20 text-[#222] font-semibold text-sm">
-                            <div className="mt-1 w-2 h-2 rounded-full bg-[#175190]"></div>
-                            <span className="flex-1">{item}</span>
+                          <li key={i} className="flex items-start gap-4 p-5 rounded-2xl bg-sand/10 border border-sand/20 text-navy-deeper font-bold text-sm">
+                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-crimson shrink-0" />
+                            <span className="opacity-80">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -204,39 +160,32 @@ export default function TermsAndConditions() {
               </section>
             ))}
 
-            {/* Bottom Call to Action */}
-            <div className="mt-16 p-12 bg-[#175190] rounded-[3rem] text-center text-white space-y-8 shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#A41546] rounded-full blur-[100px] opacity-20 -mr-32 -mt-32"></div>
-              <div className="relative z-10 space-y-6">
-                <div className="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-4 border border-white/20">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            {/* Agreement Box */}
+            <div className="bg-navy-deeper rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden mt-20">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-sand/10 blur-[80px] rounded-full -mr-20 -mt-20" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8 border border-white/20">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
                 </div>
-                <p className="text-2xl md:text-3xl font-extrabold uppercase tracking-tighter">
-                  Agreement Acknowledged
-                </p>
-                <p className="text-sm md:text-base text-white/60 max-w-xl mx-auto leading-relaxed font-medium">
+                <h3 className="font-playfair text-4xl font-bold text-white mb-6 uppercase tracking-tighter">Agreement Acknowledged</h3>
+                <p className="text-white/60 text-lg font-light leading-relaxed mb-10 max-w-xl mx-auto">
                   By continuing to use this website, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
                 </p>
-                <div className="pt-4 text-[10px] font-black uppercase tracking-[0.5em] text-[#D6D1CF]/30">
+                <div className="pt-8 border-t border-white/10 text-[9px] font-black uppercase tracking-[0.5em] text-white/30">
                   © Seedling Group of Schools | Compliance Division
                 </div>
               </div>
             </div>
-          </main>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="bg-[#175190] border-t border-white/5 py-16 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
-          <div className="font-black text-2xl text-white uppercase tracking-tighter italic">Seedling Schools</div>
-          <div className="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
-            <a href="/privacy-policy" className="hover:text-white transition-all">Privacy</a>
-            <span className="opacity-10">/</span>
-            <a href="/contact" className="hover:text-white transition-all">Contact</a>
           </div>
-          <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A41546]">Jaipur • Rajasthan • India</div>
         </div>
+      </main>
+
+      <footer className="py-12 text-center border-t border-sand/30">
+        <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">
+          Seedling Schools | Jaipur • Rajasthan • India
+        </p>
       </footer>
     </div>
   );

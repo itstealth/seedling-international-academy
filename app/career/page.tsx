@@ -49,7 +49,7 @@ function Reveal({
 ───────────────────────────────────────────── */
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block bg-emerald-50 text-emerald-700 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-emerald-200 mb-4">
+    <span className="inline-block bg-crimson/10 text-crimson text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-crimson-dark/20 mb-4 font-dm">
       {children}
     </span>
   );
@@ -197,23 +197,23 @@ function JobCard({
   onApply: (role: (typeof openRoles)[0]) => void;
 }) {
   return (
-    <div className="group bg-white border border-[#E8E3DA] rounded-2xl p-7 hover:shadow-xl hover:border-emerald-200 hover:-translate-y-0.5 transition-all duration-300">
+    <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-xl hover:border-navy-deeper/20 hover:-translate-y-0.5 transition-all duration-300">
       <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
         <div className="flex items-center gap-3 flex-wrap">
           {role.urgent && (
-            <span className="bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+            <span className="bg-sand/10 text-crimson border border-crimson/20 text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
               Urgent
             </span>
           )}
-          <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full border ${
+          <span className={`text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border ${
             role.type === "Teaching"
-              ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-              : "bg-sky-50 text-sky-700 border-sky-200"
+              ? "bg-navy-light text-navy border-navy/20"
+              : "bg-mauve/10 text-mauve border-mauve/20"
           }`}>
             {role.type}
           </span>
         </div>
-        <span className="text-[#999] text-xs flex items-center gap-1.5">
+        <span className="text-text-light text-xs flex items-center gap-1.5 font-dm">
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -222,24 +222,24 @@ function JobCard({
         </span>
       </div>
 
-      <h3 className="display text-2xl font-semibold text-[#1C1C1E] mb-1 group-hover:text-emerald-700 transition-colors duration-200">
+      <h3 className="font-playfair text-2xl font-semibold text-navy-deeper mb-1 group-hover:text-navy transition-colors duration-200">
         {role.title}
       </h3>
-      <p className="text-emerald-600 text-sm font-medium mb-4">{role.board}</p>
+      <p className="text-crimson text-sm font-black tracking-widest uppercase mb-4 font-dm">{role.board}</p>
 
-      <p className="text-[#666] text-sm leading-[1.9] mb-6">{role.desc}</p>
+      <p className="text-text-light text-sm leading-[1.9] mb-6 font-dm font-light">{role.desc}</p>
 
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex flex-wrap gap-2">
           {role.tags.map((t) => (
-            <span key={t} className="bg-[#F5F0E8] text-[#777] text-xs px-3 py-1 rounded-full">
+            <span key={t} className="bg-sand/10 text-text-light text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full font-dm">
               {t}
             </span>
           ))}
         </div>
         <button
           onClick={() => onApply(role)}
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-200 hover:gap-3"
+          className="inline-flex items-center gap-2 bg-navy-deeper hover:bg-navy-dark text-white text-[11px] font-black tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-navy-deeper/30 hover:gap-3 font-dm"
         >
           Apply Now
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -296,18 +296,18 @@ function ApplyModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* header */}
-        <div className="sticky top-0 bg-white border-b border-[#F0EDE8] px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
+        <div className="sticky top-0 bg-white border-b border-sand/30 px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
           <div>
-            <p className="text-emerald-600 text-xs font-semibold tracking-widest uppercase mb-1">
+            <p className="text-crimson text-xs font-black tracking-widest uppercase mb-1 font-dm">
               Interest Form
             </p>
-            <h3 className="display text-xl font-semibold text-[#1C1C1E] leading-snug">
+            <h3 className="font-playfair text-xl font-semibold text-navy-deeper leading-snug">
               {role.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-[#F5F0E8] hover:bg-red-50 hover:text-red-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-[#999] text-lg mt-0.5"
+            className="w-8 h-8 rounded-full bg-sand/10 hover:bg-red-50 hover:text-red-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-text-light text-lg mt-0.5"
           >
             ✕
           </button>
@@ -318,10 +318,10 @@ function ApplyModal({
           {submitted ? (
             <div className="text-center py-10">
               <span className="text-6xl block mb-4">🌱</span>
-              <p className="display text-2xl font-semibold text-emerald-700 mb-2">
+              <p className="font-playfair text-2xl font-semibold text-navy-deeper mb-2">
                 Thank You!
               </p>
-              <p className="text-[#666] text-sm leading-relaxed">
+              <p className="text-text-light text-sm leading-relaxed font-dm">
                 We've received your interest. Our HR team will reach out as soon as we open our recruitments.
               </p>
               <button
@@ -481,7 +481,7 @@ function ApplyModal({
 
               <button
                 type="submit"
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-emerald-200"
+                className="w-full bg-navy-deeper hover:bg-navy-dark text-white py-4 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-navy-deeper/30 font-dm"
               >
                 Submit Interest Form →
               </button>
@@ -515,14 +515,7 @@ export default function CareersPage() {
   };
 
   return (
-    <main
-      className="bg-[#FAFAF7] text-[#1C1C1E] overflow-x-hidden"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
-    >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
-        .display { font-family: 'Cormorant Garamond', serif; }
-      `}</style>
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* Application modal */}
       <ApplyModal
@@ -544,14 +537,14 @@ export default function CareersPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 w-full py-32">
           <Reveal>
-            <p className="display text-emerald-400 text-xl italic tracking-widest mb-4 uppercase">
+            <p className="font-playfair text-sand text-xl italic tracking-widest mb-4 uppercase">
               Seedling Group of Schools · Careers
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="display text-white font-light leading-[1.05] text-6xl md:text-7xl lg:text-[6rem] max-w-3xl mb-6">
+            <h1 className="font-playfair text-white font-light leading-[1.05] text-6xl md:text-7xl lg:text-[6rem] max-w-3xl mb-6">
               The Hunt<br />
-              <em className="font-semibold">Is On.</em>
+              <em className="font-semibold text-sand italic">Is On.</em>
             </h1>
           </Reveal>
           <Reveal delay={240}>
@@ -563,7 +556,7 @@ export default function CareersPage() {
             <div className="flex gap-4 flex-wrap">
               <button
                 onClick={() => document.getElementById("openings")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/30"
+                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-crimson/40"
               >
                 View Openings
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -572,7 +565,7 @@ export default function CareersPage() {
               </button>
               <button
                 onClick={() => setOpenGeneral(true)}
-                className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-[#1C1C1E] px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 font-dm"
               >
                 Send Your CV
               </button>
@@ -599,9 +592,9 @@ export default function CareersPage() {
       </section>
 
       {/* STATS BAND — matches all other pages */}
-      <section className="bg-[#2D6A4F] text-white py-8">
+      <section className="bg-navy-deeper text-white py-8 border-y border-sand/20">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-white/20">
+          <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
             {[
               { value: "5", label: "Schools" },
               { value: "2", label: "Campuses" },
@@ -611,8 +604,8 @@ export default function CareersPage() {
               { value: "1992", label: "Est." },
             ].map((s) => (
               <div key={s.label} className="px-4 py-4 text-center">
-                <p className="display text-3xl md:text-4xl font-semibold">{s.value}</p>
-                <p className="text-white/60 text-xs mt-1 tracking-widest uppercase">{s.label}</p>
+                <p className="font-playfair text-3xl md:text-4xl font-semibold text-sand">{s.value}</p>
+                <p className="text-white/60 text-[10px] font-black mt-1 tracking-[0.2em] uppercase font-dm">{s.label}</p>
               </div>
             ))}
           </div>
@@ -625,11 +618,11 @@ export default function CareersPage() {
       <section className="py-32 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Why Seedling</Tag>
-          <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+          <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
             Why Work<br />
-            <em className="font-semibold">With Us</em>
+            <em className="font-semibold text-crimson">With Us</em>
           </h2>
-          <p className="text-[#666] mt-5 max-w-lg mx-auto leading-relaxed">
+          <p className="text-text-light mt-5 max-w-lg mx-auto leading-relaxed font-dm font-light">
             More than a job — a calling. Teaching at Seedling means becoming part of a 30-year legacy of educational excellence and community.
           </p>
         </Reveal>
@@ -637,12 +630,12 @@ export default function CareersPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {whyWork.map((w, i) => (
             <Reveal key={w.title} delay={i * 70}>
-              <div className="group bg-white border border-[#E8E3DA] rounded-2xl p-7 hover:shadow-lg hover:border-emerald-200 hover:-translate-y-0.5 transition-all duration-300 h-full">
-                <div className="w-11 h-11 bg-emerald-50 group-hover:bg-emerald-600 border border-emerald-200 group-hover:border-emerald-600 rounded-xl flex items-center justify-center text-emerald-600 group-hover:text-white transition-all duration-300 mb-5 flex-shrink-0">
+              <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-lg hover:border-navy-deeper/20 hover:-translate-y-0.5 transition-all duration-300 h-full">
+                <div className="w-11 h-11 bg-sand/10 group-hover:bg-crimson border border-sand/40 group-hover:border-crimson rounded-xl flex items-center justify-center text-crimson group-hover:text-white transition-all duration-300 mb-5 flex-shrink-0">
                   {w.icon}
                 </div>
-                <h4 className="display text-xl font-semibold text-[#1C1C1E] mb-3">{w.title}</h4>
-                <p className="text-[#666] text-sm leading-[1.9]">{w.desc}</p>
+                <h4 className="font-playfair text-xl font-semibold text-navy-deeper mb-3">{w.title}</h4>
+                <p className="text-text-light text-sm leading-[1.9] font-dm font-light">{w.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -662,13 +655,13 @@ export default function CareersPage() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
               <Tag>Current Openings</Tag>
-              <h2 className="display text-5xl md:text-6xl font-light text-[#1C1C1E]">
+              <h2 className="font-playfair text-5xl md:text-6xl font-light text-navy-deeper">
                 Open<br />
-                <em className="font-semibold">Positions</em>
+                <em className="font-semibold text-navy">Positions</em>
               </h2>
             </div>
             <div className="text-right">
-              <p className="text-[#777] text-sm max-w-xs leading-relaxed">
+              <p className="text-text-light text-sm max-w-xs leading-relaxed font-dm font-light">
                 All Subjects · All Classes<br />Teaching and Administrative Roles<br />CBSE & Cambridge
               </p>
             </div>
@@ -681,10 +674,10 @@ export default function CareersPage() {
             {["All Roles", "Teaching", "Administrative", "CBSE", "Cambridge"].map((f, i) => (
               <button
                 key={f}
-                className={`text-xs font-semibold tracking-wide px-4 py-2 rounded-full border transition-all duration-200 ${
+                className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${
                   i === 0
-                    ? "bg-emerald-600 text-white border-emerald-600"
-                    : "bg-white text-[#555] border-[#E8E3DA] hover:border-emerald-300 hover:text-emerald-700"
+                    ? "bg-navy-deeper text-white border-navy-deeper"
+                    : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
                 }`}
               >
                 {f}
@@ -704,11 +697,11 @@ export default function CareersPage() {
 
         {/* inline note */}
         <Reveal className="mt-10">
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl px-7 py-5 flex items-start gap-4">
+          <div className="bg-sand/10 border border-sand/30 rounded-2xl px-7 py-5 flex items-start gap-4">
             <span className="text-2xl flex-shrink-0 mt-0.5">📌</span>
             <div>
-              <p className="font-semibold text-emerald-700 text-sm mb-1">How Applications Work</p>
-              <p className="text-[#666] text-sm leading-relaxed">
+              <p className="font-black text-navy-deeper text-xs tracking-widest uppercase mb-1 font-dm">How Applications Work</p>
+              <p className="text-text-light text-sm leading-relaxed font-dm font-light">
                 Fill in the Interest Form with your details and CV. We will reach out as soon as we open our recruitments. All roles are open across both campuses — Jawahar Nagar and Durgapura.
               </p>
             </div>
@@ -723,32 +716,32 @@ export default function CareersPage() {
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Voices from Inside</Tag>
-            <h2 className="display text-4xl md:text-5xl font-light text-[#1C1C1E]">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               What Our Educators<br />
-              <em className="font-semibold">Have to Say</em>
+              <em className="font-semibold text-crimson">Have to Say</em>
             </h2>
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 120}>
-                <div className="group bg-[#FAFAF7] border border-[#E8E3DA] rounded-2xl p-8 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 relative overflow-hidden h-full">
+                <div className="group bg-off-white border border-sand/40 rounded-2xl p-8 hover:shadow-lg hover:border-navy-deeper/20 transition-all duration-300 relative overflow-hidden h-full">
                   {/* decorative quote mark */}
-                  <div className="absolute top-3 right-6 display text-[7rem] leading-none text-emerald-100 font-bold select-none pointer-events-none">
+                  <div className="absolute top-3 right-6 font-playfair text-[7rem] leading-none text-sand/20 font-bold select-none pointer-events-none">
                     "
                   </div>
                   <div className="flex items-center gap-4 mb-6 relative z-10">
                     <img
                       src={t.img}
                       alt={t.name}
-                      className="w-13 h-13 w-12 h-12 rounded-full object-cover object-top border-2 border-emerald-200 flex-shrink-0"
+                      className="w-13 h-13 w-12 h-12 rounded-full object-cover object-top border-2 border-sand/40 flex-shrink-0"
                     />
                     <div>
-                      <p className="display font-semibold text-lg text-[#1C1C1E]">{t.name}</p>
-                      <p className="text-emerald-600 text-xs font-medium">Seedling Educator</p>
+                      <p className="font-playfair font-semibold text-lg text-navy-deeper">{t.name}</p>
+                      <p className="text-crimson text-[10px] font-black tracking-widest uppercase font-dm">Seedling Educator</p>
                     </div>
                   </div>
-                  <blockquote className="display italic text-xl font-light text-[#444] leading-[1.7] relative z-10">
+                  <blockquote className="font-playfair italic text-xl font-light text-text-base leading-[1.7] relative z-10">
                     "{t.quote}"
                   </blockquote>
                 </div>
@@ -761,17 +754,17 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           4. GENERAL APPLICATION
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-[#FAFAF7]">
+      <section className="py-32 bg-off-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <Reveal>
               <Tag>Open Application</Tag>
-              <h2 className="display text-4xl md:text-5xl font-light text-[#1C1C1E] mb-5 leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper mb-5 leading-tight">
                 Don't See a<br />
-                <em className="font-semibold">Role That Fits?</em>
+                <em className="font-semibold text-navy">Role That Fits?</em>
               </h2>
-              <p className="text-[#555] leading-[1.9] mb-8 text-base">
+              <p className="text-text-light leading-[1.9] mb-8 text-base font-dm font-light">
                 We're always looking for passionate educators and professionals. Drop your details and CV with us — we'll keep your profile active and reach out when the right opportunity opens.
               </p>
               <div className="space-y-3 mb-8">
@@ -780,18 +773,18 @@ export default function CareersPage() {
                   { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered" },
                   { icon: "🌏", label: "CBSE & Cambridge", sub: "Experience with either or both boards welcomed" },
                 ].map((item) => (
-                  <div key={item.label} className="flex gap-4 p-4 bg-white border border-[#E8E3DA] rounded-xl hover:border-emerald-200 transition-colors duration-200">
+                  <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-navy-deeper/20 transition-colors duration-200">
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
                     <div>
-                      <p className="font-semibold text-[#1C1C1E] text-sm">{item.label}</p>
-                      <p className="text-[#999] text-xs mt-0.5">{item.sub}</p>
+                      <p className="font-black text-navy-deeper text-[11px] tracking-widest uppercase mb-1 font-dm">{item.label}</p>
+                      <p className="text-text-light text-[10px] font-dm font-light">{item.sub}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <button
                 onClick={() => setOpenGeneral(true)}
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-emerald-200 hover:gap-3"
+                className="inline-flex items-center gap-2 bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-navy-deeper/30 hover:gap-3 font-dm"
               >
                 Send Your CV
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

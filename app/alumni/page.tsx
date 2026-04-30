@@ -13,24 +13,24 @@ const alumniList = [
     role: "CEO of Razorpay",
     image: "https://seedlingschools.com/assets/img/harshil.png",
     tags: ["Entrepreneurship", "Fintech"],
-    accent: "from-amber-400 to-orange-500",
-    bg: "from-amber-50 to-orange-50",
+    accent: "from-navy to-navy-deeper",
+    bg: "bg-off-white",
   },
   {
     name: "Abhishek Tripathi",
     role: "Wing Commander",
     image: "https://seedlingschools.com/assets/img/abhishek.png",
     tags: ["Defence", "Leadership"],
-    accent: "from-sky-400 to-blue-600",
-    bg: "from-sky-50 to-blue-50",
+    accent: "from-crimson to-crimson-dark",
+    bg: "bg-off-white",
   },
   {
     name: "Shashank Jain",
     role: "Head of Architecture & Design",
     image: "https://seedlingschools.com/assets/img/shashank.png",
     tags: ["Architecture", "Design"],
-    accent: "from-emerald-400 to-teal-600",
-    bg: "from-emerald-50 to-teal-50",
+    accent: "from-sand to-sand",
+    bg: "bg-off-white",
   },
 ];
 
@@ -40,7 +40,7 @@ const stats = [
     suffix: "+",
     label: "Students Empowered",
     description: "Across five world-class campuses in Jaipur",
-    color: "from-amber-400 to-orange-500",
+    color: "from-navy to-navy-deeper",
     icon: "🎓",
   },
   {
@@ -48,7 +48,7 @@ const stats = [
     suffix: "+",
     label: "Alumni Network",
     description: "A global community of Seedling graduates",
-    color: "from-emerald-400 to-teal-500",
+    color: "from-crimson to-crimson-dark",
     icon: "🌐",
   },
   {
@@ -56,7 +56,7 @@ const stats = [
     suffix: "%",
     label: "Results",
     description: "Consistent academic excellence since 1992",
-    color: "from-sky-400 to-blue-500",
+    color: "from-navy-deeper to-navy",
     icon: "🏆",
   },
   {
@@ -64,7 +64,7 @@ const stats = [
     suffix: "+",
     label: "Nations Represented",
     description: "Seedling alumni span the globe",
-    color: "from-violet-400 to-purple-500",
+    color: "from-sand to-sand",
     icon: "🌍",
   },
 ];
@@ -74,25 +74,25 @@ const achievements = [
     title: "Alumni Accomplishment",
     body: "We take great pride in celebrating the remarkable achievements of our esteemed alumni — showcasing their talents, dedication, and success stories.",
     icon: "🏅",
-    color: "border-amber-200 bg-amber-50",
+    color: "border-sand/40 bg-sand/10",
   },
   {
     title: "NEP-Aligned Education",
     body: "Our curriculum is thoughtfully designed to align with the latest educational standards and practices outlined by the National Education Policy.",
     icon: "📜",
-    color: "border-sky-200 bg-sky-50",
+    color: "border-navy/20 bg-navy-light",
   },
   {
     title: "Holistic Well-being",
     body: "At Seedling, we prioritize the holistic well-being of our students, parents, and staff — nurturing academic, emotional, social, and physical growth.",
     icon: "💚",
-    color: "border-emerald-200 bg-emerald-50",
+    color: "border-crimson/20 bg-crimson/5",
   },
   {
     title: "Technology-Integrated Learning",
     body: "Interactive whiteboards, educational apps, and online resources create an engaging and dynamic learning experience for every student.",
     icon: "💡",
-    color: "border-violet-200 bg-violet-50",
+    color: "border-sand/40 bg-sand/10",
   },
 ];
 
@@ -215,7 +215,7 @@ function AlumniCard({
       className="opacity-0 translate-y-8 transition-all duration-700 ease-out group"
     >
       <div
-        className={`rounded-2xl overflow-hidden bg-gradient-to-b ${alumniItem.bg} border border-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+        className={`rounded-2xl overflow-hidden bg-white border border-sand/40 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
       >
         <div className="relative h-72 overflow-hidden">
           <Image
@@ -228,15 +228,15 @@ function AlumniCard({
           <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${alumniItem.accent}`} />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-bold text-slate-800 mb-1">{alumniItem.name}</h3>
-          <p className={`text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r ${alumniItem.accent} mb-4`}>
+          <h3 className="font-playfair text-xl font-bold text-navy-deeper mb-1">{alumniItem.name}</h3>
+          <p className={`text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r ${alumniItem.accent} mb-4 font-dm`}>
             {alumniItem.role}
           </p>
           <div className="flex flex-wrap gap-2">
             {alumniItem.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs text-slate-500 bg-white border border-slate-100 px-3 py-1 rounded-full"
+                className="text-[10px] font-black tracking-widest uppercase text-text-light bg-sand/10 border border-sand/30 px-3 py-1 rounded-full font-dm"
               >
                 {tag}
               </span>
@@ -270,10 +270,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-white to-emerald-50">
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-amber-100/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
-      <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-sky-100/30 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-off-white">
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-navy-light/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-crimson/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-sand/20 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
 
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -288,28 +288,28 @@ function Hero() {
         ref={ref}
         className="relative z-10 text-center max-w-5xl mx-auto px-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
       >
-        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-amber-200 rounded-full px-5 py-2 mb-8 shadow-sm">
-          <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-          <span className="text-sm font-semibold text-amber-700 tracking-widest uppercase">
+        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-sand/40 rounded-full px-5 py-2 mb-8 shadow-sm">
+          <span className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
+          <span className="text-[10px] font-black font-dm text-navy-deeper tracking-[0.2em] uppercase">
             Since 1992
           </span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold text-slate-800 leading-[1.05] mb-6 tracking-tight">
+        <h1 className="font-playfair text-6xl md:text-8xl font-bold text-navy-deeper leading-[1.05] mb-6 tracking-tight">
           Celebrating Our{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-emerald-600">
+            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">
               Alumni
             </span>
-            <span className="absolute bottom-1 left-0 w-full h-3 bg-amber-200/60 rounded -z-0" />
+            <span className="absolute bottom-2 left-0 w-full h-3 bg-sand/30 rounded -z-0" />
           </span>
         </h1>
 
-        <p className="text-2xl md:text-3xl font-light text-slate-500 mb-4 tracking-wide">
+        <p className="font-playfair text-2xl md:text-3xl font-light text-text-light mb-4 tracking-wide italic">
           Community. Connection. Collaboration.
         </p>
 
-        <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg text-text-light max-w-2xl mx-auto mb-12 leading-relaxed font-dm font-light">
           Every Seedling alumnus carries a story of growth, resilience, and perseverance —
           a testament to what nurturing the right environment can accomplish.
         </p>
@@ -322,8 +322,8 @@ function Hero() {
             { value: "50+", label: "Nations" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-slate-800">{stat.value}</p>
-              <p className="text-sm text-slate-400 uppercase tracking-widest mt-1">{stat.label}</p>
+              <p className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper">{stat.value}</p>
+              <p className="text-[10px] font-black text-text-light uppercase tracking-[0.2em] mt-1 font-dm">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -357,8 +357,8 @@ function FeaturedAlumni() {
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-16">
-          <div className="w-10 h-px bg-amber-400" />
-          <span className="text-sm font-semibold text-amber-600 uppercase tracking-widest">
+          <div className="w-10 h-px bg-sand" />
+          <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
             Featured Story
           </span>
         </div>
@@ -367,7 +367,7 @@ function FeaturedAlumni() {
           ref={ref}
           className="opacity-0 translate-y-8 transition-all duration-1000 ease-out"
         >
-          <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-gradient-to-br from-slate-800 to-slate-900">
+          <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-navy-deeper">
             <div className="relative min-h-[420px] md:min-h-[560px] overflow-hidden group">
               <Image
                 src="https://seedlingschools.com/assets/img/harshil.png"
@@ -377,29 +377,29 @@ function FeaturedAlumni() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
               <div className="absolute top-6 left-6">
-                <span className="bg-amber-400 text-slate-900 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                <span className="bg-sand text-navy-deeper text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full font-dm">
                   The Pride of Seedling
                 </span>
               </div>
             </div>
 
             <div className="flex flex-col justify-center p-10 md:p-14 text-white">
-              <p className="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">
+              <p className="text-sand text-[10px] font-black uppercase tracking-[0.2em] mb-4 font-dm">
                 Seedling Public School Alumni
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-2 leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight">
                 Harshil Mathur
               </h2>
-              <p className="text-xl text-amber-300 font-medium mb-8">
+              <p className="font-playfair text-xl text-sand font-medium mb-8 italic">
                 CEO, Razorpay
               </p>
 
               <blockquote className="relative">
-                <div className="text-7xl text-amber-400/20 font-serif absolute -top-4 -left-2 leading-none select-none">
+                <div className="text-7xl text-sand/20 font-playfair absolute -top-4 -left-2 leading-none select-none">
                   "
                 </div>
-                <p className="text-slate-300 text-lg leading-relaxed pl-4 border-l-2 border-amber-400/50">
+                <p className="text-white/80 text-lg leading-relaxed pl-4 border-l-2 border-sand/50 font-dm font-light">
                   We take great pride in celebrating the remarkable achievements of our
                   esteemed alumni — showcasing their talents, dedication, and success
                   stories. Discover journeys of growth, resilience, and perseverance, and
@@ -409,8 +409,8 @@ function FeaturedAlumni() {
               </blockquote>
 
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-amber-400/40" />
-                <span className="text-slate-400 text-sm">
+                <div className="w-12 h-px bg-sand/30" />
+                <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] font-dm">
                   Joyous Tidings — Alumni Accomplishment
                 </span>
               </div>
@@ -419,7 +419,7 @@ function FeaturedAlumni() {
                 {["Entrepreneurship", "Fintech", "Leadership", "Innovation"].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs bg-white/10 border border-white/10 text-slate-300 px-3 py-1 rounded-full"
+                    className="text-[10px] font-black tracking-widest uppercase bg-white/10 border border-white/10 text-sand px-3 py-1 rounded-full font-dm"
                   >
                     {tag}
                   </span>
@@ -435,20 +435,20 @@ function FeaturedAlumni() {
 
 function AlumniGrid() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-off-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-emerald-400" />
-            <span className="text-sm font-semibold text-emerald-600 uppercase tracking-widest">
+            <div className="w-8 h-px bg-sand" />
+            <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
               Alumni Stories
             </span>
-            <div className="w-8 h-px bg-emerald-400" />
+            <div className="w-8 h-px bg-sand" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 leading-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight">
             The Pride of Seedling
           </h2>
-          <p className="mt-4 text-slate-500 max-w-xl mx-auto text-lg">
+          <p className="mt-4 text-text-light max-w-xl mx-auto text-lg font-dm font-light">
             Our graduates go on to lead, create, and serve at the highest levels —
             each carrying the Seedling spirit forward.
           </p>
@@ -470,15 +470,15 @@ function AchievementsSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-amber-400" />
-            <span className="text-sm font-semibold text-amber-600 uppercase tracking-widest">
+            <div className="w-8 h-px bg-crimson" />
+            <span className="text-[10px] font-black text-crimson uppercase tracking-[0.3em] font-dm">
               By the Numbers
             </span>
-            <div className="w-8 h-px bg-amber-400" />
+            <div className="w-8 h-px bg-crimson" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper">
             Empowering Educational Excellence{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-emerald-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">
               Globally
             </span>
           </h2>
@@ -488,16 +488,15 @@ function AchievementsSection() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="group relative rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6 text-center overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-sand/40 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6 text-center overflow-hidden"
             >
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r rounded-t-2xl" style={{backgroundImage: `linear-gradient(to right, var(--from), var(--to))`}} />
               <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${stat.color} rounded-t-2xl`} />
               <div className="text-3xl mb-3">{stat.icon}</div>
-              <div className={`text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.color}`}>
+              <div className={`font-playfair text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${stat.color}`}>
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-sm font-semibold text-slate-700 mt-1">{stat.label}</p>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed">{stat.description}</p>
+              <p className="text-[10px] font-black tracking-widest uppercase text-navy-deeper mt-1 font-dm">{stat.label}</p>
+              <p className="text-xs text-text-light mt-2 leading-relaxed font-dm font-light">{stat.description}</p>
             </div>
           ))}
         </div>
@@ -506,13 +505,13 @@ function AchievementsSection() {
           {achievements.map((a) => (
             <div
               key={a.title}
-              className={`rounded-2xl border-2 ${a.color} p-7 transition-all duration-300 hover:shadow-md`}
+              className={`rounded-2xl border ${a.color} p-7 transition-all duration-300 hover:shadow-md`}
             >
               <div className="flex items-start gap-4">
                 <div className="text-3xl flex-shrink-0">{a.icon}</div>
                 <div>
-                  <h3 className="font-bold text-slate-800 text-lg mb-2">{a.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{a.body}</p>
+                  <h3 className="font-playfair font-bold text-navy-deeper text-lg mb-2">{a.title}</h3>
+                  <p className="text-text-light text-sm leading-relaxed font-dm font-light">{a.body}</p>
                 </div>
               </div>
             </div>
@@ -540,7 +539,7 @@ function AlumniNetwork() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+    <section className="py-24 bg-navy-deeper relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
@@ -551,8 +550,8 @@ function AlumniNetwork() {
           }}
         />
       </div>
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-emerald-400/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sand/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-crimson/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
 
       <div
         ref={ref}
@@ -560,16 +559,16 @@ function AlumniNetwork() {
       >
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-amber-400" />
-            <span className="text-sm font-semibold text-amber-400 uppercase tracking-widest">
+            <div className="w-8 h-px bg-sand" />
+            <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
               Stay Connected
             </span>
-            <div className="w-8 h-px bg-amber-400" />
+            <div className="w-8 h-px bg-sand" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
             Nurture the Network!
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto text-lg">
+          <p className="text-white/60 max-w-xl mx-auto text-lg font-dm font-light">
             The Seedling Tribe with its Happy Vibe — a community that extends far
             beyond graduation day.
           </p>
@@ -579,7 +578,7 @@ function AlumniNetwork() {
           {networkCards.map((card, i) => (
             <div
               key={card.title}
-              className="group rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/30 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-400/5"
+              className="group rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-sand/30 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sand/5"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="relative w-14 h-14 mb-6">
@@ -590,9 +589,9 @@ function AlumniNetwork() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">{card.body}</p>
-              <button className="text-amber-400 text-sm font-semibold group-hover:underline flex items-center gap-2">
+              <h3 className="font-playfair text-xl font-bold text-white mb-3">{card.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 font-dm font-light">{card.body}</p>
+              <button className="text-sand text-[10px] font-black tracking-widest uppercase group-hover:underline flex items-center gap-2 font-dm">
                 {card.cta}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
@@ -606,21 +605,21 @@ function AlumniNetwork() {
 
 function GalleryStrip() {
   return (
-    <section className="py-24 bg-amber-50 overflow-hidden">
+    <section className="py-24 bg-sand/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-px bg-amber-400" />
-              <span className="text-sm font-semibold text-amber-600 uppercase tracking-widest">
+              <div className="w-8 h-px bg-crimson" />
+              <span className="text-[10px] font-black text-crimson uppercase tracking-[0.3em] font-dm">
                 Happy Kids Make a Happy School
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper">
               Students Speak
             </h2>
           </div>
-          <p className="text-slate-500 max-w-xs text-sm leading-relaxed">
+          <p className="text-text-light max-w-xs text-sm leading-relaxed font-dm font-light">
             Voices from our vibrant student community — each one a growing Seedling story.
           </p>
         </div>
@@ -641,7 +640,7 @@ function GalleryStrip() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-white font-semibold text-sm">{s.name}</p>
+                <p className="font-playfair text-white font-semibold text-sm">{s.name}</p>
               </div>
             </div>
           </div>
@@ -682,9 +681,9 @@ function CTASection() {
       <div className="max-w-6xl mx-auto px-6">
         <div
           ref={ref}
-          className="opacity-0 scale-95 transition-all duration-700 ease-out rounded-3xl overflow-hidden relative"
+          className="opacity-0 scale-95 transition-all duration-700 ease-out rounded-[3rem] overflow-hidden relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500" />
+          <div className="absolute inset-0 bg-navy-deeper" />
           <div className="absolute inset-0 opacity-10"
             style={{
               backgroundImage:
@@ -696,22 +695,22 @@ function CTASection() {
           <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-white/10 rounded-full blur-2xl -translate-x-1/4 translate-y-1/4" />
 
           <div className="relative z-10 text-center py-20 px-8">
-            <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-5 py-2 mb-8">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-              <span className="text-white text-sm font-semibold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-8">
+              <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
+              <span className="text-white text-[10px] font-black uppercase tracking-[0.3em] font-dm">
                 Admissions Open 2026–27
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Join the Seedling{" "}
               <span className="relative">
                 Alumni Network
-                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-white/40 rounded" />
+                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-sand/40 rounded" />
               </span>
             </h2>
 
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-dm font-light">
               Be part of a global community that celebrates growth, resilience,
               and collaboration. Connect with your alma mater — Seedling Group of Schools.
             </p>
@@ -721,7 +720,7 @@ function CTASection() {
                 href="https://seedlingschools.com/alumni.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-amber-600 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm uppercase tracking-widest"
+                className="bg-sand text-navy-deeper font-black px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-[11px] uppercase tracking-widest font-dm"
               >
                 Join Our Alumni Network
               </a>
@@ -729,16 +728,16 @@ function CTASection() {
                 href="https://seedlingschools.com/admission-procedure.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent text-white border-2 border-white/60 font-bold px-8 py-4 rounded-full hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 text-sm uppercase tracking-widest"
+                className="bg-transparent text-white border-2 border-white/30 font-black px-8 py-4 rounded-full hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 text-[11px] uppercase tracking-widest font-dm"
               >
                 Enquire Now
               </a>
             </div>
 
-            <div className="mt-16 flex flex-wrap justify-center gap-8 text-white/70 text-sm">
-              <span>SPS & SIA: <a href="tel:+917413012351" className="text-white font-semibold hover:underline">+91 74130 12351</a></span>
-              <span>SMHS & SMIA: <a href="tel:+919587772837" className="text-white font-semibold hover:underline">+91 95877 72837</a></span>
-              <span className="text-white/50">Office Hours: 8:30 AM – 6:30 PM</span>
+            <div className="mt-16 flex flex-wrap justify-center gap-8 text-white/50 text-[10px] font-black tracking-widest uppercase font-dm">
+              <span>SPS & SIA: <a href="tel:+917413012351" className="text-sand hover:underline">+91 74130 12351</a></span>
+              <span>SMHS & SMIA: <a href="tel:+919587772837" className="text-sand hover:underline">+91 95877 72837</a></span>
+              <span className="opacity-50">Office Hours: 8:30 AM – 6:30 PM</span>
             </div>
           </div>
         </div>

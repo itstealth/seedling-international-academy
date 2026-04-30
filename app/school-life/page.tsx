@@ -3,11 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // --- Custom Styles for Portability ---
-// These replace the need for tailwind.config.ts custom animations and fonts
 const pageStyles = `
-  .font-display { font-family: var(--font-display, Georgia, serif); }
-  .font-body { font-family: var(--font-body, system-ui, sans-serif); }
-  
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -85,42 +81,42 @@ const activities = [
     title: "Annual Day",
     desc: "A grand celebration of student talent with performances spanning music, dance, drama and spoken word.",
     image: "https://seedlingschools.com/assets/img/SMHS-Annual-Day.jpg",
-    color: "from-purple-600/80 to-purple-900/80",
+    color: "from-navy/80 to-navy-deeper/80",
   },
   {
     icon: "🧘",
     title: "Yoga & Meditation",
     desc: "Integrated wellness programmes that nurture mental clarity, physical balance, and emotional resilience.",
     image: "https://seedlingschools.com/assets/img/yoga1.jpg",
-    color: "from-emerald-600/80 to-emerald-900/80",
+    color: "from-mauve/80 to-navy-deeper/80",
   },
   {
     icon: "🎄",
     title: "Festivals & Celebrations",
     desc: "From Christmas to Founders Day, our calendar is rich with cultural celebrations that build community.",
     image: "https://seedlingschools.com/assets/img/Christmas.jpeg",
-    color: "from-red-600/80 to-red-900/80",
+    color: "from-crimson/80 to-crimson-dark/80",
   },
   {
     icon: "🛹",
     title: "Skaters Sunday Bash",
     desc: "Weekend skating events that promote active lifestyles, peer bonding, and a love for movement.",
     image: "https://seedlingschools.com/assets/img/skaters.jpg",
-    color: "from-blue-600/80 to-blue-900/80",
+    color: "from-navy-dark/80 to-navy-deeper/80",
   },
   {
     icon: "🌺",
     title: "Mother's Day",
     desc: "Heartfelt tributes organised by students to celebrate and honour the most important people in their lives.",
     image: "https://seedlingschools.com/assets/img/Mothersday9.jpg",
-    color: "from-pink-600/80 to-pink-900/80",
+    color: "from-crimson-dark/80 to-crimson-deeper/80",
   },
   {
     icon: "🏆",
     title: "CBSE Result Celebrations",
     desc: "We celebrate academic excellence with our toppers, honouring their hard work and dedication.",
     image: "https://seedlingschools.com/assets/img/cbse-result.jpg",
-    color: "from-[#c8a84b]/80 to-[#0a1628]/80",
+    color: "from-sand/80 to-navy-deeper/80",
   },
 ];
 
@@ -242,21 +238,21 @@ function Hero() {
       />
 
       {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/80 via-[#1a3a5c]/60 to-[#c8a84b]/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
 
       {/* Decorative geometry */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
         <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="#c8a84b" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="#c8a84b" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="#ffffff" strokeWidth="0.5" />
+          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
+          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
+          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
         </svg>
       </div>
 
       {/* Floating badge top-left */}
       <div className="absolute top-10 left-10 hidden lg:flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-3 animate-fade-in">
-        <span className="w-2 h-2 rounded-full bg-[#c8a84b] animate-pulse" />
+        <span className="w-2 h-2 rounded-full bg-sand animate-pulse" />
         <span className="text-white/90 text-sm font-light tracking-widest uppercase">Est. 1992</span>
       </div>
 
@@ -268,7 +264,7 @@ function Hero() {
           { num: "30+", label: "Years" },
         ].map((s) => (
           <div key={s.label} className="text-right animate-fade-in-right">
-            <div className="text-[#c8a84b] text-3xl font-bold tracking-tight">{s.num}</div>
+            <div className="text-sand text-3xl font-bold tracking-tight">{s.num}</div>
             <div className="text-white/60 text-xs uppercase tracking-widest">{s.label}</div>
           </div>
         ))}
@@ -276,26 +272,25 @@ function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <div className="mb-6 inline-flex items-center gap-2 bg-[#c8a84b]/20 border border-[#c8a84b]/40 rounded-full px-6 py-2 text-[#c8a84b] text-sm uppercase tracking-[0.3em] animate-fade-in-down">
+        <div className="mb-6 inline-flex items-center gap-2 bg-sand/20 border border-sand/40 rounded-full px-6 py-2 text-sand text-sm uppercase tracking-[0.3em] animate-fade-in-down">
           <span>Seedling Group of Schools</span>
         </div>
 
-        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          Life at
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8a84b] via-[#f0d080] to-[#c8a84b]">
+        <h1 className="font-playfair text-4xl md:text-5xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
+          Life at{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
             Seedling
           </span>
         </h1>
 
-        <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto font-light leading-relaxed mb-12 animate-fade-in">
+        <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto font-dm font-light leading-relaxed mb-12 animate-fade-in">
           A journey of growth, discovery, and endless possibility — since 1992.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
           <a
             href="https://seedlingschools.com/admission-procedure.php"
-            className="group relative px-10 py-4 bg-[#c8a84b] text-[#0a1628] font-bold text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#c8a84b]/30 hover:scale-105"
+            className="group relative px-10 py-4 bg-crimson text-white font-bold text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/30 hover:scale-105"
           >
             <span className="relative z-10">Apply Now 2026–27</span>
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
@@ -323,13 +318,13 @@ function MasonryGallery() {
   const [lightbox, setLightbox] = useState<(typeof galleryItems)[0] | null>(null);
 
   return (
-    <section id="gallery" className="py-24 bg-[#0a1628] relative overflow-hidden">
+    <section id="gallery" className="py-24 bg-navy-deeper relative overflow-hidden">
       {/* Subtle background texture */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #c8a84b 0, #c8a84b 1px, transparent 0, transparent 50%)",
+            "repeating-linear-gradient(45deg, #D6D1CF 0, #D6D1CF 1px, transparent 0, transparent 50%)",
           backgroundSize: "20px 20px",
         }}
       />
@@ -338,18 +333,18 @@ function MasonryGallery() {
         {/* Section header */}
         <div className="flex items-end justify-between mb-16">
           <div>
-            <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-light">
+            <span className="text-sand text-sm uppercase tracking-[0.3em] font-light">
               Visual Journal
             </span>
-            <h2 className="font-display text-5xl md:text-6xl font-black text-white mt-2">
+            <h2 className="font-playfair text-5xl md:text-6xl font-black text-white mt-2">
               Snippets of
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8a84b] to-[#f0d080]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
                 Seedling
               </span>
             </h2>
           </div>
-          <p className="hidden md:block text-white/40 text-sm max-w-xs text-right leading-relaxed">
+          <p className="hidden md:block text-white/40 text-sm max-w-xs text-right leading-relaxed font-dm">
             Every frame tells the story of a vibrant, thriving community
           </p>
         </div>
@@ -378,10 +373,10 @@ function MasonryGallery() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Category badge */}
                 <div
-                  className={`absolute top-3 left-3 bg-[#c8a84b] text-[#0a1628] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${
+                  className={`absolute top-3 left-3 bg-sand text-navy-deeper text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${
                     activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
                   }`}
                 >
@@ -393,10 +388,10 @@ function MasonryGallery() {
                     activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                 >
-                  <p className="text-white font-semibold text-sm">{item.title}</p>
+                  <p className="text-white font-semibold text-sm font-dm">{item.title}</p>
                   <div className="flex items-center gap-1 mt-1">
-                    <div className="w-4 h-px bg-[#c8a84b]" />
-                    <span className="text-[#c8a84b] text-xs">View</span>
+                    <div className="w-4 h-px bg-sand" />
+                    <span className="text-sand text-xs font-dm">View</span>
                   </div>
                 </div>
               </div>
@@ -408,7 +403,7 @@ function MasonryGallery() {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-navy-deeper/95 backdrop-blur-md flex items-center justify-center p-6"
           onClick={() => setLightbox(null)}
         >
           <div
@@ -420,9 +415,9 @@ function MasonryGallery() {
               alt={lightbox.title}
               className="w-full max-h-[80vh] object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-6">
-              <span className="text-[#c8a84b] text-xs uppercase tracking-widest">{lightbox.category}</span>
-              <h3 className="text-white text-2xl font-bold mt-1">{lightbox.title}</h3>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-deeper/80 p-6">
+              <span className="text-sand text-xs uppercase tracking-widest">{lightbox.category}</span>
+              <h3 className="text-white text-2xl font-bold mt-1 font-playfair">{lightbox.title}</h3>
             </div>
             <button
               className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
@@ -439,22 +434,22 @@ function MasonryGallery() {
 
 function SportsSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-off-white relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#c8a84b]/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0a1628]/5 rounded-full translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-sand/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-navy-deeper/5 rounded-full translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-20">
-          <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-medium">
+          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Physical Excellence
           </span>
-          <h2 className="font-display text-5xl md:text-6xl font-black text-[#0a1628] mt-3">
+          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
             Sports & Physical
-            <span className="text-[#c8a84b]"> Activities</span>
+            <span className="text-crimson"> Activities</span>
           </h2>
-          <div className="mt-4 mx-auto w-16 h-0.5 bg-[#c8a84b]" />
+          <div className="mt-4 mx-auto w-16 h-0.5 bg-sand" />
         </div>
 
         {/* Zigzag blocks */}
@@ -469,7 +464,7 @@ function SportsSection() {
               {/* Image side */}
               <div className="w-full lg:w-[55%] relative group">
                 <div
-                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#c8a84b]/20 to-[#0a1628]/10 transition-all duration-500 group-hover:scale-[1.02] ${
+                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-navy-deeper/10 transition-all duration-500 group-hover:scale-[1.02] ${
                     block.reverse ? "-right-4 left-auto" : "-left-4 right-auto"
                   }`}
                 />
@@ -479,9 +474,9 @@ function SportsSection() {
                     alt={block.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
                   {/* Tag badge */}
-                  <div className="absolute top-4 left-4 bg-[#c8a84b] text-[#0a1628] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 bg-crimson text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
                     {block.tag}
                   </div>
                 </div>
@@ -489,17 +484,17 @@ function SportsSection() {
 
               {/* Text side */}
               <div className={`w-full lg:w-[45%] ${block.reverse ? "lg:pr-8" : "lg:pl-8"}`}>
-                <h3 className="font-display text-4xl font-black text-[#0a1628] leading-tight mb-6">
+                <h3 className="font-playfair text-4xl font-black text-navy-deeper leading-tight mb-6">
                   {block.title}
                 </h3>
-                <p className="text-[#0a1628]/60 leading-relaxed text-lg mb-8">{block.body}</p>
+                <p className="text-text-base leading-relaxed text-lg mb-8 font-dm">{block.body}</p>
 
                 {/* Highlight pills */}
                 <div className="flex flex-wrap gap-3 mb-8">
                   {block.highlights.map((h) => (
                     <span
                       key={h}
-                      className="px-4 py-2 border border-[#c8a84b]/40 text-[#0a1628] text-sm rounded-full hover:bg-[#c8a84b] hover:text-[#0a1628] transition-colors duration-200 cursor-default"
+                      className="px-4 py-2 border border-sand/40 text-navy-deeper text-sm rounded-full hover:bg-sand hover:text-navy-deeper transition-colors duration-200 cursor-default font-dm font-bold"
                     >
                       {h}
                     </span>
@@ -508,8 +503,8 @@ function SportsSection() {
 
                 {/* Decorative line */}
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-0.5 bg-[#c8a84b]" />
-                  <span className="text-[#c8a84b] text-xs uppercase tracking-widest font-medium">
+                  <div className="w-12 h-0.5 bg-crimson" />
+                  <span className="text-crimson text-xs uppercase tracking-widest font-bold font-dm">
                     Excellence in Every Sport
                   </span>
                 </div>
@@ -524,23 +519,23 @@ function SportsSection() {
 
 function ActivitiesGrid() {
   return (
-    <section className="py-24 bg-[#f7f4ef] relative">
+    <section className="py-24 bg-white relative">
       {/* Large decorative text */}
       <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
-        <span className="text-[10rem] font-black text-black/[0.03] leading-none">BEYOND</span>
+        <span className="text-[10rem] font-black text-navy-deeper/[0.03] leading-none font-playfair">BEYOND</span>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-medium">
+          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Holistic Growth
           </span>
-          <h2 className="font-display text-5xl md:text-6xl font-black text-[#0a1628] mt-3">
+          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
             Beyond
-            <span className="text-[#c8a84b]"> Academics</span>
+            <span className="text-crimson"> Academics</span>
           </h2>
-          <p className="mt-4 text-[#0a1628]/50 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-text-light max-w-xl mx-auto leading-relaxed font-dm">
             At Seedling, we believe learning extends far beyond the classroom.
             Our diverse extracurricular ecosystem shapes leaders, creators, and changemakers.
           </p>
@@ -568,15 +563,15 @@ function ActivitiesGrid() {
                 <div className="text-4xl mb-3 transform transition-transform duration-300 group-hover:-translate-y-1">
                   {activity.icon}
                 </div>
-                <h3 className="font-display text-2xl font-black text-white mb-2">
+                <h3 className="font-playfair text-2xl font-black text-white mb-2">
                   {activity.title}
                 </h3>
-                <p className="text-white/80 text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500">
+                <p className="text-white/80 text-sm leading-relaxed max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 font-dm">
                   {activity.desc}
                 </p>
                 <div className="mt-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                  <div className="w-6 h-px bg-[#c8a84b]" />
-                  <span className="text-[#c8a84b] text-xs uppercase tracking-widest font-medium">
+                  <div className="w-6 h-px bg-sand" />
+                  <span className="text-sand text-xs uppercase tracking-widest font-bold">
                     Explore
                   </span>
                 </div>
@@ -594,12 +589,12 @@ function ExperienceSection() {
   const current = experiences[active];
 
   return (
-    <section className="py-24 bg-[#0a1628] relative overflow-hidden">
+    <section className="py-24 bg-navy-deeper relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <svg viewBox="0 0 600 800" className="w-full h-full">
           <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle"
-            fontSize="300" fill="#c8a84b" fontFamily="serif" fontWeight="900">
+            fontSize="300" fill="#D6D1CF" fontFamily="serif" fontWeight="900">
             "
           </text>
         </svg>
@@ -608,12 +603,12 @@ function ExperienceSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-medium">
+          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Voices of Seedling
           </span>
-          <h2 className="font-display text-5xl md:text-6xl font-black text-white mt-3">
+          <h2 className="font-playfair text-5xl md:text-6xl font-black text-white mt-3">
             Student
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8a84b] to-[#f0d080]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
               {" "}Experiences
             </span>
           </h2>
@@ -623,17 +618,17 @@ function ExperienceSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Image */}
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#c8a84b]/20 to-transparent" />
-            <div className="relative overflow-hidden rounded-2xl aspect-square max-w-md mx-auto">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-transparent" />
+            <div className="relative overflow-hidden rounded-2xl aspect-square max-w-md mx-auto shadow-2xl">
               <img
                 key={active}
                 src={current.image}
                 alt={current.name}
                 className="w-full h-full object-cover object-top animate-fade-in"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <span className="bg-[#c8a84b] text-[#0a1628] text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                <span className="bg-sand text-navy-deeper text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider">
                   {current.highlight}
                 </span>
               </div>
@@ -642,17 +637,17 @@ function ExperienceSection() {
 
           {/* Quote */}
           <div className="text-white">
-            <div className="text-[#c8a84b] text-8xl font-serif leading-none mb-4 opacity-40">"</div>
+            <div className="text-sand text-8xl font-playfair leading-none mb-4 opacity-40">"</div>
             <blockquote
               key={`quote-${active}`}
-              className="text-white/80 text-xl md:text-2xl leading-relaxed mb-8 font-light animate-fade-in"
+              className="text-white/80 text-xl md:text-2xl leading-relaxed mb-8 font-dm font-light animate-fade-in"
             >
               {current.quote}
             </blockquote>
             <div className="border-t border-white/10 pt-6">
-              <div className="text-white font-bold text-lg">{current.name}</div>
-              <div className="text-[#c8a84b] text-sm mt-1">{current.role}</div>
-              <div className="text-white/40 text-sm mt-0.5">{current.school}</div>
+              <div className="text-white font-black text-lg font-playfair tracking-tight">{current.name}</div>
+              <div className="text-sand text-sm mt-1 font-dm font-bold uppercase tracking-widest">{current.role}</div>
+              <div className="text-white/40 text-xs mt-0.5 font-dm">{current.school}</div>
             </div>
           </div>
         </div>
@@ -665,7 +660,7 @@ function ExperienceSection() {
               onClick={() => setActive(i)}
               className={`relative overflow-hidden rounded-full transition-all duration-300 ${
                 active === i
-                  ? "w-14 h-14 ring-2 ring-[#c8a84b] ring-offset-2 ring-offset-[#0a1628]"
+                  ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-navy-deeper"
                   : "w-12 h-12 opacity-50 hover:opacity-80"
               }`}
             >
@@ -692,30 +687,30 @@ function GalleryStrip() {
   };
 
   return (
-    <section className="py-24 bg-[#f7f4ef] relative overflow-hidden">
+    <section className="py-24 bg-off-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-medium">
+            <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
               Highlight Reel
             </span>
-            <h2 className="font-display text-5xl font-black text-[#0a1628] mt-2">
+            <h2 className="font-playfair text-5xl font-black text-navy-deeper mt-2">
               Highlight
-              <span className="text-[#c8a84b]"> Moments</span>
+              <span className="text-crimson"> Moments</span>
             </h2>
           </div>
           {/* Nav arrows */}
           <div className="flex gap-3">
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full border-2 border-[#0a1628]/20 hover:border-[#c8a84b] hover:bg-[#c8a84b] text-[#0a1628] transition-all duration-300 flex items-center justify-center"
+              className="w-12 h-12 rounded-full border-2 border-navy-deeper/20 hover:border-crimson hover:bg-crimson hover:text-white text-navy-deeper transition-all duration-300 flex items-center justify-center font-black"
             >
               ←
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full border-2 border-[#0a1628]/20 hover:border-[#c8a84b] hover:bg-[#c8a84b] text-[#0a1628] transition-all duration-300 flex items-center justify-center"
+              className="w-12 h-12 rounded-full border-2 border-navy-deeper/20 hover:border-crimson hover:bg-crimson hover:text-white text-navy-deeper transition-all duration-300 flex items-center justify-center font-black"
             >
               →
             </button>
@@ -738,9 +733,9 @@ function GalleryStrip() {
               alt={img.label}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-0 left-0 right-0 p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-              <span className="text-white font-semibold text-lg">{img.label}</span>
+              <span className="text-white font-black text-lg font-playfair">{img.label}</span>
             </div>
             {/* Corner number */}
             <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-xs font-bold">
@@ -751,8 +746,8 @@ function GalleryStrip() {
       </div>
 
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#f7f4ef] to-transparent pointer-events-none z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#f7f4ef] to-transparent pointer-events-none z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-off-white to-transparent pointer-events-none z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-off-white to-transparent pointer-events-none z-10" />
     </section>
   );
 }
@@ -762,12 +757,12 @@ function FeaturesSection() {
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-[#c8a84b] text-sm uppercase tracking-[0.3em] font-medium">
+          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Our Difference
           </span>
-          <h2 className="font-display text-5xl md:text-6xl font-black text-[#0a1628] mt-3">
+          <h2 className="font-playfair text-5xl md:text-6xl font-black text-navy-deeper mt-3">
             What Makes Us
-            <span className="text-[#c8a84b]"> Special</span>
+            <span className="text-crimson"> Special</span>
           </h2>
         </div>
 
@@ -775,7 +770,7 @@ function FeaturesSection() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="group relative bg-[#f7f4ef] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+              className="group relative bg-off-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
             >
               {/* Image at top */}
               <div className="h-48 overflow-hidden">
@@ -788,11 +783,11 @@ function FeaturesSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-display text-xl font-black text-[#0a1628] mb-3">{f.title}</h3>
-                <p className="text-[#0a1628]/55 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="font-playfair text-xl font-black text-navy-deeper mb-3">{f.title}</h3>
+                <p className="text-text-light text-sm leading-relaxed font-dm">{f.desc}</p>
               </div>
               {/* Gold accent bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#c8a84b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sand via-crimson to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>
@@ -811,29 +806,29 @@ function CTASection() {
           backgroundImage: "url('https://seedlingschools.com/assets/img/sps-banner.jpg')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/95 via-[#0a1628]/85 to-[#c8a84b]/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/85 to-sand/30" />
 
       {/* Decorative circles */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full border border-[#c8a84b]/10" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full border border-[#c8a84b]/10" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full border border-sand/10" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full border border-sand/10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Small tag */}
-        <div className="inline-flex items-center gap-2 bg-[#c8a84b]/20 border border-[#c8a84b]/30 rounded-full px-6 py-2 text-[#c8a84b] text-sm uppercase tracking-[0.25em] mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#c8a84b] animate-pulse" />
+        <div className="inline-flex items-center gap-2 bg-sand/20 border border-sand/30 rounded-full px-6 py-2 text-sand text-sm uppercase tracking-[0.25em] mb-8 font-dm font-bold">
+          <span className="w-1.5 h-1.5 rounded-full bg-sand animate-pulse" />
           Admissions Open 2026–27
         </div>
 
-        <h2 className="font-display text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+        <h2 className="font-playfair text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
           Join the
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8a84b] via-[#f0d080] to-[#c8a84b]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
             Seedling Family
           </span>
         </h2>
 
-        <p className="text-white/60 text-lg max-w-xl mx-auto mb-12 leading-relaxed font-light">
+        <p className="text-white/60 text-lg max-w-xl mx-auto mb-12 leading-relaxed font-dm font-light">
           Enrol your child today and give them the gift of a world-class education
           at one of Jaipur's most celebrated schools — prioritising well-being and
           community since 1992.
@@ -843,30 +838,30 @@ function CTASection() {
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <a
             href="https://seedlingschools.com/admission-procedure.php"
-            className="group relative px-12 py-5 bg-[#c8a84b] text-[#0a1628] font-bold text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#c8a84b]/40 hover:scale-105"
+            className="group relative px-12 py-5 bg-crimson text-white font-black text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40 hover:scale-105"
           >
             <span className="relative z-10">Apply Now</span>
             <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
           </a>
           <a
             href="https://seedlingschools.com/admission-online.php"
-            className="group px-12 py-5 border-2 border-white/30 text-white font-light text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-[#0a1628] transition-all duration-300"
+            className="group px-12 py-5 border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-navy-deeper transition-all duration-300"
           >
             Book a Visit
           </a>
         </div>
 
         {/* Contact strip */}
-        <div className="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center items-center text-white/40 text-sm">
-          <a href="tel:+917413012351" className="hover:text-[#c8a84b] transition-colors">
+        <div className="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center items-center text-white/40 text-sm font-dm uppercase tracking-widest">
+          <a href="tel:+917413012351" className="hover:text-sand transition-colors">
             SPS: +91 74130 12351
           </a>
           <span className="hidden sm:block text-white/20">|</span>
-          <a href="tel:+919587772837" className="hover:text-[#c8a84b] transition-colors">
+          <a href="tel:+919587772837" className="hover:text-sand transition-colors">
             SMHS: +91 95877 72837
           </a>
           <span className="hidden sm:block text-white/20">|</span>
-          <a href="mailto:seedlingacademy@hotmail.com" className="hover:text-[#c8a84b] transition-colors">
+          <a href="mailto:seedlingacademy@hotmail.com" className="hover:text-sand transition-colors font-bold">
             seedlingacademy@hotmail.com
           </a>
         </div>

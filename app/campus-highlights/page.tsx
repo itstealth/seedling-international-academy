@@ -25,15 +25,15 @@ function FeaturedArticle() {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAFAF8]" ref={heroRef}>
+    <section className="py-16 md:py-24 bg-off-white" ref={heroRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Label */}
         <div className="fade-up opacity-0 translate-y-6 transition-all duration-700 ease-out mb-10 flex items-center gap-4">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-700 uppercase">
-            <span className="w-8 h-px bg-emerald-700 inline-block" />
+          <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase font-dm">
+            <span className="w-8 h-px bg-navy inline-block" />
             Campus Highlights
           </span>
-          <span className="text-xs text-stone-400 font-medium tracking-wider uppercase">
+          <span className="text-[10px] text-text-light font-black tracking-[0.2em] uppercase font-dm">
             — Featured Story
           </span>
         </div>
@@ -52,22 +52,22 @@ function FeaturedArticle() {
                   alt="Founders Day — Seedling Group of Schools"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
-                  <span className="inline-block bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-4">
+                  <span className="inline-block bg-crimson text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-4 font-dm">
                     Annual Event
                   </span>
-                  <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-3">
+                  <h1 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
                     Founders Day Celebration
                   </h1>
-                  <p className="text-stone-200 text-base md:text-lg leading-relaxed max-w-xl line-clamp-2">
+                  <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-2 font-dm font-light">
                     A landmark celebration marking the legacy of Seedling Group of Schools — honouring three decades
                     of educational excellence, innovation, and community in Jaipur.
                   </p>
-                  <div className="mt-5 flex items-center gap-4">
-                    <span className="text-stone-300 text-sm">Since 1992</span>
-                    <span className="w-1 h-1 rounded-full bg-stone-400" />
-                    <span className="text-white text-sm font-semibold group-hover:underline">Read more →</span>
+                  <div className="mt-5 flex items-center gap-4 font-dm">
+                    <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Since 1992</span>
+                    <span className="w-1 h-1 rounded-full bg-sand/50" />
+                    <span className="text-sand text-[10px] font-black uppercase tracking-widest group-hover:underline">Read more →</span>
                   </div>
                 </div>
               </div>
@@ -88,15 +88,15 @@ function FeaturedArticle() {
                   alt="SMHS Annual Day"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-navy-deeper/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-3">
+                  <span className="inline-block bg-sand text-navy-deeper text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-3 font-dm">
                     School Life
                   </span>
-                  <h2 className="font-display text-xl md:text-2xl font-black text-white leading-tight">
+                  <h2 className="font-playfair text-xl md:text-2xl font-bold text-white leading-tight">
                     SMHS Annual Day
                   </h2>
-                  <p className="text-stone-300 text-sm mt-1 line-clamp-1">
+                  <p className="text-white/70 text-xs mt-1 line-clamp-1 font-dm font-light">
                     Students, teachers, and parents come together to celebrate achievements and creativity.
                   </p>
                 </div>
@@ -115,15 +115,15 @@ function FeaturedArticle() {
                   alt="SPS Annual Day"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-navy-deeper/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-3">
+                  <span className="inline-block bg-navy text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-3 font-dm">
                     Celebration
                   </span>
-                  <h2 className="font-display text-xl md:text-2xl font-black text-white leading-tight">
+                  <h2 className="font-playfair text-xl md:text-2xl font-bold text-white leading-tight">
                     SPS Annual Day
                   </h2>
-                  <p className="text-stone-300 text-sm mt-1 line-clamp-1">
+                  <p className="text-white/70 text-xs mt-1 line-clamp-1 font-dm font-light">
                     An evening of performances, awards, and shared pride across the Seedling family.
                   </p>
                 </div>
@@ -137,7 +137,7 @@ function FeaturedArticle() {
           className="mt-12 fade-up opacity-0 translate-y-6 transition-all duration-700 ease-out"
           style={{ transitionDelay: "400ms" }}
         >
-          <div className="bg-white rounded-2xl shadow-md px-8 py-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-100">
+          <div className="bg-white rounded-[2rem] border border-sand/40 shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
             {[
               { value: "20,000+", label: "Students" },
               { value: "15:1", label: "Student-Teacher Ratio" },
@@ -145,8 +145,8 @@ function FeaturedArticle() {
               { value: "100%", label: "Academic Results" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center px-4">
-                <p className="font-display text-2xl md:text-3xl font-black text-emerald-700">{value}</p>
-                <p className="text-stone-500 text-sm mt-1 font-medium">{label}</p>
+                <p className="font-playfair text-2xl md:text-3xl font-bold text-navy-deeper">{value}</p>
+                <p className="text-text-light text-[10px] font-black mt-1 uppercase tracking-widest font-dm">{label}</p>
               </div>
             ))}
           </div>
@@ -169,7 +169,7 @@ const newsItems = [
     date: "10 Mar 2025",
     image: "https://seedlingschools.com/assets/img/feature-1.jpg",
     large: true,
-    color: "bg-emerald-600",
+    color: "bg-navy",
   },
   {
     id: 2,
@@ -180,7 +180,7 @@ const newsItems = [
     date: "09 Mar 2025",
     image: "https://seedlingschools.com/assets/img/feature-5.jpg",
     large: false,
-    color: "bg-amber-500",
+    color: "bg-crimson",
   },
   {
     id: 3,
@@ -191,7 +191,7 @@ const newsItems = [
     date: "10 Feb 2025",
     image: "https://seedlingschools.com/assets/img/feature-2.jpg",
     large: false,
-    color: "bg-sky-600",
+    color: "bg-navy-dark",
   },
   {
     id: 4,
@@ -202,7 +202,7 @@ const newsItems = [
     date: "06 Feb 2025",
     image: "https://seedlingschools.com/assets/img/feature-4.jpg",
     large: false,
-    color: "bg-rose-500",
+    color: "bg-crimson-dark",
   },
   {
     id: 5,
@@ -213,7 +213,7 @@ const newsItems = [
     date: "03 Feb 2025",
     image: "https://seedlingschools.com/assets/img/feature-6.jpg",
     large: false,
-    color: "bg-violet-600",
+    color: "bg-sand",
   },
 ];
 
@@ -240,22 +240,22 @@ function NewsCard({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <span
-          className={`absolute top-4 left-4 ${item.color} text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider uppercase`}
+          className={`absolute top-4 left-4 ${item.color} text-white text-[9px] font-black px-3 py-1 rounded-full tracking-widest uppercase font-dm`}
         >
           {item.category}
         </span>
       </div>
       <div className={`p-5 ${large ? "md:p-7" : ""}`}>
-        <p className="text-stone-400 text-xs font-medium tracking-wider uppercase mb-2">{item.date}</p>
+        <p className="text-text-light text-[10px] font-black tracking-widest uppercase mb-2 font-dm">{item.date}</p>
         <h3
-          className={`font-display font-black text-stone-900 leading-tight group-hover:text-emerald-700 transition-colors duration-200 ${
+          className={`font-playfair font-bold text-navy-deeper leading-tight group-hover:text-crimson transition-colors duration-200 ${
             large ? "text-2xl md:text-3xl" : "text-lg"
           }`}
         >
           {item.title}
         </h3>
-        <p className="text-stone-500 text-sm leading-relaxed mt-2 line-clamp-2">{item.excerpt}</p>
-        <span className="inline-flex items-center gap-1 text-emerald-700 text-sm font-semibold mt-4 group-hover:gap-2 transition-all duration-200">
+        <p className="text-text-light text-sm leading-relaxed mt-2 line-clamp-2 font-dm font-light">{item.excerpt}</p>
+        <span className="inline-flex items-center gap-1 text-navy text-[10px] font-black uppercase tracking-widest mt-4 group-hover:gap-2 transition-all duration-200 font-dm">
           Read more <span>→</span>
         </span>
       </div>
@@ -280,23 +280,23 @@ function NewsGrid() {
   }, []);
 
   return (
-    <section className="py-24 bg-[#F3F2EE]" ref={sectionRef}>
+    <section className="py-24 bg-sand/10" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 transition-all duration-700 ease-out mb-12 flex items-end justify-between">
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-700 uppercase mb-3">
-              <span className="w-8 h-px bg-emerald-700" />
+            <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-3 font-dm">
+              <span className="w-8 h-px bg-navy" />
               Latest from the Blog
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900 leading-none">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
               News &<br />
-              <span className="text-emerald-700">Insights</span>
+              <span className="text-crimson">Insights</span>
             </h2>
           </div>
           <a
             href="https://seedlingschools.com/blog"
-            className="hidden md:inline-flex items-center gap-2 text-emerald-700 font-semibold text-sm border border-emerald-200 px-5 py-2.5 rounded-full hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2 text-navy font-black text-[10px] uppercase tracking-widest border-2 border-sand/40 px-6 py-3 rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 font-dm"
           >
             View all articles →
           </a>
@@ -331,7 +331,7 @@ const events = [
       "Students and staff embrace mindfulness and physical well-being with guided yoga and meditation sessions across all campuses.",
     image: "https://seedlingschools.com/assets/img/yoga1.jpg",
     tag: "Wellness",
-    tagColor: "bg-teal-600",
+    tagColor: "bg-navy",
   },
   {
     id: 2,
@@ -342,7 +342,7 @@ const events = [
       "A heartfelt tribute to all the mothers — featuring performances, handmade gifts, and moments of love shared by students.",
     image: "https://seedlingschools.com/assets/img/Mothersday9.jpg",
     tag: "Community",
-    tagColor: "bg-rose-500",
+    tagColor: "bg-crimson",
   },
   {
     id: 3,
@@ -353,7 +353,7 @@ const events = [
       "Bidding farewell to the graduating class with an evening of nostalgia, awards, and cherished memories.",
     image: "https://seedlingschools.com/assets/img/farewell-feature.jpg",
     tag: "Milestone",
-    tagColor: "bg-amber-500",
+    tagColor: "bg-sand",
   },
   {
     id: 4,
@@ -364,7 +364,7 @@ const events = [
       "A high-energy carnival celebrating athletic talent, team spirit, and the joy of healthy competition.",
     image: "https://seedlingschools.com/assets/img/smhs-sport-carnival.jpg",
     tag: "Sports",
-    tagColor: "bg-sky-600",
+    tagColor: "bg-navy-dark",
   },
   {
     id: 5,
@@ -375,7 +375,7 @@ const events = [
       "100% results year after year — celebrating the outstanding academic achievements of Seedling students.",
     image: "https://seedlingschools.com/assets/img/cbse-result.jpg",
     tag: "Academics",
-    tagColor: "bg-emerald-600",
+    tagColor: "bg-crimson-dark",
   },
   {
     id: 6,
@@ -386,7 +386,7 @@ const events = [
       "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling community.",
     image: "https://seedlingschools.com/assets/img/Christmas.jpeg",
     tag: "Festival",
-    tagColor: "bg-red-600",
+    tagColor: "bg-navy-deeper",
   },
 ];
 
@@ -411,19 +411,19 @@ function EventCards() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-12">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-700 uppercase mb-3">
-            <span className="w-8 h-px bg-emerald-700" />
+          <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-3 font-dm">
+            <span className="w-8 h-px bg-navy" />
             Campus Events
           </span>
           <div className="flex items-end justify-between">
-            <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900 leading-none">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
               Moments That
               <br />
-              <span className="text-emerald-700">Define Us</span>
+              <span className="text-crimson">Define Us</span>
             </h2>
             <a
               href="https://seedlingschools.com/media.php"
-              className="hidden md:inline-flex items-center gap-2 text-emerald-700 font-semibold text-sm border border-emerald-200 px-5 py-2.5 rounded-full hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition-all duration-200"
+              className="hidden md:inline-flex items-center gap-2 text-navy font-black text-[10px] uppercase tracking-widest border-2 border-sand/40 px-6 py-3 rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 font-dm"
             >
               View all events →
             </a>
@@ -447,21 +447,21 @@ function EventCards() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span
-                  className={`absolute top-4 left-4 ${event.tagColor} text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider uppercase`}
+                  className={`absolute top-4 left-4 ${event.tagColor} text-white text-[9px] font-black px-3 py-1 rounded-full tracking-widest uppercase font-dm`}
                 >
                   {event.tag}
                 </span>
               </div>
               <div className="p-5">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">
+                <div className="flex items-center gap-2 mb-3 font-dm">
+                  <span className="text-[9px] font-black text-navy-deeper bg-sand/20 px-3 py-1 rounded-full uppercase tracking-widest">
                     {event.date}, {event.year}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-black text-stone-900 leading-tight group-hover:text-emerald-700 transition-colors duration-200">
+                <h3 className="font-playfair text-xl font-bold text-navy-deeper leading-tight group-hover:text-crimson transition-colors duration-200">
                   {event.title}
                 </h3>
-                <p className="text-stone-500 text-sm leading-relaxed mt-2 line-clamp-2">{event.description}</p>
+                <p className="text-text-light text-sm leading-relaxed mt-2 line-clamp-2 font-dm font-light">{event.description}</p>
               </div>
             </a>
           ))}
@@ -526,21 +526,21 @@ function HighlightRow() {
   }, []);
 
   return (
-    <section className="py-24 bg-stone-900 overflow-hidden" ref={sectionRef}>
+    <section className="py-24 bg-navy-deeper overflow-hidden" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-14 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-4">
-            <span className="w-8 h-px bg-emerald-400" />
+          <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-sand uppercase mb-4 font-dm">
+            <span className="w-8 h-px bg-sand" />
             What Makes Us Special
-            <span className="w-8 h-px bg-emerald-400" />
+            <span className="w-8 h-px bg-sand" />
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-black text-white leading-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white leading-tight">
             Built for the Future,
             <br />
-            <span className="text-emerald-400">Rooted in Values</span>
+            <span className="text-sand">Rooted in Values</span>
           </h2>
-          <p className="text-stone-400 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto font-dm font-light">
             Our goal is to equip students with knowledge and skills they need to succeed while promoting their
             personal growth and holistic development.
           </p>
@@ -560,30 +560,30 @@ function HighlightRow() {
                   alt={item.title}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/40 to-transparent" />
               </div>
               <div className="p-5">
                 <div className="text-2xl mb-3">{item.icon}</div>
-                <h3 className="font-display text-base font-black text-white leading-tight group-hover:text-emerald-400 transition-colors duration-200 mb-2">
+                <h3 className="font-playfair text-base font-bold text-white leading-tight group-hover:text-sand transition-colors duration-200 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-stone-400 text-sm leading-relaxed line-clamp-3">{item.excerpt}</p>
+                <p className="text-white/50 text-sm leading-relaxed line-clamp-3 font-dm font-light">{item.excerpt}</p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-sand transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </div>
           ))}
         </div>
 
         {/* Quote */}
         <div
-          className="fade-up opacity-0 translate-y-6 mt-16 border-t border-stone-700 pt-12 text-center"
+          className="fade-up opacity-0 translate-y-6 mt-16 border-t border-white/10 pt-12 text-center"
           style={{ transitionDelay: "500ms" }}
         >
-          <blockquote className="font-display text-xl md:text-2xl text-stone-300 italic max-w-3xl mx-auto leading-relaxed">
+          <blockquote className="font-playfair text-xl md:text-2xl text-white italic max-w-3xl mx-auto leading-relaxed">
             "Part of the art of teaching is the ability to rearrange the world for students to guide them to see
             things in a new way."
           </blockquote>
-          <cite className="text-emerald-400 font-semibold text-sm mt-4 block not-italic tracking-wider">
+          <cite className="text-sand text-[10px] font-black uppercase tracking-widest mt-4 block not-italic font-dm">
             — Sunny Decker
           </cite>
         </div>
@@ -622,18 +622,18 @@ function GalleryStrip() {
   }, []);
 
   return (
-    <section className="py-24 bg-[#FAFAF8]" ref={sectionRef}>
+    <section className="py-24 bg-off-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="fade-up opacity-0 translate-y-6 mb-12">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-700 uppercase mb-3">
-            <span className="w-8 h-px bg-emerald-700" />
+          <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-3 font-dm">
+            <span className="w-8 h-px bg-navy" />
             Snippets of Seedling
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900 leading-none">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
             Life at
             <br />
-            <span className="text-emerald-700">Seedling</span>
+            <span className="text-crimson">Seedling</span>
           </h2>
         </div>
 
@@ -654,8 +654,8 @@ function GalleryStrip() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white text-sm font-bold">{snap.label}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 font-dm">
+                  <p className="text-white text-[10px] font-black uppercase tracking-widest">{snap.label}</p>
                 </div>
               </div>
             </div>
@@ -669,7 +669,7 @@ function GalleryStrip() {
         >
           <a
             href="https://seedlingschools.com/media.php"
-            className="inline-flex items-center gap-2 text-emerald-700 font-semibold text-sm border border-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition-all duration-200"
+            className="inline-flex items-center gap-2 text-navy font-black text-[10px] uppercase tracking-widest border-2 border-sand/40 px-8 py-4 rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 font-dm"
           >
             View Full Media Gallery →
           </a>
@@ -699,38 +699,38 @@ function CTASection() {
   }, []);
 
   return (
-    <section className="py-24 bg-[#F3F2EE] relative overflow-hidden" ref={sectionRef}>
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-emerald-100 opacity-50 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-amber-100 opacity-50 blur-3xl pointer-events-none" />
+    <section className="py-24 bg-sand/10 relative overflow-hidden" ref={sectionRef}>
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-navy/10 opacity-50 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-crimson/5 opacity-50 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Split: CTA + School list */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
           {/* Left */}
           <div className="fade-up opacity-0 translate-y-8">
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-emerald-700 uppercase mb-4">
-              <span className="w-8 h-px bg-emerald-700" />
+            <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-4 font-dm">
+              <span className="w-8 h-px bg-navy" />
               Admissions Open 2026–27
             </span>
-            <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900 leading-tight mb-4">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight mb-4">
               Join Seedling
               <br />
               Group of Schools Today
             </h2>
-            <p className="text-stone-500 text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-text-light text-lg leading-relaxed mb-8 max-w-md font-dm font-light">
               Come feel the buzz! Where every student matters. Seedling Group of Schools has been prioritizing
               student well-being and community interests since 1992.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 font-dm">
               <a
                 href="https://seedlingschools.com/admission-procedure.php"
-                className="inline-flex items-center gap-2 bg-emerald-700 text-white font-bold px-7 py-3.5 rounded-full text-sm tracking-wide hover:bg-emerald-800 transition-colors duration-200 shadow-lg shadow-emerald-200"
+                className="inline-flex items-center gap-2 bg-navy text-white font-black px-8 py-4 rounded-full text-[11px] uppercase tracking-widest hover:bg-navy-dark transition-colors duration-200 shadow-xl shadow-navy/10"
               >
                 Enquire Now →
               </a>
               <a
                 href="https://seedlingschools.com/admission-online.php"
-                className="inline-flex items-center gap-2 border-2 border-stone-300 text-stone-700 font-bold px-7 py-3.5 rounded-full text-sm tracking-wide hover:border-emerald-700 hover:text-emerald-700 transition-colors duration-200"
+                className="inline-flex items-center gap-2 border-2 border-sand/40 text-navy-deeper font-black px-8 py-4 rounded-full text-[11px] uppercase tracking-widest hover:border-navy hover:text-navy transition-colors duration-200"
               >
                 Online Admission Form
               </a>
@@ -785,14 +785,14 @@ function CTASection() {
                   <img src={school.image} alt={school.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-display font-black text-stone-900 text-sm group-hover:text-emerald-700 transition-colors duration-200">
+                  <p className="font-playfair font-bold text-navy-deeper text-sm group-hover:text-crimson transition-colors duration-200">
                     {school.name}
                   </p>
-                  <p className="text-stone-400 text-xs mt-0.5">
+                  <p className="text-text-light text-[10px] font-black uppercase tracking-widest mt-0.5 font-dm">
                     {school.board} · {school.location}
                   </p>
                 </div>
-                <span className="text-stone-300 group-hover:text-emerald-600 transition-colors duration-200 text-sm">→</span>
+                <span className="text-sand group-hover:text-crimson transition-colors duration-200 text-sm">→</span>
               </a>
             ))}
           </div>
