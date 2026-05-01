@@ -249,6 +249,53 @@ function JobCard({
   );
 }
 
+function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => { });
+    }
+  }, []);
+
+  return (
+    <section className="relative w-full h-[500px] overflow-hidden">
+      {/* Background image with parallax feel */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        style={{
+          backgroundImage:
+            "url('/assets/Home/classroom.jpg')",
+        }}
+      />
+
+      {/* Multi-layer gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
+
+      {/* Decorative geometry */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
+          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
+          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
+        </svg>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
+          Career{" "}
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
+            Seedling
+          </span> */}
+        </h1>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────────────────────────────────
    APPLICATION MODAL
 ───────────────────────────────────────────── */
@@ -524,70 +571,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <img
-          src="/assets/Home/classroom.jpg"
-          alt="Careers at Seedling"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-100"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 w-full py-32">
-          <Reveal>
-            <p className="font-playfair text-sand text-xl italic tracking-widest mb-4 uppercase">
-              Seedling Group of Schools · Careers
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <h1 className="font-playfair text-white font-light leading-[1.05] text-4xl md:text-5xl lg:text-[6rem] max-w-3xl mb-6">
-              The Hunt<br />
-              <em className="font-semibold text-sand italic">Is On.</em>
-            </h1>
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-xl mb-10">
-              Committed, diligent educators ready to reimagine the future and work towards excellence. All subjects, all classes — teaching and administrative roles. Come join the league of exemplary educational leaders.
-            </p>
-          </Reveal>
-          <Reveal delay={360}>
-            <div className="flex gap-4 flex-wrap">
-              <button
-                onClick={() => document.getElementById("openings")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-crimson/40"
-              >
-                View Openings
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => setOpenGeneral(true)}
-                className="inline-flex items-center gap-2 border border-white/40 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 font-dm"
-              >
-                Send Your CV
-              </button>
-            </div>
-          </Reveal>
-
-          {/* trust micro-badges */}
-          <Reveal delay={480}>
-            <div className="flex gap-3 flex-wrap mt-10">
-              {["CBSE & Cambridge", "Teaching & Admin Roles", "2 Campuses · Jaipur", "Est. 1992"].map((b) => (
-                <span key={b} className="bg-white/10 border border-white/20 text-white/70 text-xs px-4 py-2 rounded-full backdrop-blur-sm">
-                  {b}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-
-        {/* scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-          <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
-        </div>
-      </section>
+      <Hero />
 
       {/* STATS BAND — matches all other pages */}
       <section className="bg-navy-deeper text-white py-8 border-y border-sand/20">

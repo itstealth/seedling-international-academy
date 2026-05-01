@@ -189,6 +189,54 @@ const campusLocations = [
   },
 ];
 
+
+function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => { });
+    }
+  }, []);
+
+  return (
+    <section className="relative w-full h-[500px] overflow-hidden">
+      {/* Background image with parallax feel */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        style={{
+          backgroundImage:
+            "url('/assets/Home/classroom.jpg')",
+        }}
+      />
+
+      {/* Multi-layer gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
+
+      {/* Decorative geometry */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
+          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
+          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
+        </svg>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
+          Admissions{" "}
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
+            Seedling
+          </span> */}
+        </h1>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────────────────────────────────
    PAGE
 ───────────────────────────────────────────── */
@@ -235,10 +283,12 @@ export default function AdmissionsPage() {
         </div>
       </div>
 
+      <Hero />
+
       {/* ══════════════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* <section className="relative min-h-screen flex items-center overflow-hidden">
         <img
           src="/assets/Home/classroom.jpg"
           alt="Admissions at Seedling"
@@ -248,7 +298,6 @@ export default function AdmissionsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-32 grid md:grid-cols-2 gap-16 items-center">
-          {/* Left — headline */}
           <div>
             <Reveal>
               <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-4 uppercase">
@@ -281,7 +330,6 @@ export default function AdmissionsPage() {
               </div>
             </Reveal>
 
-            {/* trust micro-badges */}
             <Reveal delay={480}>
               <div className="flex gap-4 flex-wrap mt-12">
                 {["100% Board Results", "Est. 1992", "20,000+ Students", "CBSE & Cambridge"].map((b) => (
@@ -292,8 +340,6 @@ export default function AdmissionsPage() {
               </div>
             </Reveal>
           </div>
-
-          {/* Right — enquiry form */}
           <Reveal delay={200} className="hidden md:block">
             <div id="enquire" className="bg-white rounded-3xl shadow-2xl p-8 border border-[#F0EDE8]">
               <div className="mb-6">
@@ -348,12 +394,11 @@ export default function AdmissionsPage() {
           </Reveal>
         </div>
 
-        {/* scroll cue */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
           <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
         </div>
-      </section>
+      </section> */}
 
       {/* STATS BAND — matches About page exactly */}
       <section className="bg-navy-deeper text-white py-12 relative overflow-hidden">
@@ -394,7 +439,7 @@ export default function AdmissionsPage() {
             <Reveal key={w.title} delay={i * 80}>
               <div className="group bg-white border border-sand/20 rounded-3xl p-10 hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.1)] hover:-translate-y-2 transition-all duration-500 h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-sand/5 rounded-bl-full transition-transform duration-500 group-hover:scale-110" />
-                <span className="text-5xl mb-8 block grayscale group-hover:grayscale-0 transition-all duration-300">{w.icon}</span>
+                <span className="text-5xl mb-8 block transition-all duration-300">{w.icon}</span>
                 <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-4 tracking-tight">{w.title}</h4>
                 <p className="text-text-light text-sm leading-[1.8] font-dm">{w.desc}</p>
                 <div className="mt-8 flex items-center gap-3">
@@ -816,8 +861,8 @@ export default function AdmissionsPage() {
           <Reveal>
             <p className="display text-sand text-xl italic mb-4">The Seedling Family Awaits</p>
             <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-white">
-              Where Every<br />
-              <em className="font-semibold text-sand">Student</em><br />
+              Where Every{" "}
+              <em className="font-semibold text-sand">Student</em>{" "}
               Matters.
             </h2>
             <p className="text-white/55 text-lg leading-relaxed mb-12 max-w-xl mx-auto">
