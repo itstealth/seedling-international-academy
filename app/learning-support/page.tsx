@@ -81,6 +81,35 @@ const IMGS = {
   school: "https://seedlingschools.com/assets/img/sps-school.jpg",
 };
 
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
+}
+
+function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+  const { ref, visible } = useReveal();
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 // ─── FEATURE CARDS DATA ───────────────────────────────────────────────────────
 const CARDS: FeatureCard[] = [
   {
@@ -126,48 +155,24 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-end overflow-hidden">
-      {/* background image */}
-      <div className="absolute inset-0">
-        <img src={IMGS.hero} alt="Students learning" className="w-full h-full object-cover object-center scale-105" style={{ filter: "brightness(0.45)" }} />
-      </div>
-      {/* layered gradients */}
-      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #175190ee 0%, #175190aa 40%, #A4154620 100%)" }} />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #175190 0%, transparent 55%)" }} />
+      <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
+        <img
+          src="https://seedlingschools.com/assets/img/feature-4.jpg"
+          alt="Our Faculty at Seedling Schools"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
 
-      {/* decorative geometry */}
-      <div className="absolute top-16 right-16 w-80 h-80 rounded-full opacity-10 border-2 border-white" />
-      <div className="absolute top-32 right-32 w-48 h-48 rounded-full opacity-10 border border-white" />
-      <div className="absolute bottom-0 left-0 w-full h-1" style={{ background: "linear-gradient(to right, #A41546, #175190)" }} />
-
-      {/* content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 pb-24 pt-48 w-full">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-12" style={{ background: "#A41546" }} />
-            <span className="text-sm font-semibold tracking-[0.25em] uppercase text-white/70" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Seedling Public School, Jawahar Nagar
-            </span>
-          </div>
-          <h1
-            className="font-black leading-none mb-8 text-white"
-            style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)", fontFamily: "'Playfair Display', serif", letterSpacing: "-0.02em" }}
-          >
-            Learning<br />
-            <span style={{ color: "#A41546", WebkitTextStroke: "1px #A41546" }}>Support</span>
-          </h1>
-          <p className="text-lg lg:text-xl text-white/80 max-w-xl leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Every student receives the guidance and encouragement needed to reach their full potential — because each child learns differently.
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
+          <Reveal delay={100}>
+            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
+              Learning{" "}
+              <em className="font-semibold text-crimson">Support</em>
+            </h1>
+          </Reveal>
         </div>
-      </div>
-
-      {/* scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-white animate-pulse" />
-      </div>
-    </section>
+      </section>
   );
 }
 
@@ -450,7 +455,7 @@ function Summary() {
             <span className="text-sm font-semibold tracking-widest uppercase text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>Our Promise</span>
             <div className="h-px w-16" style={{ background: "#A41546" }} />
           </div>
-          <h2 className="font-black text-white leading-none mb-8" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="font-black text-white leading-none mb-8" style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)", fontFamily: "'Playfair Display', serif" }}>
             Every Student Feels<br />
             <span style={{ color: "#A41546" }}>Valued, Supported</span><br />
             & Motivated

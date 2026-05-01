@@ -56,7 +56,7 @@ export default function ResultPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
           <Reveal delay={100}>
             <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
-              Our<br />
+              Our{" "}
               <em className="font-semibold text-sand">Results</em>
             </h1>
           </Reveal>
