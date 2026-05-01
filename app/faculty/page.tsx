@@ -147,8 +147,8 @@ export default function FacultyPage() {
             <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
               Admissions Open 2026–27
             </span>
-            <h2 className="font-playfair text-5xl md:text-8xl font-light mb-8 text-white">
-              Join the<br />
+            <h2 className="font-playfair text-4xl md:text-5xl font-light mb-8 text-white">
+              Join the{" "}
               <em className="font-semibold text-sand">Seedling Family</em>
             </h2>
             <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-dm font-light">
