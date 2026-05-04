@@ -7,6 +7,19 @@ import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 
+const marqueeItems = [
+  'Admissions Open for 2026–27 Academic Session',
+  'Scholarship Available for Meritorious Students in Academics & Sports',
+  'Parent Counselling Available Online & Offline',
+  'Results 2024: 100% Pass Rate · Multiple School Toppers',
+  'Annual Sports Day – March 2025',
+  'Admissions Open for 2026–27 Academic Session',
+  'Scholarship Available for Meritorious Students in Academics & Sports',
+  'Parent Counselling Available Online & Offline',
+  'Results 2024: 100% Pass Rate · Multiple School Toppers',
+  'Annual Sports Day – March 2025',
+];
+
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about", dropdown: [
@@ -52,12 +65,28 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ── Announcement Marquee (topmost fixed bar) ── */}
+      <div className="fixed top-0 left-0 right-0 z-[80] bg-navy-deeper py-2.5 overflow-hidden">
+        <div className="flex gap-16 animate-[marquee_25s_linear_infinite] whitespace-nowrap">
+          {marqueeItems.concat(marqueeItems).map((text, i) => (
+            <span
+              key={i}
+              className="text-sand text-xs font-black tracking-widest uppercase flex items-center gap-4 flex-shrink-0"
+            >
+              <span className="w-1.5 h-1.5 bg-crimson rounded-full" />
+              {text}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Progress bar — sits just below the marquee */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-linear-to-r from-navy via-crimson to-navy origin-left z-[60]"
+        className="fixed top-[41px] left-0 right-0 h-[3px] bg-linear-to-r from-navy via-crimson to-navy origin-left z-[75]"
         style={{ scaleX }}
       />
 
-      <header className={`fixed top-0 left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
+      <header className={`fixed top-[35px] left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
           <nav className="relative py-3">
             <div className="flex items-center justify-between h-14">
