@@ -50,14 +50,12 @@ export default function SeedlingPage(): React.JSX.Element {
   };
 
   const marqueeItems: string[] = [
-    'Admissions Open for 2025–26 Academic Session',
-    'Early Bird Benefits for Registrations Before March 31',
+    'Admissions Open for 2026–27 Academic Session',
     'Scholarship Available for Meritorious Students in Academics & Sports',
     'Parent Counselling Available Online & Offline',
     'Results 2024: 100% Pass Rate · Multiple School Toppers',
     'Annual Sports Day – March 2025',
-    'Admissions Open for 2025–26 Academic Session',
-    'Early Bird Benefits for Registrations Before March 31',
+    'Admissions Open for 2026–27 Academic Session',
     'Scholarship Available for Meritorious Students in Academics & Sports',
     'Parent Counselling Available Online & Offline',
     'Results 2024: 100% Pass Rate · Multiple School Toppers',
@@ -143,21 +141,6 @@ export default function SeedlingPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ─── ANNOUNCEMENT MARQUEE ─── */}
-      <div className="bg-navy-deeper py-4 overflow-hidden border-y border-white/10">
-        <div className="marquee-track flex gap-16 animate-[marquee_40s_linear_infinite] whitespace-nowrap">
-          {marqueeItems.concat(marqueeItems).map((text, i) => (
-            <span
-              key={i}
-              className="text-sand text-sm font-black tracking-widest uppercase flex items-center gap-4"
-            >
-              <span className="w-2 h-2 bg-crimson rounded-full" />
-              {text}
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* ─── ABOUT SCHOOL ─── */}
       <section className="bg-off-white py-8 md:pt-16 md:pb-8" id="about">
         <div className="max-w-7xl mx-auto px-6">
@@ -231,7 +214,7 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex flex-wrap gap-4 mb-16 border-b border-sand/40">
             {([
               { key: 'campus', label: '🏫 Campus' },
-              { key: 'labs', label: '🔬 Labs & Tech' },
+              // { key: 'labs', label: '🔬 Labs & Tech' },
               { key: 'sports', label: '⚽ Sports' },
               { key: 'arts', label: '🎨 Arts' },
             ] as { key: TabKey; label: string }[]).map(({ key, label }) => (
