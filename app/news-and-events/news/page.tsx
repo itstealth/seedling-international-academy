@@ -134,7 +134,7 @@ export default function NewsCoveragePage() {
           <Calendar className="w-16 h-16 text-secondary mx-auto mb-10" />
           <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif">News Archives.</h2>
           <p className="text-white/50 text-xl font-medium mb-16 max-w-xl mx-auto leading-relaxed">
-            Looking for older milestones? Explore our complete library of press releases and media clippings since 1992.
+            Looking for older milestones? Explore our complete library of press releases and media clippings since 1993.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {["2024", "2023", "2022", "2021"].map((year) => (

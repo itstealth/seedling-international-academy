@@ -76,7 +76,7 @@ export default function SeedlingPage(): React.JSX.Element {
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
       { img: '/assets/Home/smart-classroom.jpg', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
-      { img: '/assets/ANNUAL FUNCTION/1.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+      { img: '/assets/Home/School2.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
       { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
@@ -123,7 +123,7 @@ export default function SeedlingPage(): React.JSX.Element {
 
           </h1>
           <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
-            Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1994.
+            Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1993.
           </p>
           <div className="flex gap-4 flex-wrap">
             <a href="/admissions" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
@@ -178,7 +178,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
-                Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1994.
+                Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
               </h2>
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
                 Seedling Public School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.

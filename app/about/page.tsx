@@ -47,7 +47,7 @@ function Reveal({
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const timeline = [
   {
-    year: "1992",
+    year: "1993",
     title: "The Seed is Planted",
     desc: "Late Ms. Mohini Bakshi founded Seedling Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
     img: "/assets/Home/classroom.jpg",
@@ -148,7 +148,7 @@ const stats = [
   { value: "5,000+", label: "Alumni Worldwide" },
   { value: "100%", label: "Board Results" },
   { value: "50+", label: "Nations Represented" },
-  { value: "1992", label: "Year Established" },
+  { value: "1993", label: "Year Established" },
 ];
 
 function Hero() {
@@ -241,7 +241,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
-                Founded in 1992 by the visionary Late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.

@@ -56,7 +56,7 @@ const fileReplacements = [
   {
     file: 'app/career/page.tsx',
     replacements: [
-      { from: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80', to: '/assets/testimonial/aditi-sharma.jpg' },
+      { from: 'https://images.unsplash.com/photo-1573497019930-1c28c88b4f3e?w=200&q=80', to: '/assets/testimonial/aditi-sharma.jpg' },
       { from: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80', to: '/assets/testimonial/Bhanupriya-Singh.jpg' }
     ]
   }

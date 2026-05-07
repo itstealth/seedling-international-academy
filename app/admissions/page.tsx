@@ -313,7 +313,7 @@ export default function AdmissionsPage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
-                Seedling Group of Schools — 5 schools, 2 campuses, CBSE & Cambridge boards. Prioritising student well-being and community interests since 1992.
+                Seedling Group of Schools — 5 schools, 2 campuses, CBSE & Cambridge boards. Prioritising student well-being and community interests since 1993.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -332,7 +332,7 @@ export default function AdmissionsPage() {
 
             <Reveal delay={480}>
               <div className="flex gap-4 flex-wrap mt-12">
-                {["100% Board Results", "Est. 1992", "20,000+ Students", "CBSE & Cambridge"].map((b) => (
+                {["100% Board Results", "Est. 1993", "20,000+ Students", "CBSE & Cambridge"].map((b) => (
                   <span key={b} className="bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md">
                     {b}
                   </span>
@@ -411,7 +411,7 @@ export default function AdmissionsPage() {
               { value: "5k+", label: "Alumni" },
               { value: "100%", label: "Results" },
               { value: "50+", label: "Nations" },
-              { value: "1992", label: "Est." },
+              { value: "1993", label: "Est." },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
                 <p className="font-playfair text-4xl font-black text-sand mb-1">{s.value}</p>
@@ -886,7 +886,7 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
-              {["🎓 CBSE & Cambridge", "🌿 Est. 1992", "📍 2 Campuses in Jaipur", "❤️ 20,000+ Students"].map((b) => (
+              {["🎓 CBSE & Cambridge", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 20,000+ Students"].map((b) => (
                 <span key={b} className="bg-white/8 border border-white/15 text-white/60 text-xs px-5 py-2 rounded-full">
                   {b}
                 </span>
