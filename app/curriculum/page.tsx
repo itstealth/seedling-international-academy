@@ -154,20 +154,20 @@ const achievements = [
 ];
 
 const learnerProfile = [
-  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "https://seedlingschools.com/assets/img/confident.jpg" },
-  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "https://seedlingschools.com/assets/img/reflective.jpg" },
-  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "https://seedlingschools.com/assets/img/responsible.jpg" },
-  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "https://seedlingschools.com/assets/img/innovative.jpg" },
-  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥", img: "https://seedlingschools.com/assets/img/engaged.jpg" },
+  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "/assets/img/confident.jpg" },
+  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "/assets/img/reflective.jpg" },
+  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "/assets/img/responsible.jpg" },
+  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "/assets/img/innovative.jpg" },
+  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥", img: "/assets/img/engaged.jpg" },
 ];
 
 const faculty = [
-  { name: "CBSE Faculty", subject: "Seedling Public School", img: "https://seedlingschools.com/assets/img/feature-3.jpg" },
-  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "https://seedlingschools.com/assets/img/sia-faculty.jpg" },
-  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "https://seedlingschools.com/assets/img/smhs-sports.jpg" },
-  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "https://seedlingschools.com/assets/img/feature-6.jpg" },
-  { name: "Science & Labs", subject: "Practical Learning Wing", img: "https://seedlingschools.com/assets/img/feature-2.jpg" },
-  { name: "Admissions & Counselling", subject: "All Schools", img: "https://seedlingschools.com/assets/img/counselling-1.jpg" },
+  { name: "CBSE Faculty", subject: "Seedling Public School", img: "/assets/img/feature-3.jpg" },
+  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/sia-faculty.jpg" },
+  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/img/smhs-sports.jpg" },
+  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/img/feature-6.jpg" },
+  { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/img/feature-2.jpg" },
+  { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/img/counselling-1.jpg" },
 ];
 
 const joyride = [
@@ -195,7 +195,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/sps-banner.jpg"
+          src="/assets/img/sps-banner.jpg"
           alt="Academic Excellence at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-[ken-burns_20s_ease_infinite]"
         />
@@ -525,7 +525,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative md:py-24 py-16 overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/life-at-sps.jpg"
+          src="/assets/img/life-at-sps.jpg"
           alt="Join Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover"
         />

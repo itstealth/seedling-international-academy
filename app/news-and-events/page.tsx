@@ -89,7 +89,7 @@ export default function CampusHighlightsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/sps-banner.jpg"
+          src="/assets/img/sps-banner.jpg"
           alt="Campus Highlights at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
@@ -135,7 +135,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
                     <img
-                      src="https://seedlingschools.com/assets/img/founderday18.jpg"
+                      src="/assets/img/founderday18.jpg"
                       alt="Founders Day — Seedling Group of Schools"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
@@ -173,7 +173,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
                     <img
-                      src="https://seedlingschools.com/assets/img/SMHS-Annual-Day.jpg"
+                      src="/assets/img/SMHS-Annual-Day.jpg"
                       alt="SMHS Annual Day"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
@@ -201,7 +201,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
                     <img
-                      src="https://seedlingschools.com/assets/img/Sps-annual-day.jpg"
+                      src="/assets/img/Sps-annual-day.jpg"
                       alt="SPS Annual Day"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />

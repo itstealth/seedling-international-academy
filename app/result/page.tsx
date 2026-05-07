@@ -46,7 +46,7 @@ export default function ResultPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/sps-banner.jpg"
+          src="/assets/img/sps-banner.jpg"
           alt="Results at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />

@@ -80,42 +80,42 @@ const activities = [
     icon: "🎭",
     title: "Annual Day",
     desc: "A grand celebration of student talent with performances spanning music, dance, drama and spoken word.",
-    image: "https://seedlingschools.com/assets/img/SMHS-Annual-Day.jpg",
+    image: "/assets/img/SMHS-Annual-Day.jpg",
     color: "from-navy/80 to-navy-deeper/80",
   },
   {
     icon: "🧘",
     title: "Yoga & Meditation",
     desc: "Integrated wellness programmes that nurture mental clarity, physical balance, and emotional resilience.",
-    image: "https://seedlingschools.com/assets/img/yoga1.jpg",
+    image: "/assets/img/yoga1.jpg",
     color: "from-mauve/80 to-navy-deeper/80",
   },
   {
     icon: "🎄",
     title: "Festivals & Celebrations",
     desc: "From Christmas to Founders Day, our calendar is rich with cultural celebrations that build community.",
-    image: "https://seedlingschools.com/assets/img/Christmas.jpeg",
+    image: "/assets/img/Christmas.jpeg",
     color: "from-crimson/80 to-crimson-dark/80",
   },
   {
     icon: "🛹",
     title: "Skaters Sunday Bash",
     desc: "Weekend skating events that promote active lifestyles, peer bonding, and a love for movement.",
-    image: "https://seedlingschools.com/assets/img/skaters.jpg",
+    image: "/assets/img/skaters.jpg",
     color: "from-navy-dark/80 to-navy-deeper/80",
   },
   {
     icon: "🌺",
     title: "Mother's Day",
     desc: "Heartfelt tributes organised by students to celebrate and honour the most important people in their lives.",
-    image: "https://seedlingschools.com/assets/img/Mothersday9.jpg",
+    image: "/assets/img/Mothersday9.jpg",
     color: "from-crimson-dark/80 to-crimson-deeper/80",
   },
   {
     icon: "🏆",
     title: "CBSE Result Celebrations",
     desc: "We celebrate academic excellence with our toppers, honouring their hard work and dedication.",
-    image: "https://seedlingschools.com/assets/img/cbse-result.jpg",
+    image: "/assets/img/cbse-result.jpg",
     color: "from-sand/80 to-navy-deeper/80",
   },
 ];
@@ -124,7 +124,7 @@ const experiences = [
   {
     name: "Komal Bhatia",
     role: "Parent of Class V Student",
-    image: "https://seedlingschools.com/assets/img/person-1.jpg",
+    image: "/assets/img/person-1.jpg",
     quote: "His overall development is very good. His aptitude and attitude is developing very well. We appreciate the efforts put by all the teachers — pleasure to being a part of Seedling.",
     school: "Seedling International Academy",
     highlight: "Holistic Development",
@@ -132,7 +132,7 @@ const experiences = [
   {
     name: "Aditi Sharma",
     role: "Parent",
-    image: "https://seedlingschools.com/assets/img/person-3.jpg",
+    image: "/assets/img/person-3.jpg",
     quote: "We are thrilled that Seedling School is aligned with the National Educational Policy (NEP). It gives us confidence knowing that our child is receiving an education built on excellence and relevance.",
     school: "Seedling Public School",
     highlight: "NEP Aligned",
@@ -140,7 +140,7 @@ const experiences = [
   {
     name: "Ashish Kumar Jain",
     role: "Parent",
-    image: "https://seedlingschools.com/assets/img/person-2.jpg",
+    image: "/assets/img/person-2.jpg",
     quote: "Seedling School's state-of-the-art facilities are truly impressive. From well-equipped classrooms to modern science laboratories — an environment that encourages hands-on exploration.",
     school: "Seedling Public School",
     highlight: "World-Class Facilities",
@@ -148,7 +148,7 @@ const experiences = [
   {
     name: "Narendra Kumar Sharma & Soniya Yadav",
     role: "Parents",
-    image: "https://seedlingschools.com/assets/img/person-7.jpeg",
+    image: "/assets/img/person-7.jpeg",
     quote: "Teachers truly understand and encourage every child, going the extra mile to build confidence, enhance personality, and create a positive atmosphere where our ward feels valued and motivated.",
     school: "Seedling Modern High School",
     highlight: "Nurturing Environment",
@@ -156,7 +156,7 @@ const experiences = [
   {
     name: "Muskan Rupani",
     role: "Parent",
-    image: "https://seedlingschools.com/assets/img/person-5.jpeg",
+    image: "/assets/img/person-5.jpeg",
     quote: "The Seedling Modern High School is setting new benchmarks of quality services in education. I appreciate the hard work of well-qualified teachers in the all-round development of my child.",
     school: "Seedling Modern High School",
     highlight: "Academic Excellence",
@@ -164,14 +164,14 @@ const experiences = [
 ];
 
 const stripImages = [
-  { src: "https://seedlingschools.com/assets/img/sps-1.jpg", label: "Campus Life" },
-  { src: "https://seedlingschools.com/assets/img/sps-2.jpg", label: "Classroom Innovation" },
-  { src: "https://seedlingschools.com/assets/img/sps-3.jpg", label: "Student Community" },
-  { src: "https://seedlingschools.com/assets/img/feature-1.jpg", label: "NEP Curriculum" },
-  { src: "https://seedlingschools.com/assets/img/feature-4.jpg", label: "Experiential Learning" },
-  { src: "https://seedlingschools.com/assets/img/life-at-sps.jpg", label: "Life at Seedling" },
-  { src: "https://seedlingschools.com/assets/img/feature-2.jpg", label: "State-of-the-Art Facilities" },
-  { src: "https://seedlingschools.com/assets/img/counselling-1.jpg", label: "Parent Counselling" },
+  { src: "/assets/img/sps-1.jpg", label: "Campus Life" },
+  { src: "/assets/img/sps-2.jpg", label: "Classroom Innovation" },
+  { src: "/assets/img/sps-3.jpg", label: "Student Community" },
+  { src: "/assets/img/feature-1.jpg", label: "NEP Curriculum" },
+  { src: "/assets/img/feature-4.jpg", label: "Experiential Learning" },
+  { src: "/assets/img/life-at-sps.jpg", label: "Life at Seedling" },
+  { src: "/assets/img/feature-2.jpg", label: "State-of-the-Art Facilities" },
+  { src: "/assets/img/counselling-1.jpg", label: "Parent Counselling" },
 ];
 
 const features = [
@@ -233,7 +233,7 @@ function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
         style={{
           backgroundImage:
-            "url('https://seedlingschools.com/assets/img/sps-banner.jpg')",
+            "url('/assets/img/sps-banner.jpg')",
         }}
       />
 
@@ -749,7 +749,7 @@ function CTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url('https://seedlingschools.com/assets/img/sps-banner.jpg')",
+          backgroundImage: "url('/assets/img/sps-banner.jpg')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/85 to-sand/30" />
