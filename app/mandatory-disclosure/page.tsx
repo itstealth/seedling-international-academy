@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 const MandatoryDisclosure = () => {
   return (
     <div className="min-h-screen bg-off-white font-dm selection:bg-navy/10">
-      
-      <PageHero 
+
+      <PageHero
         title="Mandatory Public Disclosure"
         subtitle="In accordance with CBSE Affiliation Bye-Laws, the following information is disclosed for Seedling Public School (SPS), Jaipur."
         image="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?w=1600&q=80"
       />
 
       <main className="max-w-6xl mx-auto px-6 py-20">
-        
+
         {/* Section 1: School Info */}
         <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-sand/30 mb-10 overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-110" />
-          
+
           <div className="flex items-center gap-6 mb-10">
             <div className="w-14 h-14 rounded-2xl bg-navy-deeper flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-navy/20">
               01
@@ -61,7 +61,7 @@ const MandatoryDisclosure = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Year Established", val: "1992" },
+                { label: "Year Established", val: "1993" },
                 { label: "School Code", val: "10441" },
                 { label: "Affiliation No.", val: "1730084" },
                 { label: "Campus Area", val: "3330 m²" },
@@ -125,7 +125,7 @@ const MandatoryDisclosure = () => {
         {/* Section 4: Documents */}
         <div className="bg-navy-deeper rounded-[3rem] p-8 md:p-16 mb-10 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-          
+
           <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-crimson flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-crimson/20 mb-6">
@@ -153,7 +153,7 @@ const MandatoryDisclosure = () => {
               { id: '(xi)', name: 'List of SMC Members', url: 'https://seedlingschools.com/smc.php' },
               { id: '(xii)', name: 'List of PTA Members', url: 'https://seedlingschools.com/pta-members.php' },
             ].map((doc) => (
-              <a 
+              <a
                 key={doc.name}
                 href={doc.url}
                 target="_blank"

@@ -777,7 +777,7 @@ function CTASection() {
         <p className="text-white/60 text-lg max-w-xl mx-auto mb-12 leading-relaxed font-dm font-light">
           Enrol your child today and give them the gift of a world-class education
           at one of Jaipur's most celebrated schools — prioritising well-being and
-          community since 1992.
+          community since 1993.
         </p>
 
         {/* CTA buttons */}
@@ -829,7 +829,7 @@ function CTASection() {
   export const metadata = {
     title: "School Life | Seedling Group of Schools",
     description:
-      "Experience life at Seedling Group of Schools — Jaipur's premier educational institution since 1992. Explore our vibrant campus life, sports, arts, and beyond.",
+      "Experience life at Seedling Group of Schools — Jaipur's premier educational institution since 1993. Explore our vibrant campus life, sports, arts, and beyond.",
   };
 */
 

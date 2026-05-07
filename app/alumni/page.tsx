@@ -55,7 +55,7 @@ const stats = [
     value: 100,
     suffix: "%",
     label: "Results",
-    description: "Consistent academic excellence since 1992",
+    description: "Consistent academic excellence since 1993",
     color: "from-navy-deeper to-navy",
     icon: "🏆",
   },
@@ -291,7 +291,7 @@ function Hero() {
         <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-sand/40 rounded-full px-5 py-2 mb-8 shadow-sm">
           <span className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
           <span className="text-[10px] font-black font-dm text-navy-deeper tracking-[0.2em] uppercase">
-            Since 1992
+            Since 1993
           </span>
         </div>
 

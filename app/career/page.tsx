@@ -145,7 +145,7 @@ const whyWork = [
       </svg>
     ),
     title: "Trusted Institution",
-    desc: "Join one of Jaipur's most respected school groups — 5 schools, 2 campuses, CBSE & Cambridge, and a community of over 20,000 students since 1992.",
+    desc: "Join one of Jaipur's most respected school groups — 5 schools, 2 campuses, CBSE & Cambridge, and a community of over 20,000 students since 1993.",
   },
   {
     icon: (
@@ -583,7 +583,7 @@ export default function CareersPage() {
               { value: "20,000+", label: "Students" },
               { value: "15:1", label: "Teacher Ratio" },
               { value: "100%", label: "Board Results" },
-              { value: "1992", label: "Est." },
+              { value: "1993", label: "Est." },
             ].map((s) => (
               <div key={s.label} className="px-4 py-4 text-center">
                 <p className="font-playfair text-3xl md:text-4xl font-semibold text-sand">{s.value}</p>
@@ -891,7 +891,7 @@ export default function CareersPage() {
                 "🏫 5 Schools",
                 "📍 2 Campuses in Jaipur",
                 "🎓 CBSE & Cambridge",
-                "🌿 Est. 1992",
+                "🌿 Est. 1993",
               ].map((b) => (
                 <span
                   key={b}
