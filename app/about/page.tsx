@@ -96,7 +96,7 @@ const leaders = [
     role: "Founder Director",
     sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    img: "https://seedlingschools.com/assets/img/mohini.png",
+    img: "/assets/img/mohini.png",
     tag: "Legacy",
   },
   {
@@ -104,7 +104,7 @@ const leaders = [
     role: "CEO & Director",
     sub: "Seedling Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
-    img: "https://seedlingschools.com/assets/img/sandeep.png",
+    img: "/assets/img/sandeep.png",
     tag: "Forever New Frontiers",
   },
   {
@@ -112,7 +112,7 @@ const leaders = [
     role: "Executive Director",
     sub: "Seedling Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
-    img: "https://seedlingschools.com/assets/img/preeti.png",
+    img: "/assets/img/preeti.png",
     tag: "Creating Fresh Pathways",
   },
   {
@@ -120,7 +120,7 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
-    img: "https://seedlingschools.com/assets/img/akansha.png",
+    img: "/assets/img/akansha.png",
     tag: "Engagement that Empowers",
   },
   {
@@ -128,7 +128,7 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
-    img: "https://seedlingschools.com/assets/img/aishwarya.png",
+    img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
   },
 ];

@@ -45,12 +45,12 @@ function Tag({ children, color = "navy" }: { children: React.ReactNode, color?: 
 }
 
 const faculty = [
-  { name: "CBSE Faculty", subject: "Seedling Public School", img: "https://seedlingschools.com/assets/img/feature-3.jpg" },
-  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "https://seedlingschools.com/assets/img/sia-faculty.jpg" },
-  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "https://seedlingschools.com/assets/img/smhs-sports.jpg" },
-  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "https://seedlingschools.com/assets/img/feature-6.jpg" },
-  { name: "Science & Labs", subject: "Practical Learning Wing", img: "https://seedlingschools.com/assets/img/feature-2.jpg" },
-  { name: "Admissions & Counselling", subject: "All Schools", img: "https://seedlingschools.com/assets/img/counselling-1.jpg" },
+  { name: "CBSE Faculty", subject: "Seedling Public School", img: "/assets/img/feature-3.jpg" },
+  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/sia-faculty.jpg" },
+  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/img/smhs-sports.jpg" },
+  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/img/feature-6.jpg" },
+  { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/img/feature-2.jpg" },
+  { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/img/counselling-1.jpg" },
 ];
 
 export default function FacultyPage() {
@@ -59,7 +59,7 @@ export default function FacultyPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/sps-banner.jpg"
+          src="/assets/img/sps-banner.jpg"
           alt="Our Faculty at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
@@ -135,7 +135,7 @@ export default function FacultyPage() {
       {/* CTA */}
       <section className="relative py-48 overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/life-at-sps.jpg"
+          src="/assets/img/life-at-sps.jpg"
           alt="Join Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover"
         />

@@ -73,12 +73,12 @@ const IconBrain = () => (
 
 // ─── SEEDLING IMAGE URLS ───────────────────────────────────────────────────────
 const IMGS = {
-  hero: "https://seedlingschools.com/assets/img/feature-4.jpg",
-  intro: "https://seedlingschools.com/assets/img/techintegrate.jpg",
-  achievers: "https://seedlingschools.com/assets/img/feature-1.jpg",
-  digital: "https://seedlingschools.com/assets/img/feature-2.jpg",
-  wellbeing: "https://seedlingschools.com/assets/img/feature-6.jpg",
-  school: "https://seedlingschools.com/assets/img/sps-school.jpg",
+  hero: "/assets/img/feature-4.jpg",
+  intro: "/assets/img/techintegrate.jpg",
+  achievers: "/assets/img/feature-1.jpg",
+  digital: "/assets/img/feature-2.jpg",
+  wellbeing: "/assets/img/feature-6.jpg",
+  school: "/assets/img/sps-school.jpg",
 };
 
 function useReveal() {
@@ -157,7 +157,7 @@ function Hero() {
   return (
       <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
         <img
-          src="https://seedlingschools.com/assets/img/feature-4.jpg"
+          src="/assets/img/feature-4.jpg"
           alt="Our Faculty at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />

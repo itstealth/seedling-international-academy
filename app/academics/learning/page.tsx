@@ -75,12 +75,12 @@ const IconBrain = () => (
 
 // ─── SEEDLING IMAGE URLS ───────────────────────────────────────────────────────
 const IMGS = {
-  hero: "https://seedlingschools.com/assets/img/feature-4.jpg",
-  intro: "https://seedlingschools.com/assets/img/techintegrate.jpg",
-  achievers: "https://seedlingschools.com/assets/img/feature-1.jpg",
-  digital: "https://seedlingschools.com/assets/img/feature-2.jpg",
-  wellbeing: "https://seedlingschools.com/assets/img/feature-6.jpg",
-  school: "https://seedlingschools.com/assets/img/sps-school.jpg",
+  hero: "/assets/img/feature-4.jpg",
+  intro: "/assets/img/techintegrate.jpg",
+  achievers: "/assets/img/feature-1.jpg",
+  digital: "/assets/img/feature-2.jpg",
+  wellbeing: "/assets/img/feature-6.jpg",
+  school: "/assets/img/sps-school.jpg",
 };
 
 // ─── FEATURE CARDS DATA ───────────────────────────────────────────────────────
