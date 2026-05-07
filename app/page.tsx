@@ -159,10 +159,10 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative">
               <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/SPARKLE FEST/3.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/STELLAR SATURDAYS/6.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
                   <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
