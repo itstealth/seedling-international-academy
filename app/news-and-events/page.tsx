@@ -39,7 +39,7 @@ const highlights = [
     title: "Academic Block & Smart Classes",
     excerpt:
       "Fully air-conditioned classrooms equipped with smart boards and digital tools, fostering technology-enabled interactive and experiential learning.",
-    image: "/assets/Home/classroom.jpg",
+    image: "/assets/Home/classroom1.webp",
     icon: "🏫",
   },
   {
@@ -47,7 +47,7 @@ const highlights = [
     title: "The Knowledge Hub (Library)",
     excerpt:
       "A well-stocked library encouraging reading habits and independent learning, serving as a hub for academic resources and literature.",
-    image: "/assets/Home/library.jpg",
+    image: "/assets/Home/ScienceLabs.webp",
     icon: "📚",
   },
   {
@@ -55,7 +55,7 @@ const highlights = [
     title: "Sports & Physical Education",
     excerpt:
       "A dedicated playground and facilities for various sports including basketball, helping inculcate discipline, teamwork, and leadership.",
-    image: "/assets/SPORTS DAY/2.webp",
+    image: "/assets/NATIONAL SPORTS DAY/1.webp",
     icon: "🏀",
   },
   {
@@ -63,20 +63,21 @@ const highlights = [
     title: "Safety & Well-being First",
     excerpt:
       "A secure environment with proper supervision, first-aid facilities, and transport services, ensuring a balanced space for personal growth.",
-    image: "/assets/Home/smart-classroom.jpg",
+    image: "/assets/SAY NO TO SUGAR/1.webp",
     icon: "🛡️",
   },
 ];
 
 // ─── Gallery Snapshots ────────────────────────────────────────────────────────
 const snapshots = [
-  { src: "/assets/ANNUAL FUNCTION/3.webp", label: "Founders Day", aspect: "aspect-[4/5]" },
-  { src: "/assets/SPORTS DAY/3.webp", label: "SPS Sportsday", aspect: "aspect-[4/3]" },
-  { src: "/assets/BOOT CAMP/3.webp", label: "Boot Camp Activity", aspect: "aspect-[4/5]" },
-  { src: "/assets/STELLAR SATURDAYS/2.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]" },
-  { src: "/assets/ANNUAL FUNCTION/4.webp", label: "SMHS Farewell", aspect: "aspect-[4/5]" },
-  { src: "/assets/XMAS CARNIVAL/2.webp", label: "Christmas Carnival", aspect: "aspect-[4/3]" },
-  { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Mother Child Cook Off", aspect: "aspect-[4/5]" },
+  { src: "/assets/JAISELMER TRIP/1.webp", label: "Jaisalmer Trip", aspect: "aspect-[4/5]" },
+  { src: "/assets/HALLOWEEN/1.webp", label: "Halloween Fest", aspect: "aspect-[4/3]" },
+  { src: "/assets/BAISAKHI/1.webp", label: "Baisakhi Celebration", aspect: "aspect-[4/5]" },
+  { src: "/assets/XMAS CARNIVAL/1.webp", label: "Christmas Carnival", aspect: "aspect-[4/3]" },
+  { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Cook Off Event", aspect: "aspect-[4/5]" },
+  { src: "/assets/STELLAR SATURDAYS/1.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]" },
+  { src: "/assets/ANNUAL FUNCTION/5.webp", label: "Annual Day Performance", aspect: "aspect-[4/5]" },
+  { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "Cambridge Guidance", aspect: "aspect-[4/3]" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -89,7 +90,7 @@ export default function CampusHighlightsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
         <img
-          src="/assets/img/sps-banner.jpg"
+          src="/assets/ANNUAL FUNCTION/1.webp"
           alt="Campus Highlights at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
         />
@@ -135,7 +136,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
                     <img
-                      src="/assets/img/founderday18.jpg"
+                      src="/assets/Home/MainCampus.webp"
                       alt="Founders Day — Seedling Group of Schools"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
@@ -173,7 +174,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
                     <img
-                      src="/assets/img/SMHS-Annual-Day.jpg"
+                      src="/assets/ANNUAL FUNCTION/6.webp"
                       alt="SMHS Annual Day"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
@@ -201,7 +202,7 @@ export default function CampusHighlightsPage() {
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
                     <img
-                      src="/assets/img/Sps-annual-day.jpg"
+                      src="/assets/ANNUAL FUNCTION/7.webp"
                       alt="SPS Annual Day"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
@@ -470,7 +471,7 @@ const newsItems = [
     excerpt:
       "In a world where differences often turn into divisions, the true power to build peace lies not in politics — but in education.",
     date: "10 Mar 2025",
-    image: "/assets/BOOT CAMP/1.webp",
+    image: "/assets/BOOT CAMP/3.webp",
     color: "bg-navy",
   },
   {
@@ -480,7 +481,7 @@ const newsItems = [
     excerpt:
       "What helps, what hurts, and what to do instead — in today's digital age, screens are everywhere.",
     date: "09 Mar 2025",
-    image: "/assets/WHISPERS OF WELLNESS/1.webp",
+    image: "/assets/MOTHER CHILD COOK OFF/2.webp",
     color: "bg-crimson",
   },
   {
@@ -490,7 +491,7 @@ const newsItems = [
     excerpt:
       "Parents today want a learning system that builds confidence, critical thinking, and global awareness.",
     date: "10 Feb 2025",
-    image: "/assets/Home/smart-classroom.jpg",
+    image: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/2.webp",
     color: "bg-navy-dark",
   },
   {
@@ -500,7 +501,7 @@ const newsItems = [
     excerpt:
       "Today's parents want schools that go beyond academics and build well-rounded, confident learners.",
     date: "06 Feb 2025",
-    image: "/assets/SPARKLE FEST/1.webp",
+    image: "/assets/SPARKLE FEST/3.webp",
     color: "bg-crimson-dark",
   },
   {
@@ -510,7 +511,7 @@ const newsItems = [
     excerpt:
       "Choosing the best CBSE school means looking for schools that focus on integrated, holistic development.",
     date: "03 Feb 2025",
-    image: "/assets/Home/classroom.jpg",
+    image: "/assets/STELLAR SATURDAYS/4.webp",
     color: "bg-sand",
   },
 ];
@@ -575,7 +576,7 @@ const events = [
     year: "2025",
     description:
       "A heartfelt tribute to all the mothers — featuring performances, handmade gifts, and moments of love shared by students.",
-    image: "/assets/MOTHER_S DAY/1.webp",
+    image: "/assets/MOTHER_S DAY/2.webp",
     tag: "Community",
     tagColor: "bg-crimson",
   },
@@ -586,7 +587,7 @@ const events = [
     year: "2025",
     description:
       "Bidding farewell to the graduating class with an evening of nostalgia, awards, and cherished memories.",
-    image: "/assets/ANNUAL FUNCTION/2.webp",
+    image: "/assets/FAREWELL 12TH/1.webp",
     tag: "Milestone",
     tagColor: "bg-sand",
   },
@@ -597,7 +598,7 @@ const events = [
     year: "2024",
     description:
       "A high-energy carnival celebrating athletic talent, team spirit, and the joy of healthy competition.",
-    image: "/assets/SPORTS DAY/1.webp",
+    image: "/assets/NATIONAL SPORTS DAY/2.webp",
     tag: "Sports",
     tagColor: "bg-navy-dark",
   },
@@ -608,7 +609,7 @@ const events = [
     year: "2025",
     description:
       "100% results year after year — celebrating the outstanding academic achievements of Seedling students.",
-    image: "/assets/STELLAR SATURDAYS/1.webp",
+    image: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",
   },
