@@ -494,8 +494,8 @@ export default function SeedlingPage(): React.JSX.Element {
                   '/assets/Home/trending5.jpg',
                   '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
-                  <div key={i} className="rounded-2xl overflow-hidden aspect-square border border-white/5 hover:border-sand/30 transition-all duration-500 group">
-                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <div key={i} className="rounded-2xl overflow-hidden aspect-[4/5] border border-white/5 hover:border-sand/30 transition-all duration-500 group">
+                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </div>
