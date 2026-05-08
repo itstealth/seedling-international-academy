@@ -270,8 +270,8 @@ export default function SeedlingPage(): React.JSX.Element {
             {[
               { img: '/assets/CRICKET FEVER/1.webp', Icon: Medal, name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
               { img: '/assets/SPORTS DAY/2.webp', Icon: Trophy, name: 'Formation Drill', desc: 'State-level pitch and certified training.' },
-              { img: '/assets/SPORTS DAY/3.webp', Icon: Users, name: 'Performances', desc: '400m track nurturing state champions.' },
-              { img: '/assets/SPORTS DAY/1.webp', Icon: Music, name: 'Group Dance', desc: 'Premium indoor courts for all levels.' },
+              { img: '/assets/Home/classroom1.webp', Icon: Users, name: 'Performances', desc: '400m track nurturing state champions.' },
+              { img: '/assets/FAREWELL 12TH/2.webp', Icon: Music, name: 'Group Dance', desc: 'Premium indoor courts for all levels.' },
             ].map(({ img, Icon, name, desc }) => (
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
