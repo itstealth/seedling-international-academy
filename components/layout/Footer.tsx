@@ -59,7 +59,7 @@ export default function Footer() {
               {[
                 { name: 'Seedling Public School', loc: 'Jawahar Nagar' },
                 { name: 'Seedling International Academy', loc: 'Cambridge Pathway' },
-                { name: 'The Kiderworld', loc: 'Pre-Primary' }
+                // { name: 'The Kiderworld', loc: 'Pre-Primary' }
               ].map((school) => (
                 <div key={school.name} className="group cursor-default">
                   <span className="block text-sm font-black text-white/80 group-hover:text-sand transition-colors">{school.name}</span>
