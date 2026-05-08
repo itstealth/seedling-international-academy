@@ -487,12 +487,12 @@ export default function SeedlingPage(): React.JSX.Element {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  '/assets/ANNUAL FUNCTION/3.webp',
-                  '/assets/STELLAR SATURDAYS/4.webp',
-                  '/assets/BOOT CAMP/1.webp',
-                  '/assets/SPORTS DAY/2.webp',
-                  '/assets/ANNUAL FUNCTION/7.webp',
-                  '/assets/STELLAR SATURDAYS/5.webp',
+                  '/assets/Home/trending1.jpg',
+                  '/assets/Home/trending2.jpg',
+                  '/assets/Home/trending3.jpg',
+                  '/assets/Home/trending4.jpg',
+                  '/assets/Home/trending5.jpg',
+                  '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
                   <div key={i} className="rounded-2xl overflow-hidden aspect-square border border-white/5 hover:border-sand/30 transition-all duration-500 group">
                     <img src={src} alt={`IG ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
