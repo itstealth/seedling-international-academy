@@ -97,25 +97,25 @@ const learningApproaches = [
   {
     title: "Aligned With National Education Policy (NEP)",
     body: "Our curriculum is thoughtfully designed to align with the latest educational standards and practices outlined by the NEP, ensuring our students receive a relevant and future-ready education. We focus on critical thinking, creativity, and empathy — preparing every student for the dynamic challenges of tomorrow.",
-    img: "/assets/Home/classroom.jpg",
+    img: "/assets/Home/classroom1.webp",
     tag: "Learning Philosophy",
   },
   {
     title: "Technology Integrated Innovative Education",
     body: "We embrace the power of technology in education. Our classrooms are equipped with interactive whiteboards, and we integrate educational apps and online resources to create an engaging and dynamic learning experience. Students are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
-    img: "/assets/Home/smart-classroom.jpg",
+    img: "/assets/Home/ScienceLabs.webp",
     tag: "Innovation",
   },
   {
     title: "Thrust on Experiential Learning",
     body: "We believe that learning should be immersive and hands-on. Through experiential learning activities — practical experiments, outdoor excursions, and interactive projects — we foster critical thinking, problem-solving skills, and a genuine love for learning in every student.",
-    img: "/assets/BOOT CAMP/2.webp",
+    img: "/assets/BOOT CAMP/1.webp",
     tag: "Student Wellbeing",
   },
   {
     title: "Effective Feedback & Parent Partnership",
     body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
-    img: "/assets/Home/library.jpg",
+    img: "/assets/MOTHER CHILD COOK OFF/2.webp",
     tag: "Community",
   },
 ];
@@ -125,21 +125,21 @@ const programs = [
     level: "Early Years & Primary",
     range: "Playgroup – Class V",
     desc: "Building strong foundations in literacy, numeracy, and curiosity. At Seedling Wonderland Kids League and our primary wings, play-based and inquiry-led learning nurture a genuine love for discovery from the very beginning.",
-    img: "/assets/PRIMARY OUTING/2.webp",
+    img: "/assets/Home/kindergarten1.webp",
     color: "from-amber-500/80",
   },
   {
     level: "Middle School",
     range: "Classes VI – VIII",
     desc: "Deepening knowledge across disciplines while nurturing self-confidence, ethical reasoning, and a global outlook. Students participate in Olympiads, academic challenges, and collaborative projects — becoming engaged, responsible, and innovative thinkers.",
-    img: "/assets/Home/classroom.jpg",
+    img: "/assets/Home/classroom1.webp",
     color: "from-sky-700/80",
   },
   {
     level: "Senior Secondary",
     range: "Classes IX – XII",
     desc: "Rigorous CBSE and Cambridge IGCSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams. Our consistent 100% board results speak to the academic rigour and dedication of our students and faculty.",
-    img: "/assets/Home/senior.jpg",
+    img: "/assets/Home/seniors-stundents.webp",
     color: "from-emerald-700/80",
   },
 ];
@@ -154,20 +154,20 @@ const achievements = [
 ];
 
 const learnerProfile = [
-  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "/assets/img/confident.jpg" },
-  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "/assets/img/reflective.jpg" },
-  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "/assets/img/responsible.jpg" },
-  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "/assets/img/innovative.jpg" },
-  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥", img: "/assets/img/engaged.jpg" },
+  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/1.webp" },
+  { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/2.webp" },
+  { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp" },
+  { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/4.webp" },
+  { trait: "Engaged", desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.", emoji: "🔥", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/5.webp" },
 ];
 
 const faculty = [
-  { name: "CBSE Faculty", subject: "Seedling Public School", img: "/assets/img/feature-3.jpg" },
-  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/sia-faculty.jpg" },
-  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/img/smhs-sports.jpg" },
-  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/img/feature-6.jpg" },
-  { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/img/feature-2.jpg" },
-  { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/img/counselling-1.jpg" },
+  { name: "CBSE Faculty", subject: "Seedling Public School", img: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp" },
+  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/6.webp" },
+  { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/NATIONAL SPORTS DAY/1.webp" },
+  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/GRADUATION WONDERLAND/1.webp" },
+  { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/Home/ScienceLabs.webp" },
+  { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/4.webp" },
 ];
 
 const joyride = [
@@ -195,7 +195,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
         <img
-          src="/assets/img/sps-banner.jpg"
+          src="/assets/Home/MainCampus.webp"
           alt="Academic Excellence at Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-[ken-burns_20s_ease_infinite]"
         />
@@ -229,9 +229,9 @@ export default function AcademicsPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="overflow-hidden rounded-3xl shadow-editorial">
               <img
-                src="/assets/WHISPERS OF WELLNESS/2.webp"
+                src="/assets/FELICITATING TOPPERS IN BOARDS/1.webp"
                 alt="CBSE Curriculum at Seedling Schools"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-full aspect-square object-cover"
               />
             </div>
             <div>
@@ -525,7 +525,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative md:py-24 py-16 overflow-hidden">
         <img
-          src="/assets/img/life-at-sps.jpg"
+          src="/assets/ANNUAL FUNCTION/1.webp"
           alt="Join Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover"
         />
