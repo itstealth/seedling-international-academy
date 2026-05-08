@@ -50,28 +50,29 @@ const timeline = [
     year: "1993",
     title: "The Seed is Planted",
     desc: "Late Ms. Mohini Bakshi founded Seedling Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
-    img: "/assets/Home/classroom.jpg",
+    img: "/assets/Home/kindergarten.webp",
     side: "right",
   },
   {
     year: "1998",
     title: "Growing Roots in Jawahar Nagar",
     desc: "Seedling Public School (CBSE) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
-    img: "/assets/ANNUAL FUNCTION/7.webp",
+    img: "/assets/Home/School1.webp",
     side: "left",
   },
   {
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "/assets/SPORTS DAY/2.webp",
+    img: "/assets/Home/seniors-stundents.webp",
     side: "right",
   },
   {
     year: "2010",
     title: "Going Global — Cambridge Curriculum",
     desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
-    img: "/assets/Home/smart-classroom.jpg",
+    // img: "/assets/Home/smart-classroom.jpg",
+    img:"/assets/Home/School2.webp",
     side: "left",
   },
   {
@@ -85,7 +86,7 @@ const timeline = [
     year: "2018",
     title: "Nurturing the Youngest Minds",
     desc: "Seedling Wonderland Kids League was born — a thoughtfully designed early-years environment at both campuses that recognises play as the most powerful form of learning.",
-    img: "/assets/PRIMARY OUTING/1.webp",
+    img: "/assets/Home/jaipur-nu.webp",
     side: "left",
   },
 ];
@@ -402,6 +403,9 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="relative timeline-line">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-sand/50 -translate-x-1/2 hidden md:block" />
+
             {timeline.map((item, i) => (
               <Reveal key={item.year} delay={i * 60}>
                 <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i === 5 ? "mb-4" : "mb-24"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
