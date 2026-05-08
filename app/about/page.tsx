@@ -135,11 +135,11 @@ const leaders = [
 ];
 
 const campusImages = [
-  { src: "/assets/Home/classroom.jpg", label: "Main Campus", span: "col-span-2 row-span-2" },
-  { src: "/assets/Home/smart-classroom.jpg", label: "Science Labs", span: "col-span-1 row-span-1" },
+  { src: "/assets/Home/MainCampus.webp", label: "Main Campus", span: "col-span-2 row-span-2" },
+  { src: "/assets/Home/ScienceLabs.webp", label: "Science Labs", span: "col-span-1 row-span-1" },
   { src: "/assets/Home/library.jpg", label: "Library", span: "col-span-1 row-span-1" },
-  { src: "/assets/SPORTS DAY/1.webp", label: "Sports Ground", span: "col-span-1 row-span-1" },
-  { src: "/assets/PRIMARY OUTING/2.webp", label: "Kindergarten", span: "col-span-1 row-span-1" },
+  { src: "/assets/Home/sports-ground.webp", label: "Sports Ground", span: "col-span-1 row-span-1" },
+  { src: "/assets/Home/kindergarten1.webp", label: "Kindergarten", span: "col-span-1 row-span-1" },
   { src: "/assets/Home/classroom.jpg", label: "Classrooms", span: "col-span-2 row-span-1" },
 ];
 
