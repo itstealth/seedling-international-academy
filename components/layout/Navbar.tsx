@@ -11,28 +11,31 @@ const marqueeItems = [
   'Admissions Open for 2026–27 Academic Session',
   'Scholarship Available for Meritorious Students in Academics & Sports',
   'Parent Counselling Available Online & Offline',
-  'Results 2024: 100% Pass Rate · Multiple School Toppers',
+  'Admissions Open for 2026–27 Academic Session',
   'Annual Sports Day – March 2025',
   'Admissions Open for 2026–27 Academic Session',
   'Scholarship Available for Meritorious Students in Academics & Sports',
   'Parent Counselling Available Online & Offline',
-  'Results 2024: 100% Pass Rate · Multiple School Toppers',
   'Annual Sports Day – March 2025',
 ];
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about", dropdown: [
-    { name: "About Seedling", href: "/about" },
-    { name: "Leadership", href: "/about/leadership" },
-  ]},
-  { name: "Academics", href: "/academics", dropdown: [
-    { name: "Curriculum", href: "/curriculum" },
-    { name: "Result", href: "/result" },
-    // { name: "Faculty", href: "/faculty" },
-    { name: "Learning Support", href: "/learning-support" },
-  ]},
-  { name: "School Life", href: "/school-life" },
+  {
+    name: "About", href: "/about", dropdown: [
+      { name: "About Seedling", href: "/about" },
+      { name: "Leadership", href: "/about/leadership" },
+    ]
+  },
+  {
+    name: "Academics", href: "/academics", dropdown: [
+      { name: "Curriculum", href: "/curriculum" },
+      { name: "Result", href: "/result" },
+      // { name: "Faculty", href: "/faculty" },
+      { name: "Learning Support", href: "/learning-support" },
+    ]
+  },
+  { name: "School Life", href: "/school-life", dropdown: [{ name: "School Life", href: "/school-life" }, { name: "Sports", href: "/sports" },] },
   { name: "News & Events", href: "/news-and-events" },
   { name: "Admissions", href: "/admissions" },
   { name: "Career", href: "/career" },
@@ -93,11 +96,11 @@ export default function Navbar() {
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center gap-4 group">
-                  <Image 
-                    src="/SPS_Logo.png" 
-                    alt="Seedling Schools Logo" 
-                    width={200} 
-                    height={60} 
+                  <Image
+                    src="/SPS_Logo.png"
+                    alt="Seedling Schools Logo"
+                    width={200}
+                    height={60}
                     className="h-20 w-auto object-contain"
                     priority
                   />
@@ -182,15 +185,15 @@ export default function Navbar() {
               className="fixed inset-y-0 right-0 z-50 w-full max-w-[400px] bg-navy-deeper xl:hidden overflow-hidden flex flex-col rounded-l-[3.5rem] shadow-editorial"
             >
               <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
-              
+
               <div className="flex flex-col h-full relative z-10">
                 <div className="flex items-center justify-between p-8 border-b border-black/5">
                   <div className="flex items-center gap-4">
-                    <Image 
-                      src="/SPS_Logo.png" 
-                      alt="Seedling Schools Logo" 
-                      width={160} 
-                      height={48} 
+                    <Image
+                      src="/SPS_Logo.png"
+                      alt="Seedling Schools Logo"
+                      width={160}
+                      height={48}
                       className="h-12 w-auto object-contain"
                     />
                   </div>
@@ -231,9 +234,9 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="p-10 bg-off-white border-t border-black/5 mt-auto">
-                   <Link
+                  <Link
                     href="/admissions"
                     onClick={() => setIsOpen(false)}
                     className="flex justify-center items-center gap-4 w-full h-20 bg-navy-deeper text-white font-black text-xl rounded-3xl shadow-editorial hover:bg-navy transition-all uppercase tracking-widest"
