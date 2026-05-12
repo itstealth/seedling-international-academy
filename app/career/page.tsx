@@ -62,31 +62,31 @@ const openRoles = [
   {
     id: 1,
     title: "Educator — Primary (Classes I–V)",
-    board: "CBSE / Cambridge",
+    board: "CBSE",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Seeking passionate, committed educators for Primary classes who can build joyful classroom connections, deliver NEP-aligned lessons, and nurture each child's holistic development.",
-    tags: ["Primary", "CBSE", "Cambridge"],
+    tags: ["Primary", "CBSE"],
     urgent: false,
   },
   {
     id: 2,
     title: "Educator — Middle School (Classes VI–VIII)",
-    board: "CBSE / Cambridge",
+    board: "CBSE",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Looking for diligent, subject-specialist educators for Middle School who can make learning immersive, experiential, and deeply engaging for students.",
-    tags: ["Middle School", "CBSE", "Cambridge"],
+    tags: ["Middle School", "CBSE"],
     urgent: false,
   },
   {
     id: 3,
     title: "Educator — Senior Secondary (Classes IX–XII)",
-    board: "CBSE / Cambridge",
+    board: "CBSE",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "We need experienced Senior Secondary educators who can deliver rigorous academic content, mentor students through board preparation, and build a culture of excellence.",
-    tags: ["Senior", "CBSE", "Cambridge"],
+    tags: ["Senior", "CBSE"],
     urgent: true,
   },
   {
@@ -109,7 +109,7 @@ const whyWork = [
       </svg>
     ),
     title: "Continuous Learning",
-    desc: "Regular professional development, training workshops, and access to the latest pedagogical practices — both CBSE and Cambridge methodologies.",
+    desc: "Regular professional development, training workshops, and access to the latest pedagogical practices.",
   },
   {
     icon: (
@@ -145,7 +145,7 @@ const whyWork = [
       </svg>
     ),
     title: "Trusted Institution",
-    desc: "Join one of Jaipur's most respected school groups — 5 schools, 2 campuses, CBSE & Cambridge, and a community of over 20,000 students since 1993.",
+    desc: "Join one of Jaipur's most respected school groups — 5 schools, 2 campuses, CBSE, and a community of over 20,000 students since 1993.",
   },
   {
     icon: (
@@ -478,7 +478,6 @@ function ApplyModal({
                   >
                     <option value="">Select</option>
                     <option>CBSE</option>
-                    <option>Cambridge</option>
                     <option>Any other</option>
                   </select>
                 </div>
@@ -551,7 +550,7 @@ export default function CareersPage() {
   const generalRole = {
     id: 0,
     title: "General Application — All Roles",
-    board: "CBSE / Cambridge / Administrative",
+    board: "CBSE / Administrative",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Send us your details and resume. We'll reach out when a suitable opportunity opens.",
@@ -644,7 +643,7 @@ export default function CareersPage() {
             </div>
             <div className="text-right">
               <p className="text-text-light text-sm max-w-xs leading-relaxed font-dm font-light">
-                All Subjects · All Classes<br />Teaching and Administrative Roles<br />CBSE & Cambridge
+                All Subjects · All Classes<br />Teaching and Administrative Roles<br />CBSE
               </p>
             </div>
           </div>
@@ -653,7 +652,7 @@ export default function CareersPage() {
         {/* filter pills */}
         <Reveal className="mb-10">
           <div className="flex gap-3 flex-wrap">
-            {["All Roles", "Teaching", "Administrative", "CBSE", "Cambridge"].map((f, i) => (
+            {["All Roles", "Teaching", "Administrative", "CBSE"].map((f, i) => (
               <button
                 key={f}
                 className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${i === 0
@@ -752,7 +751,7 @@ export default function CareersPage() {
                 {[
                   { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more" },
                   { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered" },
-                  { icon: "🌏", label: "CBSE & Cambridge", sub: "Experience with either or both boards welcomed" },
+                  { icon: "🌏", label: "CBSE Board", sub: "Experience with CBSE board welcomed" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-navy-deeper/20 transition-colors duration-200">
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
@@ -890,7 +889,7 @@ export default function CareersPage() {
               {[
                 "🏫 5 Schools",
                 "📍 2 Campuses in Jaipur",
-                "🎓 CBSE & Cambridge",
+                "🎓 CBSE Board",
                 "🌿 Est. 1993",
               ].map((b) => (
                 <span

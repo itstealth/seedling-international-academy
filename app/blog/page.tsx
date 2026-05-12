@@ -59,8 +59,8 @@ const ALL_POSTS: Post[] = [
   },
   {
     id: 4,
-    slug: "from-classroom-to-global-stage-the-cambridge-learning-approach",
-    title: "From Classroom to Global Stage – The Cambridge Learning Approach",
+    slug: "from-classroom-to-global-stage-the-international-learning-approach",
+    title: "From Classroom to Global Stage – The International Learning Approach",
     excerpt:
       "In a rapidly globalising world, education must go beyond textbooks and exams. Parents today want a learning system that builds confidence, critical thinking, and global awareness in their children.",
     categories: [
@@ -75,10 +75,10 @@ const ALL_POSTS: Post[] = [
   },
   {
     id: 5,
-    slug: "benefits-of-extracurricular-activities-for-students-in-cambridge-schools",
-    title: "Benefits of Extracurricular Activities for Students in Cambridge Schools",
+    slug: "benefits-of-extracurricular-activities-for-students-in-international-schools",
+    title: "Benefits of Extracurricular Activities for Students in International Schools",
     excerpt:
-      "When parents search for the best Cambridge school in Jaipur, academics are important—but they are no longer the only priority. Today's parents want schools that nurture the whole child.",
+      "When parents search for the best international school in Jaipur, academics are important—but they are no longer the only priority. Today's parents want schools that nurture the whole child.",
     categories: [
       "School Life and Community",
       "Social and Emotional Skills",
@@ -127,8 +127,8 @@ const ALL_POSTS: Post[] = [
   },
   {
     id: 9,
-    slug: "why-cambridge-the-curriculum-that-builds-global-leaders",
-    title: "Why Cambridge? The Curriculum That Builds Global Leaders",
+    slug: "why-international-curricula-that-build-global-leaders",
+    title: "Why International Curricula? The Path That Builds Global Leaders",
     excerpt:
       "Choosing the right school shapes a child's future. In today's world, students need more than academics — they need creativity, confidence, leadership, communication skills, and a global mindset.",
     categories: ["Best School in Jaipur"],
@@ -139,10 +139,10 @@ const ALL_POSTS: Post[] = [
   },
   {
     id: 10,
-    slug: "inside-cambridge-primary-a-fresh-approach-to-early-international-education",
-    title: "Inside Cambridge Primary – A Fresh Approach to Early International Education",
+    slug: "inside-primary-a-fresh-approach-to-early-international-education",
+    title: "Inside Primary – A Fresh Approach to Early International Education",
     excerpt:
-      "Choosing the right school in the early years shapes a child's confidence, skills, and future success. As parents explore 2026–27 admissions, many are choosing the Cambridge pathway.",
+      "Choosing the right school in the early years shapes a child's confidence, skills, and future success. As parents explore 2026–27 admissions, many are choosing an international pathway.",
     categories: ["Best CBSE Schools in Jaipur"],
     date: "25 Dec 2024",
     dateISO: "2024-12-25",
@@ -421,7 +421,7 @@ export default function BlogPage() {
           <div className="hidden lg:flex flex-col gap-3 fade-up delay-150">
             {[
               { color: "bg-navy", label: "Student Development" },
-              { color: "bg-crimson", label: "Cambridge Learning" },
+              { color: "bg-crimson", label: "International Learning" },
               { color: "bg-sand", label: "Parental Resources" },
               { color: "bg-navy-dark", label: "Mental Wellbeing" },
               { color: "bg-crimson-dark", label: "Early Education" },
