@@ -223,33 +223,36 @@ export default function CampusHighlightsPage() {
               <div>
                 <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-3 font-dm">
                   <span className="w-8 h-px bg-navy" />
-                  Latest from the Blog
+                  Media Coverage
                 </span>
                 <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
-                  News &<br />
-                  <span className="text-crimson">Insights</span>
+                  In the {" "}
+                  <span className="text-crimson">News</span>
                 </h2>
               </div>
-              <a
-                href="https://seedlingschools.com/blog"
-                className="hidden md:inline-flex items-center gap-2 text-navy font-black text-[10px] uppercase tracking-widest border-2 border-sand/40 px-6 py-3 rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 font-dm"
-              >
-                View all articles →
-              </a>
             </div>
           </Reveal>
 
-          {/* Asymmetric grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Asymmetric grid for first 5 items */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
             <div className="lg:col-span-5">
-              <NewsCard large delay={100} />
+              <NewsCard large delay={100} item={newsItems[0]} />
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {newsItems.slice(1).map((item, i) => (
+              {newsItems.slice(1, 5).map((item, i) => (
                 <NewsCard key={item.id} item={item} delay={(i + 2) * 100} />
               ))}
             </div>
           </div>
+          
+          {/* Standard grid for remaining items */}
+          {newsItems.length > 5 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {newsItems.slice(5).map((item) => (
+                <NewsCard key={item.id} item={item} delay={100} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -435,53 +438,197 @@ export default function CampusHighlightsPage() {
 const newsItems = [
   {
     id: 1,
-    category: "Education",
-    title: "Dialogue Over Division — How Schools Can Shape a Conflict-Free Future",
+    category: "Media Coverage",
+    title: "Seedling Group of Schools Shines in Regional News",
     excerpt:
-      "In a world where differences often turn into divisions, the true power to build peace lies not in politics — but in education.",
-    date: "10 Mar 2025",
-    image: "/assets/BOOT CAMP/3.webp",
+      "A proud moment for the Seedling community as our recent educational initiatives and student achievements are featured in the local press.",
+    date: "04 May 2026",
+    image: "/assets/Media/media-coverage-1.jpeg",
     color: "bg-navy",
   },
   {
     id: 2,
-    category: "Wellbeing",
-    title: "Healthy Screen Time for Young Kids",
+    category: "In the News",
+    title: "Celebrating Excellence: Media Spotlight on Seedling",
     excerpt:
-      "What helps, what hurts, and what to do instead — in today's digital age, screens are everywhere.",
-    date: "09 Mar 2025",
-    image: "/assets/MOTHER CHILD COOK OFF/2.webp",
+      "Our continuous efforts to provide holistic education and world-class facilities have caught the attention of leading educational publications.",
+    date: "26 Apr 2026",
+    image: "/assets/Media/media-coverage-2.jpeg",
     color: "bg-crimson",
   },
   {
     id: 3,
-    category: "Cambridge",
-    title: "From Classroom to Global Stage — The Cambridge Learning Approach",
+    category: "Press Release",
+    title: "Seedling's Innovative Teaching Methods Praised",
     excerpt:
-      "Parents today want a learning system that builds confidence, critical thinking, and global awareness.",
-    date: "10 Feb 2025",
-    image: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/2.webp",
+      "Local media highlights how Seedling's integration of modern technology and experiential learning is transforming the classroom experience.",
+    date: "18 Apr 2026",
+    image: "/assets/Media/media-coverage-3.jpeg",
     color: "bg-navy-dark",
   },
   {
     id: 4,
-    category: "Student Life",
-    title: "Benefits of Extracurricular Activities for Cambridge Students",
+    category: "Media Spotlight",
+    title: "Outstanding Board Results Draw Media Attention",
     excerpt:
-      "Today's parents want schools that go beyond academics and build well-rounded, confident learners.",
-    date: "06 Feb 2025",
-    image: "/assets/SPARKLE FEST/3.webp",
+      "Our students' phenomenal 100% board results and high distinctions have been covered extensively in this week's education columns.",
+    date: "05 Mar 2026",
+    image: "/assets/Media/media-coverage-4.jpeg",
     color: "bg-crimson-dark",
   },
   {
     id: 5,
-    category: "NEP",
-    title: "Integrated Curriculum in Schools — What Parents Should Know",
+    category: "In the News",
+    title: "Community Outreach & Student Wellbeing Featured",
     excerpt:
-      "Choosing the best CBSE school means looking for schools that focus on integrated, holistic development.",
-    date: "03 Feb 2025",
-    image: "/assets/STELLAR SATURDAYS/4.webp",
+      "Seedling's focus on mental health, student wellbeing, and parent partnership receives special praise in a recent media feature.",
+    date: "20 Jan 2026",
+    image: "/assets/Media/media-coverage-5.jpeg",
     color: "bg-sand",
+  },
+  {
+    id: 6,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "13 Jan 2026",
+    image: "/assets/Media/media-coverage-6.jpeg",
+    color: "bg-navy",
+  },
+  {
+    id: 7,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "11 Jan 2026",
+    image: "/assets/Media/media-coverage-7.jpeg",
+    color: "bg-crimson",
+  },
+  {
+    id: 8,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "07 Jan 2026",
+    image: "/assets/Media/media-coverage-8.jpeg",
+    color: "bg-navy-dark",
+  },
+  {
+    id: 9,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "22 Dec 2025",
+    image: "/assets/Media/media-coverage-9.jpeg",
+    color: "bg-crimson-dark",
+  },
+  {
+    id: 10,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "22 Dec 2025",
+    image: "/assets/Media/media-coverage-10.jpeg",
+    color: "bg-sand",
+  },
+  {
+    id: 11,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "20 Dec 2025",
+    image: "/assets/Media/media-coverage-11.jpeg",
+    color: "bg-navy",
+  },
+  {
+    id: 12,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "26 Nov 2025",
+    image: "/assets/Media/media-coverage-12.jpeg",
+    color: "bg-crimson",
+  },
+  {
+    id: 13,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "26 Nov 2025",
+    image: "/assets/Media/media-coverage-13.jpeg",
+    color: "bg-navy-dark",
+  },
+  {
+    id: 14,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "23 Nov 2025",
+    image: "/assets/Media/media-coverage-14.jpeg",
+    color: "bg-crimson-dark",
+  },
+  {
+    id: 15,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "05 Nov 2025",
+    image: "/assets/Media/media-coverage-15.jpeg",
+    color: "bg-sand",
+  },
+  {
+    id: 16,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "05 Nov 2025",
+    image: "/assets/Media/media-coverage-16.jpeg",
+    color: "bg-navy",
+  },
+  {
+    id: 17,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "11 Jul 2025",
+    image: "/assets/Media/media-coverage-17.jpeg",
+    color: "bg-crimson",
+  },
+  {
+    id: 18,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "11 Jul 2025",
+    image: "/assets/Media/media-coverage-18.jpeg",
+    color: "bg-navy-dark",
+  },
+  {
+    id: 19,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "06 Jul 2025",
+    image: "/assets/Media/media-coverage-19.jpeg",
+    color: "bg-crimson-dark",
+  },
+  {
+    id: 20,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "06 Jul 2025",
+    image: "/assets/Media/media-coverage-20.jpeg",
+    color: "bg-sand",
+  },
+  {
+    id: 21,
+    category: "Media Spotlight",
+    title: "Seedling Excellence Featured in News",
+    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    date: "15 May 2025",
+    image: "/assets/Media/media-coverage-21.jpeg",
+    color: "bg-navy",
   },
 ];
 
