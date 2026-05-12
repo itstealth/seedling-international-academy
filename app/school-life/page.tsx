@@ -35,17 +35,17 @@ const pageStyles = `
 // ==========================================
 
 const galleryItems = [
-  { id: 1, src: "/assets/ANNUAL FUNCTION/1.webp", title: "Founders Day", category: "Events", size: "large" },
+  { id: 1, src: "/assets/ANNUAL FETE/1.webp", title: "Annual Fete", category: "Events", size: "large" },
   { id: 2, src: "/assets/MOTHER_S DAY/2.webp", title: "Mother's Day", category: "Celebrations", size: "small" },
-  { id: 3, src: "/assets/WHISPERS OF WELLNESS/1.webp", title: "Yoga & Meditation", category: "Wellness", size: "small" },
+  { id: 3, src: "/assets/img/yoga1.jpg", title: "Yoga & Meditation", category: "Wellness", size: "small" },
   { id: 4, src: "/assets/SPORTS DAY/1.webp", title: "Sports Carnival", category: "Sports", size: "wide" },
-  { id: 5, src: "/assets/ANNUAL FUNCTION/2.webp", title: "SMHS Annual Day", category: "Events", size: "small" },
-  { id: 6, src: "/assets/ANNUAL FUNCTION/3.webp", title: "SPS Annual Day", category: "Events", size: "large" },
+  { id: 5, src: "/assets/ANNUAL FUNCTION/2.webp", title: "Cultural Fest", category: "Events", size: "small" },
+  { id: 6, src: "/assets/ANNUAL FUNCTION/3.webp", title: "Annual Day", category: "Events", size: "large" },
   { id: 7, src: "/assets/STELLAR SATURDAYS/1.webp", title: "Stellar Saturday", category: "Activities", size: "small" },
   { id: 8, src: "/assets/XMAS CARNIVAL/1.webp", title: "Christmas Celebrations", category: "Festivals", size: "small" },
   { id: 9, src: "/assets/CRICKET FEVER/1.webp", title: "Cricket Fever", category: "Sports", size: "wide" },
-  { id: 10, src: "/assets/ANNUAL FUNCTION/4.webp", title: "SMHS Farewell", category: "Events", size: "small" },
-  { id: 11, src: "/assets/ANNUAL FUNCTION/5.webp", title: "SPS Farewell Programme", category: "Events", size: "small" },
+  { id: 10, src: "/assets/ANNUAL FUNCTION/4.webp", title: "Farewell Ceremony", category: "Events", size: "small" },
+  { id: 11, src: "/assets/ANNUAL FUNCTION/5.webp", title: "Farewell Programme", category: "Events", size: "small" },
 ];
 
 const sportBlocks = [

@@ -84,8 +84,8 @@ const timeline = [
   },
   {
     year: "2018",
-    title: "Nurturing the Youngest Minds",
-    desc: "Seedling Wonderland Kids League was born — a thoughtfully designed early-years environment at both campuses that recognises play as the most powerful form of learning.",
+    title: "Gateway to Higher Education",
+    desc: "Graduating from Seedling opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
     img: "/assets/Home/jaipur-nu.webp",
     side: "left",
   },
@@ -429,7 +429,7 @@ export default function AboutPage() {
                   {/* text */}
                   <div className="md:w-5/12">
                     <div className={`${item.side === "left" ? "md:text-right" : ""}`}>
-                      <span className="font-playfair text-7xl font-light text-sand/40 leading-none block">{item.year}</span>
+                      {/* <span className="font-playfair text-7xl font-light text-sand/40 leading-none block">{item.year}</span> */}
                       <h3 className="font-playfair text-3xl font-semibold mt-2 mb-4 text-navy-deeper">{item.title}</h3>
                       <p className="text-text-light leading-[1.9] text-base font-dm">{item.desc}</p>
                     </div>
