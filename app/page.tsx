@@ -269,9 +269,9 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { img: '/assets/CRICKET FEVER/1.webp', Icon: Medal, name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
-              { img: '/assets/SPORTS DAY/2.webp', Icon: Trophy, name: 'Formation Drill', desc: 'State-level pitch and certified training.' },
-              { img: '/assets/Home/classroom1.webp', Icon: Users, name: 'Performances', desc: '400m track nurturing state champions.' },
-              { img: '/assets/FAREWELL 12TH/2.webp', Icon: Music, name: 'Group Dance', desc: 'Premium indoor courts for all levels.' },
+              { img: '/assets/SPORTS DAY/2.webp', Icon: Trophy, name: 'Formation Drill', desc: 'Building discipline through synchronized physical routines.' },
+              { img: '/assets/Home/classroom1.webp', Icon: Users, name: 'Performances', desc: 'Interactive learning fostering academic excellence.' },
+              { img: '/assets/DIWALI DANCE BEATS/1.webp', Icon: Music, name: 'Group Dance', desc: 'Vibrant choreography promoting fitness and cultural expression.' },
             ].map(({ img, Icon, name, desc }) => (
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
@@ -374,7 +374,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
               </div>
               <div className="col-span-1 row-span-2 group relative rounded-[2rem] overflow-hidden">
-                <img src="/assets/DIWALI DANCE BEATS/1.webp" alt="Diwali Dance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src="/assets/FAREWELL 12TH/2.webp" alt="Diwali Dance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Diwali Dance</span>
                 </div>
