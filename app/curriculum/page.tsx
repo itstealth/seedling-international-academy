@@ -229,7 +229,7 @@ export default function AcademicsPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="overflow-hidden rounded-3xl shadow-editorial">
               <img
-                src="/assets/Home/classroom.jpg"
+                src="/assets/curriculum.webp"
                 alt="CBSE Curriculum at Seedling Schools"
                 className="w-full h-full aspect-square object-cover"
               />

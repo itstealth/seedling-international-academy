@@ -77,7 +77,7 @@ const snapshots = [
   { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Cook Off Event", aspect: "aspect-[4/5]" },
   { src: "/assets/STELLAR SATURDAYS/1.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]" },
   { src: "/assets/ANNUAL FUNCTION/5.webp", label: "Annual Day Performance", aspect: "aspect-[4/5]" },
-  { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "Cambridge Guidance", aspect: "aspect-[4/3]" },
+  { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "International Guidance", aspect: "aspect-[4/3]" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

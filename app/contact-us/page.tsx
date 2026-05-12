@@ -405,7 +405,7 @@ export default function ContactPage() {
               <ul className="space-y-3 mb-10">
                 {[
                   'Admissions open for 2026–27 session',
-                  'CBSE & Cambridge Board programmes available',
+                  'CBSE Board programmes available',
                   'NEP-aligned innovative curriculum',
                   'Three decades of excellence in education',
                 ].map((item) => (
