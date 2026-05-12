@@ -121,7 +121,7 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
-    img: "/assets/img/akansha.png",
+    img: "/assets/img/akansha.jpeg",
     tag: "Engagement that Empowers",
   },
   {

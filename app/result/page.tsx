@@ -100,7 +100,7 @@ export default function ResultPage() {
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
                 <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-white">100% Board Results</h3>
-                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
                 <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">

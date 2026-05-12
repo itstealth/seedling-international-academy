@@ -802,10 +802,10 @@ function CTASection() {
           <a href="tel:+917413012351" className="hover:text-sand transition-colors">
             SPS: +91 74130 12351
           </a>
-          <span className="hidden sm:block text-white/20">|</span>
-          <a href="tel:+919587772837" className="hover:text-sand transition-colors">
+          {/* <span className="hidden sm:block text-white/20">|</span> */}
+          {/* <a href="tel:+919587772837" className="hover:text-sand transition-colors">
             SMHS: +91 95877 72837
-          </a>
+          </a> */}
           <span className="hidden sm:block text-white/20">|</span>
           <a href="mailto:seedlingacademy@hotmail.com" className="hover:text-sand transition-colors font-bold">
             seedlingacademy@hotmail.com

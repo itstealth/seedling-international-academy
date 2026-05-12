@@ -58,7 +58,7 @@ export default function Footer() {
             <div className="space-y-6">
               {[
                 { name: 'Seedling Public School', loc: 'Jawahar Nagar' },
-                { name: 'Seedling International Academy', loc: 'Cambridge Pathway' },
+                { name: 'Seedling International Academy', loc: '' },
                 // { name: 'The Kiderworld', loc: 'Pre-Primary' }
               ].map((school) => (
                 <div key={school.name} className="group cursor-default">
