@@ -126,9 +126,9 @@ export default function CampusHighlightsPage() {
           </Reveal>
 
           {/* Hero Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Large Feature — Left */}
-            <div className="lg:col-span-7">
+            <div>
               <Reveal delay={100}>
                 <a
                   href="#"
@@ -145,13 +145,11 @@ export default function CampusHighlightsPage() {
                       <span className="inline-block bg-navy text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-4 font-dm">
                         Campus Overview
                       </span>
-                      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+                      <h2 className="font-playfair text-2xl font-bold text-white leading-tight mb-3">
                         School Campus: A Vibrant Space to Grow
                       </h2>
-                      <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-3 font-dm font-light">
-                        Seedling Public School Jawahar Nagar reflects a harmonious blend of modern infrastructure and a nurturing environment.
-                        Spread across a well-planned area, the campus is designed to provide a safe, stimulating, and engaging atmosphere
-                        conducive to learning and holistic development.
+                      <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-2 font-dm font-light">
+                        Seedling Public School Jawahar Nagar reflects a harmonious blend of modern infrastructure and a nurturing environment designed for holistic development.
                       </p>
                       <div className="mt-5 flex items-center gap-4 font-dm">
                         <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Jawahar Nagar, Jaipur</span>
@@ -164,43 +162,14 @@ export default function CampusHighlightsPage() {
               </Reveal>
             </div>
 
-            {/* Right Column — Two stacked cards */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              {/* Card 1 */}
-              <Reveal delay={200}>
-                <a
-                  href="#"
-                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
-                    <img
-                      src="/assets/ANNUAL FUNCTION/6.webp"
-                      alt="SMHS Annual Day"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <span className="inline-block bg-sand text-navy-deeper text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-3 font-dm">
-                        School Life
-                      </span>
-                      <h2 className="font-playfair text-xl md:text-2xl font-bold text-white leading-tight">
-                        SMHS Annual Day
-                      </h2>
-                      <p className="text-white/70 text-xs mt-1 line-clamp-1 font-dm font-light">
-                        Students, teachers, and parents come together to celebrate achievements and creativity.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Reveal>
-
-              {/* Card 2 */}
+            {/* Right Column */}
+            <div>
               <Reveal delay={300}>
                 <a
                   href="#"
-                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-stone-200">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-stone-200 h-full">
                     <img
                       src="/assets/ANNUAL FUNCTION/7.webp"
                       alt="SPS Annual Day"

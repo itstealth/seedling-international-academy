@@ -74,7 +74,7 @@ const IconBrain = () => (
 // ─── SEEDLING IMAGE URLS ───────────────────────────────────────────────────────
 const IMGS = {
   hero: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/1.webp",
-  intro: "/assets/Home/classroom1.webp",
+  intro: "/assets/img/student-centric.jpeg",
   achievers: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
   digital: "/assets/Home/ScienceLabs.webp",
   wellbeing: "/assets/MOTHER CHILD COOK OFF/1.webp",
