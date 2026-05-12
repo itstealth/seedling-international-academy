@@ -82,6 +82,8 @@ const snapshots = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function CampusHighlightsPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
@@ -236,11 +238,11 @@ export default function CampusHighlightsPage() {
           {/* Asymmetric grid for first 5 items */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
             <div className="lg:col-span-5">
-              <NewsCard large delay={100} item={newsItems[0]} />
+              <NewsCard large delay={100} item={newsItems[0]} onClick={() => setSelectedImage(newsItems[0].image)} />
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {newsItems.slice(1, 5).map((item, i) => (
-                <NewsCard key={item.id} item={item} delay={(i + 2) * 100} />
+                <NewsCard key={item.id} item={item} delay={(i + 2) * 100} onClick={() => setSelectedImage(item.image)} />
               ))}
             </div>
           </div>
@@ -249,7 +251,7 @@ export default function CampusHighlightsPage() {
           {newsItems.length > 5 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {newsItems.slice(5).map((item) => (
-                <NewsCard key={item.id} item={item} delay={100} />
+                <NewsCard key={item.id} item={item} delay={100} onClick={() => setSelectedImage(item.image)} />
               ))}
             </div>
           )}
@@ -430,6 +432,30 @@ export default function CampusHighlightsPage() {
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════════
+          IMAGE MODAL
+      ══════════════════════════════════════════════════════ */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-crimson transition-colors z-50 p-2"
+            onClick={() => setSelectedImage(null)}
+          >
+            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Expanded view" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" 
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </main>
   );
 }
@@ -439,9 +465,7 @@ const newsItems = [
   {
     id: 1,
     category: "Media Coverage",
-    title: "Seedling Group of Schools Shines in Regional News",
-    excerpt:
-      "A proud moment for the Seedling community as our recent educational initiatives and student achievements are featured in the local press.",
+    title: "Investiture Ceremony 2026-27 — 200+ Student Leaders Inducted at SPS",
     date: "04 May 2026",
     image: "/assets/Media/media-coverage-1.jpeg",
     color: "bg-navy",
@@ -449,9 +473,7 @@ const newsItems = [
   {
     id: 2,
     category: "In the News",
-    title: "Celebrating Excellence: Media Spotlight on Seedling",
-    excerpt:
-      "Our continuous efforts to provide holistic education and world-class facilities have caught the attention of leading educational publications.",
+    title: "Challengers Trophy 2026 Winners Honoured by Seedling Group of Schools",
     date: "26 Apr 2026",
     image: "/assets/Media/media-coverage-2.jpeg",
     color: "bg-crimson",
@@ -459,9 +481,7 @@ const newsItems = [
   {
     id: 3,
     category: "Press Release",
-    title: "Seedling's Innovative Teaching Methods Praised",
-    excerpt:
-      "Local media highlights how Seedling's integration of modern technology and experiential learning is transforming the classroom experience.",
+    title: "Dr. Sandeep Bakshi Appointed UN Goodwill Ambassador — First from an Indian University",
     date: "18 Apr 2026",
     image: "/assets/Media/media-coverage-3.jpeg",
     color: "bg-navy-dark",
@@ -469,9 +489,7 @@ const newsItems = [
   {
     id: 4,
     category: "Media Spotlight",
-    title: "Outstanding Board Results Draw Media Attention",
-    excerpt:
-      "Our students' phenomenal 100% board results and high distinctions have been covered extensively in this week's education columns.",
+    title: "Mother Successfully Donates Kidney to Daughter at JNU Hospital Under Ayushman Bharat",
     date: "05 Mar 2026",
     image: "/assets/Media/media-coverage-4.jpeg",
     color: "bg-crimson-dark",
@@ -479,9 +497,7 @@ const newsItems = [
   {
     id: 5,
     category: "In the News",
-    title: "Community Outreach & Student Wellbeing Featured",
-    excerpt:
-      "Seedling's focus on mental health, student wellbeing, and parent partnership receives special praise in a recent media feature.",
+    title: "Indian Army Honours Dr. Sandeep Bakshi; JNU Announces Scholarships for Soldiers' Children",
     date: "20 Jan 2026",
     image: "/assets/Media/media-coverage-5.jpeg",
     color: "bg-sand",
@@ -489,8 +505,7 @@ const newsItems = [
   {
     id: 6,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Sacred Guruji Satsang Held at Seedling Public School",
     date: "13 Jan 2026",
     image: "/assets/Media/media-coverage-6.jpeg",
     color: "bg-navy",
@@ -498,8 +513,7 @@ const newsItems = [
   {
     id: 7,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Class of 2000 Alumni Reunite at Seedling to Celebrate 25th Anniversary",
     date: "11 Jan 2026",
     image: "/assets/Media/media-coverage-7.jpeg",
     color: "bg-crimson",
@@ -507,8 +521,7 @@ const newsItems = [
   {
     id: 8,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Dr. Sandeep Bakshi Donates ₹10 Lakh to Army Wives Welfare Association (AWWA)",
     date: "07 Jan 2026",
     image: "/assets/Media/media-coverage-8.jpeg",
     color: "bg-navy-dark",
@@ -516,8 +529,7 @@ const newsItems = [
   {
     id: 9,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Dr. Sandeep Bakshi Honoured in University Chancellors-2025 Category by CEO Insights",
     date: "22 Dec 2025",
     image: "/assets/Media/media-coverage-9.jpeg",
     color: "bg-crimson-dark",
@@ -525,8 +537,7 @@ const newsItems = [
   {
     id: 10,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Dr. Sandeep Bakshi Named Among India's Most Influential University Chancellors 2025",
     date: "22 Dec 2025",
     image: "/assets/Media/media-coverage-10.jpeg",
     color: "bg-sand",
@@ -534,8 +545,7 @@ const newsItems = [
   {
     id: 11,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "SPS 31st Annual Function Frozen Staged at Birla Auditorium — 1,500 Students Perform",
     date: "20 Dec 2025",
     image: "/assets/Media/media-coverage-11.jpeg",
     color: "bg-navy",
@@ -543,8 +553,7 @@ const newsItems = [
   {
     id: 12,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Historic First Patient Airlift from Mumbai to Jaipur for Treatment at JNU Hospital",
     date: "26 Nov 2025",
     image: "/assets/Media/media-coverage-12.jpeg",
     color: "bg-crimson",
@@ -552,8 +561,7 @@ const newsItems = [
   {
     id: 13,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Rajasthan Medical Milestone — Patient Airlifted to JNU Hospital in Record Time",
     date: "26 Nov 2025",
     image: "/assets/Media/media-coverage-13.jpeg",
     color: "bg-navy-dark",
@@ -570,8 +578,7 @@ const newsItems = [
   {
     id: 15,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "SPS Sports Day at JNU Ground — 1,200+ Students Compete in Track and Field Events",
     date: "05 Nov 2025",
     image: "/assets/Media/media-coverage-15.jpeg",
     color: "bg-sand",
@@ -579,8 +586,7 @@ const newsItems = [
   {
     id: 16,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Patrika Plus: Seedling Students Excel in Annual Sports Day Athletics",
     date: "05 Nov 2025",
     image: "/assets/Media/media-coverage-16.jpeg",
     color: "bg-navy",
@@ -588,8 +594,7 @@ const newsItems = [
   {
     id: 17,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "JNU and Seedling Group Donate Furniture and Books to Government School in Ramnagariya",
     date: "11 Jul 2025",
     image: "/assets/Media/media-coverage-17.jpeg",
     color: "bg-crimson",
@@ -597,8 +602,7 @@ const newsItems = [
   {
     id: 18,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Dr. Bakshi: Committed to Empowering Every Section of Society Through Education",
     date: "11 Jul 2025",
     image: "/assets/Media/media-coverage-18.jpeg",
     color: "bg-navy-dark",
@@ -606,8 +610,7 @@ const newsItems = [
   {
     id: 19,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "JNU Ranks 2nd in Rajasthan and Top 50 Nationally in India Today-MDRA Survey 2025",
     date: "06 Jul 2025",
     image: "/assets/Media/media-coverage-19.jpeg",
     color: "bg-crimson-dark",
@@ -615,8 +618,7 @@ const newsItems = [
   {
     id: 20,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "JNU NAAC A+ Accreditation and Dubai Campus Highlighted in India Today Survey",
     date: "06 Jul 2025",
     image: "/assets/Media/media-coverage-20.jpeg",
     color: "bg-sand",
@@ -624,20 +626,21 @@ const newsItems = [
   {
     id: 21,
     category: "Media Spotlight",
-    title: "Seedling Excellence Featured in News",
-    excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
+    title: "Seedling Students Shine in CBSE Boards — Sanyam Agrawal Scores 99.2% in Commerce",
     date: "15 May 2025",
     image: "/assets/Media/media-coverage-21.jpeg",
     color: "bg-navy",
   },
 ];
 
-function NewsCard({ item = newsItems[0], large = false, delay = 0 }: { item?: (typeof newsItems)[0]; large?: boolean; delay?: number }) {
-  const { ref, visible } = useReveal<HTMLAnchorElement>();
+function NewsCard({ item = newsItems[0], large = false, delay = 0, onClick }: { item?: (typeof newsItems)[0]; large?: boolean; delay?: number; onClick?: () => void }) {
+  const { ref, visible } = useReveal<HTMLDivElement>();
   return (
-    <a
-      href="#"
-      className={`group block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-white ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      className={`group block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-white cursor-pointer ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       ref={ref}
       style={{ transitionDelay: `${delay}ms`, transitionProperty: "opacity, transform", transitionDuration: "700ms" }}
     >
@@ -663,12 +666,11 @@ function NewsCard({ item = newsItems[0], large = false, delay = 0 }: { item?: (t
         >
           {item.title}
         </h3>
-        <p className="text-text-light text-sm leading-relaxed mt-2 line-clamp-2 font-dm font-light">{item.excerpt}</p>
         <span className="inline-flex items-center gap-1 text-navy text-[10px] font-black uppercase tracking-widest mt-4 group-hover:gap-2 transition-all duration-200 font-dm">
-          Read more <span>→</span>
+          View Image <span>→</span>
         </span>
       </div>
-    </a>
+    </div>
   );
 }
 
