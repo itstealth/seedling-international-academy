@@ -76,17 +76,17 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 ───────────────────────────────────────────── */
 const schools = [
   "Seedling Public School (CBSE) — Jawahar Nagar",
-  "Seedling International Academy (Cambridge) — Jawahar Nagar",
+  "Seedling International Academy — Jawahar Nagar",
   "Seedling Modern High School (CBSE) — Durgapura",
-  "Seedling Modern International Academy (Cambridge) — Durgapura",
+  "Seedling Modern International Academy — Durgapura",
   "Seedling Wonderland Kids League — Jawahar Nagar",
   "Seedling Wonderland Kids League — Durgapura",
 ];
 
 const whyUs = [
-  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in both CBSE and Cambridge board examinations — every year, across all campuses." },
+  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses." },
   { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education." },
-  { icon: "🌍", title: "Dual Board Offering", desc: "Choose from CBSE or Cambridge IGCSE — the same Seedling values, globally recognised credentials." },
+  { icon: "🌍", title: "Global Standards", desc: "Choose from CBSE or International curricula — the same Seedling values, globally recognised credentials." },
   { icon: "👨‍👩‍👧", title: "15:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care." },
   { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning." },
   { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student." },
@@ -96,7 +96,7 @@ const steps = [
   {
     num: "01",
     title: "Visit the Official Website",
-    desc: "Go to seedlingschools.com and click on the Admissions tab. Select your preferred school — CBSE or Cambridge, Jawahar Nagar or Durgapura.",
+    desc: "Go to seedlingschools.com and click on the Admissions tab. Select your preferred school — Jawahar Nagar or Durgapura.",
     icon: "🌐",
   },
   {
@@ -149,8 +149,8 @@ const documents = [
 const feeRows = [
   { school: "Seedling Public School (CBSE)", level: "Nursery – Class XII", annual: "₹39,500", admission: "On enquiry", transport: "On enquiry", note: "" },
   { school: "Seedling Modern High School (CBSE)", level: "Nursery – Class XII", annual: "₹39,500", admission: "On enquiry", transport: "On enquiry", note: "" },
-  { school: "Seedling International Academy (Cambridge)", level: "Play Group – IGCSE", annual: "₹40,000+", admission: "₹8,540", transport: "On enquiry", note: "Others: ₹7,700" },
-  { school: "Seedling Modern International Academy (Cambridge)", level: "Play Group – IGCSE", annual: "₹60,000+", admission: "On enquiry", transport: "On enquiry", note: "" },
+  { school: "Seedling International Academy", level: "Play Group – IGCSE", annual: "₹40,000+", admission: "₹8,540", transport: "On enquiry", note: "Others: ₹7,700" },
+  { school: "Seedling Modern International Academy", level: "Play Group – IGCSE", annual: "₹60,000+", admission: "On enquiry", transport: "On enquiry", note: "" },
   { school: "Seedling Wonderland Kids League", level: "Play Group – UKG", annual: "On enquiry", admission: "On enquiry", transport: "On enquiry", note: "Both campuses" },
 ];
 
@@ -162,8 +162,8 @@ const transport = [
 ];
 
 const faqs = [
-  { q: "What boards do Seedling Schools follow?", a: "Seedling Group operates under two boards — CBSE (Central Board of Secondary Education) at Seedling Public School and Seedling Modern High School, and Cambridge Assessment International Education (CAIE) at Seedling International Academy and Seedling Modern International Academy. Early years are offered through Seedling Wonderland Kids League at both campuses." },
-  { q: "What is the age criterion for admission?", a: "The minimum age for Day School (Playgroup / Nursery) is 3 years as of 31st March of the admission year. Age eligibility for each class follows CBSE / Cambridge board norms. For exact age requirements per class, please contact the school's admission counsellor." },
+  { q: "What boards do Seedling Schools follow?", a: "Seedling Group operates under two boards — CBSE (Central Board of Secondary Education) at Seedling Public School and Seedling Modern High School, and International curricula at Seedling International Academy and Seedling Modern International Academy. Early years are offered through Seedling Wonderland Kids League at both campuses." },
+  { q: "What is the age criterion for admission?", a: "The minimum age for Day School (Playgroup / Nursery) is 3 years as of 31st March of the admission year. Age eligibility for each class follows CBSE board norms. For exact age requirements per class, please contact the school's admission counsellor." },
   { q: "Is there an admission test?", a: "An age-appropriate interaction or friendly assessment may be conducted for the child. This is not a high-pressure entrance exam — it helps the school understand the child's learning style and place them in the right environment." },
   { q: "Can I apply online?", a: "Yes. Visit seedlingschools.com, click on Admissions → Online Form. Fill in the required details, select your preferred school, and submit. Our admission team will reach out to guide you through the next steps." },
   { q: "Are scholarships available?", a: "Yes. Seedling Schools offers merit scholarships for academically outstanding students and for students with achievements in sports. Early bird incentives are also available for registrations completed early in the admission season. Contact the school for current scholarship criteria." },
@@ -177,14 +177,14 @@ const campusLocations = [
     name: "Jawahar Nagar Campus",
     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur, Rajasthan – 302004",
     phone: "+91 74130 12351",
-    schools: ["Seedling Public School (CBSE)", "Seedling International Academy (Cambridge)", "Seedling Wonderland Kids League"],
+    schools: ["Seedling Public School (CBSE)", "Seedling International Academy", "Seedling Wonderland Kids League"],
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3!2d75.803!3d26.925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x1!2sSeedling+Public+School%2C+Jawahar+Nagar!5e0!3m2!1sen!2sin!4v1600000000000",
   },
   {
     name: "Durgapura Campus",
     address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur, Rajasthan – 302018",
     phone: "+91 95877 72837",
-    schools: ["Seedling Modern High School (CBSE)", "Seedling Modern International Academy (Cambridge)", "Seedling Wonderland Kids League"],
+    schools: ["Seedling Modern High School (CBSE)", "Seedling Modern International Academy", "Seedling Wonderland Kids League"],
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.784!3d26.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x2!2sSeedling+Modern+High+School%2C+Durgapura!5e0!3m2!1sen!2sin!4v1600000000001",
   },
 ];
@@ -313,7 +313,7 @@ export default function AdmissionsPage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
-                Seedling Group of Schools — 5 schools, 2 campuses, CBSE & Cambridge boards. Prioritising student well-being and community interests since 1993.
+                Seedling Group of Schools — 5 schools, 2 campuses, CBSE board. Prioritising student well-being and community interests since 1993.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -332,7 +332,7 @@ export default function AdmissionsPage() {
 
             <Reveal delay={480}>
               <div className="flex gap-4 flex-wrap mt-12">
-                {["100% Board Results", "Est. 1993", "20,000+ Students", "CBSE & Cambridge"].map((b) => (
+                {["100% Board Results", "Est. 1993", "20,000+ Students", "CBSE Board"].map((b) => (
                   <span key={b} className="bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md">
                     {b}
                   </span>
@@ -886,7 +886,7 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
-              {["🎓 CBSE & Cambridge", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 20,000+ Students"].map((b) => (
+              {["🎓 CBSE Board", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 20,000+ Students"].map((b) => (
                 <span key={b} className="bg-white/8 border border-white/15 text-white/60 text-xs px-5 py-2 rounded-full">
                   {b}
                 </span>
