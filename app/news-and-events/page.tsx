@@ -674,17 +674,17 @@ function NewsCard({ item = newsItems[0], large = false, delay = 0 }: { item?: (t
 
 // ─── Event Data ───────────────────────────────────────────────────────────────
 const events = [
-  {
-    id: 1,
-    title: "Yoga & Meditation Day",
-    date: "June 21",
-    year: "2025",
-    description:
-      "Students and staff embrace mindfulness and physical well-being with guided yoga and meditation sessions across all campuses.",
-    image: "/assets/WHISPERS OF WELLNESS/2.webp",
-    tag: "Wellness",
-    tagColor: "bg-navy",
-  },
+  // {
+  //   id: 1,
+  //   title: "Yoga & Meditation Day",
+  //   date: "June 21",
+  //   year: "2025",
+  //   description:
+  //     "Students and staff embrace mindfulness and physical well-being with guided yoga and meditation sessions across all campuses.",
+  //   image: "/assets/WHISPERS OF WELLNESS/2.webp",
+  //   tag: "Wellness",
+  //   tagColor: "bg-navy",
+  // },
   {
     id: 2,
     title: "Mother's Day Celebrations",
@@ -707,17 +707,17 @@ const events = [
     tag: "Milestone",
     tagColor: "bg-sand",
   },
-  {
-    id: 4,
-    title: "SMHS Sports Carnival",
-    date: "December 14",
-    year: "2024",
-    description:
-      "A high-energy carnival celebrating athletic talent, team spirit, and the joy of healthy competition.",
-    image: "/assets/NATIONAL SPORTS DAY/2.webp",
-    tag: "Sports",
-    tagColor: "bg-navy-dark",
-  },
+  // {
+  //   id: 4,
+  //   title: "SMHS Sports Carnival",
+  //   date: "December 14",
+  //   year: "2024",
+  //   description:
+  //     "A high-energy carnival celebrating athletic talent, team spirit, and the joy of healthy competition.",
+  //   image: "/assets/NATIONAL SPORTS DAY/2.webp",
+  //   tag: "Sports",
+  //   tagColor: "bg-navy-dark",
+  // },
   {
     id: 5,
     title: "CBSE Result Celebrations",
