@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Quick Overview</h3>
             <ul className="space-y-6">
-              {['Policies', 'Mandatory Disclosures', 'Brochure', 'ERP Login', 'Terms & Conditions'].map((item) => (
+              {['Policies', 'Mandatory Disclosures', /*'Brochure',*/ 'ERP Login', 'Terms & Conditions'].map((item) => (
                 <li key={item}>
                   <Link href={`/${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="group flex items-center text-sm font-black text-white/60 hover:text-white transition-colors font-dm">
                     <MoveRight className="w-5 h-5 mr-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 text-sand" />
