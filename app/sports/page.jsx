@@ -546,6 +546,7 @@ function SportShowcase({ sport, reverse, idx }) {
 /* ══════════════════════════════════════════ GALLERY ══════════════════════ */
 function Gallery() {
   const [hov, setHov] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
   return (
     <section style={{ background:T.navyDeeper, padding:"clamp(40px,6vw,70px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
@@ -570,7 +571,8 @@ function Gallery() {
               transform: hov === i ? "scale(1.025)" : "scale(1)",
               transition:"transform .3s",
             }}
-              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}>
+              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}
+              onClick={() => setSelectedImg(item.img)}>
               <div style={{
                 position:"absolute", inset:0,
                 backgroundImage:`url(${item.img})`,
@@ -594,6 +596,30 @@ function Gallery() {
           ))}
         </div>
       </div>
+
+      {/* IMAGE MODAL */}
+      {selectedImg && (
+        <div style={{
+          position:"fixed", inset:0, zIndex:50,
+          display:"flex", alignItems:"center", justifyContent:"center",
+          padding:16, background:"rgba(0,0,0,.9)", backdropFilter:"blur(8px)",
+        }}
+          onClick={() => setSelectedImg(null)}>
+          <button style={{
+            position:"absolute", top:24, right:24, color:"#fff",
+            background:"none", border:"none", cursor:"pointer", padding:8,
+            zIndex:51,
+          }}
+            onClick={() => setSelectedImg(null)}>
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <img src={selectedImg} alt="Expanded view"
+            style={{ maxWidth:"90vw", maxHeight:"90vh", objectFit:"contain", borderRadius:8, boxShadow:"0 25px 70px rgba(0,0,0,.5)" }}
+            onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </section>
   );
 }
