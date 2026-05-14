@@ -20,41 +20,41 @@ const T = {
 
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 const SPORTS = [
-  { id:"skating",    name:"Skating",    tagline:"Glide Beyond Limits",          accent:T.navy,        icon:"⛸",
-    img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=85",
-    desc:"Our skating program builds balance, coordination, and grace under pressure — training champions on ice and rink.",
-    highlights:["Certified rink coaches","Freestyle & speed skating","National competitions","200+ active skaters"] },
+  { id:"multisport", name:"Multi-Sport Ground", tagline:"Play. Compete. Excel.",        accent:T.navy,        icon:"🏟",
+    img:"/assets/SPORTS%20DAY/1.webp",
+    desc:"Our multi-sport ground is where champions are forged. From morning practice to competitive matches, our expansive facility hosts a variety of sports for students of all skill levels.",
+    highlights:["FIFA-standard turf field","200m athletic track","Cricket practice nets","Floodlit courts"] },
   { id:"basketball", name:"Basketball", tagline:"Rise. Dribble. Dominate.",      accent:T.crimson,     icon:"🏀",
-    img:"https://images.unsplash.com/photo-1546519638405-a2b973e87bb3?w=900&q=85",
+    img:"/assets/SPORTS%20DAY/basketball.JPG",
     desc:"Fast-paced and built on teamwork — our basketball program develops court vision, agility, and winning mindsets.",
     highlights:["State-of-art indoor courts","3v3 & 5v5 formats","Inter-school leagues","Elite point guard training"] },
-  { id:"volleyball", name:"Volleyball", tagline:"Set. Spike. Soar.",             accent:T.mauve,       icon:"🏐",
-    img:"https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=900&q=85",
+  { id:"indoor",     name:"Indoor Sports Complex", tagline:"Set. Spike. Soar.", accent:T.mauve,       icon:"🏐",
+    img:"/assets/STELLAR%20SATURDAYS/3.webp",
     desc:"Volleyball teaches explosive power, spatial awareness, and relentless communication — every rally builds a better athlete.",
     highlights:["Beach & indoor courts","Spike & serve workshops","Regional tournaments","Certified FIVB coaches"] },
+  // { id:"football",   name:"Football",   tagline:"The Beautiful Game. Elevated.", accent:T.crimsonDark, icon:"⚽",
+  //   img:"/assets/Home/football.webp",
+  //   desc:"Football forges leaders. Our program goes beyond technique — we build field intelligence, endurance, and team spirit.",
+  //   highlights:["FIFA-standard turf field","Tactical play sessions","Inter-city tournaments","500+ registered players"] },
   { id:"cricket",    name:"Cricket",    tagline:"Pitch Perfect. Match Ready.",   accent:T.navyDark,    icon:"🏏",
-    img:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&q=85",
+    img:"/assets/SPORTS%20DAY/cricket.jpg",
     desc:"A sport of strategy and skill — our cricket program instills patience, precision batting, and the art of the perfect delivery.",
     highlights:["Full-size turf pitch","Batting & bowling labs","BCCI-aligned curriculum","District level matches"] },
-  { id:"football",   name:"Football",   tagline:"The Beautiful Game. Elevated.", accent:T.crimsonDark, icon:"⚽",
-    img:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=85",
-    desc:"Football forges leaders. Our program goes beyond technique — we build field intelligence, endurance, and team spirit.",
-    highlights:["FIFA-standard turf field","Tactical play sessions","Inter-city tournaments","500+ registered players"] },
   { id:"swimming",   name:"Swimming",   tagline:"Dive Deep. Rise Faster.",       accent:T.navy,        icon:"🏊",
-    img:"https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=85",
+    img:"/assets/SPORTS%20DAY/swimming.JPG",
     desc:"Our Olympic-inspired aquatics program shapes swimmers with technique, breath control, and the drive to beat their personal best.",
     highlights:["25m heated indoor pool","Stroke technique labs","State championships","Lifeguard certification"] },
 ];
 
 const GALLERY = [
-  { img:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80", tall:true  },
-  { img:"https://images.unsplash.com/photo-1526676037777-05a232554f77?w=600&q=80", tall:false },
-  { img:"https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&q=80", tall:false },
-  { img:"https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80", tall:true  },
-  { img:"https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=600&q=80", tall:false },
-  { img:"https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&q=80", tall:false },
-  { img:"https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80", tall:true  },
-  { img:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&q=80", tall:false },
+  { img:"/assets/NATIONAL%20SPORTS%20DAY/1.webp", tall:true  },
+  { img:"/assets/SPORTS%20DAY/1.webp", tall:false },
+  { img:"/assets/NATIONAL%20SPORTS%20DAY/2.webp", tall:false },
+  { img:"/assets/SPORTS%20DAY/2.webp", tall:true  },
+  { img:"/assets/NATIONAL%20SPORTS%20DAY/3.webp", tall:false },
+  { img:"/assets/SPORTS%20DAY/3.webp", tall:false },
+  { img:"/assets/NATIONAL%20SPORTS%20DAY/4.webp", tall:true  },
+  { img:"/assets/NATIONAL%20SPORTS%20DAY/5.webp", tall:false },
 ];
 
 const STATS = [
@@ -180,7 +180,7 @@ function Hero() {
       {/* BG */}
       <div style={{
         position:"absolute", inset:0,
-        backgroundImage:"url(https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1800&q=90)",
+        backgroundImage:"url(/assets/Home/sports-ground.webp)",
         backgroundSize:"cover", backgroundPosition:"center 30%",
         transform: w > 768 ? `translateY(${sy * 0.28}px)` : "none",
       }} />
@@ -305,7 +305,7 @@ function SportsOverview() {
     { label:"Competitive Spirit", desc:"Regional & national tournaments that push limits." },
   ];
   return (
-    <section style={{ background:T.offWhite, padding:"clamp(60px,10vw,120px) 0", overflow:"hidden" }}>
+    <section style={{ background:T.offWhite, padding:"clamp(40px,6vw,70px) 0", overflow:"hidden" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <div className="two-col">
           {/* text */}
@@ -330,7 +330,7 @@ function SportsOverview() {
           <FadeUp delay={180} style={{ position:"relative" }}>
             <div style={{
               borderRadius:24, overflow:"hidden", aspectRatio:"4/5",
-              backgroundImage:"url(https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=900&q=85)",
+              backgroundImage:"url(/assets/Home/sports-ground.webp)",
               backgroundSize:"cover", backgroundPosition:"center",
             }} />
             <div style={{
@@ -375,23 +375,23 @@ function SportsGrid() {
   /* column / row spans change by breakpoint */
   const cfgs = w >= 1024
     ? [
-        { col:"1/6",  row:"1/2" }, { col:"6/10", row:"1/2" },
-        { col:"10/13",row:"1/3" }, { col:"1/5",  row:"2/3" },
-        { col:"5/10", row:"2/3" }, { col:"1/13", row:"3/4" },
+        { col:"1/7",  row:"1/2" }, { col:"7/13", row:"1/2" },
+        { col:"1/5",  row:"2/3" }, { col:"5/9",  row:"2/3" },
+        { col:"9/13", row:"2/3" },
       ]
     : null; // CSS handles mobile
 
   const gridStyle = w >= 1024
-    ? { gridTemplateColumns:"repeat(12,1fr)", gridTemplateRows:"300px 260px 280px" }
+    ? { gridTemplateColumns:"repeat(12,1fr)", gridTemplateRows:"300px 260px" }
     : w >= 600
     ? { gridTemplateColumns:"repeat(2,1fr)", gridAutoRows:"220px" }
     : { gridTemplateColumns:"1fr", gridAutoRows:"200px" };
 
   return (
-    <section id="sports" style={{ background:T.navyDeeper, padding:"clamp(60px,10vw,120px) 0" }}>
+    <section id="sports" style={{ background:T.navyDeeper, padding:"clamp(40px,6vw,70px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <FadeUp>
-          <div style={{ textAlign:"center", marginBottom:"clamp(36px,6vw,72px)" }}>
+          <div style={{ textAlign:"center", marginBottom:"clamp(24px,4vw,48px)" }}>
             <Label onDark>Our Programs</Label>
             <h2 style={{
               fontFamily:"'Playfair Display',serif",
@@ -477,7 +477,7 @@ function SportShowcase({ sport, reverse, idx }) {
   const bg = idx % 2 === 0 ? T.offWhite : "#fff";
 
   return (
-    <section style={{ background:bg, padding:"clamp(60px,10vw,110px) 0", overflow:"hidden" }}>
+    <section style={{ background:bg, padding:"clamp(40px,6vw,70px) 0", overflow:"hidden" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <div className={`two-col${reverse ? " flip" : ""}`} style={{ direction: reverse ? "rtl" : "ltr" }}>
           {/* image */}
@@ -546,11 +546,12 @@ function SportShowcase({ sport, reverse, idx }) {
 /* ══════════════════════════════════════════ GALLERY ══════════════════════ */
 function Gallery() {
   const [hov, setHov] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <section style={{ background:T.navyDeeper, padding:"clamp(60px,10vw,120px) 0" }}>
+    <section style={{ background:T.navyDeeper, padding:"clamp(40px,6vw,70px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <FadeUp>
-          <div style={{ textAlign:"center", marginBottom:"clamp(36px,5vw,64px)" }}>
+          <div style={{ textAlign:"center", marginBottom:"clamp(24px,4vw,48px)" }}>
             <Label onDark>In Action</Label>
             <h2 style={{
               fontFamily:"'Playfair Display',serif",
@@ -570,7 +571,8 @@ function Gallery() {
               transform: hov === i ? "scale(1.025)" : "scale(1)",
               transition:"transform .3s",
             }}
-              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}>
+              onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}
+              onClick={() => setSelectedImg(item.img)}>
               <div style={{
                 position:"absolute", inset:0,
                 backgroundImage:`url(${item.img})`,
@@ -594,6 +596,30 @@ function Gallery() {
           ))}
         </div>
       </div>
+
+      {/* IMAGE MODAL */}
+      {selectedImg && (
+        <div style={{
+          position:"fixed", inset:0, zIndex:50,
+          display:"flex", alignItems:"center", justifyContent:"center",
+          padding:16, background:"rgba(0,0,0,.9)", backdropFilter:"blur(8px)",
+        }}
+          onClick={() => setSelectedImg(null)}>
+          <button style={{
+            position:"absolute", top:24, right:24, color:"#fff",
+            background:"none", border:"none", cursor:"pointer", padding:8,
+            zIndex:51,
+          }}
+            onClick={() => setSelectedImg(null)}>
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <img src={selectedImg} alt="Expanded view"
+            style={{ maxWidth:"90vw", maxHeight:"90vh", objectFit:"contain", borderRadius:8, boxShadow:"0 25px 70px rgba(0,0,0,.5)" }}
+            onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </section>
   );
 }
@@ -609,10 +635,10 @@ function Achievements() {
     { icon:"🏐", title:"Volleyball State Finalists",   year:"2024", detail:"Girls team, State Schools Games" },
   ];
   return (
-    <section style={{ background:T.offWhite, padding:"clamp(60px,10vw,120px) 0" }}>
+    <section style={{ background:T.offWhite, padding:"clamp(40px,6vw,70px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <FadeUp>
-          <div style={{ textAlign:"center", marginBottom:"clamp(36px,5vw,64px)" }}>
+          <div style={{ textAlign:"center", marginBottom:"clamp(24px,4vw,48px)" }}>
             <Label>Track Record</Label>
             <h2 style={{
               fontFamily:"'Playfair Display',serif",
@@ -680,7 +706,7 @@ function Fitness() {
     { icon:"📋", title:"Structured Discipline", desc:"Routines mirroring elite academy standards — teaching commitment and mental fortitude." },
   ];
   return (
-    <section style={{ background:"#fff", padding:"clamp(60px,10vw,120px) 0", overflow:"hidden" }}>
+    <section style={{ background:"#fff", padding:"clamp(40px,6vw,70px) 0", overflow:"hidden" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <div className="two-col">
           {/* cards grid */}
@@ -706,7 +732,7 @@ function Fitness() {
             </p>
             <div style={{
               borderRadius:18, overflow:"hidden",
-              backgroundImage:"url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=85)",
+              backgroundImage:"url(/assets/Home/sports-ground.webp)",
               backgroundSize:"cover", backgroundPosition:"center",
               height:"clamp(150px,18vw,210px)", position:"relative",
             }}>
@@ -748,7 +774,7 @@ function CTA() {
     <section id="join" style={{ position:"relative", padding:"clamp(80px,12vw,160px) 0", overflow:"hidden" }}>
       <div style={{
         position:"absolute", inset:0,
-        backgroundImage:"url(https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1800&q=85)",
+        backgroundImage:"url(/assets/Home/sports-ground.webp)",
         backgroundSize:"cover", backgroundPosition:"center",
       }} />
       <div style={{
