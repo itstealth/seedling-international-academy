@@ -107,6 +107,8 @@ export default function Navbar() {
                 </Link>
               </div>
 
+              {/*  */}
+
               {/* Desktop Navigation */}
               <nav className="hidden xl:flex items-center">
                 {navItems.map((item) => (
