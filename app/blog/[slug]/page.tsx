@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { getMediaUrl, getPostCategories, stripHtml, formatDate, type WPPost } from "@/lib/wordpress";
@@ -43,7 +43,6 @@ export default function BlogDetailPage() {
 
         const postsData: WPPost[] = await postsRes.json();
 
-        // Find current post by slug
         const currentPost = postsData.find((p) => p.slug === slug);
         setPost(currentPost ?? null);
         setAllPosts(postsData);
@@ -55,6 +54,75 @@ export default function BlogDetailPage() {
     }
     if (slug) fetchData();
   }, [slug]);
+
+  // Extract headings first (used by processedContent)
+  const headings = useMemo(() => {
+    if (!post) return [];
+    const matches = post.content.rendered.matchAll(/<h([2-4])[^>]*>(.*?)<\/h\1>/gi);
+    return Array.from(matches).map((m) => {
+      const text = m[2].replace(/<[^>]*>/g, '');
+      return {
+        level: parseInt(m[1]),
+        text,
+        id: text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+      };
+    });
+  }, [post]);
+
+  // Process content - inject TOC at first heading, remove WP TOC, fix links, add IDs
+  const processedContent = useMemo(() => {
+    if (!post) return '';
+    let content = post.content.rendered;
+
+    // Remove WordPress-generated Table of Contents (any TOC-related markup)
+    content = content.replace(/<div[^>]*class="[^"]*"[^>]*>[\s\S]*?<\/div>/gi, (match) => {
+      const text = match.toLowerCase();
+      if (text.includes('toc') || text.includes('table-of-contents') || text.includes('jm-toc')) return '';
+      return match;
+    });
+    content = content.replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, (match) => {
+      return match.toLowerCase().includes('toc') ? '' : match;
+    });
+    content = content.replace(/\[toc[^\]]*\]/gi, '');
+    content = content.replace(/\[block[^>]*class="[^"]*jm-toc[^"]*"[^>]*\]/gi, '');
+    content = content.replace(/<!--[^-]*-->/gi, '');
+
+    // Remove internal links to WordPress domain
+    content = content.replace(/https:\/\/stealthlearn\.in\/seedlingschool(?!\/wp-)/g, '');
+
+    // Add IDs to headings for smooth scrolling
+    content = content.replace(/<h([2-4])([^>]*)>(.*?)<\/h\1>/gi, (_, level, attrs, text) => {
+      const id = text.replace(/<[^>]*>/g, '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+      return `<h${level}${attrs} id="${id}">${text}</h${level}>`;
+    });
+
+    // Build TOC HTML to inject at first heading position
+    const tocHtml = `<div class="max-w-3xl mx-auto mb-12"><div class="bg-white/80 backdrop-blur-sm border border-sand/40 rounded-2xl p-6 shadow-sm">
+      <h2 class="text-[10px] font-black uppercase tracking-[0.25em] text-text-light mb-4">In This Article</h2>
+      <nav class="space-y-1">
+        ${headings.map((h) => `
+          <a href="#${h.id}" class="block w-full text-left text-sm font-bold text-navy-deeper/70 hover:text-crimson transition-colors py-1.5 ${h.level === 2 ? 'pl-0' : h.level === 3 ? 'pl-5 text-[13px]' : 'pl-10 text-[12px]'}">${h.text}</a>
+        `).join('')}
+      </nav>
+    </div></div>`;
+
+    // Inject TOC at first h2 position
+    const firstH2Index = content.indexOf('<h2');
+    if (firstH2Index > 0) {
+      content = content.slice(0, firstH2Index) + tocHtml + content.slice(firstH2Index);
+    }
+
+    return content;
+  }, [post, headings]);
+
+  const scrollToHeading = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 120;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   if (loading) {
     return (
@@ -141,11 +209,11 @@ export default function BlogDetailPage() {
           />
         </div>
 
-        {/* Article Content */}
+        {/* Article Content (TOC is injected inside content at first h2) */}
         <div className="max-w-3xl mx-auto">
           <div
-            className="font-dm text-navy-deeper leading-relaxed [&_h1]:font-playfair [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-navy-deeper [&_h1]:mt-10 [&_h1]:mb-5 [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-deeper [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:font-playfair [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-navy-deeper [&_h3]:mt-6 [&_h3]:mb-3 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:text-navy-deeper [&_h4]:mt-5 [&_h4]:mb-2 [&_p]:text-base [&_p]:leading-8 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-2 [&_li]:text-base [&_li]:leading-7 [&_a]:text-crimson [&_a]:underline [&_a]:hover:text-crimson-dark [&_blockquote]:border-l-4 [&_blockquote]:border-sand [&_blockquote]:pl-5 [&_blockquote]:py-2 [&_blockquote]:my-6 [&_blockquote]:italic [&_blockquote]:text-text-light [&_img]:w-full [&_img]:rounded-2xl [&_img]:my-8 [&_img]:shadow-lg [&_figure]:my-8 [&_figcaption]:text-center [&_figcaption]:text-text-light [&_figcaption]:text-sm [&_figcaption]:mt-3 [&_hr]:border-sand/30 [&_hr]:my-10 [&_strong]:font-bold [&_em]:italic"
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+            className="font-dm text-navy-deeper leading-relaxed [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-deeper [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pl-4 [&_h2]:border-l-4 [&_h2]:border-crimson [&_h3]:font-playfair [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-navy-deeper [&_h3]:mt-8 [&_h3]:mb-4 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:text-navy-deeper [&_h4]:mt-6 [&_h4]:mb-3 [&_p]:text-base [&_p]:leading-8 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_li]:text-base [&_li]:leading-7 [&_a]:text-crimson [&_a]:underline [&_a]:hover:text-crimson-dark [&_blockquote]:border-l-4 [&_blockquote]:border-sand [&_blockquote]:pl-5 [&_blockquote]:py-3 [&_blockquote]:my-6 [&_blockquote]:italic [&_blockquote]:text-text-light [&_img]:w-full [&_img]:rounded-2xl [&_img]:my-8 [&_img]:shadow-lg [&_figure]:my-8 [&_figcaption]:text-center [&_figcaption]:text-text-light [&_figcaption]:text-sm [&_figcaption]:mt-3 [&_hr]:border-sand/30 [&_hr]:my-10 [&_strong]:font-bold [&_em]:italic"
+            dangerouslySetInnerHTML={{ __html: processedContent }}
           />
         </div>
 
@@ -193,7 +261,7 @@ export default function BlogDetailPage() {
         </section>
       )}
 
-  
+    
 
     </div>
   );
