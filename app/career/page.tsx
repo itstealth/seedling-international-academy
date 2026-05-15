@@ -250,47 +250,29 @@ function JobCard({
 }
 
 function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => { });
-    }
-  }, []);
-
   return (
-    <section className="relative w-full h-[500px] overflow-hidden">
-      {/* Background image with parallax feel */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
-        style={{
-          backgroundImage:
-            "url('/assets/Home/classroom.jpg')",
-        }}
+    <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
+      {/* Background image */}
+      <img
+        src="https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-05-15%2FMiniMax-M2.7%2F2030974885278265449%2F2018d90c226976c6a0a0fcefda5a0e931c77869d537ae48b0703f5b2e62bb99a..jpeg?Expires=1778936798&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=bQDJRDSLH5i9AiNx7p6qYwxSjyo%3D"
+        alt="Career at Seedling"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
-
-      {/* Decorative geometry */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/60 to-navy-deeper/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 to-transparent" />
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          Career{" "}
-          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling
-          </span> */}
-        </h1>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center">
+        <div className="max-w-2xl text-center">
+          <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
+            Career Opportunities at Seedling
+          </h1>
+          <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
+            Not Just a Job. A Journey of Impact, Growth & Excellence.
+          </p>
+        </div>
       </div>
     </section>
   );
