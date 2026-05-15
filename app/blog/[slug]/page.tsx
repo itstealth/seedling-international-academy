@@ -193,26 +193,7 @@ export default function BlogDetailPage() {
         </section>
       )}
 
-      {/* CTA */}
-      <section className="pt-0 pb-14 px-6 max-w-7xl mx-auto">
-        <div className="relative bg-navy-deeper rounded-[3rem] p-10 md:p-16 text-center overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-crimson/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
-
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-6">Enjoyed this article?</h2>
-            <p className="text-white/70 text-lg font-light leading-relaxed mb-8">
-              Explore more insights on education, child development, and school life on our blog.
-            </p>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-3 bg-sand hover:bg-white text-navy-deeper font-black text-[12px] uppercase tracking-widest px-10 py-5 rounded-full transition-all duration-300"
-            >
-              View All Articles <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
+  
 
     </div>
   );
