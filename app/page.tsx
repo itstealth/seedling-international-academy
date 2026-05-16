@@ -23,6 +23,8 @@ export default function SeedlingPage(): React.JSX.Element {
   }, []);
 
   const testimonials = [
+    { avatar: '/assets/testimonial/pgt.jpeg', name: 'PGT', role: '', text: 'Working at Seedling School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.' },
+    { avatar: '/assets/testimonial/prt.jpeg', name: 'PRT', role: '', text: 'Being a part of Seedling School for nearly 20 years has been an incredibly joyful and fulfilling journey. The energy, innocence, and love that children bring into the classrooms make every day vibrant and meaningful. What I value most is the freedom and autonomy the school gives teachers to innovate, connect, and create engaging learning experiences for young minds. Even after all these years, each day at Seedling still feels fresh, inspiring, and full of new possibilities.' },
     { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta & Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
     { avatar: '/assets/testimonial/Soniya-Yadav.jpg', name: 'Narendra Kumar Sharma & Soniya Yadav', role: 'Parents · Vaishali Nagar', text: 'The school provides holistic education, nurturing academic growth, creativity, and confidence. Teachers go beyond teaching and create a motivating environment for children.' },
     { avatar: '/assets/testimonial/Bhanupriya-Singh.jpg', name: 'Bhanupriya Singh', role: 'Parent · MI Road', text: 'The academic programme is well planned and balanced with co-curricular activities. Teachers and management are doing a great job in grooming children.' },
@@ -419,9 +421,11 @@ export default function SeedlingPage(): React.JSX.Element {
           {/* Cards Grid - showing 3 at a time with auto-scroll */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {testimonials.slice(currentTestimonial, currentTestimonial + 3).map(({ avatar, name, role, text }, i) => (
-              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
+              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500 flex flex-col">
                 <span className="block text-7xl leading-none text-sand font-playfair mb-4 group-hover:scale-110 transition-transform">"</span>
-                <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
+                <div className="overflow-y-auto max-h-48 flex-1">
+                  <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
+                </div>
                 <div className="flex items-center gap-4 border-t border-sand/40 pt-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50">
                     <img src={avatar} alt={name} className="w-full h-full object-cover" />

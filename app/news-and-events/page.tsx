@@ -129,8 +129,8 @@ export default function CampusHighlightsPage() {
 
           {/* Hero Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            {/* Large Feature — Left */}
-            <div>
+            {/* Large Feature — Left — Founders Day featured card */}
+            {/* <div>
               <Reveal delay={100}>
                 <a
                   href="#"
@@ -162,7 +162,7 @@ export default function CampusHighlightsPage() {
                   </div>
                 </a>
               </Reveal>
-            </div>
+            </div> */}
 
             {/* Right Column */}
             <div>
@@ -738,7 +738,7 @@ const events = [
     year: "2024",
     description:
       "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling community.",
-    image: "/assets/XMAS CARNIVAL/1.webp",
+    image: "/assets/XMAS CARNIVAL/christmas.webp",
     tag: "Festival",
     tagColor: "bg-navy-deeper",
   },
