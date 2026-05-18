@@ -541,7 +541,7 @@ function ExperienceSection() {
             Voices of Seedling
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
-            Student
+            Parent
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
               {" "}Experiences
             </span>
