@@ -568,7 +568,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           5. FEE STRUCTURE
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 bg-off-white">
+      {/* <section className="py-20 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Fee Structure</Tag>
@@ -619,7 +619,7 @@ export default function AdmissionsPage() {
             </p>
           </Reveal>
 
-          {/* scholarship highlight */}
+        
           <Reveal delay={100}>
             <div className="mt-16 grid md:grid-cols-3 gap-8">
               {[
@@ -638,7 +638,7 @@ export default function AdmissionsPage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════
           6. TRANSPORT
