@@ -125,41 +125,41 @@ const experiences = [
     name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
     image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
-    quote: "The Seedling Modern High School is setting new benchmarks of quality services in education. I appreciate the hard work of well-qualified teachers in the all-round development of my child.",
-    school: "Seedling Modern High School",
-    highlight: "Academic Excellence",
+    quote: "Seedling Public School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Seedling Public School",
+    highlight: "Nurturing Environment",
   },
   {
     name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
     role: "Parents",
     image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
-    quote: "Seedling School's state-of-the-art facilities are truly impressive. From well-equipped classrooms to modern science laboratories — an environment that encourages hands-on exploration.",
-    school: "Seedling Modern High School",
-    highlight: "World-Class Facilities",
+    quote: "The academic excellence at Seedling Public School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    school: "Seedling Public School",
+    highlight: "Academic Excellence",
   },
   {
     name: "Meghna Manglani",
     role: "Parent",
     image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
-    quote: "Teachers truly understand and encourage every child, going the extra mile to build confidence, enhance personality, and create a positive atmosphere where our ward feels valued and motivated.",
-    school: "Seedling International Academy",
-    highlight: "Nurturing Environment",
+    quote: "At Seedling Public School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Seedling Public School",
+    highlight: "Holistic Development",
   },
   {
     name: "Deepak Adwani & Varsha Adwani",
     role: "Parents",
     image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
-    quote: "The school has truly transformed our child. The teachers are dedicated, the curriculum is excellent, and the overall environment fosters both academic and personal growth.",
+    quote: "We chose Seedling Public School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
     school: "Seedling Public School",
-    highlight: "Holistic Development",
+    highlight: "Safe & Supportive",
   },
   {
     name: "Divya Soni",
     role: "Parent",
     image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
-    quote: "We are thrilled that Seedling School is aligned with the National Educational Policy (NEP). It gives us confidence knowing that our child is receiving an education built on excellence and relevance.",
+    quote: "Seedling Public School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
     school: "Seedling Public School",
-    highlight: "NEP Aligned",
+    highlight: "Future-Ready",
   },
 ];
 
@@ -227,40 +227,27 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[500px] overflow-hidden">
-      {/* Background image with parallax feel */}
+    <>
+      <section className="relative w-full h-[600px] overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('/assets/SHOWCASING WONDERLAND/1.webp')",
+          backgroundImage: "url('/assets/SHOWCASING WONDERLAND/1.webp')",
         }}
       />
+    </section>
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/50 via-navy-dark/30 to-sand/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
-
-      {/* Decorative geometry */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          Life at{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling
-          </span>
+    <section className="bg-navy-deeper pt-16 pb-4 md:pt-20 md:pb-8">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-4">
+          Life at Seedling
         </h1>
+        <p className="text-white text-lg font-dm font-light max-w-2xl mx-auto">
+          Where every child discovers, learns, and grows into their brightest self.
+        </p>
       </div>
     </section>
+    </>
   );
 }
 
@@ -554,7 +541,7 @@ function ExperienceSection() {
             Voices of Seedling
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
-            Student
+            Parent
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
               {" "}Experiences
             </span>

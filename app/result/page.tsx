@@ -44,16 +44,16 @@ export default function ResultPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
+      <section className="relative h-[90vh] min-h-[450px] flex items-center overflow-hidden">
         <img
           src="/assets/img/sps-banner.jpg"
           alt="Results at Seedling Schools"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+          className="absolute inset-0 w-full h-full object-cover object-top scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center mt-24">
           <Reveal delay={100}>
             <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
               Our{" "}

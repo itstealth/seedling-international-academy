@@ -29,7 +29,7 @@ const SPORTS = [
     desc:"Fast-paced and built on teamwork — our basketball program develops court vision, agility, and winning mindsets.",
     highlights:["State-of-art indoor courts","3v3 & 5v5 formats","Inter-school leagues","Elite point guard training"] },
   { id:"indoor",     name:"Volleyball", tagline:"Set. Spike. Soar.", accent:T.mauve,       icon:"🏐",
-    img:"/assets/STELLAR%20SATURDAYS/3.webp",
+    img:"/assets/SPORTS%20DAY/volleyball.jpeg",
     desc:"Volleyball teaches explosive power, spatial awareness, and relentless communication — every rally builds a better athlete.",
     highlights:["Beach & indoor courts","Spike & serve workshops","Regional tournaments","Certified FIVB coaches"] },
   // { id:"football",   name:"Football",   tagline:"The Beautiful Game. Elevated.", accent:T.crimsonDark, icon:"⚽",
