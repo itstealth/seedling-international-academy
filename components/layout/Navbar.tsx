@@ -37,7 +37,7 @@ const navItems = [
   },
   { name: "School Life", href: "/school-life", dropdown: [{ name: "School Life", href: "/school-life" }, { name: "Sports", href: "/sports" },] },
   { name: "News & Events", href: "/news-and-events" },
-  { name: "Admissions", href: "/admissions" },
+  { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Transport Facility", href: "/transport-facility" }] },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
   { name: "Blog", href: "/blog" },
