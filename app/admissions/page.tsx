@@ -200,40 +200,28 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[500px] overflow-hidden">
-      {/* Background image with parallax feel */}
+    <>
+    <section className="relative w-full h-[650px] overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('/assets/Home/classroom.jpg')",
+          backgroundImage: "url('/assets/Home/Kindergarten.JPG')",
         }}
       />
+      <div className="absolute inset-0 bg-black/40" />
+    </section>
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
-
-      {/* Decorative geometry */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          Admissions{" "}
-          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling
-          </span> */}
+    <section className="bg-navy-deeper pt-16 pb-8  md:pb-8">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-4">
+          Admissions
         </h1>
+        <p className="text-white text-lg font-dm font-light max-w-2xl mx-auto">
+          Begin your child's journey with Seedling — where excellence meets warmth.
+        </p>
       </div>
     </section>
+    </>
   );
 }
 
@@ -425,7 +413,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           2. WHY CHOOSE US
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-6xl mx-auto px-6">
+      <section className="py-20 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-24">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
@@ -455,7 +443,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           3. ADMISSION PROCESS TIMELINE
       ══════════════════════════════════════════════════ */}
-      <section id="process" className="py-32 bg-white">
+      <section id="process" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag>Admission Process</Tag>
@@ -514,7 +502,7 @@ export default function AdmissionsPage() {
             <div className="bg-navy-deeper rounded-[2.5rem] p-12 text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-sand opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
               <p className="font-dm text-sand text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
-              <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight">Start Your Application Today</h3>
+              <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight text-white">Start Your Application Today</h3>
               <div className="flex gap-4 justify-center flex-wrap">
                 <a href="https://seedlingschools.com/admission-online.php" target="_blank" rel="noopener noreferrer"
                   className="bg-crimson text-white hover:bg-crimson-dark px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40">
@@ -532,7 +520,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           4. DOCUMENTS REQUIRED
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-6xl mx-auto px-6">
+      <section className="py-20 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
@@ -580,7 +568,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           5. FEE STRUCTURE
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-off-white">
+      <section className="py-20 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Fee Structure</Tag>
@@ -655,7 +643,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           6. TRANSPORT
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-20">
             <Tag>Transport Facility</Tag>
@@ -812,7 +800,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           8. FAQ
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-6xl mx-auto px-6">
+      <section className="py-20 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Common Questions</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
