@@ -86,7 +86,12 @@ const christmasGallery = [
   "/assets/XMAS CARNIVAL/christmas 1.webp",
   "/assets/XMAS CARNIVAL/christmas 2.webp",
   "/assets/XMAS CARNIVAL/christmas 5.webp",
- 
+];
+
+// ─── Sports Day Gallery ────────────────────────────────────────────────────────
+const sportsDayGallery = [
+  "/assets/Home/pgt.jpeg",
+  "/assets/Home/prt.jpeg",
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -140,40 +145,44 @@ export default function CampusHighlightsPage() {
 
           {/* Hero Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            {/* Large Feature — Left — Founders Day featured card */}
-            {/* <div>
+            {/* Large Feature — Left — SPS Sports Day */}
+            <div>
               <Reveal delay={100}>
                 <a
                   href="#"
-                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedGallery(sportsDayGallery);
+                    setGalleryIndex(0);
+                  }}
+                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
                     <img
-                      src="/assets/Home/MainCampus.webp"
-                      alt="Founders Day — Seedling Group of Schools"
+                      src="/assets/Home/pgt.jpeg"
+                      alt="SPS Sports Day"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                   
                     <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
                       <span className="inline-block bg-navy text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase mb-4 font-dm">
-                        Campus Overview
+                        Sports Day
                       </span>
                       <h2 className="font-playfair text-2xl font-bold text-white leading-tight mb-3">
-                        School Campus: A Vibrant Space to Grow
+                        SPS Sports Day
                       </h2>
-                      <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl line-clamp-2 font-dm font-light">
-                        Seedling Public School Jawahar Nagar reflects a harmonious blend of modern infrastructure and a nurturing environment designed for holistic development.
-                      </p>
+                   
                       <div className="mt-5 flex items-center gap-4 font-dm">
-                        <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Jawahar Nagar, Jaipur</span>
+                        
                         <span className="w-1 h-1 rounded-full bg-sand/50" />
-                        <span className="text-sand text-[10px] font-black uppercase tracking-widest group-hover:underline">Explore Campus →</span>
+                        <span className="text-sand text-[10px] font-black uppercase tracking-widest group-hover:underline">View Gallery →</span>
                       </div>
                     </div>
                   </div>
                 </a>
               </Reveal>
-            </div> */}
+            </div> 
 
             {/* Right Column */}
             <div>
