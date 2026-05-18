@@ -160,14 +160,14 @@ const whyWork = [
 
 const testimonials = [
   {
-    name: "PGT",
-    img: "/assets/testimonial/pgt.jpeg",
+    name: "Ms. Ishita Mendiratta",
+    img: "/assets/testimonial/aditi-sharma.jpg",
     quote:
       "Working at Seedling School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
   },
   {
-    name: "PRT",
-    img: "/assets/testimonial/prt.jpeg",
+      name: "Ms. Topcee Ahuja",
+    img: "/assets/testimonial/Bhanupriya-Singh.jpg",
     quote:
       "Being a part of Seedling School for nearly 20 years has been an incredibly joyful and fulfilling journey. The energy, innocence, and love that children bring into the classrooms make every day vibrant and meaningful. What I value most is the freedom and autonomy the school gives teachers to innovate, connect, and create engaging learning experiences for young minds. Even after all these years, each day at Seedling still feels fresh, inspiring, and full of new possibilities.",
   },
