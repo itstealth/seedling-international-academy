@@ -122,44 +122,44 @@ const activities = [
 
 const experiences = [
   {
-    name: "Komal Bhatia",
-    role: "Parent of Class V Student",
-    image: "/assets/img/person-1.jpg",
-    quote: "His overall development is very good. His aptitude and attitude is developing very well. We appreciate the efforts put by all the teachers — pleasure to being a part of Seedling.",
-    school: "Seedling International Academy",
-    highlight: "Holistic Development",
-  },
-  {
-    name: "Aditi Sharma",
-    role: "Parent",
-    image: "/assets/img/person-3.jpg",
-    quote: "We are thrilled that Seedling School is aligned with the National Educational Policy (NEP). It gives us confidence knowing that our child is receiving an education built on excellence and relevance.",
-    school: "Seedling Public School",
-    highlight: "NEP Aligned",
-  },
-  {
-    name: "Ashish Kumar Jain",
-    role: "Parent",
-    image: "/assets/img/person-2.jpg",
-    quote: "Seedling School's state-of-the-art facilities are truly impressive. From well-equipped classrooms to modern science laboratories — an environment that encourages hands-on exploration.",
-    school: "Seedling Public School",
-    highlight: "World-Class Facilities",
-  },
-  {
-    name: "Narendra Kumar Sharma & Soniya Yadav",
+    name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
-    image: "/assets/img/person-7.jpeg",
-    quote: "Teachers truly understand and encourage every child, going the extra mile to build confidence, enhance personality, and create a positive atmosphere where our ward feels valued and motivated.",
-    school: "Seedling Modern High School",
-    highlight: "Nurturing Environment",
-  },
-  {
-    name: "Muskan Rupani",
-    role: "Parent",
-    image: "/assets/img/person-5.jpeg",
+    image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
     quote: "The Seedling Modern High School is setting new benchmarks of quality services in education. I appreciate the hard work of well-qualified teachers in the all-round development of my child.",
     school: "Seedling Modern High School",
     highlight: "Academic Excellence",
+  },
+  {
+    name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
+    role: "Parents",
+    image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
+    quote: "Seedling School's state-of-the-art facilities are truly impressive. From well-equipped classrooms to modern science laboratories — an environment that encourages hands-on exploration.",
+    school: "Seedling Modern High School",
+    highlight: "World-Class Facilities",
+  },
+  {
+    name: "Meghna Manglani",
+    role: "Parent",
+    image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
+    quote: "Teachers truly understand and encourage every child, going the extra mile to build confidence, enhance personality, and create a positive atmosphere where our ward feels valued and motivated.",
+    school: "Seedling International Academy",
+    highlight: "Nurturing Environment",
+  },
+  {
+    name: "Deepak Adwani & Varsha Adwani",
+    role: "Parents",
+    image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
+    quote: "The school has truly transformed our child. The teachers are dedicated, the curriculum is excellent, and the overall environment fosters both academic and personal growth.",
+    school: "Seedling Public School",
+    highlight: "Holistic Development",
+  },
+  {
+    name: "Divya Soni",
+    role: "Parent",
+    image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
+    quote: "We are thrilled that Seedling School is aligned with the National Educational Policy (NEP). It gives us confidence knowing that our child is receiving an education built on excellence and relevance.",
+    school: "Seedling Public School",
+    highlight: "NEP Aligned",
   },
 ];
 
@@ -233,12 +233,12 @@ function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
         style={{
           backgroundImage:
-            "url('/assets/img/sps-banner.jpg')",
+            "url('/assets/SHOWCASING WONDERLAND/1.webp')",
         }}
       />
 
       {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/50 via-navy-dark/30 to-sand/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
 
       {/* Decorative geometry */}
@@ -536,7 +536,7 @@ function ExperienceSection() {
   const current = experiences[active];
 
   return (
-    <section className="py-16 pb-8 bg-navy-deeper relative overflow-hidden">
+    <section className="py-16 pb-8 bg-crimson relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <svg viewBox="0 0 600 800" className="w-full h-full">
@@ -749,7 +749,7 @@ function CTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url('/assets/img/sps-banner.jpg')",
+          backgroundImage: "url('/assets/DESIGN CAREER FAIR/5.webp')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/85 to-sand/30" />
