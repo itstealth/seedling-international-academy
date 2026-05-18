@@ -94,6 +94,26 @@ const sportsDayGallery = [
   "/assets/Home/prt.jpeg",
 ];
 
+// ─── Foundation Items ──────────────────────────────────────────────────────────
+const foundationItems = [
+  {
+    id: 1,
+    category: "Foundation",
+    title: "Foundation Day Celebrations at Seedling Public School",
+    date: "2024",
+    image: "/assets/Media/foundation/media-coverage-1.jpeg",
+    color: "bg-navy",
+  },
+  {
+    id: 2,
+    category: "Foundation",
+    title: "Annual Foundation Day Ceremony — Honoring Legacy and Excellence",
+    date: "2024",
+    image: "/assets/Media/foundation/media-coverage-2.jpeg",
+    color: "bg-crimson",
+  },
+];
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function CampusHighlightsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -275,6 +295,29 @@ export default function CampusHighlightsPage() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          3b. FOUNDATION
+      ══════════════════════════════════════════════════════ */}
+      <section className="pt-8 md:pt-10 md:pb-8 bg-sand/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <Reveal>
+            <div className="mb-12 flex items-end justify-between">
+              <div>
+               
+                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
+                  Founder's <span className="text-crimson">Day</span>
+                </h2>
+              </div>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {foundationItems.map((item, i) => (
+              <NewsCard key={item.id} item={item} delay={i * 100} onClick={() => setSelectedImage(item.image)} />
+            ))}
+          </div>
         </div>
       </section>
 
