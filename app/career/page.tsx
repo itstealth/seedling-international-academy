@@ -160,16 +160,16 @@ const whyWork = [
 
 const testimonials = [
   {
-    name: "Ms. Ishita Mendiratta",
-    img: "/assets/testimonial/aditi-sharma.jpg",
+    name: "PGT",
+    img: "/assets/testimonial/pgt.jpeg",
     quote:
-      "Our aim was clear as we transitioned to the virtual platform. Academic engagement was one aspect, but most important was to keep kids involved and spare them from anxiety. Seeing them smile on screen and participate enthusiastically is truly a heartwarming feeling.",
+      "Working at Seedling School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
   },
   {
-    name: "Ms. Topcee Ahuja",
-    img: "/assets/testimonial/Bhanupriya-Singh.jpg",
+    name: "PRT",
+    img: "/assets/testimonial/prt.jpeg",
     quote:
-      "The pandemic made us consider things we never thought about before. Sometimes, it takes major disruptions to force us to change. Being able to come together and connect has been so meaningful, exciting, and challenging — but we're definitely all set to deal with the 'new normal' flexibly and successfully.",
+      "Being a part of Seedling School for nearly 20 years has been an incredibly joyful and fulfilling journey. The energy, innocence, and love that children bring into the classrooms make every day vibrant and meaningful. What I value most is the freedom and autonomy the school gives teachers to innovate, connect, and create engaging learning experiences for young minds. Even after all these years, each day at Seedling still feels fresh, inspiring, and full of new possibilities.",
   },
 ];
 
@@ -254,7 +254,7 @@ function Hero() {
     <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
       {/* Background image */}
       <img
-        src="https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-05-15%2FMiniMax-M2.7%2F2030974885278265449%2F2018d90c226976c6a0a0fcefda5a0e931c77869d537ae48b0703f5b2e62bb99a..jpeg?Expires=1778936798&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=bQDJRDSLH5i9AiNx7p6qYwxSjyo%3D"
+        src="/assets/img/career.jpeg"
         alt="Career at Seedling"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -696,7 +696,7 @@ export default function CareersPage() {
                     <img
                       src={t.img}
                       alt={t.name}
-                      className="w-13 h-13 w-12 h-12 rounded-full object-cover object-top border-2 border-sand/40 flex-shrink-0"
+                      className="w-12 h-12 md:w-20 md:h-20 rounded-full object-cover object-top border-2 border-sand/40 flex-shrink-0"
                     />
                     <div>
                       <p className="font-playfair font-semibold text-lg text-navy-deeper">{t.name}</p>
