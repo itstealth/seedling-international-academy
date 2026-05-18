@@ -113,10 +113,10 @@ const activities = [
   },
   {
     icon: "🏆",
-    title: "CBSE Result Celebrations",
+    title: "Celebrating Talent",
     desc: "We celebrate academic excellence with our toppers, honouring their hard work and dedication.",
-    image: "/assets/img/cbse-result.jpg",
-    color: "from-sand/80 to-navy-deeper/80",
+    image: "/assets/img/Celebrating-Talent.jpeg",
+    color: "from-black/60 to-navy-deeper/80",
   },
 ];
 
