@@ -80,9 +80,20 @@ const snapshots = [
   { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "International Guidance", aspect: "aspect-[4/3]" },
 ];
 
+// ─── Christmas Gallery ────────────────────────────────────────────────────────
+const christmasGallery = [
+  "/assets/XMAS CARNIVAL/christmas 3.webp",
+  "/assets/XMAS CARNIVAL/christmas 1.webp",
+  "/assets/XMAS CARNIVAL/christmas 2.webp",
+  "/assets/XMAS CARNIVAL/christmas 5.webp",
+ 
+];
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function CampusHighlightsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedGallery, setSelectedGallery] = useState<string[] | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
@@ -291,6 +302,13 @@ export default function CampusHighlightsPage() {
               <Reveal key={event.id} delay={i * 80}>
                 <a
                   href="#"
+                  onClick={(e) => {
+                    if (event.gallery) {
+                      e.preventDefault();
+                      setSelectedGallery(event.gallery);
+                      setGalleryIndex(0);
+                    }
+                  }}
                   className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-500 hover:-translate-y-2 border border-sand/20"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -302,6 +320,11 @@ export default function CampusHighlightsPage() {
                     <span className={`absolute top-4 left-4 ${event.tagColor} text-white text-[9px] font-black px-3 py-1 rounded-full tracking-widest uppercase font-dm`}>
                       {event.tag}
                     </span>
+                    {event.gallery && (
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-white text-xs font-black tracking-widest uppercase font-dm">+{event.gallery.length} images</span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -435,25 +458,62 @@ export default function CampusHighlightsPage() {
       {/* ══════════════════════════════════════════════════════
           IMAGE MODAL
       ══════════════════════════════════════════════════════ */}
-      {selectedImage && (
-        <div 
+      {(selectedImage || selectedGallery) && (
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => { setSelectedImage(null); setSelectedGallery(null); }}
         >
-          <button 
+          <button
             className="absolute top-6 right-6 text-white hover:text-crimson transition-colors z-50 p-2"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => { setSelectedImage(null); setSelectedGallery(null); }}
           >
             <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <img 
-            src={selectedImage} 
-            alt="Expanded view" 
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" 
-            onClick={(e) => e.stopPropagation()}
-          />
+
+          {selectedGallery ? (
+            <>
+              <button
+                className="absolute left-4 md:left-8 text-white hover:text-sand transition-colors z-50 p-2"
+                onClick={(e) => { e.stopPropagation(); setGalleryIndex((prev) => (prev - 1 + selectedGallery.length) % selectedGallery.length); }}
+              >
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <img
+                src={selectedGallery[galleryIndex]}
+                alt="Gallery view"
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <button
+                className="absolute right-4 md:right-8 text-white hover:text-sand transition-colors z-50 p-2"
+                onClick={(e) => { e.stopPropagation(); setGalleryIndex((prev) => (prev + 1) % selectedGallery.length); }}
+              >
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {selectedGallery.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={(e) => { e.stopPropagation(); setGalleryIndex(i); }}
+                    className={`w-2 h-2 rounded-full transition-colors ${i === galleryIndex ? "bg-sand" : "bg-white/40"}`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <img
+              src={selectedImage!}
+              alt="Expanded view"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
       )}
     </main>
@@ -741,5 +801,6 @@ const events = [
     image: "/assets/XMAS CARNIVAL/christmas.webp",
     tag: "Festival",
     tagColor: "bg-navy-deeper",
+    gallery: christmasGallery,
   },
 ];
