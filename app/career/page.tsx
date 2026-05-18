@@ -251,7 +251,7 @@ function JobCard({
 
 function Hero() {
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
+    <section className="relative h-[60vh] min-h-[850px] flex items-center overflow-hidden">
       {/* Background image */}
       <img
         src="/assets/img/career.jpeg"
@@ -260,20 +260,11 @@ function Hero() {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/60 to-navy-deeper/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/60 via-navy-deeper/20 to-navy-deeper/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center">
-        <div className="max-w-2xl text-center">
-          <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
-            Career Opportunities at Seedling
-          </h1>
-          <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
-            Not Just a Job. A Journey of Impact, Growth & Excellence.
-          </p>
-        </div>
-      </div>
+   
     </section>
   );
 }
@@ -556,6 +547,17 @@ export default function CareersPage() {
 
       {/* STATS BAND — matches all other pages */}
       <section className="bg-navy-deeper text-white py-8 border-y border-sand/20">
+
+         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">
+        <div className="max-w-2xl text-center">
+          <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
+            Career Opportunities at Seedling
+          </h1>
+          <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
+            Not Just a Job. A Journey of Impact, Growth & Excellence.
+          </p>
+        </div>
+      </div>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
             {[
@@ -578,7 +580,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           2. WHY WORK WITH US
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 max-w-5xl mx-auto px-6">
+      <section className="py-14 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
@@ -613,7 +615,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           3. JOB LISTINGS
       ══════════════════════════════════════════════════ */}
-      <section id="openings" className="py-32 max-w-5xl mx-auto px-6">
+      <section id="openings" className="py-16 max-w-5xl mx-auto px-6">
         <Reveal className="mb-16">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
@@ -674,7 +676,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           TEACHER VOICES
       ══════════════════════════════════════════════════ */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Voices from Inside</Tag>
@@ -716,7 +718,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           4. GENERAL APPLICATION
       ══════════════════════════════════════════════════ */}
-      <section className="py-32 bg-off-white">
+      <section className="py-16 bg-off-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left */}
@@ -824,7 +826,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           5. FINAL CTA
       ══════════════════════════════════════════════════ */}
-      <section className="py-40 bg-[#1C1C1E] relative overflow-hidden">
+      <section className="py-16 bg-[#1C1C1E] relative overflow-hidden">
         <img
           src="/assets/Home/smart-classroom.jpg"
           alt="Join the Seedling team"
