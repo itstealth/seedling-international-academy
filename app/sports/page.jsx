@@ -28,7 +28,7 @@ const SPORTS = [
     img:"/assets/SPORTS%20DAY/basketball.JPG",
     desc:"Fast-paced and built on teamwork — our basketball program develops court vision, agility, and winning mindsets.",
     highlights:["State-of-art indoor courts","3v3 & 5v5 formats","Inter-school leagues","Elite point guard training"] },
-  { id:"indoor",     name:"Indoor Sports Complex", tagline:"Set. Spike. Soar.", accent:T.mauve,       icon:"🏐",
+  { id:"indoor",     name:"Volleyball", tagline:"Set. Spike. Soar.", accent:T.mauve,       icon:"🏐",
     img:"/assets/STELLAR%20SATURDAYS/3.webp",
     desc:"Volleyball teaches explosive power, spatial awareness, and relentless communication — every rally builds a better athlete.",
     highlights:["Beach & indoor courts","Spike & serve workshops","Regional tournaments","Certified FIVB coaches"] },
@@ -626,14 +626,44 @@ function Gallery() {
 
 /* ══════════════════════════════════════════ ACHIEVEMENTS ═════════════════ */
 function Achievements() {
-  const list = [
-    { icon:"🏆", title:"National Cricket Champions",  year:"2024", detail:"U-17 District Level Winners" },
-    { icon:"🥇", title:"State Swimming Gold",          year:"2024", detail:"4 gold medals, State Aquatics Meet" },
-    { icon:"🏅", title:"Basketball Regionals",         year:"2023", detail:"Runners-up, North Zone Schools" },
-    { icon:"⭐", title:"Football League Title",         year:"2023", detail:"Inter-school City Championship" },
-    { icon:"🎽", title:"Athletics Track Meet",          year:"2024", detail:"15 medals across disciplines" },
-    { icon:"🏐", title:"Volleyball State Finalists",   year:"2024", detail:"Girls team, State Schools Games" },
-  ];
+ const list = [
+  {
+    icon: "🏟️",
+    title: "Seedling Sports Academy",
+    year: "2024",
+    detail: "Evening Sports Programme • Free for all Seedlites",
+  },
+  {
+    icon: "🥋",
+    title: "Karate Excellence Programme",
+    year: "2024",
+    detail: "Specialized Karate & Judo Training",
+  },
+  {
+    icon: "🏏",
+    title: "Seedling Premier League",
+    year: "2024",
+    detail: "Inter-House Cricket Championship",
+  },
+  {
+    icon: "🏀",
+    title: "Basketball Team Selections",
+    year: "2024",
+    detail: "Training & Challengers’ Meet Preparation",
+  },
+  {
+    icon: "🏸",
+    title: "Badminton Championship",
+    year: "2024",
+    detail: "Inter-House Boys & Girls Tournament",
+  },
+  {
+    icon: "🏊",
+    title: "State Swimming Gold",
+    year: "2024",
+    detail: "4 gold medals, State Aquatics Meet",
+  },
+];
   return (
     <section style={{ background:T.offWhite, padding:"clamp(40px,6vw,70px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
@@ -690,7 +720,7 @@ function AchCard({ icon, title, year, detail, idx }) {
         transformOrigin:"left", transition:"transform .35s",
       }} />
       <div style={{ fontSize:"clamp(26px,3.5vw,38px)", marginBottom:12 }}>{icon}</div>
-      <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, color:accent, letterSpacing:"2px", textTransform:"uppercase", fontWeight:600, marginBottom:8 }}>{year}</div>
+      {/* <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, color:accent, letterSpacing:"2px", textTransform:"uppercase", fontWeight:600, marginBottom:8 }}>{year}</div> */}
       <h3 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(16px,1.8vw,22px)", fontWeight:700, color:T.navyDeeper, lineHeight:1.2, marginBottom:8 }}>{title}</h3>
       <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:"clamp(12px,1vw,14px)", color:T.textLight }}>{detail}</p>
     </div>
