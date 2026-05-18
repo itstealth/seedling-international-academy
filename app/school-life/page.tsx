@@ -227,40 +227,27 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[500px] overflow-hidden">
-      {/* Background image with parallax feel */}
+    <>
+      <section className="relative w-full h-[600px] overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('/assets/SHOWCASING WONDERLAND/1.webp')",
+          backgroundImage: "url('/assets/SHOWCASING WONDERLAND/1.webp')",
         }}
       />
+    </section>
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/50 via-navy-dark/30 to-sand/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
-
-      {/* Decorative geometry */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          Life at{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling
-          </span>
+    <section className="bg-navy-deeper pt-16 pb-4 md:pt-20 md:pb-8">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-4">
+          Life at Seedling
         </h1>
+        <p className="text-white text-lg font-dm font-light max-w-2xl mx-auto">
+          Where every child discovers, learns, and grows into their brightest self.
+        </p>
       </div>
     </section>
+    </>
   );
 }
 
