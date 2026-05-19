@@ -12,7 +12,6 @@ export default function SeedlingPage(): React.JSX.Element {
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
   const [currentTestimonial, setCurrentTestimonial] = useState<number>(0);
-  const [showFloating, setShowFloating] = useState<boolean>(false);
 
   // Auto-scroll testimonials
   useEffect(() => {
@@ -44,15 +43,6 @@ export default function SeedlingPage(): React.JSX.Element {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Show floating buttons after scrolling past first viewport
-  useEffect(() => {
-    const handleFloating = (): void => {
-      setShowFloating(window.scrollY > window.innerHeight * 0.8);
-    };
-    window.addEventListener('scroll', handleFloating);
-    return () => window.removeEventListener('scroll', handleFloating);
   }, []);
 
   const handleTabSwitch = (tab: TabKey): void => {
@@ -100,7 +90,7 @@ export default function SeedlingPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
-      <section className="relative h-screen min-h-[640px] overflow-hidden flex items-center">
+      <section className="relative h-[40vh] min-h-[400px] md:h-screen md:min-h-[640px] overflow-hidden flex items-center">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -122,17 +112,17 @@ export default function SeedlingPage(): React.JSX.Element {
             <em className="font-semibold text-sand italic ml-2">Wings</em>
 
           </h1>
-          <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
+          <p className="hidden md:block text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
             Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1993.
           </p>
-          <div className="flex gap-4 flex-wrap">
+          {/* <div className="flex gap-4 flex-wrap">
             <a href="/admissions#enquire" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
               Apply Now 2026
             </a>
             <a href="/about" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">
               Explore School
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Stats */}
@@ -559,9 +549,7 @@ export default function SeedlingPage(): React.JSX.Element {
 
       {/* LEFT: Call + WhatsApp */}
       <div
-        className={`fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[99] flex flex-col items-start gap-2 sm:gap-3 transition-all duration-500 ${
-          showFloating ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
-        }`}
+        className="fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[99] flex flex-col items-start gap-2 sm:gap-3"
       >
         {/* Call */}
         <a
@@ -590,9 +578,7 @@ export default function SeedlingPage(): React.JSX.Element {
 
       {/* RIGHT: Enquire Now */}
       <div
-        className={`fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[99] transition-all duration-500 ${
-          showFloating ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
-        }`}
+        className="fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[99]"
       >
         <a
           href="/admissions#enquire"
