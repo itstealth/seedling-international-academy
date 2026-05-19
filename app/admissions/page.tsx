@@ -201,6 +201,135 @@ const campusLocations = [
   },
 ];
 
+const experiences = [
+  {
+    name: "Vatan Parnami and Anku Sapra",
+    role: "Parents",
+    image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
+    quote: "Seedling Public School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Seedling Public School",
+    highlight: "Nurturing Environment",
+  },
+  {
+    name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
+    role: "Parents",
+    image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
+    quote: "The academic excellence at Seedling Public School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    school: "Seedling Public School",
+    highlight: "Academic Excellence",
+  },
+  {
+    name: "Meghna Manglani",
+    role: "Parent",
+    image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
+    quote: "At Seedling Public School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Seedling Public School",
+    highlight: "Holistic Development",
+  },
+  {
+    name: "Deepak Adwani & Varsha Adwani",
+    role: "Parents",
+    image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
+    quote: "We chose Seedling Public School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
+    school: "Seedling Public School",
+    highlight: "Safe & Supportive",
+  },
+  {
+    name: "Divya Soni",
+    role: "Parent",
+    image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
+    quote: "Seedling Public School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
+    school: "Seedling Public School",
+    highlight: "Future-Ready",
+  },
+];
+
+function ExperienceSection() {
+  const [active, setActive] = useState(0);
+  const current = experiences[active];
+
+  return (
+    <section className="py-16 pb-8 bg-crimson relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
+        <svg viewBox="0 0 600 800" className="w-full h-full">
+          <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle"
+            fontSize="300" fill="#D6D1CF" fontFamily="serif" fontWeight="900">
+            "
+          </text>
+        </svg>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
+            Voices of Seedling
+          </span>
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
+            Parent
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
+              {" "}Experiences
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-transparent" />
+            <div className="relative overflow-hidden rounded-2xl aspect-square max-w-md mx-auto shadow-2xl">
+              <img
+                key={active}
+                src={current.image}
+                alt={current.name}
+                className="w-full h-full object-cover object-top animate-fade-in"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
+              <div className="absolute bottom-6 left-6">
+                <span className="bg-sand text-navy-deeper text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider">
+                  {current.highlight}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-white">
+            <div className="text-sand text-8xl font-playfair leading-none mb-4 opacity-40">"</div>
+            <blockquote
+              key={`quote-${active}`}
+              className="text-white/80 text-xl md:text-2xl leading-relaxed mb-8 font-dm font-light animate-fade-in"
+            >
+              {current.quote}
+            </blockquote>
+            <div className="border-t border-white/10 pt-6">
+              <div className="text-white font-black text-lg font-playfair tracking-tight">{current.name}</div>
+              <div className="text-sand text-sm mt-1 font-dm font-bold uppercase tracking-widest">{current.role}</div>
+              <div className="text-white/40 text-xs mt-0.5 font-dm">{current.school}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-4 justify-center flex-wrap">
+          {experiences.map((exp, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`relative overflow-hidden rounded-full transition-all duration-300 ${active === i
+                ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-crimson"
+                : "w-12 h-12 opacity-50 hover:opacity-80"
+                }`}
+            >
+              <img
+                src={exp.image}
+                alt={exp.name}
+                className="w-full h-full object-cover object-top"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -296,6 +425,11 @@ export default function AdmissionsPage() {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <style>{`
         .duration-400 { transition-duration: 400ms; }
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in { animation: fade-in 0.6s ease forwards; }
       `}</style>
 
       {/* ── STICKY CTA BAR ── */}
@@ -637,6 +771,11 @@ export default function AdmissionsPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          2b. PARENT EXPERIENCES
+      ══════════════════════════════════════════════════ */}
+      <ExperienceSection />
 
       {/* ══════════════════════════════════════════════════
           3. WHY CHOOSE US
