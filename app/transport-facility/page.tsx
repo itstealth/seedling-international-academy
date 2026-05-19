@@ -381,12 +381,12 @@ export default function TransportFacilityPage() {
                 <PhoneCall className="h-4 w-4" />
                 +91 74130 12351
               </a>
-              <Link
+              {/* <Link
                 href="/admissions"
                 className="inline-flex items-center justify-center gap-3 border border-white/25 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
               >
                 Admissions Enquiry
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

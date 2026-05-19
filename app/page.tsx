@@ -340,7 +340,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 Vibrant <em className="font-semibold text-navy italic">Memories</em>.
               </h2>
             </div>
-            <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a>
+            {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
           </div>
           <div className="space-y-4">
             {/* Row 1 - Left big, Right stacked */}
@@ -595,7 +595,7 @@ export default function SeedlingPage(): React.JSX.Element {
         }`}
       >
         <a
-          href="#admission"
+          href="/admissions#enquire"
           className="flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-4 py-3 sm:px-6 sm:py-3.5 rounded-full font-black text-xs sm:text-sm tracking-widest uppercase shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
         >
           <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
