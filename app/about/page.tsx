@@ -611,7 +611,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
+        {/* <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
           <Reveal>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
@@ -630,7 +630,7 @@ export default function AboutPage() {
               </svg>
             </a>
           </Reveal>
-        </div>
+        </div> */}
       </section>
     </main>
   );
