@@ -270,7 +270,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-off-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-off-white pt-20">
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-navy-light/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-crimson/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
       <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-sand/20 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
@@ -354,14 +354,14 @@ function FeaturedAlumni() {
   }, []);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-8 pb-10 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center gap-4 mb-16">
+        {/* <div className="flex items-center gap-4 mb-16">
           <div className="w-10 h-px bg-sand" />
           <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
             Featured Story
           </span>
-        </div>
+        </div> */}
 
         <div
           ref={ref}
@@ -435,7 +435,7 @@ function FeaturedAlumni() {
 
 function AlumniGrid() {
   return (
-    <section className="py-24 bg-off-white">
+    <section className="pt-16 pb-10 bg-off-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -466,7 +466,7 @@ function AlumniGrid() {
 
 function AchievementsSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-16 pb-10 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -539,7 +539,7 @@ function AlumniNetwork() {
   }, []);
 
   return (
-    <section className="py-24 bg-navy-deeper relative overflow-hidden">
+    <section className="pt-8 pb-16 bg-navy-deeper relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
@@ -605,7 +605,7 @@ function AlumniNetwork() {
 
 function GalleryStrip() {
   return (
-    <section className="py-24 bg-sand/10 overflow-hidden">
+    <section className="pt-16 pb-10 bg-sand/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
@@ -677,7 +677,7 @@ function CTASection() {
   }, []);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-10 pb-10 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div
           ref={ref}

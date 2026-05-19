@@ -180,7 +180,7 @@ function Hero() {
 function IntroSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 " style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
@@ -229,7 +229,7 @@ function IntroSection() {
 // ─── FEATURE CARDS ────────────────────────────────────────────────────────────
 function FeatureCards() {
   return (
-    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#175190" }}>
+    <section className="pt-16 pb-12 " style={{ background: "#175190" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -283,7 +283,7 @@ function FeatureCards() {
 function HighAchievers() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 " style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* image */}
@@ -338,7 +338,7 @@ function HighAchievers() {
 function ModernLearning() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#2c2c2c" }}>
+    <section className="pt-16 pb-12 " style={{ background: "#2c2c2c" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -391,7 +391,7 @@ function ModernLearning() {
 function WellbeingSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f0ebef" }}>
+    <section className="pt-16 pb-12 " style={{ background: "#f0ebef" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}

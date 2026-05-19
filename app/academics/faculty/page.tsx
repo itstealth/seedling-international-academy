@@ -107,7 +107,7 @@ export default function FacultyPage() {
       </section>
 
       {/* Leadership: Portrait Focused Section */}
-      <section className="py-48 bg-white border-y border-black/5">
+      <section className="pt-16 pb-10 bg-white border-y border-black/5">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-32">
              <span className="text-label mb-8 block uppercase">Visionaries</span>
@@ -159,7 +159,7 @@ export default function FacultyPage() {
       </section>
 
       {/* Faculty Statistics: Modern Dashboard */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {facultyStats.map((stat, i) => (
                <motion.div 
@@ -184,7 +184,7 @@ export default function FacultyPage() {
       </section>
 
       {/* Departments Gallery: Large Format Cards */}
-      <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
          <div className="text-center mb-32">
             <span className="text-label mb-8 block uppercase">Academic Excellence</span>
             <h2 className="text-heading text-6xl md:text-[10rem]">Department Leads.</h2>

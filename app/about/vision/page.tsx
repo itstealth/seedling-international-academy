@@ -23,7 +23,7 @@ export default function VisionPage() {
         image="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80"
       />
 
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center mb-32">
           <span className="text-label mb-8 block uppercase">Defining Excellence</span>
           <h2 className="text-heading text-6xl md:text-[9rem] leading-[0.85] tracking-tighter">
@@ -57,7 +57,7 @@ export default function VisionPage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-48 bg-neutral-950 text-white rounded-[5rem] mx-4 md:mx-8 mb-20 relative overflow-hidden">
+      <section className="pt-16 pb-10 bg-neutral-950 text-white rounded-[5rem] mx-4 md:mx-8 mb-20 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-10 text-center">
           <p className="serif italic text-4xl md:text-6xl text-white/90 font-light leading-tight mb-16">
@@ -74,7 +74,7 @@ export default function VisionPage() {
       </section>
 
       {/* Final Journey CTA */}
-      <section className="py-32 text-center">
+      <section className="pt-16 pb-10 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-heading text-4xl md:text-5xl mb-16 italic font-serif">Experience <br /> <span className="text-primary tracking-tighter">Growth.</span></h2>
           <Link

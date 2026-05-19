@@ -871,7 +871,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           6. TRANSPORT
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
+      <section className="pt-16 pb-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-20">
             <Tag>Transport Facility</Tag>
@@ -1064,7 +1064,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           9. FINAL CTA
       ══════════════════════════════════════════════════ */}
-      <section className="py-40 bg-navy-deeper relative overflow-hidden">
+      <section className="py-20 bg-navy-deeper relative overflow-hidden">
         <img
           src="/assets/Home/library.jpg"
           alt="Join Seedling"
