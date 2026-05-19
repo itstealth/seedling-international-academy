@@ -126,7 +126,7 @@ export default function SeedlingPage(): React.JSX.Element {
             Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1993.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <a href="/admissions" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
+            <a href="/admissions#enquire" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
               Apply Now 2026
             </a>
             <a href="/about" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">
@@ -483,11 +483,11 @@ export default function SeedlingPage(): React.JSX.Element {
               ))}
             </div>
             <div>
-              <div className="text-white text-sm font-black tracking-widest uppercase mb-6 flex items-center gap-3">
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="text-white text-sm font-black tracking-widest uppercase mb-6 flex items-center gap-3 hover:text-sand transition-colors">
                 <span className="w-8 h-[2px] bg-sand" />
                 Follow @seedlingschoolsjaipur
-              </div>
-              <div className="grid grid-cols-3 gap-4">
+              </a>
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-3 gap-4">
                 {[
                   '/assets/Home/trending1.jpg',
                   '/assets/Home/trending2.jpg',
@@ -500,14 +500,14 @@ export default function SeedlingPage(): React.JSX.Element {
                     <img src={src} alt={`IG ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative py-24 md:py-48 overflow-hidden bg-navy-deeper">
+      <section className="relative pt-16 pb-20 md:pb-24  overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">

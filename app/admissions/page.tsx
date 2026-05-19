@@ -460,7 +460,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           2. ONLINE ADMISSION INQUIRY FORM
       ══════════════════════════════════════════════════ */}
-      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
+      <section id="enquire" className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-16">
           {/* <Tag>Admission Inquiry</Tag> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
