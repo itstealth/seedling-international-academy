@@ -243,8 +243,17 @@ function Hero() {
 export default function AdmissionsPage() {
   const [sticky, setSticky] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", school: "", message: "" });
+  const [formData, setFormData] = useState({
+    candidateName: "",
+    className: "",
+    parentName: "",
+    email: "",
+    phone: "",
+    school: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 500);
@@ -252,9 +261,35 @@ export default function AdmissionsPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleFormChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: formData.parentName,
+          student_name: formData.candidateName,
+          class_name: formData.className,
+          parent_name: formData.parentName,
+          email: formData.email,
+          phone: formData.phone,
+          school: formData.school,
+          message: formData.message,
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -493,22 +528,31 @@ export default function AdmissionsPage() {
           {/* Right — Form */}
           <Reveal delay={100}>
             <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
+              {submitted ? (
+                <div className="text-center py-12">
+                  <span className="text-5xl block mb-6">🎉</span>
+                  <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-3">Thank You!</h3>
+                  <p className="text-text-light font-dm mb-6">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
+                  <button onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }} className="text-crimson font-black text-sm hover:underline uppercase tracking-widest">Submit Another Inquiry</button>
+                </div>
+              ) : (
+                <>
               <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-2 tracking-tight">Online Admission Inquiry</h3>
               <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
 
-              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-5">
+              <form onSubmit={handleFormSubmit} className="space-y-5">
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Candidate Name <span className="text-crimson">*</span>
                   </label>
-                  <input type="text" required placeholder="Enter candidate name" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                  <input type="text" required placeholder="Enter candidate name" value={formData.candidateName} onChange={handleFormChange("candidateName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Select Class <span className="text-crimson">*</span>
                   </label>
-                  <select required className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                  <select required value={formData.className} onChange={handleFormChange("className")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
                     <option value="">Select Class</option>
                     <option value="Play Group">Play Group</option>
                     <option value="LKG">LKG</option>
@@ -541,14 +585,14 @@ export default function AdmissionsPage() {
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Parent's Name <span className="text-crimson">*</span>
                   </label>
-                  <input type="text" required placeholder="Enter parent's name" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                  <input type="text" required placeholder="Enter parent's name" value={formData.parentName} onChange={handleFormChange("parentName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Email <span className="text-crimson">*</span>
                   </label>
-                  <input type="email" required placeholder="Enter email address" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                  <input type="email" required placeholder="Enter email address" value={formData.email} onChange={handleFormChange("email")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
                 </div>
 
                 <div>
@@ -556,6 +600,7 @@ export default function AdmissionsPage() {
                     Mobile <span className="text-crimson">*</span>
                   </label>
                   <input type="tel" required placeholder="10-digit mobile number" maxLength={10} pattern="[6-9][0-9]{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                    value={formData.phone} onChange={handleFormChange("phone")}
                     onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 10); }}
                     className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
                 </div>
@@ -564,7 +609,7 @@ export default function AdmissionsPage() {
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Select School <span className="text-crimson">*</span>
                   </label>
-                  <select required className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                  <select required value={formData.school} onChange={handleFormChange("school")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
                     <option value="">Select School</option>
                     <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
                     <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
@@ -579,13 +624,15 @@ export default function AdmissionsPage() {
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Message <span className="text-crimson">*</span>
                   </label>
-                  <textarea required rows={3} placeholder="Any specific queries or requirements..." className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none" />
+                  <textarea required rows={3} placeholder="Any specific queries or requirements..." value={formData.message} onChange={handleFormChange("message")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none" />
                 </div>
 
-                <button type="submit" className="w-full bg-crimson hover:bg-crimson-dark text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
-                  Submit Inquiry
+                <button type="submit" disabled={submitting} className="w-full bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
+                  {submitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
               </form>
+                </>
+              )}
             </div>
           </Reveal>
         </div>
