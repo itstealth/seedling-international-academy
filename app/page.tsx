@@ -203,7 +203,7 @@ export default function SeedlingPage(): React.JSX.Element {
               </div>
               <div className="flex gap-4 flex-wrap">
                 <a href="/about" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">Our Story</a>
-                <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a>
+              {/* <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a> */}
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── INFRASTRUCTURE / CAMPUS TABS ─── */}
-      <section className="bg-white pt-16 pb-8" id="campus">
+      <section className="bg-white pt-12 pb-8" id="campus">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
