@@ -144,28 +144,9 @@ export default function SeedlingPage(): React.JSX.Element {
       {/* ─── ABOUT SCHOOL ─── */}
       <section className="bg-off-white py-8 md:pt-16 md:pb-8" id="about">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            {/* Images */}
-            <div className="relative">
-              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
-                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
-                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
-                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
-              </div>
-            </div>
-
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             {/* Text */}
-            <div>
+            <div className="order-1 lg:order-2">
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
@@ -194,6 +175,25 @@ export default function SeedlingPage(): React.JSX.Element {
               <div className="flex gap-4 flex-wrap">
                 <a href="/about" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">Our Story</a>
               {/* <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a> */}
+              </div>
+            </div>
+
+            {/* Images */}
+            <div className="relative order-2 lg:order-1">
+              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
+                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
+                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
+                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
+                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
+                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
+                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
               </div>
             </div>
           </div>
