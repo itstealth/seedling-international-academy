@@ -117,7 +117,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function TransportFacilityPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <section className="relative min-h-[940px] sm:min-h-[720px] md:min-h-[750px] flex items-center overflow-hidden">
+       <section className="relative min-h-[840px] sm:min-h-[650px] md:min-h-[650px] flex items-center overflow-hidden">
         <Image
           src="/assets/transport-facility/bus.jpeg"
           alt="Seedling Schools transport facility bus"
@@ -129,16 +129,16 @@ export default function TransportFacilityPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/95 via-navy-deeper/65 to-navy-deeper/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-72 sm:pb-36 md:pb-0">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-72 sm:pb-36 md:pb-8 md:pt-16">
           <div className="max-w-3xl">
-            <span className="inline-block bg-white/10 text-sand text-[10px] md:text-xs font-black uppercase tracking-[0.35em] px-5 py-2 rounded-full border border-white/15 mb-8">
+            <span className="inline-block bg-white/10 text-sand text-[10px] font-black uppercase tracking-[0.35em] px-4 py-1.5 rounded-full border border-white/15 mb-6">
               Safe School Transport in Jaipur
             </span>
-            <h1 className="font-playfair text-white text-5xl md:text-7xl font-black leading-[0.95] tracking-tight mb-7">
+            <h1 className="font-playfair text-white text-3xl md:text-5xl lg:text-6xl font-black leading-[0.95] tracking-tight mb-7">
               Transport
               <span className="block text-sand">Facility</span>
             </h1>
-            <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl font-light">
+            <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-2xl font-light">
               A dependable school bus service designed around student safety, punctual routes, attentive supervision, and parent peace of mind.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
