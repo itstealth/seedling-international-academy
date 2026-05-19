@@ -423,9 +423,178 @@ export default function AdmissionsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. WHY CHOOSE US
+          2. ONLINE ADMISSION INQUIRY FORM
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
+        <Reveal className="text-center mb-16">
+          {/* <Tag>Admission Inquiry</Tag> */}
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+           Admission
+            <span className="text-crimson ml-4">Inquiry</span>
+          </h2>
+        </Reveal>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left — Requisites */}
+          <Reveal>
+            <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
+              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight">
+                Requisites for Online Application
+              </h3>
+              <ul className="space-y-5">
+                {[
+                  "2 Passport size photographs",
+                  "Aadhaar Card of the student",
+                  "Birth Certificate of the student",
+                  "Copy of report card of previous grade",
+                  "TC Required from the previous school",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="w-7 h-7 bg-sand/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-crimson text-sm font-black">{i + 1}</span>
+                    </span>
+                    <span className="text-navy-deeper font-dm text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">
+                <p className="text-navy-deeper font-dm text-sm leading-relaxed">
+                  <span className="font-black text-crimson">Note:</span> There are no direct admissions in Class 10th and 12th except as per CBSE bye-laws. Admissions in Classes 9th & 11th will only be done after the student clears the entrance examination.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-sand/10">
+                <p className="text-[10px] font-black text-black tracking-[0.3em] uppercase mb-5">Call Us For Admission</p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl">🏫</span>
+                    </span>
+                    <div>
+                      <p className="text-navy-deeper text-sm font-black font-dm">Jawahar Nagar Branch</p>
+                      <a href="tel:+917413012351" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7413012351</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl">🏫</span>
+                    </span>
+                    <div>
+                      <p className="text-navy-deeper text-sm font-black font-dm">Durgapura Branch</p>
+                      <a href="tel:+917412044410" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7412044410</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Right — Form */}
+          <Reveal delay={100}>
+            <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
+              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-2 tracking-tight">Online Admission Inquiry</h3>
+              <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
+
+              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-5">
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Candidate Name <span className="text-crimson">*</span>
+                  </label>
+                  <input type="text" required placeholder="Enter candidate name" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Select Class <span className="text-crimson">*</span>
+                  </label>
+                  <select required className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                    <option value="">Select Class</option>
+                    <option value="Play Group">Play Group</option>
+                    <option value="LKG">LKG</option>
+                    <option value="UKG">UKG</option>
+                    <option value="Prep">Prep</option>
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                    <option value="Class 9">Class 9</option>
+                    <option value="Class 11">Class 11</option>
+                    <option value="Cambridge Primary 1">Cambridge Primary 1</option>
+                    <option value="Cambridge Primary 2">Cambridge Primary 2</option>
+                    <option value="Cambridge Primary 3">Cambridge Primary 3</option>
+                    <option value="Cambridge Primary 4">Cambridge Primary 4</option>
+                    <option value="Cambridge Primary 5">Cambridge Primary 5</option>
+                    <option value="Lower Secondary 1 (Grade 6)">Lower Secondary 1 (Grade 6)</option>
+                    <option value="Lower Secondary 2 (Grade 7)">Lower Secondary 2 (Grade 7)</option>
+                    <option value="Lower Secondary 3 (Grade 8)">Lower Secondary 3 (Grade 8)</option>
+                    <option value="IGCSE 1 (Grade 9)">IGCSE 1 (Grade 9)</option>
+                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Parent's Name <span className="text-crimson">*</span>
+                  </label>
+                  <input type="text" required placeholder="Enter parent's name" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Email <span className="text-crimson">*</span>
+                  </label>
+                  <input type="email" required placeholder="Enter email address" className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Mobile <span className="text-crimson">*</span>
+                  </label>
+                  <input type="tel" required placeholder="10-digit mobile number" maxLength={10} pattern="[6-9][0-9]{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                    onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 10); }}
+                    className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Select School <span className="text-crimson">*</span>
+                  </label>
+                  <select required className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                    <option value="">Select School</option>
+                    <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                    <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                    <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+                    <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                    <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+                    <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Message <span className="text-crimson">*</span>
+                  </label>
+                  <textarea required rows={3} placeholder="Any specific queries or requirements..." className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none" />
+                </div>
+
+                <button type="submit" className="w-full bg-crimson hover:bg-crimson-dark text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
+                  Submit Inquiry
+                </button>
+              </form>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          3. WHY CHOOSE US
+      ══════════════════════════════════════════════════ */}
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-24">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
@@ -455,7 +624,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           3. ADMISSION PROCESS TIMELINE
       ══════════════════════════════════════════════════ */}
-      <section id="process" className="py-20 bg-white">
+      <section id="process" className="pt-14 pb-8 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag>Admission Process</Tag>
@@ -532,7 +701,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           4. DOCUMENTS REQUIRED
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
