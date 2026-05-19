@@ -177,7 +177,7 @@ function Hero() {
 function IntroSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
           {/* text */}
@@ -226,7 +226,7 @@ function IntroSection() {
 // ─── FEATURE CARDS ────────────────────────────────────────────────────────────
 function FeatureCards() {
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#175190" }}>
+    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12" style={{ background: "#175190" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -280,7 +280,7 @@ function FeatureCards() {
 function HighAchievers() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
           {/* image */}
@@ -335,7 +335,7 @@ function HighAchievers() {
 function ModernLearning() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#2c2c2c" }}>
+    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12" style={{ background: "#2c2c2c" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -388,7 +388,7 @@ function ModernLearning() {
 function WellbeingSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f0ebef" }}>
+    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12" style={{ background: "#f0ebef" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
           {/* text */}
@@ -438,7 +438,7 @@ function WellbeingSection() {
 // ─── SUMMARY / CTA ────────────────────────────────────────────────────────────
 function Summary() {
   return (
-    <section className="relative py-36 overflow-hidden" style={{ background: "#175190" }}>
+    <section className="relative pt-16 pb-10 overflow-hidden" style={{ background: "#175190" }}>
       {/* decorative rings */}
       <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-10 border border-white" />
       <div className="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full opacity-10 border border-white" />

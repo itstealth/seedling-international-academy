@@ -523,7 +523,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           7. CTA
       ══════════════════════════════════════════════════════ */}
-      <section className="relative md:py-24 py-16 overflow-hidden">
+      <section className="relative md:pt-20 md:pb-12 pt-16 pb-10 overflow-hidden">
         <img
           src="/assets/Home/School2.webp"
           alt="Join Seedling Schools"
@@ -566,7 +566,7 @@ export default function AcademicsPage() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="mt-24 grid grid-cols-3 gap-12 max-w-2xl mx-auto border-t border-white/10 pt-16">
+            <div className="mt-10 grid grid-cols-3 gap-12 max-w-2xl mx-auto border-t border-white/10 pt-16">
               {[["🎓", "University\nCounselling"], ["🏅", "Merit\nScholarships"], ["🤝", "Parent\nPartnerships"]].map(([icon, label]) => (
                 <div key={label} className="text-center group cursor-default">
                   <span className="text-5xl block mb-4 group-hover:scale-125 transition-transform duration-500">{icon}</span>

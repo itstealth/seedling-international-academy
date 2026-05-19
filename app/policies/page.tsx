@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Content */}
-      <section className="py-16 md:py-24 bg-off-white">
+      <section className="pt-16 pb-10 md:pt-20 md:pb-12 bg-off-white">
         <div className="max-w-4xl mx-auto px-6">
           {/* Intro Text */}
           <motion.div

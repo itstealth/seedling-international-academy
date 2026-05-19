@@ -293,7 +293,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           CORE VALUES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-navy-light/10 relative overflow-hidden">
+      <section className="pt-16 pb-10 bg-navy-light/10 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-sand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -392,7 +392,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           3. TIMELINE
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-16 bg-white md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+      <section className="pt-16 pb-10 bg-white max-w-7xl mx-auto px-5 sm:px-6">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <p className="font-playfair text-mauve text-xl italic mb-3">Our Journey</p>
@@ -543,7 +543,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           NEP ALIGNMENT BAND
       ══════════════════════════════════════════════════════════════ */}
-      <section className="bg-navy-light/40 py-24 px-5 sm:px-6 relative overflow-hidden">
+      <section className="bg-navy-light/40 pt-16 pb-10 px-5 sm:px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl -mr-48 -mt-48" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/20 rounded-full blur-3xl -ml-48 -mb-48" />
 
@@ -578,7 +578,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           7. CAMPUS GLIMPSES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-navy-deeper relative overflow-hidden">
+      <section className="pt-16 pb-10 bg-navy-deeper relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">

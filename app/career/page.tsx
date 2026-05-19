@@ -615,7 +615,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           3. JOB LISTINGS
       ══════════════════════════════════════════════════ */}
-      <section id="openings" className="py-16 max-w-5xl mx-auto px-6">
+      <section id="openings" className="pt-16 pb-10 max-w-5xl mx-auto px-6">
         <Reveal className="mb-16">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
@@ -676,7 +676,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           TEACHER VOICES
       ══════════════════════════════════════════════════ */}
-      <section className="py-16 bg-white">
+      <section className="pt-16 pb-10 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Voices from Inside</Tag>

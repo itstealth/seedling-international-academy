@@ -23,7 +23,7 @@ export default function FeeStructurePage() {
         image="/assets/Home/classroom.jpg"
       />
 
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-20 mb-32 items-end">
           <div className="flex-1">
             <span className="text-label mb-8 block uppercase">Academic Session 2026-27</span>

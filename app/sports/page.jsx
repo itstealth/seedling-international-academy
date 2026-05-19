@@ -477,7 +477,7 @@ function SportShowcase({ sport, reverse, idx }) {
   const bg = idx % 2 === 0 ? T.offWhite : "#fff";
 
   return (
-    <section style={{ background:bg, padding:"clamp(40px,6vw,70px) 0", overflow:"hidden" }}>
+    <section style={{ background:bg, padding:"clamp(40px,6vw,55px) 0", overflow:"hidden" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <div className={`two-col${reverse ? " flip" : ""}`} style={{ direction: reverse ? "rtl" : "ltr" }}>
           {/* image */}
@@ -665,7 +665,7 @@ function Achievements() {
   },
 ];
   return (
-    <section style={{ background:T.offWhite, padding:"clamp(40px,6vw,70px) 0" }}>
+    <section style={{ background:T.offWhite, padding:"clamp(40px,6vw,50px) 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <FadeUp>
           <div style={{ textAlign:"center", marginBottom:"clamp(24px,4vw,48px)" }}>
@@ -736,7 +736,7 @@ function Fitness() {
     { icon:"📋", title:"Structured Discipline", desc:"Routines mirroring elite academy standards — teaching commitment and mental fortitude." },
   ];
   return (
-    <section style={{ background:"#fff", padding:"clamp(40px,6vw,70px) 0", overflow:"hidden" }}>
+    <section style={{ background:"#fff", padding:"clamp(40px,6vw,50px) 0", overflow:"hidden" }}>
       <div style={{ maxWidth:1280, margin:"0 auto", padding:`0 clamp(20px,5vw,60px)` }}>
         <div className="two-col">
           {/* cards grid */}
