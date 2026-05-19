@@ -272,7 +272,7 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="/assets/about/empowering-about.png"
+                src="/assets/Home/School1.webp"
                 alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
@@ -611,7 +611,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
+        {/* <div className="max-w-7xl mx-auto px-6 mt-32 text-center relative z-10">
           <Reveal>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
@@ -630,7 +630,7 @@ export default function AboutPage() {
               </svg>
             </a>
           </Reveal>
-        </div>
+        </div> */}
       </section>
     </main>
   );
