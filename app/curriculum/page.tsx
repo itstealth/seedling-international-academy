@@ -525,7 +525,7 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="relative md:py-24 py-16 overflow-hidden">
         <img
-          src="/assets/ANNUAL FUNCTION/1.webp"
+          src="/assets/Home/School2.webp"
           alt="Join Seedling Schools"
           className="absolute inset-0 w-full h-full object-cover"
         />
