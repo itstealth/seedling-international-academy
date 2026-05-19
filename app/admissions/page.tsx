@@ -170,6 +170,18 @@ const faqs = [
   { q: "Is transportation available?", a: "Yes. Transportation is available for students across both campuses — Jawahar Nagar and Durgapura. GPS-enabled buses with trained attendants cover major routes across Jaipur. For route details and fees, contact the school office directly." },
   { q: "What is the Student-Teacher ratio?", a: "Seedling maintains a 15:1 student-to-teacher ratio, ensuring that every child receives personalised attention, mentoring, and academic support throughout their schooling journey." },
   { q: "Is re-admission done for Class XI?", a: "All successful students of Class X may apply for Class XI admission. Re-admission is processed through the school office. Students must apply on the prescribed form along with the non-refundable application amount." },
+  { q: "Does the school focus on holistic development?", a: "Yes, the school strongly believes in the holistic development of every child. Equal emphasis is laid on academics, sports, life skills, values, creativity, leadership, and co-curricular excellence to nurture confident and responsible individuals." },
+  { q: "What subjects are offered in senior secondary classes?", a: "The school offers a wide range of subjects across Science, Commerce, and Humanities streams, subject to availability and CBSE norms." },
+  { q: "Does the school provide remedial or support classes?", a: "Yes, the school organizes remedial and enrichment sessions to support varied learning needs and help students achieve their full potential." },
+  { q: "How are students assessed?", a: "Students are assessed through periodic tests, projects, practical work, classroom activities, assignments, and examinations in accordance with CBSE guidelines." },
+  { q: "Does the school integrate technology into learning?", a: "Yes, technology-enabled learning forms an integral part of classroom teaching through smart classrooms, digital resources, interactive tools, and blended learning practices." },
+  { q: "Does the school conduct Olympiads and competitive exams?", a: "Yes, students are encouraged to participate in Olympiads, talent search examinations, and various national and international competitive platforms." },
+  { q: "What co-curricular activities are available?", a: "The school offers a diverse range of co-curricular activities including music, dance, art, theatre, debates, public speaking, coding, robotics, literary pursuits, and club activities." },
+  { q: "Are educational trips and excursions organized?", a: "Yes, the school regularly organizes educational visits, field trips, excursions, and experiential learning programs to enhance practical understanding and exposure." },
+  { q: "What safety measures are implemented on campus?", a: "The school campus is equipped with CCTV surveillance, trained security personnel, safety protocols, monitored entry systems, and emergency preparedness measures to ensure student safety." },
+  { q: "How does the school address bullying concerns?", a: "The school follows a strict zero-tolerance policy towards bullying and promotes a safe, inclusive, and respectful learning environment for all students." },
+  { q: "How does the school communicate with parents?", a: "The school maintains regular communication with parents through ERP/mobile applications, SMS alerts, emails, circulars, notices, and Parent-Teacher Meetings." },
+  { q: "Does the school provide career counselling?", a: "Yes, the school offers career guidance and counselling support through aptitude sessions, mentoring programs, university guidance, and exposure to career pathways." },
 ];
 
 const campusLocations = [
@@ -201,11 +213,11 @@ function Hero() {
 
   return (
     <>
-    <section className="relative w-full h-[650px] overflow-hidden">
+    <section className="relative w-full h-[700px] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/assets/Home/Kindergarten.JPG')",
+          backgroundImage: "url('/assets/Home/classroom-2.webp')",
         }}
       />
       <div className="absolute inset-0 bg-black/40" />
@@ -231,8 +243,17 @@ function Hero() {
 export default function AdmissionsPage() {
   const [sticky, setSticky] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", school: "", message: "" });
+  const [formData, setFormData] = useState({
+    candidateName: "",
+    className: "",
+    parentName: "",
+    email: "",
+    phone: "",
+    school: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 500);
@@ -240,9 +261,35 @@ export default function AdmissionsPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleFormChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: formData.candidateName,
+          class_name: formData.className,
+          parent_name: formData.parentName,
+          email: formData.email,
+          phone: formData.phone,
+          student_name: formData.candidateName,
+          school: formData.school,
+          message: formData.message,
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -252,7 +299,7 @@ export default function AdmissionsPage() {
       `}</style>
 
       {/* ── STICKY CTA BAR ── */}
-      <div className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${sticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
+      {/* <div className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${sticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
         <div className="bg-white border-t border-sand/30 shadow-2xl px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div>
@@ -269,7 +316,7 @@ export default function AdmissionsPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Hero />
 
@@ -395,8 +442,8 @@ export default function AdmissionsPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-white/10">
             {[
               { value: "20k+", label: "Students" },
-              { value: "15:1", label: "Ratio" },
-              { value: "5k+", label: "Alumni" },
+              { value: "20:1", label: "Alumni Network Ratio" },
+              { value: "10000+", label: "Alumni" },
               { value: "100%", label: "Results" },
               { value: "50+", label: "Nations" },
               { value: "1993", label: "Est." },
@@ -411,9 +458,190 @@ export default function AdmissionsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          2. WHY CHOOSE US
+          2. ONLINE ADMISSION INQUIRY FORM
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
+        <Reveal className="text-center mb-16">
+          {/* <Tag>Admission Inquiry</Tag> */}
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+           Admission
+            <span className="text-crimson ml-4">Inquiry</span>
+          </h2>
+        </Reveal>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left — Requisites */}
+          <Reveal>
+            <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
+              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight">
+                Requisites for Online Application
+              </h3>
+              <ul className="space-y-5">
+                {[
+                  "2 Passport size photographs",
+                  "Aadhaar Card of the student",
+                  "Birth Certificate of the student",
+                  "Copy of report card of previous grade",
+                  "TC Required from the previous school",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="w-7 h-7 bg-sand/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-crimson text-sm font-black">{i + 1}</span>
+                    </span>
+                    <span className="text-navy-deeper font-dm text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">
+                <p className="text-navy-deeper font-dm text-sm leading-relaxed">
+                  <span className="font-black text-crimson">Note:</span> There are no direct admissions in Class 10th and 12th except as per CBSE bye-laws. Admissions in Classes 9th & 11th will only be done after the student clears the entrance examination.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-sand/10">
+                <p className="text-[10px] font-black text-black tracking-[0.3em] uppercase mb-5">Call Us For Admission</p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl">🏫</span>
+                    </span>
+                    <div>
+                      <p className="text-navy-deeper text-sm font-black font-dm">Jawahar Nagar Branch</p>
+                      <a href="tel:+917413012351" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7413012351</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl">🏫</span>
+                    </span>
+                    <div>
+                      <p className="text-navy-deeper text-sm font-black font-dm">Durgapura Branch</p>
+                      <a href="tel:+917412044410" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7412044410</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Right — Form */}
+          <Reveal delay={100}>
+            <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
+              {submitted ? (
+                <div className="text-center py-12">
+                  <span className="text-5xl block mb-6">🎉</span>
+                  <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-3">Thank You!</h3>
+                  <p className="text-text-light font-dm mb-6">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
+                  <button onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }} className="text-crimson font-black text-sm hover:underline uppercase tracking-widest">Submit Another Inquiry</button>
+                </div>
+              ) : (
+                <>
+              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-2 tracking-tight">Online Admission Inquiry</h3>
+              <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
+
+              <form onSubmit={handleFormSubmit} className="space-y-5">
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Candidate Name <span className="text-crimson">*</span>
+                  </label>
+                  <input type="text" required placeholder="Enter candidate name" value={formData.candidateName} onChange={handleFormChange("candidateName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Select Class <span className="text-crimson">*</span>
+                  </label>
+                  <select required value={formData.className} onChange={handleFormChange("className")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                    <option value="">Select Class</option>
+                    <option value="Play Group">Play Group</option>
+                    <option value="LKG">LKG</option>
+                    <option value="UKG">UKG</option>
+                    <option value="Prep">Prep</option>
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                    <option value="Class 9">Class 9</option>
+                    <option value="Class 11">Class 11</option>
+                    <option value="Cambridge Primary 1">Cambridge Primary 1</option>
+                    <option value="Cambridge Primary 2">Cambridge Primary 2</option>
+                    <option value="Cambridge Primary 3">Cambridge Primary 3</option>
+                    <option value="Cambridge Primary 4">Cambridge Primary 4</option>
+                    <option value="Cambridge Primary 5">Cambridge Primary 5</option>
+                    <option value="Lower Secondary 1 (Grade 6)">Lower Secondary 1 (Grade 6)</option>
+                    <option value="Lower Secondary 2 (Grade 7)">Lower Secondary 2 (Grade 7)</option>
+                    <option value="Lower Secondary 3 (Grade 8)">Lower Secondary 3 (Grade 8)</option>
+                    <option value="IGCSE 1 (Grade 9)">IGCSE 1 (Grade 9)</option>
+                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Parent's Name <span className="text-crimson">*</span>
+                  </label>
+                  <input type="text" required placeholder="Enter parent's name" value={formData.parentName} onChange={handleFormChange("parentName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Email <span className="text-crimson">*</span>
+                  </label>
+                  <input type="email" required placeholder="Enter email address" value={formData.email} onChange={handleFormChange("email")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Mobile <span className="text-crimson">*</span>
+                  </label>
+                  <input type="tel" required placeholder="10-digit mobile number" maxLength={10} pattern="[6-9][0-9]{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                    value={formData.phone} onChange={handleFormChange("phone")}
+                    onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 10); }}
+                    className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Select School <span className="text-crimson">*</span>
+                  </label>
+                  <select required value={formData.school} onChange={handleFormChange("school")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                    <option value="">Select School</option>
+                    <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                    <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
+                    <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
+                    <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
+                    <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
+                    <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                    Message <span className="text-crimson">*</span>
+                  </label>
+                  <textarea required rows={3} placeholder="Any specific queries or requirements..." value={formData.message} onChange={handleFormChange("message")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none" />
+                </div>
+
+                <button type="submit" disabled={submitting} className="w-full bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
+                  {submitting ? "Submitting..." : "Submit Inquiry"}
+                </button>
+              </form>
+                </>
+              )}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          3. WHY CHOOSE US
+      ══════════════════════════════════════════════════ */}
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-24">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
@@ -443,7 +671,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           3. ADMISSION PROCESS TIMELINE
       ══════════════════════════════════════════════════ */}
-      <section id="process" className="py-20 bg-white">
+      <section id="process" className="pt-14 pb-8 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag>Admission Process</Tag>
@@ -461,7 +689,7 @@ export default function AdmissionsPage() {
             {/* connecting line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sand/20 via-sand to-sand/20 md:-translate-x-px hidden sm:block" />
 
-            <div className="space-y-16">
+            <div className="space-y-8">
               {steps.map((step, i) => (
                 <Reveal key={step.num} delay={i * 80}>
                   <div className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
@@ -520,7 +748,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           4. DOCUMENTS REQUIRED
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
@@ -800,7 +1028,7 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           8. FAQ
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      {/* <section className="py-20 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Common Questions</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
@@ -831,7 +1059,7 @@ export default function AdmissionsPage() {
             </a>
           </div>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* ══════════════════════════════════════════════════
           9. FINAL CTA
