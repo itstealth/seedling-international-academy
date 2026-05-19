@@ -863,7 +863,6 @@ export default function SchoolLifePage() {
       <MasonryGallery />
       {/* <SportsSection /> */}
       <ActivitiesGrid />
-      <ExperienceSection />
       <GalleryStrip />
       {/* <FeaturesSection /> */}
       {/* <CTASection /> */}
