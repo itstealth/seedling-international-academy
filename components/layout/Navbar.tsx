@@ -144,7 +144,7 @@ export default function Navbar() {
               {/* Desktop CTA */}
               <div className="hidden xl:flex items-center gap-4">
                 <Link
-                  href="/admissions"
+                  href="/admissions#enquire"
                   className="px-5 py-3 font-black text-[12px] rounded-full transition-all shadow-lg hover:shadow-crimson/30 active:scale-95 whitespace-nowrap flex-shrink-0 bg-crimson text-white hover:bg-crimson-dark uppercase tracking-widest"
                 >
                   Apply Now &apos;26

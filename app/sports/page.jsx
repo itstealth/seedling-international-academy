@@ -841,7 +841,7 @@ function CTA() {
 
           <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>
             <CTABtn href="#sports" primary>Explore Activities</CTABtn>
-            <CTABtn href="#">Enquire Now</CTABtn>
+            <CTABtn href="/admissions#enquire">Enquire Now</CTABtn>
           </div>
         </FadeUp>
       </div>
