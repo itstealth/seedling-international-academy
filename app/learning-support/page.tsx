@@ -180,9 +180,9 @@ function Hero() {
 function IntroSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(-40px)", transition: "all 0.85s ease" }}>
             <div className="flex items-center gap-3 mb-6">
@@ -212,7 +212,7 @@ function IntroSection() {
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(40px)", transition: "all 0.85s ease 0.2s" }}>
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl" style={{ background: "linear-gradient(135deg, #17519020, #A4154615)", border: "1px solid #17519020" }} />
-              <img src={IMGS.intro} alt="Classroom technology" className="relative w-full h-[480px] object-cover rounded-3xl shadow-2xl" />
+              <img src={IMGS.intro} alt="Classroom technology" className="relative w-full h-[380px] object-cover rounded-3xl shadow-2xl" />
               {/* floating badge */}
               <div className="absolute -bottom-6 -right-6 rounded-2xl p-5 shadow-2xl" style={{ background: "#175190" }}>
                 <div className="font-black text-4xl text-white" style={{ fontFamily: "'Playfair Display', serif" }}>30+</div>
@@ -229,9 +229,9 @@ function IntroSection() {
 // ─── FEATURE CARDS ────────────────────────────────────────────────────────────
 function FeatureCards() {
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#175190" }}>
+    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#175190" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <FadeIn className="text-center mb-20">
+        <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-12" style={{ background: "#A41546" }} />
             <span className="text-sm font-semibold tracking-widest uppercase text-white/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>How We Help</span>
@@ -283,9 +283,9 @@ function FeatureCards() {
 function HighAchievers() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* image */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(-40px)", transition: "all 0.85s ease" }}>
             <div className="relative">
@@ -338,9 +338,9 @@ function HighAchievers() {
 function ModernLearning() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#2c2c2c" }}>
+    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#2c2c2c" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <FadeIn className="text-center mb-20">
+        <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-12" style={{ background: "#A41546" }} />
             <span className="text-sm font-semibold tracking-widest uppercase text-white/50" style={{ fontFamily: "'DM Sans', sans-serif" }}>Innovation in Education</span>
@@ -351,7 +351,7 @@ function ModernLearning() {
           </h2>
         </FadeIn>
 
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(-40px)", transition: "all 0.85s ease" }}>
             <p className="text-lg leading-relaxed mb-10 text-white/70" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -391,9 +391,9 @@ function ModernLearning() {
 function WellbeingSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="py-28 lg:py-36" style={{ background: "#f0ebef" }}>
+    <section className="pt-16 pb-12 lg:py-24" style={{ background: "#f0ebef" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(30px)", transition: "all 0.85s ease" }}>
             <div className="flex items-center gap-3 mb-6">
@@ -441,7 +441,7 @@ function WellbeingSection() {
 // ─── SUMMARY / CTA ────────────────────────────────────────────────────────────
 function Summary() {
   return (
-    <section className="relative py-36 overflow-hidden" style={{ background: "#175190" }}>
+    <section className="relative pt-16 pb-12 overflow-hidden" style={{ background: "#175190" }}>
       {/* decorative rings */}
       <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-10 border border-white" />
       <div className="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full opacity-10 border border-white" />
@@ -486,18 +486,6 @@ function Summary() {
             >
               Learn More About SPS
             </a>
-          </div>
-        </FadeIn>
-
-        {/* stat row */}
-        <FadeIn delay={300}>
-          <div className="mt-20 grid grid-cols-3 gap-10 pt-16 border-t border-white/15">
-            {[["Inclusive", "Environment"], ["Holistic", "Growth"], ["Student-First", "Always"]].map(([a, b]) => (
-              <div key={a} className="text-center">
-                <div className="font-black text-5xl text-white mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{a}</div>
-                <div className="text-white/50 text-sm tracking-widest uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>{b}</div>
-              </div>
-            ))}
           </div>
         </FadeIn>
       </div>
