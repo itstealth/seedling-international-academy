@@ -340,7 +340,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 Vibrant <em className="font-semibold text-navy italic">Memories</em>.
               </h2>
             </div>
-            <a href="/campus-highlights" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a>
+            <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a>
           </div>
           <div className="space-y-4">
             {/* Row 1 - Left big, Right stacked */}
