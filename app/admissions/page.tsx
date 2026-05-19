@@ -264,7 +264,7 @@ export default function AdmissionsPage() {
       `}</style>
 
       {/* ── STICKY CTA BAR ── */}
-      <div className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${sticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
+      {/* <div className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-500 ${sticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
         <div className="bg-white border-t border-sand/30 shadow-2xl px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div>
@@ -281,7 +281,7 @@ export default function AdmissionsPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Hero />
 
@@ -407,8 +407,8 @@ export default function AdmissionsPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-white/10">
             {[
               { value: "20k+", label: "Students" },
-              { value: "15:1", label: "Ratio" },
-              { value: "5k+", label: "Alumni" },
+              { value: "20:1", label: "Alumni Network Ratio" },
+              { value: "10000+", label: "Alumni" },
               { value: "100%", label: "Results" },
               { value: "50+", label: "Nations" },
               { value: "1993", label: "Est." },
@@ -473,7 +473,7 @@ export default function AdmissionsPage() {
             {/* connecting line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sand/20 via-sand to-sand/20 md:-translate-x-px hidden sm:block" />
 
-            <div className="space-y-16">
+            <div className="space-y-8">
               {steps.map((step, i) => (
                 <Reveal key={step.num} delay={i * 80}>
                   <div className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
