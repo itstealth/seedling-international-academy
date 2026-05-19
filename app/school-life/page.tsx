@@ -837,7 +837,7 @@ export default function SchoolLifePage() {
       <ExperienceSection />
       <GalleryStrip />
       {/* <FeaturesSection /> */}
-      <CTASection />
+      {/* <CTASection /> */}
     </main>
   );
 }
