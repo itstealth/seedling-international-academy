@@ -42,7 +42,7 @@ export default function AdmissionProcessPage() {
       />
 
       {/* Steps Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center mb-24">
           <span className="text-label mb-6 block uppercase">Step-by-Step Guide</span>
           <h2 className="text-heading text-4xl md:text-5xl">Joining Seedling.</h2>
@@ -88,7 +88,7 @@ export default function AdmissionProcessPage() {
       </section>
 
       {/* Required Documents Section */}
-      <section className="py-32 bg-white rounded-[5rem] mx-4 md:mx-8 shadow-editorial">
+      <section className="pt-16 pb-10 bg-white rounded-[5rem] mx-4 md:mx-8 shadow-editorial">
         <div className="max-w-[1200px] mx-auto px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -132,7 +132,7 @@ export default function AdmissionProcessPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-48 text-center">
+      <section className="pt-16 pb-10 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-heading text-4xl md:text-5xl mb-16">
             Ready to <br /> <span className="text-primary tracking-tighter">Begin?</span>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Geist_Mono, Playfair_Display, DM_Sans } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import { headers } from "next/headers";
+import NavbarWrapper from "@/components/layout/NavbarWrapper";
+import FooterWrapper from "@/components/layout/FooterWrapper";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -32,22 +33,26 @@ export const metadata: Metadata = {
   description: "A premium educational institution dedicated to excellence.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-invoke-pathname") ?? headersList.get("next-url") ?? "/";
+  const isErpLogin = pathname.startsWith("/erp-login");
+
   return (
     <html
       lang="en"
       className={`${outfit.variable} ${geistMono.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <Navbar />
+        <NavbarWrapper />
         <main className="flex-1 flex flex-col">
           {children}
         </main>
-        <Footer />
+        {!isErpLogin && <FooterWrapper />}
       </body>
     </html>
   );

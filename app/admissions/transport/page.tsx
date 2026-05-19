@@ -22,7 +22,7 @@ export default function TransportFacilityPage() {
         image="/assets/PRIMARY OUTING/1.webp"
       />
 
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -110,7 +110,7 @@ export default function TransportFacilityPage() {
       </section>
 
       {/* Transport Support */}
-      <section className="py-48 bg-neutral-950 text-white rounded-[5rem] mx-4 md:mx-8 mb-20 overflow-hidden relative">
+      <section className="pt-16 pb-10 bg-neutral-950 text-white rounded-[5rem] mx-4 md:mx-8 mb-20 overflow-hidden relative">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-10 text-center">
           <ShieldCheck className="w-20 h-20 text-secondary mx-auto mb-12 drop-shadow-2xl" />

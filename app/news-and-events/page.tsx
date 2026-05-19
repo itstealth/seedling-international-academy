@@ -276,7 +276,7 @@ export default function CampusHighlightsPage() {
           </Reveal>
 
           {/* Asymmetric grid for first 5 items */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
             <div className="lg:col-span-5">
               <NewsCard large delay={100} item={newsItems[0]} onClick={() => setSelectedImage(newsItems[0].image)} />
             </div>
@@ -285,16 +285,16 @@ export default function CampusHighlightsPage() {
                 <NewsCard key={item.id} item={item} delay={(i + 2) * 100} onClick={() => setSelectedImage(item.image)} />
               ))}
             </div>
-          </div>
+          </div> */}
           
           {/* Standard grid for remaining items */}
-          {newsItems.length > 5 && (
+          
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {newsItems.slice(5).map((item) => (
+              {newsItems.map((item) => (
                 <NewsCard key={item.id} item={item} delay={100} onClick={() => setSelectedImage(item.image)} />
               ))}
             </div>
-          )}
+        
         </div>
       </section>
 

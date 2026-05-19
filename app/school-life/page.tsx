@@ -46,6 +46,19 @@ const galleryItems = [
   { id: 9, src: "/assets/CRICKET FEVER/1.webp", title: "Cricket Fever", category: "Sports", size: "wide" },
   { id: 10, src: "/assets/ANNUAL FUNCTION/4.webp", title: "Farewell Ceremony", category: "Events", size: "small" },
   { id: 11, src: "/assets/ANNUAL FUNCTION/5.webp", title: "Farewell Programme", category: "Events", size: "small" },
+  { id: 12, src: "/assets/MOTHER_S DAY/1.webp", title: "Mother's Day", category: "Celebrations", size: "small" },
+  { id: 13, src: "/assets/BOOT CAMP/1.webp", title: "Boot Camp", category: "Activities", size: "large" },
+  { id: 14, src: "/assets/BOOT CAMP/2.webp", title: "Outdoor Learning", category: "Activities", size: "small" },
+  { id: 15, src: "/assets/ANNUAL FUNCTION/1.webp", title: "Annual Day", category: "Events", size: "wide" },
+  { id: 16, src: "/assets/SPORTS DAY/2.webp", title: "Sports Day", category: "Sports", size: "small" },
+  { id: 17, src: "/assets/STELLAR SATURDAYS/2.webp", title: "Stellar Saturday", category: "Activities", size: "small" },
+  { id: 18, src: "/assets/DESIGN CAREER FAIR/1.webp", title: "Career Fair", category: "Events", size: "small" },
+  { id: 19, src: "/assets/WHISPERS OF WELLNESS/1.webp", title: "Wellness Week", category: "Wellness", size: "large" },
+  { id: 20, src: "/assets/DESIGN CAREER FAIR/4.webp", title: "Career Guidance", category: "Events", size: "small" },
+  { id: 21, src: "/assets/XMAS CARNIVAL/2.webp", title: "Christmas Carnival", category: "Festivals", size: "small" },
+  { id: 22, src: "/assets/SHOWCASING WONDERLAND/2.webp", title: "Annual Show", category: "Events", size: "wide" },
+  { id: 23, src: "/assets/WHISPERS OF WELLNESS/2.webp", title: "Mental Health", category: "Wellness", size: "small" },
+  { id: 24, src: "/assets/CRICKET FEVER/2.webp", title: "Cricket Tournament", category: "Sports", size: "small" },
 ];
 
 const sportBlocks = [
@@ -172,6 +185,22 @@ const stripImages = [
   { src: "/assets/img/life-at-sps.jpg", label: "Life at Seedling" },
   { src: "/assets/img/feature-2.jpg", label: "State-of-the-Art Facilities" },
   { src: "/assets/img/counselling-1.jpg", label: "Parent Counselling" },
+  { src: "/assets/Home/classroom.jpg", label: "Modern Classrooms" },
+  { src: "/assets/Home/library.jpg", label: "Library & Learning" },
+  { src: "/assets/Home/smart-classroom.jpg", label: "Smart Classrooms" },
+  { src: "/assets/img/feature-3.jpg", label: "Science Labs" },
+  { src: "/assets/img/feature-5.jpg", label: "Art & Creativity" },
+  { src: "/assets/img/Christmas.jpeg", label: "Festive Celebrations" },
+  { src: "/assets/img/yoga1.jpg", label: "Yoga & Wellness" },
+  { src: "/assets/img/skaters.jpg", label: "Skating Events" },
+  { src: "/assets/BOOT CAMP/1.webp", label: "Adventure Camp" },
+  { src: "/assets/BOOT CAMP/2.webp", label: "Outdoor Learning" },
+  { src: "/assets/SPORTS DAY/1.webp", label: "Sports Day" },
+  { src: "/assets/SPORTS DAY/2.webp", label: "Athletics" },
+  { src: "/assets/ANNUAL FUNCTION/1.webp", label: "Annual Day" },
+  { src: "/assets/ANNUAL FUNCTION/3.webp", label: "Cultural Fest" },
+  { src: "/assets/STELLAR SATURDAYS/1.webp", label: "Stellar Saturdays" },
+  { src: "/assets/XMAS CARNIVAL/1.webp", label: "Christmas Carnival" },
 ];
 
 const features = [
@@ -288,19 +317,19 @@ function MasonryGallery() {
         </div>
 
         {/* Masonry Grid */}
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-1">
           {galleryItems.map((item) => {
             const heightClass =
               item.size === "large"
-                ? "h-80"
+                ? "h-72 md:h-80"
                 : item.size === "wide"
-                  ? "h-56"
-                  : "h-44";
+                  ? "h-48 md:h-52"
+                  : "h-40 md:h-44";
 
             return (
               <div
                 key={item.id}
-                className={`relative break-inside-avoid overflow-hidden rounded-2xl cursor-pointer group ${heightClass}`}
+                className={`relative break-inside-avoid overflow-hidden rounded-xl cursor-pointer group mb-1 ${heightClass}`}
                 onClick={() => setLightbox(item)}
                 onMouseEnter={() => setActiveItem(item.id)}
                 onMouseLeave={() => setActiveItem(null)}
@@ -654,12 +683,12 @@ function GalleryStrip() {
       {/* Edge-to-edge scroll strip */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
+        className="flex gap-3 overflow-x-auto scroll-smooth snap-x snap-mandatory px-6 pb-4 scrollbar-hide"
       >
         {stripImages.map((img, i) => (
           <div
             key={i}
-            className="flex-none w-[340px] md:w-[420px] h-[260px] md:h-[320px] snap-start relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="flex-none w-[260px] md:w-[300px] h-[200px] md:h-[240px] snap-start relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
           >
             <img
               src={img.src}
@@ -834,10 +863,9 @@ export default function SchoolLifePage() {
       <MasonryGallery />
       {/* <SportsSection /> */}
       <ActivitiesGrid />
-      <ExperienceSection />
       <GalleryStrip />
       {/* <FeaturesSection /> */}
-      <CTASection />
+      {/* <CTASection /> */}
     </main>
   );
 }
