@@ -462,7 +462,7 @@ function Summary() {
           </p>
           <div className="flex flex-wrap justify-center gap-5">
             <a
-              href="https://seedlingschools.com/admission-procedure.php"
+              href="/admissions#enquire"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-white text-lg shadow-xl"
@@ -473,7 +473,7 @@ function Summary() {
               Apply for Admission 2026–27
             </a>
             <a
-              href="https://seedlingschools.com/sps.php"
+              href="/about"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-lg"
