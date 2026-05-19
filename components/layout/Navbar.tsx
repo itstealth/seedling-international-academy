@@ -40,7 +40,7 @@ const navItems = [
   { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Transport Facility", href: "/transport-facility" }] },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact-us" },
 ];
 
