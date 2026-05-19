@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
-import { Instagram, Facebook, Twitter, Linkedin } from "@/components/icons/BrandIcons";
+import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "@/components/icons/BrandIcons";
 
 export default function Footer() {
   return (
@@ -25,10 +25,11 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               {[
-                { icon: Twitter, href: "#" },
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Linkedin, href: "#" }
+                { icon: Twitter, href: "https://x.com/SeedlingSchools?t=X94ppyw3vv8U40SzkrU9Cg&s=09" },
+                { icon: Facebook, href: "https://www.facebook.com/seedlingschoolsjaipur?mibextid=ZbWKwL" },
+                { icon: Instagram, href: "https://www.instagram.com/seedlingschoolsjaipur" },
+                { icon: Linkedin, href: "https://www.linkedin.com/posts/seedling-schools_funfactfriday-teethfacts-activity-7100804557030486016-c9Pj/?utm_source=share&utm_medium=member_android" },
+                { icon: Youtube, href: "https://www.youtube.com/@seedlingschoolsjaipur6258" }
               ].map((social, idx) => (
                 <a key={idx} href={social.href} className="w-14 h-14 rounded-2xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-navy-deeper hover:shadow-lg transition-all duration-500">
                   <social.icon className="w-6 h-6" />
