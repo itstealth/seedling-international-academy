@@ -248,7 +248,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 bg-navy hover:bg-navy-dark text-white text-[11px] font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   <PhoneIcon className="w-4 h-4" />
-                  Call SPS / SIA
+                  Call SPS
                 </a>
                 <a
                   href="#contact-form"
@@ -646,16 +646,7 @@ export default function ContactPage() {
                     <p className="text-navy-deeper text-sm font-bold font-dm">+91 74130 12351</p>
                   </div>
                 </a>
-                <a
-                  href="tel:+919587772837"
-                  className="flex items-center gap-3 bg-crimson/5 hover:bg-crimson/10 rounded-xl px-5 py-4 transition-colors duration-200"
-                >
-                  <PhoneIcon className="w-4 h-4 text-crimson shrink-0" />
-                  <div>
-                    <p className="text-[9px] font-black text-crimson uppercase tracking-widest font-dm">SMHS / SMIA</p>
-                    <p className="text-navy-deeper text-sm font-bold font-dm">+91 95877 72837</p>
-                  </div>
-                </a>
+                
               </div>
             </div>
 
