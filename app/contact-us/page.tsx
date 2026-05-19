@@ -44,7 +44,7 @@ const STATS = [
 
 const HOURS = [
   { day: 'Monday – Friday', time: '8:30 AM – 6:30 PM', open: true },
-  { day: 'Saturday', time: '8:30 AM – 2:00 PM', open: true },
+  { day: 'Saturday', time: '8.30 AM – 5.30 PM', open: true },
   { day: 'Sunday', time: 'Closed', open: false },
   { day: 'Public Holidays', time: 'Closed', open: false },
 ]
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 bg-navy hover:bg-navy-dark text-white text-[11px] font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   <PhoneIcon className="w-4 h-4" />
-                  Call SPS
+                  Call SEEDLING PUBLIC SCHOOL
                 </a>
                 <a
                   href="#contact-form"
@@ -421,7 +421,7 @@ export default function ContactPage() {
               {/* Classroom photo */}
               <div className="relative rounded-2xl overflow-hidden h-52 border border-sand/40 shadow-sm">
                 <Image
-                  src="/assets/Home/classroom.jpg"
+                  src="/assets/STELLAR SATURDAYS/4.webp"
                   alt="Students in a Seedling School classroom"
                   fill
                   className="object-cover"
