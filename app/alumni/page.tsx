@@ -717,15 +717,14 @@ function CTASection() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://seedlingschools.com/alumni.php"
-                target="_blank"
+                href="/alumni"
                 rel="noopener noreferrer"
                 className="bg-sand text-navy-deeper font-black px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-[11px] uppercase tracking-widest font-dm"
               >
                 Join Our Alumni Network
               </a>
               <a
-                href="https://seedlingschools.com/admission-procedure.php"
+                href="/admissions#enquire"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-transparent text-white border-2 border-white/30 font-black px-8 py-4 rounded-full hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 text-[11px] uppercase tracking-widest font-dm"
@@ -736,7 +735,7 @@ function CTASection() {
 
             <div className="mt-16 flex flex-wrap justify-center gap-8 text-white/50 text-[10px] font-black tracking-widest uppercase font-dm">
               <span>SPS & SIA: <a href="tel:+917413012351" className="text-sand hover:underline">+91 74130 12351</a></span>
-              <span>SMHS & SMIA: <a href="tel:+919587772837" className="text-sand hover:underline">+91 95877 72837</a></span>
+              {/* <span>SMHS & SMIA: <a href="tel:+919587772837" className="text-sand hover:underline">+91 95877 72837</a></span> */}
               <span className="opacity-50">Office Hours: 8:30 AM – 6:30 PM</span>
             </div>
           </div>

@@ -799,18 +799,18 @@ function CTASection() {
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <a
-            href="https://seedlingschools.com/admission-procedure.php"
+            href="/admissions#enquire"
             className="group relative px-12 py-5 bg-crimson text-white font-black text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40 hover:scale-105"
           >
             <span className="relative z-10">Apply Now</span>
             <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
           </a>
-          <a
-            href="https://seedlingschools.com/admission-online.php"
+          {/* <a
+            href="/admissions#enquire"
             className="group px-12 py-5 border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-navy-deeper transition-all duration-300"
           >
             Book a Visit
-          </a>
+          </a> */}
         </div>
 
         {/* Contact strip */}

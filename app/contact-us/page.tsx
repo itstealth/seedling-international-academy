@@ -693,22 +693,18 @@ export default function ContactPage() {
 
               <div className="flex flex-col gap-3 shrink-0 font-dm">
                 <a
-                  href="https://seedlingschools.com/admission-procedure.php"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/admissions#enquire"
                   className="inline-flex items-center justify-center gap-2 bg-sand text-navy-deeper font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   Enquire Now
                   <ArrowRightIcon className="w-4 h-4" />
                 </a>
-                <a
-                  href="https://seedlingschools.com/admission-online.php"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                {/* <a
+                  href="/admissions#enquire"
                   className="inline-flex items-center justify-center gap-2 font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 text-white border-2 border-white/30 hover:bg-white/10 hover:-translate-y-0.5"
                 >
                   Apply Online
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
