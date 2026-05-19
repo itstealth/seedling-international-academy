@@ -64,33 +64,54 @@ export default function ResultPage() {
       </section>
 
       {/* Numbers That Tell Our Story */}
-      <section className="md:py-32 py-16 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-mauve/10 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
+      <section className="py-12 md:py-20 bg-navy-deeper text-white relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-white/15" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-sand/20" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,transparent_0,transparent_31px,white_32px),linear-gradient(0deg,transparent_0,transparent_31px,white_32px)] bg-[size:32px_32px]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <Reveal className="text-center mb-10 md:mb-24">
-            <span className="inline-block bg-white/10 text-white text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-white/20 mb-6 font-dm">
-              Roll of Honour
-            </span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              Numbers That<br />
-              <em className="font-semibold text-sand">Tell Our Story</em>
-            </h2>
-          </Reveal>
+          <div className="grid lg:grid-cols-[0.8fr_1.7fr] gap-8 lg:gap-14 items-start">
+            <Reveal>
+              <div className="max-w-md">
+                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.28em] uppercase text-sand font-dm">
+                  <span className="h-px w-8 bg-sand/70" />
+                  Roll of Honour
+                </span>
+                <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-white">
+                  Numbers That<br />
+                  <em className="font-semibold text-sand">Tell Our Story</em>
+                </h2>
+                <p className="mt-5 text-sm md:text-base leading-7 text-white/60 font-dm font-light">
+                  A quick view of the academic consistency, campus scale, and learning support behind Seedling results.
+                </p>
+              </div>
+            </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            {achievements.map((a, i) => (
-              <Reveal key={a.label} delay={i * 80}>
-                <div className="group bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-10 text-center hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-editorial backdrop-blur-md">
-                  <div className="text-3xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-500">{a.icon}</div>
-                  <p className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold text-sand mb-2 md:mb-3">{a.value}</p>
-                  <p className="text-white font-bold text-sm md:text-lg mb-1 md:mb-2 font-dm tracking-tight">{a.label}</p>
-                  <p className="text-white/40 text-[10px] md:text-xs tracking-widest uppercase font-dm font-bold">{a.sub}</p>
-                </div>
-              </Reveal>
-            ))}
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+                {achievements.map((a, i) => (
+                  <Reveal key={a.label} delay={i * 60}>
+                    <div className="group min-h-[142px] bg-navy-deeper/90 p-5 md:p-6 transition-colors duration-300 hover:bg-navy-dark">
+                      <div className="mb-5 flex items-center justify-between gap-4">
+                        <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/35 font-dm">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="h-1.5 w-1.5 rounded-full bg-sand/80 transition-transform duration-300 group-hover:scale-150" />
+                      </div>
+                      <p className="font-playfair text-3xl md:text-4xl font-semibold leading-none text-sand">
+                        {a.value}
+                      </p>
+                      <p className="mt-3 text-sm font-black tracking-tight text-white font-dm">
+                        {a.label}
+                      </p>
+                      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 font-dm">
+                        {a.sub}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Topers in Seedling */}
