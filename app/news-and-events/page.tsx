@@ -32,42 +32,6 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-// ─── Highlight Data ───────────────────────────────────────────────────────────
-const highlights = [
-  {
-    id: 1,
-    title: "Academic Block & Smart Classes",
-    excerpt:
-      "Fully air-conditioned classrooms equipped with smart boards and digital tools, fostering technology-enabled interactive and experiential learning.",
-    image: "/assets/Home/classroom1.webp",
-    icon: "🏫",
-  },
-  {
-    id: 2,
-    title: "The Knowledge Hub (Library)",
-    excerpt:
-      "A well-stocked library encouraging reading habits and independent learning, serving as a hub for academic resources and literature.",
-    image: "/assets/Home/ScienceLabs.webp",
-    icon: "📚",
-  },
-  {
-    id: 3,
-    title: "Sports & Physical Education",
-    excerpt:
-      "A dedicated playground and facilities for various sports including basketball, helping inculcate discipline, teamwork, and leadership.",
-    image: "/assets/NATIONAL SPORTS DAY/1.webp",
-    icon: "🏀",
-  },
-  {
-    id: 4,
-    title: "Safety & Well-being First",
-    excerpt:
-      "A secure environment with proper supervision, first-aid facilities, and transport services, ensuring a balanced space for personal growth.",
-    image: "/assets/SAY NO TO SUGAR/1.webp",
-    icon: "🛡️",
-  },
-];
-
 // ─── Gallery Snapshots ────────────────────────────────────────────────────────
 const snapshots = [
   { src: "/assets/JAISELMER TRIP/1.webp", label: "Jaisalmer Trip", aspect: "aspect-[4/5]" },
@@ -394,74 +358,8 @@ export default function CampusHighlightsPage() {
         </div>
       </section>
 
-    {/* ══════════════════════════════════════════════════════
-          4. BUILT FOR THE FUTURE, ROOTED IN VALUES
-      ══════════════════════════════════════════════════════ */}
-      <section className="pt-16 md:pt-20 md:pb-8 py-8 bg-navy-deeper overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
-          <Reveal>
-            <div className="mb-14 text-center">
-              <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-sand uppercase mb-4 font-dm">
-                <span className="w-8 h-px bg-sand" />
-                What Makes Us Special
-                <span className="w-8 h-px bg-sand" />
-              </span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white leading-tight">
-                Built for the Future,
-                <br />
-                <span className="text-sand">Rooted in Values</span>
-              </h2>
-              <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto font-dm font-light">
-                Our goal is to equip students with knowledge and skills they need to succeed while promoting their
-                personal growth and holistic development.
-              </p>
-            </div>
-          </Reveal>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {highlights.map((item, i) => (
-              <Reveal key={item.id} delay={i * 100}>
-                <div className="group relative rounded-2xl overflow-hidden bg-stone-800 hover:bg-stone-700 transition-colors duration-300 cursor-pointer">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/40 to-transparent" />
-                  </div>
-                  <div className="p-5">
-                    <div className="text-2xl mb-3">{item.icon}</div>
-                    <h3 className="font-playfair text-base font-bold text-white leading-tight group-hover:text-sand transition-colors duration-200 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-white/50 text-sm leading-relaxed line-clamp-3 font-dm font-light">{item.excerpt}</p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-sand transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Quote */}
-          <Reveal delay={500}>
-            <div className="mt-8 md:mt-16 border-t border-white/10 pt-12 text-center">
-              <blockquote className="font-playfair text-xl md:text-2xl text-white italic max-w-3xl mx-auto leading-relaxed">
-                "Part of the art of teaching is the ability to rearrange the world for students to guide them to see
-                things in a new way."
-              </blockquote>
-              <cite className="text-sand text-[10px] font-black uppercase tracking-widest mt-4 block not-italic font-dm">
-                — Sunny Decker
-              </cite>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ══════════════════════════════════════════════════════
-          5. LIFE AT SEEDLING (GALLERY)
+          4. LIFE AT SEEDLING (GALLERY)
       ══════════════════════════════════════════════════════ */}
       <section className="pt-16 pb-12 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
