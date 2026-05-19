@@ -158,7 +158,7 @@ export default function FacultyPage() {
           <Reveal delay={120}>
             <div className="flex gap-6 justify-center flex-wrap">
               <a
-                href="/admission-online"
+                href="/admissions#enquire"
                 className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/50 hover:gap-6 font-dm"
               >
                 Apply Now
@@ -167,7 +167,7 @@ export default function FacultyPage() {
                 </svg>
               </a>
               <a
-                href="/admission-procedure"
+                href="/contact-us#contact-form"
                 className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
               >
                 Enquire Now

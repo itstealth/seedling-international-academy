@@ -3,21 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-
-const marqueeItems = [
-  'Admissions Open for 2026–27 Academic Session',
-  'Scholarship Available for Meritorious Students in Academics & Sports',
-  'Parent Counselling Available Online & Offline',
-  'Admissions Open for 2026–27 Academic Session',
-  'Annual Sports Day – March 2025',
-  'Admissions Open for 2026–27 Academic Session',
-  'Scholarship Available for Meritorious Students in Academics & Sports',
-  'Parent Counselling Available Online & Offline',
-  'Annual Sports Day – March 2025',
-];
+import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -31,7 +19,6 @@ const navItems = [
     name: "Academics", href: "/academics", dropdown: [
       { name: "Curriculum", href: "/curriculum" },
       { name: "Result", href: "/result" },
-      // { name: "Faculty", href: "/faculty" },
       { name: "Learning Support", href: "/learning-support" },
     ]
   },
@@ -40,7 +27,6 @@ const navItems = [
   { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Transport Facility", href: "/transport-facility" }] },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
-  // { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact-us" },
 ];
 
@@ -57,39 +43,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-
-
   return (
     <>
-      {/* ── Announcement Marquee (topmost fixed bar) ── */}
-      <div className="fixed top-0 left-0 right-0 z-[80] bg-navy-deeper py-2.5 overflow-hidden">
-        <div className="flex gap-16 animate-[marquee_25s_linear_infinite] whitespace-nowrap">
-          {marqueeItems.concat(marqueeItems).map((text, i) => (
-            <span
-              key={i}
-              className="text-sand text-xs font-black tracking-widest uppercase flex items-center gap-4 flex-shrink-0"
-            >
-              <span className="w-1.5 h-1.5 bg-crimson rounded-full" />
-              {text}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Progress bar — sits just below the marquee */}
-      <motion.div
-        className="fixed top-[41px] left-0 right-0 h-[3px] bg-linear-to-r from-navy via-crimson to-navy origin-left z-[75]"
-        style={{ scaleX }}
-      />
-
-      <header className={`fixed top-[35px] left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
           <nav className="relative py-3">
             <div className="flex items-center justify-between h-14">
@@ -142,14 +98,14 @@ export default function Navbar() {
               </nav>
 
               {/* Desktop CTA */}
-              <div className="hidden xl:flex items-center gap-4">
+              {/* <div className="hidden xl:flex items-center gap-4">
                 <Link
-                  href="/admissions"
+                  href="/admissions#enquire"
                   className="px-5 py-3 font-black text-[12px] rounded-full transition-all shadow-lg hover:shadow-crimson/30 active:scale-95 whitespace-nowrap flex-shrink-0 bg-crimson text-white hover:bg-crimson-dark uppercase tracking-widest"
                 >
                   Apply Now &apos;26
                 </Link>
-              </div>
+              </div> */}
 
               {/* Mobile Menu Button */}
               <div className="xl:hidden flex items-center">
@@ -236,14 +192,14 @@ export default function Navbar() {
                 </div>
 
                 <div className="p-10 bg-off-white border-t border-black/5 mt-auto">
-                  <Link
+                  {/* <Link
                     href="/admissions"
                     onClick={() => setIsOpen(false)}
                     className="flex justify-center items-center gap-4 w-full h-20 bg-navy-deeper text-white font-black text-xl rounded-3xl shadow-editorial hover:bg-navy transition-all uppercase tracking-widest"
                   >
                     Apply Now 2026
                     <ArrowRight className="w-6 h-6" />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </motion.div>

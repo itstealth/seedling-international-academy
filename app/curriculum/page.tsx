@@ -535,7 +535,7 @@ export default function AcademicsPage() {
               <p className="text-text-light leading-relaxed mb-10 text-lg font-dm font-light">
                 Every element of the Seedling experience is intentionally designed to prepare students not just academically, but for life's challenges — with confidence, compassion, and curiosity. Come feel the Buzz!
               </p>
-              <a href="/admission-procedure" className="inline-flex items-center gap-3 bg-navy hover:bg-navy-dark text-white px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-navy/40">
+              <a href="/admissions#enquire" className="inline-flex items-center gap-3 bg-navy hover:bg-navy-dark text-white px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-navy/40">
                 Begin Enrolment
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -647,7 +647,7 @@ export default function AcademicsPage() {
           <Reveal delay={120}>
             <div className="flex gap-6 justify-center flex-wrap">
               <a
-                href="/admission-online"
+                href="/admissions#enquire"
                 className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/50 hover:gap-6 font-dm"
               >
                 Apply Now
@@ -656,7 +656,7 @@ export default function AcademicsPage() {
                 </svg>
               </a>
               <a
-                href="/admission-procedure"
+                href="/contact-us#contact-form"
                 className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
               >
                 Enquire Now

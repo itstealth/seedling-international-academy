@@ -25,11 +25,11 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               {[
-                { icon: Twitter, href: "https://x.com/SeedlingSchools?t=X94ppyw3vv8U40SzkrU9Cg&s=09" },
-                { icon: Facebook, href: "https://www.facebook.com/seedlingschoolsjaipur?mibextid=ZbWKwL" },
                 { icon: Instagram, href: "https://www.instagram.com/seedlingschoolsjaipur" },
-                { icon: Linkedin, href: "https://www.linkedin.com/posts/seedling-schools_funfactfriday-teethfacts-activity-7100804557030486016-c9Pj/?utm_source=share&utm_medium=member_android" },
-                { icon: Youtube, href: "https://www.youtube.com/@seedlingschoolsjaipur6258" }
+                { icon: Facebook, href: "https://www.facebook.com/seedlingschoolsjaipur?mibextid=ZbWKwL" },
+                { icon: Youtube, href: "https://www.youtube.com/@seedlingschoolsjaipur6258" },
+                { icon: Linkedin, href: "https://www.linkedin.com/school/seedling-schools/posts/?feedView=all" },
+                { icon: Twitter, href: "https://x.com/SeedlingSchools?t=X94ppyw3vv8U40SzkrU9Cg&s=09" },
               ].map((social, idx) => (
                 <a key={idx} href={social.href} className="w-14 h-14 rounded-2xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-navy-deeper hover:shadow-lg transition-all duration-500">
                   <social.icon className="w-6 h-6" />
@@ -100,7 +100,7 @@ export default function Footer() {
               <span className="text-[10px] uppercase tracking-widest">Architected for Future Leaders.</span>
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+          {/* <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
             <Link href="/privacy-policy" className="text-xs font-black uppercase tracking-[0.2em] text-white/40 hover:text-sand transition-colors">
               Privacy
             </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
             <Link href="/mandatory-disclosure" className="text-xs font-black uppercase tracking-[0.2em] text-white/40 hover:text-sand transition-colors">
               Disclosure
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
