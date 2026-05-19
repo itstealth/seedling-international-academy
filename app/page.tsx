@@ -211,7 +211,7 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           {/* Tab Bar */}
-          <div className="flex flex-wrap gap-4 mb-16 border-b border-sand/40">
+          <div className="flex flex-nowrap gap-2 sm:gap-4 mb-16 overflow-x-auto border-b border-sand/40 pb-1">
             {([
               { key: 'campus', label: '🏫 Campus' },
               // { key: 'labs', label: '🔬 Labs & Tech' },
@@ -266,7 +266,6 @@ export default function SeedlingPage(): React.JSX.Element {
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
                   <img src={img} alt={name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-navy-deeper/40 group-hover:opacity-0 transition-opacity" />
                 </div>
                 <div className="p-8">
                   <h3 className="font-playfair text-xl font-bold text-white mb-3 flex items-center gap-2">
