@@ -308,7 +308,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT INFO CARDS
       ══════════════════════════════════════════════════════════════════════ */}
-      {/* <section className="py-20 md:py-24 bg-off-white">
+      {/* <section className="pt-16 pb-10 md:pt-20 md:pb-12 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-12">
             <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">
@@ -657,7 +657,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CTA
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 bg-off-white border-t border-sand/40">
+      <section className="py-12 bg-off-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div
             className="relative bg-navy-deeper rounded-[2rem] overflow-hidden px-8 md:px-14 py-12 md:py-14 text-white"
@@ -713,9 +713,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <p className="text-center text-text-light text-[10px] font-black uppercase tracking-widest mt-8 font-dm">
-            © 2026 Seedling Group of Schools, Jaipur. All rights reserved.
-          </p>
+         
         </div>
       </section>
 

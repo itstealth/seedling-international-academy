@@ -46,7 +46,7 @@ export default function NewsCoveragePage() {
         image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"
       />
 
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="flex items-center gap-4 mb-20">
           <Newspaper className="text-secondary w-10 h-10" />
           <h2 className="text-heading text-4xl md:text-5xl">Media Highlights.</h2>
@@ -129,7 +129,7 @@ export default function NewsCoveragePage() {
       </section>
 
       {/* Archives Section */}
-      <section className="py-48 bg-neutral-950 text-white rounded-t-[5rem] mx-4 md:mx-8">
+      <section className="pt-16 pb-10 bg-neutral-950 text-white rounded-t-[5rem] mx-4 md:mx-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Calendar className="w-16 h-16 text-secondary mx-auto mb-10" />
           <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif">News Archives.</h2>

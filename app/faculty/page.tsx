@@ -77,7 +77,7 @@ export default function FacultyPage() {
       </section>
 
       {/* Faculty Section */}
-      <section className="py-32 bg-white">
+      <section className="pt-16 pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>

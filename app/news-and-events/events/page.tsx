@@ -58,7 +58,7 @@ export default function EventsPage() {
         image="https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&q=80"
       />
 
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-24">
           {["All Events", "Cultural", "Sports", "Academic", "Innovation"].map((cat, i) => (
