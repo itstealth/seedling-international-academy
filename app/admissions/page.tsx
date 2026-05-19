@@ -275,11 +275,11 @@ export default function AdmissionsPage() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
           name: formData.parentName,
-          student_name: formData.candidateName,
           class_name: formData.className,
           parent_name: formData.parentName,
           email: formData.email,
           phone: formData.phone,
+          student_name: formData.candidateName,
           school: formData.school,
           message: formData.message,
         }),
