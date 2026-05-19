@@ -170,6 +170,18 @@ const faqs = [
   { q: "Is transportation available?", a: "Yes. Transportation is available for students across both campuses — Jawahar Nagar and Durgapura. GPS-enabled buses with trained attendants cover major routes across Jaipur. For route details and fees, contact the school office directly." },
   { q: "What is the Student-Teacher ratio?", a: "Seedling maintains a 15:1 student-to-teacher ratio, ensuring that every child receives personalised attention, mentoring, and academic support throughout their schooling journey." },
   { q: "Is re-admission done for Class XI?", a: "All successful students of Class X may apply for Class XI admission. Re-admission is processed through the school office. Students must apply on the prescribed form along with the non-refundable application amount." },
+  { q: "Does the school focus on holistic development?", a: "Yes, the school strongly believes in the holistic development of every child. Equal emphasis is laid on academics, sports, life skills, values, creativity, leadership, and co-curricular excellence to nurture confident and responsible individuals." },
+  { q: "What subjects are offered in senior secondary classes?", a: "The school offers a wide range of subjects across Science, Commerce, and Humanities streams, subject to availability and CBSE norms." },
+  { q: "Does the school provide remedial or support classes?", a: "Yes, the school organizes remedial and enrichment sessions to support varied learning needs and help students achieve their full potential." },
+  { q: "How are students assessed?", a: "Students are assessed through periodic tests, projects, practical work, classroom activities, assignments, and examinations in accordance with CBSE guidelines." },
+  { q: "Does the school integrate technology into learning?", a: "Yes, technology-enabled learning forms an integral part of classroom teaching through smart classrooms, digital resources, interactive tools, and blended learning practices." },
+  { q: "Does the school conduct Olympiads and competitive exams?", a: "Yes, students are encouraged to participate in Olympiads, talent search examinations, and various national and international competitive platforms." },
+  { q: "What co-curricular activities are available?", a: "The school offers a diverse range of co-curricular activities including music, dance, art, theatre, debates, public speaking, coding, robotics, literary pursuits, and club activities." },
+  { q: "Are educational trips and excursions organized?", a: "Yes, the school regularly organizes educational visits, field trips, excursions, and experiential learning programs to enhance practical understanding and exposure." },
+  { q: "What safety measures are implemented on campus?", a: "The school campus is equipped with CCTV surveillance, trained security personnel, safety protocols, monitored entry systems, and emergency preparedness measures to ensure student safety." },
+  { q: "How does the school address bullying concerns?", a: "The school follows a strict zero-tolerance policy towards bullying and promotes a safe, inclusive, and respectful learning environment for all students." },
+  { q: "How does the school communicate with parents?", a: "The school maintains regular communication with parents through ERP/mobile applications, SMS alerts, emails, circulars, notices, and Parent-Teacher Meetings." },
+  { q: "Does the school provide career counselling?", a: "Yes, the school offers career guidance and counselling support through aptitude sessions, mentoring programs, university guidance, and exposure to career pathways." },
 ];
 
 const campusLocations = [
@@ -201,11 +213,11 @@ function Hero() {
 
   return (
     <>
-    <section className="relative w-full h-[650px] overflow-hidden">
+    <section className="relative w-full h-[700px] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/assets/Home/Kindergarten.JPG')",
+          backgroundImage: "url('/assets/Home/classroom-2.webp')",
         }}
       />
       <div className="absolute inset-0 bg-black/40" />
