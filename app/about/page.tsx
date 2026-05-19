@@ -231,7 +231,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section id="story" className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="order-last md:order-none">
             <Reveal>
               <p className="font-playfair text-crimson text-xl italic mb-4">Who We Are</p>
               <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
