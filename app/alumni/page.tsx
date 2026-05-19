@@ -725,7 +725,7 @@ function CTASection() {
                 Join Our Alumni Network
               </a>
               <a
-                href="https://seedlingschools.com/admission-procedure.php"
+                href="/admissions#enquire"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-transparent text-white border-2 border-white/30 font-black px-8 py-4 rounded-full hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 text-[11px] uppercase tracking-widest font-dm"

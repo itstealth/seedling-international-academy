@@ -621,7 +621,7 @@ export default function AboutPage() {
               Admissions open for 2026–27. Step into a world of limitless possibilities.
             </p>
             <a
-              href="/admission-procedure"
+              href="/admissions#enquire"
               className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-12 py-6 rounded-full text-sm tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/40 hover:gap-6 font-dm"
             >
               Begin Your Application

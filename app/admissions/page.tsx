@@ -871,7 +871,7 @@ export default function AdmissionsPage() {
               <p className="font-dm text-sand text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
               <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight text-white">Start Your Application Today</h3>
               <div className="flex gap-4 justify-center flex-wrap">
-                <a href="https://seedlingschools.com/admission-online.php" target="_blank" rel="noopener noreferrer"
+                <a href="/admissions#enquire"
                   className="bg-crimson text-white hover:bg-crimson-dark px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40">
                   Fill Online Form
                 </a>
@@ -1226,7 +1226,7 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={120}>
             <div className="flex gap-4 justify-center flex-wrap">
-              <a href="https://seedlingschools.com/admission-online.php" target="_blank" rel="noopener noreferrer"
+              <a href="/admissions#enquire"
                 className="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/30 hover:gap-4">
                 Apply Now
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
