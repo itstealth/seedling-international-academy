@@ -51,7 +51,7 @@ const leaders = [
     role: "Founder Director",
     sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    img: "/assets/img/mohini.png",
+    img: "/assets/img/Mohini-Bakshi.jpeg",
     tag: "Legacy",
   },
   {
@@ -59,7 +59,7 @@ const leaders = [
     role: "CEO & Director",
     sub: "Seedling Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
-    img: "/assets/img/sandeep.png",
+    img: "/assets/img/Sandeep-Bakshi.jpeg",
     tag: "Forever New Frontiers",
   },
   {
@@ -83,7 +83,7 @@ const leaders = [
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
-    img: "/assets/img/aishwarya.png",
+    img: "/assets/img/Aishwarya-Bakshi.jpeg",
     tag: "Promoting Global Citizenship",
   },
 ];
@@ -105,7 +105,7 @@ export default function LeadershipPage() {
           <Reveal>
             <div className="relative">
               <img
-                src="/assets/img/sandeep.png"
+                src="/assets/img/Sandeep-Bakshi.jpeg"
                 alt="Dr. Sandeep Bakshi, Director Seedling Group"
                 className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
               />
