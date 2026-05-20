@@ -146,7 +146,7 @@ const campusImages = [
 
 const stats = [
   { value: "20,000+", label: "Students Enrolled" },
-  { value: "15:1", label: "Student–Teacher Ratio" },
+  { value: "20:1", label: "Student–Teacher Ratio" },
   { value: "5,000+", label: "Alumni Worldwide" },
   { value: "100%", label: "Board Results" },
   { value: "50+", label: "Nations Represented" },

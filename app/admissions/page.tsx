@@ -88,7 +88,7 @@ const whyUs = [
   { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses." },
   { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education." },
   { icon: "🌍", title: "Global Standards", desc: "Choose from CBSE or International curricula — the same Seedling values, globally recognised credentials." },
-  { icon: "👨‍👩‍👧", title: "15:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care." },
+  { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care." },
   { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning." },
   { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student." },
 ];
@@ -169,7 +169,7 @@ const faqs = [
   { q: "Can I apply online?", a: "Yes. Visit seedlingschools.com, click on Admissions → Online Form. Fill in the required details, select your preferred school, and submit. Our admission team will reach out to guide you through the next steps." },
   { q: "Are scholarships available?", a: "Yes. Seedling Schools offers merit scholarships for academically outstanding students and for students with achievements in sports. Early bird incentives are also available for registrations completed early in the admission season. Contact the school for current scholarship criteria." },
   { q: "Is transportation available?", a: "Yes. Transportation is available for students across both campuses — Jawahar Nagar and Durgapura. GPS-enabled buses with trained attendants cover major routes across Jaipur. For route details and fees, contact the school office directly." },
-  { q: "What is the Student-Teacher ratio?", a: "Seedling maintains a 15:1 student-to-teacher ratio, ensuring that every child receives personalised attention, mentoring, and academic support throughout their schooling journey." },
+  { q: "What is the Student-Teacher ratio?", a: "Seedling maintains a 20:1 student-to-teacher ratio, ensuring that every child receives personalised attention, mentoring, and academic support throughout their schooling journey." },
   { q: "Is re-admission done for Class XI?", a: "All successful students of Class X may apply for Class XI admission. Re-admission is processed through the school office. Students must apply on the prescribed form along with the non-refundable application amount." },
   { q: "Does the school focus on holistic development?", a: "Yes, the school strongly believes in the holistic development of every child. Equal emphasis is laid on academics, sports, life skills, values, creativity, leadership, and co-curricular excellence to nurture confident and responsible individuals." },
   { q: "What subjects are offered in senior secondary classes?", a: "The school offers a wide range of subjects across Science, Commerce, and Humanities streams, subject to availability and CBSE norms." },
