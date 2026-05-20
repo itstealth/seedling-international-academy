@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { Info, Download, ShieldCheck, CreditCard, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -17,10 +17,11 @@ const feeData = [
 export default function FeeStructurePage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Fee Structure"
-        subtitle="Transparent and straightforward. Investing in your child's future with clarity and trust."
-        image="/assets/Home/classroom.jpg"
+        badge="Transparent Fees"
+        breadcrumbs={[{ label: "Fee Structure" }]}
       />
 
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">

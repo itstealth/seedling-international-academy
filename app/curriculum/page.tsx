@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // ─── Scroll Reveal ────────────────────────────────────────────────────────────
 function useReveal() {
@@ -229,25 +230,15 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════════════════ */}
-      <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
-        <img
-          src="/assets/Home/MainCampus.webp"
-          alt="Academic Excellence at Seedling Schools"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-[ken-burns_20s_ease_infinite]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
-          <Reveal delay={100}>
-            <h1 className="font-playfair text-white font-light text-3xl sm:text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
-              Academic{" "}
-              <em className="font-semibold text-sand">Excellence</em><br className="sm:block hidden" />
-              <span className="text-white/90"> & Future-Ready Learning.</span>
-            </h1>
-          </Reveal>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/Home/MainCampus.webp"
+        title="Academic Excellence"
+        subtitle="& Future-Ready Learning."
+        badge="CBSE Curriculum"
+        breadcrumbs={[{ label: "Academics" }, { label: "Curriculum" }]}
+        height="large"
+        overlayOpacity={0.6}
+      />
 
       {/* ══════════════════════════════════════════════════════
           2. CURRICULUM OVERVIEW

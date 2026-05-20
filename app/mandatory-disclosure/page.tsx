@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import PageHero from '@/components/ui/PageHero';
+import HeroWrapper from '@/components/layout/HeroWrapper';
 
 export const metadata: Metadata = {
   title: 'Mandatory Public Disclosure | Seedling Public School, Jaipur',
@@ -12,10 +12,11 @@ const MandatoryDisclosure = () => {
   return (
     <div className="min-h-screen bg-off-white font-dm selection:bg-navy/10">
 
-      <PageHero
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Mandatory Public Disclosure"
-        subtitle="In accordance with CBSE Affiliation Bye-Laws, the following information is disclosed for Seedling Public School (SPS), Jaipur."
-        image="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?w=1600&q=80"
+        badge="CBSE Compliance"
+        breadcrumbs={[{ label: "Mandatory Disclosure" }]}
       />
 
       <main className="max-w-6xl mx-auto px-6 py-20">

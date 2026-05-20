@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -30,9 +29,17 @@ const navItems = [
   { name: "Contact", href: "/contact-us" },
 ];
 
+const announcements = [
+  "Admissions open for 2026–27 Academic Session",
+  "Scholarship available for meritorious students in Academics & Sports",
+  "Parent counselling available online & offline",
+  "Seedling wins State-level inter-school debate championship",
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -45,10 +52,23 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 bg-navy-deeper/95 backdrop-blur-md shadow-sm border-b border-white/5 transition-all duration-300`}>
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
-          <nav className="relative py-3">
-            <div className="flex items-center justify-between h-14">
+      <div className="sticky top-0 left-0 right-0 z-50 bg-navy-deeper">
+        {/* ── ANNOUNCEMENT TICKER ── */}
+        <div className="overflow-hidden h-8 flex items-center border-b border-white/[0.06]">
+          <div className="flex items-center gap-0 whitespace-nowrap animate-marquee">
+            {[...announcements, ...announcements].map((a, i) => (
+              <span key={i} className="inline-flex items-center gap-4 text-[10.5px] font-medium tracking-[0.12em] uppercase text-white/60 px-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0 inline-block" />
+                {a}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── MAIN HEADER ── */}
+        <header className="bg-navy-deeper">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="flex items-center justify-between h-[68px] gap-6">
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center gap-4 group">
@@ -118,94 +138,85 @@ export default function Navbar() {
                 </button>
               </div>
             </div>
-          </nav>
-        </div>
-      </header>
+          </div>
+        </header>
 
-      {/* Mobile Sidebar Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-navy-deeper/40 backdrop-blur-md xl:hidden"
-              onClick={() => setIsOpen(false)}
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-[400px] bg-navy-deeper xl:hidden overflow-hidden flex flex-col rounded-l-[3.5rem] shadow-editorial"
-            >
-              <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
-
-              <div className="flex flex-col h-full relative z-10">
-                <div className="flex items-center justify-between p-8 border-b border-black/5">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src="/SPS_Logo.png"
-                      alt="Seedling Schools Logo"
-                      width={160}
-                      height={48}
-                      className="h-12 w-auto object-contain"
-                    />
-                  </div>
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="p-3 text-white/60 hover:text-white transition-colors bg-white/10 rounded-full"
+        {/* ── MOBILE NAV EXPANDED ── */}
+        <div className={`xl:hidden border-t border-white/[0.06] overflow-hidden transition-all duration-300 ${isOpen ? "max-h-screen" : "max-h-0"}`}>
+          <div className="bg-navy-deeper px-6 py-4 space-y-1">
+            <div className="flex items-center justify-between pb-2">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">Menu</span>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-white/40 hover:text-white transition-colors"
+                aria-label="Close menu"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            {navItems.map((item) => (
+              <div key={item.name}>
+                <div className="flex items-center justify-between">
+                  <Link
+                    href={item.href}
+                    onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
+                    className={`flex-1 py-3 text-[12px] font-semibold tracking-[0.1em] uppercase transition-colors ${pathname === item.href ? "text-white" : "text-white/45"}`}
                   >
-                    <X className="w-6 h-6" />
-                  </button>
+                    {item.name}
+                  </Link>
+                  {item.dropdown && (
+                    <button
+                      onClick={() => setMobileExpanded(mobileExpanded === item.name ? null : item.name)}
+                      className="p-2 text-white/30"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
+                        className={`transition-transform ${mobileExpanded === item.name ? "rotate-180" : ""}`}>
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
-
-                <div className="flex-1 overflow-y-auto px-8 py-10">
-                  <div className="flex flex-col gap-2">
-                    {navItems.map((item) => (
-                      <div key={item.name}>
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className={`py-5 text-xl font-black uppercase tracking-widest ${pathname === item.href ? "text-sand" : "text-white/80"}`}
-                        >
-                          {item.name}
-                        </Link>
-                        {item.dropdown && (
-                          <div className="pl-4 flex flex-col gap-1">
-                            {item.dropdown.map((sub) => (
-                              <Link
-                                key={sub.name}
-                                href={sub.href}
-                                onClick={() => setIsOpen(false)}
-                                className={`py-3 text-base font-bold uppercase tracking-wider ${pathname === sub.href ? "text-sand" : "text-white/60"}`}
-                              >
-                                {sub.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
+                {item.dropdown && mobileExpanded === item.name && (
+                  <div className="ml-4 mb-2 border-l border-white/[0.08] pl-4 space-y-1">
+                    {item.dropdown.map((child) => (
+                      <Link
+                        key={child.name}
+                        href={child.href}
+                        onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
+                        className="block py-2 text-[11.5px] text-white/35 hover:text-white tracking-wide transition-colors"
+                      >
+                        {child.name}
+                      </Link>
                     ))}
                   </div>
-                </div>
-
-                <div className="p-10 bg-off-white border-t border-black/5 mt-auto">
-                  {/* <Link
-                    href="/admissions"
-                    onClick={() => setIsOpen(false)}
-                    className="flex justify-center items-center gap-4 w-full h-20 bg-navy-deeper text-white font-black text-xl rounded-3xl shadow-editorial hover:bg-navy transition-all uppercase tracking-widest"
-                  >
-                    Apply Now 2026
-                    <ArrowRight className="w-6 h-6" />
-                  </Link> */}
-                </div>
+                )}
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            ))}
+            <div className="pt-3">
+              <Link
+                href="/admissions"
+                className="block w-full text-center py-3 bg-crimson text-white text-[11px] font-bold tracking-[0.15em] uppercase rounded-full"
+              >
+                Apply Now &apos;26
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style jsx global>{`
+        @keyframes marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 32s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </>
   );
 }

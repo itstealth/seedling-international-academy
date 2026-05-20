@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { getMediaUrl, getPostCategories, stripHtml, formatDate, type WPPost } from "@/lib/wordpress";
 
 const ArrowLeft = ({ size = 16 }: { size?: number }) => (
@@ -161,6 +162,12 @@ export default function BlogDetailPage() {
 
   return (
     <div className="min-h-screen bg-off-white font-dm">
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Blog"
+        badge="Stories & Updates"
+        breadcrumbs={[{ label: "Blog" }]}
+      />
       {/* Back Button */}
       <div className="pt-32 px-6 max-w-7xl mx-auto">
         <Link

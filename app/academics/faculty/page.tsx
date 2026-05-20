@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  Award, 
-  BookOpen, 
-  Star, 
-  Mail, 
+import HeroWrapper from "@/components/layout/HeroWrapper";
+import {
+  Users,
+  Award,
+  BookOpen,
+  Star,
+  Mail,
   Globe,
   ChevronRight,
   ShieldCheck,
@@ -82,29 +83,12 @@ const departments = [
 export default function FacultyPage() {
   return (
     <div className="bg-neutral-bg min-h-screen pt-32 overflow-x-hidden">
-      
-      {/* Editorial Hero */}
-      <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto text-center">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="text-label mb-10 block">Expert Mentors</span>
-          <h1 className="text-heading text-6xl md:text-[10rem] mb-20 tracking-tight">
-            The Academic <br /> 
-            <span className="text-primary italic">Council.</span>
-          </h1>
-          <div className="relative h-[600px] rounded-[5rem] overflow-hidden shadow-editorial mx-auto max-w-6xl group">
-             <Image 
-               src="/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/academics_faculty_hero_professional_1776861261472.png"
-               alt="Faculty Team"
-               fill
-               className="object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-             />
-             <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" />
-          </div>
-        </motion.div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Faculty"
+        badge="Our Educators"
+        breadcrumbs={[{ label: "Faculty" }]}
+      />
 
       {/* Leadership: Portrait Focused Section */}
       <section className="pt-16 pb-10 bg-white border-y border-black/5">

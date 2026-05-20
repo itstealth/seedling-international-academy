@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 /* ─── THEME ────────────────────────────────────────────────────────────── */
 const T = {
@@ -877,7 +878,7 @@ export default function SportsPage() {
     <>
       <Styles />
       <main style={{ background:T.offWhite, overflowX:"hidden" }}>
-        <Hero />
+        <HeroWrapper backgroundImage="/assets/Home/sports-ground.webp" title="Sports" badge="Athletics & Fitness" breadcrumbs={[{label:"Sports"}]} />
         <SportsOverview />
         <SportsGrid />
         {SPORTS.map((sport, i) => (

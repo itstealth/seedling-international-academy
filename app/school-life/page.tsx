@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // --- Custom Styles for Portability ---
 const pageStyles = `
@@ -245,40 +246,6 @@ const features = [
 // ==========================================
 // INTERNAL COMPONENTS
 // ==========================================
-
-function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => { });
-    }
-  }, []);
-
-  return (
-    <>
-      <section className="relative w-full h-[600px] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/SHOWCASING WONDERLAND/1.webp')",
-        }}
-      />
-    </section>
-
-    <section className="bg-navy-deeper pt-16 pb-4 md:pt-20 md:pb-8">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-4">
-          Life at Seedling
-        </h1>
-        <p className="text-white text-lg font-dm font-light max-w-2xl mx-auto">
-          Where every child discovers, learns, and grows into their brightest self.
-        </p>
-      </div>
-    </section>
-    </>
-  );
-}
 
 function MasonryGallery() {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -859,7 +826,15 @@ export default function SchoolLifePage() {
       */}
       <style dangerouslySetInnerHTML={{ __html: pageStyles }} />
 
-      <Hero />
+      <HeroWrapper
+        backgroundImage="/assets/SHOWCASING WONDERLAND/1.webp"
+        title="Life at Seedling"
+        subtitle="Where every child discovers, learns, and grows into their brightest self."
+        badge="School Life"
+        breadcrumbs={[{ label: "School Life" }]}
+        height="large"
+        overlayOpacity={0.5}
+      />
       <MasonryGallery />
       {/* <SportsSection /> */}
       <ActivitiesGrid />

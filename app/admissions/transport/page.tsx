@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { ShieldCheck, MapPin, PhoneCall, Clock, Navigation, CheckCircle2 } from "lucide-react";
 
 const routes = [
@@ -16,10 +16,11 @@ const routes = [
 export default function TransportFacilityPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Transport Facility"
-        subtitle="Safety first, comfort always. A reliable network of modern buses connecting all corners of Jaipur."
-        image="/assets/PRIMARY OUTING/1.webp"
+        badge="Safe & Reliable"
+        breadcrumbs={[{ label: "Transport" }]}
       />
 
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

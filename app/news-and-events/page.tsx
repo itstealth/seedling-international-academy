@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // ─── Scroll Reveal ────────────────────────────────────────────────────────────
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -90,24 +91,14 @@ export default function CampusHighlightsPage() {
       {/* ══════════════════════════════════════════════════════
           1. HERO BANNER
       ══════════════════════════════════════════════════════ */}
-      <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
-        <img
-          src="/assets/ANNUAL FUNCTION/1.webp"
-          alt="Campus Highlights at Seedling Schools"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
-          <Reveal delay={100}>
-            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
-              News &{" "}
-              <em className="font-semibold text-crimson">Events</em>
-            </h1>
-          </Reveal>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/ANNUAL FUNCTION/1.webp"
+        title="News & Events"
+        badge="Campus Highlights"
+        breadcrumbs={[{ label: "News & Events" }]}
+        height="large"
+        overlayOpacity={0.6}
+      />
 
       {/* ══════════════════════════════════════════════════════
           2. FEATURED ARTICLE

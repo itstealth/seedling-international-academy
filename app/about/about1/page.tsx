@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import {
   History,
   Target,
@@ -57,8 +58,13 @@ const leaders = [
 export default function AboutPage() {
   return (
     <div className="bg-neutral-bg min-h-screen pt-32 overflow-x-hidden">
-
-      {/* Editorial Hero Section */}
+      <HeroWrapper
+        backgroundImage="/assets/about/about-banner.jpg"
+        title="About"
+        subtitle="Us"
+        badge="CBSE Affiliated · Jaipur"
+        breadcrumbs={[{ label: "About" }]}
+      />
       <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="flex flex-col items-center text-center">
           <motion.div

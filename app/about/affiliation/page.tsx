@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { CheckCircle2, ShieldCheck, Globe, Award, Plus } from "lucide-react";
 
 const affiliations = [
@@ -25,7 +26,12 @@ const affiliations = [
 export default function AffiliationPage() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-40 relative overflow-hidden">
-      {/* Mesh Gradients Background */}
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Affiliations & Certifications"
+        badge="Globally Recognized"
+        breadcrumbs={[{ label: "Affiliations" }]}
+      />
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.05]">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary blur-[120px]" />
