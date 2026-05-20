@@ -8,7 +8,6 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
-  { name: "Home", href: "/" },
   {
     name: "About", href: "/about", dropdown: [
       { name: "About Seedling", href: "/about" },
@@ -54,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 left-0 right-0 z-50 bg-navy-deeper">
-        {/* ── ANNOUNCEMENT TICKER ── */}
+        {/* ── ANNOUNCEMENT TICKER (commented out)
         <div className="overflow-hidden h-8 flex items-center border-b border-white/[0.06]">
           <div className="flex items-center gap-0 whitespace-nowrap animate-marquee">
             {[...announcements, ...announcements].map((a, i) => (
@@ -65,10 +64,11 @@ export default function Navbar() {
             ))}
           </div>
         </div>
+        */}
 
         {/* ── MAIN HEADER ── */}
         <header className="bg-navy-deeper">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="max-w-[1600px] mx-auto px-4 py-2 sm:px-6 lg:px-10">
             <div className="flex items-center justify-between h-[68px] gap-6">
               {/* Logo */}
               <div className="flex-shrink-0">
@@ -154,14 +154,14 @@ export default function Navbar() {
                 transition={{ type: "spring", bounce: 0, duration: 0.5 }}
                 className="fixed inset-y-0 left-0 z-50 w-[80%] max-w-[320px] bg-navy-deeper xl:hidden overflow-hidden flex flex-col"
               >
-                <div className="flex items-center justify-between p-6 border-b border-white/[0.06]">
+                <div className="flex items-center justify-between p-3 border-b border-white/[0.06]">
                   <Link href="/" onClick={() => setIsOpen(false)}>
                     <Image
                       src="/SPS_Logo.png"
                       alt="Seedling Schools Logo"
-                      width={140}
-                      height={42}
-                      className="h-10 w-auto object-contain"
+                      width={180}
+                      height={54}
+                      className=" w-auto object-contain"
                     />
                   </Link>
                   <button
@@ -181,7 +181,7 @@ export default function Navbar() {
                           {item.dropdown ? (
                             <button
                               onClick={() => setMobileExpanded(mobileExpanded === item.name ? null : item.name)}
-                              className={`flex-1 py-3 text-[13px] font-bold uppercase tracking-wider transition-colors flex items-center gap-2 ${pathname.startsWith(item.href) ? "text-sand" : "text-white/70"}`}
+                              className={`flex-1 py-3 text-[16px] font-bold uppercase tracking-wider transition-colors flex items-center gap-2 ${pathname.startsWith(item.href) ? "text-sand" : "text-white/70"}`}
                             >
                               {item.name}
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
@@ -193,7 +193,7 @@ export default function Navbar() {
                             <Link
                               href={item.href}
                               onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
-                              className={`flex-1 py-3 text-[13px] font-bold uppercase tracking-wider transition-colors ${pathname === item.href ? "text-sand" : "text-white/70"}`}
+                              className={`flex-1 py-3 text-[16px] font-bold uppercase tracking-wider transition-colors ${pathname === item.href ? "text-sand" : "text-white/70"}`}
                             >
                               {item.name}
                             </Link>
@@ -206,7 +206,7 @@ export default function Navbar() {
                                 key={child.name}
                                 href={child.href}
                                 onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
-                                className={`block py-2.5 text-[12px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-sand" : "text-white/50"}`}
+                                className={`block py-2.5 text-[14px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-sand" : "text-white/50"}`}
                               >
                                 {child.name}
                               </Link>
@@ -232,7 +232,7 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-      <style jsx global>{`
+      {/* <style jsx global>{`
         @keyframes marquee {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -243,7 +243,7 @@ export default function Navbar() {
         .animate-marquee:hover {
           animation-play-state: paused;
         }
-      `}</style>
+      `}</style> */}
     </>
   );
 }
