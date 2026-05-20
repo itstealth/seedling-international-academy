@@ -31,8 +31,6 @@ const CAMPUS_MAPS = [
 
 const SCHOOLS = [
   'Seedling Public School (CBSE), Jawahar Nagar',
-  'Seedling Modern High School (CBSE), Durgapura',
-  'Seedling Wonderland Kids League, Jawahar Nagar',
 ]
 
 const STATS = [
