@@ -37,7 +37,7 @@ const SCHOOLS = [
 
 const STATS = [
   { value: '20,000+', label: 'Students' },
-  { value: '15:1', label: 'Student-Teacher Ratio' },
+  { value: '20:1', label: 'Student-Teacher Ratio' },
   { value: '5,000+', label: 'Alumni Network' },
   { value: '100%', label: 'Board Results' },
   { value: '30+', label: 'Years of Excellence' },
@@ -501,7 +501,7 @@ export default function ContactPage() {
             {currentMap.address}
           </p>
 
-          <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl h-80 md:h-96 bg-sand/10">
+          <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl aspect-square md:aspect-auto md:h-96 bg-sand/10">
             <iframe
               key={currentMap.id}
               src={currentMap.src}

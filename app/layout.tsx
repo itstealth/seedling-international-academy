@@ -1,31 +1,25 @@
 import type { Metadata } from "next";
-import { Outfit, Geist_Mono, Playfair_Display, DM_Sans } from "next/font/google";
+import { Geist_Mono, DM_Serif_Text, DM_Sans } from "next/font/google";
 import { headers } from "next/headers";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
 import "./globals.css";
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const dmSerif = DM_Serif_Text({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400"],
 });
 
 const dmSans = DM_Sans({
   variable: "--font-dm",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -45,9 +39,9 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${geistMono.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${dmSerif.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans antialiased">
         <NavbarWrapper />
         <main className="flex-1 flex flex-col">
           {children}

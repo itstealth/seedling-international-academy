@@ -161,7 +161,7 @@ function Hero() {
 function IntroSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 " style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
@@ -179,7 +179,7 @@ function IntroSection() {
             <p className="text-lg leading-relaxed" style={{ color: "#5a5a5a", fontFamily: "'DM Sans', sans-serif" }}>
               The school believes that each child learns differently, and therefore adopts a student-centric approach that caters to diverse learning needs and abilities.
             </p>
-            <div className="mt-10 flex gap-10">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 text-center sm:text-left">
               {[["Student-Centric", "Approach"], ["Inclusive", "Environment"], ["Holistic", "Development"]].map(([a, b]) => (
                 <div key={a}>
                   <div className="font-bold text-lg" style={{ color: "#175190", fontFamily: "'Playfair Display', serif" }}>{a}</div>
@@ -264,7 +264,7 @@ function FeatureCards() {
 function HighAchievers() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 " style={{ background: "#f8f7f6" }}>
+    <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* image */}
@@ -319,7 +319,7 @@ function HighAchievers() {
 function ModernLearning() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 " style={{ background: "#2c2c2c" }}>
+    <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#2c2c2c" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -338,7 +338,7 @@ function ModernLearning() {
             <p className="text-lg leading-relaxed mb-10 text-white/70" style={{ fontFamily: "'DM Sans', sans-serif" }}>
               The integration of modern teaching tools, digital resources, and interactive methodologies further enhances the learning experience. The school also focuses on developing essential skills such as communication, critical thinking, and problem-solving.
             </p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 { icon: "💻", label: "Digital Tools" },
                 { icon: "🎯", label: "Interactive Methods" },
@@ -372,7 +372,7 @@ function ModernLearning() {
 function WellbeingSection() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 " style={{ background: "#f0ebef" }}>
+    <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#f0ebef" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* text */}
@@ -444,7 +444,7 @@ function Summary() {
           <p className="text-xl text-white/75 max-w-3xl mx-auto leading-relaxed mb-14" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Overall, the learning support at Seedling Public School, Jawahar Nagar, creates an inclusive and encouraging environment where every student feels valued, supported, and motivated to succeed academically and personally.
           </p>
-          <div className="flex flex-wrap justify-center gap-5">
+          {/* <div className="flex flex-wrap justify-center gap-5">
             <a
               href="/admissions#enquire"
               target="_blank"
@@ -467,7 +467,7 @@ function Summary() {
             >
               Learn More About SPS
             </a>
-          </div>
+          </div> */}
         </FadeIn>
       </div>
     </section>
@@ -490,7 +490,7 @@ export default function LearningSupport() {
   return (
     <>
       <FontLoader />
-      <main style={{ background: "#f8f7f6" }}>
+      <main style={{ background: "#f8f7f6" }} className="overflow-x-hidden">
         <HeroWrapper
           backgroundImage="/assets/img/sps-banner.jpg"
           title="Learning Support"

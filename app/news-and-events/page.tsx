@@ -195,7 +195,7 @@ export default function CampusHighlightsPage() {
             <div className="mt-12 bg-white rounded-[2rem] border border-sand/40 shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
               {[
                 { value: "20,000+", label: "Students" },
-                { value: "15:1", label: "Student-Teacher Ratio" },
+                { value: "20:1", label: "Student-Teacher Ratio" },
                 { value: "5,000+", label: "Alumni Network" },
                 { value: "100%", label: "Academic Results" },
               ].map(({ value, label }) => (

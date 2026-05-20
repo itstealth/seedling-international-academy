@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { MoveRight } from "lucide-react";
+import { Download, MoveRight } from "lucide-react";
 import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "@/components/icons/BrandIcons";
 
 export default function Footer() {
+  const brochureHref = "/assets/SPS%20(CBSE)%20PROSPECTUS.pdf";
+
   return (
     <footer className="bg-[#060e1c] border-t border-white/10 relative overflow-hidden">
       {/* Subtle mesh decoration */}
@@ -42,7 +44,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Quick Overview</h3>
             <ul className="space-y-6">
-              {['Policies', 'Mandatory Disclosures', 'ERP Login', 'Terms & Conditions'].map((item) => (
+              {['Blog','Policies', 'Mandatory Disclosures', 'ERP Login', 'Terms & Conditions'].map((item) => (
                 <li key={item}>
                   <Link href={`/${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className="group flex items-center text-sm font-black text-white/60 hover:text-white transition-colors font-dm">
                     <MoveRight className="w-5 h-5 mr-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 text-sand" />
@@ -50,6 +52,16 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={brochureHref}
+                  download
+                  className="group flex items-center text-sm font-black text-white/60 hover:text-white transition-colors font-dm"
+                >
+                  <Download className="w-5 h-5 mr-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 text-sand" />
+                  <span>Download Brochure</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -58,39 +70,51 @@ export default function Footer() {
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Our Institutions</h3>
             <div className="space-y-6">
               {[
-                { name: 'Seedling Public School', loc: 'Jawahar Nagar' },
-                { name: 'Seedling International Academy', loc: 'Jawahar Nagar' },
+                { name: 'Seedling Public School', loc: 'Jawahar Nagar', link: '/' },
+                { name: 'Seedling International Academy', loc: 'Jawahar Nagar', link: 'https://seedlingschools.com/sia.php' },
               ].map((school) => (
                 <div key={school.name} className="group cursor-default">
-                  <span className="block text-sm font-black text-white/80 group-hover:text-sand transition-colors">{school.name}</span>
+                  {school.link ? (
+                    <a href={school.link} target={school.link.startsWith('http') ? '_blank' : '_self'} rel={school.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="block text-sm font-black text-white/80 hover:text-sand transition-colors">{school.name}</a>
+                  ) : (
+                    <span className="block text-sm font-black text-white/80 group-hover:text-sand transition-colors">{school.name}</span>
+                  )}
                   <span className="text-[10px] uppercase font-bold tracking-widest text-white/40 block mt-1">{school.loc}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Column 4: Location */}
+          {/* Column 4: Location Maps */}
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Locations</h3>
-            <div className="space-y-6">
-              {[
-                {
-                  name: 'Jawahar Nagar Campus',
-                  address: 'Sector-4, Park Lane, Jawahar Nagar, Jaipur – 302004',
-                  phone: '+91 7413012351',
-                },
-                {
-                  name: 'Durgapura Campus',
-                  address: 'Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur – 302018',
-                  phone: '+91 9588772837',
-                },
-              ].map((campus) => (
-                <div key={campus.name} className="group cursor-default">
-                  <span className="block text-sm font-black text-white/80 group-hover:text-sand transition-colors">{campus.name}</span>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/40 block mt-1">{campus.address}</span>
-                  <a href={`tel:${campus.phone.replace(/\s/g, '')}`} className="text-[10px] uppercase font-bold tracking-widest text-sand/60 block mt-1 hover:text-sand transition-colors">{campus.phone}</a>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="h-44 sm:h-48 md:h-[120px] rounded-xl overflow-hidden border border-white/10">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.783!3d26.943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1a!2sSeedling%20Public%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="120"
+                  className="h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Jawahar Nagar Campus"
+                />
+              </div>
+              <div className="h-44 sm:h-48 md:h-[120px] rounded-xl overflow-hidden border border-white/10">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.5!2d75.79!3d26.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1b!2sSeedling%20Modern%20High%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="120"
+                  className="h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Durgapura Campus"
+                />
+              </div>
             </div>
           </div>
 
