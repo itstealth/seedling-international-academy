@@ -8,6 +8,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
+  { name: "Home", href: "/" },
   {
     name: "About", href: "/about", dropdown: [
       { name: "About Seedling", href: "/about" },
@@ -175,7 +176,7 @@ export default function Navbar() {
 
                 <div className="flex-1 overflow-y-auto px-6 py-6">
                   <div className="flex flex-col gap-1">
-                    {navItems.map((item) => (
+                    {navItems.filter(item => item.name !== "Home").map((item) => (
                       <div key={item.name}>
                         <div className="flex items-center justify-between">
                           {item.dropdown ? (
