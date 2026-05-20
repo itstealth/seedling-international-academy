@@ -91,9 +91,9 @@ export default function Navbar() {
                   <div key={item.name} className="relative group">
                     {item.dropdown ? (
                       <>
-                        <button className={`flex flex-col items-center px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname.startsWith(item.href) ? "text-sand" : "text-white/80 hover:text-white"}`}>
+                        <button className={`flex items-center justify-center gap-1 px-2.5 py-2 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname.startsWith(item.href) ? "text-sand" : "text-white/80 hover:text-white"}`}>
                           {item.name}
-                          <ChevronDown className="w-3 h-3 mt-0.5" />
+                          <ChevronDown className="w-3 h-3" />
                         </button>
                         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-navy-deeper/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
                           {item.dropdown.map((sub) => (
