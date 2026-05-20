@@ -547,7 +547,7 @@ export default function CareersPage() {
               { value: "5", label: "Schools" },
               { value: "2", label: "Campuses" },
               { value: "20,000+", label: "Students" },
-              { value: "15:1", label: "Teacher Ratio" },
+              { value: "20:1", label: "Teacher Ratio" },
               { value: "100%", label: "Board Results" },
               { value: "1993", label: "Est." },
             ].map((s) => (

@@ -79,20 +79,20 @@ const leaders = [
     tag: "Engagement that Empowers",
   },
   {
-    name: "Mr. Sriram Bajaj",
-    role: "Principal",
-    sub: "Seedling Group of Institutions",
-    quote: "True education is not the filling of a pail, but the lighting of a fire — we must ignite curiosity, foster courage, and nurture compassion in every child we serve.",
-    img: "/assets/Home/principle.jpeg",
-    tag: "Illuminating Futures",
-  },
-  {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
+  },
+  {
+    name: "Mr. Sriram Bajaj",
+    role: "Principal",
+    sub: "Seedling Group of Institutions",
+    quote: "True education is lighting a fire, not filling a pail — we must ignite curiosity, foster courage, and nurture compassion.",
+    img: "/assets/Home/principle.jpeg",
+    tag: "Illuminating Futures",
   },
 ];
 
@@ -134,10 +134,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                As we dynamise our movement into a post-pandemic world, we sense opportunity at our doorstep. For us, it is a chance to rewrite the narrative of school — to make it more relevant to the realities of the world today. A place where learning happens not from a textbook or worksheet, but through contextual, real-life problem-solving.
-              </p>
-              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. Homes and families must move forward together with the school — being relevant, optimistic, and forever focused on the larger purpose and collective well-being.
+                At Seedling, we constantly reflect and recalibrate what school means in an age of deep uncertainty — rewriting the narrative to make learning relevant, contextual, and real.
               </p>
               <p className="text-text-light leading-[1.9] text-base font-dm">
                 From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.

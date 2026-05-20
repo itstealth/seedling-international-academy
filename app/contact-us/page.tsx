@@ -37,7 +37,7 @@ const SCHOOLS = [
 
 const STATS = [
   { value: '20,000+', label: 'Students' },
-  { value: '15:1', label: 'Student-Teacher Ratio' },
+  { value: '20:1', label: 'Student-Teacher Ratio' },
   { value: '5,000+', label: 'Alumni Network' },
   { value: '100%', label: 'Board Results' },
   { value: '30+', label: 'Years of Excellence' },

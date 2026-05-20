@@ -184,7 +184,7 @@ const programs = [
 const achievements = [
   { value: "100%", label: "Board Results", sub: "Consistently every year", icon: "🏆" },
   { value: "20,000+", label: "Students Enrolled", sub: "Across 5 schools", icon: "👩‍🎓" },
-  { value: "15:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
+  { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
   { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
   { value: "30+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },
   { value: "2", label: "Boards Offered", sub: "CBSE & Cambridge", icon: "📜" },
@@ -612,7 +612,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           7. CTA
       ══════════════════════════════════════════════════════ */}
-      <section className="relative md:pt-20 md:pb-12 pt-16 pb-10 overflow-hidden">
+      {/* <section className="relative md:pt-20 md:pb-12 pt-16 pb-10 overflow-hidden">
         <img
           src="/assets/Home/School2.webp"
           alt="Join Seedling Schools"
@@ -661,7 +661,7 @@ export default function AcademicsPage() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
