@@ -51,7 +51,7 @@ const leaders = [
     role: "Founder Director",
     sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    img: "/assets/img/mohini.png",
+    img: "/assets/img/Mohini-Bakshi.jpeg",
     tag: "Legacy",
   },
   {
@@ -59,7 +59,7 @@ const leaders = [
     role: "CEO & Director",
     sub: "Seedling Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
-    img: "/assets/img/sandeep.png",
+    img: "/assets/img/Sandeep-Bakshi.jpeg",
     tag: "Forever New Frontiers",
   },
   {
@@ -79,26 +79,18 @@ const leaders = [
     tag: "Engagement that Empowers",
   },
   {
-    name: "Mr. Sriram Bajaj",
-    role: "Principal",
-    sub: "Seedling Group of Institutions",
-    quote: "True education is not the filling of a pail, but the lighting of a fire — we must ignite curiosity, foster courage, and nurture compassion in every child we serve.",
-    img: "/assets/Home/principle.jpeg",
-    tag: "Illuminating Futures",
-  },
-  {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
-    img: "/assets/img/aishwarya.png",
+    img: "/assets/img/Aishwarya-Bakshi.jpeg",
     tag: "Promoting Global Citizenship",
   },
 ];
 
 export default function LeadershipPage() {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
         title="Leadership"
@@ -113,7 +105,7 @@ export default function LeadershipPage() {
           <Reveal>
             <div className="relative">
               <img
-                src="/assets/img/sandeep.png"
+                src="/assets/img/Sandeep-Bakshi.jpeg"
                 alt="Dr. Sandeep Bakshi, Director Seedling Group"
                 className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
               />
@@ -134,10 +126,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                As we dynamise our movement into a post-pandemic world, we sense opportunity at our doorstep. For us, it is a chance to rewrite the narrative of school — to make it more relevant to the realities of the world today. A place where learning happens not from a textbook or worksheet, but through contextual, real-life problem-solving.
-              </p>
-              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
-                At Seedling, we are constantly reflecting, reassessing, and recalibrating what the fundamental purpose of school is in an age of deep uncertainty and change. Homes and families must move forward together with the school — being relevant, optimistic, and forever focused on the larger purpose and collective well-being.
+                At Seedling, we constantly reflect and recalibrate what school means in an age of deep uncertainty — rewriting the narrative to make learning relevant, contextual, and real.
               </p>
               <p className="text-text-light leading-[1.9] text-base font-dm">
                 From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
@@ -154,9 +143,72 @@ export default function LeadershipPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
+          PRINCIPAL'S MESSAGE
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="self-start md:sticky md:top-28">
+            <Reveal>
+              <div className="relative">
+                <img
+                  src="/assets/Home/principle.jpeg"
+                  alt="Shruti Kukar, Principal Seedling Public School"
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
+                  <p className="text-navy text-sm font-dm">Principal, Seedling Public School</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div>
+            <Reveal>
+              <p className="font-playfair text-navy text-xl italic mb-4">Principal's Note</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
+                "Nurturing Happy Minds,<br />
+                <em className="font-semibold">Strong Hearts &amp; Bold Futures"</em>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                At Seedling Public School, we do not believe children are meant to simply pass examinations — they are meant to discover their voice, build their confidence, strengthen their values and step into the future with courage and clarity.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                In a world that is changing faster than ever before, we are committed to nurturing children who are not only academically capable, but emotionally secure, ethically grounded, creatively expressive and mentally resilient.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                From academics to innovation, sports to performing arts, leadership to public speaking, yoga to mindfulness and meditation — every experience at Seedling is designed to shape balanced, future-ready individuals who can thrive in life, not just in classrooms.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                And to every parent, we offer not just education, but partnership, reassurance and trust. Your child will be guided with warmth, challenged with purpose, heard with empathy and encouraged to grow into the finest version of themselves.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
+                Because at Seedling, we are not merely building successful students. We are nurturing happy minds, strong hearts, fearless voices, and extraordinary human beings ready to leave their mark on the world.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <p className="text-text-light leading-[1.9] text-base italic mb-4 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                Welcome to our portals where every child grows to bloom.
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <div className="mt-10 flex items-center gap-4">
+                <div className="w-12 h-px bg-navy" />
+                <span className="font-playfair italic text-xl text-text-light">Shruti Kukar</span>
+              </div>
+              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling Public School</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
           LEADERSHIP
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-10 sm:py-16 bg-white">
+      <section className="py-10  bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
