@@ -37,6 +37,7 @@ const announcements = [
   "Seedling wins State-level inter-school debate championship",
 ];
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -134,8 +135,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="hidden xl:block" aria-hidden="true" />
-            </div>
+                          </div>
           </div>
         </header>
 
