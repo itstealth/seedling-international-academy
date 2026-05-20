@@ -550,10 +550,26 @@ export default function SeedlingPage(): React.JSX.Element {
                 <input type="text" placeholder="Name of Child" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
                 <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
                   <option value="">Select Grade / Class</option>
-                  <option>Nursery / LKG / UKG</option>
-                  <option>Grade 1–5</option>
-                  <option>Grade 6–8</option>
-                  <option>Grade 9–12</option>
+                  <option>Nursery</option>
+                  <option>LKG</option>
+                  <option>UKG</option>
+                  <option>Grade 1</option>
+                  <option>Grade 2</option>
+                  <option>Grade 3</option>
+                  <option>Grade 4</option>
+                  <option>Grade 5</option>
+                  <option>Grade 6</option>
+                  <option>Grade 7</option>
+                  <option>Grade 8</option>
+                  <option>Grade 9</option>
+                  <option>Grade 10</option>
+                  <option>Grade 11</option>
+                  <option>Grade 12</option>
+                </select>
+                <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
+                  <option value="">Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
                 </select>
                 <input type="email" placeholder="Email Address" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
                 <input type="tel" placeholder="Contact Number" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
