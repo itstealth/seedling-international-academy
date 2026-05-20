@@ -154,7 +154,7 @@ export default function SeedlingPage(): React.JSX.Element {
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
                 Seedling Public School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6 mb-12">
+              <div className="grid sm:grid-cols-2 gap-6 mb-6 md:mb-12">
                 {[
                   { icon: BookOpen, title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
                   { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top CBSE academic outcomes." },
@@ -172,7 +172,7 @@ export default function SeedlingPage(): React.JSX.Element {
                   </div>
                 ))}
               </div>
-              <div className="flex gap-4 flex-wrap">
+              <div className="flex gap-4 flex-wrap mb-5 md:mb-0">
                 <a href="/about" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">Our Story</a>
               {/* <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a> */}
               </div>
