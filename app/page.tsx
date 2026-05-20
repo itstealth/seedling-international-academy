@@ -331,7 +331,8 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
           </div>
-          <div className="space-y-4">
+          {/* Gallery Grid - Mobile: 2-col boxes | Desktop: asymmetric layout */}
+          <div className="hidden md:block space-y-4">
             {/* Row 1 - Left big, Right stacked */}
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 row-span-2 group relative rounded-[2rem] overflow-hidden">
@@ -391,6 +392,27 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mobile Gallery - Clean 2-column grid */}
+          <div className="md:hidden grid grid-cols-2 gap-3">
+            {[
+              { img: '/assets/ANNUAL FUNCTION/5.webp', label: 'Annual Day' },
+              { img: '/assets/STELLAR SATURDAYS/2.webp', label: 'Stellar Saturdays' },
+              { img: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip' },
+              { img: '/assets/BOOT CAMP/1.webp', label: 'Boot Camp' },
+              { img: '/assets/FAREWELL 12TH/2.webp', label: 'Diwali Dance' },
+              { img: '/assets/SPORTS DAY/3.webp', label: 'Sports Day' },
+              { img: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing' },
+              { img: '/assets/SPARKLE FEST/1.webp', label: 'Sparkle Fest' },
+            ].map(({ img, label }) => (
+              <div key={label} className="group relative rounded-2xl overflow-hidden aspect-square">
+                <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
+                  <span className="text-white text-xs font-semibold font-playfair">{label}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
