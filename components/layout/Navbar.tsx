@@ -130,11 +130,17 @@ export default function Navbar() {
               {/* Mobile Menu Button */}
               <div className="xl:hidden flex items-center">
                 <button
-                  onClick={() => setIsOpen(true)}
+                  onClick={() => setIsOpen(!isOpen)}
                   className="p-2.5 rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
-                  aria-label="Open menu"
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
                 >
-                  <Menu className="w-6 h-6" />
+                  {isOpen ? (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    <Menu className="w-6 h-6" />
+                  )}
                 </button>
               </div>
             </div>
