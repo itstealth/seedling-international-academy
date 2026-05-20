@@ -54,47 +54,47 @@ export default function ResultPage() {
       />
 
       {/* Numbers That Tell Our Story */}
-      <section className="py-12 md:py-20 bg-navy-deeper text-white relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-px bg-white/15" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-sand/20" />
-        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,transparent_0,transparent_31px,white_32px),linear-gradient(0deg,transparent_0,transparent_31px,white_32px)] bg-[size:32px_32px]" />
+      <section className="py-12 md:py-16 bg-off-white text-text-base relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-sand/30" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-sand/30" />
+        <div className="absolute inset-0 mesh-gradient opacity-80" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-[0.8fr_1.7fr] gap-8 lg:gap-14 items-start">
             <Reveal>
               <div className="max-w-md">
-                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.28em] uppercase text-sand font-dm">
-                  <span className="h-px w-8 bg-sand/70" />
+                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.28em] uppercase text-crimson font-dm">
+                  <span className="h-px w-8 bg-crimson/70" />
                   Roll of Honour
                 </span>
-                <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-white">
+                <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-navy-deeper">
                   Numbers That<br />
-                  <em className="font-semibold text-sand">Tell Our Story</em>
+                  <em className="font-semibold text-navy">Tell Our Story</em>
                 </h2>
-                <p className="mt-5 text-sm md:text-base leading-7 text-white/60 font-dm font-light">
+                <p className="mt-5 text-sm md:text-base leading-7 text-text-light font-dm font-light">
                   A quick view of the academic consistency, campus scale, and learning support behind Seedling results.
                 </p>
               </div>
             </Reveal>
 
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+            <div className="overflow-hidden rounded-2xl border border-sand/30 bg-white shadow-editorial">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-sand/20">
                 {achievements.map((a, i) => (
                   <Reveal key={a.label} delay={i * 60}>
-                    <div className="group min-h-[142px] bg-navy-deeper/90 p-5 md:p-6 transition-colors duration-300 hover:bg-navy-dark">
+                    <div className="group min-h-[142px] bg-white p-5 md:p-6 transition-colors duration-300 hover:bg-navy-light">
                       <div className="mb-5 flex items-center justify-between gap-4">
-                        <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/35 font-dm">
+                        <span className="text-[10px] font-black uppercase tracking-[0.24em] text-text-light/60 font-dm">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="h-1.5 w-1.5 rounded-full bg-sand/80 transition-transform duration-300 group-hover:scale-150" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-crimson/70 transition-transform duration-300 group-hover:scale-150" />
                       </div>
-                      <p className="font-playfair text-3xl md:text-4xl font-semibold leading-none text-sand">
+                      <p className="font-playfair text-3xl md:text-4xl font-semibold leading-none text-navy">
                         {a.value}
                       </p>
-                      <p className="mt-3 text-sm font-black tracking-tight text-white font-dm">
+                      <p className="mt-3 text-sm font-black tracking-tight text-navy-deeper font-dm">
                         {a.label}
                       </p>
-                      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 font-dm">
+                      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-text-light font-dm">
                         {a.sub}
                       </p>
                     </div>
@@ -108,17 +108,17 @@ export default function ResultPage() {
           <Reveal delay={150}>
             <div className="mt-24">
               <div className="text-center mb-12">
-                <span className="inline-block bg-sand/20 text-sand text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-sand/30 mb-4 font-dm backdrop-blur-sm">
+                <span className="inline-block bg-crimson/5 text-crimson text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-crimson/10 mb-4 font-dm backdrop-blur-sm">
                   Board Toppers
                 </span>
-                <h3 className="font-playfair text-3xl md:text-5xl font-light text-white">
-                  Felicitating <em className="font-semibold text-sand">Excellence</em>
+                <h3 className="font-playfair text-3xl md:text-5xl font-light text-navy-deeper">
+                  Felicitating <em className="font-semibold text-navy">Excellence</em>
                 </h3>
               </div>
               
               <div className="flex flex-wrap justify-center gap-6">
                 {[1, 2, 3, 4, 5].map((num) => (
-                  <div key={num} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-sand/50">
+                  <div key={num} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-editorial transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_60px_rgba(10,31,58,0.18)] hover:border-navy-light">
                     <img 
                       src={`/assets/FELICITATING TOPPERS IN BOARDS/${num}.webp`} 
                       alt={`Seedling Topper ${num}`}
@@ -139,15 +139,15 @@ export default function ResultPage() {
 
           {/* Full-width 100% results banner */}
           <Reveal delay={200}>
-            <div className="mt-20 bg-navy-deeper/60 border border-white/10 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
+            <div className="mt-20 bg-white border border-sand/30 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-navy-light rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
-                <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-white">100% Board Results</h3>
-                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <p className="text-crimson text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
+                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-navy-deeper">100% Board Results</h3>
+                <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
-                <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">
+                <div className="w-40 h-40  rounded-full flex flex-col items-center justify-center border-2 border-navy/10 bg-navy text-white transition-colors duration-500">
                   <span className="font-playfair text-5xl font-bold">100%</span>
                   <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
                 </div>
