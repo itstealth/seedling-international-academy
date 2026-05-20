@@ -46,9 +46,9 @@ export default function ResultPage() {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
-        title="Our Results"
+        title="Results"
         badge="Academic Excellence"
-        breadcrumbs={[{ label: "Academics" }, { label: "Results" }]}
+        // breadcrumbs={[{ label: "Academics" }, { label: "Results" }]}
         height="large"
         overlayOpacity={0.6}
       />
