@@ -247,8 +247,7 @@ export default function AcademicsPage() {
         <Reveal className="text-center mb-16">
           {/* <Tag color="navy">Curriculum Overview</Tag> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
-            About
-            <em className="font-semibold text-crimson ml-2">Curriculum</em>
+            <em className="font-semibold text-crimson">Curriculum</em>
           </h2>
         </Reveal>
 
@@ -624,12 +623,8 @@ export default function AcademicsPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <span className="inline-block bg-sand/10 text-sand text-xs tracking-[0.3em] uppercase px-6 py-2.5 rounded-full border border-sand/20 mb-8 font-dm font-black">
-              Admissions Open 2026–27
-            </span>
             <h2 className="font-playfair text-3xl md:text-5xl font-light mb-8 text-white">
-              Join the<br />
-              <em className="font-semibold text-sand">Seedling Family</em>
+              Join the <em className="font-semibold text-sand">Seedling Family</em>
             </h2>
             <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-dm font-light">
               Come feel the Buzz! Parent counselling is available both online and offline. Early bird incentives and scholarships for meritorious students in academics and sports are available. Where every student matters — prioritising well-being since 1993.
