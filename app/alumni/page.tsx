@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // ==========================================
 // DATA CONSTANTS
@@ -253,178 +254,67 @@ function AlumniCard({
 // SECTIONS
 // ==========================================
 
-function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) el.classList.add("opacity-100", "translate-y-0");
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-off-white pt-20">
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-navy-light/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-crimson/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
-      <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-sand/20 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
-
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      <div
-        ref={ref}
-        className="relative z-10 text-center max-w-5xl mx-auto px-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
-      >
-        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-sand/40 rounded-full px-5 py-2 mb-8 shadow-sm">
-          <span className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
-          <span className="text-[10px] font-black font-dm text-navy-deeper tracking-[0.2em] uppercase">
-            Since 1993
-          </span>
-        </div>
-
-        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-[1.05] mb-6 tracking-tight">
-          Celebrating Our{" "}
-          <span className="relative inline-block">
-            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">
-              Alumni
-            </span>
-            <span className="absolute bottom-2 left-0 w-full h-3 bg-sand/30 rounded -z-0" />
-          </span>
-        </h1>
-
-        <p className="font-playfair text-2xl md:text-3xl font-light text-text-light mb-4 tracking-wide italic">
-          Community. Connection. Collaboration.
-        </p>
-
-        <p className="text-lg text-text-light max-w-2xl mx-auto mb-12 leading-relaxed font-dm font-light">
-          Every Seedling alumnus carries a story of growth, resilience, and perseverance —
-          a testament to what nurturing the right environment can accomplish.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-          {[
-            { value: "20,000+", label: "Students" },
-            { value: "5,000+", label: "Alumni Network" },
-            { value: "100%", label: "Results" },
-            { value: "50+", label: "Nations" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper">{stat.value}</p>
-              <p className="text-[10px] font-black text-text-light uppercase tracking-[0.2em] mt-1 font-dm">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-xs text-slate-400 uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-slate-300 to-transparent" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturedAlumni() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) el.classList.add("opacity-100", "translate-y-0");
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
+function FeaturedAlumniSection() {
   return (
     <section className="pt-8 pb-10 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* <div className="flex items-center gap-4 mb-16">
-          <div className="w-10 h-px bg-sand" />
-          <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
-            Featured Story
-          </span>
-        </div> */}
+        <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-navy-deeper">
+          <div className="relative min-h-[420px] md:min-h-[560px] overflow-hidden group">
+            <Image
+              src="/assets/alumni/harshil.png"
+              alt="Harshil Mathur – CEO of Razorpay"
+              fill
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+            <div className="absolute top-6 left-6">
+              <span className="bg-sand text-navy-deeper text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full font-dm">
+                The Pride of Seedling
+              </span>
+            </div>
+          </div>
 
-        <div
-          ref={ref}
-          className="opacity-0 translate-y-8 transition-all duration-1000 ease-out"
-        >
-          <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-navy-deeper">
-            <div className="relative min-h-[420px] md:min-h-[560px] overflow-hidden group">
-              <Image
-                src="/assets/alumni/harshil.png"
-                alt="Harshil Mathur – CEO of Razorpay"
-                fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-              <div className="absolute top-6 left-6">
-                <span className="bg-sand text-navy-deeper text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full font-dm">
-                  The Pride of Seedling
-                </span>
+          <div className="flex flex-col justify-center p-10 md:p-14 text-white">
+            <p className="text-sand text-[10px] font-black uppercase tracking-[0.2em] mb-4 font-dm">
+              Seedling Public School Alumni
+            </p>
+
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight">
+              Harshil Mathur
+            </h2>
+            <p className="font-playfair text-xl text-sand font-medium mb-8 italic">
+              CEO, Razorpay
+            </p>
+
+            <blockquote className="relative">
+              <div className="text-7xl text-sand/20 font-playfair absolute -top-4 -left-2 leading-none select-none">
+                "
               </div>
+              <p className="text-white/80 text-lg leading-relaxed pl-4 border-l-2 border-sand/50 font-dm font-light">
+                We take great pride in celebrating the remarkable achievements of our
+                esteemed alumni — showcasing their talents, dedication, and success
+                stories. Discover journeys of growth, resilience, and perseverance, and
+                gain insights into how Seedling School played a pivotal role in shaping
+                their path to success.
+              </p>
+            </blockquote>
+
+            <div className="mt-10 flex items-center gap-4">
+              <div className="w-12 h-px bg-sand/30" />
+              <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] font-dm">
+                Joyous Tidings — Alumni Accomplishment
+              </span>
             </div>
 
-            <div className="flex flex-col justify-center p-10 md:p-14 text-white">
-              <p className="text-sand text-[10px] font-black uppercase tracking-[0.2em] mb-4 font-dm">
-                Seedling Public School Alumni
-              </p>
-
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight">
-                Harshil Mathur
-              </h2>
-              <p className="font-playfair text-xl text-sand font-medium mb-8 italic">
-                CEO, Razorpay
-              </p>
-
-              <blockquote className="relative">
-                <div className="text-7xl text-sand/20 font-playfair absolute -top-4 -left-2 leading-none select-none">
-                  "
-                </div>
-                <p className="text-white/80 text-lg leading-relaxed pl-4 border-l-2 border-sand/50 font-dm font-light">
-                  We take great pride in celebrating the remarkable achievements of our
-                  esteemed alumni — showcasing their talents, dedication, and success
-                  stories. Discover journeys of growth, resilience, and perseverance, and
-                  gain insights into how Seedling School played a pivotal role in shaping
-                  their path to success.
-                </p>
-              </blockquote>
-
-              <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-sand/30" />
-                <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] font-dm">
-                  Joyous Tidings — Alumni Accomplishment
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["Entrepreneurship", "Fintech", "Leadership", "Innovation"].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] font-black tracking-widest uppercase bg-white/10 border border-white/10 text-sand px-3 py-1 rounded-full font-dm"
+                >
+                  {tag}
                 </span>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                {["Entrepreneurship", "Fintech", "Leadership", "Innovation"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-black tracking-widest uppercase bg-white/10 border border-white/10 text-sand px-3 py-1 rounded-full font-dm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -768,8 +658,13 @@ export const metadata = {
 export default function AlumniPage() {
   return (
     <main className="min-h-screen">
-      <Hero />
-      <FeaturedAlumni />
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Our Alumni"
+        badge="Global Network"
+        breadcrumbs={[{ label: "Alumni" }]}
+      />
+      <FeaturedAlumniSection />
       <AlumniGrid />
       <AchievementsSection />
       <AlumniNetwork />

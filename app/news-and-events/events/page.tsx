@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { Calendar, MapPin, Clock, ArrowRight, Music, Trophy, Users, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -52,10 +52,11 @@ export default function EventsPage() {
   const FeaturedIcon = events[0].icon;
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero 
-        title="Upcoming Events"
-        subtitle="Mark your calendars. From grand stage performances to adrenaline-fueled sports meets, stay tuned to the buzz at Seedling."
-        image="https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&q=80"
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Events"
+        badge="Upcoming Events"
+        breadcrumbs={[{ label: "Events" }]}
       />
 
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

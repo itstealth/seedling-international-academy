@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // ─── Scroll Reveal Hook ───────────────────────────────────────────────────────
 function useScrollReveal() {
@@ -152,53 +153,6 @@ const stats = [
   { value: "1993", label: "Year Established" },
 ];
 
-function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => { });
-    }
-  }, []);
-
-  return (
-    <section className="relative w-full h-[500px] overflow-hidden">
-      {/* Background image with parallax feel */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out"
-        style={{
-          backgroundImage:
-            "url('/assets/about/about-banner.jpg')",
-        }}
-      />
-
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/80 via-navy-dark/60 to-sand/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-transparent to-transparent" />
-
-      {/* Decorative geometry */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <svg viewBox="0 0 400 800" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-          <circle cx="400" cy="200" r="300" fill="none" stroke="currentColor" className="text-sand" strokeWidth="1" />
-          <circle cx="400" cy="200" r="220" fill="none" stroke="currentColor" className="text-sand" strokeWidth="0.5" />
-          <circle cx="400" cy="600" r="200" fill="none" stroke="white" strokeWidth="0.5" />
-        </svg>
-      </div>
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-6 animate-fade-in-up">
-          About{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Us
-          </span>
-        </h1>
-      </div>
-    </section>
-  );
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
@@ -208,7 +162,15 @@ export default function AboutPage() {
           1. HERO
       ══════════════════════════════════════════════════════════════ */}
 
-      <Hero />
+      <HeroWrapper
+        backgroundImage="/assets/about/about-banner.jpg"
+        title="About"
+        subtitle="Us"
+        badge="CBSE Affiliated · Jaipur"
+        breadcrumbs={[{ label: "About" }]}
+        height="large"
+        overlayOpacity={0.6}
+      />
 
       {/* ══════════════════════════════════════════════════════════════
           STATS BAND

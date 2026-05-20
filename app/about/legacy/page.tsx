@@ -3,6 +3,7 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 const milestones = [
   {
@@ -52,8 +53,12 @@ export default function LegacyPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-white text-neutral-950 overflow-hidden pb-40">
-
-      {/* Cinematic Hero Segment */}
+      <HeroWrapper
+        backgroundImage="/assets/about/about-banner.jpg"
+        title="Our Legacy"
+        badge="Since 1993"
+        breadcrumbs={[{ label: "Legacy" }]}
+      />
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 opacity-40">
           <Image

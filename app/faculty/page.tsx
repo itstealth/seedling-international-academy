@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,25 +57,12 @@ const faculty = [
 export default function FacultyPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      {/* Hero */}
-      <section className="relative h-[50vh] min-h-[450px] flex items-center overflow-hidden">
-        <img
-          src="/assets/img/sps-banner.jpg"
-          alt="Our Faculty at Seedling Schools"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
-          <Reveal delay={100}>
-            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-6 inline-block">
-              Our{" "}
-              <em className="font-semibold text-sand">Faculty</em>
-            </h1>
-          </Reveal>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Faculty"
+        badge="Our Educators"
+        breadcrumbs={[{ label: "Faculty" }]}
+      />
 
       {/* Faculty Section */}
       <section className="pt-16 pb-10 bg-white">
