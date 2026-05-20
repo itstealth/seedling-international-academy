@@ -448,6 +448,42 @@ function SportsSection() {
 }
 
 function ActivitiesGrid() {
+  const [selectedActivity, setSelectedActivity] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const activityFolders: { [key: string]: string[] } = {
+    "Annual Day": [
+      "/assets/ANNUAL FUNCTION/1.webp",
+      "/assets/ANNUAL FUNCTION/2.webp",
+      "/assets/ANNUAL FUNCTION/3.webp",
+      "/assets/ANNUAL FUNCTION/4.webp",
+      "/assets/ANNUAL FUNCTION/5.webp",
+      "/assets/ANNUAL FUNCTION/6.webp",
+      "/assets/ANNUAL FUNCTION/7.webp",
+    ],
+    "Yoga & Meditation": [
+      "/assets/img/yoga1.jpg",
+    ],
+    "Festivals & Celebrations": [
+      "/assets/XMAS CARNIVAL/1.webp",
+      "/assets/XMAS CARNIVAL/2.webp",
+      "/assets/XMAS CARNIVAL/3.webp",
+      "/assets/XMAS CARNIVAL/christmas 1.webp",
+      "/assets/XMAS CARNIVAL/christmas 2.webp",
+      "/assets/XMAS CARNIVAL/christmas 3.webp",
+      "/assets/XMAS CARNIVAL/christmas 5.webp",
+      "/assets/XMAS CARNIVAL/christmas.webp",
+    ],
+    "Skaters Sunday Bash": ["/assets/img/skaters.jpg"],
+    "Mother's Day": [
+      "/assets/MOTHER_S DAY/1.webp",
+      "/assets/MOTHER_S DAY/2.webp",
+    ],
+    "Celebrating Talent": ["/assets/img/Celebrating-Talent.jpeg"],
+  };
+
+  const currentImages = selectedActivity !== null ? activityFolders[activities[selectedActivity].title] || [activities[selectedActivity].image] : [];
+
   return (
     <section className="py-16 pb-8 bg-white relative overflow-hidden">
       {/* Large decorative text */}
@@ -476,7 +512,11 @@ function ActivitiesGrid() {
           {activities.map((activity, i) => (
             <div
               key={i}
-              className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-default aspect-[4/3]"
+              className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[4/3]"
+              onClick={() => {
+                setSelectedActivity(i);
+                setSelectedImageIndex(0);
+              }}
             >
               {/* Background image */}
               <img
@@ -510,6 +550,79 @@ function ActivitiesGrid() {
           ))}
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {selectedActivity !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-navy-deeper/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+          onClick={() => setSelectedActivity(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Main Image */}
+            <div className="relative aspect-video bg-black">
+              <img
+                src={currentImages[selectedImageIndex]}
+                alt={activities[selectedActivity!].title}
+                className="w-full h-full object-contain"
+              />
+              {/* Close button */}
+              <button
+                className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                onClick={() => setSelectedActivity(null)}
+              >
+                ✕
+              </button>
+              {/* Navigation arrows */}
+              {currentImages.length > 1 && (
+                <>
+                  <button
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev === 0 ? currentImages.length - 1 : prev - 1));
+                    }}
+                  >
+                    ←
+                  </button>
+                  <button
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
+                    }}
+                  >
+                    →
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Thumbnail strip */}
+            {currentImages.length > 1 && (
+              <div className="flex gap-2 p-4 bg-navy-deeper overflow-x-auto">
+                {currentImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex(idx);
+                    }}
+                    className={`flex-none w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                      selectedImageIndex === idx ? "border-sand scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
+
+                      </div>
+        </div>
+      )}
     </section>
   );
 }

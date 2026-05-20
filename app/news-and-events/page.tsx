@@ -92,7 +92,7 @@ export default function CampusHighlightsPage() {
           1. HERO BANNER
       ══════════════════════════════════════════════════════ */}
       <HeroWrapper
-        backgroundImage="/assets/ANNUAL FUNCTION/1.webp"
+        backgroundImage="/assets/FAREWELL 12TH/1.webp"
         title="News & Events"
         badge="Campus Highlights"
         breadcrumbs={[{ label: "News & Events" }]}
