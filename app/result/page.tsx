@@ -117,18 +117,31 @@ export default function ResultPage() {
               </div>
               
               <div className="flex flex-wrap justify-center gap-6">
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <div key={num} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-editorial transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_60px_rgba(10,31,58,0.18)] hover:border-navy-light">
-                    <img 
-                      src={`/assets/FELICITATING TOPPERS IN BOARDS/${num}.webp`} 
-                      alt={`Seedling Topper ${num}`}
+                {[
+                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp", name: "Top Performer" },
+                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/2.webp", name: "Top Performer" },
+                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/3.webp", name: "Top Performer" },
+                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/4.webp", name: "Top Performer" },
+                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/5.webp", name: "Top Performer" },
+                  { src: "/assets/result/ayush.jpg", name: "Ayush" },
+                  { src: "/assets/result/geetika.jpg", name: "Geetika" },
+                  { src: "/assets/result/neelvi.jpg", name: "Neelvi" },
+                  { src: "/assets/result/pranjal.jpg", name: "Pranjal" },
+                  { src: "/assets/result/saatvik.jpg", name: "Saatvik" },
+                  { src: "/assets/result/vidhi.jpg", name: "Vidhi" },
+                  { src: "/assets/result/yug.jpg", name: "Yug" },
+                ].map((student, idx) => (
+                  <div key={student.src} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-editorial transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_60px_rgba(10,31,58,0.18)] hover:border-navy-light">
+                    <img
+                      src={student.src}
+                      alt={`Seedling Topper ${student.name}`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute bottom-0 left-0 w-full p-6 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="w-8 h-1 bg-sand mb-4 rounded-full" />
-                      <p className="text-white font-playfair font-semibold text-xl">Top Performer</p>
+                      <p className="text-white font-playfair font-semibold text-xl">{student.name}</p>
                       <p className="text-white/70 text-[10px] tracking-widest uppercase font-dm mt-1">Board Examinations</p>
                     </div>
                   </div>
