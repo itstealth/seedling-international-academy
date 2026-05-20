@@ -54,8 +54,12 @@ export default function HeroWrapper({
           style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)" }}
         >
           {title}
-          {subtitle && <span className="block font-light">{subtitle}</span>}
         </h1>
+        {subtitle && (
+          <p className="text-white/80 text-lg md:text-xl max-w-xl leading-relaxed font-light">
+            {subtitle}
+          </p>
+        )}
       </div>
       {/* breadcrumb bar */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#01217e] rounded-t-[10px] flex items-center overflow-hidden whitespace-nowrap z-10">
