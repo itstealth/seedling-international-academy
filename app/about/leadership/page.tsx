@@ -79,6 +79,14 @@ const leaders = [
     tag: "Engagement that Empowers",
   },
   {
+    name: "Mr. Sriram Bajaj",
+    role: "Principal",
+    sub: "Seedling Group of Institutions",
+    quote: "True education is not the filling of a pail, but the lighting of a fire — we must ignite curiosity, foster courage, and nurture compassion in every child we serve.",
+    img: "/assets/Home/principle.jpeg",
+    tag: "Illuminating Futures",
+  },
+  {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
     sub: "Seedling Group of Institutions",
