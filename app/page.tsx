@@ -90,7 +90,7 @@ export default function SeedlingPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
-      <section className="relative h-[40vh] min-h-[400px] md:h-screen md:min-h-[640px] overflow-hidden flex items-center">
+      <section className="relative h-[40vh] min-h-[400px] md:h-[calc(100vh-68px)] overflow-hidden flex items-center">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -496,7 +496,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative pt-16 pb-20 md:pb-24  overflow-hidden bg-navy-deeper">
+      <section className="relative pt-16 pb-16 md:pb-24  overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
