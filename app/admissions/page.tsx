@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 /* ─────────────────────────────────────────────
    SCROLL REVEAL
@@ -331,40 +332,6 @@ function ExperienceSection() {
 }
 
 
-function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => { });
-    }
-  }, []);
-
-  return (
-    <>
-    <section className="relative w-full h-[700px] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/Home/classroom-2.webp')",
-        }}
-      />
-      <div className="absolute inset-0 bg-black/40" />
-    </section>
-
-    <section className="bg-navy-deeper pt-16 pb-8  md:pb-8">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="font-playfair text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tight mb-4">
-          Admissions
-        </h1>
-        <p className="text-white text-lg font-dm font-light max-w-2xl mx-auto">
-          Begin your child's journey with Seedling — where excellence meets warmth.
-        </p>
-      </div>
-    </section>
-    </>
-  );
-}
 
 /* ─────────────────────────────────────────────
    PAGE
@@ -452,7 +419,15 @@ export default function AdmissionsPage() {
         </div>
       </div> */}
 
-      <Hero />
+      <HeroWrapper
+        backgroundImage="/assets/Home/classroom-2.webp"
+        title="Admissions"
+        subtitle="Begin your child's journey with Seedling — where excellence meets warmth."
+        badge="Admissions Open · 2026-27"
+        breadcrumbs={[{ label: "Admissions" }]}
+        height="large"
+        overlayOpacity={0.4}
+      />
 
       {/* ══════════════════════════════════════════════════
           1. HERO
@@ -645,7 +620,7 @@ export default function AdmissionsPage() {
                       <a href="tel:+917413012351" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7413012351</a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  {/* <div className="flex items-center gap-4">
                     <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <span className="text-xl">🏫</span>
                     </span>
@@ -653,7 +628,7 @@ export default function AdmissionsPage() {
                       <p className="text-navy-deeper text-sm font-black font-dm">Durgapura Branch</p>
                       <a href="tel:+917412044410" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7412044410</a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

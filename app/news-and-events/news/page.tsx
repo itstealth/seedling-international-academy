@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { Newspaper, ExternalLink, Calendar, ArrowRight, Share2 } from "lucide-react";
 import Image from "next/image";
 
@@ -40,10 +40,11 @@ const newsItems = [
 export default function NewsCoveragePage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero
-        title="News Coverage"
-        subtitle="Seedling in the headlines. Celebrating our achievements and milestones recognized by the leading media."
-        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="News & Updates"
+        badge="Latest News"
+        breadcrumbs={[{ label: "News" }]}
       />
 
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

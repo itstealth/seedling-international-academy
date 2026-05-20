@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { getMediaUrl, getPostCategories, stripHtml, formatDate, type WPPost, type WPCategory } from "@/lib/wordpress";
 
 // ─── Scroll Reveal ────────────────────────────────────────────────────────────
@@ -154,29 +155,12 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-off-white font-dm">
-
-      {/* ══════════════════ HERO BANNER ══════════════════ */}
-      <section className="relative h-[55vh] min-h-[480px] flex items-center overflow-hidden">
-        <img
-          src="/assets/ANNUAL FUNCTION/1.webp"
-          alt="Seedling Schools Blog"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center">
-          <Reveal delay={100}>
-            <div className="max-w-2xl text-center">
-             
-              <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6 mt-14">
-                Our Blog
-              </h1>
-             
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Blog"
+        badge="Stories & Updates"
+        breadcrumbs={[{ label: "Blog" }]}
+      />
 
       {/* ══════════════════ BLOG GRID + FILTERS ══════════════════ */}
       <section className="pt-16 pb-8 md:pt-24 md:pb-8 bg-off-white">

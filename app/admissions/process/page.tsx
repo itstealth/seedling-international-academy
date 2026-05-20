@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { ClipboardCheck, UserCheck, CalendarClock, CreditCard, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -35,10 +35,11 @@ const steps = [
 export default function AdmissionProcessPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Admission Process"
-        subtitle="Your pathway to excellence starts here. A seamless four-step journey to join the Seedling family."
-        image="/assets/Home/classroom.jpg"
+        badge="How to Apply"
+        breadcrumbs={[{ label: "Admission Process" }]}
       />
 
       {/* Steps Section */}

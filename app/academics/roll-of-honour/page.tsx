@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Award, 
-  Star, 
-  Trophy, 
-  Sparkles, 
-  Users, 
-  Globe, 
+import HeroWrapper from "@/components/layout/HeroWrapper";
+import {
+  Award,
+  Star,
+  Trophy,
+  Sparkles,
+  Users,
+  Globe,
   PartyPopper,
   Medal,
   ChevronRight,
@@ -43,31 +44,12 @@ const achievements = [
 export default function RollOfHonourPage() {
   return (
     <div className="bg-neutral-bg min-h-screen pt-32 overflow-x-hidden">
-      
-      {/* Prestigious Hero Section */}
-      <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto text-center relative">
-        <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           className="relative z-10"
-        >
-          <span className="text-label mb-10 block">Legacy of Achievement</span>
-          <h1 className="text-heading text-6xl md:text-[10rem] mb-20 tracking-tight">
-            Roll of <br /> 
-            <span className="text-secondary italic">Honour.</span>
-          </h1>
-          <div className="relative h-[600px] rounded-[5rem] overflow-hidden shadow-editorial mx-auto max-w-6xl group">
-             <Image 
-               src="/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/roll_of_honour_hero_gold_1776861216355.png"
-               alt="Excellence in Education"
-               fill
-               className="object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-             />
-             <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors" />
-          </div>
-        </motion.div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Roll of Honour"
+        badge="Achievements"
+        breadcrumbs={[{ label: "Honour" }]}
+      />
 
       {/* Excellence Statistics: Glass Gallery */}
       <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

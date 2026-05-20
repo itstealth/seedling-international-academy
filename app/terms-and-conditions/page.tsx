@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 const sections = [
   { id: "s1", title: "1. Website Information Disclaimer", content: "Seedling Group of Schools makes every effort to ensure that the information provided on this website is accurate and up to date. However, the School gives no warranty or guarantee regarding the accuracy, completeness, or suitability of the information for any specific purpose. The content available on this website does not constitute legal, professional, or educational advice.", callout: "All implied warranties and conditions are excluded to the fullest extent permitted by law. The School shall not be liable for any direct or indirect loss, damage, or inconvenience arising from the use of, or reliance upon, the information contained on this website, except in cases of death or personal injury caused by negligence." },
@@ -44,11 +44,12 @@ export default function TermsAndConditions() {
 
   return (
     <div className="min-h-screen bg-off-white font-dm selection:bg-navy/10 scroll-smooth">
-      
-      <PageHero 
+
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Terms & Conditions"
-        subtitle="By accessing this website, you accept and agree to be bound by these Terms and Conditions. Discontinue use immediately if you disagree."
-        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80"
+        badge="Legal"
+        breadcrumbs={[{ label: "Terms & Conditions" }]}
       />
 
       <main className="max-w-7xl mx-auto px-6 py-20">

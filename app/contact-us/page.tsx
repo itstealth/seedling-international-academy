@@ -1,7 +1,8 @@
-'use client'
+"use client"
 
 import { useState } from 'react'
 import Image from 'next/image'
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -207,87 +208,13 @@ export default function ContactPage() {
       {/* ── Accent bar ─────────────────────────────────────────────────────── */}
       <div className="h-1 bg-gradient-to-r from-navy via-crimson to-sand" />
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          HERO
-      ══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-white border-b border-sand/40 overflow-hidden">
-        {/* Dot-grid texture */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.03]"
-          style={{
-            backgroundImage: 'radial-gradient(circle, #175190 1px, transparent 1px)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-
-        <div className="relative max-w-6xl mx-auto px-6 py-12 md:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            {/* Left copy */}
-            <div>
-              <div className="inline-flex items-center gap-2 mb-5">
-                <span className="w-8 h-px bg-crimson" />
-                <span className="text-crimson text-[10px] font-black tracking-[0.3em] uppercase font-dm">Get In Touch</span>
-              </div>
-
-              <h1
-                className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight tracking-tight mb-5"
-              >
-                We&apos;d love to<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">hear from you.</span>
-              </h1>
-
-              <p className="text-text-light text-lg leading-relaxed mb-8 max-w-lg font-light">
-                Whether you have questions about admissions, curricula, or school life —
-                our team is ready to help. Reach out and we&apos;ll get back to you promptly.
-              </p>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="tel:+917413012351"
-                  className="inline-flex items-center gap-2 bg-navy hover:bg-navy-dark text-white text-[11px] font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
-                >
-                  <PhoneIcon className="w-4 h-4" />
-                  Call SEEDLING PUBLIC SCHOOL
-                </a>
-                <a
-                  href="#contact-form"
-                  className="inline-flex items-center gap-2 border-2 border-navy text-navy hover:bg-navy/5 text-[11px] font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200"
-                >
-                  <SendIcon className="w-4 h-4" />
-                  Send a Message
-                </a>
-              </div>
-            </div>
-
-            {/* Right image */}
-            <div className="relative hidden lg:block">
-              <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/assets/Home/smart-classroom.jpg"
-                  alt="Students at Seedling International Academy, Jawahar Nagar"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
-              </div>
-
-              {/* Floating badges */}
-              <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-lg px-5 py-4 border border-sand/40">
-                <p className="text-[10px] text-text-light font-black uppercase tracking-[0.2em] mb-0.5 font-dm">Admissions Open</p>
-                <p className="text-navy text-sm font-bold font-dm">2026–27 Session</p>
-              </div>
-              <div className="absolute -top-4 -right-4 bg-navy text-white rounded-2xl shadow-lg px-5 py-4">
-                <p className="text-[10px] text-white/70 mb-0.5 font-black uppercase tracking-[0.2em] font-dm">Students</p>
-                <p className="text-xl font-bold font-playfair">20,000+</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Contact Us"
+        subtitle="We'd love to hear from you."
+        badge="Get In Touch"
+        breadcrumbs={[{ label: "Contact Us" }]}
+      />
 
       {/* ══════════════════════════════════════════════════════════════════════
           STATS STRIP

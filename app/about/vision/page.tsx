@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PageHero from "@/components/ui/PageHero";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { Target, Eye, Sparkles, Globe2, ShieldCheck, Heart, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -17,10 +17,11 @@ const pillars = [
 export default function VisionPage() {
   return (
     <main className="bg-neutral-bg min-h-screen">
-      <PageHero
+      <HeroWrapper
+        backgroundImage="/assets/about/about-banner.jpg"
         title="Vision & Mission"
-        subtitle="The philosophical core of Seedling. Defining our purpose and the impact we strive to make on every student."
-        image="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80"
+        badge="Our Purpose"
+        breadcrumbs={[{ label: "Vision & Mission" }]}
       />
 
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

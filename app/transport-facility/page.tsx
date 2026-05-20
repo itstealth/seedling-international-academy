@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import {
   Bus,
   Camera,
@@ -117,62 +118,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function TransportFacilityPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-       <section className="relative min-h-[840px] sm:min-h-[650px] md:min-h-[650px] flex items-center overflow-hidden">
-        <Image
-          src="/assets/transport-facility/bus.jpeg"
-          alt="Seedling Schools transport facility bus"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/95 via-navy-deeper/65 to-navy-deeper/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-72 sm:pb-36 md:pb-8 md:pt-16">
-          <div className="max-w-3xl">
-            <span className="inline-block bg-white/10 text-sand text-[10px] font-black uppercase tracking-[0.35em] px-4 py-1.5 rounded-full border border-white/15 mb-6">
-              Safe School Transport in Jaipur
-            </span>
-            <h1 className="font-playfair text-white text-3xl md:text-5xl lg:text-6xl font-black leading-[0.95] tracking-tight mb-7">
-              Transport
-              <span className="block text-sand">Facility</span>
-            </h1>
-            <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-2xl font-light">
-              A dependable school bus service designed around student safety, punctual routes, attentive supervision, and parent peace of mind.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+917413012351"
-                className="inline-flex items-center justify-center gap-3 bg-sand text-navy-deeper hover:bg-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-xl"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Call Transport Desk
-              </a>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center justify-center gap-3 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
-              >
-                <Navigation className="h-4 w-4" />
-                Enquire Routes
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-navy-deeper/75 backdrop-blur-md border-t border-white/10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3">
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="px-6 py-7 text-center border-white/10 sm:border-l first:border-l-0">
-                <strong className="block font-playfair text-3xl md:text-4xl text-sand leading-none">{stat.value}</strong>
-                <span className="mt-2 block text-white/60 text-[10px] font-black uppercase tracking-[0.28em]">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Transport Facility"
+        badge="Safe Transportation"
+        breadcrumbs={[{ label: "Transport" }]}
+      />
 
       <section className="pt-14 pb-16 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
