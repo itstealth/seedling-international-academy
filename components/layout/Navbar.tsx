@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { Phone, Mail, MapPin, X, Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -218,18 +218,39 @@ export default function Navbar() {
                         )}
                       </div>
                     ))}
+                    <Link
+                      href="/contact-us"
+                      onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
+                      className="block w-full text-center py-4 bg-crimson text-white text-[12px] font-black uppercase tracking-widest rounded-lg hover:bg-crimson-dark transition-colors mt-4"
+                    >
+                      Enquire Now
+                    </Link>
+                    <div className="flex items-center justify-center gap-4 py-4">
+                      <a
+                        href="tel:+917413012351"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        aria-label="Call us"
+                      >
+                        <Phone className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="mailto:info@seedlingschool.edu"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        aria-label="Email us"
+                      >
+                        <Mail className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="/contact-us#location"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        aria-label="Find us on map"
+                      >
+                        <MapPin className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-6 border-t border-white/[0.06]">
-                  <Link
-                    href="/contact-us"
-                    onClick={() => setIsOpen(false)}
-                    className="block w-full text-center py-4 bg-crimson text-white text-[12px] font-black uppercase tracking-widest rounded-full hover:bg-crimson-dark transition-colors"
-                  >
-                    Enquire Now
-                  </Link>
-                </div>
               </motion.div>
             </>
           )}
@@ -259,7 +280,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className="fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[70]">
+      <div className={`fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : ""}`}>
         <Link
           href="/admissions#enquire"
           className="flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-4 py-3 sm:px-6 sm:py-3.5 rounded-full font-black text-xs sm:text-sm tracking-widest uppercase shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
