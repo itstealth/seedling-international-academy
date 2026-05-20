@@ -71,7 +71,7 @@ export default function Navbar() {
         {/* ── MAIN HEADER ── */}
         <header className="bg-navy-deeper">
           <div className="max-w-[1600px] mx-auto px-4 py-2 sm:px-6 lg:px-10">
-            <div className="flex items-center justify-between h-[68px] gap-6 xl:grid xl:grid-cols-[200px_1fr_200px]">
+            <div className="flex items-center justify-between h-[68px] gap-6">
               {/* Logo */}
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center gap-4 group">
@@ -87,7 +87,7 @@ export default function Navbar() {
               </div>
 
               {/* Desktop Navigation */}
-              <nav className="hidden xl:flex items-center justify-center gap-1">
+              <nav className="hidden xl:flex items-center justify-end gap-1">
                 {navItems.map((item) => (
                   <div key={item.name} className="relative group flex items-center">
                     {item.dropdown ? (
