@@ -164,8 +164,7 @@ export default function AboutPage() {
 
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
-        title="About"
-        subtitle="Us"
+        title="About us"
         badge="CBSE Affiliated · Jaipur"
         breadcrumbs={[{ label: "About" }]}
         height="large"
