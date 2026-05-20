@@ -501,7 +501,7 @@ export default function ContactPage() {
             {currentMap.address}
           </p>
 
-          <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl h-80 md:h-96 bg-sand/10">
+          <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl aspect-square md:aspect-auto md:h-96 bg-sand/10">
             <iframe
               key={currentMap.id}
               src={currentMap.src}
