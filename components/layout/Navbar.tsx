@@ -37,11 +37,265 @@ const announcements = [
   "Seedling wins State-level inter-school debate championship",
 ];
 
+const schools = [
+  "Seedling Public School (CBSE), Jawahar Nagar, Jaipur",
+];
+
+function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [formData, setFormData] = useState({
+    candidateName: "",
+    className: "",
+    parentName: "",
+    email: "",
+    phone: "",
+    school: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+
+  // Reset form and errors when popup closes
+  useEffect(() => {
+    if (!isOpen) {
+      setFormErrors({});
+    }
+  }, [isOpen]);
+
+  const handleFormChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+    if (formErrors[field]) {
+      setFormErrors(prev => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const errors: Record<string, string> = {};
+    const phoneVal = formData.phone;
+    if (!phoneVal) {
+      errors.phone = 'Mobile number is required';
+    } else if (phoneVal.length !== 10) {
+      errors.phone = 'Enter 10-digit mobile number';
+    } else if (!/^[6-9]/.test(phoneVal)) {
+      errors.phone = 'Must start with 6, 7, 8, or 9';
+    }
+    if (!formData.parentName.trim()) {
+      errors.parentName = 'Parent name is required';
+    }
+    if (!formData.candidateName.trim()) {
+      errors.candidateName = 'Student name is required';
+    }
+    if (!formData.className) {
+      errors.className = 'Please select a grade';
+    }
+    if (!formData.school) {
+      errors.school = 'Please select gender';
+    }
+    if (!formData.message.trim()) {
+      errors.message = 'Please enter a message';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+    setFormErrors({});
+    setSubmitting(true);
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: formData.candidateName,
+          class_name: formData.className,
+          parent_name: formData.parentName,
+          email: formData.email,
+          phone: formData.phone,
+          student_name: formData.candidateName,
+          school: formData.school,
+          message: formData.message,
+        }),
+      });
+      window.location.href = '/thank-you';
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-navy-deeper/75 backdrop-blur-[2px]"
+            onClick={onClose}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="fixed left-1/2 top-1/2 z-[210] w-[calc(100%-2rem)] max-w-[400px] [translate:-50%_-50%] bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
+          >
+            <div className="relative px-8 pt-8 pb-3">
+              <h3 className="font-playfair text-3xl font-semibold text-center text-navy-deeper tracking-tight">Enquiry Form</h3>
+              <button
+                onClick={onClose}
+                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy-deeper/80 text-navy-deeper hover:bg-navy-deeper hover:text-white transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" strokeWidth={1.8} />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-8 pb-8">
+              {submitted ? (
+                <div className="text-center py-10">
+                  <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-3">Thank You!</h3>
+                  <p className="text-text-light font-dm mb-7 leading-relaxed">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
+                  <button
+                    onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }}
+                    className="w-full h-11 bg-navy-deeper text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy transition-colors"
+                  >
+                    Submit Another Inquiry
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="space-y-3.5">
+                  <div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Parent's Name *"
+                      value={formData.parentName}
+                      onChange={handleFormChange("parentName")}
+                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
+                    />
+                    {formErrors.parentName && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.parentName}</p>}
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Student Name *"
+                      value={formData.candidateName}
+                      onChange={handleFormChange("candidateName")}
+                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
+                    />
+                    {formErrors.candidateName && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.candidateName}</p>}
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="Mobile Number *"
+                      value={formData.phone}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                        setFormData(prev => ({ ...prev, phone: val }));
+                        if (formErrors.phone) setFormErrors(prev => ({ ...prev, phone: '' }));
+                      }}
+                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
+                    />
+                    {formErrors.phone && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.phone}</p>}
+                  </div>
+
+                  {/* <input
+                    type="email"
+                    required
+                    placeholder="Email *"
+                    value={formData.email}
+                    onChange={handleFormChange("email")}
+                    className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
+                  /> */}
+
+                 
+
+                  <div>
+                    <select
+                      required
+                      value={formData.className}
+                      onChange={(e) => {
+                        handleFormChange("className")(e);
+                        if (formErrors.className) setFormErrors(prev => ({ ...prev, className: '' }));
+                      }}
+                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base focus:outline-none focus:border-navy"
+                    >
+                      <option value="">Grade Applying For *</option>
+                      <option value="Nursery">Nursery</option>
+                      <option value="LKG">LKG</option>
+                      <option value="UKG">UKG</option>
+                      <option value="Grade 1">Grade 1</option>
+                      <option value="Grade 2">Grade 2</option>
+                      <option value="Grade 3">Grade 3</option>
+                      <option value="Grade 4">Grade 4</option>
+                      <option value="Grade 5">Grade 5</option>
+                      <option value="Grade 6">Grade 6</option>
+                      <option value="Grade 7">Grade 7</option>
+                      <option value="Grade 8">Grade 8</option>
+                      <option value="Grade 9">Grade 9</option>
+                      <option value="Grade 10">Grade 10</option>
+                      <option value="Grade 11">Grade 11</option>
+                      <option value="Grade 12">Grade 12</option>
+                    </select>
+                    {formErrors.className && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.className}</p>}
+                  </div>
+
+                  <div>
+                    <select
+                      required
+                      value={formData.school}
+                      onChange={(e) => {
+                        handleFormChange("school")(e);
+                        if (formErrors.school) setFormErrors(prev => ({ ...prev, school: '' }));
+                      }}
+                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base focus:outline-none focus:border-navy"
+                    >
+                      <option value="">Select Gender *</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                    {formErrors.school && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.school}</p>}
+                  </div>
+
+                  <div>
+                    <textarea
+                      rows={3}
+                      placeholder="Message"
+                      value={formData.message}
+                      onChange={handleFormChange("message")}
+                      className="w-full rounded border border-[#cfcfcf] bg-white px-3 py-2 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy resize-none"
+                    />
+                    {formErrors.message && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.message}</p>}
+                  </div>
+
+                  <button type="submit" disabled={submitting} className="w-full h-11 bg-navy-deeper text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy disabled:opacity-60 transition-colors">
+                    {submitting ? "Submitting..." : "Submit"}
+                  </button>
+                </form>
+              )}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [showInquiryPopup, setShowInquiryPopup] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -219,8 +473,8 @@ export default function Navbar() {
                       </div>
                     ))}
                     <Link
-                      href="/contact-us"
-                      onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
+                      href="#"
+                      onClick={(e) => { e.preventDefault(); setShowInquiryPopup(true); setIsOpen(false); setMobileExpanded(null); }}
                       className="block w-full text-center py-4 bg-crimson text-white text-[12px] font-black uppercase tracking-widest rounded-lg hover:bg-crimson-dark transition-colors mt-4"
                     >
                       Enquire Now
@@ -281,15 +535,15 @@ export default function Navbar() {
       </div>
 
       <div className={`fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : ""}`}>
-        <Link
-          href="/admissions#enquire"
+        <button
+          onClick={() => setShowInquiryPopup(true)}
           className="flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-4 py-3 sm:px-6 sm:py-3.5 rounded-full font-black text-xs sm:text-sm tracking-widest uppercase shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
         >
           <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
           Enquire Now
-        </Link>
+        </button>
       </div>
       {/* <style jsx global>{`
         @keyframes marquee {
@@ -303,6 +557,7 @@ export default function Navbar() {
           animation-play-state: paused;
         }
       `}</style> */}
+      <InquiryPopup isOpen={showInquiryPopup} onClose={() => setShowInquiryPopup(false)} />
     </>
   );
 }
