@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 
 /* ─────────────────────────────────────────────
    SCROLL REVEAL
@@ -44,19 +45,20 @@ function Reveal({
 }
 
 /* ─────────────────────────────────────────────
-   TAG — matches all other pages
+   TAG / LABEL
 ───────────────────────────────────────────── */
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, color = "navy" }: { children: React.ReactNode, color?: "navy" | "crimson" | "mauve" }) {
+  const styles = {
+    navy: "bg-navy-light text-navy border-navy/20",
+    crimson: "bg-crimson/10 text-crimson border-crimson/20",
+    mauve: "bg-mauve/10 text-mauve border-mauve/20",
+  };
   return (
-    <span className="inline-block bg-crimson/10 text-crimson text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-crimson-dark/20 mb-4 font-dm">
+    <span className={`inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4 font-dm ${styles[color]}`}>
       {children}
     </span>
   );
 }
-
-/* ─────────────────────────────────────────────
-   DATA — all from seedlingschools.com/career.php
-───────────────────────────────────────────── */
 
 const openRoles = [
   {
@@ -246,26 +248,6 @@ function JobCard({
         </button>
       </div>
     </div>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="relative h-[60vh] min-h-[850px] flex items-center overflow-hidden">
-      {/* Background image */}
-      <img
-        src="/assets/img/career.jpeg"
-        alt="Career at Seedling"
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
-
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/60 via-navy-deeper/20 to-navy-deeper/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
-
-      {/* Main content */}
-   
-    </section>
   );
 }
 
@@ -533,19 +515,20 @@ export default function CareersPage() {
 
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-
-      {/* Application modal */}
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Careers"
+        badge="Join Our Team"
+        breadcrumbs={[{ label: "Careers" }]}
+      />
       <ApplyModal
         role={selectedRole ?? (openGeneral ? generalRole : null)}
         onClose={() => { setSelectedRole(null); setOpenGeneral(false); }}
       />
 
       {/* ══════════════════════════════════════════════════
-          1. HERO
+          STATS
       ══════════════════════════════════════════════════ */}
-      <Hero />
-
-      {/* STATS BAND — matches all other pages */}
       <section className="bg-navy-deeper text-white py-8 border-y border-sand/20">
 
          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">

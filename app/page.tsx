@@ -90,7 +90,7 @@ export default function SeedlingPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
-      <section className="relative h-[40vh] min-h-[400px] md:h-screen md:min-h-[640px] overflow-hidden flex items-center">
+      <section className="relative h-[40vh] min-h-[400px] md:h-[calc(100vh-68px)] overflow-hidden flex items-center">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -144,28 +144,9 @@ export default function SeedlingPage(): React.JSX.Element {
       {/* ─── ABOUT SCHOOL ─── */}
       <section className="bg-off-white py-8 md:pt-16 md:pb-8" id="about">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            {/* Images */}
-            <div className="relative">
-              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
-                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
-                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
-                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
-              </div>
-            </div>
-
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             {/* Text */}
-            <div>
+            <div className="order-1 lg:order-2">
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
@@ -196,6 +177,25 @@ export default function SeedlingPage(): React.JSX.Element {
               {/* <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a> */}
               </div>
             </div>
+
+            {/* Images */}
+            <div className="relative order-2 lg:order-1">
+              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
+                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
+                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
+                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
+                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
+                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
+                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -211,7 +211,7 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           {/* Tab Bar */}
-          <div className="flex flex-wrap gap-4 mb-16 border-b border-sand/40">
+          <div className="flex flex-nowrap gap-2 sm:gap-4 mb-16 overflow-x-auto border-b border-sand/40 pb-1">
             {([
               { key: 'campus', label: '🏫 Campus' },
               // { key: 'labs', label: '🔬 Labs & Tech' },
@@ -266,7 +266,6 @@ export default function SeedlingPage(): React.JSX.Element {
               <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-44 overflow-hidden relative">
                   <img src={img} alt={name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-navy-deeper/40 group-hover:opacity-0 transition-opacity" />
                 </div>
                 <div className="p-8">
                   <h3 className="font-playfair text-xl font-bold text-white mb-3 flex items-center gap-2">
@@ -332,7 +331,8 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
           </div>
-          <div className="space-y-4">
+          {/* Gallery Grid - Mobile: 2-col boxes | Desktop: asymmetric layout */}
+          <div className="hidden md:block space-y-4">
             {/* Row 1 - Left big, Right stacked */}
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 row-span-2 group relative rounded-[2rem] overflow-hidden">
@@ -392,6 +392,27 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mobile Gallery - Clean 2-column grid */}
+          <div className="md:hidden grid grid-cols-2 gap-3">
+            {[
+              { img: '/assets/ANNUAL FUNCTION/5.webp', label: 'Annual Day' },
+              { img: '/assets/STELLAR SATURDAYS/2.webp', label: 'Stellar Saturdays' },
+              { img: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip' },
+              { img: '/assets/BOOT CAMP/1.webp', label: 'Boot Camp' },
+              { img: '/assets/FAREWELL 12TH/2.webp', label: 'Diwali Dance' },
+              { img: '/assets/SPORTS DAY/3.webp', label: 'Sports Day' },
+              { img: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing' },
+              { img: '/assets/SPARKLE FEST/1.webp', label: 'Sparkle Fest' },
+            ].map(({ img, label }) => (
+              <div key={label} className="group relative rounded-2xl overflow-hidden aspect-square">
+                <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
+                  <span className="text-white text-xs font-semibold font-playfair">{label}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -497,7 +518,7 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative pt-16 pb-20 md:pb-24  overflow-hidden bg-navy-deeper">
+      <section className="relative pt-16 pb-16 md:pb-24  overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-24 items-center">

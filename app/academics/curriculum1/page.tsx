@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import {
   BookOpen,
   Target,
@@ -70,30 +71,12 @@ export default function CurriculumPage() {
 
   return (
     <div className="bg-neutral-bg min-h-screen pt-32 overflow-x-hidden">
-
-      {/* Editorial Hero */}
-      <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative"
-        >
-          <span className="text-label mb-8 block">Academic Excellence</span>
-          <h1 className="text-heading text-6xl md:text-[10rem] mb-20 tracking-tight">
-            The Learning <br />
-            <span className="text-primary italic">Framework.</span>
-          </h1>
-          <div className="relative h-[600px] rounded-[5rem] overflow-hidden shadow-editorial mx-auto max-w-6xl group">
-            <Image
-              src="/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/academics_curriculum_hero_1776861119845.png"
-              alt="Library and Learning"
-              fill
-              className="object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" />
-          </div>
-        </motion.div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Academics"
+        badge="Our Curriculum"
+        breadcrumbs={[{ label: "Academics" }]}
+      />
 
       {/* Interactive Tabs Dashboard */}
       <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">

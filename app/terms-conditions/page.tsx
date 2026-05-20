@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import HeroWrapper from "@/components/layout/HeroWrapper";
 import { FileText, AlertTriangle, Link2, Scale, Shield, Globe } from "lucide-react";
 
 const sections = [
@@ -65,25 +66,12 @@ const sections = [
 export default function TermsConditionsPage() {
   return (
     <div className="bg-off-white">
-      {/* Hero Banner */}
-      <section className="relative h-[55vh] min-h-120 flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/assets/Home/MainCampus.webp')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-linear-to-r from-navy-deeper/90 via-navy-deeper/50 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-navy-deeper/60 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="font-playfair text-white font-light text-4xl md:text-5xl leading-[1.05] mb-4 inline-block">
-              Terms & <em className="font-semibold text-crimson">Conditions</em>
-            </h1>
-            <p className="text-white/60 text-lg font-dm font-light mt-4">Seedling School, Jaipur</p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Terms & Conditions"
+        badge="Legal"
+        breadcrumbs={[{ label: "Terms & Conditions" }]}
+      />
 
       {/* Content */}
       <section className="pt-16 pb-10 md:pt-20 md:pb-12 bg-off-white">
