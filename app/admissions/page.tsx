@@ -339,6 +339,7 @@ function ExperienceSection() {
 export default function AdmissionsPage() {
   const [sticky, setSticky] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const [activeProcessStep, setActiveProcessStep] = useState(0);
   const [formData, setFormData] = useState({
     candidateName: "",
     className: "",
@@ -356,6 +357,16 @@ export default function AdmissionsPage() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveProcessStep((current) => (current + 1) % steps.length);
+    }, 3500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const activeAdmissionStep = steps[activeProcessStep];
 
   const handleFormChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [field]: e.target.value }));
@@ -721,11 +732,6 @@ export default function AdmissionsPage() {
                   <select required value={formData.school} onChange={handleFormChange("school")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
                     <option value="">Select School</option>
                     <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
-                    <option value="Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)">Seedling International Academy, Jawahar Nagar, Jaipur (Cambridge Board)</option>
-                    <option value="Seedling Modern High School (CBSE), Durgapura, Jaipur">Seedling Modern High School (CBSE), Durgapura, Jaipur</option>
-                    <option value="Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur">Seedling Modern International Academy, (Cambridge Board) Durgapura, Jaipur</option>
-                    <option value="Seedling Wonderland Kids League (Jawahar Nagar)">Seedling Wonderland Kids League (Jawahar Nagar)</option>
-                    <option value="Seedling Wonderland Kids League (Durgapura)">Seedling Wonderland Kids League (Durgapura)</option>
                   </select>
                 </div>
 
@@ -785,62 +791,84 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           3. ADMISSION PROCESS TIMELINE
       ══════════════════════════════════════════════════ */}
-      <section id="process" className="pt-14 pb-8 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <Reveal className="text-center mb-24">
+      <section id="process" className="pt-14 pb-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <Reveal className="text-center mb-16">
             <Tag>Admission Process</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
               Six Simple Steps<br />
               <span className="text-crimson">to Join Us</span>
             </h2>
             <p className="text-text-light mt-6 max-w-xl mx-auto leading-relaxed font-dm">
-              We've made the admission process as clear and frictionless as possible. Our team is with you at every step.
+              We&apos;ve made the admission process as clear and frictionless as possible. Our team is with you at every step.
             </p>
           </Reveal>
 
-          {/* Vertical timeline */}
-          <div className="relative">
-            {/* connecting line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-sand/20 via-sand to-sand/20 md:-translate-x-px hidden sm:block" />
+          {/* Auto progress stepper */}
+          <Reveal>
+            <div className="max-w-5xl mx-auto">
+              <div className="relative mb-12">
+                <div className="absolute left-5 right-5 top-5 h-1 rounded-full bg-sand/20 sm:top-7" />
+                <div
+                  className="absolute left-5 top-5 h-1 rounded-full bg-crimson transition-all duration-700 sm:top-7"
+                  style={{ width: `calc((100% - 2.5rem) * ${activeProcessStep / (steps.length - 1)})` }}
+                />
+                <div className="relative z-10 grid grid-cols-6 gap-1 sm:gap-2">
+                  {steps.map((step, i) => {
+                    const active = i === activeProcessStep;
+                    const complete = i < activeProcessStep;
 
-            <div className="space-y-8">
-              {steps.map((step, i) => (
-                <Reveal key={step.num} delay={i * 80}>
-                  <div className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-                    {/* dot */}
-                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-crimson rounded-full ring-8 ring-crimson/10 z-10 hidden sm:block" />
+                    return (
+                      <button
+                        key={step.num}
+                        type="button"
+                        onClick={() => setActiveProcessStep(i)}
+                        className="group flex flex-col items-center gap-3 text-center"
+                        aria-current={active ? "step" : undefined}
+                      >
+                        <span className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center font-playfair text-base sm:text-xl font-black shadow-sm transition-all duration-500 ${active ? "bg-crimson border-crimson text-white ring-4 sm:ring-8 ring-crimson/10 scale-110" : complete ? "bg-navy-deeper border-navy-deeper text-white" : "bg-white border-sand/30 text-navy-deeper"}`}>
+                          {step.num}
+                        </span>
+                        <span className={`hidden sm:block text-[10px] font-black uppercase tracking-[0.18em] font-dm transition-colors duration-300 ${active ? "text-crimson" : "text-text-light"}`}>
+                          Step
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
 
-                    {/* card — left or right */}
-                    <div className="md:w-5/12">
-                      <div className={`bg-off-white border border-sand/20 rounded-3xl p-8 hover:shadow-xl hover:border-sand/40 transition-all duration-500 group ${i % 2 === 1 ? "md:ml-auto" : ""}`}>
-                        <div className="flex items-start gap-6">
-                          <div className="flex-shrink-0">
-                            <div className="w-14 h-14 bg-white border border-sand/10 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-500">
-                              {step.icon}
-                            </div>
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-3 mb-3">
-                              <span className="font-playfair text-5xl font-black text-navy-deeper/10 leading-none group-hover:text-crimson/10 transition-colors duration-500">{step.num}</span>
-                              <h3 className="font-playfair text-2xl font-black text-navy-deeper group-hover:text-crimson transition-colors duration-500">{step.title}</h3>
-                            </div>
-                            <p className="text-text-light text-sm leading-[1.8] font-dm">{step.desc}</p>
-                          </div>
-                        </div>
-                      </div>
+              <div key={activeAdmissionStep.num} className="bg-off-white border border-sand/20 rounded-2xl p-7 md:p-10 shadow-[0_28px_70px_-40px_rgba(10,31,58,0.35)] transition-all duration-500">
+                <div className="grid gap-8 md:grid-cols-[160px_1fr] md:items-center">
+                  <div className="flex items-center gap-5 md:flex-col md:items-start">
+                    <div className="w-20 h-20 bg-white border border-sand/20 rounded-2xl flex items-center justify-center text-4xl shadow-sm">
+                      {activeAdmissionStep.icon}
                     </div>
-
-                    {/* spacer */}
-                    <div className="md:w-2/12" />
-                    <div className="md:w-5/12" />
+                    <div>
+                      <p className="text-crimson text-xs font-black uppercase tracking-[0.24em] font-dm mb-2">
+                        Step {activeAdmissionStep.num}
+                      </p>
+                      <p className="font-playfair text-5xl font-black text-navy-deeper/10 leading-none">
+                        {activeAdmissionStep.num}
+                      </p>
+                    </div>
                   </div>
-                </Reveal>
-              ))}
+
+                  <div>
+                    <h3 className="font-playfair text-3xl md:text-4xl font-black text-navy-deeper leading-tight mb-5">
+                      {activeAdmissionStep.title}
+                    </h3>
+                    <p className="text-text-light text-base leading-[1.85] font-dm max-w-3xl">
+                      {activeAdmissionStep.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* inline CTA after process */}
-          <Reveal className="mt-24 text-center">
+          <Reveal className="mt-16 text-center">
             <div className="bg-navy-deeper rounded-[2.5rem] p-12 text-white relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-sand opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
               <p className="font-dm text-sand text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
