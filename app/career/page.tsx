@@ -541,11 +541,10 @@ export default function CareersPage() {
           </p>
         </div>
       </div>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
+        <div className="max-w-5xl mx-auto md:px-6">
+          <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-sand/20">
             {[
-              { value: "5", label: "Schools" },
-              { value: "2", label: "Campuses" },
+              { value: "2", label: "Schools" },
               { value: "20,000+", label: "Students" },
               { value: "20:1", label: "Teacher Ratio" },
               { value: "100%", label: "Board Results" },
@@ -823,7 +822,7 @@ export default function CareersPage() {
             <p className="font-playfair text-sand text-xl italic mb-4 tracking-wide">
               Join the League
             </p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.05] mb-6">
+            <h2 className="font-playfair text-white text-4xl md:text-5xl font-light leading-[1.05] mb-6">
               Reimagine<br />
               <em className="font-semibold text-sand">Education</em><br />
               With Us.
@@ -854,8 +853,7 @@ export default function CareersPage() {
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
               {[
-                "🏫 5 Schools",
-                "📍 2 Campuses in Jaipur",
+                "🏫 2 Schools",
                 "🎓 CBSE Board",
                 "🌿 Est. 1993",
               ].map((b) => (
