@@ -73,7 +73,7 @@ const highlights = [
     title: "The Knowledge Hub (Library)",
     excerpt:
       "A well-stocked library encouraging reading habits and independent learning, serving as a hub for academic resources and literature.",
-    image: "/assets/Home/ScienceLabs.webp",
+    image: "/assets/Home/library.jpg",
     icon: "📚",
   },
   {
@@ -152,7 +152,7 @@ const learningApproaches = [
   {
     title: "Effective Feedback & Parent Partnership",
     body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
-    img: "/assets/MOTHER_S DAY/1.webp",
+    img: "/assets/img/ptm.jpg",
     tag: "Community",
   },
 ];
@@ -385,12 +385,12 @@ export default function AcademicsPage() {
       <section className="py-20 bg-navy-deeper text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <Reveal className="text-center mb-20">
+          <Reveal className="text-center mb-10 md:mb-16">
             {/* <span className="inline-block bg-sand/10 text-sand text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
               Cambridge Learner Profile
             </span> */}
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              We Shape <em className="font-semibold text-sand">5 Kinds</em><br />of Learners
+              We train <em className="font-semibold text-sand">Seedlites</em> <span className="ml-2">to be.....</span>
             </h2>
           </Reveal>
 
