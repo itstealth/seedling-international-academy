@@ -152,7 +152,7 @@ const learningApproaches = [
   {
     title: "Effective Feedback & Parent Partnership",
     body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
-    img: "/assets/MOTHER_S DAY/1.webp",
+    img: "/assets/img/ptm.jpg",
     tag: "Community",
   },
 ];
