@@ -115,23 +115,43 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 const CARDS: FeatureCard[] = [
   {
     icon: <IconBook />,
-    title: "Remedial Classes",
-    text: "Dedicated remedial classes help bridge learning gaps and strengthen core concepts for students who require additional academic help.",
+    title: "Remedial & Bridge Learning Programs",
+    text: "Structured support classes for students who require reinforcement in specific subjects and concepts, ensuring no child is left behind.",
   },
   {
     icon: <IconUser />,
-    title: "Personalized Attention",
-    text: "Teachers closely adapt their teaching strategies to suit individual learning styles, ensuring that no child is left behind.",
-  },
-  {
-    icon: <IconMessage />,
-    title: "Feedback Sessions",
-    text: "Regular feedback sessions provide students and families with timely insights to continuously improve learning outcomes.",
+    title: "Personalized Attention & Academic Mentoring",
+    text: "Individual learning plans and one-on-one guidance sessions designed to cater to every learner's pace, strengths, and challenges.",
   },
   {
     icon: <IconChart />,
-    title: "Progress Monitoring",
-    text: "Teachers closely monitor student progress and adjust strategies, ensuring each child receives the support they need.",
+    title: "Continuous Progress Monitoring",
+    text: "Regular academic tracking through assessments, observation, and performance analytics to identify growth areas early.",
+  },
+  {
+    icon: <IconMessage />,
+    title: "Student Feedback & Reflection Sessions",
+    text: "Interactive feedback meetings where students receive constructive guidance, encouragement, and actionable strategies for improvement.",
+  },
+  {
+    icon: <IconHeart />,
+    title: "Counselling & Emotional Wellness Support",
+    text: "A safe and supportive environment offering emotional guidance, stress management, confidence-building, and mental wellness support.",
+  },
+  {
+    icon: <IconStar />,
+    title: "Parent Partnership & Academic Review Meetings",
+    text: "Regular parent-teacher interactions to collaboratively discuss student progress, learning goals, behavioural development, and growth strategies.",
+  },
+  {
+    icon: <IconBrain />,
+    title: "Peer Learning & Collaborative Support Groups",
+    text: "Buddy systems, peer mentoring, and collaborative study circles that promote teamwork, confidence, and shared learning experiences.",
+  },
+  {
+    icon: <IconTrophy />,
+    title: "Life Skills, Motivation & Confidence-Building Workshops",
+    text: "Sessions focused on communication, resilience, study habits, leadership, emotional intelligence, and self-belief to nurture holistic development.",
   },
 ];
 
@@ -211,7 +231,7 @@ function IntroSection() {
 function FeatureCards() {
   return (
     <section className="pt-16 pb-12 " style={{ background: "#175190" }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="max-w-[85rem] mx-auto px-6 lg:px-16">
         <FadeIn className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-12" style={{ background: "#A41546" }} />
@@ -223,7 +243,7 @@ function FeatureCards() {
           </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {CARDS.map((card, i) => (
             <FadeIn key={card.title} delay={i * 120}>
               <div
