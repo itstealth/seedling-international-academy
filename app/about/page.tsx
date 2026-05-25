@@ -65,7 +65,7 @@ const timeline = [
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "/assets/Home/seniors-stundents.webp",
+    img: "/assets/Home/smhs-student.webp",
     side: "right",
   },
   {
@@ -73,14 +73,14 @@ const timeline = [
     title: "Going Global — Cambridge Curriculum",
     desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
     // img: "/assets/Home/smart-classroom.jpg",
-    img:"/assets/Home/School2.webp",
+    img:"/assets/Home/sia-student.jpg",
     side: "left",
   },
   {
     year: "2015",
     title: "Seedling Modern International Academy",
     desc: "A second Cambridge-affiliated institution — Seedling Modern International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
-    img: "/assets/Home/library.jpg",
+    img: "/assets/Home/smia-student.jpg",
     side: "right",
   },
   {
@@ -136,12 +136,16 @@ const leaders = [
 ];
 
 const campusImages = [
-  { src: "/assets/Home/MainCampus.webp", label: "Main Campus", span: "col-span-2 row-span-2" },
-  { src: "/assets/Home/ScienceLabs.webp", label: "Science Labs", span: "col-span-1 row-span-1" },
-  { src: "/assets/Home/library.jpg", label: "Library", span: "col-span-1 row-span-1" },
-  { src: "/assets/Home/sports-ground.webp", label: "Sports Ground", span: "col-span-1 row-span-1" },
-  { src: "/assets/Home/kindergarten1.webp", label: "Kindergarten", span: "col-span-1 row-span-1" },
-  { src: "/assets/Home/classroom.jpg", label: "Classrooms", span: "col-span-2 row-span-1" },
+  { src: "/assets/campus-images/1.jpeg", label: "Campus View" },
+  { src: "/assets/campus-images/2.jpeg", label: "Science Labs" },
+  { src: "/assets/campus-images/3.jpeg", label: "Library" },
+  { src: "/assets/campus-images/4.jpeg", label: "Sports Ground" },
+  { src: "/assets/campus-images/5.jpeg", label: "Kindergarten" },
+  { src: "/assets/campus-images/6.jpeg", label: "Classrooms" },
+  { src: "/assets/campus-images/7.jpeg", label: "Auditorium" },
+  { src: "/assets/campus-images/8.jpeg", label: "Swimming Pool" },
+  { src: "/assets/campus-images/9.jpeg", label: "Computer Lab" },
+  { src: "/assets/campus-images/10.jpeg", label: "Art Studio" },
 ];
 
 const stats = [
@@ -155,8 +159,32 @@ const stats = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+
+      {/* Image Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-5xl w-full cursor-default" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-crimson transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              &times;
+            </button>
+            <img
+              src={selectedImage}
+              alt="Campus view"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* ══════════════════════════════════════════════════════════════
           1. HERO
@@ -233,7 +261,7 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="/assets/Home/School1.webp"
+                src="/assets/Home/MainCampus.webp"
                 alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
@@ -263,7 +291,7 @@ export default function AboutPage() {
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-crimson text-xl italic mb-3">Our Guiding Principles</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
-              Core Values of <em className="font-semibold text-navy">Seedlings</em>
+              Core Values of <em className="font-semibold text-navy">Seedling</em>
             </h2>
           </Reveal>
 
@@ -405,13 +433,13 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           4. PHILOSOPHY (FULL-WIDTH PARALLAX)
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
+      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden bg-crimson">
         {/* <img
           src="/assets/about/feature-education.png"
           alt="Seedling Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         /> */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-navy-deeper/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
@@ -550,10 +578,13 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-3 gap-4 h-[700px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {campusImages.map((img, i) => (
-              <Reveal key={i} delay={i * 60} className={img.span}>
-                <div className="relative overflow-hidden rounded-3xl h-full group cursor-pointer border border-white/5">
+              <Reveal key={i} delay={i * 60}>
+                <div
+                  className="relative overflow-hidden rounded-3xl aspect-square h-full group cursor-pointer border border-white/5"
+                  onClick={() => setSelectedImage(img.src)}
+                >
                   <img
                     src={img.src}
                     alt={img.label}
