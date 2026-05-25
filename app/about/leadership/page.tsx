@@ -67,7 +67,7 @@ const leaders = [
     role: "Executive Director",
     sub: "Seedling Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
-    img: "/assets/img/preeti.png",
+    img: "/assets/img/preeti-bakshi.jpeg",
     tag: "Creating Fresh Pathways",
   },
   {
@@ -94,7 +94,7 @@ export default function LeadershipPage() {
       <HeroWrapper
         backgroundImage="/assets/Home/MainCampus.webp"
         title="Leadership"
-        badge="Our Team"
+        badge="Anchored In Purpose. Driven By A Vision"
         breadcrumbs={[{ label: "Leadership" }]}
       />
 
