@@ -140,7 +140,7 @@ const learningApproaches = [
   {
     title: "Technology Integrated Innovative Education",
     body: "We embrace the power of technology in education. Our classrooms are equipped with interactive whiteboards, and we integrate educational apps and online resources to create an engaging and dynamic learning experience. Students are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
-    img: "/assets/img/tech_integrated_learning.jpeg",
+    img: "/assets/img/tech_integrated_learning.jpg",
     tag: "Innovation",
   },
   {
