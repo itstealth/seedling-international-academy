@@ -97,11 +97,50 @@ export default function LeadershipPage() {
         badge="Our Team"
         breadcrumbs={[{ label: "Leadership" }]}
       />
+
+          <section className="py-10  bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <Reveal className="text-center mb-16">
+            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light">
+              The <em className="font-semibold">Leadership</em><br />Behind the Legacy
+            </h2>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {leaders.map((l, i) => (
+              <Reveal key={l.name} delay={i * 100}>
+                <div className="group bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sand">
+                  <div className="relative overflow-hidden h-72">
+                    <img
+                      src={l.img}
+                      alt={l.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
+                      {l.tag}
+                    </span>
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
+                    <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
+                    <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
+                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
+                      "{l.quote}"
+                    </blockquote>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* ══════════════════════════════════════════════════════════════
           DIRECTOR'S MESSAGE
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className=" bg-crimson">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto py-10 md:py-16  px-5 sm:px-6">
           <Reveal>
             <div className="relative">
               <img
@@ -118,24 +157,24 @@ export default function LeadershipPage() {
 
           <div>
             <Reveal>
-              <p className="font-playfair text-navy text-xl italic mb-4">Director's Communiqué</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
+              <p className="font-playfair text-white text-xl italic mb-4">Director's Communiqué</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-white">
                 "Life Ready<br />
-                &amp; <em className="font-semibold">Life Worthy"</em>
+                &amp; <em className="font-semibold text-white">Life Worthy"</em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="text-text-light leading-[1.9] text-base mb-6 font-dm">
+              <p className="text-white/80 leading-[1.9] text-base mb-6 font-dm">
                 At Seedling, we constantly reflect and recalibrate what school means in an age of deep uncertainty — rewriting the narrative to make learning relevant, contextual, and real.
               </p>
-              <p className="text-text-light leading-[1.9] text-base font-dm">
+              <p className="text-white/80 leading-[1.9] text-base font-dm">
                 From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
               </p>
             </Reveal>
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-navy" />
-                <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
+                <div className="w-12 h-px bg-white" />
+                <span className="font-playfair italic text-xl text-white">Dr. Sandeep Bakshi</span>
               </div>
             </Reveal>
           </div>
@@ -208,44 +247,7 @@ export default function LeadershipPage() {
       {/* ══════════════════════════════════════════════════════════════
           LEADERSHIP
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-10  bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <Reveal className="text-center mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light">
-              The <em className="font-semibold">Leadership</em><br />Behind the Legacy
-            </h2>
-          </Reveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {leaders.map((l, i) => (
-              <Reveal key={l.name} delay={i * 100}>
-                <div className="group bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-sand">
-                  <div className="relative overflow-hidden h-72">
-                    <img
-                      src={l.img}
-                      alt={l.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
-                      {l.tag}
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
-                    <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
-                    <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
-                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
-                      "{l.quote}"
-                    </blockquote>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+  
     </main>
   );
 }

@@ -233,7 +233,7 @@ export default function AboutPage() {
           <Reveal delay={150} className="relative">
             <div className="relative">
               <img
-                src="/assets/Home/School1.webp"
+                src="/assets/Home/MainCampus.webp"
                 alt="Seedling Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
@@ -263,7 +263,7 @@ export default function AboutPage() {
           <Reveal className="text-center mb-16">
             <p className="font-playfair text-crimson text-xl italic mb-3">Our Guiding Principles</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
-              Core Values of <em className="font-semibold text-navy">Seedlings</em>
+              Core Values of <em className="font-semibold text-navy">Seedling</em>
             </h2>
           </Reveal>
 
@@ -405,13 +405,13 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           4. PHILOSOPHY (FULL-WIDTH PARALLAX)
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
+      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden bg-crimson">
         {/* <img
           src="/assets/about/feature-education.png"
           alt="Seedling Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         /> */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-navy-deeper/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
