@@ -65,7 +65,7 @@ const timeline = [
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "/assets/Home/seniors-stundents.webp",
+    img: "/assets/Home/smhs-student.webp",
     side: "right",
   },
   {
@@ -73,14 +73,14 @@ const timeline = [
     title: "Going Global — Cambridge Curriculum",
     desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
     // img: "/assets/Home/smart-classroom.jpg",
-    img:"/assets/Home/School2.webp",
+    img:"/assets/Home/sia-student.jpg",
     side: "left",
   },
   {
     year: "2015",
     title: "Seedling Modern International Academy",
     desc: "A second Cambridge-affiliated institution — Seedling Modern International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
-    img: "/assets/Home/library.jpg",
+    img: "/assets/Home/smia-student.jpg",
     side: "right",
   },
   {
