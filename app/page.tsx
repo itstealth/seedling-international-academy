@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain } from 'lucide-react';
+import Link from 'next/link';
+import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -77,7 +78,7 @@ export default function SeedlingPage(): React.JSX.Element {
     sports: [
       { img: '/assets/SPORTS DAY/1.webp', alt: 'Sports Ground', tag: 'Outdoor', title: 'Multi-Sport Ground', desc: 'Dedicated grounds for cricket, football, athletics, and kabaddi — built to national standards.' },
       { img: '/assets/STELLAR SATURDAYS/1.webp', alt: 'Swimming Pool', tag: 'Aquatics', title: 'Swimming Pool', desc: 'Olympic-standard swimming pool with qualified coaches for beginner and advanced swimmers from Grade 3 onwards.' },
-      { img: '/assets/STELLAR SATURDAYS/3.webp', alt: 'Indoor Sports', tag: 'Indoor', title: 'Indoor Sports Complex', desc: 'Badminton, table tennis, chess, and yoga facilities in a fully air-conditioned indoor sports complex.' },
+      { img: '/assets/SPORTS%20DAY/basketball.JPG', alt: 'Basketball', tag: 'Outdoor', title: 'Basketball', desc: 'Well-maintained basketball courts for competitive play and physical development.' },
     ],
     arts: [
       { img: '/assets/ANNUAL FUNCTION/5.webp', alt: 'Music Room', tag: 'Music', title: 'Music & Dance Studio', desc: 'Fully equipped studios for classical and contemporary music, dance, and performing arts for all grades.' },
@@ -108,12 +109,12 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
-            Where Every Child Finds Their
+            Beyond Education. Into Transformation.
             <em className="font-semibold text-sand italic ml-2">Wings</em>
 
           </h1>
           <p className="hidden md:block text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
-            Seedling Public School nurtures young minds with holistic education and a culture of excellence — shaping tomorrow's leaders since 1993.
+            Shaping confident learners prepared for life, leadership, and meaningful contribution.
           </p>
           {/* <div className="flex gap-4 flex-wrap">
             <a href="/admissions#enquire" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
@@ -182,7 +183,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative order-2 lg:order-1">
               <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/Home/MainCampus.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
                   <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
@@ -233,7 +234,7 @@ export default function SeedlingPage(): React.JSX.Element {
             {infraData[activeTab].map(({ img, alt, tag, title, desc }) => (
               <div key={title} className="group bg-off-white rounded-[2rem] overflow-hidden border border-sand/40 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
                 <div className="h-64 overflow-hidden">
-                  <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <img src={img} alt={alt} className={`w-full h-full object-cover  transition-transform duration-1000 group-hover:scale-110`} />
                 </div>
                 <div className="p-8">
                   <span className="inline-block bg-navy-light text-navy text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-full mb-4 border border-navy/10">{tag}</span>
@@ -418,20 +419,26 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-off-white pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-crimson pt-16 pb-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
-            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Testimonials</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-6">
-              Voices from the <em className="font-semibold text-navy italic">Family</em>.
+            <div className="inline-flex items-center gap-4 mb-6">
+              <span className="h-px w-16 bg-white" />
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white">Testimonials</span>
+              <span className="h-px w-16 bg-white" />
+            </div>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-6">
+              Voices from the <em className="font-semibold text-white italic">Family</em>.
             </h2>
           </div>
 
           {/* Cards Grid - showing 3 at a time with auto-scroll */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {testimonials.slice(currentTestimonial, currentTestimonial + 3).map(({ avatar, name, role, text }, i) => (
-              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-sm border border-sand/30 hover:border-navy/20 hover:shadow-editorial transition-all duration-500 flex flex-col">
-                <span className="block text-7xl leading-none text-sand font-playfair mb-4 group-hover:scale-110 transition-transform">"</span>
+              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden">
+                {/* Colored accent top */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-navy`} />
+                <span className="block text-7xl leading-none text-crimson/30 font-playfair mb-4 group-hover:text-crimson/50 transition-transform">"</span>
                 <div className="overflow-y-auto max-h-48 flex-1">
                   <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
                 </div>
@@ -454,7 +461,7 @@ export default function SeedlingPage(): React.JSX.Element {
               <button
                 key={startIdx}
                 onClick={() => setCurrentTestimonial(startIdx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === startIdx ? 'bg-navy w-8' : 'bg-sand/40 hover:bg-sand'}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === startIdx ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'}`}
               />
             ))}
           </div>
@@ -462,43 +469,82 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-10" />
+      <section className="bg-white pt-16 pb-12 relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex items-end justify-between mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Latest at Seedling</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-                Trending <em className="font-semibold text-sand italic">Updates</em>.
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling</span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
+                Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
             </div>
-            <a href="/blog" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">All Updates</a>
+            <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+              All Updates
+              <ArrowUpRight size={16} strokeWidth={2.5} />
+            </Link>
           </div>
-          <div className="grid lg:grid-cols-2 gap-20">
-            <div className="space-y-8">
-              {[
-                { day: '12', month: 'APR', title: 'Annual Sports Day 2025', desc: 'Over 2,000 students participated in team sports and the relay championship.' },
-                { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
-                { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
-              ].map(({ day, month, title, desc }) => (
-                <div key={title} className="flex gap-8 items-start pb-8 border-b border-white/10 group cursor-pointer">
-                  <div className="bg-crimson text-white w-20 h-20 rounded-3xl flex flex-col items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <strong className="block text-2xl font-playfair leading-none">{day}</strong>
-                    <span className="text-[10px] font-black tracking-widest uppercase mt-1">{month}</span>
-                  </div>
-                  <div>
-                    <h4 className="text-white text-xl font-bold mb-2 font-playfair group-hover:text-sand transition-colors">{title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed font-light">{desc}</p>
-                  </div>
+
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
+            <Link href="/blog" className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
+              <img
+                src="/assets/Home/trending1.jpg"
+                alt="Annual Sports Day 2025"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/45 to-transparent" />
+              <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
+                <strong className="block text-2xl font-playfair leading-none">12</strong>
+                <span className="text-[10px] font-black tracking-widest uppercase mt-1">APR</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
+                  <CalendarDays size={15} strokeWidth={2.5} />
+                  Campus Highlight
                 </div>
-              ))}
-            </div>
-            <div>
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="text-white text-sm font-black tracking-widest uppercase mb-6 flex items-center gap-3 hover:text-sand transition-colors">
-                <span className="w-8 h-[2px] bg-sand" />
-                Follow @seedlingschoolsjaipur
+                <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
+                  Annual Sports Day <em className="font-semibold text-sand italic">2025</em>
+                </h3>
+                <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
+                  Over 2,000 students participated in team sports and the relay championship.
+                </p>
+              </div>
+            </Link>
+
+            <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
+              <div className="space-y-4">
+                {[
+                  { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
+                  { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
+                  { day: '18', month: 'MAR', title: 'Stellar Saturdays Showcase', desc: 'Creative clubs presented music, art, public speaking, and hands-on projects.' },
+                ].map(({ day, month, title, desc }, index) => (
+                  <Link key={title} href="/blog" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                    <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
+                      <strong className="block text-xl font-playfair leading-none">{day}</strong>
+                      <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-4">
+                        <h4 className="text-navy-deeper text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
+                        <ArrowUpRight size={17} strokeWidth={2.5} className="text-crimson flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
+                <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
+                  <Camera size={18} strokeWidth={2.5} />
+                  Follow Updates
+                </span>
+                <ArrowUpRight size={17} strokeWidth={2.5} />
               </a>
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-3 gap-4">
+            </div>
+
+            <div className="lg:col-span-2">
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mt-2">
                 {[
                   '/assets/Home/trending1.jpg',
                   '/assets/Home/trending2.jpg',
@@ -507,8 +553,8 @@ export default function SeedlingPage(): React.JSX.Element {
                   '/assets/Home/trending5.jpg',
                   '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
-                  <div key={i} className="rounded-2xl overflow-hidden aspect-[4/5] border border-white/5 hover:border-sand/30 transition-all duration-500 group">
-                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <div key={i} className="rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
+                    <img src={src} alt={`Seedling update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </a>
