@@ -183,7 +183,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="relative order-2 lg:order-1">
               <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
                 <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/School1.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
+                  <img src="/assets/Home/MainCampus.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
                 </div>
                 <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
                   <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
