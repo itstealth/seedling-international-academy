@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain } from 'lucide-react';
+import Link from 'next/link';
+import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -468,42 +469,82 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-white pt-16 pb-8 relative overflow-hidden">
+      <section className="bg-white pt-16 pb-12 relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex items-end justify-between mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
             </div>
-            <a href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson">All Updates</a>
+            <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+              All Updates
+              <ArrowUpRight size={16} strokeWidth={2.5} />
+            </Link>
           </div>
-          <div className="grid lg:grid-cols-2 gap-20">
-            <div className="space-y-8">
-              {[
-                { day: '12', month: 'APR', title: 'Annual Sports Day 2025', desc: 'Over 2,000 students participated in team sports and the relay championship.' },
-                { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
-                { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
-              ].map(({ day, month, title, desc }) => (
-                <div key={title} className="flex gap-8 items-start pb-8 border-b border-sand/40 group cursor-pointer">
-                  <div className="bg-crimson text-white w-20 h-20 rounded-3xl flex flex-col items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <strong className="block text-2xl font-playfair leading-none">{day}</strong>
-                    <span className="text-[10px] font-black tracking-widest uppercase mt-1">{month}</span>
-                  </div>
-                  <div>
-                    <h4 className="text-navy-deeper text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
-                    <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
-                  </div>
+
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
+            <Link href="/blog" className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
+              <img
+                src="/assets/Home/trending1.jpg"
+                alt="Annual Sports Day 2025"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/45 to-transparent" />
+              <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
+                <strong className="block text-2xl font-playfair leading-none">12</strong>
+                <span className="text-[10px] font-black tracking-widest uppercase mt-1">APR</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
+                  <CalendarDays size={15} strokeWidth={2.5} />
+                  Campus Highlight
                 </div>
-              ))}
-            </div>
-            <div>
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="text-navy-deeper text-sm font-black tracking-widest uppercase mb-6 flex items-center gap-3 hover:text-crimson transition-colors">
-                <span className="w-8 h-[2px] bg-crimson" />
-                Follow @seedlingschoolsjaipur
+                <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
+                  Annual Sports Day <em className="font-semibold text-sand italic">2025</em>
+                </h3>
+                <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
+                  Over 2,000 students participated in team sports and the relay championship.
+                </p>
+              </div>
+            </Link>
+
+            <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
+              <div className="space-y-4">
+                {[
+                  { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
+                  { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
+                  { day: '18', month: 'MAR', title: 'Stellar Saturdays Showcase', desc: 'Creative clubs presented music, art, public speaking, and hands-on projects.' },
+                ].map(({ day, month, title, desc }, index) => (
+                  <Link key={title} href="/blog" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                    <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
+                      <strong className="block text-xl font-playfair leading-none">{day}</strong>
+                      <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-4">
+                        <h4 className="text-navy-deeper text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
+                        <ArrowUpRight size={17} strokeWidth={2.5} className="text-crimson flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
+                <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
+                  <Camera size={18} strokeWidth={2.5} />
+                  Follow Updates
+                </span>
+                <ArrowUpRight size={17} strokeWidth={2.5} />
               </a>
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-3 gap-4">
+            </div>
+
+            <div className="lg:col-span-2">
+              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mt-2">
                 {[
                   '/assets/Home/trending1.jpg',
                   '/assets/Home/trending2.jpg',
@@ -512,8 +553,8 @@ export default function SeedlingPage(): React.JSX.Element {
                   '/assets/Home/trending5.jpg',
                   '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
-                  <div key={i} className="rounded-2xl overflow-hidden aspect-[4/5] border border-sand/20 hover:border-crimson/30 transition-all duration-500 group">
-                    <img src={src} alt={`IG ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <div key={i} className="rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
+                    <img src={src} alt={`Seedling update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </a>
