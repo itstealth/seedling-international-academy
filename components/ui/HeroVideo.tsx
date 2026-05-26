@@ -19,21 +19,19 @@ export default function HeroVideo(): React.JSX.Element {
       return;
     }
 
-    // All other browsers: use hls.js (loaded dynamically to avoid SSR issues)
     let hlsInstance: import('hls.js').default | null = null;
+    let cancelled = false;
 
     import('hls.js').then(({ default: Hls }) => {
-      if (!Hls.isSupported()) return; // fallback.webm already set as <source>
+      if (cancelled || !Hls.isSupported()) return;
 
-      hlsInstance = new Hls({
-        startLevel: 0,         // start at lowest quality for fastest first frame
-        autoStartLoad: true,
-      });
+      hlsInstance = new Hls({ startLevel: 0, autoStartLoad: true });
       hlsInstance.loadSource(HLS_SRC);
       hlsInstance.attachMedia(video);
     });
 
     return () => {
+      cancelled = true;
       hlsInstance?.destroy();
     };
   }, []);
