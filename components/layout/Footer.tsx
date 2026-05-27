@@ -110,6 +110,8 @@ export default function Footer() {
 </div>
           </div>
 
+          
+
           {/* Column 5: Contact */}
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Contact</h3>
