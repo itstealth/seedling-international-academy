@@ -122,8 +122,8 @@ export default function SeedlingPage(): React.JSX.Element {
         {/* Stats */}
         <div className="absolute bottom-0 right-0 z-10 hidden lg:flex">
           {[
-            { val: '30+', label: 'Years of Excellence' },
-            { val: '5000+', label: 'Students' },
+            { val: '33+', label: 'Years of Excellence' },
+            { val: '10000+', label: 'Students' },
             { val: '150+', label: 'Faculty' },
             { val: '100%', label: 'Results' },
           ].map(({ val, label }) => (
@@ -305,7 +305,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110" />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-navy-deeper text-white rounded-[2rem] p-12 shadow-2xl z-10 border-4 border-white">
-                <strong className="block text-6xl font-playfair text-sand mb-2">30+</strong>
+                <strong className="block text-6xl font-playfair text-sand mb-2">33+</strong>
                 <span className="text-xs font-black tracking-widest uppercase opacity-60">Years of Academic<br />Excellence</span>
               </div>
             </div>

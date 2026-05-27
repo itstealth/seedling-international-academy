@@ -138,7 +138,7 @@ const whyWork = [
       </svg>
     ),
     title: "Growth Opportunities",
-    desc: "30+ years of institutional growth means new roles, expanded responsibilities, and career advancement paths for educators and administrators alike.",
+    desc: "33+ years of institutional growth means new roles, expanded responsibilities, and career advancement paths for educators and administrators alike.",
   },
   {
     icon: (

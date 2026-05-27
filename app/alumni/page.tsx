@@ -45,7 +45,7 @@ const stats = [
     icon: "🎓",
   },
   {
-    value: 5000,
+    value: 10000,
     suffix: "+",
     label: "Alumni Network",
     description: "A global community of Seedling graduates",

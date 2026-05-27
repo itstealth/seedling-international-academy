@@ -72,7 +72,7 @@ export default function ERPLoginPage() {
         {/* Bottom stat strip */}
         <div className="relative z-10 flex items-center gap-8">
           {[
-            { value: "5000+", label: "Students" },
+            { value: "10000+", label: "Students" },
             { value: "200+", label: "Faculty" },
             { value: "25+", label: "Years" },
           ].map((s) => (
