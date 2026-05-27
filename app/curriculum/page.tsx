@@ -94,41 +94,41 @@ const highlights = [
   },
 ];
 
-const curricula = [
-  {
-    board: "CBSE",
-    schools: ["Seedling Public School", "Seedling Modern High School"],
-    icon: "🇮🇳",
-    color: "from-orange-50 to-amber-50",
-    border: "border-orange-200",
-    accent: "bg-orange-500",
-    text: "text-orange-600",
-    desc: "Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.",
-    highlights: ["NEP Aligned", "100% Board Results", "Personalised Learning"],
-  },
-  {
-    board: "Cambridge IGCSE",
-    schools: ["Seedling International Academy", "Seedling Modern International Academy"],
-    icon: "🌏",
-    color: "from-sky-50 to-blue-50",
-    border: "border-sky-200",
-    accent: "bg-sky-600",
-    text: "text-sky-700",
-    desc: "Your gateway to a holistic education under the esteemed Cambridge IGCSE Board. Our experienced faculty, state-of-the-art facilities, and a curriculum that promotes critical thinking and creativity create a stimulating learning environment where every student thrives and gains worldwide credibility.",
-    highlights: ["Cambridge Primary → IGCSE", "Global Credibility", "University Counselling"],
-  },
-  {
-    board: "Early Years",
-    schools: ["Seedling Wonderland Kids League"],
-    icon: "🌱",
-    color: "from-emerald-50 to-green-50",
-    border: "border-emerald-200",
-    accent: "bg-emerald-600",
-    text: "text-emerald-700",
-    desc: "A thoughtfully designed early-years environment at both Jawahar Nagar and Durgapura campuses. Play is the most powerful form of learning — every activity is intentional, joyful, and developmental, nurturing curiosity and creativity from the very first day.",
-    highlights: ["Play-Based Learning", "Dual Campus", "Age 2–6 Years"],
-  },
-];
+// const curricula = [
+//   {
+//     board: "CBSE",
+//     schools: ["Seedling Public School", "Seedling Modern High School"],
+//     icon: "🇮🇳",
+//     color: "from-orange-50 to-amber-50",
+//     border: "border-orange-200",
+//     accent: "bg-orange-500",
+//     text: "text-orange-600",
+//     desc: "Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.",
+//     highlights: ["NEP Aligned", "100% Board Results", "Personalised Learning"],
+//   },
+//   {
+//     board: "Cambridge IGCSE",
+//     schools: ["Seedling International Academy", "Seedling Modern International Academy"],
+//     icon: "🌏",
+//     color: "from-sky-50 to-blue-50",
+//     border: "border-sky-200",
+//     accent: "bg-sky-600",
+//     text: "text-sky-700",
+//     desc: "Your gateway to a holistic education under the esteemed Cambridge IGCSE Board. Our experienced faculty, state-of-the-art facilities, and a curriculum that promotes critical thinking and creativity create a stimulating learning environment where every student thrives and gains worldwide credibility.",
+//     highlights: ["Cambridge Primary → IGCSE", "Global Credibility", "University Counselling"],
+//   },
+//   {
+//     board: "Early Years",
+//     schools: ["Seedling Wonderland Kids League"],
+//     icon: "🌱",
+//     color: "from-emerald-50 to-green-50",
+//     border: "border-emerald-200",
+//     accent: "bg-emerald-600",
+//     text: "text-emerald-700",
+//     desc: "A thoughtfully designed early-years environment at both Jawahar Nagar and Durgapura campuses. Play is the most powerful form of learning — every activity is intentional, joyful, and developmental, nurturing curiosity and creativity from the very first day.",
+//     highlights: ["Play-Based Learning", "Dual Campus", "Age 2–6 Years"],
+//   },
+// ];
 
 const learningApproaches = [
   {

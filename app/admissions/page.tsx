@@ -674,10 +674,9 @@ export default function AdmissionsPage() {
                   </label>
                   <select required value={formData.className} onChange={handleFormChange("className")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
                     <option value="">Select Class</option>
-                    <option value="Play Group">Play Group</option>
+                    <option value="Nursery">Nursery</option>
                     <option value="LKG">LKG</option>
                     <option value="UKG">UKG</option>
-                    <option value="Prep">Prep</option>
                     <option value="Class 1">Class 1</option>
                     <option value="Class 2">Class 2</option>
                     <option value="Class 3">Class 3</option>
@@ -688,7 +687,9 @@ export default function AdmissionsPage() {
                     <option value="Class 8">Class 8</option>
                     <option value="Class 9">Class 9</option>
                     <option value="Class 11">Class 11</option>
-                    <option value="Cambridge Primary 1">Cambridge Primary 1</option>
+                    <option value="Class 12">Class 12</option>
+
+                    {/* <option value="Cambridge Primary 1">Cambridge Primary 1</option>
                     <option value="Cambridge Primary 2">Cambridge Primary 2</option>
                     <option value="Cambridge Primary 3">Cambridge Primary 3</option>
                     <option value="Cambridge Primary 4">Cambridge Primary 4</option>
@@ -697,7 +698,7 @@ export default function AdmissionsPage() {
                     <option value="Lower Secondary 2 (Grade 7)">Lower Secondary 2 (Grade 7)</option>
                     <option value="Lower Secondary 3 (Grade 8)">Lower Secondary 3 (Grade 8)</option>
                     <option value="IGCSE 1 (Grade 9)">IGCSE 1 (Grade 9)</option>
-                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option>
+                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option> */}
                   </select>
                 </div>
 

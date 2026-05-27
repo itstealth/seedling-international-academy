@@ -15,15 +15,15 @@ const milestones = [
   {
     year: "1998",
     title: "Rapid Expansion",
-    description: "The inauguration of Seedling Public School (SPS) and Seedling Modern High School (SMHS), defining new standards for private education in the heart of Jaipur.",
+    description: "The inauguration of Seedling Public School (SPS), defining new standards for private education in the heart of Jaipur.",
     align: "left"
   },
-  {
-    year: "2010",
-    title: "Global Horizons",
-    description: "Launch of Seedling International Academy (SIA). We introduced global pedagogical standards, bringing the world closer to Jaipur and our students closer to their global dreams.",
-    align: "right"
-  },
+  // {
+  //   year: "2010",
+  //   title: "Global Horizons",
+  //   description: "Launch of Seedling International Academy (SIA). We introduced global pedagogical standards, bringing the world closer to Jaipur and our students closer to their global dreams.",
+  //   align: "right"
+  // },
   {
     year: "2020",
     title: "Digital Pioneering",
