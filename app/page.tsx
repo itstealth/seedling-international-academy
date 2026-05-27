@@ -37,14 +37,15 @@ export default function SeedlingPage(): React.JSX.Element {
   }, [isDesktop]);
 
   const testimonials = [
-    { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta & Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
-    { avatar: '/assets/testimonial/Soniya-Yadav.jpg', name: 'Narendra Kumar Sharma & Soniya Yadav', role: 'Parents · Vaishali Nagar', text: 'The school provides holistic education, nurturing academic growth, creativity, and confidence. Teachers go beyond teaching and create a motivating environment for children.' },
-    { avatar: '/assets/testimonial/Bhanupriya-Singh.jpg', name: 'Bhanupriya Singh', role: 'Parent · MI Road', text: 'The academic programme is well planned and balanced with co-curricular activities. Teachers and management are doing a great job in grooming children.' },
-    { avatar: '/assets/testimonial/Anita-Gupta.jpg', name: 'Mrs. Anita Gupta', role: 'Parent · Raja Park', text: 'The curriculum and teaching methods are impressive. Worksheets and activities help children think beyond textbooks.' },
-    { avatar: '/assets/testimonial/ibha-chadra.jpg', name: 'Ibha Chhabra', role: 'Parent · Jhotwara', text: 'We are grateful for the care, dedication, and guidance provided by the teachers and school management.' },
-    { avatar: '/assets/testimonial/aditi-sharma.jpg', name: 'Aditi Sharma', role: 'Parent · Vaishali Nagar', text: "Aligned with NEP, the school provides modern and relevant education, giving us confidence in our child's future." },
-    { avatar: '/assets/testimonial/Sweta-Shrivastava.jpg', name: 'Sweta Shrivastava', role: 'Parent · MI Road', text: 'Technology integration makes learning interactive and helps children build essential digital skills for the future.' },
-    { avatar: '/assets/testimonial/Muskan-Rupani.jpg', name: 'Muskan Rupani', role: 'Parent · Jaipur', text: 'The school sets high standards in education with skilled teachers ensuring overall personality development.' },
+    
+    { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta<br />& Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
+    { avatar: '/assets/testimonial/Soniya-Yadav.jpg', name: 'Narendra Kumar Sharma<br />& Soniya Yadav', role: 'Parents · Vaishali Nagar', text: 'The school provides holistic education, nurturing academic growth, creativity, and confidence. Teachers go beyond teaching and create a motivating environment for children.' },
+    { avatar: '/assets/testimonial/Bhanupriya-Singh.jpg', name: 'Bhanupriya<br />Singh', role: 'Parent · MI Road', text: 'The academic programme is well planned and balanced with co-curricular activities. Teachers and management are doing a great job in grooming children.' },
+    { avatar: '/assets/testimonial/Anita-Gupta.jpg', name: 'Mrs. Anita<br />Gupta', role: 'Parent · Raja Park', text: 'The curriculum and teaching methods are impressive. Worksheets and activities help children think beyond textbooks.' },
+    { avatar: '/assets/testimonial/ibha-chadra.jpg', name: 'Ibha<br />Chhabra', role: 'Parent · Jhotwara', text: 'We are grateful for the care, dedication, and guidance provided by the teachers and school management.' },
+    { avatar: '/assets/testimonial/aditi-sharma.jpg', name: 'Aditi<br />Sharma', role: 'Parent · Vaishali Nagar', text: "Aligned with NEP, the school provides modern and relevant education, giving us confidence in our child's future." },
+    { avatar: '/assets/testimonial/Sweta-Shrivastava.jpg', name: 'Sweta<br />Shrivastava', role: 'Parent · MI Road', text: 'Technology integration makes learning interactive and helps children build essential digital skills for the future.' },
+    { avatar: '/assets/testimonial/Muskan-Rupani.jpg', name: 'Muskan<br />Rupani', role: 'Parent · Jaipur', text: 'The school sets high standards in education with skilled teachers ensuring overall personality development.' },
   ];
 
   // Sticky nav shadow on scroll
@@ -439,21 +440,21 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           {/* Cards Slider - single on mobile, 3 on desktop */}
-          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory md:snap-none snap-center pb-4 -mx-6 px-6 md:mx-0 md:px-0">
+          <div className="flex md:grid md:grid-cols-3 items-stretch gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory md:snap-none snap-center pb-4 -mx-6 px-6 md:mx-0 md:px-0">
             {testimonials.slice(currentTestimonial, currentTestimonial + (isDesktop ? 3 : 1)).map(({ avatar, name, role, text }, i) => (
-              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden snap-center">
+              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-8 md:p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden snap-center shrink-0 w-[calc(100vw-3rem)] md:w-auto h-[380px] md:h-[450px]">
                 {/* Colored accent top */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-navy`} />
-                <span className="block text-7xl leading-none text-crimson/30 font-playfair mb-4 group-hover:text-crimson/50 transition-transform">"</span>
-                <div className="overflow-y-auto max-h-48 flex-1">
-                  <p className="text-lg text-text-light leading-relaxed mb-10 font-light italic">{text}</p>
+                <span className="block text-7xl leading-none text-crimson/30 font-playfair mb-4 group-hover:text-crimson/50 transition-transform">&ldquo;</span>
+                <div className="overflow-y-auto min-h-0 flex-1 pr-2">
+                  <p className="text-base md:text-lg text-text-light leading-relaxed font-light italic">{text}</p>
                 </div>
-                <div className="flex items-center gap-4 border-t border-sand/40 pt-8">
-                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50">
+                <div className="flex items-center gap-4 border-t border-sand/40 pt-6 md:pt-8 mt-6 md:mt-8">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50 flex-shrink-0">
                     <img src={avatar} alt={name} className="w-full h-full object-cover" />
                   </div>
-                  <div>
-                    <div className="text-lg font-black text-navy-deeper font-dm">{name}</div>
+                  <div className="min-w-0">
+                    <div className="text-base md:text-lg font-black text-navy-deeper font-dm leading-tight" dangerouslySetInnerHTML={{ __html: name }} />
                     <div className="text-xs font-black tracking-widest uppercase text-text-light opacity-60">{role}</div>
                   </div>
                 </div>
@@ -595,7 +596,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 ))}
               </div>
             </div>
-            <div className="bg-white p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
+            <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
               <div className="space-y-4">
