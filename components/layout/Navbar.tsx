@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin, X, Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -71,31 +72,15 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const errors: Record<string, string> = {};
-    const phoneVal = formData.phone;
-    if (!phoneVal) {
-      errors.phone = 'Mobile number is required';
-    } else if (phoneVal.length !== 10) {
-      errors.phone = 'Enter 10-digit mobile number';
-    } else if (!/^[6-9]/.test(phoneVal)) {
-      errors.phone = 'Must start with 6, 7, 8, or 9';
-    }
-    if (!formData.parentName.trim()) {
-      errors.parentName = 'Parent name is required';
-    }
-    if (!formData.candidateName.trim()) {
-      errors.candidateName = 'Student name is required';
-    }
-    if (!formData.className) {
-      errors.className = 'Please select a grade';
-    }
-    if (!formData.school) {
-      errors.school = 'Please select gender';
-    }
-    if (!formData.message.trim()) {
-      errors.message = 'Please enter a message';
-    }
-
+    const data: EnquiryFormData = {
+      parentName: formData.parentName,
+      candidateName: formData.candidateName,
+      phone: formData.phone,
+      className: formData.className,
+      gender: formData.school,
+      message: formData.message,
+    };
+    const errors = validateEnquiryForm(data);
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return;
@@ -103,21 +88,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     setFormErrors({});
     setSubmitting(true);
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          name: formData.candidateName,
-          class_name: formData.className,
-          parent_name: formData.parentName,
-          email: formData.email,
-          phone: formData.phone,
-          student_name: formData.candidateName,
-          school: formData.school,
-          message: formData.message,
-        }),
-      });
+      await submitEnquiryForm(data);
       window.location.href = '/thank-you';
     } catch (err) {
       console.error("Form submission error:", err);
