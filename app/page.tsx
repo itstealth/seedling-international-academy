@@ -94,7 +94,7 @@ export default function SeedlingPage(): React.JSX.Element {
       {/* ─── HERO ─── */}
       <section className="relative h-[40vh] min-h-[400px] md:h-[calc(100vh-68px)] overflow-hidden flex items-center">
         <HeroVideo />
-        <div className="absolute inset-0 bg-navy-deeper/60" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.75rem] font-black tracking-[0.2em] uppercase px-5 py-2 rounded-full mb-8">
             <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
