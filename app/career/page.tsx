@@ -749,22 +749,22 @@ export default function CareersPage() {
                 {[
                   {
                     campus: "Jawahar Nagar Campus",
-                    schools: "SPS · SIA · SWKL",
+                    schools: "SPS",
                     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur – 302004",
                     phone: "+91 74130 12351",
                     landline: "0141-3623000",
                     email: "seedlingacademy@hotmail.com",
                     color: "border-l-navy",
                   },
-                  {
-                    campus: "Durgapura Campus",
-                    schools: "SMHS · SMIA · SWKL",
-                    address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur – 302018",
-                    phone: "+91 95877 72837",
-                    landline: "0141-3624000",
-                    email: "smhsjaipur@jnujaipur.ac.in",
-                    color: "border-l-crimson",
-                  },
+                  // {
+                  //   campus: "Durgapura Campus",
+                  //   schools: "SMHS · SMIA · SWKL",
+                  //   address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur – 302018",
+                  //   phone: "+91 95877 72837",
+                  //   landline: "0141-3624000",
+                  //   email: "smhsjaipur@jnujaipur.ac.in",
+                  //   color: "border-l-crimson",
+                  // },
                 ].map((campus) => (
                   <div
                     key={campus.campus}

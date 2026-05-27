@@ -36,16 +36,16 @@ const events = [
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80",
     desc: "A dedicated session for parents to discuss their child's academic progress and holistic development with mentors."
   },
-  {
-    title: "Winter Science & Tech Fair",
-    date: "January 20, 2027",
-    time: "10:00 AM onwards",
-    location: "Innovation Labs, SMHS",
-    category: "Innovation",
-    icon: Star,
-    image: "https://images.unsplash.com/photo-1564910443496-5fd2d068ddca?auto=format&fit=crop&q=80",
-    desc: "Showcasing student innovations in Robotics, AI, and Sustainable Sciences to parents and industry experts."
-  }
+  // {
+  //   title: "Winter Science & Tech Fair",
+  //   date: "January 20, 2027",
+  //   time: "10:00 AM onwards",
+  //   location: "Innovation Labs, SMHS",
+  //   category: "Innovation",
+  //   icon: Star,
+  //   image: "https://images.unsplash.com/photo-1564910443496-5fd2d068ddca?auto=format&fit=crop&q=80",
+  //   desc: "Showcasing student innovations in Robotics, AI, and Sustainable Sciences to parents and industry experts."
+  // }
 ];
 
 export default function EventsPage() {
