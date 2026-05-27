@@ -88,34 +88,26 @@ export default function Footer() {
           {/* Column 4: Location Maps */}
           <div className="lg:col-span-2 space-y-10">
             <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Locations</h3>
-            <div className="space-y-4">
-              <div className="h-44 sm:h-48 md:h-[120px] rounded-xl overflow-hidden border border-white/10">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.783!3d26.943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1a!2sSeedling%20Public%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="120"
-                  className="h-full"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Jawahar Nagar Campus"
-                />
-              </div>
-              <div className="h-44 sm:h-48 md:h-[120px] rounded-xl overflow-hidden border border-white/10">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.5!2d75.79!3d26.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1b!2sSeedling%20Modern%20High%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="120"
-                  className="h-full"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Durgapura Campus"
-                />
-              </div>
-            </div>
+           <div className="space-y-4">
+  <a
+    href="https://maps.google.com/?q=Seedling+Public+School+Jawahar+Nagar+Jaipur"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block h-44 sm:h-48 md:h-30 rounded-xl overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
+  >
+    <iframe
+      src="https://www.google.com/maps?q=Seedling+Public+School+Jawahar+Nagar+Jaipur&output=embed"
+      width="100%"
+      height="120"
+      className="h-full w-full"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Seedling Public School Jawahar Nagar Jaipur"
+    />
+  </a>
+</div>
           </div>
 
           {/* Column 5: Contact */}
