@@ -49,7 +49,7 @@ const faculty = [
   { name: "CBSE Faculty", subject: "Seedling Public School", img: "/assets/img/feature-3.jpg" },
   // { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/sia-faculty.jpg" },
   { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/img/smhs-sports.jpg" },
-  { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/Home/classroom1.webp" },
+  // { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/Home/classroom1.webp" },
   { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/img/feature-6.jpg" },
   { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/img/counselling-1.jpg" },
 ];
