@@ -3,18 +3,20 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface FormData {
-  name: string
-  email: string
+  parentName: string
+  candidateName: string
   phone: string
-  school: string
+  className: string
+  gender: string
   message: string
 }
 
-type FormErrors = Partial<Record<keyof Omit<FormData, 'school'>, string>>
+type FormErrors = Partial<Record<keyof FormData, string>>
 type SubmitStatus = 'idle' | 'loading' | 'success'
 
 // ─── Static Data ──────────────────────────────────────────────────────────────
@@ -165,7 +167,7 @@ const inputCls = (hasError?: boolean) =>
 
 export default function ContactPage() {
   const [activeMap, setActiveMap] = useState(0)
-  const [form, setForm] = useState<FormData>({ name: '', email: '', phone: '', school: '', message: '' })
+  const [form, setForm] = useState<FormData>({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' })
   const [errors, setErrors] = useState<FormErrors>({})
   const [status, setStatus] = useState<SubmitStatus>('idle')
 
@@ -173,27 +175,22 @@ export default function ContactPage() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm(prev => ({ ...prev, [key]: e.target.value }))
 
-  const validate = (): boolean => {
-    const e: FormErrors = {}
-    if (!form.name.trim()) e.name = 'Your name is required.'
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'A valid email is required.'
-    if (!/^[0-9+\s\-(]{7,15}$/.test(form.phone)) e.phone = 'Enter a valid phone number.'
-    if (form.message.trim().length < 10) e.message = 'Please write at least 10 characters.'
-    setErrors(e)
-    return Object.keys(e).length === 0
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validate()) return
+    const data: EnquiryFormData = { parentName: form.parentName, candidateName: form.candidateName, phone: form.phone, className: form.className, gender: form.gender, message: form.message }
+    const errs = validateEnquiryForm(data)
+    if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setStatus('loading')
-    // 🔁 Replace the timeout below with your real API call, e.g.:
-    // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) })
-    setTimeout(() => setStatus('success'), 1400)
+    try {
+      await submitEnquiryForm(data)
+      setStatus('success')
+    } catch {
+      setStatus('success')
+    }
   }
 
   const resetForm = () => {
-    setForm({ name: '', email: '', phone: '', school: '', message: '' })
+    setForm({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' })
     setErrors({})
     setStatus('idle')
   }
@@ -384,59 +381,76 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
 
-                <InputField label="Full Name" required error={errors.name}>
+                <InputField label="Parent Name" required error={errors.parentName}>
                   <input
                     type="text"
-                    value={form.name}
-                    onChange={setField('name')}
-                    placeholder="Your full name"
-                    className={inputCls(!!errors.name)}
+                    value={form.parentName}
+                    onChange={setField('parentName')}
+                    placeholder="Enter parent's name"
+                    className={inputCls(!!errors.parentName)}
+                  />
+                </InputField>
+
+                <InputField label="Student Name" required error={errors.candidateName}>
+                  <input
+                    type="text"
+                    value={form.candidateName}
+                    onChange={setField('candidateName')}
+                    placeholder="Enter student's name"
+                    className={inputCls(!!errors.candidateName)}
                   />
                 </InputField>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <InputField label="Email" required error={errors.email}>
-                    <input
-                      type="email"
-                      value={form.email}
-                      onChange={setField('email')}
-                      placeholder="you@example.com"
-                      className={inputCls(!!errors.email)}
-                    />
+                  <InputField label="Grade Applying For" required error={errors.className}>
+                    <select
+                      value={form.className}
+                      onChange={setField('className')}
+                      className={inputCls(!!errors.className) + ' cursor-pointer'}
+                    >
+                      <option value="">Select Grade</option>
+                      <option>Nursery</option><option>LKG</option><option>UKG</option>
+                      <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                      <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                      <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                      <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                    </select>
                   </InputField>
-                  <InputField label="Phone" required error={errors.phone}>
+                  <InputField label="Gender" required error={errors.gender}>
+                    <select
+                      value={form.gender}
+                      onChange={setField('gender')}
+                      className={inputCls(!!errors.gender) + ' cursor-pointer'}
+                    >
+                      <option value="">Select Gender</option>
+                      <option>Male</option><option>Female</option>
+                    </select>
+                  </InputField>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <InputField label="Mob." required error={errors.phone}>
                     <input
                       type="tel"
                       value={form.phone}
-                      onChange={setField('phone')}
-                      placeholder="+91 98765 00000"
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\D/g, '').slice(0, 10)
+                        setForm(prev => ({ ...prev, phone: val }))
+                      }}
+                      placeholder="10-digit mobile"
                       className={inputCls(!!errors.phone)}
                     />
                   </InputField>
                 </div>
-
-                <InputField label="School of Interest">
-                  <select
-                    value={form.school}
-                    onChange={setField('school')}
-                    className={inputCls() + ' cursor-pointer'}
-                  >
-                    <option value="">Select a school (optional)</option>
-                    {SCHOOLS.map((s) => <option key={s}>{s}</option>)}
-                  </select>
-                </InputField>
 
                 <InputField label="Message" required error={errors.message}>
                   <textarea
                     rows={4}
                     value={form.message}
                     onChange={setField('message')}
-                    placeholder="Tell us how we can help you..."
+                    placeholder="Your message..."
                     className={inputCls(!!errors.message) + ' resize-none'}
                   />
-                  <p className="text-right text-xs text-stone-400 mt-1">
-                    {form.message.length} chars
-                  </p>
                 </InputField>
 
                 <button

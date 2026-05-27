@@ -4,9 +4,96 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
 import HeroVideo from '@/components/ui/HeroVideo';
+import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
+
+// ─── Request a Callback Form ─────────────────────────────────────────────────
+function CallbackForm() {
+  const [formData, setFormData] = useState({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+    if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const data: EnquiryFormData = { parentName: formData.parentName, candidateName: formData.candidateName, phone: formData.phone, className: formData.className, gender: formData.gender, message: formData.message };
+    const errs = validateEnquiryForm(data);
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setSubmitting(true);
+    try {
+      await submitEnquiryForm(data);
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (submitted) return (
+    <div className="text-center py-10">
+      <div className="w-20 h-20 bg-crimson/10 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg className="w-10 h-10 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+      </div>
+      <p className="font-playfair text-3xl font-semibold text-navy-deeper mb-3">Thank You!</p>
+      <p className="text-text-light text-sm leading-relaxed">We will contact you within 24 hours.</p>
+    </div>
+  );
+
+  const fieldCls = "w-full h-12 rounded-xl border border-[#cfcfcf] bg-white px-4 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors";
+  const errorCls = "text-crimson text-xs mt-1.5 pl-1";
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div>
+        <input type="text" placeholder="Parent's Name *" value={formData.parentName} onChange={handleChange('parentName')} className={fieldCls} />
+        {errors.parentName && <p className={errorCls}>{errors.parentName}</p>}
+      </div>
+      <div>
+        <input type="text" placeholder="Student's Name *" value={formData.candidateName} onChange={handleChange('candidateName')} className={fieldCls} />
+        {errors.candidateName && <p className={errorCls}>{errors.candidateName}</p>}
+      </div>
+      <div>
+        <input type="tel" placeholder="Mobile Number *" value={formData.phone}
+          onChange={(e) => handleChange('phone')({ ...e, target: { ...e.target, value: e.target.value.replace(/\D/g, '').slice(0, 10) } } as React.ChangeEvent<HTMLInputElement>)}
+          className={fieldCls} />
+        {errors.phone && <p className={errorCls}>{errors.phone}</p>}
+      </div>
+      <div>
+        <select value={formData.className} onChange={handleChange('className')} className={`${fieldCls} appearance-none`}>
+          <option value="">Grade Applying For *</option>
+          <option>Nursery</option><option>LKG</option><option>UKG</option>
+          <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+          <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+          <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+          <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+        </select>
+        {errors.className && <p className={errorCls}>{errors.className}</p>}
+      </div>
+      <div>
+        <select value={formData.gender} onChange={handleChange('gender')} className={`${fieldCls} appearance-none`}>
+          <option value="">Select Gender *</option>
+          <option>Male</option><option>Female</option>
+        </select>
+        {errors.gender && <p className={errorCls}>{errors.gender}</p>}
+      </div>
+      <div>
+        <textarea rows={3} placeholder="Message" value={formData.message} onChange={handleChange('message')} className="w-full rounded-xl border border-[#cfcfcf] bg-white px-4 py-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors resize-none" />
+        {errors.message && <p className={errorCls}>{errors.message}</p>}
+      </div>
+      <button type="submit" disabled={submitting} className="w-full h-12 bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white rounded-full font-playfair font-black text-base uppercase tracking-wider transition-colors shadow-lg hover:shadow-crimson/30">
+        {submitting ? "Submitting..." : "Submit Enquiry"}
+      </button>
+    </form>
+  );
+}
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
 export default function SeedlingPage(): React.JSX.Element {
@@ -599,37 +686,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
-              <div className="space-y-4">
-                <input type="text" placeholder="Name of Child" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
-                <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
-                  <option value="">Select Grade / Class</option>
-                  <option>Nursery</option>
-                  <option>LKG</option>
-                  <option>UKG</option>
-                  <option>Grade 1</option>
-                  <option>Grade 2</option>
-                  <option>Grade 3</option>
-                  <option>Grade 4</option>
-                  <option>Grade 5</option>
-                  <option>Grade 6</option>
-                  <option>Grade 7</option>
-                  <option>Grade 8</option>
-                  <option>Grade 9</option>
-                  <option>Grade 10</option>
-                  <option>Grade 11</option>
-                  <option>Grade 12</option>
-                </select>
-                <select className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors appearance-none">
-                  <option value="">Select Gender</option>
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
-                <input type="email" placeholder="Email Address" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
-                <input type="tel" placeholder="Contact Number" className="w-full px-8 py-5 bg-off-white border border-sand/40 rounded-2xl text-sm font-bold tracking-tight focus:outline-none focus:border-navy transition-colors" />
-                <button className="w-full bg-navy-deeper hover:bg-navy-dark text-white py-6 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">
-                  Submit Enquiry
-                </button>
-              </div>
+              <CallbackForm />
             </div>
           </div>
         </div>

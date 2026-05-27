@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
 
 /* ─────────────────────────────────────────────
    SCROLL REVEAL
@@ -306,13 +307,12 @@ export default function AdmissionsPage() {
   const [sticky, setSticky] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [activeProcessStep, setActiveProcessStep] = useState(0);
-  const [formData, setFormData] = useState({
-    candidateName: "",
-    className: "",
+  const [formData, setFormData] = useState<EnquiryFormData>({
     parentName: "",
-    email: "",
+    candidateName: "",
     phone: "",
-    school: "",
+    className: "",
+    gender: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -340,23 +340,11 @@ export default function AdmissionsPage() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const errors = validateEnquiryForm(formData);
+    if (Object.keys(errors).length > 0) return;
     setSubmitting(true);
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          name: formData.candidateName,
-          class_name: formData.className,
-          parent_name: formData.parentName,
-          email: formData.email,
-          phone: formData.phone,
-          student_name: formData.candidateName,
-          school: formData.school,
-          message: formData.message,
-        }),
-      });
+      await submitEnquiryForm(formData);
       setSubmitted(true);
     } catch (err) {
       console.error("Form submission error:", err);
@@ -474,39 +462,53 @@ export default function AdmissionsPage() {
                   <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Seedling family!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleFormSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Parent Name *</label>
-                      <input required type="text" placeholder="Your name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })}
+                      <input required type="text" placeholder="Your name" value={formData.parentName} onChange={e => setFormData({ ...formData, parentName: e.target.value })}
                         className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Phone *</label>
-                      <input required type="tel" placeholder="+91 XXXXX XXXXX" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Student Name *</label>
+                      <input required type="text" placeholder="Child name" value={formData.candidateName} onChange={e => setFormData({ ...formData, candidateName: e.target.value })}
                         className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                     </div>
                   </div>
-                  <div>
-                    <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Email</label>
-                    <input type="email" placeholder="your@email.com" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Select Grade *</label>
+                      <select required value={formData.className} onChange={e => setFormData({ ...formData, className: e.target.value })}
+                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 bg-white">
+                        <option value="">Select Grade</option>
+                        <option>Nursery</option><option>LKG</option><option>UKG</option>
+                        <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                        <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                        <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                        <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Gender *</label>
+                      <select required value={formData.gender} onChange={e => setFormData({ ...formData, gender: e.target.value })}
+                        className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 bg-white">
+                        <option value="">Select Gender</option>
+                        <option>Male</option><option>Female</option>
+                      </select>
+                    </div>
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Select School *</label>
-                    <select required value={formData.school} onChange={e => setFormData({ ...formData, school: e.target.value })}
-                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 bg-white">
-                      <option value="">Choose a school…</option>
-                      {schools.map(s => <option key={s} value={s}>{s}</option>)}
-                    </select>
+                    <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Mob. *</label>
+                    <input required type="tel" placeholder="10-digit mobile" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value.replace(/\D/g,'').slice(0,10) })}
+                      className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200" />
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-[#555] tracking-wide uppercase block mb-1.5">Message</label>
                     <textarea placeholder="Any specific queries?" rows={3} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })}
                       className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] placeholder-[#BBB] focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy-light transition-all duration-200 resize-none" />
                   </div>
-                  <button type="submit" className="w-full bg-crimson hover:bg-crimson-dark text-white py-4 rounded-xl font-semibold tracking-wide text-sm transition-all duration-300 hover:shadow-lg hover:shadow-crimson/20">
-                    Send Enquiry →
+                  <button type="submit" disabled={submitting} className="w-full bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white py-4 rounded-xl font-semibold tracking-wide text-sm transition-all duration-300 hover:shadow-lg hover:shadow-crimson/20">
+                    {submitting ? "Sending..." : "Send Enquiry →"}
                   </button>
                   <p className="text-[#AAA] text-xs text-center">We typically respond within 24 hours · No spam, ever</p>
                 </form>
@@ -619,7 +621,7 @@ export default function AdmissionsPage() {
                   <span className="text-5xl block mb-6">🎉</span>
                   <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-3">Thank You!</h3>
                   <p className="text-text-light font-dm mb-6">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
-                  <button onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }} className="text-crimson font-black text-sm hover:underline uppercase tracking-widest">Submit Another Inquiry</button>
+                  <button onClick={() => { setSubmitted(false); setFormData({ parentName: "", candidateName: "", phone: "", className: "", gender: "", message: "" }); }} className="text-crimson font-black text-sm hover:underline uppercase tracking-widest">Submit Another Inquiry</button>
                 </div>
               ) : (
                 <>
@@ -677,16 +679,9 @@ export default function AdmissionsPage() {
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
-                    Email <span className="text-crimson">*</span>
+                    Mob. <span className="text-crimson">*</span>
                   </label>
-                  <input type="email" required placeholder="Enter email address" value={formData.email} onChange={handleFormChange("email")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
-                    Mobile <span className="text-crimson">*</span>
-                  </label>
-                  <input type="tel" required placeholder="10-digit mobile number" maxLength={10} pattern="[6-9][0-9]{9}" title="Should start with 6, 7, 8 or 9 and be exactly 10 digits"
+                  <input type="tel" required placeholder="10-digit mobile number" maxLength={10}
                     value={formData.phone} onChange={handleFormChange("phone")}
                     onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 10); }}
                     className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
@@ -694,11 +689,11 @@ export default function AdmissionsPage() {
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
-                    Select School <span className="text-crimson">*</span>
+                    Gender <span className="text-crimson">*</span>
                   </label>
-                  <select required value={formData.school} onChange={handleFormChange("school")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
-                    <option value="">Select School</option>
-                    <option value="Seedling Public School (CBSE), Jawahar Nagar, Jaipur">Seedling Public School (CBSE), Jawahar Nagar, Jaipur</option>
+                  <select required value={formData.gender} onChange={handleFormChange("gender")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                    <option value="">Select Gender</option>
+                    <option>Male</option><option>Female</option>
                   </select>
                 </div>
 
