@@ -271,7 +271,7 @@ export default function AboutPage() {
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-crimson text-white rounded-2xl px-6 py-4 shadow-xl">
-                <p className="font-playfair text-4xl font-semibold">30+</p>
+                <p className="font-playfair text-4xl font-semibold">33+</p>
                 <p className="text-white/80 text-xs tracking-widest uppercase font-dm">Years of Excellence</p>
               </div>
             </div>
@@ -590,12 +590,8 @@ export default function AboutPage() {
                     alt={img.label}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span
-                    className="absolute bottom-6 left-6 text-white text-lg font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 font-dm"
-                  >
-                    {img.label}
-                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
                 </div>
               </Reveal>
             ))}
