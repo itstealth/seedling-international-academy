@@ -75,14 +75,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ─────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────── */
-const schools = [
-  "Seedling Public School (CBSE) — Jawahar Nagar",
-  "Seedling International Academy — Jawahar Nagar",
-  "Seedling Modern High School (CBSE) — Durgapura",
-  "Seedling Modern International Academy — Durgapura",
-  "Seedling Wonderland Kids League — Jawahar Nagar",
-  "Seedling Wonderland Kids League — Durgapura",
-];
+
 
 const whyUs = [
   { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses." },
@@ -147,13 +140,7 @@ const documents = [
   { doc: "Category Verification Certificate", note: "If applicable" },
 ];
 
-const feeRows = [
-  { school: "Seedling Public School (CBSE)", level: "Nursery – Class XII", annual: "₹39,500", admission: "On enquiry", transport: "On enquiry", note: "" },
-  { school: "Seedling Modern High School (CBSE)", level: "Nursery – Class XII", annual: "₹39,500", admission: "On enquiry", transport: "On enquiry", note: "" },
-  { school: "Seedling International Academy", level: "Play Group – IGCSE", annual: "₹40,000+", admission: "₹8,540", transport: "On enquiry", note: "Others: ₹7,700" },
-  { school: "Seedling Modern International Academy", level: "Play Group – IGCSE", annual: "₹60,000+", admission: "On enquiry", transport: "On enquiry", note: "" },
-  { school: "Seedling Wonderland Kids League", level: "Play Group – UKG", annual: "On enquiry", admission: "On enquiry", transport: "On enquiry", note: "Both campuses" },
-];
+
 
 const transport = [
   { icon: "🚌", title: "Fleet Coverage", desc: "GPS-enabled buses covering all major residential areas across Jaipur — Jawahar Nagar, Durgapura, and surrounding localities." },
@@ -162,44 +149,23 @@ const transport = [
   { icon: "📲", title: "Real-Time Updates", desc: "Parents receive timely communication about bus timings and any changes via the school's communication channels and ERP system." },
 ];
 
-const faqs = [
-  { q: "What boards do Seedling Schools follow?", a: "Seedling Group operates under two boards — CBSE (Central Board of Secondary Education) at Seedling Public School and Seedling Modern High School, and International curricula at Seedling International Academy and Seedling Modern International Academy. Early years are offered through Seedling Wonderland Kids League at both campuses." },
-  { q: "What is the age criterion for admission?", a: "The minimum age for Day School (Playgroup / Nursery) is 3 years as of 31st March of the admission year. Age eligibility for each class follows CBSE board norms. For exact age requirements per class, please contact the school's admission counsellor." },
-  { q: "Is there an admission test?", a: "An age-appropriate interaction or friendly assessment may be conducted for the child. This is not a high-pressure entrance exam — it helps the school understand the child's learning style and place them in the right environment." },
-  { q: "Can I apply online?", a: "Yes. Visit seedlingschools.com, click on Admissions → Online Form. Fill in the required details, select your preferred school, and submit. Our admission team will reach out to guide you through the next steps." },
-  { q: "Are scholarships available?", a: "Yes. Seedling Schools offers merit scholarships for academically outstanding students and for students with achievements in sports. Early bird incentives are also available for registrations completed early in the admission season. Contact the school for current scholarship criteria." },
-  { q: "Is transportation available?", a: "Yes. Transportation is available for students across both campuses — Jawahar Nagar and Durgapura. GPS-enabled buses with trained attendants cover major routes across Jaipur. For route details and fees, contact the school office directly." },
-  { q: "What is the Student-Teacher ratio?", a: "Seedling maintains a 20:1 student-to-teacher ratio, ensuring that every child receives personalised attention, mentoring, and academic support throughout their schooling journey." },
-  { q: "Is re-admission done for Class XI?", a: "All successful students of Class X may apply for Class XI admission. Re-admission is processed through the school office. Students must apply on the prescribed form along with the non-refundable application amount." },
-  { q: "Does the school focus on holistic development?", a: "Yes, the school strongly believes in the holistic development of every child. Equal emphasis is laid on academics, sports, life skills, values, creativity, leadership, and co-curricular excellence to nurture confident and responsible individuals." },
-  { q: "What subjects are offered in senior secondary classes?", a: "The school offers a wide range of subjects across Science, Commerce, and Humanities streams, subject to availability and CBSE norms." },
-  { q: "Does the school provide remedial or support classes?", a: "Yes, the school organizes remedial and enrichment sessions to support varied learning needs and help students achieve their full potential." },
-  { q: "How are students assessed?", a: "Students are assessed through periodic tests, projects, practical work, classroom activities, assignments, and examinations in accordance with CBSE guidelines." },
-  { q: "Does the school integrate technology into learning?", a: "Yes, technology-enabled learning forms an integral part of classroom teaching through smart classrooms, digital resources, interactive tools, and blended learning practices." },
-  { q: "Does the school conduct Olympiads and competitive exams?", a: "Yes, students are encouraged to participate in Olympiads, talent search examinations, and various national and international competitive platforms." },
-  { q: "What co-curricular activities are available?", a: "The school offers a diverse range of co-curricular activities including music, dance, art, theatre, debates, public speaking, coding, robotics, literary pursuits, and club activities." },
-  { q: "Are educational trips and excursions organized?", a: "Yes, the school regularly organizes educational visits, field trips, excursions, and experiential learning programs to enhance practical understanding and exposure." },
-  { q: "What safety measures are implemented on campus?", a: "The school campus is equipped with CCTV surveillance, trained security personnel, safety protocols, monitored entry systems, and emergency preparedness measures to ensure student safety." },
-  { q: "How does the school address bullying concerns?", a: "The school follows a strict zero-tolerance policy towards bullying and promotes a safe, inclusive, and respectful learning environment for all students." },
-  { q: "How does the school communicate with parents?", a: "The school maintains regular communication with parents through ERP/mobile applications, SMS alerts, emails, circulars, notices, and Parent-Teacher Meetings." },
-  { q: "Does the school provide career counselling?", a: "Yes, the school offers career guidance and counselling support through aptitude sessions, mentoring programs, university guidance, and exposure to career pathways." },
-];
+
 
 const campusLocations = [
   {
     name: "Jawahar Nagar Campus",
     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur, Rajasthan – 302004",
     phone: "+91 74130 12351",
-    schools: ["Seedling Public School (CBSE)", "Seedling International Academy", "Seedling Wonderland Kids League"],
+    schools: ["Seedling Public School (CBSE)"],
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3!2d75.803!3d26.925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x1!2sSeedling+Public+School%2C+Jawahar+Nagar!5e0!3m2!1sen!2sin!4v1600000000000",
   },
-  {
-    name: "Durgapura Campus",
-    address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur, Rajasthan – 302018",
-    phone: "+91 95877 72837",
-    schools: ["Seedling Modern High School (CBSE)", "Seedling Modern International Academy", "Seedling Wonderland Kids League"],
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.784!3d26.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x2!2sSeedling+Modern+High+School%2C+Durgapura!5e0!3m2!1sen!2sin!4v1600000000001",
-  },
+  // {
+  //   name: "Durgapura Campus",
+  //   address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur, Rajasthan – 302018",
+  //   phone: "+91 95877 72837",
+  //   schools: ["Seedling Modern High School (CBSE)", "Seedling Modern International Academy", "Seedling Wonderland Kids League"],
+  //   mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.784!3d26.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x2!2sSeedling+Modern+High+School%2C+Durgapura!5e0!3m2!1sen!2sin!4v1600000000001",
+  // },
 ];
 
 const experiences = [
@@ -561,7 +527,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-white/10">
             {[
-              { value: "20k+", label: "Students" },
+              { value: "10k+", label: "Students" },
               { value: "20:1", label: "Alumni Network Ratio" },
               { value: "10000+", label: "Alumni" },
               { value: "100%", label: "Results" },
