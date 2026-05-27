@@ -315,7 +315,7 @@ export default function AdmissionsPage() {
     gender: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [formErrors, setFormErrors] = useState<Partial<Record<keyof EnquiryFormData, string>>>({});
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -341,11 +341,12 @@ export default function AdmissionsPage() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errors = validateEnquiryForm(formData);
-    if (Object.keys(errors).length > 0) return;
+    if (Object.keys(errors).length > 0) { setFormErrors(errors); return; }
+    setFormErrors({});
     setSubmitting(true);
     try {
       await submitEnquiryForm(formData);
-      setSubmitted(true);
+      window.location.href = '/thank-you';
     } catch (err) {
       console.error("Form submission error:", err);
     } finally {
@@ -616,15 +617,6 @@ export default function AdmissionsPage() {
           {/* Right — Form */}
           <Reveal delay={100}>
             <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
-              {submitted ? (
-                <div className="text-center py-12">
-                  <span className="text-5xl block mb-6">🎉</span>
-                  <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-3">Thank You!</h3>
-                  <p className="text-text-light font-dm mb-6">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
-                  <button onClick={() => { setSubmitted(false); setFormData({ parentName: "", candidateName: "", phone: "", className: "", gender: "", message: "" }); }} className="text-crimson font-black text-sm hover:underline uppercase tracking-widest">Submit Another Inquiry</button>
-                </div>
-              ) : (
-                <>
               <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-2 tracking-tight">Online Admission Inquiry</h3>
               <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
 
@@ -633,14 +625,17 @@ export default function AdmissionsPage() {
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Candidate Name <span className="text-crimson">*</span>
                   </label>
-                  <input type="text" required placeholder="Enter candidate name" value={formData.candidateName} onChange={handleFormChange("candidateName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                  <input type="text" required placeholder="Enter candidate name" value={formData.candidateName} onChange={handleFormChange("candidateName")}
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.candidateName ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`} />
+                  {formErrors.candidateName && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.candidateName}</p>}
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Select Class <span className="text-crimson">*</span>
                   </label>
-                  <select required value={formData.className} onChange={handleFormChange("className")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                  <select required value={formData.className} onChange={handleFormChange("className")}
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.className ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`}>
                     <option value="">Select Class</option>
                     <option value="Nursery">Nursery</option>
                     <option value="LKG">LKG</option>
@@ -656,25 +651,17 @@ export default function AdmissionsPage() {
                     <option value="Class 9">Class 9</option>
                     <option value="Class 11">Class 11</option>
                     <option value="Class 12">Class 12</option>
-
-                    {/* <option value="Cambridge Primary 1">Cambridge Primary 1</option>
-                    <option value="Cambridge Primary 2">Cambridge Primary 2</option>
-                    <option value="Cambridge Primary 3">Cambridge Primary 3</option>
-                    <option value="Cambridge Primary 4">Cambridge Primary 4</option>
-                    <option value="Cambridge Primary 5">Cambridge Primary 5</option>
-                    <option value="Lower Secondary 1 (Grade 6)">Lower Secondary 1 (Grade 6)</option>
-                    <option value="Lower Secondary 2 (Grade 7)">Lower Secondary 2 (Grade 7)</option>
-                    <option value="Lower Secondary 3 (Grade 8)">Lower Secondary 3 (Grade 8)</option>
-                    <option value="IGCSE 1 (Grade 9)">IGCSE 1 (Grade 9)</option>
-                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option> */}
                   </select>
+                  {formErrors.className && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.className}</p>}
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Parent's Name <span className="text-crimson">*</span>
                   </label>
-                  <input type="text" required placeholder="Enter parent's name" value={formData.parentName} onChange={handleFormChange("parentName")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                  <input type="text" required placeholder="Enter parent's name" value={formData.parentName} onChange={handleFormChange("parentName")}
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.parentName ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`} />
+                  {formErrors.parentName && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.parentName}</p>}
                 </div>
 
                 <div>
@@ -684,32 +671,35 @@ export default function AdmissionsPage() {
                   <input type="tel" required placeholder="10-digit mobile number" maxLength={10}
                     value={formData.phone} onChange={handleFormChange("phone")}
                     onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 10); }}
-                    className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm" />
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.phone ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`} />
+                  {formErrors.phone && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.phone}</p>}
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Gender <span className="text-crimson">*</span>
                   </label>
-                  <select required value={formData.gender} onChange={handleFormChange("gender")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm">
+                  <select required value={formData.gender} onChange={handleFormChange("gender")}
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.gender ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`}>
                     <option value="">Select Gender</option>
                     <option>Male</option><option>Female</option>
                   </select>
+                  {formErrors.gender && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.gender}</p>}
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Message <span className="text-crimson">*</span>
                   </label>
-                  <textarea required rows={3} placeholder="Any specific queries or requirements..." value={formData.message} onChange={handleFormChange("message")} className="w-full rounded-xl px-4 py-3 text-text-base text-sm border border-sand/40 bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none" />
+                  <textarea required rows={3} placeholder="Any specific queries or requirements..." value={formData.message} onChange={handleFormChange("message")}
+                    className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm resize-none ${formErrors.message ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`} />
+                  {formErrors.message && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.message}</p>}
                 </div>
 
                 <button type="submit" disabled={submitting} className="w-full bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
                   {submitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
               </form>
-                </>
-              )}
             </div>
           </Reveal>
         </div>

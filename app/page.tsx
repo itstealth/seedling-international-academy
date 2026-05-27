@@ -14,7 +14,6 @@ function CallbackForm() {
   const [formData, setFormData] = useState({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [field]: e.target.value }));
@@ -29,23 +28,13 @@ function CallbackForm() {
     setSubmitting(true);
     try {
       await submitEnquiryForm(data);
-      setSubmitted(true);
+      window.location.href = '/thank-you';
     } catch (err) {
       console.error(err);
     } finally {
       setSubmitting(false);
     }
   };
-
-  if (submitted) return (
-    <div className="text-center py-10">
-      <div className="w-20 h-20 bg-crimson/10 rounded-full flex items-center justify-center mx-auto mb-6">
-        <svg className="w-10 h-10 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-      </div>
-      <p className="font-playfair text-3xl font-semibold text-navy-deeper mb-3">Thank You!</p>
-      <p className="text-text-light text-sm leading-relaxed">We will contact you within 24 hours.</p>
-    </div>
-  );
 
   const fieldCls = "w-full h-12 rounded-xl border border-[#cfcfcf] bg-white px-4 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors";
   const errorCls = "text-crimson text-xs mt-1.5 pl-1";
@@ -661,7 +650,7 @@ export default function SeedlingPage(): React.JSX.Element {
       <section className="relative pt-16 pb-16 md:pb-24  overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-8">
