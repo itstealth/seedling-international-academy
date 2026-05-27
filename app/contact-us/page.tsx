@@ -183,9 +183,9 @@ export default function ContactPage() {
     setStatus('loading')
     try {
       await submitEnquiryForm(data)
-      setStatus('success')
+      window.location.href = '/thank-you'
     } catch {
-      setStatus('success')
+      window.location.href = '/thank-you'
     }
   }
 
