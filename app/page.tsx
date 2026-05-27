@@ -14,14 +14,27 @@ export default function SeedlingPage(): React.JSX.Element {
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
   const [currentTestimonial, setCurrentTestimonial] = useState<number>(0);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
-  // Auto-scroll testimonials
+  // Track desktop view
+  useEffect(() => {
+    const checkWidth = () => setIsDesktop(window.innerWidth >= 768);
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  // Auto-scroll testimonials (single on mobile, group on desktop)
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 3));
+      if (isDesktop) {
+        setCurrentTestimonial((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 3));
+      } else {
+        setCurrentTestimonial((prev) => (prev >= testimonials.length - 1 ? 0 : prev + 1));
+      }
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isDesktop]);
 
   const testimonials = [
     { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta & Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
@@ -425,10 +438,10 @@ export default function SeedlingPage(): React.JSX.Element {
             </h2>
           </div>
 
-          {/* Cards Grid - showing 3 at a time with auto-scroll */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {testimonials.slice(currentTestimonial, currentTestimonial + 3).map(({ avatar, name, role, text }, i) => (
-              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden">
+          {/* Cards Slider - single on mobile, 3 on desktop */}
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory md:snap-none snap-center pb-4 -mx-6 px-6 md:mx-0 md:px-0">
+            {testimonials.slice(currentTestimonial, currentTestimonial + (isDesktop ? 3 : 1)).map(({ avatar, name, role, text }, i) => (
+              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden snap-center">
                 {/* Colored accent top */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-navy`} />
                 <span className="block text-7xl leading-none text-crimson/30 font-playfair mb-4 group-hover:text-crimson/50 transition-transform">"</span>
@@ -448,13 +461,13 @@ export default function SeedlingPage(): React.JSX.Element {
             ))}
           </div>
 
-          {/* Dots */}
+          {/* Dots - desktop shows group starts, mobile shows all */}
           <div className="flex justify-center gap-3 mt-10">
-            {[0, 3].map((startIdx) => (
+            {(isDesktop ? [0, 3, 6] : testimonials.map((_, idx) => idx)).map((idx) => (
               <button
-                key={startIdx}
-                onClick={() => setCurrentTestimonial(startIdx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === startIdx ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'}`}
+                key={idx}
+                onClick={() => setCurrentTestimonial(idx)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'}`}
               />
             ))}
           </div>
