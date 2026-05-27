@@ -147,7 +147,7 @@ const programs = [
 
 const achievements = [
   { value: "100%", label: "Board Results", sub: "Consistently every year", icon: "🏆" },
-  { value: "20,000+", label: "Students Enrolled", sub: "Across 5 schools", icon: "👩‍🎓" },
+  { value: "10k+", label: "Students Enrolled", sub: "Across 2 schools", icon: "👩‍🎓" },
   { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
   { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
   { value: "33+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },

@@ -147,7 +147,7 @@ const whyWork = [
       </svg>
     ),
     title: "Trusted Institution",
-    desc: "Join one of Jaipur's most respected school groups — 5 schools, 2 campuses, CBSE, and a community of over 20,000 students since 1993.",
+    desc: "Join one of Jaipur's most respected school groups — 2 schools, 2 campuses, CBSE, and a community of over 10k+ students since 1993.",
   },
   {
     icon: (
@@ -545,7 +545,7 @@ export default function CareersPage() {
           <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-sand/20">
             {[
               { value: "2", label: "Schools" },
-              { value: "20,000+", label: "Students" },
+              { value: "10k+", label: "Students" },
               { value: "20:1", label: "Teacher Ratio" },
               { value: "100%", label: "Board Results" },
               { value: "1993", label: "Est." },
