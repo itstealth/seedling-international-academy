@@ -137,50 +137,129 @@ export default function LeadershipPage() {
         </div>
       </section>
       {/* ══════════════════════════════════════════════════════════════
-          DIRECTOR'S MESSAGE
+          CEO & DIRECTOR'S MESSAGE
       ══════════════════════════════════════════════════════════════ */}
-      <section className=" bg-crimson">
-        <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto py-10 md:py-16  px-5 sm:px-6">
-          <Reveal>
-            <div className="relative">
-              <img
-                src="/assets/img/Sandeep-Bakshi.jpeg"
-                alt="Dr. Sandeep Bakshi, Director Seedling Group"
-                className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
-                <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
-                <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div>
+      {/* <section className="bg-crimson py-10 md:py-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <Reveal>
-              <p className="font-playfair text-white text-xl italic mb-4">Director's Communiqué</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-white">
-                "Life Ready<br />
-                &amp; <em className="font-semibold text-white">Life Worthy"</em>
-              </h2>
+              <div className="relative md:sticky md:top-28 self-start">
+                <img
+                  src="/assets/img/Sandeep-Bakshi.jpeg"
+                  alt="Dr. Sandeep Bakshi, CEO & Director Seedling Group"
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
+                  <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group of Schools</p>
+                </div>
+              </div>
             </Reveal>
-            <Reveal delay={100}>
-              <p className="text-white/80 leading-[1.9] text-base mb-6 font-dm">
-                At Seedling, we constantly reflect and recalibrate what school means in an age of deep uncertainty — rewriting the narrative to make learning relevant, contextual, and real.
-              </p>
-              <p className="text-white/80 leading-[1.9] text-base font-dm">
-                From Play Group to University — your child, in our care, is promised a world of opportunities, memories, and milestones.
-              </p>
-            </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-white" />
-                <span className="font-playfair italic text-xl text-white">Dr. Sandeep Bakshi</span>
+
+            <div>
+              <Reveal>
+                <p className="font-playfair text-navy text-xl italic mb-4">CEO & Director's Message</p>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-text-base">
+                  "Life Ready<br />
+                  <em className="font-semibold">& Life Worthy"</em>
+                </h2>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  At Seedling, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  As you explore our website, I warmly invite you to experience the spirit of Seedling — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base font-dm font-semibold">
+                  Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
+                </p>
+              </Reveal>
+              <Reveal delay={200}>
+                <div className="mt-10 flex items-center gap-4">
+                  <div className="w-12 h-px bg-navy" />
+                  <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
+                </div>
+                <p className="text-navy text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+  <section className="bg-crimson py-10 md:py-16  ">
+        <div className="grid md:grid-cols-2 gap-16 items-start max-w-7xl mx-auto px-5 sm:px-6">
+          <div className="self-start md:sticky md:top-28">
+            <Reveal>
+              <div className="relative">
+                <img
+                  src="/assets/img/Sandeep-Bakshi.jpeg"
+                  alt="Dr. Sandeep Bakshi, CEO & Director Seedling Group"
+                 
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
+                  <p className="text-navy text-sm font-dm">Principal, Seedling Public School</p>
+                </div>
               </div>
             </Reveal>
           </div>
+
+          <div>
+             <Reveal>
+                <p className="font-playfair text-blue-300 text-xl italic mb-4">CEO & Director's Message</p>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-white">
+                  "Life Ready<br />
+                  <em className="font-semibold">& Life Worthy"</em>
+                </h2>
+              </Reveal>
+          <Reveal delay={100}>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                </p>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  At Seedling, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                </p>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
+                </p>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                </p>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
+                </p>
+                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                  As you explore our website, I warmly invite you to experience the spirit of Seedling — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                </p>
+                <p className="text-white leading-[1.9] text-base font-dm font-semibold">
+                  Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
+                </p>
+              </Reveal>
+            <Reveal delay={200}>
+                <div className="mt-10 flex items-center gap-4">
+                  <div className="w-12 h-px bg-blue-400" />
+                  <span className="font-playfair italic text-xl text-white">Dr. Sandeep Bakshi</span>
+                </div>
+                <p className="text-blue-400 text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
+              </Reveal>
+           
+          </div>
         </div>
       </section>
-
       {/* ══════════════════════════════════════════════════════════════
           PRINCIPAL'S MESSAGE
       ══════════════════════════════════════════════════════════════ */}
