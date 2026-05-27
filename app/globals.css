@@ -3,19 +3,20 @@
 /* 🌈 THEME VARIABLES (Replaces tailwind.config.js) */
 @theme {
   /* Colors */
-  --color-navy: #175190;
-  --color-crimson: #A41546;
+  --color-navy: #034ea2;
+  --color-crimson: #a3123f;
   --color-mauve: #896B85;
   --color-sand: #D6D1CF;
-  --color-off-white: #f8f7f6;
+  --color-off-white: #ffffff;
   --color-dark: #0e0e0e;
   --color-text-base: #2c2c2c;
   --color-text-light: #5a5a5a;
-  --color-navy-dark: #0e3d6e;
-  --color-navy-deeper: #0a1f3a;
-  --color-crimson-dark: #8a1239;
+  --color-navy-dark: #013975;
+  --color-navy-deeper: #013975;
+  --color-crimson-dark: #8e1037;
   --color-crimson-deeper: #7a0f35;
   --color-navy-light: #eef4fc;
+  --color-cool-white: #f0f4ff;
 
   /* Fonts */
   --font-serif: var(--font-serif);
@@ -42,7 +43,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif) !important;
-    color: var(--color-navy-deeper);
+    color: var(--color-navy);
     font-weight: 400;
   }
 
