@@ -550,7 +550,7 @@ export default function AdmissionsPage() {
           2. ONLINE ADMISSION INQUIRY FORM
       ══════════════════════════════════════════════════ */}
       <section id="enquire" className="pt-14 pb-8 max-w-6xl mx-auto px-6">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-4 md:mb-14">
           {/* <Tag>Admission Inquiry</Tag> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
            Admission
@@ -558,7 +558,7 @@ export default function AdmissionsPage() {
           </h2>
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
           {/* Left — Requisites */}
           <Reveal>
             <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
@@ -713,8 +713,8 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           3. WHY CHOOSE US
       ══════════════════════════════════════════════════ */}
-      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
-        <Reveal className="text-center mb-24">
+      <section className="pt-14 md:pb-8 max-w-6xl mx-auto px-6">
+        <Reveal className="text-center mb-8 md:mb-14">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
             Six Reasons Parents<br />
@@ -842,8 +842,8 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           4. DOCUMENTS REQUIRED
       ══════════════════════════════════════════════════ */}
-      <section className="pt-14 pb-8 max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-20 items-start">
+      <section className="pt-10 md:pt-14 pb-4 md:pb-8 max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] mb-8 tracking-tight">
@@ -975,7 +975,7 @@ export default function AdmissionsPage() {
             </h2>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 gap-8 mb-10 md:mb-14">
             {transport.map((t, i) => (
               <Reveal key={t.title} delay={i * 80}>
                 <div className="bg-off-white border border-sand/20 rounded-3xl p-10 flex gap-8 hover:shadow-xl hover:border-sand/40 transition-all duration-500 group">
@@ -1070,9 +1070,9 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           7. CAMPUS VISIT CTA
       ══════════════════════════════════════════════════ */}
-      <section className="relative py-40 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <img
-          src="/assets/Home/smart-classroom.jpg"
+          src="/assets/Home/MainCampus.webp"
           alt="Book a campus visit"
           className="absolute inset-0 w-full h-full object-cover scale-105"
         />

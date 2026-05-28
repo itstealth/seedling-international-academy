@@ -563,7 +563,7 @@ export default function CareersPage() {
           2. WHY WORK WITH US
       ══════════════════════════════════════════════════ */}
       <section className="py-14 max-w-5xl mx-auto px-6">
-        <Reveal className="text-center mb-20">
+        <Reveal className="text-center mb-10 md:mb-14">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
             Why Work<br />
@@ -597,10 +597,10 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           3. JOB LISTINGS
       ══════════════════════════════════════════════════ */}
-      <section id="openings" className="pt-16 pb-10 max-w-5xl mx-auto px-6">
-        <Reveal className="mb-16">
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <div>
+      <section id="openings" className="pt-4 md:pt-16 pb-10 max-w-5xl mx-auto px-6">
+        <Reveal className="mb-10 md:mb-16">
+          <div className="flex items-end justify-between gap-6 flex-wrap md:justify-normal justify-center">
+            <div className="text-center md:text-left">
               <Tag>Current Openings</Tag>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
                 Open<br />
@@ -608,7 +608,7 @@ export default function CareersPage() {
               </h2>
             </div>
             <div className="text-right">
-              <p className="text-text-light text-sm max-w-xs leading-relaxed font-dm font-light">
+              <p className="text-text-light text-center md:text-left text-sm max-w-xs leading-relaxed font-dm font-light">
                 All Subjects · All Classes<br />Teaching and Administrative Roles<br />CBSE
               </p>
             </div>
@@ -616,8 +616,8 @@ export default function CareersPage() {
         </Reveal>
 
         {/* filter pills */}
-        <Reveal className="mb-10">
-          <div className="flex gap-3 flex-wrap">
+        <Reveal className="mb-4 md:mb-10">
+          <div className="flex gap-3 flex-wrap justify-center md:justify-start">
             {["All Roles", "Teaching", "Administrative", "CBSE"].map((f, i) => (
               <button
                 key={f}
@@ -658,9 +658,9 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           TEACHER VOICES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-16 pb-10 bg-white">
+      <section className="pt-4 pb-8 md:pt-16 md:pb-10 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <Reveal className="text-center mb-16">
+          <Reveal className="text-center mb-10 md:mb-16">
             <Tag>Voices from Inside</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               What Our Educators<br />
@@ -687,7 +687,7 @@ export default function CareersPage() {
                       <p className="text-crimson text-[10px] font-black tracking-widest uppercase font-dm">Seedling Educator</p>
                     </div>
                   </div>
-                  <blockquote className="font-playfair italic text-xl font-light text-text-base leading-[1.7] relative z-10">
+                  <blockquote className="font-playfair text-xl font-light text-text-base leading-[1.7] relative z-10">
                     "{t.quote}"
                   </blockquote>
                 </div>
@@ -700,7 +700,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           4. GENERAL APPLICATION
       ══════════════════════════════════════════════════ */}
-      <section className="py-16 bg-off-white">
+      <section className="pt-4 pb-8 md:py-16 bg-off-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left */}
