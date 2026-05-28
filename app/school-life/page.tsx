@@ -36,7 +36,7 @@ const pageStyles = `
 // ==========================================
 
 const galleryItems = [
-  { id: 1, src: "/assets/ANNUAL FETE/1.webp", title: "Annual Fete", category: "Events", size: "large" },
+  { id: 1, src: "/assets/PRIMARY OUTING/3.webp", title: "Primary Outing", category: "Events", size: "large" },
   { id: 2, src: "/assets/MOTHER_S DAY/2.webp", title: "Mother's Day", category: "Celebrations", size: "small" },
   { id: 3, src: "/assets/img/yoga1.jpg", title: "Yoga & Meditation", category: "Wellness", size: "small" },
   { id: 4, src: "/assets/SPORTS DAY/1.webp", title: "Sports Carnival", category: "Sports", size: "wide" },
@@ -287,11 +287,9 @@ function MasonryGallery() {
         <div className="columns-2 md:columns-3 lg:columns-4 gap-1">
           {galleryItems.map((item) => {
             const heightClass =
-              item.size === "large"
-                ? "h-72 md:h-80"
-                : item.size === "wide"
-                  ? "h-48 md:h-52"
-                  : "h-40 md:h-44";
+             
+                   "h-48 md:h-52"
+                 
 
             return (
               <div

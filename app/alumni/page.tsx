@@ -659,10 +659,11 @@ export default function AlumniPage() {
   return (
     <main className="min-h-screen">
       <HeroWrapper
-        backgroundImage="/assets/Home/seniors-stundents.webp"
+        backgroundImage="/assets/img/sps-banner.jpg"
         title="Our Alumni"
         badge="Global Network"
         breadcrumbs={[{ label: "Alumni" }]}
+        position={5}
       />
       <FeaturedAlumniSection />
       <AlumniGrid />
