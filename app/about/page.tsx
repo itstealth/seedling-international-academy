@@ -382,7 +382,7 @@ export default function AboutPage() {
           3. TIMELINE
       ══════════════════════════════════════════════════════════════ */}
       <section className="pt-16 pb-10 bg-white max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto md:px-6">
           <Reveal className="text-center mb-8 md:mb-20">
             <p className="font-playfair text-mauve text-xl italic mb-3">Our Journey</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
@@ -402,7 +402,7 @@ export default function AboutPage() {
                   <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy rounded-full ring-4 ring-navy-light z-10 hidden md:block" />
 
                   {/* image */}
-                  <div className="md:w-5/12">
+                  <div className="w-full md:w-5/12">
                     <div className="overflow-hidden rounded-2xl shadow-xl group border border-sand/30">
                       <img
                         src={item.img}
