@@ -35,14 +35,14 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 
 // ─── Gallery Snapshots ────────────────────────────────────────────────────────
 const snapshots = [
-  { src: "/assets/JAISELMER TRIP/1.webp", label: "Jaisalmer Trip", aspect: "aspect-[4/5]" },
-  { src: "/assets/HALLOWEEN/1.webp", label: "Halloween Fest", aspect: "aspect-[4/3]" },
-  { src: "/assets/BAISAKHI/1.webp", label: "Baisakhi Celebration", aspect: "aspect-[4/5]" },
-  { src: "/assets/XMAS CARNIVAL/1.webp", label: "Christmas Carnival", aspect: "aspect-[4/3]" },
-  { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Cook Off Event", aspect: "aspect-[4/5]" },
-  { src: "/assets/STELLAR SATURDAYS/1.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]" },
-  { src: "/assets/ANNUAL FUNCTION/5.webp", label: "Annual Day Performance", aspect: "aspect-[4/5]" },
-  { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "International Guidance", aspect: "aspect-[4/3]" },
+  { src: "/assets/JAISELMER TRIP/1.webp", label: "Jaisalmer Trip", aspect: "aspect-[4/5]", gallery: ["/assets/JAISELMER TRIP/1.webp", "/assets/JAISELMER TRIP/2.webp", "/assets/JAISELMER TRIP/3.webp", "/assets/JAISELMER TRIP/4.webp"] },
+  { src: "/assets/HALLOWEEN/1.webp", label: "Halloween Fest", aspect: "aspect-[4/3]", gallery: ["/assets/HALLOWEEN/1.webp", "/assets/HALLOWEEN/2.webp", "/assets/HALLOWEEN/3.webp", "/assets/HALLOWEEN/4.webp"] },
+  { src: "/assets/BAISAKHI/1.webp", label: "Baisakhi Celebration", aspect: "aspect-[4/5]", gallery: ["/assets/BAISAKHI/1.webp", "/assets/BAISAKHI/2.webp", "/assets/BAISAKHI/3.webp", "/assets/BAISAKHI/4.webp"] },
+  { src: "/assets/XMAS CARNIVAL/1.webp", label: "Christmas Carnival", aspect: "aspect-[4/3]", gallery: ["/assets/XMAS CARNIVAL/1.webp", "/assets/XMAS CARNIVAL/2.webp", "/assets/XMAS CARNIVAL/christmas 1.webp", "/assets/XMAS CARNIVAL/christmas 2.webp", "/assets/XMAS CARNIVAL/christmas 3.webp", "/assets/XMAS CARNIVAL/christmas 5.webp"] },
+  { src: "/assets/MOTHER CHILD COOK OFF/1.webp", label: "Cook Off Event", aspect: "aspect-[4/5]", gallery: ["/assets/MOTHER CHILD COOK OFF/1.webp", "/assets/MOTHER CHILD COOK OFF/2.webp", "/assets/MOTHER CHILD COOK OFF/3.webp"] },
+  { src: "/assets/STELLAR SATURDAYS/1.webp", label: "Stellar Saturday", aspect: "aspect-[4/3]", gallery: ["/assets/STELLAR SATURDAYS/1.webp", "/assets/STELLAR SATURDAYS/2.webp", "/assets/STELLAR SATURDAYS/3.webp", "/assets/STELLAR SATURDAYS/4.webp", "/assets/STELLAR SATURDAYS/5.webp", "/assets/STELLAR SATURDAYS/6.webp"] },
+  { src: "/assets/ANNUAL FUNCTION/5.webp", label: "Annual Day Performance", aspect: "aspect-[4/5]", gallery: ["/assets/ANNUAL FUNCTION/1.webp", "/assets/ANNUAL FUNCTION/2.webp", "/assets/ANNUAL FUNCTION/3.webp", "/assets/ANNUAL FUNCTION/4.webp", "/assets/ANNUAL FUNCTION/5.webp", "/assets/ANNUAL FUNCTION/6.webp", "/assets/ANNUAL FUNCTION/7.webp"] },
+  { src: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", label: "International Guidance", aspect: "aspect-[4/3]", gallery: ["/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/1.webp", "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/2.webp", "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/3.webp", "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/4.webp", "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/5.webp", "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/6.webp"] },
 ];
 
 // ─── Christmas Gallery ────────────────────────────────────────────────────────
@@ -51,6 +51,32 @@ const christmasGallery = [
   "/assets/XMAS CARNIVAL/christmas 1.webp",
   "/assets/XMAS CARNIVAL/christmas 2.webp",
   "/assets/XMAS CARNIVAL/christmas 5.webp",
+  "/assets/XMAS CARNIVAL/christmas.webp",
+  "/assets/XMAS CARNIVAL/1.webp",
+  "/assets/XMAS CARNIVAL/2.webp",
+];
+
+// ─── Mothers Day Gallery ────────────────────────────────────────────────────────
+const mothersDayGallery = [
+  "/assets/MOTHER_S DAY/1.webp",
+  "/assets/MOTHER_S DAY/2.webp",
+];
+
+// ─── Farewell Gallery ────────────────────────────────────────────────────────
+const farewellGallery = [
+  "/assets/FAREWELL 12TH/1.webp",
+  "/assets/FAREWELL 12TH/2.webp",
+  "/assets/FAREWELL 12TH/3.webp",
+];
+
+// ─── Felicitation Gallery ────────────────────────────────────────────────────────
+const felicitationGallery = [
+  "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
+  "/assets/FELICITATING TOPPERS IN BOARDS/2.webp",
+  "/assets/FELICITATING TOPPERS IN BOARDS/3.webp",
+  "/assets/FELICITATING TOPPERS IN BOARDS/4.webp",
+  "/assets/FELICITATING TOPPERS IN BOARDS/5.webp",
+  "/assets/FELICITATING TOPPERS IN BOARDS/6.webp",
 ];
 
 // ─── Sports Day Gallery ────────────────────────────────────────────────────────
@@ -84,6 +110,7 @@ export default function CampusHighlightsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedGallery, setSelectedGallery] = useState<string[] | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [selectedSnapGallery, setSelectedSnapGallery] = useState<{ images: string[]; index: number } | null>(null);
 
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
@@ -293,12 +320,12 @@ export default function CampusHighlightsPage() {
                   Moments That<br />
                   <span className="text-crimson">Define Us</span>
                 </h2>
-                <a
+                {/* <a
                   href="https://seedlingschools.com/media.php"
                   className="hidden md:inline-flex items-center gap-2 text-navy font-black text-[10px] uppercase tracking-widest border-2 border-sand/40 px-6 py-3 rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 font-dm"
                 >
                   View all events →
-                </a>
+                </a> */}
               </div>
             </div>
           </Reveal>
@@ -374,6 +401,7 @@ export default function CampusHighlightsPage() {
               {snapshots.map((snap, i) => (
                 <div
                   key={i}
+                  onClick={() => snap.gallery && setSelectedSnapGallery({ images: snap.gallery, index: 0 })}
                   className="group relative break-inside-avoid overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className={`relative ${snap.aspect} overflow-hidden bg-stone-100`}>
@@ -385,6 +413,9 @@ export default function CampusHighlightsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 font-dm">
                       <p className="text-white text-[10px] font-black uppercase tracking-widest">{snap.label}</p>
+                      {snap.gallery && (
+                        <p className="text-white/70 text-[9px] mt-1">+{snap.gallery.length} images</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -399,21 +430,55 @@ export default function CampusHighlightsPage() {
       {/* ══════════════════════════════════════════════════════
           IMAGE MODAL
       ══════════════════════════════════════════════════════ */}
-      {(selectedImage || selectedGallery) && (
+      {(selectedImage || selectedGallery || selectedSnapGallery) && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
-          onClick={() => { setSelectedImage(null); setSelectedGallery(null); }}
+          onClick={() => { setSelectedImage(null); setSelectedGallery(null); setSelectedSnapGallery(null); }}
         >
           <button
             className="absolute top-6 right-6 text-white hover:text-crimson transition-colors z-50 p-2"
-            onClick={() => { setSelectedImage(null); setSelectedGallery(null); }}
+            onClick={() => { setSelectedImage(null); setSelectedGallery(null); setSelectedSnapGallery(null); }}
           >
             <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
 
-          {selectedGallery ? (
+          {selectedSnapGallery ? (
+            <>
+              <button
+                className="absolute left-4 md:left-8 text-white hover:text-sand transition-colors z-50 p-2"
+                onClick={(e) => { e.stopPropagation(); setSelectedSnapGallery((prev) => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null); }}
+              >
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <img
+                src={selectedSnapGallery.images[selectedSnapGallery.index]}
+                alt="Gallery view"
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <button
+                className="absolute right-4 md:right-8 text-white hover:text-sand transition-colors z-50 p-2"
+                onClick={(e) => { e.stopPropagation(); setSelectedSnapGallery((prev) => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null); }}
+              >
+                <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {selectedSnapGallery.images.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={(e) => { e.stopPropagation(); setSelectedSnapGallery((prev) => prev ? { ...prev, index: i } : null); }}
+                    className={`w-2 h-2 rounded-full transition-colors ${i === selectedSnapGallery.index ? "bg-sand" : "bg-white/40"}`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : selectedGallery ? (
             <>
               <button
                 className="absolute left-4 md:left-8 text-white hover:text-sand transition-colors z-50 p-2"
@@ -698,6 +763,7 @@ const events = [
     image: "/assets/MOTHER_S DAY/2.webp",
     tag: "Community",
     tagColor: "bg-crimson",
+    gallery: mothersDayGallery,
   },
   {
     id: 3,
@@ -709,6 +775,7 @@ const events = [
     image: "/assets/FAREWELL 12TH/1.webp",
     tag: "Milestone",
     tagColor: "bg-sand",
+    gallery: farewellGallery,
   },
   // {
   //   id: 4,
@@ -731,6 +798,7 @@ const events = [
     image: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",
+    gallery: felicitationGallery,
   },
   {
     id: 6,
