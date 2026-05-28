@@ -156,7 +156,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-off-white font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/Home/classroom-2.webp"
         title="Blog"
         badge="Stories & Updates"
         breadcrumbs={[{ label: "Blog" }]}

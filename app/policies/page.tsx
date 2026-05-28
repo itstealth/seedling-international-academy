@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="bg-off-white">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/Home/School1.webp"
         title="Policies"
         badge="Privacy & Safety"
         breadcrumbs={[{ label: "Policies" }]}

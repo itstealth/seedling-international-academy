@@ -512,7 +512,7 @@ export default function LearningSupport() {
       <FontLoader />
       <main style={{ background: "#f8f7f6" }} className="overflow-x-hidden">
         <HeroWrapper
-          backgroundImage="/assets/img/sps-banner.jpg"
+          backgroundImage="/assets/banner/learning-support.jpg"
           title="Learning Support"
           badge="Student Care"
           breadcrumbs={[{ label: "Learning Support" }]}
