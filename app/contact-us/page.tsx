@@ -25,8 +25,8 @@ const CAMPUS_MAPS = [
   {
     id: 0,
     label: 'SPS — Jawahar Nagar',
-    address: 'Bank St, Sector 4, Jawahar Nagar, Jaipur, Rajasthan 302004',
-    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.5!2d75.783!3d26.943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3ebad9f3edb%3A0x7c6a0adf0e0f0e1a!2sSeedling%20Public%20School!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin',
+    address: 'Jawahar Nagar, Jaipur',
+    src: 'https://www.google.com/maps?q=Seedling+Public+School+Jawahar+Nagar+Jaipur&output=embed',
     link: 'https://maps.google.com/?q=Seedling+Public+School+Jawahar+Nagar+Jaipur',
   },
 ]

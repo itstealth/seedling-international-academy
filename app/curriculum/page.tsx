@@ -188,7 +188,7 @@ export default function AcademicsPage() {
           1. HERO
       ══════════════════════════════════════════════════════ */}
       <HeroWrapper
-        backgroundImage="/assets/Home/MainCampus.webp"
+        backgroundImage="/assets/campus-images/4.jpeg"
         title="Academic Excellence"
         subtitle="& Future-Ready Learning."
         badge="CBSE Curriculum"

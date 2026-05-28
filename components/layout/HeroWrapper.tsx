@@ -11,6 +11,7 @@ interface BreadcrumbItem {
 interface HeroWrapperProps {
   backgroundImage?: string;
   backgroundVideo?: string;
+  position?: number; // percentage for background position
   title: string;
   subtitle?: string;
   badge?: string;
@@ -21,19 +22,20 @@ interface HeroWrapperProps {
 
 export default function HeroWrapper({
   backgroundImage,
+  position = 35,
   title,
   subtitle,
   badge,
   breadcrumbs = [],
 }: HeroWrapperProps): React.JSX.Element {
   return (
-    <div className="relative h-[360px] md:h-[420px] overflow-hidden">
+    <div className="relative h-[360px] md:h-[420px] lg:h-[500px] overflow-hidden">
       {backgroundImage && (
         <Image
           src={backgroundImage}
           alt=""
           fill
-          className="object-cover object-[center_35%]"
+          className={`object-cover object-[center_${position}%]`}
           priority
           sizes="100vw"
         />
