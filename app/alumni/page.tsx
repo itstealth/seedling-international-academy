@@ -257,7 +257,7 @@ function AlumniCard({
 function FeaturedAlumniSection() {
   return (
     <section className="pt-8 pb-10 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="rounded-3xl overflow-hidden shadow-xl grid md:grid-cols-2 bg-navy-deeper">
           <div className="relative min-h-[420px] md:min-h-[560px] overflow-hidden group">
             <Image
@@ -279,7 +279,7 @@ function FeaturedAlumniSection() {
               Seedling Public School Alumni
             </p>
 
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight text-white">
               Harshil Mathur
             </h2>
             <p className="font-playfair text-xl text-sand font-medium mb-8 italic">
@@ -325,16 +325,16 @@ function FeaturedAlumniSection() {
 
 function AlumniGrid() {
   return (
-    <section className="pt-16 pb-10 bg-off-white">
+    <section className="pt-6 pb-10 bg-off-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
+          {/* <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-8 h-px bg-sand" />
             <span className="text-[10px] font-black text-sand uppercase tracking-[0.3em] font-dm">
               Alumni Stories
             </span>
             <div className="w-8 h-px bg-sand" />
-          </div>
+          </div> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight">
             The Pride of Seedling
           </h2>
@@ -495,7 +495,7 @@ function AlumniNetwork() {
 
 function GalleryStrip() {
   return (
-    <section className="pt-16 pb-10 bg-sand/10 overflow-hidden">
+    <section className="pt-16 pb-4 bg-sand/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
@@ -568,7 +568,7 @@ function CTASection() {
 
   return (
     <section className="pt-10 pb-10 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div
           ref={ref}
           className="opacity-0 scale-95 transition-all duration-700 ease-out rounded-[3rem] overflow-hidden relative"
