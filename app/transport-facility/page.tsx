@@ -257,7 +257,7 @@ export default function TransportFacilityPage() {
         </div>
       </section>
 
-      <section className="pt-20 pb-16 bg-off-white">
+      <section className="py-10 md:py-16 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             <div className="bg-white border border-sand/30 rounded-[2rem] p-8 md:p-10 shadow-editorial">

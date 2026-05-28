@@ -160,7 +160,8 @@ const Styles = () => (
     @media(max-width:479px){
       .feat-grid { grid-template-columns:1fr; }
       .ach-grid  { grid-template-columns:1fr; }
-      .gal       { columns:1; }
+      .gal       { columns:2; }
+      .gal > div { height:130px !important; }
       .stats-row { flex-direction:column; }
     }
   `}</style>
