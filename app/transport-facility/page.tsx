@@ -49,13 +49,6 @@ const safetyFeatures = [
     image: "/assets/transport-facility/camera.jpeg",
   },
   {
-    title: "Supervised Campus Entry",
-    description:
-      "Arrival and dispersal are managed carefully at school gates to keep movement orderly and reassuring for children and parents.",
-    icon: ShieldCheck,
-    image: "/assets/transport-facility/entry-gate.jpeg",
-  },
-  {
     title: "Trained Security Support",
     description:
       "Security staff and attendants coordinate with the school office to guide students safely from bus stops to campus spaces.",
@@ -127,7 +120,7 @@ export default function TransportFacilityPage() {
 
       <section className="pt-14 pb-16 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-stretch">
             <div>
               <SectionLabel>Student Safety First</SectionLabel>
               <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.08] tracking-tight">
@@ -141,17 +134,16 @@ export default function TransportFacilityPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-editorial mt-12">
+            <div className="self-stretch">
+              <div className="relative h-full rounded-3xl overflow-hidden">
                 <Image
-                  src="/assets/transport-facility/camera.jpeg"
+                  src="/assets/Home/building-from-top.jpg"
                   alt="Seedling Schools campus entry gate"
                   fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
               </div>
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-editorial">
                   <Image
                     src="/assets/transport-facility/security-guard.jpeg"
@@ -167,7 +159,7 @@ export default function TransportFacilityPage() {
                     Timely, supervised, and parent-friendly.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -182,7 +174,7 @@ export default function TransportFacilityPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {safetyFeatures.map((feature) => {
               const Icon = feature.icon;
 

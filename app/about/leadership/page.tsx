@@ -260,6 +260,57 @@ export default function LeadershipPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          EXECUTIVE DIRECTOR'S MESSAGE — SMHS
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="self-start md:sticky md:top-28">
+            <Reveal>
+              <div className="relative">
+                <img
+                  src="/assets/img/preeti-bakshi.jpeg"
+                  alt="Dr. Preeti Bakshi, Executive Director Seedling Modern High School"
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-off-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Dr. Preeti Bakshi</p>
+                  <p className="text-crimson text-sm font-dm">Executive Director's Message</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div>
+             <Reveal>
+                <p className="font-playfair text-crimson text-xl italic mb-4">Executive Director's Message</p>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
+                  Education for a<br />
+                  <em className="font-semibold">Brighter Tomorrow</em>
+                </h2>
+              </Reveal>
+          <Reveal delay={100}>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  At SEEDLING MODERN HIGH SCHOOL, we believe that education is the key to unlocking a brighter and more successful future. As one of the best schools in Jaipur and a top school in Jaipur, our commitment is to provide an inspiring learning environment where students are encouraged to achieve academic excellence while developing strong values, confidence, and leadership qualities.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  We understand that every child is unique, and our dedicated educators strive to nurture their individual talents through innovative teaching methods, modern infrastructure, and a student-centred approach. Along with academics, we place equal emphasis on sports, arts, creativity, and co-curricular activities to ensure the holistic development of every learner.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Our vision is to shape responsible global citizens who are compassionate, capable, and prepared to meet the challenges of tomorrow. At SEEDLING MODERN HIGH SCHOOL, we continue to set new standards in education and warmly welcome every child to be a part of our journey towards excellence.
+                </p>
+              </Reveal>
+            <Reveal delay={200}>
+                <div className="mt-10 flex items-center gap-4">
+                  <div className="w-12 h-px bg-crimson" />
+                  <span className="font-playfair italic text-xl text-navy-deeper">Dr. Preeti Bakshi</span>
+                </div>
+                <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling Modern High School</p>
+              </Reveal>
+          </div>
+        </div>
+      </section>
       {/* ══════════════════════════════════════════════════════════════
           PRINCIPAL'S MESSAGE
       ══════════════════════════════════════════════════════════════ */}
