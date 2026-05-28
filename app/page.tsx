@@ -200,7 +200,7 @@ export default function SeedlingPage(): React.JSX.Element {
 
           <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
             Beyond Education. Into Transformation.
-            <em className="font-semibold text-sand italic ml-2">Wings</em>
+            {/* <em className="font-semibold text-sand italic ml-2">Wings</em> */}
 
           </h1>
           <p className="hidden md:block text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
@@ -593,10 +593,11 @@ export default function SeedlingPage(): React.JSX.Element {
                   Campus Highlight
                 </div>
                 <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
-                  Annual Sports Day <em className="font-semibold text-sand italic">2025</em>
+                 Investiture ceremony 
+                 {/* <em className="font-semibold text-sand italic">2025</em> */}
                 </h3>
                 <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
-                  Over 2,000 students participated in team sports and the relay championship.
+                Students proudly participated in the Investiture Ceremony, taking leadership roles and pledging responsibility.
                 </p>
               </div>
             </Link>
@@ -604,7 +605,7 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '05', month: 'APR', title: 'Board Results 2024', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
+                  { day: '05', month: 'APR', title: 'Board Results 2026', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
                   { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
                   { day: '18', month: 'MAR', title: 'Stellar Saturdays Showcase', desc: 'Creative clubs presented music, art, public speaking, and hands-on projects.' },
                 ].map(({ day, month, title, desc }, index) => (
@@ -680,7 +681,7 @@ export default function SeedlingPage(): React.JSX.Element {
               </div>
             </div>
 
-            
+
             <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8 ">Request a Callback</h3>

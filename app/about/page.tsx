@@ -87,7 +87,7 @@ const timeline = [
     year: "2018",
     title: "Gateway to Higher Education",
     desc: "Graduating from Seedling opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
-    img: "/assets/Home/jaipur-nu.webp",
+    img: "/assets/Home/jaipur-national-university.jpg",
     side: "left",
   },
 ];

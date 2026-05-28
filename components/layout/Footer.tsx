@@ -31,7 +31,7 @@ export default function Footer() {
                 { icon: Facebook, href: "https://www.facebook.com/seedlingschoolsjaipur?mibextid=ZbWKwL" },
                 { icon: Youtube, href: "https://www.youtube.com/@seedlingschoolsjaipur6258" },
                 { icon: Linkedin, href: "https://www.linkedin.com/school/seedling-schools/posts/?feedView=all" },
-                { icon: Twitter, href: "https://x.com/SeedlingSchools?t=X94ppyw3vv8U40SzkrU9Cg&s=09" },
+                // { icon: Twitter, href: "https://x.com/SeedlingSchools?t=X94ppyw3vv8U40SzkrU9Cg&s=09" },
               ].map((social, idx) => (
                 <a key={idx} href={social.href} className="w-14 h-14 rounded-2xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-navy-deeper hover:shadow-lg transition-all duration-500">
                   <social.icon className="w-6 h-6" />

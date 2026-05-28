@@ -494,11 +494,6 @@ function SportShowcase({ sport, reverse, idx }) {
               backgroundImage:`url(${sport.img})`,
               backgroundSize:"cover", backgroundPosition:"center",
             }} />
-            <div style={{
-              position:"absolute", bottom:-14, [reverse ? "left" : "right"]:-14,
-              width:110, height:110, borderRadius:16,
-              border:`2px solid ${sport.accent}44`,
-            }} />
           </div>
           {/* text */}
           <div ref={txtRef} style={{
