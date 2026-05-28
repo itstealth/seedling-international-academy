@@ -123,23 +123,30 @@ const learningApproaches = [
 
 const programs = [
   {
-    level: "Early Years & Primary",
-    range: "Playgroup – Class V",
-    desc: "Building strong foundations in literacy, numeracy, and curiosity. At Seedling Wonderland Kids League and our primary wings, play-based and inquiry-led learning nurture a genuine love for discovery from the very beginning.",
+    level: "Pre Primary",
+    range: "Age 3-5",
+    desc: "Play-based learning that builds strong foundations in literacy, numeracy, and creativity.",
     img: "/assets/SHOWCASING WONDERLAND/1.webp",
+    color: "from-amber-500/80",
+  },
+  {
+    level: "Primary",
+    range: "Class I-V",
+    desc: "Inquiry-led education encouraging curiosity, confidence, and a love for learning.",
+    img: "/assets/SHOWCASING WONDERLAND/3.webp",
     color: "from-amber-500/80",
   },
   {
     level: "Middle School",
     range: "Classes VI – VIII",
-    desc: "Deepening knowledge across disciplines while nurturing self-confidence, ethical reasoning, and a global outlook. Students participate in Olympiads, academic challenges, and collaborative projects — becoming engaged, responsible, and innovative thinkers.",
+    desc: "Academic growth through Olympiads, projects, and collaborative learning experiences.",
     img: "/assets/Home/School2.webp",
     color: "from-sky-700/80",
   },
   {
     level: "Senior Secondary",
     range: "Classes IX – XII",
-    desc: "Rigorous CBSE programmes with personalised career counselling, university guidance, and focused preparation for competitive exams. Our consistent 100% board results speak to the academic rigour and dedication of our students and faculty.",
+    desc: "Focused CBSE learning with career guidance and competitive exam preparation.",
     img: "/assets/Home/seniors-stundents.webp",
     color: "from-emerald-700/80",
   },
@@ -387,14 +394,15 @@ export default function AcademicsPage() {
           </h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-4">
           {[
             { ...programs[0], color: "from-mauve/90" },
             { ...programs[1], color: "from-navy-deeper/90" },
             { ...programs[2], color: "from-crimson/90" },
+            { ...programs[3], color: "from-crimson/90" },
           ].map((p, i) => (
             <Reveal key={p.level} delay={i * 120}>
-              <div className="group relative h-[520px] rounded-[2.5rem] overflow-hidden shadow-editorial cursor-pointer">
+              <div className="group relative h-[420px] rounded-[2.5rem] overflow-hidden shadow-editorial cursor-pointer">
                 <img
                   src={p.img}
                   alt={p.level}

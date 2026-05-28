@@ -669,7 +669,7 @@ export default function AlumniPage() {
       <AlumniGrid />
       <AchievementsSection />
       <AlumniNetwork />
-      <GalleryStrip />
+      {/* <GalleryStrip /> */}
       <CTASection />
     </main>
   );
