@@ -101,7 +101,8 @@ export default function MandatoryDisclosuresPage() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-xl shadow-navy/5 overflow-hidden border border-navy/10"
           >
-            <table className="w-full">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-150">
               <thead>
                 <tr className="bg-linear-to-r from-navy to-navy-dark">
                   <th className="px-6 py-5 text-left text-xs font-bold uppercase tracking-widest text-white/90">S.No.</th>
@@ -154,6 +155,7 @@ export default function MandatoryDisclosuresPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </motion.div>
         </div>
       </section>
