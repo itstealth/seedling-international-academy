@@ -157,8 +157,15 @@ export default function SeedlingPage(): React.JSX.Element {
   // Infrastructure tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
-      { img: '/assets/Home/smart-classroom.jpg', alt: 'Classrooms', tag: 'Classrooms', title: 'Smart Digital Classrooms', desc: 'Air-conditioned, tech-enabled classrooms with interactive boards fostering 21st-century learning for every student.' },
-      { img: '/assets/Home/School2.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+       { img: '/assets/Home/School2.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+  { 
+  img: '/assets/Home/science-lab.jpg',
+  alt: 'Science Lab',
+  tag: 'Science Lab',
+  title: 'Modern Science Labs',
+ desc: 'Modern science labs with advanced tools encouraging innovation and practical learning for every student.'
+},
+     
       { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
@@ -334,7 +341,7 @@ export default function SeedlingPage(): React.JSX.Element {
       <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="mb-20">
+          <div className="mb-12 md:mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
               Champions <em className="font-semibold text-sand italic">Everywhere</em>
@@ -647,11 +654,11 @@ export default function SeedlingPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative pt-16 pb-16 md:pb-24  overflow-hidden bg-navy-deeper">
+      <section className="relative pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto  relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
+            <div className='px-2'>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-8">
                 Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
@@ -674,7 +681,7 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
             <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8">Request a Callback</h3>
+              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8 ">Request a Callback</h3>
               <CallbackForm />
             </div>
           </div>
