@@ -79,6 +79,17 @@ const felicitationGallery = [
   "/assets/FELICITATING TOPPERS IN BOARDS/6.webp",
 ];
 
+// ─── Annual Function Gallery ────────────────────────────────────────────────────────
+const annualFunctionGallery = [
+  "/assets/ANNUAL FUNCTION/1.webp",
+  "/assets/ANNUAL FUNCTION/2.webp",
+  "/assets/ANNUAL FUNCTION/3.webp",
+  "/assets/ANNUAL FUNCTION/4.webp",
+  "/assets/ANNUAL FUNCTION/5.webp",
+  "/assets/ANNUAL FUNCTION/6.webp",
+  "/assets/ANNUAL FUNCTION/7.webp",
+];
+
 // ─── Sports Day Gallery ────────────────────────────────────────────────────────
 const sportsDayGallery = [
   "/assets/Home/pgt.jpeg",
@@ -191,7 +202,12 @@ export default function CampusHighlightsPage() {
               <Reveal delay={300}>
                 <a
                   href="#"
-                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 h-full"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedGallery(annualFunctionGallery);
+                    setGalleryIndex(0);
+                  }}
+                  className="group block relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 h-full cursor-pointer"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-stone-200 h-full">
                     <img
