@@ -307,7 +307,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT FORM
       ══════════════════════════════════════════════════════════════════════ */}
-      <section id="contact-form" className="py-12 md:py-16 bg-white border-y border-sand/40 scroll-mt-6">
+      <section id="contact-form" className="pt-12 pb-8 md:pt-16 md:pb-10 bg-white border-y border-sand/40 scroll-mt-6">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
@@ -349,11 +349,11 @@ export default function ContactPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white text-sm font-bold font-dm drop-shadow">State-of-the-art learning environment</p>
                   <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Seedling Schools, Jaipur</p>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -480,7 +480,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           MAP
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 bg-off-white">
+      <section className="pt-12 pb-8 md:pt-14 md:pb-10 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-6">
             <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Our Locations</p>
@@ -542,7 +542,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOURS
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 bg-white border-t border-sand/40">
+      <section className="pt-12 pb-8 md:pt-14 md:pb-10 bg-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
