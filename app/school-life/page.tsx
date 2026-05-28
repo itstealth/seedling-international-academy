@@ -485,18 +485,18 @@ function ActivitiesGrid() {
   const currentImages = selectedActivity !== null ? activityFolders[activities[selectedActivity].title] || [activities[selectedActivity].image] : [];
 
   return (
-    <section className="py-16 pb-8 bg-white relative overflow-hidden">
+    <section className="py-8 md:pt-14  pb-8 bg-white relative overflow-hidden">
       {/* Large decorative text */}
-      <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
+      {/* <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
         <span className="text-[10rem] font-black text-navy-deeper/[0.03] leading-none font-playfair">BEYOND</span>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
+        <div className="text-center mb-10">
+          {/* <span className="text-gray-800 text-sm uppercase tracking-[0.3em] font-medium">
             Holistic Growth
-          </span>
+          </span> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
             Beyond
             <span className="text-crimson"> Academics</span>
@@ -729,14 +729,14 @@ function GalleryStrip() {
   };
 
   return (
-    <section className="py-16 pb-8 bg-off-white relative overflow-hidden">
+    <section className="pt-6 md:py-12 pb-8 bg-off-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-end justify-between mb-8">
           <div>
-            <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
+            {/* <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
               Highlight Reel
-            </span>
+            </span> */}
             <h2 className="font-playfair text-5xl font-black text-navy-deeper mt-2">
               Highlight
               <span className="text-crimson"> Moments</span>

@@ -106,7 +106,7 @@ export default function ResultPage() {
 
           {/* Topers in Seedling */}
           <Reveal delay={150}>
-            <div className="mt-24">
+            <div className="mt-10 md:mt-14">
               <div className="text-center mb-12">
                 <span className="inline-block bg-crimson/5 text-crimson text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-crimson/10 mb-4 font-dm backdrop-blur-sm">
                   Board Toppers
@@ -135,7 +135,7 @@ export default function ResultPage() {
                     <img
                       src={student.src}
                       alt={`Seedling Topper ${student.name}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-[28rem] md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -152,7 +152,7 @@ export default function ResultPage() {
 
           {/* Full-width 100% results banner */}
           <Reveal delay={200}>
-            <div className="mt-20 bg-white border border-sand/30 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
+            <div className="mt-10 md:mt-14 bg-white border border-sand/30 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-navy-light rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-crimson text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>

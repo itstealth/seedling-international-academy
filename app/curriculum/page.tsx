@@ -201,7 +201,7 @@ export default function AcademicsPage() {
           2. CURRICULUM OVERVIEW
       ══════════════════════════════════════════════════════ */}
       <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-10 md:mb-16">
           {/* <Tag color="navy">Curriculum Overview</Tag> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
             <em className="font-semibold text-crimson">Curriculum</em>
@@ -303,14 +303,14 @@ export default function AcademicsPage() {
       ══════════════════════════════════════════════════════ */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-24">
+          <Reveal className="text-center mb-10 md:mb-14">
             <Tag color="crimson">How We Teach</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               Our Learning <em className="font-semibold text-navy">Approach</em>
             </h2>
           </Reveal>
 
-          <div className="space-y-20">
+          <div className="space-y-10 md:space-y-20">
             {learningApproaches.map((item, i) => (
               <Reveal key={item.title} delay={60}>
                 <div className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}>
