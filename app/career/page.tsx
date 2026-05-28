@@ -519,7 +519,7 @@ export default function CareersPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/img/career.jpeg"
         title="Careers"
         badge="Join Our Team"
         breadcrumbs={[{ label: "Careers" }]}

@@ -58,7 +58,7 @@ export default function FacultyPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/Home/classroom1.webp"
         title="Faculty"
         badge="Our Educators"
         breadcrumbs={[{ label: "Faculty" }]}

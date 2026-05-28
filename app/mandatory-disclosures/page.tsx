@@ -82,7 +82,7 @@ export default function MandatoryDisclosuresPage() {
   return (
     <div className="bg-off-white">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/about/about-banner.jpg"
         title="Mandatory Disclosures"
         badge="CBSE Compliance"
         breadcrumbs={[{ label: "Disclosures" }]}

@@ -204,7 +204,7 @@ export default function ContactPage() {
       <div className="h-1 bg-gradient-to-r from-navy via-crimson to-sand" />
 
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/assets/campus-images/6.jpeg"
         title="Contact Us"
         subtitle="We'd love to hear from you."
         badge="Get In Touch"
