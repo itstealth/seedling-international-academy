@@ -51,7 +51,7 @@ const leaders = [
     role: "Founder Director",
     sub: "Seedling Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
-    img: "/assets/img/Mohini-Bakshi.jpeg",
+    img: "/assets/img/Mohini-Bakshi.jpg",
     tag: "Legacy",
   },
   {
@@ -59,7 +59,7 @@ const leaders = [
     role: "CEO & Director",
     sub: "Seedling Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
-    img: "/assets/img/Sandeep-Bakshi.jpeg",
+    img: "/assets/img/Sandeep-Bakshi.jpg",
     tag: "Forever New Frontiers",
   },
   {
@@ -205,14 +205,14 @@ export default function LeadershipPage() {
             <Reveal>
               <div className="relative">
                 <img
-                  src="/assets/img/Sandeep-Bakshi.jpeg"
+                  src="/assets/img/Sandeep-Bakshi.jpg"
                   alt="Dr. Sandeep Bakshi, CEO & Director Seedling Group"
                  
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
-                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal, Seedling Public School</p>
+                  <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
+                  <p className="text-navy text-sm font-dm">CEO & Director's Message</p>
                 </div>
               </div>
             </Reveal>
