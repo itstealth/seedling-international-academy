@@ -100,7 +100,7 @@ export default function LeadershipPage() {
 
           <section className="py-10  bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <Reveal className="text-center mb-16">
+          <Reveal className="text-center mb-10 md:mb-16">
             <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light">
               The <em className="font-semibold">Leadership</em><br />Behind the Legacy
