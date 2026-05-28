@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
-import { FileText } from "lucide-react";
 
 const mandatoryData = [
   {
@@ -94,12 +92,8 @@ export default function MandatoryDisclosuresPage() {
       <section className="pt-16 pb-10 md:pt-20 md:pb-12 bg-off-white">
         <div className="max-w-6xl mx-auto px-6">
           {/* Table Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-xl shadow-navy/5 overflow-hidden border border-navy/10"
+          <div
+            className="bg-white rounded-2xl shadow-xl shadow-navy/5 border border-navy/10"
           >
             <div className="overflow-x-auto">
             <table className="w-full min-w-150">
@@ -111,13 +105,9 @@ export default function MandatoryDisclosuresPage() {
                 </tr>
               </thead>
               <tbody>
-                {mandatoryData.map((item, index) => (
-                  <motion.tr
+                {mandatoryData.map((item) => (
+                  <tr
                     key={item.section}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="border-b border-neutral-100 hover:bg-navy-light/20 transition-colors"
                   >
                     <td className="px-6 py-5">
@@ -151,12 +141,12 @@ export default function MandatoryDisclosuresPage() {
                         <span className="font-bold text-navy text-sm">{item.value}</span>
                       )}
                     </td>
-                  </motion.tr>
+                  </tr>
                 ))}
               </tbody>
             </table>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
