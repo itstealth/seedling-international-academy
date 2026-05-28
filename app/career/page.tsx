@@ -501,6 +501,9 @@ function ApplyModal({
 export default function CareersPage() {
   const [selectedRole, setSelectedRole] = useState<(typeof openRoles)[0] | null>(null);
   const [openGeneral, setOpenGeneral] = useState(false);
+  const [activeFilter, setActiveFilter] = useState(0);
+
+  const filters = ["All Roles", "Administrative", "Teaching", "CBSE"];
 
   const generalRole = {
     id: 0,
@@ -618,10 +621,11 @@ export default function CareersPage() {
         {/* filter pills */}
         <Reveal className="mb-4 md:mb-10">
           <div className="flex gap-3 flex-wrap justify-center md:justify-start">
-            {["All Roles", "Teaching", "Administrative", "CBSE"].map((f, i) => (
+            {filters.map((f, i) => (
               <button
                 key={f}
-                className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${i === 0
+                onClick={() => setActiveFilter(i)}
+                className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${activeFilter === i
                   ? "bg-navy-deeper text-white border-navy-deeper"
                   : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
                   }`}
@@ -634,7 +638,13 @@ export default function CareersPage() {
 
         {/* job cards */}
         <div className="space-y-5">
-          {openRoles.map((role, i) => (
+          {openRoles.filter((role) => {
+            if (activeFilter === 0) return true;
+            if (activeFilter === 1) return role.type === "Teaching";
+            if (activeFilter === 2) return role.type === "Administrative";
+            if (activeFilter === 3) return role.board === "CBSE";
+            return true;
+          }).map((role, i) => (
             <Reveal key={role.id} delay={i * 80}>
               <JobCard role={role} onApply={setSelectedRole} />
             </Reveal>
@@ -658,13 +668,13 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           TEACHER VOICES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-4 pb-8 md:pt-16 md:pb-10 bg-white">
+      <section className="pt-4 pb-8 md:pt-16  bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center mb-10 md:mb-16">
             <Tag>Voices from Inside</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               What Our Educators<br />
-              <em className="font-semibold text-crimson">Have to Say</em>
+              <em className="font-light text-crimson">Have to Say</em>
             </h2>
           </Reveal>
 
@@ -683,7 +693,7 @@ export default function CareersPage() {
                       className="w-12 h-12 md:w-20 md:h-20 rounded-full object-cover object-top border-2 border-sand/40 flex-shrink-0"
                     />
                     <div>
-                      <p className="font-playfair font-semibold text-lg text-navy-deeper">{t.name}</p>
+                      <p className="font-playfair font-normal text-lg text-navy-deeper">{t.name}</p>
                       <p className="text-crimson text-[10px] font-black tracking-widest uppercase font-dm">Seedling Educator</p>
                     </div>
                   </div>
@@ -700,7 +710,7 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           4. GENERAL APPLICATION
       ══════════════════════════════════════════════════ */}
-      <section className="pt-4 pb-8 md:py-16 bg-off-white">
+      <section className="pt-4 pb-8 md:py-12 md:pt-8 bg-off-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left */}
@@ -851,7 +861,7 @@ export default function CareersPage() {
             </div>
           </Reveal>
           <Reveal delay={220}>
-            <div className="mt-16 flex flex-wrap justify-center gap-4">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
                 "🏫 2 Schools",
                 "🎓 CBSE Board",
