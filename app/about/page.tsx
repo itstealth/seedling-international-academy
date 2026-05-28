@@ -218,7 +218,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           2. WHO WE ARE
       ══════════════════════════════════════════════════════════════ */}
-      <section id="story" className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+      <section id="story" className="py-10 md:pt-16 md:pb-8 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-last md:order-none">
             <Reveal>
@@ -282,7 +282,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           CORE VALUES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="pt-16 pb-10 bg-navy-light/10 relative overflow-hidden">
+      <section className="py-8 md:pt-16 md:pb-8 bg-navy-light/10 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-sand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -383,7 +383,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="pt-16 pb-10 bg-white max-w-7xl mx-auto px-5 sm:px-6">
         <div className="max-w-7xl mx-auto px-6">
-          <Reveal className="text-center mb-24">
+          <Reveal className="text-center mb-8 md:mb-20">
             <p className="font-playfair text-mauve text-xl italic mb-3">Our Journey</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
               From <em className="font-semibold text-crimson">Nursery</em><br />to University
@@ -397,7 +397,7 @@ export default function AboutPage() {
 
             {timeline.map((item, i) => (
               <Reveal key={item.year} delay={i * 60}>
-                <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i === 5 ? "mb-4" : "mb-24"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
+                <div className={`relative flex flex-col md:flex-row items-center gap-4 md:gap-8 ${i === 5 ? "mb-4" : "mb-12 md:mb-20"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
                   {/* dot */}
                   <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-navy rounded-full ring-4 ring-navy-light z-10 hidden md:block" />
 
