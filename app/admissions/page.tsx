@@ -216,6 +216,13 @@ function ExperienceSection() {
   const [active, setActive] = useState(0);
   const current = experiences[active];
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActive(prev => (prev + 1) % experiences.length);
+    }, 10000);
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-16 pb-8 bg-crimson relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
