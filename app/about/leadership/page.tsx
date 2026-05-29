@@ -92,7 +92,7 @@ export default function LeadershipPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
-        backgroundImage="/assets/Home/MainCampus.webp"
+        backgroundImage="/assets/banner/leadership-banner-img.jpeg"
         title="Leadership"
         badge="Anchored In Purpose. Driven By A Vision"
         breadcrumbs={[{ label: "Leadership" }]}
