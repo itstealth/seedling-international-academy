@@ -276,7 +276,11 @@ export default function TransportFacilityPage() {
             </div>
 
             <div className="bg-navy-deeper rounded-[2rem] p-8 md:p-10 text-white shadow-editorial">
-              <SectionLabel>Parent Assurance</SectionLabel>
+             
+                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white font-dm">
+      <span className="h-px w-8 bg-white" />
+    Parent Assurance
+    </span>
               <h2 className="mt-5 font-playfair text-3xl md:text-4xl font-black text-white leading-tight">
                 Safety checks that families can count on.
               </h2>
