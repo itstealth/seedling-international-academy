@@ -76,8 +76,8 @@ const IconBrain = () => (
 const IMGS = {
   hero: "/assets/INTERNATIONAL GUIDANCE (CAMBRIDGE)/1.webp",
   intro: "/assets/img/student-centric.jpeg",
-  achievers: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
-  digital: "/assets/Home/ScienceLabs.webp",
+  achievers: "/assets/FELICITATING TOPPERS IN BOARDS/6.webp",
+  digital: "/assets/Home/stem-lab.jpg",
   wellbeing: "/assets/MOTHER CHILD COOK OFF/1.webp",
   school: "/assets/Home/MainCampus.webp",
 };
@@ -284,34 +284,34 @@ function FeatureCards() {
 function HighAchievers() {
   const { ref, visible } = useInView();
   return (
-    <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#f8f7f6" }}>
+    <section className="pt-10 md:pt-16 pb-12 overflow-x-hidden" style={{ background: "#f8f7f6" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* image */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(-40px)", transition: "all 0.85s ease" }}>
             <div className="relative">
-              <img src={IMGS.achievers} alt="High achieving students" className="w-full h-[500px] object-cover rounded-3xl shadow-2xl" />
+              <img src={IMGS.achievers} alt="High achieving students" className="w-full h-[250px] sm:h-[450px] md:h-[330px] object-cover rounded-3xl shadow-2xl" />
               <div className="absolute inset-0 rounded-3xl" style={{ background: "linear-gradient(to top, #17519066, transparent)" }} />
               {/* overlapping chips */}
-              <div className="absolute bottom-8 left-8 flex flex-wrap gap-3">
+              {/* <div className="absolute bottom-8 left-8 flex flex-wrap gap-3">
                 {["Olympiads", "Competitions", "Advanced Learning"].map(tag => (
                   <span key={tag} className="px-4 py-2 rounded-full text-sm font-semibold text-white" style={{ background: "rgba(164,21,70,0.85)", fontFamily: "'DM Sans', sans-serif" }}>{tag}</span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* text */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(40px)", transition: "all 0.85s ease 0.2s" }}>
-            <div className="flex items-center gap-3 mb-6">
+            {/* <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-1 rounded-full" style={{ background: "#A41546" }} />
               <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#A41546", fontFamily: "'DM Sans', sans-serif" }}>Beyond the Classroom</span>
-            </div>
+            </div> */}
             <h2 className="font-bold mb-6 leading-tight" style={{ color: "#175190", fontSize: "clamp(2rem, 4vw, 3rem)", fontFamily: "'Playfair Display', serif" }}>
               Nurturing High Achievers
             </h2>
             <p className="text-lg leading-relaxed mb-8" style={{ color: "#5a5a5a", fontFamily: "'DM Sans', sans-serif" }}>
-              The school nurtures high achievers by providing enrichment opportunities, advanced learning resources, and participation in Olympiads and academic competitions. This balanced approach ensures that both support and challenge are provided where needed.
+              The school nurtures high achievers by providing enrichment opportunities, advanced learning resources, and participation in Olympiads and academic competitions. 
             </p>
             <div className="space-y-5">
               {[
@@ -341,7 +341,7 @@ function ModernLearning() {
   return (
     <section className="pt-16 pb-12 overflow-x-hidden" style={{ background: "#2c2c2c" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <FadeIn className="text-center mb-12">
+        <FadeIn className="text-center mb-8 md:mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-12" style={{ background: "#A41546" }} />
             <span className="text-sm font-semibold tracking-widest uppercase text-white/50" style={{ fontFamily: "'DM Sans', sans-serif" }}>Innovation in Education</span>
@@ -379,7 +379,7 @@ function ModernLearning() {
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(40px)", transition: "all 0.85s ease 0.2s" }}>
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl" style={{ background: "linear-gradient(135deg, #A4154630, #17519030)" }} />
-              <img src={IMGS.digital} alt="Modern learning facilities" className="relative w-full h-[500px] object-cover rounded-3xl" style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.5)" }} />
+              <img src={IMGS.digital} alt="Modern learning facilities" className="relative w-full h-[250px] sm:h-[450px] md:h-[380px] object-cover rounded-3xl" style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.5)" }} />
             </div>
           </div>
         </div>
