@@ -133,14 +133,14 @@ const programs = [
     level: "Primary",
     range: "Class I-V",
     desc: "Inquiry-led education encouraging curiosity, confidence, and a love for learning.",
-    img: "/assets/SHOWCASING WONDERLAND/3.webp",
+    img: "/assets/Home/primary-school.jpg",
     color: "from-amber-500/80",
   },
   {
     level: "Middle School",
     range: "Classes VI – VIII",
     desc: "Academic growth through Olympiads, projects, and collaborative learning experiences.",
-    img: "/assets/Home/School2.webp",
+    img: "/assets/Home/middle-school.jpg",
     color: "from-sky-700/80",
   },
   {
@@ -402,21 +402,19 @@ export default function AcademicsPage() {
             { ...programs[3], color: "from-crimson/90" },
           ].map((p, i) => (
             <Reveal key={p.level} delay={i * 120}>
-              <div className="group relative h-[420px] rounded-[2.5rem] overflow-hidden shadow-editorial cursor-pointer">
+              <div className="group relative h-[420px] rounded-[2.5rem] overflow-hidden shadow-editorial">
                 <img
                   src={p.img}
                   alt={p.level}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
-                  <span className="text-white/70 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
-                  <h3 className="font-playfair text-4xl font-semibold mb-5 leading-tight text-white">{p.level}</h3>
-                  <p className="text-white/85 text-sm leading-relaxed font-dm font-light">
-                    {p.desc}
-                  </p>
-                  <div className="mt-8 w-12 h-1 bg-white/60 group-hover:w-24 transition-all duration-500 rounded-full" />
+                  <span className="text-white/80 text-xs tracking-[0.3em] uppercase mb-4 block font-dm font-bold">{p.range}</span>
+                  <h3 className="font-playfair text-[25px] font-semibold mb-5 leading-tight text-white">{p.level}</h3>
+                
+                  <div className="mt-1 w-12 h-1 bg-white/60 group-hover:w-24 transition-all duration-500 rounded-full" />
                 </div>
               </div>
             </Reveal>
