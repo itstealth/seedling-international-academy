@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
 import HeroVideo from '@/components/ui/HeroVideo';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
+import { url } from 'inspector';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -576,7 +577,7 @@ export default function SeedlingPage(): React.JSX.Element {
           </div>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
-            <Link href="/blog" className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
+            <a href="https://www.instagram.com/p/DX8nfpKEyWC/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
               <img
                 src="/assets/Home/trending1.jpg"
                 alt="Annual Sports Day 2025"
@@ -584,8 +585,8 @@ export default function SeedlingPage(): React.JSX.Element {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/45 to-transparent" />
               <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
-                <strong className="block text-2xl font-playfair leading-none">12</strong>
-                <span className="text-[10px] font-black tracking-widest uppercase mt-1">APR</span>
+                <strong className="block text-2xl font-playfair leading-none">4</strong>
+                <span className="text-[10px] font-black tracking-widest uppercase mt-1">MAY</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
                 <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
@@ -600,16 +601,16 @@ export default function SeedlingPage(): React.JSX.Element {
                 Students proudly participated in the Investiture Ceremony, taking leadership roles and pledging responsibility.
                 </p>
               </div>
-            </Link>
+            </a>
 
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '05', month: 'APR', title: 'Board Results 2026', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.' },
-                  { day: '28', month: 'MAR', title: 'Admissions Open – Early Bird Offer', desc: 'Register before April 30 and avail exclusive early bird fee concessions.' },
-                  { day: '18', month: 'MAR', title: 'Stellar Saturdays Showcase', desc: 'Creative clubs presented music, art, public speaking, and hands-on projects.' },
-                ].map(({ day, month, title, desc }, index) => (
-                  <Link key={title} href="/blog" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
+                  { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJKS2PAsE6/" },
+                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling Public School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
+                ].map(({ day, month, title, desc, url }, index) => (
+                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
                       <strong className="block text-xl font-playfair leading-none">{day}</strong>
                       <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
@@ -621,7 +622,7 @@ export default function SeedlingPage(): React.JSX.Element {
                       </div>
                       <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
 

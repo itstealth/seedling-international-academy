@@ -124,7 +124,7 @@ export default function Footer() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block">Admission Helpline</span>
                 <a href="tel:+917413012351" className="text-sm font-black text-white/80 hover:text-sand transition-colors">+91 7413012351</a>
                 <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block mt-2">Office Landline</span>
-                <a href="tel:+911412654395" className="text-sm font-black text-white/80 hover:text-sand transition-colors">+91 0141 3623000</a>
+                <a href="tel:01413623000" className="text-sm font-black text-white/80 hover:text-sand transition-colors">0141 3623000</a>
               </div>
               <div className="space-y-1">
                 <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block">Visit Us</span>
