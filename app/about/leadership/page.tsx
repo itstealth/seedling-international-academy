@@ -118,17 +118,17 @@ export default function LeadershipPage() {
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
+                    {/* <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
                       {l.tag}
-                    </span>
+                    </span> */}
                   </div>
                   <div className="p-7">
                     <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
                     <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
-                    <p className="text-text-light text-xs mb-5 font-dm">{l.sub}</p>
-                    <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
+                    <p className="text-text-light text-xs  font-dm">{l.sub}</p>
+                    {/* <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
                       "{l.quote}"
-                    </blockquote>
+                    </blockquote> */}
                   </div>
                 </div>
               </Reveal>
