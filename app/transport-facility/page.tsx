@@ -118,7 +118,7 @@ export default function TransportFacilityPage() {
         breadcrumbs={[{ label: "Transport" }]}
       />
 
-      <section className="pt-14 pb-16 bg-off-white">
+      <section className="pt-14 [b-8 md:pb-14 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-stretch">
             <div>
@@ -135,7 +135,7 @@ export default function TransportFacilityPage() {
             </div>
 
             <div className="self-stretch">
-              <div className="relative h-full rounded-3xl overflow-hidden">
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden">
                 <Image
                   src="/assets/Home/building-from-top.jpg"
                   alt="Seedling Schools campus entry gate"
