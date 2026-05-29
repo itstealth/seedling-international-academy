@@ -137,7 +137,7 @@ export default function TransportFacilityPage() {
             <div className="self-stretch">
               <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden">
                 <Image
-                  src="/assets/Home/building-from-top.jpg"
+                  src="/assets/Home/MainCampus.webp"
                   alt="Seedling Schools campus entry gate"
                   fill
                   className="object-cover"
