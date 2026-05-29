@@ -94,6 +94,7 @@ export default function LeadershipPage() {
       <HeroWrapper
         backgroundImage="/assets/banner/leadership-banner-img.jpeg"
         title="Leadership"
+        position={70}
         badge="Anchored In Purpose. Driven By A Vision"
         breadcrumbs={[{ label: "Leadership" }]}
       />

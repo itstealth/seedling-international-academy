@@ -35,7 +35,10 @@ export default function HeroWrapper({
           src={backgroundImage}
           alt=""
           fill
-          className={`object-cover object-[center_${position}%]`}
+          style={{
+    objectPosition: `center ${position}%`,
+  }}
+          className={`object-cover`}
           priority
           sizes="100vw"
         />
