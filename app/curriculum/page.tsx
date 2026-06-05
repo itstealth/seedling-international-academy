@@ -98,13 +98,13 @@ const learningApproaches = [
   {
     title: "Aligned With National Education Policy (NEP)",
     body: "Our curriculum is thoughtfully designed to align with the latest educational standards and practices outlined by the NEP, ensuring our students receive a relevant and future-ready education. We focus on critical thinking, creativity, and empathy — preparing every student for the dynamic challenges of tomorrow.",
-    img: "/assets/STELLAR SATURDAYS/3.webp",
+    img: "/assets/STELLAR SATURDAYS/3.JPG",
     tag: "Learning Philosophy",
   },
   {
     title: "Technology Integrated Innovative Education",
     body: "We embrace the power of technology in education. Our classrooms are equipped with interactive whiteboards, and we integrate educational apps and online resources to create an engaging and dynamic learning experience. Students are introduced to modern skills including AI, ethics, and sustainability — preparing them for a digitally driven world.",
-    img: "/assets/img/tech_integrated_learning.jpg",
+    img: "/assets/img/tech.jpg",
     tag: "Innovation",
   },
   {
@@ -115,7 +115,7 @@ const learningApproaches = [
   },
   {
     title: "Effective Feedback & Parent Partnership",
-    body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Seedling is truly a community endeavour.",
+    body: "We believe in the power of feedback. Our teachers provide timely and constructive feedback to students and maintain open communication with parents — both online and offline — ensuring the continuous growth and development of each child. Education at Cambridge International School is truly a community endeavour.",
     img: "/assets/img/ptm.jpg",
     tag: "Community",
   },
@@ -146,7 +146,7 @@ const programs = [
   {
     level: "Senior Secondary",
     range: "Classes IX – XII",
-    desc: "Focused CBSE learning with career guidance and competitive exam preparation.",
+    desc: "Focused Cambridge learning with career guidance and competitive exam preparation.",
     img: "/assets/Home/seniors-stundents.webp",
     color: "from-emerald-700/80",
   },
@@ -158,7 +158,7 @@ const achievements = [
   { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
   { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
   { value: "33+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },
-  { value: "2", label: "Boards Offered", sub: "CBSE & Cambridge", icon: "📜" },
+  { value: "2", label: "Boards Offered", sub: "Cambridge & Cambridge", icon: "📜" },
 ];
 
 const learnerProfile = [
@@ -173,7 +173,7 @@ const learnerProfile = [
 
 const joyride = [
   "Personalised Learning Journeys — tailored to meet individual student needs and strengths",
-  "Academic Rigor — comprehensive CBSE curriculum with critical knowledge and skills",
+  "Academic Rigor — comprehensive Cambridge curriculum with critical knowledge and skills",
   "Emotional Intelligence — integrated into all aspects of learning for holistic growth",
   "Future-Ready Skills — AI, ethics, and sustainability for tomorrow's challenges",
   "Holistic Development — prioritising both academic success and personal growth",
@@ -198,7 +198,7 @@ export default function AcademicsPage() {
         backgroundImage="/assets/banner/Academic-Excellence.jpeg"
         title="Academic Excellence"
         subtitle="& Future-Ready Learning."
-        badge="CBSE Curriculum"
+        badge="Cambridge Curriculum"
         breadcrumbs={[{ label: "Academics" }, { label: "Curriculum" }]}
         // height="large"
         overlayOpacity={0.6}
@@ -220,17 +220,17 @@ export default function AcademicsPage() {
             <div className="overflow-hidden rounded-3xl shadow-editorial">
               <img
                 src="/assets/curriculum.webp"
-                alt="CBSE Curriculum at Seedling Schools"
+                alt="Cambridge Curriculum at Cambridge International School"
                 className="w-full h-full aspect-square object-cover"
               />
             </div>
             <div>
               {/* <div className="inline-block text-navy text-[10px] font-black tracking-[0.2em] uppercase mb-4 border border-navy/10 px-4 py-1 rounded-full font-dm">
-                CBSE
+                Cambridge
               </div> */}
               <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">Central Board of Secondary Education</h3>
               <p className="text-text-light leading-[1.9] text-lg font-dm font-light mb-8">
-                Affiliated with the Central Board of Secondary Education, our CBSE schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
+                Affiliated with the Central Board of Secondary Education, our Cambridge schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["NEP Aligned", "100% Board Results", "Personalised Learning"].map((h) => (
@@ -460,7 +460,7 @@ export default function AcademicsPage() {
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
                 <h3 className="font-playfair text-4xl md:text-5xl font-semibold mb-6">100% Board Results</h3>
-                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Cambridge International School Group has consistently achieved 100% results in both Cambridge and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
                 <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">
@@ -474,7 +474,7 @@ export default function AcademicsPage() {
       </section> */}
 
       {/* ══════════════════════════════════════════════════════
-          JOYRIDE — WHAT SEEDLING OFFERS
+          JOYRIDE — WHAT CAMBRIDGE INTERNATIONAL SCHOOL OFFERS
       ══════════════════════════════════════════════════════ */}
       {/* <section className="py-32 bg-off-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -483,10 +483,10 @@ export default function AcademicsPage() {
               <Tag color="crimson">Start Your Joyride</Tag>
               <h2 className="font-playfair text-5xl font-light leading-tight mb-8 text-navy-deeper">
                 12 Reasons to Choose<br />
-                <em className="font-semibold text-navy">Seedling Schools</em>
+                <em className="font-semibold text-navy">Cambridge International School</em>
               </h2>
               <p className="text-text-light leading-relaxed mb-10 text-lg font-dm font-light">
-                Every element of the Seedling experience is intentionally designed to prepare students not just academically, but for life's challenges — with confidence, compassion, and curiosity. Come feel the Buzz!
+                Every element of the Cambridge International School experience is intentionally designed to prepare students not just academically, but for life's challenges — with confidence, compassion, and curiosity. Come feel the Buzz!
               </p>
               <a href="/admissions#enquire" className="inline-flex items-center gap-3 bg-navy hover:bg-navy-dark text-white px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-navy/40">
                 Begin Enrolment
@@ -578,7 +578,7 @@ export default function AcademicsPage() {
       {/* <section className="relative md:pt-20 md:pb-12 pt-16 pb-10 overflow-hidden">
         <img
           src="/assets/Home/School2.webp"
-          alt="Join Seedling Schools"
+          alt="Join Cambridge International School"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-navy-dark/70" />
@@ -587,7 +587,7 @@ export default function AcademicsPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
           <Reveal>
             <h2 className="font-playfair text-3xl md:text-5xl font-light mb-8 text-white">
-              Join the <em className="font-semibold text-sand">Seedling Family</em>
+              Join the <em className="font-semibold text-sand">Cambridge International School Family</em>
             </h2>
             <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-dm font-light">
               Come feel the Buzz! Parent counselling is available both online and offline. Early bird incentives and scholarships for meritorious students in academics and sports are available. Where every student matters — prioritising well-being since 1993.

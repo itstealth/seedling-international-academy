@@ -833,7 +833,7 @@ function CTA() {
           </h2>
 
           <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:"clamp(14px,1.5vw,18px)", color:"rgba(255,255,255,.62)", lineHeight:1.75, maxWidth:540, margin:"0 auto 48px" }}>
-            Join a legacy of excellence. From first steps to championship podiums — Seedling Schools Athletics is where champions are made.
+            Join a legacy of excellence. From first steps to championship podiums — Cambridge International School Athletics is where champions are made.
           </p>
 
           <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>

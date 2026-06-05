@@ -50,43 +50,43 @@ const timeline = [
   {
     year: "1993",
     title: "The Seed is Planted",
-    desc: "Late Ms. Mohini Bakshi founded Seedling Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
+    desc: "Late Ms. Mohini Bakshi founded Cambridge International School Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
     img: "/assets/Home/kindergarten.webp",
     side: "right",
   },
   {
     year: "1998",
     title: "Growing Roots in Jawahar Nagar",
-    desc: "Seedling Public School (CBSE) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
+    desc: "Cambridge International School (Cambridge) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
     img: "/assets/Home/School1.webp",
     side: "left",
   },
   {
     year: "2005",
     title: "Opening New Horizons — Durgapura",
-    desc: "Seedling Modern High School (CBSE) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "/assets/Home/smhs-student.webp",
+    desc: "Cambridge International School (Cambridge) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
+    img: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-04%2FMiniMax-M2.7%2F2030974885278265449%2F8c27b7b5301a4f87deea25c4e0cd132c8ae686bc9a4a6da38bb9f3eb35462c2b..jpeg?Expires=1780644553&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=xHeS8LsQORtgHKBNLNAbXXMy1HY%3D",
     side: "right",
   },
   {
     year: "2010",
     title: "Going Global — Cambridge Curriculum",
-    desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
+    desc: "Cambridge International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
     // img: "/assets/Home/smart-classroom.jpg",
     img:"/assets/Home/sia-student.jpg",
     side: "left",
   },
   {
     year: "2015",
-    title: "Seedling Modern International Academy",
-    desc: "A second Cambridge-affiliated institution — Seedling Modern International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
+    title: "Cambridge International Academy",
+    desc: "A second Cambridge-affiliated institution — Cambridge International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
     img: "/assets/Home/smia-student.jpg",
     side: "right",
   },
   {
     year: "2018",
     title: "Gateway to Higher Education",
-    desc: "Graduating from Seedling opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
+    desc: "Graduating from Cambridge International School opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Cambridge International School significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
     img: "/assets/Home/jaipur-national-university.jpg",
     side: "left",
   },
@@ -96,7 +96,7 @@ const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
     role: "Founder Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
     img: "/assets/img/mohini.png",
     tag: "Legacy",
@@ -104,7 +104,7 @@ const leaders = [
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
     img: "/assets/img/sandeep.png",
     tag: "Forever New Frontiers",
@@ -112,7 +112,7 @@ const leaders = [
   {
     name: "Dr. Preeti Bakshi",
     role: "Executive Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
     img: "/assets/img/preeti.png",
     tag: "Creating Fresh Pathways",
@@ -120,7 +120,7 @@ const leaders = [
   {
     name: "Ms. Akansha Bakshi",
     role: "Joint Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
     img: "/assets/img/akansha.png",
     tag: "Engagement that Empowers",
@@ -128,7 +128,7 @@ const leaders = [
   {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
@@ -193,7 +193,7 @@ export default function AboutPage() {
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
         title="About us"
-        badge="CBSE Affiliated · Jaipur"
+        badge="Cambridge Affiliated · Jaipur"
         breadcrumbs={[{ label: "About" }]}
         height="large"
         overlayOpacity={0.6}
@@ -231,7 +231,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
-                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Cambridge International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
@@ -262,12 +262,12 @@ export default function AboutPage() {
             <div className="relative">
               <img
                 src="/assets/Home/MainCampus.webp"
-                alt="Seedling Students Learning"
+                alt="Cambridge International School Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
               <img
                 src="/assets/about/grow.jpg"
-                alt="Seedling Campus Life"
+                alt="Cambridge International School Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-crimson text-white rounded-2xl px-6 py-4 shadow-xl">
@@ -436,7 +436,7 @@ export default function AboutPage() {
       <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden bg-crimson">
         {/* <img
           src="/assets/about/feature-education.png"
-          alt="Seedling Philosophy"
+          alt="Cambridge International School Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
@@ -603,7 +603,7 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
-              <em className="font-semibold text-sand">Seedling Family?</em>
+              <em className="font-semibold text-sand">Cambridge International School Family?</em>
             </h2>
             <p className="text-white/60 text-xl mb-12 font-dm max-w-2xl mx-auto">
               Admissions open for 2026–27. Step into a world of limitless possibilities.

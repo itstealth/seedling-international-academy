@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Seedling Group of Schools",
+  title: "Cambridge International School Group",
   description: "A premium educational institution dedicated to excellence.",
 };
 

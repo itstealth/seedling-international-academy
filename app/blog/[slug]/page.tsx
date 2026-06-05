@@ -37,7 +37,7 @@ export default function BlogDetailPage() {
     async function fetchData() {
       try {
         const [postsRes] = await Promise.all([
-          fetch('https://stealthlearn.in/seedlingschool/wp-json/wp/v2/posts?per_page=100&_embed'),
+          fetch('https://stealthlearn.in/cambridgeinternationalschool/wp-json/wp/v2/posts?per_page=100&_embed'),
         ]);
 
         if (!postsRes.ok) throw new Error('Failed to fetch posts');
@@ -89,7 +89,7 @@ export default function BlogDetailPage() {
     content = content.replace(/<!--[^-]*-->/gi, '');
 
     // Remove internal links to WordPress domain
-    content = content.replace(/https:\/\/stealthlearn\.in\/seedlingschool(?!\/wp-)/g, '');
+    content = content.replace(/https:\/\/stealthlearn\.in\/cambridgeinternationalschool(?!\/wp-)/g, '');
 
     // Add IDs to headings for smooth scrolling
     content = content.replace(/<h([2-4])([^>]*)>(.*?)<\/h\1>/gi, (_, level, attrs, text) => {

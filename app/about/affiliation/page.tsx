@@ -6,16 +6,16 @@ import { CheckCircle2, ShieldCheck, Globe, Award, Plus } from "lucide-react";
 
 const affiliations = [
   {
-    name: "Central Board of Secondary Education (CBSE)",
-    schools: "Seedling Public School & Seedling Modern High School",
-    description: "Our core institutions are proudly affiliated with CBSE, New Delhi, offering a robust curriculum that fosters critical thinking and aligns perfectly with the National Education Policy (NEP).",
-    acronym: "CBSE",
+    name: "Central Board of Secondary Education (Cambridge)",
+    schools: "Cambridge International School & Cambridge International School",
+    description: "Our core institutions are proudly affiliated with Cambridge, New Delhi, offering a robust curriculum that fosters critical thinking and aligns perfectly with the National Education Policy (NEP).",
+    acronym: "Cambridge",
     icon: ShieldCheck,
     color: "from-blue-600 to-indigo-700"
   },
   {
     name: "Cambridge Assessment International Education",
-    schools: "Seedling International Academy & Seedling Modern International Academy",
+    schools: "Cambridge International Academy & Cambridge International Academy",
     description: "Offering prestigious global programs such as IGCSE and A-Levels, empowering students with internationally recognized qualifications for elite higher education.",
     acronym: "CAIE",
     icon: Globe,
@@ -54,7 +54,7 @@ export default function AffiliationPage() {
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary italic font-serif">Recognized.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
-              At Seedling, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
+              At Cambridge International School, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
             </p>
           </motion.div>
         </div>

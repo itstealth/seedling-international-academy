@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import HeroWrapper from '@/components/layout/HeroWrapper';
 
 export const metadata: Metadata = {
-  title: 'Mandatory Public Disclosure | Seedling Public School, Jaipur',
-  description: 'Mandatory public disclosure information for Seedling Public School (SPS), Jaipur, as per CBSE Affiliation Bye-Laws. Includes school info, affiliation status, and certificates.',
-  keywords: 'Seedling Public School, Jaipur, Mandatory Disclosure, CBSE Compliance, School Information, Affiliation Status',
+  title: 'Mandatory Public Disclosure | Cambridge International School, Jaipur',
+  description: 'Mandatory public disclosure information for Cambridge International School (SPS), Jaipur, as per Cambridge Affiliation Bye-Laws. Includes school info, affiliation status, and certificates.',
+  keywords: 'Cambridge International School, Jaipur, Mandatory Disclosure, Cambridge Compliance, School Information, Affiliation Status',
 };
 
 const MandatoryDisclosure = () => {
@@ -15,7 +15,7 @@ const MandatoryDisclosure = () => {
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
         title="Mandatory Public Disclosure"
-        badge="CBSE Compliance"
+        badge="Cambridge Compliance"
         breadcrumbs={[{ label: "Mandatory Disclosure" }]}
       />
 
@@ -37,7 +37,7 @@ const MandatoryDisclosure = () => {
               <div>
                 <label className="block text-[10px] font-black text-crimson uppercase tracking-[0.2em] mb-2">School Name & Address</label>
                 <div className="text-navy-deeper leading-relaxed">
-                  <strong className="text-xl block mb-1">Seedling Public School</strong>
+                  <strong className="text-xl block mb-1">Cambridge International School</strong>
                   <p className="text-text-light font-light">Sector-4, Park Lane, Jawahar Nagar,<br />Jaipur — 302004, Rajasthan</p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ const MandatoryDisclosure = () => {
                 <div className="space-y-2">
                   <p className="flex items-center gap-3 text-text-light">
                     <span className="text-navy">Email:</span>
-                    <a href="mailto:seedlingacademy@hotmail.com" className="font-bold hover:text-navy transition-colors">seedlingacademy@hotmail.com</a>
+                    <a href="mailto:cambridgeacademy@hotmail.com" className="font-bold hover:text-navy transition-colors">cambridgeacademy@hotmail.com</a>
                   </p>
                   <p className="flex items-center gap-3 text-text-light">
                     <span className="text-navy">Phone:</span>
@@ -141,18 +141,18 @@ const MandatoryDisclosure = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
             {[
-              { id: '(i)', name: 'Affiliation / Upgradation Letter', url: 'https://seedlingschools.com/mandatory-discloser/Affiliation-Upgradation-Letter.pdf' },
-              { id: '(ii)', name: 'Trust Registration Certificate', url: 'https://seedlingschools.com/mandatory-discloser/Trust-Registration-Certificate.pdf' },
-              { id: '(iii)', name: 'No Objection Certificate', url: 'https://seedlingschools.com/mandatory-discloser/NOC-By-State-Govt.pdf' },
-              { id: '(iv)', name: 'RTE Recognition Certificate', url: 'https://seedlingschools.com/mandatory-discloser/RTE.pdf' },
-              { id: '(v)', name: 'Building Safety Certificate', url: 'https://seedlingschools.com/mandatory-discloser/Building-Safety-Certificate.pdf' },
-              { id: '(vi)', name: 'Fire Safety Certificate', url: 'https://seedlingschools.com/mandatory-discloser/Fire-Safety.pdf' },
-              { id: '(vii)', name: 'Health & Sanitation', url: 'https://seedlingschools.com/mandatory-discloser/Watar-Health.pdf' },
-              { id: '(viii)', name: 'Fee Structure', url: 'https://seedlingschools.com/mandatory-discloser/Fee%20structure%20PDF.pdf' },
-              { id: '(ix)', name: 'DEO Certificate', url: 'https://seedlingschools.com/deo-certificate.php' },
-              { id: '(x)', name: 'Annual Academic Calendar', url: 'https://seedlingschools.com/mandatory-discloser/Year-Planner-2024-25.pdf' },
-              { id: '(xi)', name: 'List of SMC Members', url: 'https://seedlingschools.com/smc.php' },
-              { id: '(xii)', name: 'List of PTA Members', url: 'https://seedlingschools.com/pta-members.php' },
+              { id: '(i)', name: 'Affiliation / Upgradation Letter', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Affiliation-Upgradation-Letter.pdf' },
+              { id: '(ii)', name: 'Trust Registration Certificate', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Trust-Registration-Certificate.pdf' },
+              { id: '(iii)', name: 'No Objection Certificate', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/NOC-By-State-Govt.pdf' },
+              { id: '(iv)', name: 'RTE Recognition Certificate', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/RTE.pdf' },
+              { id: '(v)', name: 'Building Safety Certificate', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Building-Safety-Certificate.pdf' },
+              { id: '(vi)', name: 'Fire Safety Certificate', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Fire-Safety.pdf' },
+              { id: '(vii)', name: 'Health & Sanitation', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Watar-Health.pdf' },
+              { id: '(viii)', name: 'Fee Structure', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Fee%20structure%20PDF.pdf' },
+              { id: '(ix)', name: 'DEO Certificate', url: 'https://cambridgeinternationalschool.com/deo-certificate.php' },
+              { id: '(x)', name: 'Annual Academic Calendar', url: 'https://cambridgeinternationalschool.com/mandatory-discloser/Year-Planner-2024-25.pdf' },
+              { id: '(xi)', name: 'List of SMC Members', url: 'https://cambridgeinternationalschool.com/smc.php' },
+              { id: '(xii)', name: 'List of PTA Members', url: 'https://cambridgeinternationalschool.com/pta-members.php' },
             ].map((doc) => (
               <a
                 key={doc.name}
@@ -207,7 +207,7 @@ const MandatoryDisclosure = () => {
 
       <footer className="py-12 text-center border-t border-sand/30">
         <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">
-          © Seedling Group of Schools | Compliance Division | CBSE Mandatory Disclosure
+          © Cambridge International School Group | Compliance Division | Cambridge Mandatory Disclosure
         </p>
       </footer>
     </div>

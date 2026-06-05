@@ -49,7 +49,7 @@ const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
     role: "Founder Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
     img: "/assets/img/Mohini-Bakshi.jpg",
     tag: "Legacy",
@@ -57,7 +57,7 @@ const leaders = [
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
     img: "/assets/img/Sandeep-Bakshi.jpg",
     tag: "Forever New Frontiers",
@@ -65,7 +65,7 @@ const leaders = [
   {
     name: "Dr. Preeti Bakshi",
     role: "Executive Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
     img: "/assets/img/preeti-bakshi.jpeg",
     tag: "Creating Fresh Pathways",
@@ -73,7 +73,7 @@ const leaders = [
   {
     name: "Ms. Akansha Bakshi",
     role: "Joint Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
     img: "/assets/img/akansha.jpeg",
     tag: "Engagement that Empowers",
@@ -81,7 +81,7 @@ const leaders = [
   {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
-    sub: "Seedling Group of Institutions",
+    sub: "Cambridge International School Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/Aishwarya-Bakshi.jpeg",
     tag: "Promoting Global Citizenship",
@@ -147,12 +147,12 @@ export default function LeadershipPage() {
               <div className="relative md:sticky md:top-28 self-start">
                 <img
                   src="/assets/img/Sandeep-Bakshi.jpeg"
-                  alt="Dr. Sandeep Bakshi, CEO & Director Seedling Group"
+                  alt="Dr. Sandeep Bakshi, CEO CEO & Director Seedling Director Cambridge International School Group"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
                   <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
-                  <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group of Schools</p>
+                  <p className="text-navy text-sm font-dm">CEO & Director, Cambridge International School Group</p>
                 </div>
               </div>
             </Reveal>
@@ -167,22 +167,22 @@ export default function LeadershipPage() {
               </Reveal>
               <Reveal delay={100}>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                  Welcome to the Cambridge International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  At Seedling, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                  At Cambridge International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Cambridge International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  As you explore our website, I warmly invite you to experience the spirit of Seedling — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                  As you explore our website, I warmly invite you to experience the spirit of Cambridge International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base font-dm font-semibold">
                   Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
@@ -193,7 +193,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-navy" />
                   <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
                 </div>
-                <p className="text-navy text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
+                <p className="text-navy text-sm font-dm mt-1">CEO & Director, Cambridge International School Group</p>
               </Reveal>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/Sandeep-Bakshi.jpg"
-                  alt="Dr. Sandeep Bakshi, CEO & Director Seedling Group"
+                  alt="Dr. Sandeep Bakshi, CEO CEO & Director Seedling Director Cambridge International School Group"
                  
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
@@ -229,22 +229,22 @@ export default function LeadershipPage() {
               </Reveal>
           <Reveal delay={100}>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
-                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                  Welcome to the Cambridge International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
-                  At Seedling, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                  At Cambridge International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
-                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Cambridge International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
                 <p className="text-white leading-[1.9] text-base mb-4 font-dm">
-                  As you explore our website, I warmly invite you to experience the spirit of Seedling — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                  As you explore our website, I warmly invite you to experience the spirit of Cambridge International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
                 <p className="text-white leading-[1.9] text-base font-dm font-semibold">
                   Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
@@ -255,7 +255,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-blue-400" />
                   <span className="font-playfair italic text-xl text-white">Dr. Sandeep Bakshi</span>
                 </div>
-                <p className="text-blue-400 text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
+                <p className="text-blue-400 text-sm font-dm mt-1">CEO & Director, Cambridge International School Group</p>
               </Reveal>
            
           </div>
@@ -272,7 +272,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/preeti-bakshi.jpeg"
-                  alt="Dr. Preeti Bakshi, Executive Director Seedling Public School"
+                  alt="Dr. Preeti Bakshi, Executive Director Cambridge International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-off-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
@@ -293,13 +293,13 @@ export default function LeadershipPage() {
               </Reveal>
           <Reveal delay={100}>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  At SEEDLING PUBLIC SCHOOL, we believe that education is the key to unlocking a brighter and more successful future. As one of the best schools in Jaipur and a top school in Jaipur, our commitment is to provide an inspiring learning environment where students are encouraged to achieve academic excellence while developing strong values, confidence, and leadership qualities.
+                  At CAMBRIDGE INTERNATIONAL SCHOOL, we believe that education is the key to unlocking a brighter and more successful future. As one of the best schools in Jaipur and a top school in Jaipur, our commitment is to provide an inspiring learning environment where students are encouraged to achieve academic excellence while developing strong values, confidence, and leadership qualities.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                   We understand that every child is unique, and our dedicated educators strive to nurture their individual talents through innovative teaching methods, modern infrastructure, and a student-centred approach. Along with academics, we place equal emphasis on sports, arts, creativity, and co-curricular activities to ensure the holistic development of every learner.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  Our vision is to shape responsible global citizens who are compassionate, capable, and prepared to meet the challenges of tomorrow. At SEEDLING PUBLIC SCHOOL, we continue to set new standards in education and warmly welcome every child to be a part of our journey towards excellence.
+                  Our vision is to shape responsible global citizens who are compassionate, capable, and prepared to meet the challenges of tomorrow. At CAMBRIDGE INTERNATIONAL SCHOOL, we continue to set new standards in education and warmly welcome every child to be a part of our journey towards excellence.
                 </p>
               </Reveal>
             <Reveal delay={200}>
@@ -307,7 +307,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-crimson" />
                   <span className="font-playfair italic text-xl text-navy-deeper">Dr. Preeti Bakshi</span>
                 </div>
-                <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling Public School</p>
+                <p className="text-crimson text-sm font-dm mt-1">Executive Director, Cambridge International School</p>
               </Reveal>
           </div>
         </div>
@@ -322,12 +322,12 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/Home/principle.jpeg"
-                  alt="Shruti Kukar, Principal Seedling Public School"
+                  alt="Shruti Kukar, Principal Cambridge International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal, Seedling Public School</p>
+                  <p className="text-navy text-sm font-dm">Principal, Cambridge International School</p>
                 </div>
               </div>
             </Reveal>
@@ -343,19 +343,19 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                At Seedling Public School, we do not believe children are meant to simply pass examinations — they are meant to discover their voice, build their confidence, strengthen their values and step into the future with courage and clarity.
+                At Cambridge International School, we do not believe children are meant to simply pass examinations — they are meant to discover their voice, build their confidence, strengthen their values and step into the future with courage and clarity.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                 In a world that is changing faster than ever before, we are committed to nurturing children who are not only academically capable, but emotionally secure, ethically grounded, creatively expressive and mentally resilient.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                From academics to innovation, sports to performing arts, leadership to public speaking, yoga to mindfulness and meditation — every experience at Seedling is designed to shape balanced, future-ready individuals who can thrive in life, not just in classrooms.
+                From academics to innovation, sports to performing arts, leadership to public speaking, yoga to mindfulness and meditation — every experience at Cambridge International School is designed to shape balanced, future-ready individuals who can thrive in life, not just in classrooms.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                 And to every parent, we offer not just education, but partnership, reassurance and trust. Your child will be guided with warmth, challenged with purpose, heard with empathy and encouraged to grow into the finest version of themselves.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
-                Because at Seedling, we are not merely building successful students. We are nurturing happy minds, strong hearts, fearless voices, and extraordinary human beings ready to leave their mark on the world.
+                Because at Cambridge International School, we are not merely building successful students. We are nurturing happy minds, strong hearts, fearless voices, and extraordinary human beings ready to leave their mark on the world.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -369,7 +369,7 @@ export default function LeadershipPage() {
                 <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair italic text-xl text-text-light">Shruti Kukar</span>
               </div>
-              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling Public School</p>
+              <p className="text-navy text-sm font-dm mt-1">Principal, Cambridge International School</p>
             </Reveal>
           </div>
         </div>

@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
-import HeroVideo from '@/components/ui/HeroVideo';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
-import { url } from 'inspector';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -86,7 +84,7 @@ function CallbackForm() {
 }
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
-export default function SeedlingPage(): React.JSX.Element {
+export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
@@ -190,46 +188,84 @@ export default function SeedlingPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
-      <section className="relative h-[40vh] min-h-[400px] md:h-[calc(100vh-68px)] overflow-hidden flex items-center">
-        <HeroVideo />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.75rem] font-black tracking-[0.2em] uppercase px-5 py-2 rounded-full mb-8">
-            <span className="w-2 h-2 bg-sand rounded-full animate-pulse" />
-            CBSE Affiliated · Jaipur
-          </div>
-
-          <h1 className="serif text-[clamp(2rem,5vw,4rem)] text-white leading-[1] font-light max-w-3xl mb-8">
-            Beyond Education. Into Transformation.
-            {/* <em className="font-semibold text-sand italic ml-2">Wings</em> */}
-
-          </h1>
-          <p className="hidden md:block text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
-            Shaping confident learners prepared for life, leadership, and meaningful contribution.
-          </p>
-          {/* <div className="flex gap-4 flex-wrap">
-            <a href="/admissions#enquire" className="bg-crimson hover:bg-crimson-dark text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-crimson/40 hover:-translate-y-1">
-              Apply Now 2026
-            </a>
-            <a href="/about" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-500 hover:bg-white hover:text-navy-deeper">
-              Explore School
-            </a>
-          </div> */}
+      <section className="relative min-h-screen overflow-hidden px-4 pt-20 md:pt-28">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/Home/building-from-top.jpg"
+            className="w-full h-full object-cover"
+            alt="Cambridge International School"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a3a5c]/70 via-[#1a3a5c]/60 to-[#1a3a5c]/80" />
         </div>
 
-        {/* Stats */}
-        <div className="absolute bottom-0 right-0 z-10 hidden lg:flex">
-          {[
-            { val: '33+', label: 'Years of Excellence' },
-            { val: '10000+', label: 'Students' },
-            { val: '150+', label: 'Faculty' },
-            { val: '100%', label: 'Results' },
-          ].map(({ val, label }) => (
-            <div key={label} className="bg-navy-deeper/40 backdrop-blur-2xl border-l border-white/10 p-10 text-center text-white min-w-[180px]">
-              <strong className="block text-4xl font-semibold font-playfair text-sand mb-2">{val}</strong>
-              <span className="text-[10px] font-black tracking-widest uppercase opacity-60">{label}</span>
-            </div>
-          ))}
+        {/* Decorative SVG Elements */}
+        <svg
+          width="358"
+          height="483"
+          viewBox="0 0 358 483"
+          className="absolute top-0 z-[1] left-0 opacity-45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="paint0_linear" x1="-50.9961" y1="-33.114" x2="-50.9961" y2="507.886" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#91bbfb" />
+              <stop offset="1" stopColor="#E6F1FF" />
+            </linearGradient>
+            <linearGradient id="paint1_linear" x1="8.04686" y1="-135.113" x2="8.04686" y2="405.887" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#8dbafd" />
+              <stop offset="1" stopColor="#c1d9f8" />
+            </linearGradient>
+          </defs>
+          <g filter="url(#filter0_f)">
+            <rect x="-86.9961" y="-33.114" width="72" height="541" rx="36" transform="rotate(-30.8182 -86.9961 -33.114)" fill="url(#paint0_linear)" />
+          </g>
+          <g filter="url(#filter1_f)">
+            <rect x="-17" y="-135.113" width="50.0937" height="541" rx="25.0469" transform="rotate(-30.8182 -17 -135.113)" fill="url(#paint1_linear)" />
+          </g>
+          <filter id="filter0_f" x="-137.641" y="-120.646" width="440.285" height="602.787" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur_0_1" />
+          </filter>
+          <filter id="filter1_f" x="-71.707" y="-215.486" width="429.598" height="599.69" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur_0_1" />
+          </filter>
+        </svg>
+
+        {/* Hero Header Badge */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-2 text-center">
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md px-1.5 py-1 text-white shadow-lg shadow-blue-500/15">
+            <span className="rounded-full bg-gradient-to-br from-[#2f8cff] to-[#9fc8ff] px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest text-white">
+              New
+            </span>
+            <span className="truncate pr-2 text-sm font-semibold text-white">
+              Admissions open for 2026-27 academic session
+            </span>
+          </div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
+          <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(3rem,8vw,7.25rem)] font-medium leading-[0.95] tracking-normal !text-white">
+            Beyond education.
+            <br />
+            Into transformation.
+          </h1>
+          <p className="mt-7 max-w-3xl px-2 text-lg font-medium leading-relaxed text-white/80 md:text-2xl">
+            Shaping confident learners through Cambridge academics, creative exploration, and a campus built for meaningful growth.
+          </p>
+          <div className="mt-7 flex flex-wrap justify-center gap-4">
+            <a href="/admissions#enquire" className="rounded-lg border border-blue-300 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-200 px-5 py-3 text-lg font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              Apply Now
+            </a>
+            <a href="/about" className="rounded-lg border border-neutral-300 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-300 px-5 py-3 text-lg font-semibold text-black shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              Explore School
+            </a>
+          </div>
         </div>
       </section>
 
@@ -239,17 +275,17 @@ export default function SeedlingPage(): React.JSX.Element {
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             {/* Text */}
             <div className="order-1 lg:order-2">
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Cambridge International School</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
               </h2>
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
-                Seedling Public School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.
+                Cambridge International School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 mb-6 md:mb-12">
                 {[
-                  { icon: BookOpen, title: 'CBSE Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
-                  { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top CBSE academic outcomes." },
+                  { icon: BookOpen, title: 'Cambridge Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
+                  { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top Cambridge academic outcomes." },
                   { icon: Heart, title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
                   { icon: Brain, title: 'Mental Wellness', desc: 'Dedicated professional counsellors.' },
                 ].map(({ icon: Icon, title, desc }) => (
@@ -284,7 +320,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
-                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">CBSE</span>
+                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">Cambridge</span>
                 <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
               </div>
             </div>
@@ -372,7 +408,7 @@ export default function SeedlingPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ─── WHY SEEDLING ─── */}
+      {/* ─── WHY CAMBRIDGE INTERNATIONAL SCHOOL ─── */}
       <section className="bg-off-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
@@ -565,7 +601,7 @@ export default function SeedlingPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge International School</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
@@ -606,9 +642,9 @@ export default function SeedlingPage(): React.JSX.Element {
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Seedling students shine again with 14 students scoring above 95% in CBSE.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
+                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Cambridge International School students shine again with 14 students scoring above 95% in Cambridge.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJKS2PAsE6/" },
-                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling Public School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
+                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Cambridge International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
                 ].map(({ day, month, title, desc, url }, index) => (
                   <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
@@ -626,7 +662,7 @@ export default function SeedlingPage(): React.JSX.Element {
                 ))}
               </div>
 
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
+              <a href="https://www.instagram.com/cambridgeinternationalschooljaipur" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
                 <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
                   <Camera size={18} strokeWidth={2.5} />
                   Follow Updates
@@ -636,7 +672,7 @@ export default function SeedlingPage(): React.JSX.Element {
             </div>
 
             <div className="lg:col-span-2">
-              <a href="https://www.instagram.com/seedlingschoolsjaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mt-2">
+              <a href="https://www.instagram.com/cambridgeinternationalschooljaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mt-2">
                 {[
                   '/assets/Home/trending1.jpg',
                   '/assets/Home/trending2.jpg',
@@ -646,7 +682,7 @@ export default function SeedlingPage(): React.JSX.Element {
                   '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
                   <div key={i} className="rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
-                    <img src={src} alt={`Seedling update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <img src={src} alt={`Cambridge International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </a>
