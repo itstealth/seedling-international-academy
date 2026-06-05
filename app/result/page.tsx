@@ -38,7 +38,7 @@ const achievements = [
   { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
   { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
   { value: "33+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },
-  { value: "2", label: "Boards Offered", sub: "CBSE & Cambridge", icon: "📜" },
+  { value: "2", label: "Boards Offered", sub: "Cambridge & Cambridge", icon: "📜" },
 ];
 
 export default function ResultPage() {
@@ -72,7 +72,7 @@ export default function ResultPage() {
                   <em className="font-semibold text-navy">Tell Our Story</em>
                 </h2>
                 <p className="mt-5 text-sm md:text-base leading-7 text-text-light font-dm font-light">
-                  A quick view of the academic consistency, campus scale, and learning support behind Seedling results.
+                  A quick view of the academic consistency, campus scale, and learning support behind Cambridge International School results.
                 </p>
               </div>
             </Reveal>
@@ -104,7 +104,7 @@ export default function ResultPage() {
             </div>
           </div>
 
-          {/* Topers in Seedling */}
+          {/* Topers in Cambridge International School */}
           <Reveal delay={150}>
             <div className="mt-10 md:mt-14">
               <div className="text-center mb-12">
@@ -134,7 +134,7 @@ export default function ResultPage() {
                   <div key={student.src} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-editorial transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_60px_rgba(10,31,58,0.18)] hover:border-navy-light">
                     <img
                       src={student.src}
-                      alt={`Seedling Topper ${student.name}`}
+                      alt={`Cambridge International School Topper ${student.name}`}
                       className="w-full h-[28rem] md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
@@ -157,7 +157,7 @@ export default function ResultPage() {
               <div className="relative z-10">
                 <p className="text-crimson text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
                 <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-navy-deeper">100% Board Results</h3>
-                <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both CBSE examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Cambridge International School Group has consistently achieved 100% results in Cambridge examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
                 <div className="w-40 h-40  rounded-full flex flex-col items-center justify-center border-2 border-navy/10 bg-navy text-white transition-colors duration-500">

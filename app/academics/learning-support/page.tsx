@@ -61,12 +61,12 @@ export default function LearningSupportPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-label mb-8 block uppercase tracking-[0.5em]">The Seedling Ecosystem</span>
+          <span className="text-label mb-8 block uppercase tracking-[0.5em]">The Cambridge International School Ecosystem</span>
           <h2 className="text-heading text-5xl md:text-8xl mb-12">
             Empowering every student <br /> to reach their <span className="text-primary tracking-tighter">potential.</span>
           </h2>
           <p className="text-2xl text-neutral-600 font-medium leading-relaxed max-w-3xl mx-auto">
-            At Seedling, learning support is not just about academic remediation; it&apos;s about building a holistic world where students feel safe, understood, and inspired to grow.
+            At Cambridge International School, learning support is not just about academic remediation; it&apos;s about building a holistic world where students feel safe, understood, and inspired to grow.
           </p>
         </motion.div>
       </section>
@@ -138,7 +138,7 @@ export default function LearningSupportPage() {
           </h2>
           <div className="flex flex-col items-center">
             <div className="w-32 h-1 bg-secondary mb-10" />
-            <span className="text-label text-white opacity-60 uppercase tracking-[0.5em] block">The Seedling Philosophy</span>
+            <span className="text-label text-white opacity-60 uppercase tracking-[0.5em] block">The Cambridge International School Philosophy</span>
           </div>
         </div>
       </section>

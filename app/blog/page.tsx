@@ -89,8 +89,8 @@ export default function BlogPage() {
     async function fetchData() {
       try {
         const [postsRes, categoriesRes] = await Promise.all([
-          fetch('https://stealthlearn.in/seedlingschool/wp-json/wp/v2/posts?per_page=100&_embed'),
-          fetch('https://stealthlearn.in/seedlingschool/wp-json/wp/v2/categories?per_page=50'),
+          fetch('https://stealthlearn.in/cambridgeinternationalschool/wp-json/wp/v2/posts?per_page=100&_embed'),
+          fetch('https://stealthlearn.in/cambridgeinternationalschool/wp-json/wp/v2/categories?per_page=50'),
         ]);
 
         if (!postsRes.ok || !categoriesRes.ok) throw new Error('Failed to fetch data');

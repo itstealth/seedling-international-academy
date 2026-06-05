@@ -48,7 +48,7 @@ const stats = [
     value: 10000,
     suffix: "+",
     label: "Alumni Network",
-    description: "A global community of Seedling graduates",
+    description: "A global community of Cambridge International School graduates",
     color: "from-crimson to-crimson-dark",
     icon: "🌐",
   },
@@ -64,7 +64,7 @@ const stats = [
     value: 50,
     suffix: "+",
     label: "Nations Represented",
-    description: "Seedling alumni span the globe",
+    description: "Cambridge International School alumni span the globe",
     color: "from-sand to-sand",
     icon: "🌍",
   },
@@ -85,7 +85,7 @@ const achievements = [
   },
   {
     title: "Holistic Well-being",
-    body: "At Seedling, we prioritize the holistic well-being of our students, parents, and staff — nurturing academic, emotional, social, and physical growth.",
+    body: "At Cambridge International School, we prioritize the holistic well-being of our students, parents, and staff — nurturing academic, emotional, social, and physical growth.",
     icon: "💚",
     color: "border-crimson/20 bg-crimson/5",
   },
@@ -269,14 +269,14 @@ function FeaturedAlumniSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
             <div className="absolute top-6 left-6">
               <span className="bg-sand text-navy-deeper text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full font-dm">
-                The Pride of Seedling
+                The Pride of Cambridge International School
               </span>
             </div>
           </div>
 
           <div className="flex flex-col justify-center p-10 md:p-14 text-white">
             <p className="text-sand text-[10px] font-black uppercase tracking-[0.2em] mb-4 font-dm">
-              Seedling Public School Alumni
+              Cambridge International School Alumni
             </p>
 
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight text-white">
@@ -294,7 +294,7 @@ function FeaturedAlumniSection() {
                 We take great pride in celebrating the remarkable achievements of our
                 esteemed alumni — showcasing their talents, dedication, and success
                 stories. Discover journeys of growth, resilience, and perseverance, and
-                gain insights into how Seedling School played a pivotal role in shaping
+                gain insights into how  Cambridge International School played a pivotal role in shaping
                 their path to success.
               </p>
             </blockquote>
@@ -336,11 +336,11 @@ function AlumniGrid() {
             <div className="w-8 h-px bg-sand" />
           </div> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight">
-            The Pride of Seedling
+            The Pride of Cambridge International School
           </h2>
           <p className="mt-4 text-text-light max-w-xl mx-auto text-lg font-dm font-light">
             Our graduates go on to lead, create, and serve at the highest levels —
-            each carrying the Seedling spirit forward.
+            each carrying the Cambridge International School spirit forward.
           </p>
         </div>
 
@@ -459,7 +459,7 @@ function AlumniNetwork() {
             Nurture the Network!
           </h2>
           <p className="text-white/60 max-w-xl mx-auto text-lg font-dm font-light">
-            The Seedling Tribe with its Happy Vibe — a community that extends far
+            The Cambridge International School Tribe with its Happy Vibe — a community that extends far
             beyond graduation day.
           </p>
         </div>
@@ -510,7 +510,7 @@ function GalleryStrip() {
             </h2>
           </div>
           <p className="text-text-light max-w-xs text-sm leading-relaxed font-dm font-light">
-            Voices from our vibrant student community — each one a growing Seedling story.
+            Voices from our vibrant student community — each one a growing Cambridge International School story.
           </p>
         </div>
       </div>
@@ -593,7 +593,7 @@ function CTASection() {
             </div>
 
             <h2 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Join the Seedling{" "}
+              Join the Cambridge International School{" "}
               <span className="relative">
                 Alumni Network
                 <span className="absolute -bottom-2 left-0 right-0 h-1 bg-sand/40 rounded" />
@@ -602,7 +602,7 @@ function CTASection() {
 
             <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-dm font-light">
               Be part of a global community that celebrates growth, resilience,
-              and collaboration. Connect with your alma mater — Seedling Group of Schools.
+              and collaboration. Connect with your alma mater — Cambridge International School Group.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -649,7 +649,7 @@ function CTASection() {
 
 /*
 export const metadata = {
-  title: "Alumni | Seedling Group of Schools",
+  title: "Alumni | Cambridge International School Group",
   description:
     "Celebrating the remarkable achievements of our esteemed alumni. Discover their journeys of growth, resilience, and perseverance.",
 };

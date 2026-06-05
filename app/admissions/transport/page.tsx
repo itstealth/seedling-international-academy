@@ -31,7 +31,7 @@ export default function TransportFacilityPage() {
             viewport={{ once: true }}
           >
             <span className="text-label mb-8 block uppercase">Safe & Secure Transit</span>
-            <h2 className="text-heading text-4xl md:text-5xl mb-12">The Seedling <br /> Fleet.</h2>
+            <h2 className="text-heading text-4xl md:text-5xl mb-12">The Cambridge International School <br /> Fleet.</h2>
             <p className="text-xl text-neutral-600 font-medium leading-relaxed mb-10">
               Our transportation system is managed with the highest standards of safety. Every bus is equipped with GPS tracking and is manned by trained staff.
             </p>

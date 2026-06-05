@@ -64,31 +64,31 @@ const openRoles = [
   {
     id: 1,
     title: "Educator — Primary (Classes I–V)",
-    board: "CBSE",
+    board: "Cambridge",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Seeking passionate, committed educators for Primary classes who can build joyful classroom connections, deliver NEP-aligned lessons, and nurture each child's holistic development.",
-    tags: ["Primary", "CBSE"],
+    tags: ["Primary", "Cambridge"],
     urgent: false,
   },
   {
     id: 2,
     title: "Educator — Middle School (Classes VI–VIII)",
-    board: "CBSE",
+    board: "Cambridge",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Looking for diligent, subject-specialist educators for Middle School who can make learning immersive, experiential, and deeply engaging for students.",
-    tags: ["Middle School", "CBSE"],
+    tags: ["Middle School", "Cambridge"],
     urgent: false,
   },
   {
     id: 3,
     title: "Educator — Senior Secondary (Classes IX–XII)",
-    board: "CBSE",
+    board: "Cambridge",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "We need experienced Senior Secondary educators who can deliver rigorous academic content, mentor students through board preparation, and build a culture of excellence.",
-    tags: ["Senior", "CBSE"],
+    tags: ["Senior", "Cambridge"],
     urgent: true,
   },
   {
@@ -97,7 +97,7 @@ const openRoles = [
     board: "All Schools",
     type: "Administrative",
     location: "Jawahar Nagar & Durgapura, Jaipur",
-    desc: "Seedling is growing, and so is our administrative team. We welcome organised, professional individuals ready to support the smooth functioning of our campuses and contribute to a thriving school community.",
+    desc: "Cambridge International School is growing, and so is our administrative team. We welcome organised, professional individuals ready to support the smooth functioning of our campuses and contribute to a thriving school community.",
     tags: ["Administrative", "Operations"],
     urgent: false,
   },
@@ -120,7 +120,7 @@ const whyWork = [
       </svg>
     ),
     title: "Collaborative Culture",
-    desc: "Work alongside a league of exemplary educational leaders who inspire each other. We come together, adapt, and grow — as one Seedling family.",
+    desc: "Work alongside a league of exemplary educational leaders who inspire each other. We come together, adapt, and grow — as one Cambridge International School family.",
   },
   {
     icon: (
@@ -129,7 +129,7 @@ const whyWork = [
       </svg>
     ),
     title: "Meaningful Impact",
-    desc: "Be the guiding light in a student's life. At Seedling, teachers impart not just textbook lessons but invaluable life lessons that shape futures.",
+    desc: "Be the guiding light in a student's life. At Cambridge International School, teachers impart not just textbook lessons but invaluable life lessons that shape futures.",
   },
   {
     icon: (
@@ -147,7 +147,7 @@ const whyWork = [
       </svg>
     ),
     title: "Trusted Institution",
-    desc: "Join one of Jaipur's most respected school groups — 2 schools, 2 campuses, CBSE, and a community of over 10k+ students since 1993.",
+    desc: "Join one of Jaipur's most respected school groups — 2 schools, 2 campuses, Cambridge, and a community of over 10k+ students since 1993.",
   },
   {
     icon: (
@@ -165,13 +165,13 @@ const testimonials = [
     name: "Ms. Ishita Mendiratta",
     img: "/assets/testimonial/aditi-sharma.jpg",
     quote:
-      "Working at Seedling School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
+      "Working at Cambridge International School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
   },
   {
       name: "Ms. Topcee Ahuja",
     img: "/assets/testimonial/Bhanupriya-Singh.jpg",
     quote:
-      "Being a part of Seedling School for nearly 20 years has been an incredibly joyful and fulfilling journey. The energy, innocence, and love that children bring into the classrooms make every day vibrant and meaningful. What I value most is the freedom and autonomy the school gives teachers to innovate, connect, and create engaging learning experiences for young minds. Even after all these years, each day at Seedling still feels fresh, inspiring, and full of new possibilities.",
+      "Being a part of Cambridge International School for nearly 20 years has been an incredibly joyful and fulfilling journey. The energy, innocence, and love that children bring into the classrooms make every day vibrant and meaningful. What I value most is the freedom and autonomy the school gives teachers to innovate, connect, and create engaging learning experiences for young minds. Even after all these years, each day at Seedling still feels fresh, inspiring, and full of new possibilities.",
   },
 ];
 
@@ -432,7 +432,7 @@ function ApplyModal({
                     className="w-full border border-[#E8E3DA] rounded-xl px-4 py-3 text-sm text-[#1C1C1E] bg-white focus:outline-none focus:border-navy-light focus:ring-2 focus:ring-navy/10 transition-all duration-200"
                   >
                     <option value="">Select</option>
-                    <option>CBSE</option>
+                    <option>Cambridge</option>
                     <option>Any other</option>
                   </select>
                 </div>
@@ -503,12 +503,12 @@ export default function CareersPage() {
   const [openGeneral, setOpenGeneral] = useState(false);
   const [activeFilter, setActiveFilter] = useState(0);
 
-  const filters = ["All Roles", "Administrative", "Teaching", "CBSE"];
+  const filters = ["All Roles", "Administrative", "Teaching", "Cambridge"];
 
   const generalRole = {
     id: 0,
     title: "General Application — All Roles",
-    board: "CBSE / Administrative",
+    board: "Cambridge / Administrative",
     type: "Teaching",
     location: "Jawahar Nagar & Durgapura, Jaipur",
     desc: "Send us your details and resume. We'll reach out when a suitable opportunity opens.",
@@ -537,7 +537,7 @@ export default function CareersPage() {
          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">
         <div className="max-w-2xl text-center">
           <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
-            Career Opportunities at Seedling
+            Career Opportunities at Cambridge International School
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
             Not Just a Job. A Journey of Impact, Growth & Excellence.
@@ -612,7 +612,7 @@ export default function CareersPage() {
             </div>
             <div className="text-right">
               <p className="text-text-light text-center md:text-left text-sm max-w-xs leading-relaxed font-dm font-light">
-                All Subjects · All Classes<br />Teaching and Administrative Roles<br />CBSE
+                All Subjects · All Classes<br />Teaching and Administrative Roles<br />Cambridge
               </p>
             </div>
           </div>
@@ -642,7 +642,7 @@ export default function CareersPage() {
             if (activeFilter === 0) return true;
             if (activeFilter === 1) return role.type === "Teaching";
             if (activeFilter === 2) return role.type === "Administrative";
-            if (activeFilter === 3) return role.board === "CBSE";
+            if (activeFilter === 3) return role.board === "Cambridge";
             return true;
           }).map((role, i) => (
             <Reveal key={role.id} delay={i * 80}>
@@ -727,7 +727,7 @@ export default function CareersPage() {
                 {[
                   { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more" },
                   { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered" },
-                  { icon: "🌏", label: "CBSE Board", sub: "Experience with CBSE board welcomed" },
+                  { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-navy-deeper/20 transition-colors duration-200">
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
@@ -763,7 +763,7 @@ export default function CareersPage() {
                     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur – 302004",
                     phone: "+91 74130 12351",
                     landline: "0141-3623000",
-                    email: "seedlingacademy@hotmail.com",
+                    email: "cambridgeacademy@hotmail.com",
                     color: "border-l-navy",
                   },
                   // {
@@ -821,7 +821,7 @@ export default function CareersPage() {
       <section className="py-16 bg-[#1C1C1E] relative overflow-hidden">
         <img
           src="/assets/Home/smart-classroom.jpg"
-          alt="Join the Seedling team"
+          alt="Join the Cambridge International School team"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 to-crimson-dark/70" />
@@ -864,7 +864,7 @@ export default function CareersPage() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               {[
                 "🏫 2 Schools",
-                "🎓 CBSE Board",
+                "🎓 Cambridge Board",
                 "🌿 Est. 1993",
               ].map((b) => (
                 <span

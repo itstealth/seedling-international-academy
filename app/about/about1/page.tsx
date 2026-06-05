@@ -21,7 +21,7 @@ const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
     role: "Founder",
-    quote: "Education at Seedling is about nurturing the unique spark within every child, preparing them to lead with wisdom and empathy in an ever-evolving world.",
+    quote: "Education at Cambridge International School is about nurturing the unique spark within every child, preparing them to lead with wisdom and empathy in an ever-evolving world.",
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/leadership_md_portrait_professional_1776862565387.png",
     initials: "MB"
   },
@@ -62,7 +62,7 @@ export default function AboutPage() {
         backgroundImage="/assets/about/about-banner.jpg"
         title="About"
         subtitle="Us"
-        badge="CBSE Affiliated · Jaipur"
+        badge="Cambridge Affiliated · Jaipur"
         breadcrumbs={[{ label: "About" }]}
       />
       <section className="py-48 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
@@ -72,7 +72,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-12"
           >
-            <span className="text-label mb-8 block">The Seedling Legacy</span>
+            <span className="text-label mb-8 block">The Cambridge International School Legacy</span>
             <h1 className="text-heading text-7xl md:text-[12rem] leading-[0.8] mb-16">
               Shaping <br />
               <span className="text-primary italic">Generations.</span>
@@ -87,12 +87,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-950 mb-8 font-serif italic">The Seedling Story.</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-950 mb-8 font-serif italic">The Cambridge International School Story.</h2>
               <p className="text-xl text-neutral-600 font-medium leading-relaxed mb-8">
-                Founded over three decades ago, Seedling Group of Schools began with a vision to revolutionize the educational landscape of Jaipur.
+                Founded over three decades ago, Cambridge International School Group began with a vision to revolutionize the educational landscape of Jaipur.
               </p>
               <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-                What started as a single innovative pre-school has evolved into a global powerhouse of learning, housing multiple prestigious schools that cater to CBSE and Cambridge international standards.
+                What started as a single innovative pre-school has evolved into a global powerhouse of learning, housing multiple prestigious schools that cater to Cambridge and Cambridge international standards.
               </p>
             </motion.div>
             <motion.div

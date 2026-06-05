@@ -6,9 +6,9 @@ const mandatoryData = [
   {
     section: "1",
     field: "Name of the School with address",
-    value: "SEEDLING PUBLIC SCHOOL\nSector- 4 Park Lane, Jawahar Nagar, Jaipur",
+    value: "CAMBRIDGE INTERNATIONAL SCHOOL\nSector- 4 Park Lane, Jawahar Nagar, Jaipur",
     details: [
-      { label: "E-mail", value: "seedlingacademy@hotmail.com" },
+      { label: "E-mail", value: "cambridgeacademy@hotmail.com" },
       { label: "Phone No.", value: "0141-7193000" },
       { label: "Fax No.", value: "0141-2561684" },
     ]
@@ -84,7 +84,7 @@ export default function MandatoryDisclosuresPage() {
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
         title="Mandatory Disclosures"
-        badge="CBSE Compliance"
+        badge="Cambridge Compliance"
         breadcrumbs={[{ label: "Disclosures" }]}
       />
 

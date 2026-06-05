@@ -20,7 +20,7 @@ const events = [
     title: "Inter-School Sports Carnival",
     date: "December 05-07, 2026",
     time: "8:00 AM - 2:00 PM",
-    location: "Seedling Olympic Complex",
+    location: "Cambridge International School Olympic Complex",
     category: "Sports",
     icon: Trophy,
     image: "https://images.unsplash.com/photo-1526676023131-d356ded0e3d8?auto=format&fit=crop&q=80",

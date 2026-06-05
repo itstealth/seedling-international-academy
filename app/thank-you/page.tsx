@@ -46,11 +46,11 @@ export default function ThankYouPage() {
           </a>
           <span className="hidden sm:block text-white/20">|</span>
           <a
-            href="mailto:info@seedlingschool.edu"
+            href="mailto:info@cambridgeinternationalschool.edu"
             className="flex items-center gap-2 text-white/60 hover:text-sand text-sm transition-colors"
           >
             <Mail className="w-4 h-4" />
-            info@seedlingschool.edu
+            info@cambridgeinternationalschool.edu
           </a>
         </div>
 

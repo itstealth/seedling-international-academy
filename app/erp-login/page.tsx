@@ -36,7 +36,7 @@ export default function ERPLoginPage() {
         <div className="absolute inset-0">
           <Image
             src="/assets/Home/School2.webp"
-            alt="Seedling Modern High School"
+            alt="Cambridge International School"
             fill
             className="object-cover"
             priority
@@ -49,7 +49,7 @@ export default function ERPLoginPage() {
           <Link href="/" className="block">
             <Image
               src="/SPS_Logo.png"
-              alt="Seedling Modern High School"
+              alt="Cambridge International School"
               width={200}
               height={200}
               className="rounded-full object-cover ring-2 ring-white/20"
@@ -95,7 +95,7 @@ export default function ERPLoginPage() {
 
           {/* Mobile logo */}
           <Link href="/" className="lg:hidden flex items-center gap-3 mb-8">
-            <Image src="/SPS_Logo.png" alt="Seedling Modern High School" width={50} height={50} className="rounded-full object-cover" />
+            <Image src="/SPS_Logo.png" alt="Cambridge International School" width={50} height={50} className="rounded-full object-cover" />
           </Link>
 
           {/* Heading */}

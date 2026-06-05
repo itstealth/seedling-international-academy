@@ -81,7 +81,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 const whyUs = [
   { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses." },
   { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education." },
-  { icon: "🌍", title: "Global Standards", desc: "Choose from CBSE or International curricula — the same Seedling values, globally recognised credentials." },
+  { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Cambridge International School values, globally recognised credentials." },
   { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care." },
   { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning." },
   { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student." },
@@ -91,7 +91,7 @@ const steps = [
   {
     num: "01",
     title: "Visit the Official Website",
-    desc: "Go to seedlingschools.com and click on the Admissions tab. Select your preferred school — Jawahar Nagar or Durgapura.",
+    desc: "Go to cambridgeinternationalschool.com and click on the Admissions tab. Select your preferred school — Jawahar Nagar or Durgapura.",
     icon: "🌐",
   },
   {
@@ -121,7 +121,7 @@ const steps = [
   {
     num: "06",
     title: "Confirmation & Welcome",
-    desc: "Receive your admission confirmation. Pay the fee as per the schedule and collect the joining kit. Welcome to the Seedling Family!",
+    desc: "Receive your admission confirmation. Pay the fee as per the schedule and collect the joining kit. Welcome to the Cambridge International School Family!",
     icon: "🎉",
   },
 ];
@@ -157,14 +157,14 @@ const campusLocations = [
     name: "Jawahar Nagar Campus",
     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur, Rajasthan – 302004",
     phone: "+91 74130 12351",
-    schools: ["Seedling Public School (CBSE)"],
+    schools: ["Cambridge International School (Cambridge)"],
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3!2d75.803!3d26.925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x1!2sSeedling+Public+School%2C+Jawahar+Nagar!5e0!3m2!1sen!2sin!4v1600000000000",
   },
   // {
   //   name: "Durgapura Campus",
   //   address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur, Rajasthan – 302018",
   //   phone: "+91 95877 72837",
-  //   schools: ["Seedling Modern High School (CBSE)", "Seedling Modern International Academy", "Seedling Wonderland Kids League"],
+  //   schools: ["Cambridge International School (Cambridge)", "Cambridge International Academy", "Cambridge International School Wonderland Kids League"],
   //   mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.784!3d26.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x2!2sSeedling+Modern+High+School%2C+Durgapura!5e0!3m2!1sen!2sin!4v1600000000001",
   // },
 ];
@@ -174,40 +174,40 @@ const experiences = [
     name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
     image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
-    quote: "Seedling Public School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
-    school: "Seedling Public School",
+    quote: "Cambridge International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Cambridge International School",
     highlight: "Nurturing Environment",
   },
   {
     name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
     role: "Parents",
     image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
-    quote: "The academic excellence at Seedling Public School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
-    school: "Seedling Public School",
+    quote: "The academic excellence at Cambridge International School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    school: "Cambridge International School",
     highlight: "Academic Excellence",
   },
   {
     name: "Meghna Manglani",
     role: "Parent",
     image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
-    quote: "At Seedling Public School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
-    school: "Seedling Public School",
+    quote: "At Cambridge International School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Cambridge International School",
     highlight: "Holistic Development",
   },
   {
     name: "Deepak Adwani & Varsha Adwani",
     role: "Parents",
     image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
-    quote: "We chose Seedling Public School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
-    school: "Seedling Public School",
+    quote: "We chose Cambridge International School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
+    school: "Cambridge International School",
     highlight: "Safe & Supportive",
   },
   {
     name: "Divya Soni",
     role: "Parent",
     image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
-    quote: "Seedling Public School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
-    school: "Seedling Public School",
+    quote: "Cambridge International School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
+    school: "Cambridge International School",
     highlight: "Future-Ready",
   },
 ];
@@ -237,7 +237,7 @@ function ExperienceSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
-            Voices of Seedling
+            Voices of Cambridge International School
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
             Parent
@@ -395,7 +395,7 @@ export default function AdmissionsPage() {
       <HeroWrapper
         backgroundImage="/assets/Home/classroom-2.webp"
         title="Admissions"
-        subtitle="Begin your child's journey with Seedling — where excellence meets warmth."
+        subtitle="Begin your child's journey with Cambridge International School — where excellence meets warmth."
         badge="Admissions Open · 2026-27"
         breadcrumbs={[{ label: "Admissions" }]}
         height="large"
@@ -430,7 +430,7 @@ export default function AdmissionsPage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
-                Seedling Group of Schools — 5 schools, 2 campuses, CBSE board. Prioritising student well-being and community interests since 1993.
+                Cambridge International School Group — 5 schools, 2 campuses, Cambridge board. Prioritising student well-being and community interests since 1993.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -449,7 +449,7 @@ export default function AdmissionsPage() {
 
             <Reveal delay={480}>
               <div className="flex gap-4 flex-wrap mt-12">
-                {["100% Board Results", "Est. 1993", "10k+ Students", "CBSE Board"].map((b) => (
+                {["100% Board Results", "Est. 1993", "10k+ Students", "Cambridge Board"].map((b) => (
                   <span key={b} className="bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md">
                     {b}
                   </span>
@@ -467,7 +467,7 @@ export default function AdmissionsPage() {
                 <div className="text-center py-8">
                   <span className="text-5xl block mb-4">✅</span>
                   <p className="display text-2xl font-semibold text-navy mb-2">Thank You!</p>
-                  <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Seedling family!</p>
+                  <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Cambridge International School family!</p>
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -591,7 +591,7 @@ export default function AdmissionsPage() {
 
               <div className="mt-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">
                 <p className="text-navy-deeper font-dm text-sm leading-relaxed">
-                  <span className="font-black text-crimson">Note:</span> There are no direct admissions in Class 10th and 12th except as per CBSE bye-laws. Admissions in Classes 9th & 11th will only be done after the student clears the entrance examination.
+                  <span className="font-black text-crimson">Note:</span> There are no direct admissions in Class 10th and 12th except as per Cambridge bye-laws. Admissions in Classes 9th & 11th will only be done after the student clears the entrance examination.
                 </p>
               </div>
 
@@ -953,7 +953,7 @@ export default function AdmissionsPage() {
             <div className="mt-16 grid md:grid-cols-3 gap-8">
               {[
                 { icon: "🥇", title: "Merit Scholarships", desc: "Available for academically outstanding students across all schools. Contact the admissions office for eligibility criteria." },
-                { icon: "🏅", title: "Sports Scholarships", desc: "Exceptional athletes may be eligible for fee concessions. Seedling values sports performance at par with academic achievement." },
+                { icon: "🏅", title: "Sports Scholarships", desc: "Exceptional athletes may be eligible for fee concessions. Cambridge International School values sports performance at par with academic achievement." },
                 { icon: "⏰", title: "Early Bird Incentive", desc: "Register early in the admission season to benefit from early bird incentives. Seats are limited — don't wait!" },
               ].map((s) => (
                 <div key={s.title} className="bg-white border border-sand/20 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 group">
@@ -1093,7 +1093,7 @@ export default function AdmissionsPage() {
               <span className="text-sand">Campus Visit</span>
             </h2>
             <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-xl mx-auto font-dm font-light">
-              Walk through our campuses, meet our teachers, and feel the Seedling difference. Parent counselling is available both online and offline. Come feel the buzz.
+              Walk through our campuses, meet our teachers, and feel the Cambridge International School difference. Parent counselling is available both online and offline. Come feel the buzz.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -1168,7 +1168,7 @@ export default function AdmissionsPage() {
       <section className="py-20 bg-navy-deeper relative overflow-hidden">
         <img
           src="/assets/Home/library.jpg"
-          alt="Join Seedling"
+          alt="Join Cambridge International School"
           className="absolute inset-0 w-full h-full object-cover opacity-15"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/90 to-navy/60" />
@@ -1176,14 +1176,14 @@ export default function AdmissionsPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-sand text-xl italic mb-4">The Seedling Family Awaits</p>
+            <p className="display text-sand text-xl italic mb-4">The Cambridge International School Family Awaits</p>
             <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-white">
               Where Every{" "}
               <em className="font-semibold text-sand">Student</em>{" "}
               Matters.
             </h2>
             <p className="text-white/55 text-lg leading-relaxed mb-12 max-w-xl mx-auto">
-              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling advantage — from Play Group to University.
+              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Cambridge International School advantage — from Play Group to University.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -1203,7 +1203,7 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
-              {["🎓 CBSE Board", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 10k+ Students"].map((b) => (
+              {["🎓 Cambridge Board", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 10k+ Students"].map((b) => (
                 <span key={b} className="bg-white/8 border border-white/15 text-white/60 text-xs px-5 py-2 rounded-full">
                   {b}
                 </span>

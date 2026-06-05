@@ -37,7 +37,7 @@ const curriculumTabs = [
   },
   {
     id: "middle",
-    label: "Middle School (CBSE)",
+    label: "Middle School (Cambridge)",
     title: "The Skill Forge",
     description: "As students move into Middle School, we introduce greater academic rigor integrated with future-ready skills like AI, Ethics, and Sustainability.",
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/infrastructure_science_lab_modern_1776862645820.png",

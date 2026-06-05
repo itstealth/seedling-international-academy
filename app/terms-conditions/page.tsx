@@ -8,17 +8,17 @@ const sections = [
   {
     title: "Terms and Conditions of Use",
     icon: FileText,
-    content: `For the purpose of these Terms and Conditions, "School" refers to Seedling Group of Schools, an educational institution operating in Jaipur, Rajasthan, India, along with its associated campuses, management, and administration.\n\nBy accessing and using this website, you accept and agree to be bound by the following Terms and Conditions. If you do not agree with any part of these terms, you should discontinue use of this website immediately.`
+    content: `For the purpose of these Terms and Conditions, "School" refers to Cambridge International School Group, an educational institution operating in Jaipur, Rajasthan, India, along with its associated campuses, management, and administration.\n\nBy accessing and using this website, you accept and agree to be bound by the following Terms and Conditions. If you do not agree with any part of these terms, you should discontinue use of this website immediately.`
   },
   {
     title: "Website Information Disclaimer",
     icon: AlertTriangle,
-    content: `Seedling Group of Schools makes every effort to ensure that the information provided on this website is accurate and up to date. However, the School gives no warranty or guarantee regarding the accuracy, completeness, or suitability of the information for any specific purpose. The content available on this website does not constitute legal, professional, or educational advice.\n\nAll implied warranties and conditions are excluded to the fullest extent permitted by law. The School shall not be liable for any direct or indirect loss, damage, or inconvenience arising from the use of, or reliance upon, the information contained on this website, except in cases of death or personal injury caused by negligence.`
+    content: `Cambridge International School Group makes every effort to ensure that the information provided on this website is accurate and up to date. However, the School gives no warranty or guarantee regarding the accuracy, completeness, or suitability of the information for any specific purpose. The content available on this website does not constitute legal, professional, or educational advice.\n\nAll implied warranties and conditions are excluded to the fullest extent permitted by law. The School shall not be liable for any direct or indirect loss, damage, or inconvenience arising from the use of, or reliance upon, the information contained on this website, except in cases of death or personal injury caused by negligence.`
   },
   {
     title: "Third-Party Links",
     icon: Link2,
-    content: `This website may contain links to third-party websites for convenience and informational purposes only. Seedling Group of Schools has no control over the content of such websites and accepts no responsibility or liability for their content, availability, or practices.`
+    content: `This website may contain links to third-party websites for convenience and informational purposes only. Cambridge International School Group has no control over the content of such websites and accepts no responsibility or liability for their content, availability, or practices.`
   },
   {
     title: "Changes to Terms",
@@ -33,7 +33,7 @@ const sections = [
   {
     title: "Website Availability",
     icon: Globe,
-    content: `While Seedling Group of Schools endeavors to keep the website accessible at all times, it reserves the right to suspend, restrict, or withdraw access to the website (in whole or in part) at any time without notice for operational, security, or administrative reasons.`
+    content: `While Cambridge International School Group endeavors to keep the website accessible at all times, it reserves the right to suspend, restrict, or withdraw access to the website (in whole or in part) at any time without notice for operational, security, or administrative reasons.`
   },
   {
     title: "Disclaimer",
@@ -43,12 +43,12 @@ const sections = [
   {
     title: "No Liability to Parents or Third Parties",
     icon: Shield,
-    content: `Any dealings or communications between Seedling Group of Schools and students or prospective students do not create a legal or contractual relationship with parents, guardians, sponsors, or other third parties. Use of the online prospectus and website content is subject to these Terms and Conditions.`
+    content: `Any dealings or communications between Cambridge International School Group and students or prospective students do not create a legal or contractual relationship with parents, guardians, sponsors, or other third parties. Use of the online prospectus and website content is subject to these Terms and Conditions.`
   },
   {
     title: "Copyright",
     icon: FileText,
-    content: `All content on this website, including text, images, logos, and design, is protected by copyright and other intellectual property laws. Content may be viewed, printed, or downloaded solely for personal and non-commercial use. No material may be copied, modified, reproduced, published, or distributed without prior written permission from Seedling Group of Schools.\n\nThe name, logo, and trademarks of Seedling Group of Schools may not be used without express written authorization from the School.`
+    content: `All content on this website, including text, images, logos, and design, is protected by copyright and other intellectual property laws. Content may be viewed, printed, or downloaded solely for personal and non-commercial use. No material may be copied, modified, reproduced, published, or distributed without prior written permission from Cambridge International School Group.\n\nThe name, logo, and trademarks of Cambridge International School Group may not be used without express written authorization from the School.`
   },
   {
     title: "Complaints",

@@ -67,7 +67,7 @@ const sportBlocks = [
     image: "/assets/SPORTS DAY/2.webp",
     tag: "Athletics",
     title: "Sports at Par with Academics",
-    body: "At Seedling Schools, sports remain at par with academics, instilling qualities of confidence, teamwork, responsibility, discipline, and leadership. Our organized sports events span from intra-school to national levels, showcasing tremendous growth in students' techniques and performance.",
+    body: "At Cambridge International School, sports remain at par with academics, instilling qualities of confidence, teamwork, responsibility, discipline, and leadership. Our organized sports events span from intra-school to national levels, showcasing tremendous growth in students' techniques and performance.",
     highlights: ["Intra-School Events", "National Level Tournaments", "Dedicated Coaches"],
     reverse: false,
   },
@@ -139,58 +139,58 @@ const experiences = [
     name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
     image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
-    quote: "Seedling Public School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
-    school: "Seedling Public School",
+    quote: "Cambridge International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Cambridge International School",
     highlight: "Nurturing Environment",
   },
   {
     name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
     role: "Parents",
     image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
-    quote: "The academic excellence at Seedling Public School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
-    school: "Seedling Public School",
+    quote: "The academic excellence at Cambridge International School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    school: "Cambridge International School",
     highlight: "Academic Excellence",
   },
   {
     name: "Meghna Manglani",
     role: "Parent",
     image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
-    quote: "At Seedling Public School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
-    school: "Seedling Public School",
+    quote: "At Cambridge International School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Cambridge International School",
     highlight: "Holistic Development",
   },
   {
     name: "Deepak Adwani & Varsha Adwani",
     role: "Parents",
     image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
-    quote: "We chose Seedling Public School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
-    school: "Seedling Public School",
+    quote: "We chose Cambridge International School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
+    school: "Cambridge International School",
     highlight: "Safe & Supportive",
   },
   {
     name: "Divya Soni",
     role: "Parent",
     image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
-    quote: "Seedling Public School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
-    school: "Seedling Public School",
+    quote: "Cambridge International School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
+    school: "Cambridge International School",
     highlight: "Future-Ready",
   },
 ];
 
 const stripImages = [
   { src: "/assets/img/sps-1.jpg", label: "Campus Life" },
-  { src: "/assets/img/sps-2.jpg", label: "Classroom Innovation" },
+  { src: "/assets/img/sps-2.JPG", label: "Classroom Innovation" },
   { src: "/assets/img/sps-3.jpg", label: "Student Community" },
   { src: "/assets/img/feature-1.jpg", label: "NEP Curriculum" },
   { src: "/assets/img/feature-4.jpg", label: "Experiential Learning" },
-  { src: "/assets/img/life-at-sps.jpg", label: "Life at Seedling" },
+  { src: "/assets/img/life-at-sps.jpg", label: "Life at Cambridge International School" },
   { src: "/assets/img/feature-2.jpg", label: "State-of-the-Art Facilities" },
   { src: "/assets/img/counselling-1.jpg", label: "Parent Counselling" },
   { src: "/assets/Home/classroom.jpg", label: "Modern Classrooms" },
   { src: "/assets/Home/library.jpg", label: "Library & Learning" },
   { src: "/assets/Home/smart-classroom.jpg", label: "Smart Classrooms" },
   { src: "/assets/img/feature-3.jpg", label: "Science Labs" },
-  { src: "/assets/img/feature-5.jpg", label: "Art & Creativity" },
+  { src: "/assets/img/feature-5.JPG", label: "Art & Creativity" },
   { src: "/assets/img/Christmas.jpeg", label: "Festive Celebrations" },
   { src: "/assets/img/yoga1.jpg", label: "Yoga & Wellness" },
   { src: "/assets/img/skaters.jpg", label: "Skating Events" },
@@ -274,7 +274,7 @@ function MasonryGallery() {
               Snippets of
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
-                Seedling
+                Cambridge International School
               </span>
             </h2>
           </div>
@@ -500,7 +500,7 @@ function ActivitiesGrid() {
             <span className="text-crimson"> Academics</span>
           </h2>
           <p className="mt-4 text-text-light max-w-xl mx-auto leading-relaxed font-dm">
-            At Seedling, we believe learning extends far beyond the classroom.
+            At Cambridge International School, we believe learning extends far beyond the classroom.
             Our diverse extracurricular ecosystem shapes leaders, creators, and changemakers.
           </p>
         </div>
@@ -645,7 +645,7 @@ function ExperienceSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
-            Voices of Seedling
+            Voices of Cambridge International School
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
             Parent
@@ -864,7 +864,7 @@ function CTASection() {
           Join the
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling Family
+            Cambridge International School Family
           </span>
         </h2>
 
@@ -901,8 +901,8 @@ function CTASection() {
             SMHS: +91 95877 72837
           </a> */}
           <span className="hidden sm:block text-white/20">|</span>
-          <a href="mailto:seedlingacademy@hotmail.com" className="hover:text-sand transition-colors font-bold">
-            seedlingacademy@hotmail.com
+          <a href="mailto:cambridgeacademy@hotmail.com" className="hover:text-sand transition-colors font-bold">
+            cambridgeacademy@hotmail.com
           </a>
         </div>
       </div>
@@ -921,9 +921,9 @@ function CTASection() {
   inside a server component that exports metadata.
 
   export const metadata = {
-    title: "School Life | Seedling Group of Schools",
+    title: "School Life | Cambridge International School Group",
     description:
-      "Experience life at Seedling Group of Schools — Jaipur's premier educational institution since 1993. Explore our vibrant campus life, sports, arts, and beyond.",
+      "Experience life at Cambridge International School Group — Jaipur's premier educational institution since 1993. Explore our vibrant campus life, sports, arts, and beyond.",
   };
 */
 
@@ -938,8 +938,8 @@ export default function SchoolLifePage() {
       <style dangerouslySetInnerHTML={{ __html: pageStyles }} />
 
       <HeroWrapper
-        backgroundImage="/assets/SHOWCASING WONDERLAND/1.webp"
-        title="Life at Seedling"
+        backgroundImage="/assets/SHOWCASING WONDERLAND/1.JPG"
+        title="Life at Cambridge International School"
         subtitle="Where every child discovers, learns, and grows into their brightest self."
         badge="School Life"
         breadcrumbs={[{ label: "School Life" }]}

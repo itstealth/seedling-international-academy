@@ -32,7 +32,7 @@ const CAMPUS_MAPS = [
 ]
 
 const SCHOOLS = [
-  'Seedling Public School (CBSE), Jawahar Nagar',
+  'Cambridge International School (CBSE), Jawahar Nagar',
 ]
 
 const STATS = [
@@ -265,7 +265,7 @@ export default function ContactPage() {
 
             <InfoCard icon={<EmailIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-navy-deeper" accent="bg-sand" label="Email Us">
               <ContactItem label="SPS / SIA">
-                <a href="mailto:seedlingacademy@hotmail.com" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">seedlingacademy@hotmail.com</a>
+                <a href="mailto:cambridgeacademy@hotmail.com" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">cambridgeacademy@hotmail.com</a>
               </ContactItem>
               <ContactItem label="SMHS / SMIA">
                 <a href="mailto:smhsjaipur@jnujaipur.ac.in" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">smhsjaipur@jnujaipur.ac.in</a>
@@ -327,7 +327,7 @@ export default function ContactPage() {
               <ul className="space-y-3 mb-10">
                 {[
                   'Admissions open for 2026–27 session',
-                  'CBSE Board programmes available',
+                  'Cambridge Board programmes available',
                   'NEP-aligned innovative curriculum',
                   'Three decades of excellence in education',
                 ].map((item) => (
@@ -344,7 +344,7 @@ export default function ContactPage() {
               <div className="relative rounded-2xl overflow-hidden h-52 border border-sand/40 shadow-sm">
                 <Image
                   src="/assets/STELLAR SATURDAYS/4.webp"
-                  alt="Students in a Seedling School classroom"
+                  alt="Students in a Cambridge International School School classroom"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
@@ -352,7 +352,7 @@ export default function ContactPage() {
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white text-sm font-bold font-dm drop-shadow">State-of-the-art learning environment</p>
-                  <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Seedling Schools, Jaipur</p>
+                  <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Cambridge International School, Jaipur</p>
                 </div> */}
               </div>
             </div>
@@ -622,7 +622,7 @@ export default function ContactPage() {
                 <h2
                   className="font-playfair text-3xl md:text-4xl font-bold leading-tight mb-3 text-white"
                 >
-                  Ready to join the<br />Seedling family?
+                  Ready to join the<br />Cambridge International School family?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed font-dm font-light">
                   Visit any of our campuses or start your online application today.
