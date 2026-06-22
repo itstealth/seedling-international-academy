@@ -23,7 +23,7 @@ const leadership = [
   { 
     name: "Late Ms. Mohini Bakshi", 
     role: "Founder", 
-    quote: "Education at Cambridge International School is about nurturing the unique spark within every child.",
+    quote: "Education at Seedling International School is about nurturing the unique spark within every child.",
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/leadership_md_portrait_professional_1776862565387.png",
     initials: "MB"
   },

@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import HeroWrapper from '@/components/layout/HeroWrapper';
 
 export const metadata: Metadata = {
-  title: 'Mandatory Public Disclosure | Cambridge International School, Jaipur',
-  description: 'Mandatory public disclosure information for Cambridge International School (SPS), Jaipur, as per Cambridge Affiliation Bye-Laws. Includes school info, affiliation status, and certificates.',
-  keywords: 'Cambridge International School, Jaipur, Mandatory Disclosure, Cambridge Compliance, School Information, Affiliation Status',
+  title: 'Mandatory Public Disclosure | Seedling International School, Jaipur',
+  description: 'Mandatory public disclosure information for Seedling International School (SPS), Jaipur, as per Cambridge Affiliation Bye-Laws. Includes school info, affiliation status, and certificates.',
+  keywords: 'Seedling International School, Jaipur, Mandatory Disclosure, Cambridge Compliance, School Information, Affiliation Status',
 };
 
 const MandatoryDisclosure = () => {
@@ -37,7 +37,7 @@ const MandatoryDisclosure = () => {
               <div>
                 <label className="block text-[10px] font-black text-crimson uppercase tracking-[0.2em] mb-2">School Name & Address</label>
                 <div className="text-navy-deeper leading-relaxed">
-                  <strong className="text-xl block mb-1">Cambridge International School</strong>
+                  <strong className="text-xl block mb-1">Seedling International School</strong>
                   <p className="text-text-light font-light">Sector-4, Park Lane, Jawahar Nagar,<br />Jaipur — 302004, Rajasthan</p>
                 </div>
               </div>
@@ -207,7 +207,7 @@ const MandatoryDisclosure = () => {
 
       <footer className="py-12 text-center border-t border-sand/30">
         <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">
-          © Cambridge International School Group | Compliance Division | Cambridge Mandatory Disclosure
+          © Seedling International School Group | Compliance Division | Cambridge Mandatory Disclosure
         </p>
       </footer>
     </div>

@@ -30,7 +30,7 @@ export default function FeeStructurePage() {
             <span className="text-label mb-8 block uppercase">Academic Session 2026-27</span>
             <h2 className="text-heading text-4xl md:text-5xl mb-12">Clarity in <br /> Investment.</h2>
             <p className="text-xl text-neutral-600 font-medium leading-relaxed max-w-xl">
-              Our fee structure is designed to reflect the premium educational experience and world-class facilities provided at Cambridge International School.
+              Our fee structure is designed to reflect the premium educational experience and world-class facilities provided at Seedling International School.
             </p>
           </div>
           <div className="lg:w-[350px]">

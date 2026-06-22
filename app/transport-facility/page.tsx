@@ -15,14 +15,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Transport Facility | Safe School Bus Service in Jaipur | Cambridge International School",
+  title: "Transport Facility | Safe School Bus Service in Jaipur | Seedling International School",
   description:
-    "Explore Cambridge International School' transport facility in Jaipur with safe school buses, trained attendants, CCTV monitoring, route planning, and convenient pickup support for families.",
+    "Explore Seedling International School' transport facility in Jaipur with safe school buses, trained attendants, CCTV monitoring, route planning, and convenient pickup support for families.",
   keywords: [
-    "Cambridge International School transport facility",
+    "Seedling International School transport facility",
     "school bus service Jaipur",
     "safe school transport Jaipur",
-    "Cambridge International School school bus routes",
+    "Seedling International School school bus routes",
     "school transportation facility",
   ],
 };
@@ -127,7 +127,7 @@ export default function TransportFacilityPage() {
                 A smoother journey from home to school.
               </h2>
               <p className="mt-7 text-text-light text-base md:text-lg leading-[1.9]">
-                Cambridge International School offers a thoughtfully managed transport facility for students across major Jaipur localities. The service is planned to support safe travel, reliable timing, and coordinated communication between parents, transport staff, and the school office.
+                Seedling International School offers a thoughtfully managed transport facility for students across major Jaipur localities. The service is planned to support safe travel, reliable timing, and coordinated communication between parents, transport staff, and the school office.
               </p>
               <p className="mt-5 text-text-light text-base md:text-lg leading-[1.9]">
                 From supervised campus entry to attentive route management, every detail is shaped to make daily school travel feel calm, punctual, and secure.
@@ -138,7 +138,7 @@ export default function TransportFacilityPage() {
               <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden">
                 <Image
                   src="/assets/Home/MainCampus.webp"
-                  alt="Cambridge International School campus entry gate"
+                  alt="Seedling International School campus entry gate"
                   fill
                   className="object-cover"
                 />
@@ -303,7 +303,7 @@ export default function TransportFacilityPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper via-navy-deeper/95 to-crimson-deeper/90" />
           <Image
             src="/assets/transport-facility/camera.jpeg"
-            alt="Cambridge International School transport safety support"
+            alt="Seedling International School transport safety support"
             fill
             sizes="100vw"
             className="object-cover opacity-15"
@@ -317,7 +317,7 @@ export default function TransportFacilityPage() {
                 Need help finding the right school bus route?
               </h2>
               <p className="mt-5 text-white/70 text-base md:text-lg leading-[1.8] max-w-2xl">
-                Share your locality with our team and we will guide you with available route options, pickup points, and transport fee details for your preferred Cambridge International School campus.
+                Share your locality with our team and we will guide you with available route options, pickup points, and transport fee details for your preferred Seedling International School campus.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4">

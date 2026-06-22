@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const newsItems = [
   {
-    title: "Cambridge International School Group Wins 'Best School in Rajasthan' Award",
+    title: "Seedling International School Group Wins 'Best School in Rajasthan' Award",
     date: "June 15, 2025",
     source: "Education World",
     desc: "Recognized for academic excellence, state-of-the-art infrastructure, and innovative teaching methods at the National Education Awards.",
@@ -15,7 +15,7 @@ const newsItems = [
     featured: true
   },
   {
-    title: "Cambridge International School Students Shine in Cambridge Class XII Results",
+    title: "Seedling International School Students Shine in Cambridge Class XII Results",
     date: "May 22, 2025",
     source: "Jaipur Times",
     desc: "Over 40% students score above 90%, with school toppers reaching 98.4% in Science and Commerce streams.",

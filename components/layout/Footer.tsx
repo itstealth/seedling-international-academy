@@ -44,7 +44,7 @@ export default function Footer() {
                 <div className="flex items-center">
                   <img
                     src="/camb_Logo.png"
-                    alt="Cambridge International School Logo"
+                    alt="Seedling International School Logo"
                     className="h-36 w-auto object-contain"
                   />
                 </div>
@@ -117,8 +117,11 @@ export default function Footer() {
                 <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Our Institutions</h3>
                 <div className="space-y-6">
                   {[
-                    { name: 'Cambridge International School', loc: 'Jawahar Nagar', link: '/' },
-                    { name: 'Cambridge International Academy', loc: 'Jawahar Nagar', link: 'https://cambridgeinternationalschool.com/sia.php' },
+                    { name: 'Seedling International Academy (Cambridge)', loc: 'Jawahar Nagar, Jaipur', link: '/' },
+                    { name: 'Seedling Public School (SPS)', loc: 'Jawahar Nagar, Jaipur', link: '' },
+                    { name: 'Seedling Modern High School (SMHS)', loc: 'Jawahar Nagar, Jaipur', link: '' },
+                    { name: 'Seedling MIT Academy (SMIA)', loc: 'Jawahar Nagar, Jaipur', link: '' },
+                    { name: 'SWKL', loc: 'Jawahar Nagar, Jaipur', link: '' },
                   ].map((school) => (
                     <div key={school.name} className="group cursor-default">
                       {school.link ? (
@@ -137,13 +140,13 @@ export default function Footer() {
                 <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Locations</h3>
                 <div className="space-y-4">
                   <a
-                    href="https://maps.google.com/?q=Seedling+Public+School+Jawahar+Nagar+Jaipur"
+                    href="https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block h-32 sm:h-36 rounded-xl overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
                   >
                     <iframe
-                      src="https://www.google.com/maps?q=Seedling+Public+School+Jawahar+Nagar+Jaipur&output=embed"
+                      src="https://www.google.com/maps?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur&output=embed"
                       width="100%"
                       height="100"
                       className="h-full w-full"
@@ -151,7 +154,7 @@ export default function Footer() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Cambridge International School Jawahar Nagar Jaipur"
+                      title="Seedling International School Jawahar Nagar Jaipur"
                     />
                   </a>
                 </div>
@@ -189,9 +192,9 @@ export default function Footer() {
             </nav>
 
             <div className="py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-              <span className="font-semibold text-lg">Cambridge International School</span>
+              <span className="font-semibold text-lg">Seedling International School</span>
               <span className="text-gray-500 text-sm">
-                2026 Cambridge International School. All rights reserved.
+                © 2026 Seedling Group of Schools. All Rights Reserved.
               </span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

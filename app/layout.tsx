@@ -23,8 +23,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Cambridge International School Group",
-  description: "A premium educational institution dedicated to excellence.",
+  title: "Seedling International Academy | Best Cambridge School, Jawahar Nagar, Jaipur",
+  description: "Seedling International Academy is the best Cambridge IGCSE school in Jawahar Nagar, Jaipur, offering globally benchmarked education.",
 };
 
 export default async function RootLayout({

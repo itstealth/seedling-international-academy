@@ -50,43 +50,43 @@ const timeline = [
   {
     year: "1993",
     title: "The Seed is Planted",
-    desc: "Late Ms. Mohini Bakshi founded Cambridge International School Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
+    desc: "Late Ms. Mohini Bakshi founded Seedling International School Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
     img: "/assets/Home/kindergarten.webp",
     side: "right",
   },
   {
     year: "1998",
     title: "Growing Roots in Jawahar Nagar",
-    desc: "Cambridge International School (Cambridge) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
+    desc: "Seedling International School (Cambridge) took root in Sector 4, Jawahar Nagar — becoming a cornerstone institution for families across Jaipur who sought holistic, values-driven education.",
     img: "/assets/Home/School1.webp",
     side: "left",
   },
   {
     year: "2005",
     title: "Opening New Horizons — Durgapura",
-    desc: "Cambridge International School (Cambridge) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
+    desc: "Seedling International School (Cambridge) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
     img: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-04%2FMiniMax-M2.7%2F2030974885278265449%2F8c27b7b5301a4f87deea25c4e0cd132c8ae686bc9a4a6da38bb9f3eb35462c2b..jpeg?Expires=1780644553&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=xHeS8LsQORtgHKBNLNAbXXMy1HY%3D",
     side: "right",
   },
   {
     year: "2010",
     title: "Going Global — Cambridge Curriculum",
-    desc: "Cambridge International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
+    desc: "Seedling International Academy launched with the Cambridge Board, giving students access to a world-class, internationally recognised curriculum while remaining rooted in Indian values.",
     // img: "/assets/Home/smart-classroom.jpg",
     img:"/assets/Home/sia-student.jpg",
     side: "left",
   },
   {
     year: "2015",
-    title: "Cambridge International Academy",
-    desc: "A second Cambridge-affiliated institution — Cambridge International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
+    title: "Seedling International Academy",
+    desc: "A second Cambridge-affiliated institution — Seedling International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
     img: "/assets/Home/smia-student.jpg",
     side: "right",
   },
   {
     year: "2018",
     title: "Gateway to Higher Education",
-    desc: "Graduating from Cambridge International School opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Cambridge International School significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
+    desc: "Graduating from Seedling International School opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling International School significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
     img: "/assets/Home/jaipur-national-university.jpg",
     side: "left",
   },
@@ -96,7 +96,7 @@ const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
     role: "Founder Director",
-    sub: "Cambridge International School Group of Institutions",
+    sub: "Seedling International School Group of Institutions",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
     img: "/assets/img/mohini.png",
     tag: "Legacy",
@@ -104,7 +104,7 @@ const leaders = [
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
-    sub: "Cambridge International School Group of Institutions",
+    sub: "Seedling International School Group of Institutions",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
     img: "/assets/img/sandeep.png",
     tag: "Forever New Frontiers",
@@ -112,7 +112,7 @@ const leaders = [
   {
     name: "Dr. Preeti Bakshi",
     role: "Executive Director",
-    sub: "Cambridge International School Group of Institutions",
+    sub: "Seedling International School Group of Institutions",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
     img: "/assets/img/preeti.png",
     tag: "Creating Fresh Pathways",
@@ -120,7 +120,7 @@ const leaders = [
   {
     name: "Ms. Akansha Bakshi",
     role: "Joint Director",
-    sub: "Cambridge International School Group of Institutions",
+    sub: "Seedling International School Group of Institutions",
     quote: "Adaptability to change is itself a hallmark of successful education.",
     img: "/assets/img/akansha.png",
     tag: "Engagement that Empowers",
@@ -128,7 +128,7 @@ const leaders = [
   {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
-    sub: "Cambridge International School Group of Institutions",
+    sub: "Seedling International School Group of Institutions",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
@@ -231,7 +231,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
-                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Cambridge International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Seedling International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
@@ -242,7 +242,7 @@ export default function AboutPage() {
               <div className="mt-12 space-y-5">
                 {[
                   { icon: "🌱", title: "Holistic Development", desc: "Intellectual, social, moral, spiritual, emotional and physical growth for every child." },
-                  { icon: "🌍", title: "NEP Aligned Curriculum", desc: "Thoughtfully designed to align with the National Education Policy — ensuring students receive a relevant, future-ready education." },
+                  { icon: "🌍", title: "Cambridge-Aligned Curriculum", desc: "Thoughtfully designed to meet Cambridge Assessment International Education standards." },
                   { icon: "❤️", title: "Student Well-being First", desc: "A safe, inclusive and stimulating learning environment where every student feels confident, respected and motivated to grow." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4 p-4 rounded-2xl hover:bg-navy-light transition-colors duration-300">
@@ -262,12 +262,12 @@ export default function AboutPage() {
             <div className="relative">
               <img
                 src="/assets/Home/MainCampus.webp"
-                alt="Cambridge International School Students Learning"
+                alt="Seedling International School Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
               <img
                 src="/assets/about/grow.jpg"
-                alt="Cambridge International School Campus Life"
+                alt="Seedling International School Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-crimson text-white rounded-2xl px-6 py-4 shadow-xl">
@@ -298,8 +298,8 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                title: "Integrity",
-                desc: "Being honest and ethical in all actions.",
+                title: "Confident",
+                desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -309,8 +309,8 @@ export default function AboutPage() {
                 bg: "bg-crimson/10",
               },
               {
-                title: "Respect",
-                desc: "Valuing self, others, and the environment.",
+                title: "Reflective",
+                desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -320,8 +320,8 @@ export default function AboutPage() {
                 bg: "bg-navy/10",
               },
               {
-                title: "Responsibility",
-                desc: "Taking ownership of actions and duties.",
+                title: "Responsible",
+                desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -331,8 +331,8 @@ export default function AboutPage() {
                 bg: "bg-mauve/10",
               },
               {
-                title: "Excellence",
-                desc: "Striving to achieve the best in everything.",
+                title: "Innovative",
+                desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -342,8 +342,8 @@ export default function AboutPage() {
                 bg: "bg-sand/10",
               },
               {
-                title: "Empathy",
-                desc: "Understanding and caring for others.",
+                title: "Engaged",
+                desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -351,17 +351,6 @@ export default function AboutPage() {
                 ),
                 color: "text-crimson",
                 bg: "bg-crimson/10",
-              },
-              {
-                title: "Discipline",
-                desc: "Maintaining consistency and self-control.",
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                  </svg>
-                ),
-                color: "text-navy",
-                bg: "bg-navy/10",
               },
             ].map((value, i) => (
               <Reveal key={value.title} delay={i * 100}>
@@ -436,7 +425,7 @@ export default function AboutPage() {
       <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden bg-crimson">
         {/* <img
           src="/assets/about/feature-education.png"
-          alt="Cambridge International School Philosophy"
+          alt="Seedling International School Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
@@ -545,12 +534,12 @@ export default function AboutPage() {
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { emoji: "📋", title: "Aligned with NEP", desc: "Our curriculum is thoughtfully designed to align with the National Education Policy — ensuring students receive a relevant, future-ready education with global standards." },
-              { emoji: "🏛️", title: "State-of-the-Art Facilities", desc: "Spacious modern classrooms, well-equipped science laboratories, a well-stocked library, and inspiring outdoor spaces that enhance the learning experience." },
-              { emoji: "💻", title: "Technology-Integrated Learning", desc: "Interactive whiteboards, AI-integrated tools, educational apps, and online resources create an engaging and dynamic learning experience every single day." },
-              { emoji: "🔬", title: "Experiential Learning", desc: "Hands-on experiments, outdoor excursions, and interactive projects foster critical thinking, problem-solving, and a genuine love for discovery beyond textbooks." },
-              { emoji: "💬", title: "Student-Centred Approach", desc: "Personalised attention with continuous assessment, timely feedback, and open parent–teacher communication ensure the continuous growth of each child." },
-              { emoji: "🌿", title: "Holistic Well-being", desc: "We nurture not only academic growth but emotional, social, and physical well-being — for students, parents, and staff alike. Integrity, Respect, Empathy at our core." },
+              { emoji: "🌍", title: "Strong International Focus", desc: "We prioritise international-mindedness and global competence alongside Indian values." },
+              { emoji: "📚", title: "Flexible curriculum", desc: "Our Cambridge-aligned curriculum adapts to individual student needs and learning styles." },
+              { emoji: "📊", title: "School-driven Formative Assessments", desc: "Continuous, meaningful assessments that track progress and guide instruction." },
+              { emoji: "🔬", title: "Learning by doing", desc: "Hands-on projects, experiments, and real-world applications deepen understanding." },
+              { emoji: "💻", title: "Online performance tracking", desc: "Parents and teachers can monitor student progress through our digital platform." },
+              { emoji: "🏫", title: "Safe and secure Campus", desc: "A nurturing environment where students feel safe, valued, and empowered to learn." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group">
@@ -603,7 +592,7 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
-              <em className="font-semibold text-sand">Cambridge International School Family?</em>
+              <em className="font-semibold text-sand">Seedling International School Family?</em>
             </h2>
             <p className="text-white/60 text-xl mb-12 font-dm max-w-2xl mx-auto">
               Admissions open for 2026–27. Step into a world of limitless possibilities.
