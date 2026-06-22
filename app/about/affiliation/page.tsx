@@ -6,8 +6,8 @@ import { CheckCircle2, ShieldCheck, Globe, Award, Plus } from "lucide-react";
 
 const affiliations = [
   {
-    name: "Central Board of Secondary Education (Cambridge)",
-    schools: "Cambridge International School & Cambridge International School",
+    name: "Cambridge board (Cambridge)",
+    schools: "Seedling International School & Seedling International School",
     description: "Our core institutions are proudly affiliated with Cambridge, New Delhi, offering a robust curriculum that fosters critical thinking and aligns perfectly with the National Education Policy (NEP).",
     acronym: "Cambridge",
     icon: ShieldCheck,
@@ -54,7 +54,7 @@ export default function AffiliationPage() {
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary italic font-serif">Recognized.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
-              At Cambridge International School, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
+              At Seedling International School, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
             </p>
           </motion.div>
         </div>

@@ -33,22 +33,28 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const achievements = [
-  { value: "100%", label: "Board Results", sub: "Consistently every year", icon: "🏆" },
-  { value: "10k+", label: "Students Enrolled", sub: "Across 2 schools", icon: "👩‍🎓" },
+  { value: "100%", label: "Pass Rate", sub: "Consistently every year", icon: "🏆" },
+  { value: "10k+", label: "Students Enrolled", sub: "Across group schools", icon: "👩‍🎓" },
   { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
   { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
   { value: "33+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },
-  { value: "2", label: "Boards Offered", sub: "Cambridge & Cambridge", icon: "📜" },
+  { value: "2", label: "Programmes", sub: "Cambridge IGCSE", icon: "📜" },
+];
+
+const gradeDistinctions = [
+  { grade: "A*", desc: "Exceptional performance demonstrating outstanding mastery" },
+  { grade: "A", desc: "Strong performance demonstrating very good mastery" },
+  { grade: "B", desc: "Good performance demonstrating good knowledge and understanding" },
+  { grade: "C", desc: "Satisfactory performance demonstrating adequate learning" },
 ];
 
 export default function ResultPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/cbse-result.jpg"
+        backgroundImage="/assets/about/about-banner.jpg"
         title="Results"
-        badge="Academic Excellence"
-        // breadcrumbs={[{ label: "Academics" }, { label: "Results" }]}
+        badge="Cambridge Assessment"
         height="large"
         overlayOpacity={0.6}
       />
@@ -65,14 +71,14 @@ export default function ResultPage() {
               <div className="max-w-md">
                 <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.28em] uppercase text-crimson font-dm">
                   <span className="h-px w-8 bg-crimson/70" />
-                  Roll of Honour
+                  Cambridge Results
                 </span>
                 <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-navy-deeper">
-                  Numbers That<br />
-                  <em className="font-semibold text-navy">Tell Our Story</em>
+                  Academic<br />
+                  <em className="font-semibold text-navy">Excellence</em>
                 </h2>
                 <p className="mt-5 text-sm md:text-base leading-7 text-text-light font-dm font-light">
-                  A quick view of the academic consistency, campus scale, and learning support behind Cambridge International School results.
+                  Cambridge International assessments are graded on a scale from A* to G, with A* being the highest. Our students consistently achieve excellent results, demonstrating deep understanding and mastery across all subjects.
                 </p>
               </div>
             </Reveal>
@@ -104,48 +110,35 @@ export default function ResultPage() {
             </div>
           </div>
 
-          {/* Topers in Cambridge International School */}
+          {/* Cambridge Grade System Explained */}
           <Reveal delay={150}>
             <div className="mt-10 md:mt-14">
               <div className="text-center mb-12">
                 <span className="inline-block bg-crimson/5 text-crimson text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-crimson/10 mb-4 font-dm backdrop-blur-sm">
-                  Board Toppers
+                  Cambridge Grading
                 </span>
                 <h3 className="font-playfair text-3xl md:text-5xl font-light text-navy-deeper">
-                  Felicitating <em className="font-semibold text-navy">Excellence</em>
+                  Understanding <em className="font-semibold text-navy">Grades</em>
                 </h3>
               </div>
-              
-              <div className="flex flex-wrap justify-center gap-6">
-                {[
-                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp", name: "Top Performer" },
-                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/2.webp", name: "Top Performer" },
-                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/3.webp", name: "Top Performer" },
-                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/4.webp", name: "Top Performer" },
-                  { src: "/assets/FELICITATING TOPPERS IN BOARDS/5.webp", name: "Top Performer" },
-                  { src: "/assets/result/ayush.jpg", name: "Ayush" },
-                  { src: "/assets/result/geetika.jpg", name: "Geetika" },
-                  { src: "/assets/result/neelvi.jpg", name: "Neelvi" },
-                  { src: "/assets/result/pranjal.jpg", name: "Pranjal" },
-                  { src: "/assets/result/saatvik.jpg", name: "Saatvik" },
-                  { src: "/assets/result/vidhi.jpg", name: "Vidhi" },
-                  { src: "/assets/result/yug.jpg", name: "Yug" },
-                ].map((student, idx) => (
-                  <div key={student.src} className="group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] aspect-[3/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-editorial transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_60px_rgba(10,31,58,0.18)] hover:border-navy-light">
-                    <img
-                      src={student.src}
-                      alt={`Cambridge International School Topper ${student.name}`}
-                      className="w-full h-[28rem] md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-0 left-0 w-full p-6 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="w-8 h-1 bg-sand mb-4 rounded-full" />
-                      <p className="text-white font-playfair font-semibold text-xl">{student.name}</p>
-                      <p className="text-white/70 text-[10px] tracking-widest uppercase font-dm mt-1">Board Examinations</p>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {gradeDistinctions.map((g) => (
+                  <Reveal key={g.grade}>
+                    <div className="bg-white rounded-[2rem] p-8 border border-sand/30 shadow-sm hover:shadow-editorial hover:border-navy/20 transition-all duration-500 text-center group">
+                      <div className="w-20 h-20 rounded-full bg-navy text-white flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <span className="font-playfair text-3xl font-bold">{g.grade}</span>
+                      </div>
+                      <p className="text-text-light text-sm leading-relaxed font-dm font-light">{g.desc}</p>
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
+              </div>
+
+              <div className="mt-10 bg-navy-deeper rounded-[2rem] p-8 md:p-12 text-center">
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed font-dm font-light max-w-3xl mx-auto">
+                  Unlike traditional rank-based systems, Cambridge International focuses on criterion-referenced assessment. Each student's performance is measured against set standards, not against other students — ensuring fair and meaningful evaluation of individual mastery.
+                </p>
               </div>
             </div>
           </Reveal>
@@ -156,11 +149,13 @@ export default function ResultPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-navy-light rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-crimson text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-navy-deeper">100% Board Results</h3>
-                <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Cambridge International School Group has consistently achieved 100% results in Cambridge examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-navy-deeper">100% Pass Rate</h3>
+                <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">
+                  Seedling International Academy students consistently achieve excellent results in Cambridge International examinations. Our students receive distinctions and strong grades, opening doors to top universities worldwide — in India and abroad.
+                </p>
               </div>
               <div className="flex-shrink-0 relative z-10">
-                <div className="w-40 h-40  rounded-full flex flex-col items-center justify-center border-2 border-navy/10 bg-navy text-white transition-colors duration-500">
+                <div className="w-40 h-40 rounded-full flex flex-col items-center justify-center border-2 border-navy/10 bg-navy text-white transition-colors duration-500">
                   <span className="font-playfair text-5xl font-bold">100%</span>
                   <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
                 </div>

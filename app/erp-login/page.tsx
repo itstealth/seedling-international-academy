@@ -18,7 +18,8 @@ export default function ERPLoginPage() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // ERP redirect would go here
+    // Redirect to StudyAbase ERP portal for Seedling International Academy
+    window.location.href = 'https://studybase.in/login?q=SeedlingInternationalAcademy-JawaharNagar';
   }
 
   const placeholders: Record<string, string> = {
@@ -36,7 +37,7 @@ export default function ERPLoginPage() {
         <div className="absolute inset-0">
           <Image
             src="/assets/Home/School2.webp"
-            alt="Cambridge International School"
+            alt="Seedling International Academy"
             fill
             className="object-cover"
             priority
@@ -48,8 +49,8 @@ export default function ERPLoginPage() {
         <div className="relative z-10">
           <Link href="/" className="block">
             <Image
-              src="/SPS_Logo.png"
-              alt="Cambridge International School"
+              src="/camb_logo.png"
+              alt="Seedling International Academy"
               width={200}
               height={200}
               className="rounded-full object-cover ring-2 ring-white/20"
@@ -95,7 +96,7 @@ export default function ERPLoginPage() {
 
           {/* Mobile logo */}
           <Link href="/" className="lg:hidden flex items-center gap-3 mb-8">
-            <Image src="/SPS_Logo.png" alt="Cambridge International School" width={50} height={50} className="rounded-full object-cover" />
+            <Image src="/camb_logo.png" alt="Seedling International Academy" width={50} height={50} className="rounded-full object-cover" />
           </Link>
 
           {/* Heading */}

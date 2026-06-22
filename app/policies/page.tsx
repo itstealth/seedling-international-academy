@@ -6,7 +6,7 @@ import { Shield, Mail, Globe, FileText, Lock, Users, AlertCircle } from "lucide-
 
 const sections = [
   {
-    title: "Privacy Policy of Cambridge International School",
+    title: "Privacy Policy of Seedling International School",
     icon: Shield,
     content: `This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy for the School App is managed with the help of standard privacy policy frameworks.\n\nWe use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.\n\nThis Privacy Policy applies to the mobile application and digital services operated by Seedling School.`
   },
@@ -73,7 +73,7 @@ const sections = [
   {
     title: "Contact Us",
     icon: Mail,
-    content: `If you have any questions regarding this Privacy Policy, please contact us:\n\nCambridge International School, Jaipur\n\nEmail: cambridgeacademy@hotmail.com\n\nWebsite: https://cambridgeinternationalschool.com/\n\nContact No: 0141-3623000`,
+    content: `If you have any questions regarding this Privacy Policy, please contact us:\n\nSeedling International School, Jaipur\n\nEmail: cambridgeacademy@hotmail.com\n\nWebsite: https://cambridgeinternationalschool.com/\n\nContact No: 0141-3623000`,
     isLast: true
   }
 ];

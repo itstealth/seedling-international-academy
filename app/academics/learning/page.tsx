@@ -147,7 +147,7 @@ function IntroSection() {
               A Student-Centric Approach to Every Child's Journey
             </h2>
             <p className="text-lg leading-relaxed mb-6" style={{ color: "#5a5a5a", fontFamily: "'DM Sans', sans-serif" }}>
-              The learning support system at Cambridge International School, Jawahar Nagar, is designed to ensure that every student receives the guidance and encouragement needed to reach their full potential.
+              The learning support system at Seedling International School, Jawahar Nagar, is designed to ensure that every student receives the guidance and encouragement needed to reach their full potential.
             </p>
             <p className="text-lg leading-relaxed" style={{ color: "#5a5a5a", fontFamily: "'DM Sans', sans-serif" }}>
               The school believes that each child learns differently, and therefore adopts a student-centric approach that caters to diverse learning needs and abilities.
@@ -415,7 +415,7 @@ function Summary() {
             & Motivated
           </h2>
           <p className="text-xl text-white/75 max-w-3xl mx-auto leading-relaxed mb-14" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Overall, the learning support at Cambridge International School, Jawahar Nagar, creates an inclusive and encouraging environment where every student feels valued, supported, and motivated to succeed academically and personally.
+            Overall, the learning support at Seedling International School, Jawahar Nagar, creates an inclusive and encouraging environment where every student feels valued, supported, and motivated to succeed academically and personally.
           </p>
           <div className="flex flex-wrap justify-center gap-5">
             <a

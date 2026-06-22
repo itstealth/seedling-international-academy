@@ -194,7 +194,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <img
             src="/assets/Home/building-from-top.jpg"
             className="w-full h-full object-cover"
-            alt="Cambridge International School"
+            alt="Seedling International School"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a3a5c]/70 via-[#1a3a5c]/60 to-[#1a3a5c]/80" />
         </div>
@@ -243,7 +243,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               New
             </span>
             <span className="truncate pr-2 text-sm font-semibold text-white">
-              Admissions open for 2026-27 academic session
+              Cambridge IGCSE Affiliated · Jaipur
             </span>
           </div>
         </div>
@@ -275,19 +275,19 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 items-center">
             {/* Text */}
             <div className="order-1 lg:order-2">
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Cambridge International School</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling International Academy</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
               </h2>
               <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
-                Cambridge International School stands as one of Jaipur's most trusted educational institutions. Our approach blends rigorous academics with emotional intelligence, creativity, and leadership.
+                Welcome to Seedling International Academy, your gateway to a holistic education under the esteemed Cambridge IGCSE Board. At Seedling, we believe in nurturing young minds to become confident, compassionate, and globally aware individuals.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 mb-6 md:mb-12">
                 {[
                   { icon: BookOpen, title: 'Cambridge Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
                   { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top Cambridge academic outcomes." },
                   { icon: Heart, title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
-                  { icon: Brain, title: 'Mental Wellness', desc: 'Dedicated professional counsellors.' },
+                  { icon: Brain, title: 'University Counseling', desc: 'Dedicated guidance for global higher-education pathways.' },
                 ].map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="flex gap-4 items-start p-6 bg-white rounded-3xl shadow-sm border border-sand/30 hover:border-navy/20 transition-all group">
                     <div className="w-12 h-12 rounded-2xl bg-navy-light text-navy flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -381,7 +381,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="mb-12 md:mb-20">
             <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-              Champions <em className="font-semibold text-sand italic">Everywhere</em>
+              Sports
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
@@ -415,14 +415,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-12">
-                Start Your Child's <em className="font-semibold text-navy italic">Joyride</em>.
+                Why Seedling International Academy?
               </h2>
               <div className="flex flex-col gap-6">
                 {[
                   { num: '01', title: 'Personalized Journeys', desc: "Tailored approaches for each child's strengths." },
                   { num: '02', title: 'Future-Ready Skills', desc: 'AI literacy and critical thinking integrated.' },
                   { num: '03', title: 'Global Mindset', desc: 'International exposure with Indian values.' },
-                  { num: '04', title: 'Career Guidance', desc: 'Expert counselling from Grade 8 onwards.' },
+                  { num: '04', title: 'University Counseling', desc: 'Dedicated guidance for global higher-education pathways.' },
                 ].map(({ num, title, desc }) => (
                   <div key={num} className="flex gap-6 items-start p-8 bg-white rounded-[2rem] shadow-sm border border-sand/30 hover:shadow-editorial hover:border-navy/20 transition-all group">
                     <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{num}</div>
@@ -601,7 +601,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge International School</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling International School</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
@@ -642,9 +642,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Cambridge International School students shine again with 14 students scoring above 95% in Cambridge.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
+                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Seedling International School students shine again with 14 students scoring above 95% in Cambridge.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJKS2PAsE6/" },
-                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Cambridge International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
+                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
                 ].map(({ day, month, title, desc, url }, index) => (
                   <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
@@ -682,7 +682,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   '/assets/Home/trending6.jpg',
                 ].map((src, i) => (
                   <div key={i} className="rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
-                    <img src={src} alt={`Cambridge International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <img src={src} alt={`Seedling International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                   </div>
                 ))}
               </a>
@@ -709,7 +709,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   'Early Bird Benefits for Registrations',
                   'Scholarships for Meritorious Students',
                   'Counselling Available Online & Offline',
-                  'Flexible Fee Payment Options',
+                  'Flexible curriculum tailored to individual needs',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-4 text-white font-bold text-sm uppercase tracking-widest">
                     <span className="w-6 h-6 rounded-full bg-crimson flex items-center justify-center text-[10px]">✓</span> {item}
@@ -721,7 +721,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
             <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8 ">Request a Callback</h3>
+              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8 ">Building Joyful Classroom Connections</h3>
               <CallbackForm />
             </div>
           </div>

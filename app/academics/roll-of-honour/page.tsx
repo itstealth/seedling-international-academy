@@ -20,7 +20,7 @@ import Link from "next/link";
 const achievements = [
   { 
     title: "100% Board Success", 
-    desc: "A consistent track record of perfect results in Cambridge & Cambridge examinations.",
+    desc: "A consistent track record of perfect results in Cambridge examinations.",
     icon: Trophy,
     stat: "100%",
     color: "secondary"
@@ -96,7 +96,7 @@ export default function RollOfHonourPage() {
               {[
                 { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },
                 { name: "Subject Toppers", count: "45 Students", sub: "Achieved perfect 100 in various subjects" },
-                { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Cambridge International School at National level" },
+                { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at National level" },
                 { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in IVY League" }
               ].map((row, i) => (
                 <motion.div 
