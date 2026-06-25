@@ -642,9 +642,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '16', month: 'MAY', title: 'Board Results 2026', desc: 'Seedling International School students shine again with 14 students scoring above 95% in Cambridge.',url: 'https://www.instagram.com/p/DYZvohtk0WF/' },
-                  { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJKS2PAsE6/" },
-                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXn85ZfCcGn/?img_index=1" },
+                  { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Seedling International School students shine again with 100% in Cambridge.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
+                  { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
+                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
                 ].map(({ day, month, title, desc, url }, index) => (
                   <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
@@ -662,7 +662,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 ))}
               </div>
 
-              <a href="https://www.instagram.com/cambridgeinternationalschooljaipur" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
+              <a href="https://www.instagram.com/seedlinginternational/" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
                 <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
                   <Camera size={18} strokeWidth={2.5} />
                   Follow Updates

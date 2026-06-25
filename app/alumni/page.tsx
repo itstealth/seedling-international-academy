@@ -73,7 +73,7 @@ const stats = [
 const achievements = [
   {
     title: "Alumni Accomplishment",
-    body: "We take great pride in celebrating the remarkable achievements of our esteemed alumni — showcasing their talents, dedication, and success stories.",
+    body: "We take great pride in celebrating the remarkable achievements of our esteemed alumni. Here, we highlight the extraordinary accomplishments of our graduates, showcasing their talents, dedication, and success stories. Discover their journeys of growth, resilience, and perseverance, and gain insights into how Seedling School played a pivotal role in shaping their path to success.",
     icon: "🏅",
     color: "border-sand/40 bg-sand/10",
   },

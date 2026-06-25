@@ -25,7 +25,7 @@ const navItems = [
   },
   { name: "School Life", href: "/school-life", dropdown: [{ name: "School Life", href: "/school-life" }, { name: "Sports", href: "/sports" },] },
   { name: "News & Events", href: "/news-and-events" },
-  { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Transport Facility", href: "/transport-facility" }] },
+  { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Online Registration", href: "/admissions/online" }, { name: "Transport Facility", href: "/transport-facility" }] },
   { name: "Career", href: "/career" },
   { name: "Alumni", href: "/alumni" },
   { name: "Contact", href: "/contact-us" },
@@ -459,7 +459,7 @@ export default function Navbar() {
                         <Phone className="w-5 h-5" />
                       </a>
                       <a
-                        href="mailto:info@cambridgeinternationalschool.edu"
+                        href="mail to:seedlingacademy@hotmail.com"
                         className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
                         aria-label="Email us"
                       >

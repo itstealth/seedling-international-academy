@@ -299,7 +299,7 @@ export default function AboutPage() {
             {[
               {
                 title: "Confident",
-                desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.",
+                desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum and IB curriculum, they gain confidence to face challenges and express ideas.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -310,7 +310,7 @@ export default function AboutPage() {
               },
               {
                 title: "Reflective",
-                desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.",
+                desc: "We foster a reflective approach to learning, where students evaluate their work, identify strengths and weaknesses, and make improvements.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -321,7 +321,7 @@ export default function AboutPage() {
               },
               {
                 title: "Responsible",
-                desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.",
+                desc: "Responsibility is a core value at Seedling Modern International Academy. We encourage our students to take ownership of their learning and actions, preparing them to be ethical leaders.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -332,7 +332,7 @@ export default function AboutPage() {
               },
               {
                 title: "Innovative",
-                desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.",
+                desc: "With the Cambridge curriculum and IB curriculum, we encourage innovation in problem-solving and creative thinking. Seedling Modern International Academy nurtures innovative thinking by allowing students to explore new ideas, embrace technology, and engage in hands-on learning experiences that prepare them to tackle the challenges of the future.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -343,7 +343,7 @@ export default function AboutPage() {
               },
               {
                 title: "Engaged",
-                desc: "Learning comes alive as students participate in hands-on activities, collaborative projects, and interactive discussions.",
+                desc: "At Seedling Modern International Academy, we ensure that our students are actively engaged in their learning journey. Whether in the classroom or during extracurricular activities, we encourage students to stay curious, explore new ideas, and develop a passion for learning. Engagement is key to preparing students for success in a rapidly changing world.",
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
