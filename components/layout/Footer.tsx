@@ -117,11 +117,10 @@ export default function Footer() {
                 <h3 className="text-crimson font-black text-xs tracking-[0.3em] uppercase block border-b border-white/10 pb-4">Our Institutions</h3>
                 <div className="space-y-6">
                   {[
-                    { name: 'Seedling International Academy (Cambridge)', loc: 'Jawahar Nagar, Jaipur', link: '/' },
-                    { name: 'Seedling Public School (SPS)', loc: 'Jawahar Nagar, Jaipur', link: '' },
+                    { name: 'Seedling Public School (SPS)', loc: 'Jawahar Nagar, Jaipur', link: 'https://sps.seedlingschools.com/' },
                     { name: 'Seedling Modern High School (SMHS)', loc: 'Jawahar Nagar, Jaipur', link: '' },
-                    { name: 'Seedling MIT Academy (SMIA)', loc: 'Jawahar Nagar, Jaipur', link: '' },
-                    { name: 'SWKL', loc: 'Jawahar Nagar, Jaipur', link: '' },
+                    { name: 'Seedling MIT Academy (SMIA)', loc: 'Jawahar Nagar, Jaipur', link: 'https://www.seedlingschools.com/smia.php' },
+                    { name: 'SWKL', loc: 'Jawahar Nagar, Jaipur', link: 'https://seedlingschools.com/swkl.php' },
                   ].map((school) => (
                     <div key={school.name} className="group cursor-default">
                       {school.link ? (
@@ -166,11 +165,11 @@ export default function Footer() {
                 <div className="space-y-6">
                   <div className="space-y-1">
                     <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block">General Inquiry</span>
-                    <a href="mailto:info@cambridgeinternationalschool.com" className="text-sm font-black text-white/80 hover:text-sand transition-colors">info@cambridgeinternationalschool.com</a>
+                    <a href="mail to:seedlingacademy@hotmail.com" className="text-sm font-black text-white/80 hover:text-sand transition-colors">seedlingacademy@hotmail.com</a>
                   </div>
                   <div className="space-y-1">
                     <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block mt-4">Admission Helpline</span>
-                    <a href="tel:+917413012351" className="text-sm font-black text-white/80 hover:text-sand transition-colors">+91 7413012351</a>
+                    <a href="tel:+917413012351" className="text-sm font-black text-white/80 hover:text-sand transition-colors">: +91 7413012351</a>
                     <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block mt-2">Office Landline</span>
                     <a href="tel:01413623000" className="text-sm font-black text-white/80 hover:text-sand transition-colors">0141 3623000</a>
                   </div>

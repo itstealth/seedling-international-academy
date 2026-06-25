@@ -26,7 +26,7 @@ const SPORTS = [
     desc:"Our multi-sport ground is where champions are forged. From morning practice to competitive matches, our expansive facility hosts a variety of sports for students of all skill levels.",
     highlights:["FIFA-standard turf field","200m athletic track","Cricket practice nets","Floodlit courts"] },
   { id:"basketball", name:"Basketball", tagline:"Rise. Dribble. Dominate.",      accent:T.crimson,     icon:"🏀",
-    img:"/assets/SPORTS%20DAY/basketball.JPG",
+    img:"/assets/bb.JPG",
     desc:"Fast-paced and built on teamwork — our basketball program develops court vision, agility, and winning mindsets.",
     highlights:["State-of-art indoor courts","3v3 & 5v5 formats","Inter-school leagues","Elite point guard training"] },
   { id:"indoor",     name:"Volleyball", tagline:"Set. Spike. Soar.", accent:T.mauve,       icon:"🏐",

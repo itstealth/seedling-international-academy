@@ -162,7 +162,7 @@ const achievements = [
 ];
 
 const learnerProfile = [
-  { trait: "Confident", desc: "Students embark on a journey of self-discovery, fearlessly exploring new ideas and embracing challenges with a can-do attitude.", emoji: "💪", img: "/assets/SENIIOR INVESTITURE/1.webp" },
+  { trait: "Confident", desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum and IB curriculum, they gain confidence to face challenges and express ideas.", emoji: "💪", img: "/assets/SENIIOR INVESTITURE/1.webp" },
   { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "/assets/WHISPERS OF WELLNESS/2.webp" },
   { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "/assets/ROAD SAFETY WEEK/1.webp" },
   { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "/assets/DESIGN CAREER FAIR/2.webp" },
