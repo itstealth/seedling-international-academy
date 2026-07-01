@@ -12,10 +12,10 @@ export default function Footer() {
         <div className="relative z-10 -mb-24">
           <div className="bg-linear-to-r from-gray-200 to-gray-300 rounded-2xl overflow-hidden h-96 relative group shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1549979047-f06bb9619b61?q=80&w=1374&auto=format&fit=crop"
+              src="https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-25%2FMiniMax-M2.7%2F2030974885278265449%2F76abb27ef643f6f1c4c01df53b7505c73d25d895193cd08f929a1ababe40c991..jpeg?Expires=1782468885&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=Cthy7fb9H7EG3CjfksbL7YHQb28%3D"
               className="w-full h-full object-cover opacity-80"
             />
-            <div className="absolute inset-0 bg-black/20 flex flex-col justify-center p-12 md:p-24">
+            <div className="absolute inset-0 bg-red-900/40 flex flex-col justify-center p-12 md:p-24">
               <h2 className="text-white text-5xl md:text-6xl font-bold max-w-2xl mb-8">
                 Join our learning community today
               </h2>
