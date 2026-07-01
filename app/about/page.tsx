@@ -65,7 +65,7 @@ const timeline = [
     year: "2005",
     title: "Opening New Horizons — Durgapura",
     desc: "Seedling International School (Cambridge) opened its doors in Durgapura, expanding the group's reach and bringing the same ethos of joyful, reflective learning to a new community.",
-    img: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-04%2FMiniMax-M2.7%2F2030974885278265449%2F8c27b7b5301a4f87deea25c4e0cd132c8ae686bc9a4a6da38bb9f3eb35462c2b..jpeg?Expires=1780644553&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=xHeS8LsQORtgHKBNLNAbXXMy1HY%3D",
+    img: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-25%2FMiniMax-M2.7%2F2030974885278265449%2Fd75d3f45a0f389fe69222b03c3945a95f7e7dd03cd24bb3ca1f94cf38400d234..jpeg?Expires=1782471923&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=%2FO53SxoBM%2B9PypsI76%2BoXp7k4jc%3D",
     side: "right",
   },
   {
@@ -80,7 +80,7 @@ const timeline = [
     year: "2015",
     title: "Seedling International Academy",
     desc: "A second Cambridge-affiliated institution — Seedling International Academy — was established in Durgapura, completing a full dual-campus, dual-curriculum ecosystem.",
-    img: "/assets/Home/smia-student.jpg",
+    img: "https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-06-25%2FMiniMax-M2.7%2F2030974885278265449%2Fba7477178cb438cbf1c1061ee45bbbabb6f86e0fb740fa7b4694bde9da077309..jpeg?Expires=1782472435&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=3FmZkX1YscxZ162i2uRv1JEQhgA%3D",
     side: "right",
   },
   {
