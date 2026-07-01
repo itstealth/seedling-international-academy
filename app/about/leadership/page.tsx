@@ -92,7 +92,7 @@ export default function LeadershipPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
-        backgroundImage="/assets/banner/leadership-banner-img.jpeg"
+        backgroundImage="/assets/img/career.jpeg"
         title="Leadership"
         position={70}
         badge="Anchored In Purpose. Driven By A Vision"
