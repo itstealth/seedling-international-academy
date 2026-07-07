@@ -19,7 +19,7 @@ export default function Footer() {
               <div className="col-span-2 md:col-span-3 lg:col-span-3 space-y-5">
                 <div className="flex items-center">
                   <img
-                    src="/camb_Logo.png"
+                    src="/camb_logo.png"
                     alt="Seedling International School Logo"
                     className="h-20 w-auto object-contain"
                   />
