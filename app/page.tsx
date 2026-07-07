@@ -175,7 +175,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             disableRemotePlayback
           >
             <source
-              src="/assets/Home/WhatsApp%20Video%202026-07-07%20at%201.05.34%20PM.mp4"
+              src="/assets/Home/hero-chunk-1.mp4"
               type="video/mp4"
             />
           </video>
