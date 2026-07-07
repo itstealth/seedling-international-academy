@@ -118,7 +118,7 @@ export default function Footer() {
                     href="https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block h-40 rounded-lg overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
+                    className="block h-[172px] rounded-lg overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
                   >
                     <iframe
                       src="https://www.google.com/maps?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur&output=embed"
