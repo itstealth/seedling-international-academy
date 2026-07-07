@@ -21,7 +21,7 @@ export default function Footer() {
                   <img
                     src="/camb_logo.png"
                     alt="Seedling International School Logo"
-                    className="h-20 w-auto object-contain"
+                    className="h-28 w-auto object-contain"
                   />
                 </div>
                 <p className="text-sm leading-relaxed text-white/60 font-medium max-w-lg font-dm hidden md:block">
