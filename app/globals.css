@@ -12,11 +12,19 @@
   --color-text-base: #2c2c2c;
   --color-text-light: #5a5a5a;
   --color-navy-dark: #013975;
-  --color-navy-deeper: #013975;
+  --color-navy-deeper: #00142e;
   --color-crimson-dark: #8e1037;
   --color-crimson-deeper: #7a0f35;
   --color-navy-light: #eef4fc;
   --color-cool-white: #f0f4ff;
+  --color-royal-blue: #1e4db7;
+
+  /* Cambridge Pathway stage colors */
+  --color-camb-ey: #7c3aed;        /* Early Years – purple */
+  --color-camb-p:  #2563eb;        /* Primary – blue */
+  --color-camb-ls: #059669;        /* Lower Secondary – green */
+  --color-camb-us: #ea580c;        /* Upper Secondary – orange */
+  --color-camb-a:  #9f1239;        /* Advanced – maroon */
 
   /* Fonts */
   --font-serif: var(--font-serif);

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, X, Menu, ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Phone, Mail, MapPin, X } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
@@ -41,6 +41,114 @@ const announcements = [
 const schools = [
   "Seedling International School (Cambridge), Jawahar Nagar, Jaipur",
 ];
+
+function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isOpen) {
+      setQuery("");
+      // Autofocus shortly after the popup mounts
+      const t = setTimeout(() => inputRef.current?.focus(), 80);
+      return () => clearTimeout(t);
+    }
+  }, [isOpen]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen, onClose]);
+
+  const suggestions = [
+    "Admissions",
+    "Curriculum",
+    "Fee Structure",
+    "Transport Facility",
+    "Mandatory Disclosures",
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    if (q) {
+      onClose();
+      router.push(`/search?q=${encodeURIComponent(q)}`);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    onClose();
+    router.push(`/search?q=${encodeURIComponent(suggestion)}`);
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-navy-deeper/75 backdrop-blur-[2px]"
+            onClick={onClose}
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+            className="fixed left-1/2 top-24 z-[210] w-[calc(100%-2rem)] max-w-[640px] [translate:-50%_0] bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col"
+          >
+            <form onSubmit={handleSubmit} className="flex items-center gap-3 px-5 sm:px-7 py-4 sm:py-5 border-b border-neutral-200">
+              <svg className="w-5 h-5 text-neutral-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+              <input
+                ref={inputRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search the school..."
+                className="flex-1 min-w-0 bg-transparent outline-none font-playfair text-lg sm:text-xl text-text-base placeholder:text-[#8c8c8c]"
+              />
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-navy-deeper/80 text-navy-deeper hover:bg-navy-deeper hover:text-white transition-colors flex-shrink-0"
+                aria-label="Close search"
+              >
+                <X className="w-4 h-4" strokeWidth={2} />
+              </button>
+            </form>
+
+            <div className="px-5 sm:px-7 py-5">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-text-light mb-3">Popular Searches</p>
+              <div className="flex flex-wrap gap-2">
+                {suggestions.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => handleSuggestionClick(s)}
+                    className="px-4 py-2 rounded-full bg-navy-deeper/5 hover:bg-royal-blue hover:text-white text-sm font-semibold text-navy-deeper transition-colors"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
 
 function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [formData, setFormData] = useState({
@@ -265,7 +373,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [showSearchPopup, setShowSearchPopup] = useState(false);
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
   const pathname = usePathname();
 
@@ -294,75 +402,121 @@ export default function Navbar() {
         */}
 
         {/* ── MAIN HEADER ── */}
-        <header className="bg-navy-deeper">
-          <div className="max-w-[1600px] mx-auto px-4 py-2 sm:px-6 lg:px-10">
-            <div className="flex items-center justify-between h-[68px] gap-6">
-              {/* Logo */}
-              <div className="flex-shrink-0">
-                <Link href="/" className="flex items-center gap-4 group">
+        <motion.header
+          className="bg-navy-deeper relative overflow-hidden"
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Animated shimmer band */}
+          <motion.div
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-royal-blue to-transparent"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+          {/* Subtle moving glow */}
+          <motion.div
+            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-royal-blue/10 blur-3xl rounded-full pointer-events-none"
+            animate={{ x: ["-50%", "-30%", "-50%"] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <div className="max-w-[1600px] mx-auto px-4 py-4 sm:px-6 lg:px-10 relative z-10">
+            <div className="flex items-center justify-between gap-4 lg:gap-8">
+              {/* LEFT: Contact Info */}
+              <motion.div
+                className="hidden lg:flex flex-col gap-1 text-white flex-1 min-w-0"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <a
+                  href="mailto:admissions@seedlinginternational.edu.in"
+                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="truncate">admissions@seedlinginternational.edu.in</span>
+                </a>
+                <a
+                  href="tel:+917413012351"
+                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
+                  <span>+91 74130 12351 (Admissions)</span>
+                </a>
+                <a
+                  href="tel:+911412345678"
+                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
+                  <span>+91 84481 43444 (Admissions)</span>
+                </a>
+              </motion.div>
+
+              {/* CENTER: Logo */}
+              <motion.div
+                className="flex-shrink-0"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link href="/" className="flex items-center">
                   <Image
                     src="/camb_logo.png"
                     alt="Seedling International School Logo"
-                    width={260}
+                    width={140}
                     height={70}
-                    className="h-32 w-auto object-contain"
+                    className="h-10 sm:h-14 md:h-16 w-auto object-contain"
                     priority
                   />
                 </Link>
-              </div>
+              </motion.div>
 
-              {/* Desktop Navigation */}
-              <nav className="hidden xl:flex items-center justify-end gap-1">
-                {navItems.map((item) => (
-                  <div key={item.name} className="relative group flex items-center">
-                    {item.dropdown ? (
-                      <>
-                        <button className={`inline-flex h-10 items-center justify-center gap-1 px-2.5 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname.startsWith(item.href) ? "text-sand" : "text-white/80 hover:text-white"}`}>
-                          {item.name}
-                          <ChevronDown className="w-3 h-3" />
-                        </button>
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-navy-deeper/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
-                          {item.dropdown.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              className={`block px-5 py-3 text-sm font-bold uppercase tracking-wider transition-colors ${pathname === sub.href ? "text-sand" : "text-white/80 hover:text-white hover:bg-white/5"}`}
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`inline-flex h-10 items-center justify-center px-2.5 text-[13px] font-black uppercase tracking-wider transition-all whitespace-nowrap ${pathname === item.href ? "text-sand" : "text-white/80 hover:text-white"}`}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </nav>
-
-              {/* Mobile Menu Button */}
-              <div className="xl:hidden flex items-center">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="p-2.5 rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
-                  aria-label={isOpen ? "Close menu" : "Open menu"}
+              {/* RIGHT: Actions */}
+              <motion.div
+                className="flex items-center gap-3 sm:gap-5 flex-1 justify-end min-w-0"
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <Link
+                  href="/"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110"
+                  aria-label="Home"
                 >
-                  {isOpen ? (
-                    <X className="w-6 h-6" />
-                  ) : (
-                    <Menu className="w-6 h-6" />
-                  )}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12 12 2.25 21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+                  </svg>
+                </Link>
+                <button
+                  onClick={() => setShowSearchPopup(true)}
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110 hover:rotate-6"
+                  aria-label="Open search"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>
                 </button>
-              </div>
-
-                          </div>
+                <motion.button
+                  onClick={() => setIsOpen(true)}
+                  className="relative flex items-center gap-3 bg-royal-blue text-white px-4 sm:px-6 py-2.5 sm:py-3 overflow-hidden group"
+                  aria-label="Open menu"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {/* Shimmer sweep on hover */}
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+                  <span className="relative font-black text-[12px] sm:text-[13px] uppercase tracking-[0.2em]">Menu</span>
+                  <svg className="relative w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+                  </svg>
+                </motion.button>
+              </motion.div>
+            </div>
           </div>
-        </header>
+        </motion.header>
 
         {/* ── MOBILE NAV DRAWER ── */}
         <AnimatePresence>
@@ -372,69 +526,66 @@ export default function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[80] bg-navy-deeper/60 backdrop-blur-sm xl:hidden"
+                className="fixed inset-0 z-[80] bg-royal-blue/10 backdrop-blur-2xl"
                 onClick={() => setIsOpen(false)}
               />
               <motion.div
-                initial={{ x: "-100%" }}
+                initial={{ x: "100%" }}
                 animate={{ x: 0 }}
-                exit={{ x: "-100%" }}
+                exit={{ x: "100%" }}
                 transition={{ type: "spring", bounce: 0, duration: 0.5 }}
-                className="fixed inset-y-0 left-0 z-[90] w-[80%] max-w-[320px] bg-navy-deeper xl:hidden overflow-hidden flex flex-col"
+                className="fixed inset-y-0 right-0 z-[90] w-full sm:w-[480px] sm:max-w-[90%] bg-navy-deeper/85 backdrop-blur-2xl border-l border-white/10 overflow-y-auto flex flex-col shadow-2xl"
               >
-                <div className="flex items-center justify-between p-3 border-b border-white/[0.06]">
-                  <Link href="/" onClick={() => setIsOpen(false)}>
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 gap-4">
+                  <Link href="/" onClick={() => setIsOpen(false)} className="flex-1 min-w-0">
                     <Image
                       src="/camb_Logo.png"
                       alt="Seedling International School Logo"
-                      width={180}
-                      height={54}
-                      className=" w-auto object-contain"
+                      width={300}
+                      height={90}
+                      className="h-[64px] sm:h-[90px] w-auto object-contain"
                     />
                   </Link>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 text-white/40 hover:text-white transition-colors bg-white/10 rounded-full"
+                    className="flex items-center gap-3 text-white hover:text-white transition-colors group flex-shrink-0"
                     aria-label="Close menu"
                   >
-                    <X className="w-5 h-5" />
+                    <span className="inline-flex items-center justify-center w-11 h-11 bg-royal-blue text-white rounded-full transition-colors group-hover:bg-[#16459e]">
+                      <X className="w-5 h-5" strokeWidth={2.5} />
+                    </span>
                   </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto px-6 py-6">
+                <div className="flex-1 overflow-y-auto px-6 sm:px-8 py-6">
                   <div className="flex flex-col gap-1">
                     {navItems.filter(item => item.name !== "Home").map((item) => (
-                      <div key={item.name}>
+                      <div key={item.name} className="border-b border-white/5 pb-3 mb-3">
                         <div className="flex items-center justify-between">
                           {item.dropdown ? (
-                            <button
-                              onClick={() => setMobileExpanded(mobileExpanded === item.name ? null : item.name)}
-                              className={`flex-1 py-3 text-[16px] font-bold uppercase tracking-wider transition-colors flex items-center gap-2 ${pathname.startsWith(item.href) ? "text-sand" : "text-white/70"}`}
+                            <span
+                              className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
                             >
                               {item.name}
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
-                                className={`transition-transform ${mobileExpanded === item.name ? "rotate-180" : ""}`}>
-                                <polyline points="6 9 12 15 18 9" />
-                              </svg>
-                            </button>
+                            </span>
                           ) : (
                             <Link
                               href={item.href}
-                              onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
-                              className={`flex-1 py-3 text-[16px] font-bold uppercase tracking-wider transition-colors ${pathname === item.href ? "text-sand" : "text-white/70"}`}
+                              onClick={() => setIsOpen(false)}
+                              className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
                             >
                               {item.name}
                             </Link>
                           )}
                         </div>
-                        {item.dropdown && mobileExpanded === item.name && (
-                          <div className="ml-4 border-l border-white/[0.08] pl-4 space-y-1">
+                        {item.dropdown && (
+                          <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/40 pl-4 sm:pl-6 space-y-1 mt-1">
                             {item.dropdown.map((child) => (
                               <Link
                                 key={child.name}
                                 href={child.href}
-                                onClick={() => { setIsOpen(false); setMobileExpanded(null); }}
-                                className={`block py-2.5 text-[14px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-sand" : "text-white/50"}`}
+                                onClick={() => setIsOpen(false)}
+                                className={`block py-2 text-sm sm:text-base font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
                               >
                                 {child.name}
                               </Link>
@@ -445,29 +596,29 @@ export default function Navbar() {
                     ))}
                     <Link
                       href="#"
-                      onClick={(e) => { e.preventDefault(); setShowInquiryPopup(true); setIsOpen(false); setMobileExpanded(null); }}
-                      className="block w-full text-center py-4 bg-crimson text-white text-[12px] font-black uppercase tracking-widest rounded-lg hover:bg-crimson-dark transition-colors mt-4"
+                      onClick={(e) => { e.preventDefault(); setShowInquiryPopup(true); setIsOpen(false); }}
+                      className="block w-full text-center py-4 mt-6 bg-royal-blue text-white text-[12px] font-black uppercase tracking-[0.2em] rounded-lg hover:bg-[#16459e] transition-colors"
                     >
                       Enquire Now
                     </Link>
-                    <div className="flex items-center justify-center gap-4 py-4">
+                    <div className="flex items-center justify-center gap-4 py-6">
                       <a
                         href="tel:+917413012351"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
                         aria-label="Call us"
                       >
                         <Phone className="w-5 h-5" />
                       </a>
                       <a
                         href="mail to:seedlingacademy@hotmail.com"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
                         aria-label="Email us"
                       >
                         <Mail className="w-5 h-5" />
                       </a>
                       <a
                         href="/contact-us#location"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
                         aria-label="Find us on map"
                       >
                         <MapPin className="w-5 h-5" />
@@ -529,6 +680,7 @@ export default function Navbar() {
         }
       `}</style> */}
       <InquiryPopup isOpen={showInquiryPopup} onClose={() => setShowInquiryPopup(false)} />
+      <SearchPopup isOpen={showSearchPopup} onClose={() => setShowSearchPopup(false)} />
     </>
   );
 }

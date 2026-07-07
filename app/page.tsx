@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
+import WorldMapDemo from "@/components/world-map-demo";
+import { AnimatePresence, motion } from "framer-motion";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -88,40 +90,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<TabKey>('campus');
   const [navShadow, setNavShadow] = useState<string>('0 2px 20px rgba(23,81,144,0.10)');
-  const [currentTestimonial, setCurrentTestimonial] = useState<number>(0);
-  const [isDesktop, setIsDesktop] = useState<boolean>(false);
-
-  // Track desktop view
-  useEffect(() => {
-    const checkWidth = () => setIsDesktop(window.innerWidth >= 768);
-    checkWidth();
-    window.addEventListener('resize', checkWidth);
-    return () => window.removeEventListener('resize', checkWidth);
-  }, []);
-
-  // Auto-scroll testimonials (single on mobile, group on desktop)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isDesktop) {
-        setCurrentTestimonial((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 3));
-      } else {
-        setCurrentTestimonial((prev) => (prev >= testimonials.length - 1 ? 0 : prev + 1));
-      }
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [isDesktop]);
-
-  const testimonials = [
-    
-    { avatar: '/assets/testimonial/deepak-gupta.jpg', name: 'Deepak Gupta<br />& Renu Gupta', role: 'Parents · Jaipur', text: 'We are truly grateful for the support and leadership shown during our children\'s sports day. Your dedication made the event special.' },
-    { avatar: '/assets/testimonial/Soniya-Yadav.jpg', name: 'Narendra Kumar Sharma<br />& Soniya Yadav', role: 'Parents · Vaishali Nagar', text: 'The school provides holistic education, nurturing academic growth, creativity, and confidence. Teachers go beyond teaching and create a motivating environment for children.' },
-    { avatar: '/assets/testimonial/Bhanupriya-Singh.jpg', name: 'Bhanupriya<br />Singh', role: 'Parent · MI Road', text: 'The academic programme is well planned and balanced with co-curricular activities. Teachers and management are doing a great job in grooming children.' },
-    { avatar: '/assets/testimonial/Anita-Gupta.jpg', name: 'Mrs. Anita<br />Gupta', role: 'Parent · Raja Park', text: 'The curriculum and teaching methods are impressive. Worksheets and activities help children think beyond textbooks.' },
-    { avatar: '/assets/testimonial/ibha-chadra.jpg', name: 'Ibha<br />Chhabra', role: 'Parent · Jhotwara', text: 'We are grateful for the care, dedication, and guidance provided by the teachers and school management.' },
-    { avatar: '/assets/testimonial/aditi-sharma.jpg', name: 'Aditi<br />Sharma', role: 'Parent · Vaishali Nagar', text: "Aligned with NEP, the school provides modern and relevant education, giving us confidence in our child's future." },
-    { avatar: '/assets/testimonial/Sweta-Shrivastava.jpg', name: 'Sweta<br />Shrivastava', role: 'Parent · MI Road', text: 'Technology integration makes learning interactive and helps children build essential digital skills for the future.' },
-    { avatar: '/assets/testimonial/Muskan-Rupani.jpg', name: 'Muskan<br />Rupani', role: 'Parent · Jaipur', text: 'The school sets high standards in education with skilled teachers ensuring overall personality development.' },
-  ];
 
   // Sticky nav shadow on scroll
   useEffect(() => {
@@ -269,143 +237,410 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ─── ABOUT SCHOOL ─── */}
-      <section className="bg-off-white py-8 md:pt-16 md:pb-8" id="about">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 items-center">
-            {/* Text */}
-            <div className="order-1 lg:order-2">
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">About Seedling International Academy</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
-                Nurturing <em className="font-semibold text-navy italic">Excellence</em> Since 1993.
-              </h2>
-              <p className="text-lg text-text-light leading-relaxed mb-10 font-light">
-                Welcome to Seedling International Academy, your gateway to a holistic education under the esteemed Cambridge IGCSE Board. At Seedling, we believe in nurturing young minds to become confident, compassionate, and globally aware individuals.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-6 mb-6 md:mb-12">
-                {[
-                  { icon: BookOpen, title: 'Cambridge Curriculum', desc: 'Comprehensive, future-aligned syllabus.' },
-                  { icon: Award, title: 'Award-Winning', desc: "Rajasthan's top Cambridge academic outcomes." },
-                  { icon: Heart, title: 'Holistic Growth', desc: 'Arts and life skills integrated daily.' },
-                  { icon: Brain, title: 'University Counseling', desc: 'Dedicated guidance for global higher-education pathways.' },
-                ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex gap-4 items-start p-6 bg-white rounded-3xl shadow-sm border border-sand/30 hover:border-navy/20 transition-all group">
-                    <div className="w-12 h-12 rounded-2xl bg-navy-light text-navy flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <Icon size={22} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-black text-navy-deeper mb-1 uppercase tracking-tight">{title}</h4>
-                      <p className="text-xs text-text-light leading-relaxed font-light">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="flex gap-4 flex-wrap mb-5 md:mb-0">
-                <a href="/about" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">Our Story</a>
-              {/* <a href="#admission" className="border-2 border-navy-deeper text-navy-deeper px-8 py-3.5 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-navy-deeper hover:text-white">Book a Tour</a> */}
-              </div>
-            </div>
 
-            {/* Images */}
-            <div className="relative order-2 lg:order-1">
-              <div className="grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 h-[400px]">
-                <div className="row-span-2 overflow-hidden rounded-[2.5rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/MainCampus.webp" alt="School Building" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white">
-                  <img src="/assets/Home/junior.webp" alt="Classroom" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-                <div className="overflow-hidden rounded-[2rem] shadow-editorial border-4 border-white relative">
-                  <img src="/assets/WHISPERS OF WELLNESS/2.webp" alt="Students" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" />
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-crimson text-white md:px-8 md:py-5 px-4 py-3 rounded-2xl shadow-2xl z-10">
-                <span className="block text-xl md:text-3xl font-semibold font-playfair leading-none mb-1">Cambridge</span>
-                <span className="text-[10px] font-black tracking-widest uppercase opacity-70">Affiliated School</span>
-              </div>
+      {/* ─── CURRICULUM OVERVIEW ─── */}
+      <section className="bg-navy-deeper pt-20 pb-24 relative overflow-hidden" id="curriculum">
+        {/* Gold accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <div className="inline-flex flex-col items-center gap-2 mb-5">
+              <span className="block w-px h-10 bg-sand" />
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand">Learning</span>
             </div>
+            <h2 className="font-playfair text-4xl md:text-6xl font-light text-white leading-tight mb-6">
+              Curriculum overview
+            </h2>
+            <p className="text-sm md:text-base text-white/80 leading-relaxed font-light max-w-2xl mx-auto">
+              At Seedling International School, we are dedicated to upholding the values and heritage of our founding school, while
+              building on British education excellence. Our curriculum emphasises academic rigour, personal growth, and a global
+              perspective from the Early Years to the Sixth Form. Our programme covers four stages and age groups:
+            </p>
+          </div>
+
+          {/* Stage cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+            {[
+              {
+                name: "Pre-Prep School",
+                age: "3 - 7 years",
+                img: "/assets/Home/3+ years .JPG",
+              },
+              {
+                name: "Prep School",
+                age: "7 - 11 years",
+                img: "/assets/Home/4+ years .JPG",
+              },
+              {
+                name: "Junior School",
+                age: "11 - 14 years",
+                img: "/assets/Home/11+ years .JPG",
+              },
+              {
+                name: "Senior School",
+                age: "14 - 16 years",
+                img: "/assets/Home/14+ years .JPG",
+              },
+              {
+                name: "Sixth Form",
+                age: "16 - 18 years",
+                img: "/assets/Home/16+ years.JPG",
+              },
+            ].map((stage, i) => (
+              <motion.div
+                key={stage.name}
+                className="group relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6, scale: 1.02 }}
+              >
+                {/* Image */}
+                <img
+                  src={stage.img}
+                  alt={stage.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Dark gradient overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+
+                {/* Top stage label */}
+                <div className="absolute top-4 left-4 right-4 flex justify-end">
+                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-white/70">
+                    Stage {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <h3 className="font-playfair text-xl md:text-2xl font-light text-white leading-tight mb-3">
+                    {stage.name}
+                  </h3>
+                  <span className="inline-block px-4 py-1.5 rounded-full border border-sand/70 text-sand text-[11px] font-black tracking-widest">
+                    {stage.age}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WORLD MAP / GLOBAL REACH ─── */}
+      <section className="bg-navy-deeper w-full" id="global-reach">
+        <div className="w-full">
+          <WorldMapDemo />
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS / VOICES FROM THE FAMILY ─── */}
+      <section className="bg-off-white py-16 md:py-24" id="testimonials">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <motion.div
+            className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.span
+              className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block"
+              initial={{ opacity: 0, letterSpacing: "0.1em" }}
+              whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6 }}
+            >
+              Testimonials
+            </motion.span>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
+              {"Voices from the ".split("").map((ch, idx) => (
+                <motion.span
+                  key={`v-${idx}`}
+                  className="inline-block"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.4, delay: idx * 0.025 }}
+                >
+                  {ch === " " ? " " : ch}
+                </motion.span>
+              ))}
+              <em className="font-semibold italic text-royal-blue">
+                {"Family".split("").map((ch, idx) => (
+                  <motion.span
+                    key={`f-${idx}`}
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.4 + idx * 0.05,
+                    }}
+                  >
+                    {ch}
+                  </motion.span>
+                ))}
+              </em>
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
+              >
+                .
+              </motion.span>
+            </h2>
+            <motion.p
+              className="mt-5 text-text-light text-base md:text-lg leading-relaxed font-light"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              Real stories from the parents, students and alumni who make
+              Seedling International School what it is today.
+            </motion.p>
+          </motion.div>
+
+          {/* Testimonial cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                quote:
+                  "Seedling has shaped my daughter into a confident, curious learner. The Cambridge curriculum and the teachers' dedication have made every day feel meaningful.",
+                name: "Priya Sharma",
+                role: "Parent — Grade 5",
+                accent: "from-royal-blue to-royal-blue",
+              },
+              {
+                quote:
+                  "From the IGCSE toppers to the sports field, the school gave me opportunities I never imagined. I'm proud to be a Seedling alumnus at a top global university today.",
+                name: "Aarav Mehta",
+                role: "Alumni — Class of 2022",
+                accent: "from-crimson to-crimson",
+              },
+              {
+                quote:
+                  "The holistic approach — academics, arts, sports and life skills — has helped my son find what he truly loves. We couldn't have asked for a better environment.",
+                name: "Rohan & Anjali Verma",
+                role: "Parents — Grade 8",
+                accent: "from-navy to-navy",
+              },
+              {
+                quote:
+                  "As an educator myself, I'm amazed by Seedling's teaching standards. The faculty genuinely cares, and the leadership is always open to dialogue and growth.",
+                name: "Dr. Neha Kapoor",
+                role: "Parent — Grade 10",
+                accent: "from-royal-blue to-royal-blue",
+              },
+              {
+                quote:
+                  "The transport, safety and the warmth of every staff member — from the gate to the classroom — gives us complete peace of mind as working parents.",
+                name: "Karan Singhvi",
+                role: "Parent — Grade 3",
+                accent: "from-crimson to-crimson",
+              },
+              {
+                quote:
+                  "I came to Seedling in Grade 9 and immediately felt at home. Today I'm an A-Level topper and a published debater. This place changed my life.",
+                name: "Isha Rathore",
+                role: "Student — Grade 12",
+                accent: "from-navy to-navy",
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                className="group relative bg-white rounded-3xl p-7 md:p-8 border border-sand/40 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                {/* Hover glow */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
+                />
+
+                {/* Quote mark */}
+                <motion.div
+                  className={`absolute -top-4 -left-2 w-12 h-12 rounded-2xl bg-gradient-to-br ${t.accent} flex items-center justify-center text-white text-3xl font-playfair leading-none shadow-lg`}
+                  initial={{ rotate: -180, scale: 0 }}
+                  whileInView={{ rotate: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 15,
+                    delay: i * 0.12 + 0.3,
+                  }}
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                >
+                  &ldquo;
+                </motion.div>
+
+                {/* Quote */}
+                <blockquote className="text-text-base text-[15px] leading-relaxed font-light flex-1 mt-3">
+                  {t.quote}
+                </blockquote>
+
+                {/* Author */}
+                <div className="mt-6 pt-5 border-t border-sand/40 flex items-center gap-3">
+                  <div
+                    className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.accent} text-white flex items-center justify-center font-black text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                  <div>
+                    <p className="font-playfair text-base font-semibold text-navy-deeper leading-tight">
+                      {t.name}
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.15em] text-text-light font-semibold mt-0.5">
+                      {t.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ─── INFRASTRUCTURE / CAMPUS TABS ─── */}
-      <section className="bg-white pt-12 pb-8" id="campus">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
-              World-Class <em className="font-semibold text-navy">Facilities</em>
-            </h2>
-          </div>
+      <section className="bg-white pt-14 pb-12 md:pt-20 md:pb-14" id="campus">
+        <motion.div
+          className="max-w-7xl mx-auto px-6"
+          initial={{ opacity: 0, y: 54 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.18 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 md:mb-14">
+            <div className="max-w-3xl">
+              <motion.span
+                className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block"
+                initial={{ opacity: 0, letterSpacing: "0.1em" }}
+                whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.65, delay: 0.1 }}
+              >
+                Infrastructure
+              </motion.span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
+                World-Class <em className="font-semibold text-navy">Facilities</em>
+              </h2>
+            </div>
 
           {/* Tab Bar */}
-          <div className="flex flex-nowrap gap-2 sm:gap-4 mb-16 overflow-x-auto border-b border-sand/40 pb-1">
+          <div className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl bg-navy-light/70 p-2 border border-navy/10">
             {([
               { key: 'campus', label: '🏫 Campus' },
               // { key: 'labs', label: '🔬 Labs & Tech' },
               { key: 'sports', label: '⚽ Sports' },
               { key: 'arts', label: '🎨 Arts' },
-            ] as { key: TabKey; label: string }[]).map(({ key, label }) => (
+            ] as { key: TabKey; label: string }[]).map(({ key }) => (
               <button
                 key={key}
-                className={`pb-4 px-6 text-sm font-black tracking-widest uppercase cursor-pointer transition-all border-b-4 ${activeTab === key ? 'border-navy text-navy' : 'border-transparent text-text-light hover:text-navy'}`}
+                className={`relative min-w-28 rounded-xl px-5 py-3 text-xs font-black tracking-widest uppercase cursor-pointer transition-colors ${activeTab === key ? 'text-white' : 'text-navy hover:text-navy-deeper'}`}
                 onClick={() => handleTabSwitch(key)}
               >
-                {label}
+                {activeTab === key && (
+                  <motion.span
+                    layoutId="facility-active-tab"
+                    className="absolute inset-0 rounded-xl bg-navy shadow-lg shadow-navy/20"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                  />
+                )}
+                <span className="relative z-10">{key === 'campus' ? 'Campus' : key === 'sports' ? 'Sports' : 'Arts'}</span>
               </button>
             ))}
           </div>
+          </div>
 
           {/* Tab Content */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {infraData[activeTab].map(({ img, alt, tag, title, desc }) => (
-              <div key={title} className="group bg-off-white rounded-[2rem] overflow-hidden border border-sand/40 hover:border-navy/20 hover:shadow-editorial transition-all duration-500">
-                <div className="h-64 overflow-hidden">
-                  <img src={img} alt={alt} className={`w-full h-full object-cover  transition-transform duration-1000 group-hover:scale-110`} />
-                </div>
-                <div className="p-8">
-                  <span className="inline-block bg-navy-light text-navy text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-full mb-4 border border-navy/10">{tag}</span>
-                  <h3 className="font-playfair text-2xl font-semibold text-navy-deeper mb-3">{title}</h3>
-                  <p className="text-sm text-text-light leading-relaxed font-light">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SPORTS ─── */}
-      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="mb-12 md:mb-20">
-            <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Sports & Athletics</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-              Sports
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { img: '/assets/CRICKET FEVER/1.webp', Icon: Medal, name: 'Cricket', desc: 'BCCI-standard ground with pro coaching.' },
-              { img: '/assets/SPORTS DAY/2.webp', Icon: Trophy, name: 'Formation Drill', desc: 'Building discipline through synchronized physical routines.' },
-              { img: '/assets/SUSTAINABLE FASHION SHOW/4.webp', Icon: Users, name: 'Performances', desc: 'Showcasing student creativity and eco-consciousness.' },
-              { img: '/assets/DIWALI DANCE BEATS/1.webp', Icon: Music, name: 'Group Dance', desc: 'Vibrant choreography promoting fitness and cultural expression.' },
-            ].map(({ img, Icon, name, desc }) => (
-              <div key={name} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:bg-white/10 hover:border-sand/30 transition-all duration-500 hover:-translate-y-2">
-                <div className="h-44 overflow-hidden relative">
-                  <img src={img} alt={name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                </div>
-                <div className="p-8">
-                  <h3 className="font-playfair text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <Icon size={24} className="text-sand" />
-                    {name}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6 md:gap-8 items-stretch"
+              initial={{ opacity: 0, y: 34, filter: "blur(12px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -18, filter: "blur(10px)" }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.article
+                className="group relative min-h-[430px] md:min-h-[560px] rounded-[2.25rem] overflow-hidden shadow-editorial bg-navy-deeper"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.55, delay: 0.05 }}
+              >
+                <img
+                  src={infraData[activeTab][0].img}
+                  alt={infraData[activeTab][0].alt}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1800ms] group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/35 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-10 text-white">
+                  <span className="inline-block bg-white/15 text-white text-[10px] font-black tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 border border-white/25 backdrop-blur-md">
+                    {infraData[activeTab][0].tag}
+                  </span>
+                  <h3 className="font-playfair text-3xl md:text-5xl font-semibold text-white mb-4 leading-tight">
+                    {infraData[activeTab][0].title}
                   </h3>
-                  <p className="text-white/60 text-xs leading-relaxed font-light">{desc}</p>
+                  <p className="max-w-xl text-sm md:text-base leading-relaxed text-white/82 font-light">
+                    {infraData[activeTab][0].desc}
+                  </p>
                 </div>
+              </motion.article>
+
+              <div className="grid gap-6">
+                {infraData[activeTab].slice(1).map(({ img, alt, tag, title, desc }, i) => (
+                  <motion.article
+                    key={title}
+                    className="group grid sm:grid-cols-[180px_1fr] bg-off-white rounded-[2rem] overflow-hidden border border-sand/40 hover:border-navy/20 hover:shadow-editorial transition-all duration-500"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.55, delay: 0.12 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -6 }}
+                  >
+                    <div className="h-52 sm:h-full min-h-[220px] overflow-hidden">
+                      <img
+                        src={img}
+                        alt={alt}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-7 flex flex-col justify-center">
+                      <span className="inline-block w-fit bg-navy-light text-navy text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-full mb-4 border border-navy/10">
+                        {tag}
+                      </span>
+                      <h3 className="font-playfair text-2xl font-semibold text-navy-deeper mb-3 leading-tight">
+                        {title}
+                      </h3>
+                      <p className="text-sm text-text-light leading-relaxed font-light">
+                        {desc}
+                      </p>
+                    </div>
+                  </motion.article>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </section>
 
       {/* ─── WHY CAMBRIDGE INTERNATIONAL SCHOOL ─── */}
@@ -545,55 +780,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section className="bg-crimson pt-16 pb-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-4 mb-6">
-              <span className="h-px w-16 bg-white" />
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white">Testimonials</span>
-              <span className="h-px w-16 bg-white" />
-            </div>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-6">
-              Voices from the <em className="font-semibold text-white italic">Family</em>.
-            </h2>
-          </div>
-
-          {/* Cards Slider - single on mobile, 3 on desktop */}
-          <div className="flex md:grid md:grid-cols-3 items-stretch gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory md:snap-none snap-center pb-4 -mx-6 px-6 md:mx-0 md:px-0">
-            {testimonials.slice(currentTestimonial, currentTestimonial + (isDesktop ? 3 : 1)).map(({ avatar, name, role, text }, i) => (
-              <div key={currentTestimonial + i} className="group bg-white rounded-[2.5rem] p-8 md:p-10 shadow-md border-2 border-white/30 hover:border-navy/40 hover:shadow-xl transition-all duration-500 flex flex-col relative overflow-hidden snap-center shrink-0 w-[calc(100vw-3rem)] md:w-auto h-[380px] md:h-[450px]">
-                {/* Colored accent top */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-navy`} />
-                <span className="block text-7xl leading-none text-crimson/30 font-playfair mb-4 group-hover:text-crimson/50 transition-transform">&ldquo;</span>
-                <div className="overflow-y-auto min-h-0 flex-1 pr-2">
-                  <p className="text-base md:text-lg text-text-light leading-relaxed font-light italic">{text}</p>
-                </div>
-                <div className="flex items-center gap-4 border-t border-sand/40 pt-6 md:pt-8 mt-6 md:mt-8">
-                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-sand/50 flex-shrink-0">
-                    <img src={avatar} alt={name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-base md:text-lg font-black text-navy-deeper font-dm leading-tight" dangerouslySetInnerHTML={{ __html: name }} />
-                    <div className="text-xs font-black tracking-widest uppercase text-text-light opacity-60">{role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Dots - desktop shows group starts, mobile shows all */}
-          <div className="flex justify-center gap-3 mt-10">
-            {(isDesktop ? [0, 3, 6] : testimonials.map((_, idx) => idx)).map((idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentTestimonial(idx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
       <section className="bg-white pt-16 pb-12 relative overflow-hidden">
