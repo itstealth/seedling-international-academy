@@ -169,9 +169,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             poster="/assets/Home/building-from-top.jpg"
             // Disable picture-in-picture so the video stays as a background
             // Disable remote playback for the same reason
-            // @ts-expect-error - non-standard but widely supported attributes
+            // @ts-ignore - non-standard but widely supported attributes
             disablePictureInPicture
-            // @ts-expect-error - non-standard but widely supported attributes
+            // @ts-ignore - non-standard but widely supported attributes
             disableRemotePlayback
           >
             <source
