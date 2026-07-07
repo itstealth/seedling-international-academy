@@ -157,13 +157,28 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen overflow-hidden px-4 pt-20 md:pt-28">
-        {/* Background Image with Overlay */}
+        {/* Background Video with Overlay (chunked streaming for smooth playback) */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/Home/building-from-top.jpg"
+          <video
             className="w-full h-full object-cover"
-            alt="Seedling International School"
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/assets/Home/building-from-top.jpg"
+            // Disable picture-in-picture so the video stays as a background
+            // Disable remote playback for the same reason
+            // @ts-expect-error - non-standard but widely supported attributes
+            disablePictureInPicture
+            // @ts-expect-error - non-standard but widely supported attributes
+            disableRemotePlayback
+          >
+            <source
+              src="/assets/Home/WhatsApp%20Video%202026-07-07%20at%201.05.34%20PM.mp4"
+              type="video/mp4"
+            />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a3a5c]/70 via-[#1a3a5c]/60 to-[#1a3a5c]/80" />
         </div>
 
@@ -219,9 +234,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
           <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(3rem,8vw,7.25rem)] font-medium leading-[0.95] tracking-normal !text-white">
-            Beyond education.
-            <br />
-            Into transformation.
+            Where Learning <span className="whitespace-nowrap">Inspires Transformation.</span>
           </h1>
           <p className="mt-7 max-w-3xl px-2 text-lg font-medium leading-relaxed text-white/80 md:text-2xl">
             Shaping confident learners through Cambridge academics, creative exploration, and a campus built for meaningful growth.
@@ -266,27 +279,27 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               {
                 name: "Pre-Prep School",
                 age: "3 - 7 years",
-                img: "/assets/Home/3+ years .JPG",
+                img: "/assets/Home/3 years .webp",
               },
               {
                 name: "Prep School",
                 age: "7 - 11 years",
-                img: "/assets/Home/4+ years .JPG",
+                img: "/assets/Home/4 years .webp",
               },
               {
                 name: "Junior School",
                 age: "11 - 14 years",
-                img: "/assets/Home/11+ years .JPG",
+                img: "/assets/Home/11 years .webp",
               },
               {
                 name: "Senior School",
                 age: "14 - 16 years",
-                img: "/assets/Home/14+ years .JPG",
+                img: "/assets/Home/14 years .webp",
               },
               {
                 name: "Sixth Form",
                 age: "16 - 18 years",
-                img: "/assets/Home/16+ years.JPG",
+                img: "/assets/Home/16 years.webp",
               },
             ].map((stage, i) => (
               <motion.div
@@ -473,22 +486,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
                 />
 
-                {/* Quote mark */}
-                <motion.div
-                  className={`absolute -top-4 -left-2 w-12 h-12 rounded-2xl bg-gradient-to-br ${t.accent} flex items-center justify-center text-white text-3xl font-playfair leading-none shadow-lg`}
-                  initial={{ rotate: -180, scale: 0 }}
-                  whileInView={{ rotate: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 15,
-                    delay: i * 0.12 + 0.3,
-                  }}
-                  whileHover={{ rotate: 10, scale: 1.1 }}
-                >
-                  &ldquo;
-                </motion.div>
+                {/* Quote mark removed */}
 
                 {/* Quote */}
                 <blockquote className="text-text-base text-[15px] leading-relaxed font-light flex-1 mt-3">
@@ -522,7 +520,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── INFRASTRUCTURE / CAMPUS TABS ─── */}
-      <section className="bg-white pt-14 pb-12 md:pt-20 md:pb-14" id="campus">
+      <section className="bg-navy-deeper pt-14 pb-12 md:pt-20 md:pb-14 relative overflow-hidden" id="campus">
+        {/* Subtle mesh decoration to match other dark sections */}
+        <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
         <motion.div
           className="max-w-7xl mx-auto px-6"
           initial={{ opacity: 0, y: 54 }}
@@ -541,13 +541,13 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               >
                 Infrastructure
               </motion.span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
-                World-Class <em className="font-semibold text-navy">Facilities</em>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
+                World-Class <em className="font-semibold text-sand">Facilities</em>
               </h2>
             </div>
 
           {/* Tab Bar */}
-          <div className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl bg-navy-light/70 p-2 border border-navy/10">
+          <div className="flex flex-nowrap gap-2 overflow-x-auto rounded-2xl bg-white/10 p-2 border border-white/15">
             {([
               { key: 'campus', label: '🏫 Campus' },
               // { key: 'labs', label: '🔬 Labs & Tech' },
@@ -556,13 +556,13 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             ] as { key: TabKey; label: string }[]).map(({ key }) => (
               <button
                 key={key}
-                className={`relative min-w-28 rounded-xl px-5 py-3 text-xs font-black tracking-widest uppercase cursor-pointer transition-colors ${activeTab === key ? 'text-white' : 'text-navy hover:text-navy-deeper'}`}
+                className={`relative min-w-28 rounded-xl px-5 py-3 text-xs font-black tracking-widest uppercase cursor-pointer transition-colors ${activeTab === key ? 'text-white' : 'text-white/70 hover:text-white'}`}
                 onClick={() => handleTabSwitch(key)}
               >
                 {activeTab === key && (
                   <motion.span
                     layoutId="facility-active-tab"
-                    className="absolute inset-0 rounded-xl bg-navy shadow-lg shadow-navy/20"
+                    className="absolute inset-0 rounded-xl bg-royal-blue shadow-lg shadow-royal-blue/30"
                     transition={{ type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
@@ -782,14 +782,15 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-white pt-16 pb-12 relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
+      <section className="bg-navy-deeper/40 pt-16 pb-12 relative overflow-hidden backdrop-blur-md">
+        <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/30 via-navy-deeper/20 to-royal-blue/30" />
+        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-navy-deeper/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling International School</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
-                Trending <em className="font-semibold text-navy italic">Updates</em>.
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white/80 mb-4 block">Latest at Seedling International School</span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
+                Trending <em className="font-semibold text-sand italic">Updates</em>.
               </h2>
             </div>
             <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
@@ -799,16 +800,16 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </div>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
-            <a href="https://www.instagram.com/p/DX8nfpKEyWC/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
+            <a href="https://www.instagram.com/p/Dac7NwvoH72/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-navy-deeper shadow-editorial border border-sand/30">
               <img
-                src="/assets/Home/trending1.jpg"
-                alt="Annual Sports Day 2025"
+                src="/assets/Home/challenge.png"
+                alt="Cambridge Kaleidoscope Challenge"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/45 to-transparent" />
               <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
-                <strong className="block text-2xl font-playfair leading-none">4</strong>
-                <span className="text-[10px] font-black tracking-widest uppercase mt-1">MAY</span>
+                <strong className="block text-2xl font-playfair leading-none">6</strong>
+                <span className="text-[10px] font-black tracking-widest uppercase mt-1">JUL</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
                 <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
@@ -816,11 +817,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   Campus Highlight
                 </div>
                 <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
-                 Investiture ceremony 
-                 {/* <em className="font-semibold text-sand italic">2025</em> */}
+                 Cambridge Kaleidoscope <em className="font-semibold text-sand">Challenge</em>
                 </h3>
                 <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
-                Students proudly participated in the Investiture Ceremony, taking leadership roles and pledging responsibility.
+                Fostering Critical Thinking, Creativity &amp; Curiosity — students explored diverse perspectives through hands-on challenges, building confidence and collaborative problem-solving skills.
                 </p>
               </div>
             </a>
