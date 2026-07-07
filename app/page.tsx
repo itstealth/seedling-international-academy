@@ -167,11 +167,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             playsInline
             preload="metadata"
             poster="/assets/Home/building-from-top.jpg"
-            // Disable picture-in-picture so the video stays as a background
-            // Disable remote playback for the same reason
-            // @ts-ignore - non-standard but widely supported attributes
             disablePictureInPicture
-            // @ts-ignore - non-standard but widely supported attributes
             disableRemotePlayback
           >
             <source
