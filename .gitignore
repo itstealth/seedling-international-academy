@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large video originals (use chunked versions for commits)
+public/assets/Home/WhatsApp Video *.mp4
