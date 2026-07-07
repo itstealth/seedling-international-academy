@@ -679,13 +679,15 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── STUDENT GALLERY ─── */}
-      <section className="bg-white pt-16 pb-8">
+      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
+        {/* Subtle mesh decoration to match other dark sections */}
+        <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Campus Life</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
-                Vibrant <em className="font-semibold text-navy italic">Memories</em>.
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Campus Life</span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
+                Vibrant <em className="font-semibold text-sand italic">Memories</em>.
               </h2>
             </div>
             {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
