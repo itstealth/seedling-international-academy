@@ -778,15 +778,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
 
       {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
-      <section className="bg-navy-deeper/40 pt-16 pb-12 relative overflow-hidden backdrop-blur-md">
-        <div className="absolute inset-0 bg-gradient-to-br from-royal-blue/30 via-navy-deeper/20 to-royal-blue/30" />
-        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-navy-deeper/40 to-transparent" />
+      <section className="bg-white pt-16 pb-12 relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white/80 mb-4 block">Latest at Seedling International School</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-                Trending <em className="font-semibold text-sand italic">Updates</em>.
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling International School</span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
+                Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
             </div>
             <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
