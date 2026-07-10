@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { Download, MoveRight, ArrowUp } from "lucide-react";
+import { MoveRight, ArrowUp } from "lucide-react";
 import { Instagram, Facebook, Linkedin, Youtube } from "@/components/icons/BrandIcons";
 
 export default function Footer() {
-  const brochureHref = "/assets/SPS%20(Cambridge)%20PROSPECTUS.pdf";
-
   return (
     <section className="bg-white font-dmSans">
       <div className="px-4 sm:px-6 lg:px-10 pt-8 sm:pt-10">
@@ -68,37 +66,7 @@ export default function Footer() {
                       </Link>
                     </li>
                   ))}
-                  <li>
-                    <a
-                      href={brochureHref}
-                      download
-                      className="group flex items-center text-xs font-black text-white/60 hover:text-white transition-colors font-dm"
-                    >
-                      <Download className="w-4 h-4 mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 text-sand flex-shrink-0" />
-                      <span>Download Brochure</span>
-                    </a>
-                  </li>
                 </ul>
-              </div>
-
-              {/* Column 3: Our Institutions */}
-              <div className="lg:col-span-3 space-y-5 min-w-0">
-                <h3 className="text-crimson font-black text-[10px] tracking-[0.3em] uppercase block border-b border-white/10 pb-3">Our Institutions</h3>
-                <div className="space-y-4">
-                  {[
-                    { name: 'Seedling Public School (SPS)', loc: 'Jawahar Nagar, Jaipur', link: 'https://sps.seedlingschools.com/' },
-                    { name: 'Seedling Modern High School (SMHS)', loc: 'Jawahar Nagar, Jaipur', link: 'https://seedlingschools.com/smhs.php' },
-                  ].map((school) => (
-                    <div key={school.name} className="group cursor-default">
-                      {school.link ? (
-                        <a href={school.link} target={school.link.startsWith('http') ? '_blank' : '_self'} rel={school.link.startsWith('http') ? 'noopener noreferrer' : undefined} className="block text-xs font-black text-white/80 hover:text-sand transition-colors break-words">{school.name}</a>
-                      ) : (
-                        <span className="block text-xs font-black text-white/80 group-hover:text-sand transition-colors break-words">{school.name}</span>
-                      )}
-                      <span className="text-[9px] uppercase font-bold tracking-widest text-white/40 block mt-1">{school.loc}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Column 4: Location Maps */}
@@ -159,9 +127,6 @@ export default function Footer() {
 
             <div className="py-5 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3">
               <span className="font-semibold text-sm">Seedling International School</span>
-              <span className="text-gray-500 text-xs">
-                © 2026 Seedling Group of Schools. All Rights Reserved.
-              </span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition-colors"
