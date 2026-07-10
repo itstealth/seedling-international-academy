@@ -288,9 +288,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               Curriculum overview
             </h2>
             <p className="text-sm md:text-base text-white/80 leading-relaxed font-light max-w-2xl mx-auto">
-              At Seedling International School, we are dedicated to upholding the values and heritage of our founding school, while
-              building on British education excellence. Our curriculum emphasises academic rigour, personal growth, and a global
-              perspective from the Early Years to the Sixth Form. Our programme covers four stages and age groups:
+              The Cambridge international curriculum sets a global standard for education, and is recognised by universities and employers worldwide. Our curriculum is flexible, challenging and inspiring, culturally sensitive yet international in approach. Cambridge students develop an informed curiosity and a lasting passion for learning. They also gain the essential skills they need for success at university and in their future careers.
             </p>
           </div>
 
