@@ -277,7 +277,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
-          <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(3rem,8vw,7.25rem)] font-medium leading-[0.95] tracking-normal !text-white">
+          <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(2rem,7vw,7.25rem)] font-medium leading-[1.05] tracking-normal !text-white">
             Where Learning <span className="whitespace-nowrap">Inspires Transformation.</span>
           </h1>
           <p className="mt-7 max-w-3xl px-2 text-lg font-medium leading-relaxed text-white/80 md:text-2xl">
@@ -511,7 +511,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             >
               
             </motion.span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
+            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-navy-deeper leading-[1.5]">
               {"Voices from the ".split("").map((ch, idx) => (
                 <motion.span
                   key={`v-${idx}`}
