@@ -9,7 +9,7 @@ export default function WorldMapDemo() {
         <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
           Cambridge International is taught in{" "}
           <span className="text-royal-blue">
-            {"10,000+ schools across 160+ countries".split(" ").map((word, idx) => (
+            {"10,000+ Schools across 160+ countries".split(" ").map((word, idx) => (
               <motion.span
                 key={idx}
                 className="inline-block"
