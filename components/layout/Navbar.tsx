@@ -430,36 +430,6 @@ export default function Navbar() {
 
           <div className="max-w-[1600px] mx-auto px-4 py-4 sm:px-6 lg:px-10 relative z-10">
             <div className="flex items-center justify-between gap-4 lg:gap-8">
-              {/* LEFT: Contact Info */}
-              <motion.div
-                className="hidden lg:flex flex-col gap-1 text-white flex-1 min-w-0"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <a
-                  href="mailto:admissions@seedlinginternational.edu.in"
-                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
-                >
-                  <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="truncate">admissions@seedlinginternational.edu.in</span>
-                </a>
-                <a
-                  href="tel:+917413012351"
-                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
-                >
-                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
-                  <span>+91 74130 12351 (Admissions)</span>
-                </a>
-                <a
-                  href="tel:+911412345678"
-                  className="group flex items-center gap-2.5 text-[13px] font-medium tracking-wide text-white/90 hover:text-white transition-colors"
-                >
-                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
-                  <span>+91 84481 43444 (Admissions)</span>
-                </a>
-              </motion.div>
-
               {/* CENTER: Logos side by side */}
               <motion.div
                 className="flex-shrink-0"

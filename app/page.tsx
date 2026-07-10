@@ -152,6 +152,54 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     ],
   };
 
+  const cambridgePathwayStages = [
+    {
+      title: "Cambridge Early Years",
+      age: "Age 3+",
+      color: "from-[#8b26e6] to-[#6f22d8]",
+      bg: "bg-[#f2e9ff]",
+      border: "border-[#8b26e6]",
+      points: ["A play-based programme", "A holistic curriculum", "Engaging resources", "Support to measure progress"],
+      footer: "6 curriculum areas including Personal, social and emotional development",
+    },
+    {
+      title: "Cambridge Primary",
+      age: "Age 5+",
+      color: "from-[#5f72f2] to-[#4458e5]",
+      bg: "bg-[#edf0ff]",
+      border: "border-[#5f72f2]",
+      points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to understand potential"],
+      footer: "10+ subjects including English, Mathematics and Science",
+    },
+    {
+      title: "Cambridge Lower Secondary",
+      age: "Age 11+",
+      color: "from-[#06951d] to-[#007f17]",
+      bg: "bg-[#e8f8ea]",
+      border: "border-[#06951d]",
+      points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to predict performance"],
+      footer: "10+ subjects including English, Mathematics and Science",
+    },
+    {
+      title: "Cambridge Upper Secondary",
+      age: "Age 14+",
+      color: "from-[#ee4a25] to-[#d63c1c]",
+      bg: "bg-[#fff0ea]",
+      border: "border-[#ee4a25]",
+      points: ["Broad, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to optimise achievement"],
+      footer: "Cambridge IGCSE: 70+ subjects. Cambridge O Level: 40+ subjects. Cambridge ICE.",
+    },
+    {
+      title: "Cambridge Advanced",
+      age: "Age 16+",
+      color: "from-[#a20f27] to-[#7f0d21]",
+      bg: "bg-[#fff0f3]",
+      border: "border-[#a20f27]",
+      points: ["In-depth, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to predict performance"],
+      footer: "Cambridge International AS & A Level: 50+ subjects. Cambridge AICE, Cambridge IPQ.",
+    },
+  ];
+
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
@@ -235,14 +283,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <p className="mt-7 max-w-3xl px-2 text-lg font-medium leading-relaxed text-white/80 md:text-2xl">
             Shaping confident learners through Cambridge academics, creative exploration, and a campus built for meaningful growth.
           </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-4">
-            <a href="/admissions#enquire" className="rounded-lg border border-blue-300 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-200 px-5 py-3 text-lg font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-              Apply Now
-            </a>
-            <a href="/about" className="rounded-lg border border-neutral-300 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-300 px-5 py-3 text-lg font-semibold text-black shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-              Explore School
-            </a>
-          </div>
         </div>
       </section>
 
@@ -339,12 +379,117 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         </div>
       </section>
 
+      {/* Cambridge Pathway */}
+      <section className="bg-navy-deeper pb-24 relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            className="rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-5 md:p-8 shadow-2xl shadow-black/20 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="mb-8 flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-center">
+              <span className="hidden h-px w-28 bg-sand/70 lg:block" />
+              <div className="flex items-center gap-4">
+                <div className="text-left font-playfair text-3xl font-semibold leading-none text-white md:text-4xl">
+                  Cambridge<br />
+                  <span className="text-sand">Pathway</span>
+                </div>
+                <motion.div
+                  className="h-16 w-16"
+                  animate={{ x: [0, 8, 0] }}
+                  transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <svg viewBox="0 0 72 72" className="h-full w-full" aria-hidden="true">
+                    <path d="M15 8L58 36L15 64L26 36L15 8Z" fill="none" stroke="#20c7bd" strokeWidth="5" strokeLinejoin="round" />
+                  </svg>
+                </motion.div>
+              </div>
+              <p className="max-w-xl text-base font-medium text-white/80 md:text-lg">
+                A clear path for educational success from age 3 to 19
+              </p>
+              <span className="hidden h-px w-28 bg-sand/70 lg:block" />
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+              {cambridgePathwayStages.map((stage, index) => (
+                <motion.article
+                  key={stage.title}
+                  className={`group flex min-h-[360px] flex-col overflow-hidden rounded-2xl border-2 ${stage.border} ${stage.bg} shadow-xl shadow-black/15`}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -8, scale: 1.015 }}
+                >
+                  <div className={`relative min-h-[84px] bg-gradient-to-br ${stage.color} p-4 text-white`}>
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                    <h3 className="relative z-10 font-playfair text-lg font-black leading-tight text-white">
+                      {stage.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-1 flex-col">
+                    <div className="flex-1 p-4">
+                      <p className="mb-3 text-sm font-black text-navy-deeper">{stage.age}</p>
+                      <ul className="space-y-2 text-sm leading-snug text-text-base">
+                        {stage.points.map((point) => (
+                          <li key={point} className="flex gap-2">
+                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="border-t border-black/10 bg-white/45 p-4 text-sm font-bold leading-relaxed text-navy-deeper">
+                      {stage.footer}
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div
+              className="mt-5 rounded-xl bg-[#3f1168] px-5 py-4 text-center font-playfair text-base font-black text-white shadow-lg md:text-lg"
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+            >
+              Cambridge Professional Development for teachers and school leaders
+            </motion.div>
+
+            <div className="mt-7 flex items-center justify-center gap-4 text-center">
+              <span className="h-px w-24 bg-sand/70 md:w-44" />
+              <div className="flex items-center gap-3">
+                <span className="font-playfair text-2xl font-semibold leading-none text-white md:text-3xl">
+                  Ready for<br />the world
+                </span>
+                <motion.svg
+                  viewBox="0 0 48 56"
+                  className="h-14 w-12"
+                  aria-hidden="true"
+                  animate={{ rotate: [0, -4, 4, 0] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path d="M6 4H42V36L24 50L6 36V4Z" fill="none" stroke="#d06abd" strokeWidth="4" />
+                </motion.svg>
+              </div>
+              <span className="h-px w-24 bg-sand/70 md:w-44" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── WORLD MAP / GLOBAL REACH ─── */}
       <section className="bg-navy-deeper w-full" id="global-reach">
         <div className="w-full">
           <WorldMapDemo />
         </div>
       </section>
+
 
       {/* ─── TESTIMONIALS / VOICES FROM THE FAMILY ─── */}
       <section className="bg-off-white py-16 md:py-24" id="testimonials">
@@ -364,7 +509,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6 }}
             >
-              Testimonials
+              
             </motion.span>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
               {"Voices from the ".split("").map((ch, idx) => (
@@ -481,8 +626,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
                 />
-
-                {/* Quote mark removed */}
 
                 {/* Quote */}
                 <blockquote className="text-text-base text-[15px] leading-relaxed font-light flex-1 mt-3">
@@ -855,20 +998,19 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
             <div className="lg:col-span-2">
-              <a href="https://www.instagram.com/cambridgeinternationalschooljaipur" target="_blank" rel="noopener noreferrer" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mt-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-2">
                 {[
-                  '/assets/Home/trending1.jpg',
-                  '/assets/Home/trending2.jpg',
-                  '/assets/Home/trending3.jpg',
-                  '/assets/Home/trending4.jpg',
-                  '/assets/Home/trending5.jpg',
-                  '/assets/Home/trending6.jpg',
-                ].map((src, i) => (
-                  <div key={i} className="rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
+                  { src: '/assets/Home/TU1.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=6' },
+                  { src: '/assets/Home/TU2.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=2' },
+                  { src: '/assets/Home/TU3.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=3' },
+                  { src: '/assets/Home/TU4.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=4' },
+                  { src: '/assets/Home/TU5.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=5' },
+                ].map(({ src, url }, i) => (
+                  <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block rounded-[1.5rem] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
                     <img src={src} alt={`Seedling International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </div>
+                  </a>
                 ))}
-              </a>
+              </div>
             </div>
           </div>
         </div>
