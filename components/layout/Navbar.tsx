@@ -520,16 +520,7 @@ export default function Navbar() {
                 transition={{ type: "spring", bounce: 0, duration: 0.5 }}
                 className="fixed inset-y-0 right-0 z-[90] w-full sm:w-[480px] sm:max-w-[90%] bg-navy-deeper/85 backdrop-blur-2xl border-l border-white/10 overflow-y-auto flex flex-col shadow-2xl"
               >
-                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 gap-4">
-                  <Link href="/" onClick={() => setIsOpen(false)} className="flex-1 min-w-0">
-                    <Image
-                      src="/camb_logo.png"
-                      alt="Seedling International School Logo"
-                      width={300}
-                      height={90}
-                      className="h-[64px] sm:h-[90px] w-auto object-contain"
-                    />
-                  </Link>
+                <div className="flex items-center justify-end p-4 sm:p-6 border-b border-white/10 gap-4">
                   <button
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-3 text-white hover:text-white transition-colors group flex-shrink-0"
