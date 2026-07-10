@@ -9,7 +9,7 @@ export default function WorldMapDemo() {
         <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
           Cambridge International operates in{" "}
           <span className="text-royal-blue">
-            {"10,000 schools in more than 160 countries".split("").map((word, idx) => (
+            {"10,000 schools in more than 160 countries".split(" ").map((word, idx) => (
               <motion.span
                 key={idx}
                 className="inline-block"
@@ -18,6 +18,7 @@ export default function WorldMapDemo() {
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
               >
                 {word}
+                {idx < 7 ? " " : ""}
               </motion.span>
             ))}
           </span>
