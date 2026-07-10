@@ -454,17 +454,25 @@ export default function Navbar() {
                 </a>
               </motion.div>
 
-              {/* CENTER: Logo */}
+              {/* CENTER: Logos side by side */}
               <motion.div
                 className="flex-shrink-0"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-5">
                   <Image
                     src="/camb_logo.png"
-                    alt="Seedling International School Logo"
+                    alt="Seedling International Academy Logo"
+                    width={140}
+                    height={70}
+                    className="h-10 sm:h-14 md:h-16 w-auto object-contain"
+                    priority
+                  />
+                  <Image
+                    src="/assets/Home/SMIA-logo.png"
+                    alt="Seedling Modern International Academy Logo"
                     width={140}
                     height={70}
                     className="h-10 sm:h-14 md:h-16 w-auto object-contain"
