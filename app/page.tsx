@@ -263,18 +263,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </filter>
         </svg>
 
-        {/* Hero Header Badge */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-2 text-center">
-          <div className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md px-1.5 py-1 text-white shadow-lg shadow-blue-500/15">
-            <span className="rounded-full bg-gradient-to-br from-[#2f8cff] to-[#9fc8ff] px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest text-white">
-              New
-            </span>
-            <span className="truncate pr-2 text-sm font-semibold text-white">
-              Cambridge IGCSE Affiliated · Jaipur
-            </span>
-          </div>
-        </div>
-
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
           <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(2rem,7vw,7.25rem)] font-medium leading-[1.05] tracking-normal !text-white">
