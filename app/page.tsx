@@ -512,34 +512,22 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               
             </motion.span>
             <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-navy-deeper leading-[1.5]">
-              {"Voices from the ".split("").map((ch, idx) => (
+              {"Voices from the".split(" ").map((word, idx) => (
                 <motion.span
-                  key={`v-${idx}`}
+                  key={`w-${idx}`}
                   className="inline-block"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: idx * 0.025 }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
                 >
-                  {ch === " " ? " " : ch}
+                  {word}
+                  {idx < 2 ? " " : ""}
                 </motion.span>
               ))}
-              <em className="font-semibold italic text-royal-blue">
-                {"Family".split("").map((ch, idx) => (
-                  <motion.span
-                    key={`f-${idx}`}
-                    className="inline-block"
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: 0.4 + idx * 0.05,
-                    }}
-                  >
-                    {ch}
-                  </motion.span>
-                ))}
+              <span>{" "}</span>
+              <em className="font-semibold italic text-royal-blue inline-block">
+                Family
               </em>
               <motion.span
                 className="inline-block"
