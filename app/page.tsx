@@ -280,9 +280,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(2rem,7vw,7.25rem)] font-medium leading-[1.05] tracking-normal !text-white">
             Where Learning <span className="whitespace-nowrap">Inspires Transformation.</span>
           </h1>
-          <p className="mt-7 max-w-3xl px-2 text-lg font-medium leading-relaxed text-white/80 md:text-2xl">
-            Shaping confident learners through Cambridge academics, creative exploration, and a campus built for meaningful growth.
-          </p>
         </div>
       </section>
 
