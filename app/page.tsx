@@ -204,7 +204,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen overflow-hidden px-4 pt-20 md:pt-28">
+      <section className="relative min-h-[480px] md:min-h-screen overflow-hidden px-4 pt-16 md:pt-28">
         {/* Background Video with Overlay (chunked streaming for smooth playback) */}
         <div className="absolute inset-0 z-0">
           <video
