@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Phone, Mail, MapPin, X } from "lucide-react";
+import { Phone, Mail, MapPin, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
@@ -375,6 +375,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSearchPopup, setShowSearchPopup] = useState(false);
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -384,6 +385,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Reset open dropdown when drawer closes
+  useEffect(() => {
+    if (!isOpen) setOpenDropdown(null);
+  }, [isOpen]);
 
   return (
     <>
@@ -454,20 +460,28 @@ export default function Navbar() {
                 </a>
               </motion.div>
 
-              {/* CENTER: Logo */}
+              {/* CENTER: Logos side by side */}
               <motion.div
                 className="flex-shrink-0"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-5">
                   <Image
                     src="/camb_logo.png"
-                    alt="Seedling International School Logo"
+                    alt="Seedling International Academy Logo"
                     width={140}
                     height={70}
-                    className="h-10 sm:h-14 md:h-16 w-auto object-contain"
+                    className="h-8 sm:h-12 md:h-14 w-auto object-contain"
+                    priority
+                  />
+                  <Image
+                    src="/assets/Home/SMIA-logo.png"
+                    alt="Seedling Modern International Academy Logo"
+                    width={160}
+                    height={80}
+                    className="h-12 sm:h-16 md:h-20 w-auto object-contain"
                     priority
                   />
                 </Link>
@@ -559,41 +573,62 @@ export default function Navbar() {
 
                 <div className="flex-1 overflow-y-auto px-6 sm:px-8 py-6">
                   <div className="flex flex-col gap-1">
-                    {navItems.filter(item => item.name !== "Home").map((item) => (
-                      <div key={item.name} className="border-b border-white/5 pb-3 mb-3">
-                        <div className="flex items-center justify-between">
-                          {item.dropdown ? (
-                            <span
-                              className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
-                            >
-                              {item.name}
-                            </span>
-                          ) : (
-                            <Link
-                              href={item.href}
-                              onClick={() => setIsOpen(false)}
-                              className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
-                            >
-                              {item.name}
-                            </Link>
+                    {navItems.filter(item => item.name !== "Home").map((item) => {
+                      const isOpenDrop = openDropdown === item.name;
+                      return (
+                        <div key={item.name} className="border-b border-white/5 pb-3 mb-3">
+                          <div className="flex items-center justify-between">
+                            {item.dropdown ? (
+                              <button
+                                type="button"
+                                onClick={() => setOpenDropdown(isOpenDrop ? null : item.name)}
+                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
+                              >
+                                <span>{item.name}</span>
+                                <ChevronDown
+                                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isOpenDrop ? "rotate-180 text-sand" : "text-white/60"}`}
+                                  strokeWidth={2.5}
+                                />
+                              </button>
+                            ) : (
+                              <Link
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
+                              >
+                                {item.name}
+                              </Link>
+                            )}
+                          </div>
+                          {item.dropdown && (
+                            <AnimatePresence initial={false}>
+                              {isOpenDrop && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: "auto" }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/40 pl-4 sm:pl-6 space-y-1 mt-1 pb-1">
+                                    {item.dropdown.map((child) => (
+                                      <Link
+                                        key={child.name}
+                                        href={child.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`block py-2 text-sm sm:text-base font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
+                                      >
+                                        {child.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
                           )}
                         </div>
-                        {item.dropdown && (
-                          <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/40 pl-4 sm:pl-6 space-y-1 mt-1">
-                            {item.dropdown.map((child) => (
-                              <Link
-                                key={child.name}
-                                href={child.href}
-                                onClick={() => setIsOpen(false)}
-                                className={`block py-2 text-sm sm:text-base font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
-                              >
-                                {child.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                      );
+                    })}
                     <Link
                       href="#"
                       onClick={(e) => { e.preventDefault(); setShowInquiryPopup(true); setIsOpen(false); }}
