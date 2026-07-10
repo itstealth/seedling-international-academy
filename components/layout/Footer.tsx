@@ -17,13 +17,6 @@ export default function Footer() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-6 gap-y-8 pb-4">
               {/* Column 1: Brand */}
               <div className="col-span-2 md:col-span-3 lg:col-span-3 space-y-5">
-                <div className="flex items-center">
-                  <img
-                    src="/camb_logo.png"
-                    alt="Seedling International School Logo"
-                    className="h-24 w-auto object-contain"
-                  />
-                </div>
                 <p className="text-sm leading-relaxed text-white/60 font-medium max-w-lg font-dm hidden md:block">
                   Dedicated to academic excellence and holistic growth since 1993. We empower the next generation of global leaders with curiosity, character, and competence.
                 </p>
