@@ -449,9 +449,9 @@ export default function Navbar() {
                   <Image
                     src="/assets/Home/SMIA-logo.png"
                     alt="Seedling Modern International Academy Logo"
-                    width={160}
-                    height={80}
-                    className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+                    width={140}
+                    height={70}
+                    className="h-10 sm:h-14 md:h-16 w-auto object-contain"
                     priority
                   />
                 </Link>
