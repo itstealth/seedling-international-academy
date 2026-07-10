@@ -87,9 +87,7 @@ export default function Footer() {
                 <div className="space-y-4">
                   {[
                     { name: 'Seedling Public School (SPS)', loc: 'Jawahar Nagar, Jaipur', link: 'https://sps.seedlingschools.com/' },
-                    { name: 'Seedling Modern High School (SMHS)', loc: 'Jawahar Nagar, Jaipur', link: '' },
-                    { name: 'Seedling MIT Academy (SMIA)', loc: 'Jawahar Nagar, Jaipur', link: 'https://www.seedlingschools.com/smia.php' },
-                    { name: 'SWKL', loc: 'Jawahar Nagar, Jaipur', link: 'https://seedlingschools.com/swkl.php' },
+                    { name: 'Seedling Modern High School (SMHS)', loc: 'Jawahar Nagar, Jaipur', link: 'https://seedlingschools.com/smhs.php' },
                   ].map((school) => (
                     <div key={school.name} className="group cursor-default">
                       {school.link ? (
