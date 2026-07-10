@@ -523,7 +523,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 gap-4">
                   <Link href="/" onClick={() => setIsOpen(false)} className="flex-1 min-w-0">
                     <Image
-                      src="/camb_Logo.png"
+                      src="/camb_logo.png"
                       alt="Seedling International School Logo"
                       width={300}
                       height={90}
