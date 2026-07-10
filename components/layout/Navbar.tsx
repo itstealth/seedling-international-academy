@@ -451,7 +451,7 @@ export default function Navbar() {
                     alt="Seedling Modern International Academy Logo"
                     width={140}
                     height={70}
-                    className="h-10 sm:h-14 md:h-16 w-auto object-contain"
+                    className="h-9 sm:h-12 md:h-14 w-auto object-contain"
                     priority
                   />
                 </Link>
@@ -522,13 +522,22 @@ export default function Navbar() {
               >
                 <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 gap-4">
                   <Link href="/" onClick={() => setIsOpen(false)} className="flex-1 min-w-0">
-                    <Image
-                      src="/camb_logo.png"
-                      alt="Seedling International School Logo"
-                      width={300}
-                      height={90}
-                      className="h-[64px] sm:h-[90px] w-auto object-contain"
-                    />
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <Image
+                        src="/camb_logo.png"
+                        alt="Seedling International School Logo"
+                        width={300}
+                        height={90}
+                        className="h-[48px] sm:h-[64px] w-auto object-contain"
+                      />
+                      <Image
+                        src="/assets/Home/SMIA-logo.png"
+                        alt="Seedling Modern International Academy Logo"
+                        width={300}
+                        height={90}
+                        className="h-[48px] sm:h-[64px] w-auto object-contain"
+                      />
+                    </div>
                   </Link>
                   <button
                     onClick={() => setIsOpen(false)}
