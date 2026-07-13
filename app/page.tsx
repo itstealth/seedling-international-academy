@@ -299,7 +299,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {[
               {
                 name: "Seedling International Academy",
-                subtitle: "Cambridge · Jawahar Nagar",
+                subtitle: "SIA · Jawahar Nagar",
                 img: "/assets/Home/School2.webp",
                 tag: "SIA",
               },
@@ -341,7 +341,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     <h3 className="font-playfair text-2xl md:text-3xl font-semibold leading-tight mb-2 text-white drop-shadow-lg">
                       {campus.name}
                     </h3>
-                    <p className="text-royal-blue text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
+                    <p className="text-white text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
                       {campus.subtitle}
                     </p>
                   </div>
@@ -597,7 +597,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 md:mb-14">
             <div className="max-w-3xl">
               <motion.span
-                className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block"
+                className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white mb-4 block"
                 initial={{ opacity: 0, letterSpacing: "0.1em" }}
                 whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
                 viewport={{ once: true }}
@@ -606,7 +606,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 Infrastructure
               </motion.span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-                World-Class <em className="font-semibold text-sand">Facilities</em>
+                World-Class <em className="font-semibold text-white">Facilities</em>
               </h2>
             </div>
 
@@ -712,7 +712,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-royal-blue mb-4 block">Why Choose Us</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-12">
                 Why Cambridge?
               </h2>
@@ -724,7 +724,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   { num: '04', title: 'University Counseling', desc: 'Dedicated guidance for global higher-education pathways.' },
                 ].map(({ num, title, desc }) => (
                   <div key={num} className="flex gap-6 items-start p-8 bg-white rounded-[2rem] shadow-sm border border-sand/30 hover:shadow-editorial hover:border-navy/20 transition-all group">
-                    <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{num}</div>
+                    <div className="w-14 h-14 rounded-2xl bg-royal-blue text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">{num}</div>
                     <div>
                       <h4 className="text-lg font-black text-navy-deeper mb-1 uppercase tracking-tight font-dm">{title}</h4>
                       <p className="text-sm text-text-light leading-relaxed font-light">{desc}</p>
@@ -753,9 +753,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-4 block">Campus Life</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-white mb-4 block">Campus Life</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight">
-                Vibrant <em className="font-semibold text-sand italic">Memories</em>.
+                Vibrant <em className="font-semibold text-white italic">Memories</em>.
               </h2>
             </div>
             {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
@@ -963,7 +963,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   'Flexible curriculum tailored to individual needs',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-4 text-navy-deeper font-bold text-sm uppercase tracking-widest">
-                    <span className="w-6 h-6 rounded-full bg-crimson text-white flex items-center justify-center text-[10px]">✓</span> {item}
+                    <span className="w-6 h-6 rounded-full bg-royal-blue text-white flex items-center justify-center text-[10px]">✓</span> {item}
                   </div>
                 ))}
               </div>
