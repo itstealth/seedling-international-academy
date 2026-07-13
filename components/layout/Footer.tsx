@@ -20,8 +20,8 @@ const schools = [
   {
     name: "Seedling Modern International Academy",
     subtitle: "(SMIA)",
-    logo: "/assets/Home/SMIA-logo.png",
-    logoHeight: "h-10 sm:h-12 md:h-14",
+    logo: "/assets/Home/SMIA_Logo.png",
+    logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
     address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
@@ -40,9 +40,9 @@ export default function Footer() {
 
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Two Schools Side by Side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 pb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 pb-10 md:items-stretch">
               {schools.map((school) => (
-                <div key={school.name} className="space-y-6">
+                <div key={school.name} className="flex flex-col space-y-6 h-full">
                   {/* Logo */}
                   <div className="flex items-center gap-3">
                     <Image
@@ -98,27 +98,28 @@ export default function Footer() {
                     </div>
                   </div>
 
-                  {/* Map */}
-                  <a
-                    href={`https://maps.google.com/?q=${encodeURIComponent(school.mapQuery)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-[140px] rounded-lg overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
-                  >
-                    <iframe
-                      src={`https://www.google.com/maps?q=${encodeURIComponent(school.mapQuery)}&output=embed`}
-                      width="100%"
-                      height="100"
-                      className="h-full w-full"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title={`${school.name} location`}
-                    />
-                  </a>
+                  {/* Map + Social pushed to bottom */}
+                  <div className="mt-auto space-y-4 pt-2">
+                    <a
+                      href={`https://maps.google.com/?q=${encodeURIComponent(school.mapQuery)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-[140px] rounded-lg overflow-hidden border border-white/10 hover:border-sand/50 transition-colors cursor-pointer"
+                    >
+                      <iframe
+                        src={`https://www.google.com/maps?q=${encodeURIComponent(school.mapQuery)}&output=embed`}
+                        width="100%"
+                        height="100"
+                        className="h-full w-full"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={`${school.name} location`}
+                      />
+                    </a>
 
-                  {/* Social Icons */}
+                    {/* Social Icons */}
                   <div className="flex gap-2.5">
                     <a
                       href="https://www.instagram.com/seedlinginternational/"
@@ -156,6 +157,7 @@ export default function Footer() {
                     >
                       <Linkedin className="size-4" />
                     </a>
+                  </div>
                   </div>
                 </div>
               ))}

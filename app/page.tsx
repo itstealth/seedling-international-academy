@@ -290,7 +290,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               Two campuses, <em className="font-semibold text-sand italic">one vision</em>
             </h2>
             <p className="text-sm md:text-base text-white/80 leading-relaxed font-light max-w-2xl mx-auto">
-              Seedling International Academy operates two campuses in Jaipur — each delivering the same globally benchmarked Cambridge education with its own distinct character.
+              Two distinct schools, united by the same Cambridge board — Seedling International Academy (SIA) and Seedling Modern International Academy (SMIA) deliver globally benchmarked education, each with its own unique identity.
             </p>
           </div>
 
@@ -301,18 +301,12 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 name: "Seedling International Academy",
                 subtitle: "Cambridge · Jawahar Nagar",
                 img: "/assets/Home/School2.webp",
-                address: "Jawahar Nagar, Jaipur, Rajasthan",
-                mapHref: "https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur",
-                phone: "+91 74130 12351",
-                tag: "Cambridge",
+                tag: "SIA",
               },
               {
                 name: "Seedling Modern International Academy",
                 subtitle: "SMIA · Durgapura",
-                img: "/0N9A9674.JPG",
-                address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
-                mapHref: "https://maps.google.com/?q=Seedling+Modern+International+Academy+Durgapura+Jaipur",
-                phone: "+91 95877 72837",
+                img: "/join.JPG",
                 tag: "SMIA",
               },
             ].map((campus, i) => (
@@ -326,7 +320,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 whileHover={{ y: -6 }}
               >
                 {/* Image */}
-                <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden">
+                <div className="relative h-80 sm:h-96 md:h-[28rem] overflow-hidden">
                   <img
                     src={campus.img}
                     alt={campus.name}
@@ -351,38 +345,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       {campus.subtitle}
                     </p>
                   </div>
-                </div>
-
-                {/* Details */}
-                <div className="p-6 md:p-8 space-y-5">
-                  <div className="flex items-start gap-3 text-white/85">
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-sand" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z" />
-                    </svg>
-                    <span className="text-sm md:text-base font-medium leading-relaxed">{campus.address}</span>
-                  </div>
-
-                  <div className="flex items-center gap-3 text-white/85">
-                    <svg className="w-5 h-5 flex-shrink-0 text-sand" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                    </svg>
-                    <a href={`tel:${campus.phone.replace(/\s/g, "")}`} className="text-sm md:text-base font-medium hover:text-white transition-colors">
-                      {campus.phone}
-                    </a>
-                  </div>
-
-                  <a
-                    href={campus.mapHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-2 text-[11px] font-black tracking-[0.2em] uppercase text-sand hover:text-white transition-colors"
-                  >
-                    View on map
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                  </a>
                 </div>
               </motion.div>
             ))}
@@ -549,7 +511,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            Voices from the <em className="font-semibold italic text-royal-blue">Family</em>.
+            Voices from our <em className="font-semibold italic text-royal-blue">Community</em>.
           </motion.h2>
 
           {/* Category cards with testimony */}
@@ -885,7 +847,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
 
-      {/* ─── TRENDING UPDATES + INSTAGRAM ─── */}
+{/* ─── TRENDING UPDATES + INSTAGRAM (temporarily commented out) ─── */}
+      {false && (
       <section className="bg-white pt-16 pb-12 relative overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -978,7 +941,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-
+      )}
       {/* ─── ADMISSION CTA ─── */}
       <section className="relative pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-navy-deeper">
         <div className="absolute inset-0 mesh-gradient opacity-10" />

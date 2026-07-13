@@ -447,7 +447,7 @@ export default function Navbar() {
                     priority
                   />
                   <Image
-                    src="/assets/Home/SMIA-logo.png"
+                    src="/assets/Home/SMIA_Logo.png"
                     alt="Seedling Modern International Academy Logo"
                     width={140}
                     height={70}
@@ -543,7 +543,7 @@ export default function Navbar() {
                               <button
                                 type="button"
                                 onClick={() => setOpenDropdown(isOpenDrop ? null : item.name)}
-                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-base sm:text-lg font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
+                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
                               >
                                 <span>{item.name}</span>
                                 <ChevronDown
@@ -555,7 +555,7 @@ export default function Navbar() {
                               <Link
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`flex-1 py-3 text-base sm:text-lg font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
+                                className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
                               >
                                 {item.name}
                               </Link>
@@ -577,7 +577,7 @@ export default function Navbar() {
                                         key={child.name}
                                         href={child.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
+                                        className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
                                       >
                                         {child.name}
                                       </Link>
