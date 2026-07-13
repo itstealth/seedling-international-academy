@@ -12,23 +12,48 @@ const navItems = [
   { name: "Home", href: "/" },
   {
     name: "About", href: "/about", dropdown: [
-      { name: "About Seedling International School", href: "/about" },
-      { name: "Leadership", href: "/about/leadership" },
+      { name: "Welcome from the Head's", href: "/about" },
+      { name: "Mission and Values", href: "/about/mission" },
+      { name: "Our Standards", href: "/about/standards" },
+      { name: "Seedling Legacy", href: "/about/legacy" },
+      { name: "Leadership Teams", href: "/about/leadership" },
+    ]
+  },
+  {
+    name: "Why Cambridge", href: "/why-cambridge", dropdown: [
+      { name: "Cambridge Education", href: "/why-cambridge/education" },
+      { name: "Your Path Your Way", href: "/why-cambridge/path" },
+      { name: "International Cambridge", href: "/why-cambridge/international" },
+      { name: "Pedagogy", href: "/why-cambridge/pedagogy" },
     ]
   },
   {
     name: "Academics", href: "/academics", dropdown: [
-      { name: "Curriculum", href: "/curriculum" },
-      { name: "Result", href: "/result" },
-      { name: "Learning Support", href: "/learning-support" },
+      { name: "Cambridge Early Years", href: "/academics/early-years" },
+      { name: "Cambridge Primary", href: "/academics/primary" },
+      { name: "Cambridge Lower Secondary", href: "/academics/lower-secondary" },
+      { name: "Cambridge Upper Secondary", href: "/academics/upper-secondary" },
+      { name: "Cambridge Advanced", href: "/academics/advanced" },
     ]
   },
-  { name: "School Life", href: "/school-life", dropdown: [{ name: "School Life", href: "/school-life" }, { name: "Sports", href: "/sports" },] },
-  { name: "News & Events", href: "/news-and-events" },
-  { name: "Admissions", href: "/admissions", dropdown: [{ name: "Admissions", href: "/admissions" }, { name: "Online Registration", href: "/admissions/online" }, { name: "Transport Facility", href: "/transport-facility" }] },
-  { name: "Career", href: "/career" },
-  { name: "Alumni", href: "/alumni" },
-  { name: "Contact", href: "/contact-us" },
+  {
+    name: "School Life", href: "/school-life", dropdown: [
+      { name: "Sports", href: "/sports" },
+    ]
+  },
+  {
+    name: "Admissions", href: "/admissions", dropdown: [
+      { name: "Procedure", href: "/admissions" },
+      { name: "Transport Facility", href: "/transport-facility" },
+      { name: "Result", href: "/result" },
+    ]
+  },
+  {
+    name: "Campuses", href: "/campuses", dropdown: [
+      { name: "SIA", href: "/sia" },
+      { name: "SMIA", href: "/smia" },
+    ]
+  },
 ];
 
 const announcements = [
