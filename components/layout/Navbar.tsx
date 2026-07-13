@@ -37,9 +37,7 @@ const navItems = [
     ]
   },
   {
-    name: "School Life", href: "/school-life", dropdown: [
-      { name: "Sports", href: "/sports" },
-    ]
+    name: "School Life", href: "/school-life",
   },
   {
     name: "Admissions", href: "/admissions", dropdown: [

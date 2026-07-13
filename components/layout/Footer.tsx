@@ -31,10 +31,10 @@ const schools = [
 
 export default function Footer() {
   return (
-    <section className="bg-white font-dmSans">
-      <div className="px-4 sm:px-6 lg:px-10 pt-8 sm:pt-10">
+    <section className="bg-[#060e1c] font-dmSans">
+      <div className="px-4 sm:px-6 lg:px-10">
         {/* Main Black Footer Area */}
-        <div className="bg-[#060e1c] rounded-t-3xl pt-16 md:pt-20 pb-10 px-6 md:px-12 text-white relative overflow-hidden">
+        <div className="bg-[#060e1c] pt-16 md:pt-20 pb-10 px-6 md:px-12 text-white relative overflow-hidden">
           {/* Subtle mesh decoration */}
           <div className="absolute top-0 right-0 w-[60%] h-[60%] mesh-gradient opacity-[0.05] pointer-events-none" />
 

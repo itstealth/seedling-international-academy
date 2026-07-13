@@ -273,7 +273,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
 
       {/* ─── OUR CAMPUSES ─── */}
-      <section className="bg-navy-deeper pt-20 pb-24 relative overflow-hidden" id="campuses">
+      <section className="bg-white pt-20 pb-24 relative overflow-hidden" id="campuses">
         {/* Gold accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
         {/* Subtle mesh decoration */}
@@ -286,10 +286,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               <span className="block w-px h-10 bg-sand" />
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand">Our Campuses</span>
             </div>
-            <h2 className="font-playfair text-4xl md:text-6xl font-light text-white leading-tight mb-6">
+            <h2 className="font-playfair text-4xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
               Two campuses, <em className="font-semibold text-sand italic">one vision</em>
             </h2>
-            <p className="text-sm md:text-base text-white/80 leading-relaxed font-light max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-text-light leading-relaxed font-light max-w-2xl mx-auto">
               Two distinct schools, united by the same Cambridge board — Seedling International Academy (SIA) and Seedling Modern International Academy (SMIA) deliver globally benchmarked education, each with its own unique identity.
             </p>
           </div>
@@ -353,7 +353,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* Cambridge Pathway */}
-      <section className="bg-navy-deeper pb-24 relative overflow-hidden">
+      <section className="bg-navy-deeper pt-16 md:pt-20 pb-24 relative overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -386,37 +386,37 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               <span className="hidden h-px w-28 bg-sand/70 lg:block" />
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 items-stretch">
               {cambridgePathwayStages.map((stage, index) => (
                 <motion.article
                   key={stage.title}
-                  className={`group flex min-h-[360px] flex-col overflow-hidden rounded-2xl border-2 ${stage.border} ${stage.bg} shadow-xl shadow-black/15`}
+                  className={`group flex flex-col overflow-hidden rounded-2xl border-2 ${stage.border} ${stage.bg} shadow-xl shadow-black/15`}
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -8, scale: 1.015 }}
                 >
-                  <div className={`relative min-h-[84px] bg-gradient-to-br ${stage.color} p-4 text-white`}>
+                  <div className={`relative min-h-[88px] bg-gradient-to-br ${stage.color} px-5 py-4 text-white`}>
                 <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
-                    <h3 className="relative z-10 font-playfair text-lg font-black leading-tight text-white">
+                    <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
                       {stage.title}
                     </h3>
                   </div>
 
                   <div className="flex flex-1 flex-col">
-                    <div className="flex-1 p-4">
-                      <p className="mb-3 text-sm font-black text-navy-deeper">{stage.age}</p>
-                      <ul className="space-y-2 text-sm leading-snug text-text-base">
+                    <div className="flex-1 px-5 py-5">
+                      <p className="mb-3 text-[13px] font-black uppercase tracking-wider text-navy-deeper">{stage.age}</p>
+                      <ul className="space-y-2.5 text-[13px] leading-snug text-text-base">
                         {stage.points.map((point) => (
-                          <li key={point} className="flex gap-2">
-                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" />
+                          <li key={point} className="flex gap-2.5">
+                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" />
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="border-t border-black/10 bg-white/45 p-4 text-sm font-bold leading-relaxed text-navy-deeper">
+                    <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[13px] font-bold leading-relaxed text-navy-deeper">
                       {stage.footer}
                     </div>
                   </div>
@@ -943,16 +943,16 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
       )}
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-navy-deeper">
-        <div className="absolute inset-0 mesh-gradient opacity-10" />
+      <section className="relative pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-white">
+        <div className="absolute inset-0 mesh-gradient opacity-[0.04]" />
         <div className="max-w-7xl mx-auto  relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div className='px-2'>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-white leading-tight mb-8">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
                 Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
               </h2>
-              <p className="text-xl text-white/70 leading-relaxed mb-12 font-light">
+              <p className="text-xl text-text-light leading-relaxed mb-12 font-light">
                 Admissions for 2026–27 are now open. Experience the difference of a school that truly cares about every child's growth and happiness.
               </p>
               <div className="space-y-4">
@@ -962,17 +962,17 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   'Counselling Available Online & Offline',
                   'Flexible curriculum tailored to individual needs',
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-white font-bold text-sm uppercase tracking-widest">
-                    <span className="w-6 h-6 rounded-full bg-crimson flex items-center justify-center text-[10px]">✓</span> {item}
+                  <div key={item} className="flex items-center gap-4 text-navy-deeper font-bold text-sm uppercase tracking-widest">
+                    <span className="w-6 h-6 rounded-full bg-crimson text-white flex items-center justify-center text-[10px]">✓</span> {item}
                   </div>
                 ))}
               </div>
             </div>
 
 
-            <div className="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8 ">Building Joyful Classroom Connections</h3>
+            <div className="bg-royal-blue p-10 md:p-12 rounded-[3rem] shadow-2xl relative group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
+              <h3 className="font-playfair text-3xl font-semibold text-white mb-8">Building Joyful Classroom Connections</h3>
               <CallbackForm />
             </div>
           </div>
