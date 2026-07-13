@@ -624,36 +624,6 @@ export default function Navbar() {
                         </div>
                       );
                     })}
-                    <Link
-                      href="#"
-                      onClick={(e) => { e.preventDefault(); setShowInquiryPopup(true); setIsOpen(false); }}
-                      className="block w-full text-center py-4 mt-6 bg-royal-blue text-white text-[12px] font-black uppercase tracking-[0.2em] rounded-lg hover:bg-[#16459e] transition-colors"
-                    >
-                      Enquire Now
-                    </Link>
-                    <div className="flex items-center justify-center gap-4 py-6">
-                      <a
-                        href="tel:+917413012351"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
-                        aria-label="Call us"
-                      >
-                        <Phone className="w-5 h-5" />
-                      </a>
-                      <a
-                        href="mail to:seedlingacademy@hotmail.com"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
-                        aria-label="Email us"
-                      >
-                        <Mail className="w-5 h-5" />
-                      </a>
-                      <a
-                        href="/contact-us#location"
-                        className="flex items-center justify-center w-11 h-11 bg-white/10 hover:bg-royal-blue text-white rounded-full transition-colors"
-                        aria-label="Find us on map"
-                      >
-                        <MapPin className="w-5 h-5" />
-                      </a>
-                    </div>
                   </div>
                 </div>
 

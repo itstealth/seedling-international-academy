@@ -12,7 +12,7 @@ type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
 
 // ─── Request a Callback Form ─────────────────────────────────────────────────
 function CallbackForm() {
-  const [formData, setFormData] = useState({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' });
+  const [formData, setFormData] = useState({ school: '', parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
@@ -42,6 +42,14 @@ function CallbackForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <div>
+        <select value={formData.school} onChange={handleChange('school')} className={`${fieldCls} appearance-none`}>
+          <option value="">Select Campus *</option>
+          <option value="SIA">Seedling International Academy (SIA) — Jawahar Nagar, Jaipur</option>
+          <option value="SMIA">Seedling Modern International Academy (SMIA) — Durgapura, Jaipur</option>
+        </select>
+        {errors.school && <p className={errorCls}>{errors.school}</p>}
+      </div>
       <div>
         <input type="text" placeholder="Parent's Name *" value={formData.parentName} onChange={handleChange('parentName')} className={fieldCls} />
         {errors.parentName && <p className={errorCls}>{errors.parentName}</p>}
