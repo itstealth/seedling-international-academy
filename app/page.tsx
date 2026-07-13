@@ -284,10 +284,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <div className="inline-flex flex-col items-center gap-2 mb-5">
               <span className="block w-px h-10 bg-sand" />
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand">Our Campuses</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-royal-blue">Our Campuses</span>
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
-              Two campuses, <em className="font-semibold text-sand italic">one vision</em>
+              Two campuses, <em className="font-semibold text-royal-blue italic">one vision</em>
             </h2>
             <p className="text-sm md:text-base text-text-light leading-relaxed font-light max-w-2xl mx-auto">
               Two distinct schools, united by the same Cambridge board — Seedling International Academy (SIA) and Seedling Modern International Academy (SMIA) deliver globally benchmarked education, each with its own unique identity.
@@ -341,7 +341,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     <h3 className="font-playfair text-2xl md:text-3xl font-semibold leading-tight mb-2 text-white drop-shadow-lg">
                       {campus.name}
                     </h3>
-                    <p className="text-sand text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
+                    <p className="text-royal-blue text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
                       {campus.subtitle}
                     </p>
                   </div>
@@ -948,9 +948,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto  relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div className='px-2'>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand mb-6 block">Join the Family</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-royal-blue mb-6 block">Join the Family</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-8">
-                Enroll Your Child <em className="font-semibold text-sand italic">Today</em>.
+                Enroll Your Child <em className="font-semibold text-royal-blue italic">Today</em>.
               </h2>
               <p className="text-xl text-text-light leading-relaxed mb-12 font-light">
                 Admissions for 2026–27 are now open. Experience the difference of a school that truly cares about every child's growth and happiness.
