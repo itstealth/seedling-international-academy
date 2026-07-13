@@ -747,7 +747,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── STUDENT GALLERY ─── */}
-      <section className="bg-navy-deeper pt-16 pb-8 relative overflow-hidden">
+      <section className="bg-navy-deeper py-16 md:py-24 relative overflow-hidden">
         {/* Subtle mesh decoration to match other dark sections */}
         <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6">
