@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera } from 'lucide-react';
+import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, CalendarDays, Camera, Pencil, Mail, Phone, ArrowDown, ChevronDown } from 'lucide-react';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
 import WorldMapDemo from "@/components/world-map-demo";
 import { AnimatePresence, motion } from "framer-motion";
@@ -272,89 +272,117 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
 
-      {/* ─── CURRICULUM OVERVIEW ─── */}
-      <section className="bg-navy-deeper pt-20 pb-24 relative overflow-hidden" id="curriculum">
+      {/* ─── OUR CAMPUSES ─── */}
+      <section className="bg-navy-deeper pt-20 pb-24 relative overflow-hidden" id="campuses">
         {/* Gold accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        {/* Subtle mesh decoration */}
+        <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <div className="inline-flex flex-col items-center gap-2 mb-5">
               <span className="block w-px h-10 bg-sand" />
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand">Learning</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-sand">Our Campuses</span>
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-light text-white leading-tight mb-6">
-              Curriculum overview
+              Two campuses, <em className="font-semibold text-sand italic">one vision</em>
             </h2>
             <p className="text-sm md:text-base text-white/80 leading-relaxed font-light max-w-2xl mx-auto">
-              The Cambridge international curriculum sets a global standard for education, and is recognised by universities and employers worldwide. Our curriculum is flexible, challenging and inspiring, culturally sensitive yet international in approach. Cambridge students develop an informed curiosity and a lasting passion for learning. They also gain the essential skills they need for success at university and in their future careers.
+              Seedling International Academy operates two campuses in Jaipur — each delivering the same globally benchmarked Cambridge education with its own distinct character.
             </p>
           </div>
 
-          {/* Stage cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+          {/* Campus cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {[
               {
-                name: "Pre-Prep School",
-                age: "3 - 7 years",
-                img: "/assets/Home/3 years .webp",
+                name: "Seedling International Academy",
+                subtitle: "Cambridge · Jawahar Nagar",
+                img: "/assets/Home/School2.webp",
+                address: "Jawahar Nagar, Jaipur, Rajasthan",
+                mapHref: "https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur",
+                phone: "+91 74130 12351",
+                tag: "Cambridge",
               },
               {
-                name: "Prep School",
-                age: "7 - 11 years",
-                img: "/assets/Home/4 years .webp",
+                name: "Seedling Modern International Academy",
+                subtitle: "SMIA · Durgapura",
+                img: "/0N9A9674.JPG",
+                address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
+                mapHref: "https://maps.google.com/?q=Seedling+Modern+International+Academy+Durgapura+Jaipur",
+                phone: "+91 95877 72837",
+                tag: "SMIA",
               },
-              {
-                name: "Junior School",
-                age: "11 - 14 years",
-                img: "/assets/Home/11 years .webp",
-              },
-              {
-                name: "Senior School",
-                age: "14 - 16 years",
-                img: "/assets/Home/14 years .webp",
-              },
-              {
-                name: "Sixth Form",
-                age: "16 - 18 years",
-                img: "/assets/Home/16 years.webp",
-              },
-            ].map((stage, i) => (
+            ].map((campus, i) => (
               <motion.div
-                key={stage.name}
-                className="group relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer"
+                key={campus.name}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/20 bg-white/[0.04] backdrop-blur-sm"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6 }}
               >
                 {/* Image */}
-                <img
-                  src={stage.img}
-                  alt={stage.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden">
+                  <img
+                    src={campus.img}
+                    alt={campus.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-navy-deeper/70 to-transparent" />
 
-                {/* Dark gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  {/* Tag */}
+                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 px-3 py-1.5 rounded-full">
+                    <span className="size-1.5 rounded-full bg-sand" />
+                    <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white">
+                      {campus.tag}
+                    </span>
+                  </div>
 
-                {/* Top stage label */}
-                <div className="absolute top-4 left-4 right-4 flex justify-end">
-                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-white/70">
-                    Stage {String(i + 1).padStart(2, "0")}
-                  </span>
+                  {/* Title overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="font-playfair text-2xl md:text-3xl font-semibold leading-tight mb-2 text-white drop-shadow-lg">
+                      {campus.name}
+                    </h3>
+                    <p className="text-sand text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
+                      {campus.subtitle}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Bottom content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <h3 className="font-playfair text-xl md:text-2xl font-light text-white leading-tight mb-3">
-                    {stage.name}
-                  </h3>
-                  <span className="inline-block px-4 py-1.5 rounded-full border border-sand/70 text-sand text-[11px] font-black tracking-widest">
-                    {stage.age}
-                  </span>
+                {/* Details */}
+                <div className="p-6 md:p-8 space-y-5">
+                  <div className="flex items-start gap-3 text-white/85">
+                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-sand" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z" />
+                    </svg>
+                    <span className="text-sm md:text-base font-medium leading-relaxed">{campus.address}</span>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-white/85">
+                    <svg className="w-5 h-5 flex-shrink-0 text-sand" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                    <a href={`tel:${campus.phone.replace(/\s/g, "")}`} className="text-sm md:text-base font-medium hover:text-white transition-colors">
+                      {campus.phone}
+                    </a>
+                  </div>
+
+                  <a
+                    href={campus.mapHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-2 text-[11px] font-black tracking-[0.2em] uppercase text-sand hover:text-white transition-colors"
+                  >
+                    View on map
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -474,152 +502,116 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
 
-      {/* ─── TESTIMONIALS / VOICES FROM THE FAMILY ─── */}
-      <section className="bg-off-white py-16 md:py-24" id="testimonials">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ─── COMMUNITY VOICES ─── */}
+      <section className="relative bg-white py-16 md:py-24 overflow-hidden" id="testimonials">
+        {/* Subtle architectural background */}
+        <div
+          className="absolute inset-0 opacity-[0.06] bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/assets/Home/building-from-top.jpg')" }}
+        />
+
+        {/* Right-side floating action buttons */}
+        <motion.div
+          className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col gap-3"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {[
+            { icon: Pencil, label: "Write a review", href: "#" },
+            { icon: CalendarDays, label: "Book a visit", href: "/admissions" },
+            { icon: Mail, label: "Email us", href: "mailto:seedlingacademy@hotmail.com" },
+            { icon: Phone, label: "Call us", href: "tel:+917413012351" },
+          ].map(({ icon: Icon, label, href }, idx) => (
+            <motion.a
+              key={label}
+              href={href}
+              aria-label={label}
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.3 + idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.08, y: -2 }}
+              className="size-11 rounded-full bg-crimson text-white flex items-center justify-center shadow-xl shadow-crimson/30 hover:bg-crimson-dark transition-colors"
+            >
+              <Icon className="size-4" strokeWidth={2.2} />
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* Header */}
-          <motion.div
-            className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
+          <motion.h2
+            className="text-center font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-navy-deeper leading-[1.5] mb-10 md:mb-14"
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <motion.span
-              className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block"
-              initial={{ opacity: 0, letterSpacing: "0.1em" }}
-              whileInView={{ opacity: 1, letterSpacing: "0.4em" }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6 }}
-            >
-              
-            </motion.span>
-            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-navy-deeper leading-[1.5]">
-              {"Voices from the".split(" ").map((word, idx) => (
-                <motion.span
-                  key={`w-${idx}`}
-                  className="inline-block"
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                >
-                  {word}
-                  {idx < 2 ? " " : ""}
-                </motion.span>
-              ))}
-              <span>{" "}</span>
-              <em className="font-semibold italic text-royal-blue inline-block">
-                Family
-              </em>
-              <motion.span
-                className="inline-block"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.4, delay: 0.7 }}
-              >
-                .
-              </motion.span>
-            </h2>
-            <motion.p
-              className="mt-5 text-text-light text-base md:text-lg leading-relaxed font-light"
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              Real stories from the parents, students and alumni who make
-              Seedling International School what it is today.
-            </motion.p>
-          </motion.div>
+            Voices from the <em className="font-semibold italic text-royal-blue">Family</em>.
+          </motion.h2>
 
-          {/* Testimonial cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* Category cards with testimony */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                quote:
-                  "Seedling has shaped my daughter into a confident, curious learner. The Cambridge curriculum and the teachers' dedication have made every day feel meaningful.",
-                name: "Priya Sharma",
-                role: "Parent — Grade 5",
-                accent: "from-royal-blue to-royal-blue",
-              },
-              {
-                quote:
-                  "From the IGCSE toppers to the sports field, the school gave me opportunities I never imagined. I'm proud to be a Seedling alumnus at a top global university today.",
-                name: "Aarav Mehta",
-                role: "Alumni — Class of 2022",
-                accent: "from-crimson to-crimson",
-              },
-              {
-                quote:
-                  "The holistic approach — academics, arts, sports and life skills — has helped my son find what he truly loves. We couldn't have asked for a better environment.",
-                name: "Rohan & Anjali Verma",
-                role: "Parents — Grade 8",
-                accent: "from-navy to-navy",
-              },
-              {
-                quote:
-                  "As an educator myself, I'm amazed by Seedling's teaching standards. The faculty genuinely cares, and the leadership is always open to dialogue and growth.",
-                name: "Dr. Neha Kapoor",
-                role: "Parent — Grade 10",
-                accent: "from-royal-blue to-royal-blue",
-              },
-              {
-                quote:
-                  "The transport, safety and the warmth of every staff member — from the gate to the classroom — gives us complete peace of mind as working parents.",
-                name: "Karan Singhvi",
-                role: "Parent — Grade 3",
-                accent: "from-crimson to-crimson",
-              },
-              {
-                quote:
-                  "I came to Seedling in Grade 9 and immediately felt at home. Today I'm an A-Level topper and a published debater. This place changed my life.",
+                label: "STUDENT",
+                img: "/0N9A9674.JPG",
+                quote: "I came to Seedling in Grade 9 and immediately felt at home. Today I'm an A-Level topper and a published debater. This place changed my life.",
                 name: "Isha Rathore",
                 role: "Student — Grade 12",
-                accent: "from-navy to-navy",
               },
-            ].map((t, i) => (
+              {
+                label: "PARENT",
+                img: "/assets/PRIMARY OUTING/1.webp",
+                quote: "Seedling has shaped my daughter into a confident, curious learner. The Cambridge curriculum and the teachers' dedication have made every day feel meaningful.",
+                name: "Priya Sharma",
+                role: "Parent — Grade 5",
+              },
+              {
+                label: "FACULTY",
+                img: "/0N9A9612.JPG",
+                quote: "As an educator myself, I'm amazed by Seedling's teaching standards. The faculty genuinely cares, and the leadership is always open to dialogue and growth.",
+                name: "Dr. Neha Kapoor",
+                role: "Educator & Parent",
+              },
+            ].map((card, i) => (
               <motion.div
-                key={i}
-                className="group relative bg-white rounded-3xl p-7 md:p-8 border border-sand/40 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden"
-                initial={{ opacity: 0, y: 50 }}
+                key={card.label}
+                initial={{ opacity: 0, y: 36 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.12,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6 }}
+                className="group bg-white border-2 border-sand/50 rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden"
               >
-                {/* Hover glow */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${t.accent} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
-                />
+                {/* Image */}
+                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-sand/60 m-3 mb-0">
+                  <img
+                    src={card.img}
+                    alt={card.label}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
 
-                {/* Quote */}
-                <blockquote className="text-text-base text-[15px] leading-relaxed font-light flex-1 mt-3">
-                  {t.quote}
-                </blockquote>
+                {/* Body */}
+                <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
+                  <h3 className="font-playfair text-xl sm:text-2xl tracking-[0.15em] text-text-light font-light mb-2">
+                    {card.label}
+                  </h3>
+                  <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
 
-                {/* Author */}
-                <div className="mt-6 pt-5 border-t border-sand/40 flex items-center gap-3">
-                  <div
-                    className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.accent} text-white flex items-center justify-center font-black text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    {t.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </div>
-                  <div>
+                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6 italic">
+                    &ldquo;{card.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="pt-5 border-t border-sand/40 inline-flex flex-col items-center min-w-[180px]">
                     <p className="font-playfair text-base font-semibold text-navy-deeper leading-tight">
-                      {t.name}
+                      {card.name}
                     </p>
-                    <p className="text-[11px] uppercase tracking-[0.15em] text-text-light font-semibold mt-0.5">
-                      {t.role}
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
+                      {card.role}
                     </p>
                   </div>
                 </div>
@@ -760,7 +752,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Why Choose Us</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight mb-12">
-                Why Seedling International Academy?
+                Why Cambridge?
               </h2>
               <div className="flex flex-col gap-6">
                 {[
@@ -899,7 +891,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Seedling International School</span>
+              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper leading-tight">
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
@@ -939,7 +931,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Seedling International School students shine again with 100% in Cambridge.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
+                  { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
                   { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
                 ].map(({ day, month, title, desc, url }, index) => (

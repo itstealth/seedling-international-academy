@@ -412,7 +412,7 @@ export default function Navbar() {
           className="bg-navy-deeper relative overflow-hidden"
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Animated shimmer band */}
           <motion.div
@@ -435,7 +435,7 @@ export default function Navbar() {
                 className="flex-shrink-0"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.3, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-5">
                   <Image
@@ -462,7 +462,7 @@ export default function Navbar() {
                 className="flex items-center gap-3 sm:gap-5 flex-1 justify-end min-w-0"
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <Link
                   href="/"
@@ -543,7 +543,7 @@ export default function Navbar() {
                               <button
                                 type="button"
                                 onClick={() => setOpenDropdown(isOpenDrop ? null : item.name)}
-                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
+                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-base sm:text-lg font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
                               >
                                 <span>{item.name}</span>
                                 <ChevronDown
@@ -555,7 +555,7 @@ export default function Navbar() {
                               <Link
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`flex-1 py-3 text-lg sm:text-xl font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
+                                className={`flex-1 py-3 text-base sm:text-lg font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
                               >
                                 {item.name}
                               </Link>
@@ -577,7 +577,7 @@ export default function Navbar() {
                                         key={child.name}
                                         href={child.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block py-2 text-sm sm:text-base font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
+                                        className={`block py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
                                       >
                                         {child.name}
                                       </Link>
