@@ -165,16 +165,22 @@ export default function Footer() {
 
             {/* Bottom Nav */}
             <nav className="border-t border-white/10 py-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-xs font-medium text-gray-300">
-              <Link href="/contact-us" className="hover:text-white transition-colors">Contact</Link>
+              {/* <Link href="/contact-us" className="hover:text-white transition-colors">Contact</Link>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
               <Link href="/policies" className="hover:text-white transition-colors">Policies</Link>
               <Link href="/mandatory-disclosures" className="hover:text-white transition-colors">Mandatory Disclosures</Link>
               <Link href="/erp-login" className="hover:text-white transition-colors">ERP Login</Link>
-              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link> */}
+              <span className="opacity-70">Contact</span>
+              <span className="opacity-70">Blog</span>
+              <span className="opacity-70">Policies</span>
+              <span className="opacity-70">Mandatory Disclosures</span>
+              <span className="opacity-70">ERP Login</span>
+              <span className="opacity-70">Terms & Conditions</span>
             </nav>
 
             {/* Back to top */}
-            <div className="py-5 border-t border-white/10 flex justify-end items-center gap-3">
+            <div className="py-5 border-t border-white/10 flex justify-center items-center gap-3">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition-colors"

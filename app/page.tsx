@@ -326,7 +326,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     alt={campus.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-navy-deeper/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-navy-deeper/40 to-transparent" />
 
                   {/* Tag */}
                   <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 px-3 py-1.5 rounded-full">
@@ -708,7 +708,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── WHY CAMBRIDGE INTERNATIONAL SCHOOL ─── */}
-      <section className="bg-off-white pt-16 pb-8">
+      <section className="bg-off-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-24 items-center">
             <div>
@@ -859,10 +859,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
             </div>
-            <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+            {/* <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
               All Updates
               <ArrowUpRight size={16} strokeWidth={2.5} />
-            </Link>
+            </Link> */}
           </div>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
