@@ -1,0 +1,223 @@
+"use client";
+
+import HeroWrapper from "@/components/layout/HeroWrapper";
+import WorldMapDemo from "@/components/world-map-demo";
+
+const stats = [
+  { value: "160+", label: "Countries", sub: "Cambridge operates in more than 160 countries worldwide." },
+  { value: "10,000+", label: "Schools", sub: "Over ten thousand schools deliver the Cambridge curriculum globally." },
+  { value: "1M+", label: "Learners", sub: "More than a million students sit Cambridge exams each year." },
+  { value: "70+", label: "IGCSE Subjects", sub: "And 50+ AS & A Level subjects — the widest range in international education." },
+  { value: "1,400+", label: "Universities", sub: "Cambridge qualifications are recognised by leading universities worldwide." },
+  { value: "190+", label: "Years of Heritage", sub: "A pedagogy refined over more than a century of educational research." },
+];
+
+const recognition = [
+  {
+    title: "Recognised by Top Universities",
+    desc: "Cambridge International AS & A Levels are accepted by every leading university in the UK, US, Canada, Australia and beyond — including the Ivy League, Oxbridge, IITs and NITs.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+    ),
+    color: "crimson",
+  },
+  {
+    title: "Trusted by Governments",
+    desc: "Cambridge is the chosen international curriculum of ministries of education across continents — from Singapore and Malaysia to the UAE, Egypt, South Africa and beyond.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11h16V10M9 21V13h6v8" />
+      </svg>
+    ),
+    color: "navy",
+  },
+  {
+    title: "Endorsed by Employers",
+    desc: "Multinational employers — from finance and consulting to tech and engineering — actively recruit Cambridge graduates for their analytical rigour and global mindset.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 14.15v4.075a2.25 2.25 0 01-1.59 2.15c-2.282.927-4.683 1.475-7.16 1.475a17.07 17.07 0 01-7.16-1.475 2.25 2.25 0 01-1.59-2.15V14.15M16.5 6.75l-4.5-3-4.5 3M12 3.75v13.5" />
+      </svg>
+    ),
+    color: "mauve",
+  },
+  {
+    title: "Aligned with NEP 2020",
+    desc: "Cambridge International's flexible, inquiry-led approach aligns naturally with India's National Education Policy 2020 — making the transition seamless for our students.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+      </svg>
+    ),
+    color: "royal-blue",
+  },
+];
+
+const benefits = [
+  { title: "Globally Portable", desc: "Cambridge qualifications travel with the student — whether they pursue higher education in India, the UK, the US, Australia or anywhere else." },
+  { title: "Recognised Excellence", desc: "A Cambridge diploma is one of the most recognised credentials in international education, opening doors at top universities and competitive careers." },
+  { title: "Future-Ready Skills", desc: "The Cambridge approach develops critical thinking, research, collaboration and problem-solving — skills that define the next generation of leaders." },
+  { title: "Flexible Pathways", desc: "From Early Years through Cambridge Advanced, students can shape a learning path that matches their strengths and ambitions." },
+  { title: "Internationally Connected", desc: "Joining a global community of Cambridge learners — competing, collaborating, and connecting with peers across 160+ countries." },
+  { title: "Holistic Growth", desc: "Beyond academics, Cambridge nurtures curiosity, resilience, and global citizenship — shaping well-rounded young people ready for an interconnected world." },
+];
+
+const colorMap: Record<string, { bg: string; text: string; border: string }> = {
+  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
+  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
+  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
+  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
+};
+
+export default function CambridgeEducationPage(): React.JSX.Element {
+  return (
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+      {/* ═══ HERO ═══ */}
+      <HeroWrapper
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Cambridge Education"
+        badge="A Global Standard"
+        breadcrumbs={[{ label: "Cambridge Education" }]}
+        height="large"
+      />
+
+      {/* ═══ INTRO ═══ */}
+      <section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center">
+        <span className="block w-px h-12 bg-sand mx-auto mb-5" />
+        <p className="font-playfair text-crimson text-xl italic mb-4">A Passport to the World</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+          Recognised in <em className="font-semibold text-navy">160+ countries</em>.<br />
+          Trusted across generations.
+        </h2>
+        <p className="text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
+          Cambridge International is the world's largest provider of international education — a curriculum designed not for one country, but for every learner, anywhere. When your child studies Cambridge, they join a community that opens doors from Jaipur to Johannesburg, Singapore to Stockholm.
+        </p>
+      </section>
+
+      {/* ═══ BIG STATS BAND ═══ */}
+      <section className="relative py-14 md:py-20 bg-navy-deeper overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+          <div className="text-center mb-10 md:mb-14">
+            <p className="font-playfair text-sand text-xl italic mb-3">Cambridge by the Numbers</p>
+            <h2 className="font-playfair text-3xl md:text-5xl font-light text-white">
+              A Presence That <em className="font-semibold text-sand">Spans the Globe</em>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:border-sand/50 transition-all duration-500 hover:-translate-y-1"
+              >
+                <p className="font-playfair text-4xl md:text-6xl font-semibold text-sand leading-none mb-3">{s.value}</p>
+                <p className="font-playfair text-lg md:text-xl text-white font-semibold mb-2">{s.label}</p>
+                <p className="text-white/70 text-xs md:text-sm leading-relaxed font-dm">{s.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ WORLD MAP ═══ */}
+      <section className="relative py-12 md:py-16 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6">
+          <WorldMapDemo />
+        </div>
+      </section>
+
+      {/* ═══ RECOGNITION ═══ */}
+      <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="text-center mb-12 md:mb-16">
+          <p className="font-playfair text-navy text-xl italic mb-3">Globally Trusted</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            Where a Cambridge <em className="font-semibold text-navy">Qualification</em> Is Recognised
+          </h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          {recognition.map((r) => {
+            const c = colorMap[r.color];
+            return (
+              <div
+                key={r.title}
+                className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 border ${c.border} hover:-translate-y-1`}
+              >
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
+                  {r.icon}
+                </div>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{r.title}</h3>
+                <p className="text-text-light text-sm leading-[1.85] font-dm">{r.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ═══ WHY IT MATTERS ═══ */}
+      <section className="relative py-12 md:py-20 bg-navy-light/40 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/20 rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+          <div className="text-center mb-12 md:mb-16">
+            <p className="font-playfair text-mauve text-xl italic mb-3">Why This Matters</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+              What <em className="font-semibold text-navy">Cambridge</em> Means for Your Child
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {benefits.map((b, i) => (
+              <div
+                key={b.title}
+                className="bg-white rounded-3xl p-7 md:p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group"
+              >
+                <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper group-hover:text-royal-blue transition-colors">{b.title}</h3>
+                <p className="text-text-light text-sm leading-[1.9] font-dm">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ CLOSING CTA ═══ */}
+      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <span className="block w-px h-10 bg-sand mx-auto mb-5" />
+          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
+            A Cambridge education.<br />
+            <em className="font-semibold text-sand">A world of possibility.</em>
+          </h2>
+          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+            At Seedling International Academy, your child doesn't just study Cambridge — they join a 160-country community of learners shaping the future.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="/admissions"
+              className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/40 font-dm"
+            >
+              Begin Your Journey
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="/why-cambridge/path"
+              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
+            >
+              Your Path, Your Way
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

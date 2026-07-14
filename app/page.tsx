@@ -534,10 +534,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               },
               {
                 label: "PARENT",
-                img: "/assets/PRIMARY OUTING/1.webp",
-                quote: "Seedling has shaped my daughter into a confident, curious learner. The Cambridge curriculum and the teachers' dedication have made every day feel meaningful.",
-                name: "Priya Sharma",
-                role: "Parent — Grade 5",
+                img: "/assets/testimonial/Vatan Parnami and Anku Sapra.png",
+                quote: "Seedling International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+                name: "Vatan Parnami & Anku Sapra",
+                role: "Parents",
               },
               {
                 label: "FACULTY",
@@ -572,7 +572,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   </h3>
                   <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
 
-                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6 italic">
+                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light italic mb-6">
                     &ldquo;{card.quote}&rdquo;
                   </blockquote>
 
@@ -867,10 +867,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 Trending <em className="font-semibold text-navy italic">Updates</em>.
               </h2>
             </div>
-            {/* <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+            <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
               All Updates
               <ArrowUpRight size={16} strokeWidth={2.5} />
-            </Link> */}
+            </Link>
           </div>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">

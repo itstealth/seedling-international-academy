@@ -233,74 +233,6 @@ function ExperienceSection() {
           </text>
         </svg>
       </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
-            Voices of Seedling International School
-          </span>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
-            Parent
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
-              {" "}Experiences
-            </span>
-          </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-transparent" />
-            <div className="relative overflow-hidden rounded-2xl aspect-square max-w-md mx-auto shadow-2xl">
-              <img
-                key={active}
-                src={current.image}
-                alt={current.name}
-                className="w-full h-full object-cover object-top animate-fade-in"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
-              <div className="absolute bottom-6 left-6">
-                <span className="bg-sand text-navy-deeper text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider">
-                  {current.highlight}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-white">
-            <div className="text-sand text-8xl font-playfair leading-none mb-4 opacity-40">"</div>
-            <blockquote
-              key={`quote-${active}`}
-              className="text-white/80 text-xl md:text-2xl leading-relaxed mb-8 font-dm font-light animate-fade-in"
-            >
-              {current.quote}
-            </blockquote>
-            <div className="border-t border-white/10 pt-6">
-              <div className="text-white font-black text-lg font-playfair tracking-tight">{current.name}</div>
-              <div className="text-sand text-sm mt-1 font-dm font-bold uppercase tracking-widest">{current.role}</div>
-              <div className="text-white/40 text-xs mt-0.5 font-dm">{current.school}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex gap-4 justify-center flex-wrap">
-          {experiences.map((exp, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`relative overflow-hidden rounded-full transition-all duration-300 ${active === i
-                ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-crimson"
-                : "w-12 h-12 opacity-50 hover:opacity-80"
-                }`}
-            >
-              <img
-                src={exp.image}
-                alt={exp.name}
-                className="w-full h-full object-cover object-top"
-              />
-            </button>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -1098,10 +1030,6 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={120}>
             <div className="flex gap-6 justify-center flex-wrap">
-              <a href="tel:+917413012351"
-                className="inline-flex items-center gap-3 bg-white text-navy-deeper hover:bg-sand px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-2xl">
-                📞 Book a Visit
-              </a>
               <a href="#enquire"
                 className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-navy-deeper px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
                 Enquire Online

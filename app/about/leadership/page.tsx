@@ -92,11 +92,11 @@ export default function LeadershipPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/career.jpeg"
-        title="Leadership"
+        backgroundImage="/assets/img/sps-banner.jpg"
+        title="Leadership Teams"
         position={70}
         badge="Anchored In Purpose. Driven By A Vision"
-        breadcrumbs={[{ label: "Leadership" }]}
+        breadcrumbs={[{ label: "Leadership Teams" }]}
       />
 
           <section className="py-10  bg-white">

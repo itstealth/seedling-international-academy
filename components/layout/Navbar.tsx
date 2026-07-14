@@ -12,7 +12,7 @@ const navItems = [
   { name: "Home", href: "/" },
   {
     name: "About", href: "/about", dropdown: [
-      { name: "Welcome from the Head's", href: "/about" },
+      { name: "Welcome from the Head's", href: "/about/welcome-from-the-head" },
       { name: "Mission and Values", href: "/about/mission" },
       { name: "Our Standards", href: "/about/standards" },
       { name: "Seedling Legacy", href: "/about/legacy" },
@@ -48,8 +48,8 @@ const navItems = [
   },
   {
     name: "Campuses", href: "/campuses", dropdown: [
-      { name: "SIA", href: "/sia" },
-      { name: "SMIA", href: "/smia" },
+      { name: "SIA", href: "/campuses#sia" },
+      { name: "SMIA", href: "/campuses#smia" },
     ]
   },
 ];
@@ -575,18 +575,13 @@ export default function Navbar() {
                                 />
                               </button>
                             ) : (
-                              /* <Link
+                              <Link
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
                                 className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
                               >
                                 {item.name}
-                              </Link> */
-                              <span
-                                className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors ${pathname === item.href ? "text-sand" : "text-white/80"}`}
-                              >
-                                {item.name}
-                              </span>
+                              </Link>
                             )}
                           </div>
                           {item.dropdown && (
@@ -601,20 +596,14 @@ export default function Navbar() {
                                 >
                                   <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/40 pl-4 sm:pl-6 space-y-1 mt-1 pb-1">
                                     {item.dropdown.map((child) => (
-                                      /* <Link
+                                      <Link
                                         key={child.name}
                                         href={child.href}
                                         onClick={() => setIsOpen(false)}
                                         className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
                                       >
                                         {child.name}
-                                      </Link> */
-                                      <span
-                                        key={child.name}
-                                        className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/40"}`}
-                                      >
-                                        {child.name}
-                                      </span>
+                                      </Link>
                                     ))}
                                   </div>
                                 </motion.div>

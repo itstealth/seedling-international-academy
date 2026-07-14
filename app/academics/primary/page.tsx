@@ -1,0 +1,135 @@
+"use client";
+
+import { motion } from "framer-motion";
+import HeroWrapper from "@/components/layout/HeroWrapper";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
+const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.02 } } };
+const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
+
+const subjects = [
+  { group: "Core", items: ["English", "Mathematics", "Science"], color: "crimson" },
+  { group: "Languages", items: ["English as a Second Language", "French", "Spanish", "German", "Mandarin", "Hindi"], color: "navy" },
+  { group: "Humanities", items: ["Geography", "History", "Global Perspectives"], color: "mauve" },
+  { group: "Creative", items: ["Art & Design", "Music", "Drama", "Physical Education"], color: "royal-blue" },
+  { group: "Digital", items: ["Computing & Digital Literacy"], color: "crimson" },
+  { group: "Wellbeing", items: ["Wellbeing", "Personal & Social Education"], color: "navy" },
+];
+
+const features = [
+  { title: "Flexible Curriculum", desc: "Not restrictive — teachers bring local and international examples into class, and it works with their students.", icon: "🌐", color: "crimson" },
+  { title: "Optional Assessments", desc: "Cambridge Primary Checkpoint accurately measures student potential and progress at key stages.", icon: "📊", color: "navy" },
+  { title: "High-Quality Resources", desc: "Engaging classroom materials plus endorsed resources from trusted publisher partners.", icon: "📚", color: "mauve" },
+  { title: "Clear Progression", desc: "A clear age-appropriate path that takes students seamlessly into Cambridge Lower Secondary.", icon: "➡️", color: "royal-blue" },
+];
+
+const colorMap: Record<string, { bg: string; text: string; border: string }> = {
+  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
+  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
+  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
+  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
+};
+
+export default function CambridgePrimaryPage(): React.JSX.Element {
+  return (
+    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+      <HeroWrapper backgroundImage="/assets/img/sps-banner.jpg" title="Cambridge Primary" badge="Ages 5–11 · A Strong Foundation" breadcrumbs={[{ label: "Cambridge Primary" }]} height="large" />
+
+      <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+        <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
+        <p className="font-playfair text-crimson text-xl italic mb-4">The Foundation Years</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+          A strong foundation,<br />
+          <em className="font-semibold text-navy">a lifelong love of learning.</em>
+        </h2>
+        <p className="text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
+          Cambridge Primary provides a strong foundation for students at the beginning of their schooling — preparing them to progress through the Cambridge Pathway in an age-appropriate way.
+        </p>
+        <motion.figure className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm text-left" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, delay: 0.1, ease: EASE }}>
+          <blockquote className="font-playfair italic text-lg md:text-xl text-navy-deeper leading-relaxed">
+            &ldquo;Cambridge Primary has a very flexible curriculum. It is not restrictive. I can bring local and international examples into my class, and it works very well with my students.&rdquo;
+          </blockquote>
+          <figcaption className="mt-4 text-[10px] font-black tracking-[0.2em] uppercase text-text-light">— Cambridge Primary Teacher, Egypt</figcaption>
+        </motion.figure>
+      </motion.section>
+
+      <section className="relative py-12 md:py-20 bg-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 h-72 bg-mauve/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-sand/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+            <p className="font-playfair text-navy text-xl italic mb-3">Subjects At Cambridge Primary</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+              Over <em className="font-semibold text-navy">Ten Subjects</em> To Explore
+            </h2>
+          </motion.div>
+
+          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+            {subjects.map((s) => {
+              const c = colorMap[s.color];
+              return (
+                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`bg-off-white rounded-2xl p-6 shadow-sm hover:shadow-lg border ${c.border}`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
+                    <h3 className="font-playfair text-lg font-semibold text-navy-deeper">{s.group}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {s.items.map((i) => (<span key={i} className="text-xs font-medium text-text-light bg-white border border-sand/40 rounded-full px-3 py-1">{i}</span>))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+            <p className="font-playfair text-sand text-xl italic mb-3">Why It Works</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
+              The Cambridge Primary <em className="font-semibold text-sand">Advantage</em>
+            </h2>
+          </motion.div>
+          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+            {features.map((f) => {
+              const c = colorMap[f.color];
+              return (
+                <motion.div key={f.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-sand/40 transition-colors">
+                  <div className="text-4xl mb-4">{f.icon}</div>
+                  <h3 className="font-playfair text-lg font-semibold mb-2 text-white">{f.title}</h3>
+                  <p className="text-white/75 text-sm leading-[1.85] font-dm">{f.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <p className="font-playfair text-sand text-xl italic mb-4">Where Primary Leads</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
+            Strong starts. <em className="font-semibold text-sand">Confident learners.</em>
+          </h2>
+          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+            Cambridge Primary at Seedling International Academy — designed to spark curiosity, build strong foundations, and prepare your child for the next stage of the Cambridge Pathway.
+          </p>
+          <motion.div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={stagger}>
+            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="/admissions" className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40 font-dm">
+              Enquire Now
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </motion.a>
+            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="/academics/lower-secondary" className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
+              Cambridge Lower Secondary
+            </motion.a>
+          </motion.div>
+        </div>
+      </motion.section>
+    </main>
+  );
+}
