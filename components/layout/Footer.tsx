@@ -7,7 +7,7 @@ const schools = [
   {
     name: "Seedling International Academy",
     subtitle: "",
-    logo: "/camb_logo.png",
+    logo: "/assets/Home/SIA_Logo_transparent.webp",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [
@@ -20,7 +20,7 @@ const schools = [
   {
     name: "Seedling Modern International Academy",
     subtitle: "(SMIA)",
-    logo: "/assets/Home/SMIA_Logo.png",
+    logo: "/assets/Home/SMIA_Logo_transparent.webp",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
@@ -39,6 +39,19 @@ export default function Footer() {
           <div className="absolute top-0 right-0 w-[60%] h-[60%] mesh-gradient opacity-[0.05] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto relative z-10">
+            {/* Cambridge shield — accreditation mark shared by both campuses */}
+            <div className="flex items-center justify-center gap-5 pb-10">
+              <span className="h-px flex-1 max-w-[120px] bg-white/10" />
+              <Image
+                src="/assets/Home/cambridge_shield_v2.webp"
+                alt="Cambridge shield"
+                width={50}
+                height={58}
+                className="h-12 md:h-14 w-auto object-contain opacity-90"
+              />
+              <span className="h-px flex-1 max-w-[120px] bg-white/10" />
+            </div>
+
             {/* Two Schools Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 pb-10 md:items-stretch">
               {schools.map((school) => (

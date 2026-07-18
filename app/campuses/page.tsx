@@ -49,7 +49,7 @@ const campuses: Campus[] = [
     shortName: "SIA",
     fullName: "Seedling International Academy",
     badge: "SIA · Jawahar Nagar, Jaipur",
-    heroImage: "/assets/Home/School2.webp",
+    heroImage: "/assets/Home/SIA_collage_v3.webp",
     introHeadline: "Where Cambridge meets <em class='font-semibold text-navy'>three decades of Seedling.</em>",
     introLead: "Our Jawahar Nagar campus is the home of Seedling International Academy (SIA) — a five-acre green space where the Cambridge curriculum comes alive through joyful learning, caring teachers, and a community that treats every child as irreplaceable.",
     established: "1993",
@@ -89,7 +89,7 @@ const campuses: Campus[] = [
     shortName: "SMIA",
     fullName: "Seedling Modern International Academy",
     badge: "SMIA · Durgapura, Jaipur",
-    heroImage: "/join.JPG",
+    heroImage: "/assets/Home/SMIA_collage_v3.webp",
     introHeadline: "Modern facilities. <em class='font-semibold text-navy'>Timeless Seedling values.</em>",
     introLead: "Seedling Modern International Academy (SMIA) at Durgapura brings the same globally benchmarked Cambridge education to central Jaipur — modern, vibrant and built for the next generation of learners.",
     established: "2010s",
@@ -171,7 +171,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, ease: EASE }}
-            className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-sand/40 shadow-lg"
+            className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg"
           >
             <img src={campus.heroImage} alt={campus.fullName} className="w-full h-full object-cover" />
             <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
@@ -275,7 +275,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               </a>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-sand/40 shadow-lg h-[280px]">
+            <div className="rounded-[8px] overflow-hidden border border-sand/40 shadow-lg h-[280px]">
               <iframe
                 src={campus.mapEmbed}
                 width="100%"
@@ -312,7 +312,7 @@ export default function CampusesPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
-        backgroundImage="/assets/Home/School2.webp"
+        backgroundImage="/assets/campus-images/3.jpeg"
         title="Our Campuses"
         badge="Two Distinct Schools, One Cambridge Standard"
         breadcrumbs={[{ label: "Campuses" }]}

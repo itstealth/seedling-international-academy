@@ -43,7 +43,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function SMIAPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <HeroWrapper backgroundImage="/join.JPG" title="Seedling Modern International Academy" badge="SMIA · Durgapura, Jaipur" breadcrumbs={[{ label: "SMIA" }]} height="large" />
+      <HeroWrapper backgroundImage="/assets/Home/SMIA_collage_v3.webp" title="Seedling Modern International Academy" badge="SMIA · Durgapura, Jaipur" breadcrumbs={[{ label: "SMIA" }]} height="large" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
@@ -147,7 +147,7 @@ export default function SMIAPage(): React.JSX.Element {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
             </a>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, ease: EASE }} className="rounded-2xl overflow-hidden border border-sand/40 shadow-lg h-[360px]">
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, ease: EASE }} className="rounded-[8px] overflow-hidden border border-sand/40 shadow-lg h-[360px]">
             <iframe
               src="https://www.google.com/maps?q=Seedling+Modern+International+Academy+Durgapura+Jaipur&output=embed"
               width="100%"

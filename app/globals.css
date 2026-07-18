@@ -19,12 +19,60 @@
   --color-cool-white: #f0f4ff;
   --color-royal-blue: #1e4db7;
 
-  /* Cambridge Pathway stage colors */
-  --color-camb-ey: #7c3aed;        /* Early Years – purple */
-  --color-camb-p:  #2563eb;        /* Primary – blue */
-  --color-camb-ls: #059669;        /* Lower Secondary – green */
-  --color-camb-us: #ea580c;        /* Upper Secondary – orange */
-  --color-camb-a:  #9f1239;        /* Advanced – maroon */
+  /* Cambridge official colors */
+  --color-camb-blue: #8ee8d8;
+  --color-camb-light-blue: #d1f9f1;
+  --color-camb-warm-blue: #00bdb6;
+  --color-camb-dark-blue: #133844;
+
+  /* ── Premium light system ──────────────────────────────────────────────
+     Grounds are near-neutral; stage identity is carried by a muted accent
+     on a hairline rule, never by a saturated block. Quiet + institutional. */
+  --color-ivory:    #ffffff;
+  --color-stone:    #f4f6f9;
+  --color-ink:      #0e2440;
+  --color-ink-soft: #4a5a6e;
+  --color-hairline: #dde3ea;
+  --color-gold:     #c9a054;
+
+  /* Section grounds — barely-there tints, neutral first, hue second */
+  --color-pastel-purple-bg: #f4f3f6;
+  --color-pastel-blue-bg:   #f1f3f6;
+  --color-pastel-green-bg:  #f1f4f2;
+  --color-pastel-orange-bg: #f7f4ef;
+  --color-pastel-rose-bg:   #f6f2f3;
+
+  --color-pastel-purple-border: #e4e2e8;
+  --color-pastel-blue-border:   #dfe3ea;
+  --color-pastel-green-border:  #dee5e0;
+  --color-pastel-orange-border: #ebe4d9;
+  --color-pastel-rose-border:   #e9e0e2;
+
+  /* Stage accents — Cambridge's own teal, one hue, five deepening values.
+     Anchored on the real brand tokens above: light teal at age 3,
+     --color-camb-dark-blue at age 16. The value encodes the journey. */
+  --color-camb-ey: #8fa9c4;        /* Early Years      */
+  --color-camb-p:  #5f81a5;        /* Primary          */
+  --color-camb-ls: #3a5f88;        /* Lower Secondary  */
+  --color-camb-us: #1d4370;        /* Upper Secondary  */
+  --color-camb-a:  #00142e;        /* Advanced         = navy-deeper */
+
+  /* Claret — the single warm counterpoint, used sparingly for emphasis */
+  --color-claret: #a3123f;         /* = Seedling crimson / Cambridge shield red */
+
+  /* Stage card grounds — a whisper of the accent, nothing more */
+  --color-camb-ey-soft: #eef2f7;
+  --color-camb-p-soft:  #ebf0f6;
+  --color-camb-ls-soft: #e8eef5;
+  --color-camb-us-soft: #e6ecf4;
+  --color-camb-a-soft:  #e4eaf2;
+
+  /* Ink that sits on those grounds — deepened teal, ≥5.9:1 on ivory */
+  --color-camb-ey-ink: #3d5a7a;
+  --color-camb-p-ink:  #32506f;
+  --color-camb-ls-ink: #274565;
+  --color-camb-us-ink: #1d3a5a;
+  --color-camb-a-ink:  #00142e;
 
   /* Fonts */
   --font-serif: var(--font-serif);
