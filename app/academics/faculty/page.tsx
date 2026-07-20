@@ -117,12 +117,12 @@ export default function FacultyPage() {
                     {/* Content */}
                     <div className="flex-1 p-12 md:p-16 flex flex-col justify-between">
                        <div className="relative">
-                          <div className="absolute top-0 right-0 p-4 text-7xl font-black text-black/[0.03] select-none pointer-events-none italic font-serif">
+                          <div className="absolute top-0 right-0 p-4 text-7xl font-black text-black/[0.03] select-none pointer-events-none font-serif">
                              {member.initials}
                           </div>
                           <span className="text-label text-secondary mb-4 block uppercase font-black">{member.role}</span>
                           <h3 className="text-4xl font-black text-neutral-950 mb-8 tracking-tighter">{member.name}</h3>
-                          <p className="text-xl text-neutral-500 font-serif italic leading-relaxed mb-10">
+                          <p className="text-xl text-neutral-500 font-serif leading-relaxed mb-10">
                              &quot;{member.quote}&quot;
                           </p>
                        </div>
@@ -188,7 +188,7 @@ export default function FacultyPage() {
                      <div className="flex justify-between items-start mb-10">
                         <div>
                            <span className="text-xs font-black tracking-[0.4em] uppercase text-secondary mb-4 block">Meet the experts</span>
-                           <h4 className="text-5xl font-black tracking-tighter italic font-serif h-auto">{dept.name}</h4>
+                           <h4 className="text-5xl font-black tracking-tighter font-serif h-auto">{dept.name}</h4>
                         </div>
                         <div className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-xl flex items-center justify-center border border-white/20">
                            <BookOpen className="w-10 h-10 text-white" />

@@ -2,24 +2,36 @@
 
 /* 🌈 THEME VARIABLES (Replaces tailwind.config.js) */
 @theme {
-  /* Colors */
-  --color-navy: #034ea2;
-  --color-crimson: #a3123f;
+  /* Colors — sampled from the RENDERED cambridgeinternational.org homepage,
+     not from its stylesheet (the stylesheet carries dead legacy hexes that
+     never paint). Measured share of pixels: white 40%, mint #d7fdf5 9.3%,
+     off-white #f7fafa 6.9%, teal #00bdb6 6.1%, yellow #f9d541 3.4%.
+     There is NO warm/red/coral accent anywhere on the rendered page.
+
+     Usage rule taken from their site: teal and yellow are FILLS only, always
+     with ink text on top — never coloured text on white (teal on white is
+     2.35:1 and fails). Coloured text uses deep teal #036268 (7.12:1). */
+  --color-navy: #036268;
+  --color-crimson: #036268;        /* was coral — no warm accent exists on their site */
   --color-mauve: #896B85;
   --color-sand: #D6D1CF;
   --color-off-white: #ffffff;
   --color-dark: #0e0e0e;
-  --color-text-base: #2c2c2c;
-  --color-text-light: #5a5a5a;
-  --color-navy-dark: #013975;
-  --color-navy-deeper: #00142e;
-  --color-crimson-dark: #8e1037;
-  --color-crimson-deeper: #7a0f35;
-  --color-navy-light: #eef4fc;
-  --color-cool-white: #f0f4ff;
-  --color-royal-blue: #1e4db7;
+  --color-text-base: #1f2121;
+  --color-text-light: #4f5151;
+  --color-navy-dark: #025573;
+  --color-navy-deeper: #133844;
+  --color-crimson-dark: #025573;
+  --color-crimson-deeper: #133844;
+  --color-navy-light: #eef3f3;
+  --color-cool-white: #f7fafa;
+  --color-royal-blue: #00bdb6;
 
-  /* Cambridge official colors */
+  /* The two genuine identity fills, measured off the live page */
+  --color-mint:   #d7fdf5;         /* 9.3% of rendered pixels — light section ground */
+  --color-yellow: #f9d541;         /* 3.4% — accent blocks; ink on top = 11.3:1 */
+
+  /* Cambridge official colors (verified against the live site's stylesheet) */
   --color-camb-blue: #8ee8d8;
   --color-camb-light-blue: #d1f9f1;
   --color-camb-warm-blue: #00bdb6;
@@ -29,11 +41,10 @@
      Grounds are near-neutral; stage identity is carried by a muted accent
      on a hairline rule, never by a saturated block. Quiet + institutional. */
   --color-ivory:    #ffffff;
-  --color-stone:    #f4f6f9;
-  --color-ink:      #0e2440;
-  --color-ink-soft: #4a5a6e;
-  --color-hairline: #dde3ea;
-  --color-gold:     #c9a054;
+  --color-stone:    #f7fafa;
+  --color-ink:      #1f2121;
+  --color-ink-soft: #4f5151;
+  --color-hairline: #e3e3e3;
 
   /* Section grounds — barely-there tints, neutral first, hue second */
   --color-pastel-purple-bg: #f4f3f6;
@@ -49,36 +60,37 @@
   --color-pastel-rose-border:   #e9e0e2;
 
   /* Stage accents — Cambridge's own teal, one hue, five deepening values.
-     Anchored on the real brand tokens above: light teal at age 3,
-     --color-camb-dark-blue at age 16. The value encodes the journey. */
-  --color-camb-ey: #8fa9c4;        /* Early Years      */
-  --color-camb-p:  #5f81a5;        /* Primary          */
-  --color-camb-ls: #3a5f88;        /* Lower Secondary  */
-  --color-camb-us: #1d4370;        /* Upper Secondary  */
-  --color-camb-a:  #00142e;        /* Advanced         = navy-deeper */
+     Mint at age 3, the site's darkest teal-navy at age 16. The value
+     encodes the journey. */
+  --color-camb-ey: #8ee8d8;        /* Early Years      */
+  --color-camb-p:  #3be0d0;        /* Primary          */
+  --color-camb-ls: #00bdb6;        /* Lower Secondary  */
+  --color-camb-us: #036268;        /* Upper Secondary  */
+  --color-camb-a:  #133844;        /* Advanced         = navy-deeper */
 
-  /* Claret — the single warm counterpoint, used sparingly for emphasis */
-  --color-claret: #a3123f;         /* = Seedling crimson / Cambridge shield red */
+  /* Claret — retired. Their site has no warm accent; this maps to deep teal
+     so any remaining bg-claret / text-claret stays on-palette. */
+  --color-claret: #036268;
 
   /* Stage card grounds — a whisper of the accent, nothing more */
-  --color-camb-ey-soft: #eef2f7;
-  --color-camb-p-soft:  #ebf0f6;
-  --color-camb-ls-soft: #e8eef5;
-  --color-camb-us-soft: #e6ecf4;
-  --color-camb-a-soft:  #e4eaf2;
+  --color-camb-ey-soft: #eefaf8;
+  --color-camb-p-soft:  #ecf9f7;
+  --color-camb-ls-soft: #e7f6f5;
+  --color-camb-us-soft: #e3f1f1;
+  --color-camb-a-soft:  #e6eeef;
 
-  /* Ink that sits on those grounds — deepened teal, ≥5.9:1 on ivory */
-  --color-camb-ey-ink: #3d5a7a;
-  --color-camb-p-ink:  #32506f;
-  --color-camb-ls-ink: #274565;
-  --color-camb-us-ink: #1d3a5a;
-  --color-camb-a-ink:  #00142e;
+  /* Ink that sits on those grounds — deepened teal, ≥7.8:1 on ivory */
+  --color-camb-ey-ink: #0d5c53;
+  --color-camb-p-ink:  #0a4f49;
+  --color-camb-ls-ink: #075049;
+  --color-camb-us-ink: #054345;
+  --color-camb-a-ink:  #133844;
 
-  /* Fonts */
-  --font-serif: var(--font-serif);
-  --font-playfair: var(--font-serif);
-  --font-dm: var(--font-dm);
-  --font-sans: var(--font-dm);
+  /* Fonts — Cambridge International runs one family site-wide: Source Sans Pro. */
+  --font-serif: var(--font-source-sans);
+  --font-playfair: var(--font-source-sans);
+  --font-dm: var(--font-source-sans);
+  --font-sans: var(--font-source-sans);
 
   /* Standard radii and shadows for consistency */
   --radius-premium: 3.5rem;
@@ -91,16 +103,23 @@
 /* 🌍 GLOBAL BASE STYLES */
 @layer base {
   body {
-    font-family: var(--font-dm) !important;
+    font-family: var(--font-source-sans) !important;
     color: var(--color-text-base);
     background-color: var(--color-off-white);
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif) !important;
-    color: var(--color-navy);
-    font-weight: 400;
+    font-family: var(--font-source-sans) !important;
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  /* Cambridge International uses no italics anywhere — <em> is used across
+     this site purely for accent-word styling, not grammatical emphasis, so
+     it must not fall back to the browser's default italic rendering. */
+  em, i, cite, q, dfn {
+    font-style: normal;
   }
 
   *, *::before, *::after {
@@ -134,9 +153,9 @@
 
   .mesh-gradient {
     background-image: 
-      radial-gradient(at 0% 0%, rgba(23, 81, 144, 0.05) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(164, 21, 70, 0.05) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(137, 107, 133, 0.05) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(23, 81, 144, 0.05) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(0, 189, 182, 0.07) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(142, 232, 216, 0.09) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(3, 98, 104, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(0, 189, 182, 0.07) 0px, transparent 50%);
   }
 }

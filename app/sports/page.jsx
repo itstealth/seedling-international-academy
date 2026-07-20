@@ -4,19 +4,19 @@ import HeroWrapper from "@/components/layout/HeroWrapper";
 
 /* ─── THEME ────────────────────────────────────────────────────────────── */
 const T = {
-  navy:          "#175190",
-  navyDark:      "#0e3d6e",
-  navyDeeper:    "#0a1f3a",
-  navyLight:     "#eef4fc",
-  crimson:       "#A41546",
-  crimsonDark:   "#8a1239",
-  crimsonDeeper: "#7a0f35",
+  navy:          "#036268",
+  navyDark:      "#025573",
+  navyDeeper:    "#133844",
+  navyLight:     "#eef3f3",
+  crimson:       "#036268",
+  crimsonDark:   "#025573",
+  crimsonDeeper: "#133844",
   mauve:         "#896B85",
   sand:          "#D6D1CF",
   offWhite:      "#f8f7f6",
   dark:          "#0e0e0e",
-  textBase:      "#2c2c2c",
-  textLight:     "#5a5a5a",
+  textBase:      "#1f2121",
+  textLight:     "#4f5151",
 };
 
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
@@ -319,7 +319,7 @@ function SportsOverview() {
               fontWeight:900, color:T.navyDeeper, lineHeight:.93, marginBottom:22,
             }}>
               More Than<br />
-              <em style={{ fontStyle:"italic", color:T.crimson }}>A Game.</em>
+              <em style={{ color:T.crimson }}>A Game.</em>
             </h2>
             <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:"clamp(14px,1.4vw,17px)", color:T.textLight, lineHeight:1.8, marginBottom:40, maxWidth:480 }}>
               At Seedling Schools, sports is woven into the identity of every student. Our world-class facilities, certified coaches, and competitive programs give students the edge to excel — on and off the field.
@@ -400,7 +400,7 @@ function SportsGrid() {
               fontSize:"clamp(34px,5.5vw,72px)",
               fontWeight:900, color:"#fff", lineHeight:1,
             }}>
-              Featured <em style={{ fontStyle:"italic", color:T.sand }}>Sports</em>
+              Featured <em style={{ color:T.sand }}>Sports</em>
             </h2>
           </div>
         </FadeUp>
@@ -455,7 +455,7 @@ function SportsGrid() {
                     fontSize: i === 5 ? "clamp(26px,4vw,52px)" : "clamp(20px,2.5vw,34px)",
                     fontWeight:700, color:"#fff", lineHeight:1, marginBottom:6,
                   }}>{sport.name}</h3>
-                  <div style={{ fontFamily:"'DM Sans',sans-serif", fontStyle:"italic", fontSize:12, color:T.sand, marginBottom: isH ? 10 : 0, transition:"margin .3s" }}>{sport.tagline}</div>
+                  <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12, color:T.sand, marginBottom: isH ? 10 : 0, transition:"margin .3s" }}>{sport.tagline}</div>
                   <p style={{
                     fontFamily:"'DM Sans',sans-serif", fontSize:13, color:"rgba(255,255,255,.8)",
                     lineHeight:1.5, maxWidth:380,
@@ -555,7 +555,7 @@ function Gallery() {
               fontSize:"clamp(34px,5.5vw,70px)",
               fontWeight:900, color:"#fff",
             }}>
-              Sports <em style={{ fontStyle:"italic", color:T.sand }}>Gallery</em>
+              Sports <em style={{ color:T.sand }}>Gallery</em>
             </h2>
           </div>
         </FadeUp>
@@ -673,7 +673,7 @@ function Achievements() {
               fontWeight:900, color:T.navyDeeper, lineHeight:1.05,
             }}>
               Achievements &amp;<br />
-              <em style={{ fontStyle:"italic", color:T.crimson }}>Championships</em>
+              <em style={{ color:T.crimson }}>Championships</em>
             </h2>
           </div>
         </FadeUp>
@@ -751,7 +751,7 @@ function Fitness() {
               fontWeight:900, color:T.navyDeeper, lineHeight:.93, marginBottom:22,
             }}>
               Built For<br />
-              <em style={{ fontStyle:"italic", color:T.crimson }}>Peak</em><br />
+              <em style={{ color:T.crimson }}>Peak</em><br />
               Performance
             </h2>
             <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:"clamp(14px,1.3vw,17px)", color:T.textLight, lineHeight:1.8, marginBottom:32, maxWidth:420 }}>
@@ -828,7 +828,7 @@ function CTA() {
             fontWeight:900, color:"#fff", lineHeight:.91, marginBottom:26,
           }}>
             Building Champions<br />
-            <em style={{ fontStyle:"italic", color:T.sand }}>On &amp; Off{"  "}</em>
+            <em style={{ color:T.sand }}>On &amp; Off{"  "}</em>
             the Field
           </h2>
 

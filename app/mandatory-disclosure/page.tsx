@@ -29,7 +29,7 @@ const MandatoryDisclosure = () => {
             <div className="w-14 h-14 rounded-2xl bg-navy-deeper flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-navy/20">
               01
             </div>
-            <h3 className="font-playfair text-3xl font-bold text-navy-deeper">School Information</h3>
+            <h3 className="font-playfair text-3xl font-bold text-ink">School Information</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -84,7 +84,7 @@ const MandatoryDisclosure = () => {
               <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-navy-deeper font-playfair text-xl font-bold">
                 02
               </div>
-              <h3 className="font-playfair text-2xl font-bold text-navy-deeper">Affiliation Status</h3>
+              <h3 className="font-playfair text-2xl font-bold text-ink">Affiliation Status</h3>
             </div>
             <div className="space-y-5">
               <div className="flex justify-between items-center pb-4 border-b border-sand/20">
@@ -108,7 +108,7 @@ const MandatoryDisclosure = () => {
               <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-navy-deeper font-playfair text-xl font-bold">
                 03
               </div>
-              <h3 className="font-playfair text-2xl font-bold text-navy-deeper">Trust Details</h3>
+              <h3 className="font-playfair text-2xl font-bold text-ink">Trust Details</h3>
             </div>
             <div className="space-y-5">
               <div className="flex justify-between items-start pb-4 border-b border-sand/20">
@@ -181,7 +181,7 @@ const MandatoryDisclosure = () => {
             <div className="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-navy-deeper font-playfair text-2xl font-bold shadow-xl shadow-sand/20">
               05
             </div>
-            <h3 className="font-playfair text-3xl font-bold text-navy-deeper">Infrastructure & Facilities</h3>
+            <h3 className="font-playfair text-3xl font-bold text-ink">Infrastructure & Facilities</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

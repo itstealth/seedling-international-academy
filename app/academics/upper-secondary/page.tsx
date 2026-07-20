@@ -36,8 +36,8 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Where Specialisation Begins</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Where Specialisation Begins</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           A curriculum as unique<br />
           <em className="font-semibold text-navy">as the student studying it.</em>
         </h2>
@@ -52,8 +52,8 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-3">Two Routes</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">Two Routes</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               <em className="font-semibold text-navy">IGCSE</em> or <em className="font-semibold text-navy">O Level</em>
             </h2>
           </motion.div>
@@ -64,7 +64,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
               return (
                 <motion.div key={r.name} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`bg-off-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border ${c.border}`}>
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="font-playfair text-2xl font-semibold text-navy-deeper">{r.name}</h3>
+                    <h3 className="font-playfair text-2xl font-semibold text-ink">{r.name}</h3>
                     <span className={`text-3xl md:text-4xl font-bold ${c.text}`}>{r.count}</span>
                   </div>
                   <p className="text-text-light text-sm md:text-base leading-[1.85] font-dm">{r.desc}</p>
@@ -77,10 +77,10 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
 
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-sand text-xl italic mb-3">The Subject Catalogue</p>
+            <p className="font-playfair text-sand text-xl mb-3">The Subject Catalogue</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               Over <em className="font-semibold text-sand">100 Subjects</em>, One Curriculum
             </h2>
@@ -106,7 +106,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
 
       <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <p className="font-playfair text-sand text-xl italic mb-4">The Final Stretch</p>
+          <p className="font-playfair text-sand text-xl mb-4">The Final Stretch</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Two years that open<br />
             <em className="font-semibold text-sand">a lifetime of doors.</em>

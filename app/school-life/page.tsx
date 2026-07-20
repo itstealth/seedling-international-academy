@@ -375,7 +375,7 @@ function SportsSection() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Physical Excellence
           </span>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink mt-3">
             Sports & Physical
             <span className="text-crimson"> Activities</span>
           </h2>
@@ -412,7 +412,7 @@ function SportsSection() {
 
               {/* Text side */}
               <div className={`w-full lg:w-[45%] ${block.reverse ? "lg:pr-8" : "lg:pl-8"}`}>
-                <h3 className="font-playfair text-4xl font-black text-navy-deeper leading-tight mb-6">
+                <h3 className="font-playfair text-4xl font-black text-ink leading-tight mb-6">
                   {block.title}
                 </h3>
                 <p className="text-text-base leading-relaxed text-lg mb-8 font-dm">{block.body}</p>
@@ -495,7 +495,7 @@ function ActivitiesGrid() {
           {/* <span className="text-gray-800 text-sm uppercase tracking-[0.3em] font-medium">
             Holistic Growth
           </span> */}
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink mt-3">
             Beyond
             <span className="text-crimson"> Academics</span>
           </h2>
@@ -735,7 +735,7 @@ function GalleryStrip() {
             {/* <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
               Highlight Reel
             </span> */}
-            <h2 className="font-playfair text-5xl font-black text-navy-deeper mt-2">
+            <h2 className="font-playfair text-5xl font-black text-ink mt-2">
               Highlight
               <span className="text-crimson"> Moments</span>
             </h2>
@@ -800,7 +800,7 @@ function FeaturesSection() {
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
             Our Difference
           </span>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper mt-3">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink mt-3">
             What Makes Us
             <span className="text-crimson"> Special</span>
           </h2>
@@ -823,7 +823,7 @@ function FeaturesSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-playfair text-xl font-black text-navy-deeper mb-3">{f.title}</h3>
+                <h3 className="font-playfair text-xl font-black text-ink mb-3">{f.title}</h3>
                 <p className="text-text-light text-sm leading-relaxed font-dm">{f.desc}</p>
               </div>
               {/* Gold accent bar */}

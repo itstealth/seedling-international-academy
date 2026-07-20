@@ -102,7 +102,7 @@ export default function LeadershipPage() {
           <section className="py-10  bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <Reveal className="text-center mb-10 md:mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">Our Torchbearers</p>
+            <p className="font-playfair text-navy text-xl mb-3">Our Torchbearers</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light">
               The <em className="font-semibold">Leadership</em><br />Behind the Legacy
             </h2>
@@ -127,7 +127,7 @@ export default function LeadershipPage() {
                     <h3 className="font-playfair text-2xl font-semibold text-text-base mb-1">{l.name}</h3>
                     <p className="text-navy text-sm font-medium mb-1 font-dm">{l.role}</p>
                     <p className="text-text-light text-xs  font-dm">{l.sub}</p>
-                    {/* <blockquote className="font-playfair italic text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
+                    {/* <blockquote className="font-playfair text-text-light text-base leading-relaxed border-l-2 border-crimson-dark pl-4">
                       "{l.quote}"
                     </blockquote> */}
                   </div>
@@ -159,7 +159,7 @@ export default function LeadershipPage() {
 
             <div>
               <Reveal>
-                <p className="font-playfair text-navy text-xl italic mb-4">CEO & Director's Message</p>
+                <p className="font-playfair text-navy text-xl mb-4">CEO & Director's Message</p>
                 <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-text-base">
                   "Life Ready<br />
                   <em className="font-semibold">& Life Worthy"</em>
@@ -191,7 +191,7 @@ export default function LeadershipPage() {
               <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
                   <div className="w-12 h-px bg-navy" />
-                  <span className="font-playfair italic text-xl text-text-light">Dr. Sandeep Bakshi</span>
+                  <span className="font-playfair text-xl text-text-light">Dr. Sandeep Bakshi</span>
                 </div>
                 <p className="text-navy text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
               </Reveal>
@@ -221,7 +221,7 @@ export default function LeadershipPage() {
 
           <div>
              <Reveal>
-                <p className="font-playfair text-blue-300 text-xl italic mb-4">CEO & Director's Message</p>
+                <p className="font-playfair text-blue-300 text-xl mb-4">CEO & Director's Message</p>
                 <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-white">
                   "Life Ready<br />
                   <em className="font-semibold">& Life Worthy"</em>
@@ -253,7 +253,7 @@ export default function LeadershipPage() {
             <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
                   <div className="w-12 h-px bg-blue-400" />
-                  <span className="font-playfair italic text-xl text-white">Dr. Sandeep Bakshi</span>
+                  <span className="font-playfair text-xl text-white">Dr. Sandeep Bakshi</span>
                 </div>
                 <p className="text-blue-400 text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
               </Reveal>
@@ -285,8 +285,8 @@ export default function LeadershipPage() {
 
           <div>
              <Reveal>
-                <p className="font-playfair text-crimson text-xl italic mb-4">Executive Director's Message</p>
-                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
+                <p className="font-playfair text-crimson text-xl mb-4">Executive Director's Message</p>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-ink">
                   Education for a<br />
                   <em className="font-semibold">Brighter Tomorrow</em>
                 </h2>
@@ -305,7 +305,7 @@ export default function LeadershipPage() {
             <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
                   <div className="w-12 h-px bg-crimson" />
-                  <span className="font-playfair italic text-xl text-navy-deeper">Dr. Preeti Bakshi</span>
+                  <span className="font-playfair text-xl text-navy-deeper">Dr. Preeti Bakshi</span>
                 </div>
                 <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling International School</p>
               </Reveal>
@@ -335,7 +335,7 @@ export default function LeadershipPage() {
 
           <div>
             <Reveal>
-              <p className="font-playfair text-navy text-xl italic mb-4">Principal's Note</p>
+              <p className="font-playfair text-navy text-xl mb-4">Principal's Note</p>
               <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
                 "Nurturing Happy Minds,<br />
                 <em className="font-semibold">Strong Hearts &amp; Bold Futures"</em>
@@ -359,7 +359,7 @@ export default function LeadershipPage() {
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <p className="text-text-light leading-[1.9] text-base italic mb-4 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
               <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
                 Welcome to our portals where every child grows to bloom.
               </p>
@@ -367,7 +367,7 @@ export default function LeadershipPage() {
             <Reveal delay={300}>
               <div className="mt-10 flex items-center gap-4">
                 <div className="w-12 h-px bg-navy" />
-                <span className="font-playfair italic text-xl text-text-light">Shruti Kukar</span>
+                <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
               </div>
               <p className="text-navy text-sm font-dm mt-1">Principal, Seedling International School</p>
             </Reveal>

@@ -7,7 +7,7 @@ const schools = [
   {
     name: "Seedling International Academy",
     subtitle: "",
-    logo: "/assets/Home/SIA_Logo_transparent.webp",
+    logo: "/camb_logo.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [

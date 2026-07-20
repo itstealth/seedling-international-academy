@@ -38,8 +38,8 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Where Depth Begins</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Where Depth Begins</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Subjects deepen.<br />
           <em className="font-semibold text-navy">Choice begins.</em>
         </h2>
@@ -54,8 +54,8 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-3">Subjects At Lower Secondary</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">Subjects At Lower Secondary</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Over <em className="font-semibold text-navy">Ten Subjects</em>, One Balanced Curriculum
             </h2>
           </motion.div>
@@ -67,7 +67,7 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
                 <motion.div key={s.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`bg-off-white rounded-2xl p-6 shadow-sm hover:shadow-lg border ${c.border}`}>
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-navy-deeper">{s.group}</h3>
+                    <h3 className="font-playfair text-lg font-semibold text-ink">{s.group}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {s.items.map((i) => (<span key={i} className="text-xs font-medium text-text-light bg-white border border-sand/40 rounded-full px-3 py-1">{i}</span>))}
@@ -81,10 +81,10 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
 
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-sand text-xl italic mb-3">Built To Measure</p>
+            <p className="font-playfair text-sand text-xl mb-3">Built To Measure</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               Optional <em className="font-semibold text-sand">Assessment</em>, Real Insight
             </h2>
@@ -106,7 +106,7 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
 
       <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <p className="font-playfair text-sand text-xl italic mb-4">The Bridge To Upper Secondary</p>
+          <p className="font-playfair text-sand text-xl mb-4">The Bridge To Upper Secondary</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Depth today. <em className="font-semibold text-sand">Choice tomorrow.</em>
           </h2>

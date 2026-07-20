@@ -123,7 +123,7 @@ export default function TransportFacilityPage() {
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-stretch">
             <div>
               <SectionLabel>Student Safety First</SectionLabel>
-              <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.08] tracking-tight">
+              <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.08] tracking-tight">
                 A smoother journey from home to school.
               </h2>
               <p className="mt-7 text-text-light text-base md:text-lg leading-[1.9]">
@@ -169,7 +169,7 @@ export default function TransportFacilityPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionLabel>Facility Highlights</SectionLabel>
-            <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.08]">
+            <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.08]">
               Transport care built into the school day.
             </h2>
           </div>
@@ -197,7 +197,7 @@ export default function TransportFacilityPage() {
                     </div>
                   </div>
                   <div className="p-7 md:p-9">
-                    <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-3">
+                    <h3 className="font-playfair text-2xl font-black text-ink mb-3">
                       {feature.title}
                     </h3>
                     <p className="text-text-light text-sm md:text-base leading-[1.85]">
@@ -254,7 +254,7 @@ export default function TransportFacilityPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             <div className="bg-white border border-sand/30 rounded-[2rem] p-8 md:p-10 shadow-editorial">
               <SectionLabel>How It Works</SectionLabel>
-              <h2 className="mt-5 font-playfair text-3xl md:text-4xl font-black text-navy-deeper leading-tight">
+              <h2 className="mt-5 font-playfair text-3xl md:text-4xl font-black text-ink leading-tight">
                 Route support made simple for parents.
               </h2>
 
@@ -265,7 +265,7 @@ export default function TransportFacilityPage() {
                       {index + 1}
                     </div>
                     <div>
-                      <h3 className="font-playfair text-xl font-black text-navy-deeper mb-2">
+                      <h3 className="font-playfair text-xl font-black text-ink mb-2">
                         {step.title}
                       </h3>
                       <p className="text-text-light text-sm leading-[1.8]">{step.description}</p>

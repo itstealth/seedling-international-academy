@@ -222,7 +222,7 @@ function JobCard({
         </span>
       </div>
 
-      <h3 className="font-playfair text-2xl font-semibold text-navy-deeper mb-1 group-hover:text-navy transition-colors duration-200">
+      <h3 className="font-playfair text-2xl font-semibold text-ink mb-1 group-hover:text-ink transition-colors duration-200">
         {role.title}
       </h3>
       <p className="text-crimson text-sm font-black tracking-widest uppercase mb-4 font-dm">{role.board}</p>
@@ -301,7 +301,7 @@ function ApplyModal({
             <p className="text-crimson text-xs font-black tracking-widest uppercase mb-1 font-dm">
               Interest Form
             </p>
-            <h3 className="font-playfair text-xl font-semibold text-navy-deeper leading-snug">
+            <h3 className="font-playfair text-xl font-semibold text-ink leading-snug">
               {role.title}
             </h3>
           </div>
@@ -568,7 +568,7 @@ export default function CareersPage() {
       <section className="py-14 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-10 md:mb-14">
           <Tag>Why Seedling</Tag>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             Why Work<br />
             <em className="font-semibold text-crimson">With Us</em>
           </h2>
@@ -584,7 +584,7 @@ export default function CareersPage() {
                 <div className="w-11 h-11 bg-sand/10 group-hover:bg-crimson border border-sand/40 group-hover:border-crimson rounded-xl flex items-center justify-center text-crimson group-hover:text-white transition-all duration-300 mb-5 flex-shrink-0">
                   {w.icon}
                 </div>
-                <h4 className="font-playfair text-xl font-semibold text-navy-deeper mb-3">{w.title}</h4>
+                <h4 className="font-playfair text-xl font-semibold text-ink mb-3">{w.title}</h4>
                 <p className="text-text-light text-sm leading-[1.9] font-dm font-light">{w.desc}</p>
               </div>
             </Reveal>
@@ -605,7 +605,7 @@ export default function CareersPage() {
           <div className="flex items-end justify-between gap-6 flex-wrap md:justify-normal justify-center">
             <div className="text-center md:text-left">
               <Tag>Current Openings</Tag>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
                 Open<br />
                 <em className="font-semibold text-navy">Positions</em>
               </h2>
@@ -672,7 +672,7 @@ export default function CareersPage() {
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center mb-10 md:mb-16">
             <Tag>Voices from Inside</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               What Our Educators<br />
               <em className="font-light text-crimson">Have to Say</em>
             </h2>
@@ -716,7 +716,7 @@ export default function CareersPage() {
             {/* Left */}
             <Reveal>
               <Tag>Open Application</Tag>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper mb-5 leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink mb-5 leading-tight">
                 Don't See a<br />
                 <em className="font-semibold text-navy">Role That Fits?</em>
               </h2>
@@ -829,7 +829,7 @@ export default function CareersPage() {
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="font-playfair text-sand text-xl italic mb-4 tracking-wide">
+            <p className="font-playfair text-sand text-xl mb-4 tracking-wide">
               Join the League
             </p>
             <h2 className="font-playfair text-white text-4xl md:text-5xl font-light leading-[1.05] mb-6">

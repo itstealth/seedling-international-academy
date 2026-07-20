@@ -316,7 +316,7 @@ function SearchResults() {
                     <span className="text-[10px] font-black tracking-[0.2em] uppercase text-crimson">
                       {item.category}
                     </span>
-                    <h3 className="font-playfair text-xl font-semibold text-navy-deeper mt-1 mb-1 group-hover:text-royal-blue transition-colors">
+                    <h3 className="font-playfair text-xl font-semibold text-ink mt-1 mb-1 group-hover:text-royal-blue transition-colors">
                       {highlight(item.title, q)}
                     </h3>
                     <p className="text-sm text-text-light leading-relaxed">

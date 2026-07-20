@@ -47,8 +47,8 @@ export default function SMIAPage(): React.JSX.Element {
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Our Modern Campus</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Our Modern Campus</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Modern facilities.<br />
           <em className="font-semibold text-navy">Timeless Seedling values.</em>
         </h2>
@@ -60,7 +60,7 @@ export default function SMIAPage(): React.JSX.Element {
       {/* Stats band */}
       <section className="relative py-12 md:py-16 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={stagger}>
             {stats.map((s) => (
@@ -80,8 +80,8 @@ export default function SMIAPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-3">What Makes SMIA Special</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">What Makes SMIA Special</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Six <em className="font-semibold text-navy">Pillars</em> of the SMIA Experience
             </h2>
           </motion.div>
@@ -91,7 +91,7 @@ export default function SMIAPage(): React.JSX.Element {
               return (
                 <motion.div key={h.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border}`}>
                   <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{h.icon}</div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{h.title}</h3>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{h.title}</h3>
                   <p className="text-text-light text-sm leading-[1.85] font-dm">{h.desc}</p>
                 </motion.div>
               );
@@ -104,8 +104,8 @@ export default function SMIAPage(): React.JSX.Element {
       <section className="relative py-12 md:py-20 bg-navy-light/40 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-3">The Campus</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">The Campus</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Built For <em className="font-semibold text-navy">Modern Learning</em>
             </h2>
           </motion.div>
@@ -113,7 +113,7 @@ export default function SMIAPage(): React.JSX.Element {
             {facilities.map((f, i) => (
               <motion.div key={f.name} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className="bg-white rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border border-sand/40">
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-crimson mb-3 block">0{i + 1}</span>
-                <h3 className="font-playfair text-lg font-semibold mb-2 text-navy-deeper">{f.name}</h3>
+                <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{f.name}</h3>
                 <p className="text-text-light text-sm leading-[1.85] font-dm">{f.desc}</p>
               </motion.div>
             ))}
@@ -125,8 +125,8 @@ export default function SMIAPage(): React.JSX.Element {
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-crimson text-xl italic mb-3">Visit Us</p>
-            <h2 className="font-playfair text-3xl md:text-4xl font-light text-navy-deeper leading-tight mb-4">
+            <p className="font-playfair text-crimson text-xl mb-3">Visit Us</p>
+            <h2 className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-4">
               Find Your Way <em className="font-semibold text-navy">to SMIA</em>
             </h2>
             <p className="text-text-light text-base md:text-lg leading-relaxed font-dm mb-4">
@@ -165,7 +165,7 @@ export default function SMIAPage(): React.JSX.Element {
       <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <p className="font-playfair text-sand text-xl italic mb-4">Visit Our Campus</p>
+          <p className="font-playfair text-sand text-xl mb-4">Visit Our Campus</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Walk the corridors<br />
             <em className="font-semibold text-sand">of a Seedling school.</em>

@@ -115,7 +115,7 @@ export default function TransportFacilityPage() {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-10 text-center">
           <ShieldCheck className="w-20 h-20 text-secondary mx-auto mb-12 drop-shadow-2xl" />
-          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif leading-tight">
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 font-serif leading-tight">
             Transport <br /> <span className="text-secondary tracking-tighter">Assistance.</span>
           </h2>
           <p className="text-white/60 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">

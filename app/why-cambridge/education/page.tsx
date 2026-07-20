@@ -86,8 +86,8 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       {/* ═══ INTRO ═══ */}
       <section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
-        <p className="font-playfair text-crimson text-xl italic mb-4">A Passport to the World</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">A Passport to the World</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Recognised in <em className="font-semibold text-navy">160+ countries</em>.<br />
           Trusted across generations.
         </h2>
@@ -99,11 +99,11 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       {/* ═══ BIG STATS BAND ═══ */}
       <section className="relative py-14 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-10 md:mb-14">
-            <p className="font-playfair text-sand text-xl italic mb-3">Cambridge by the Numbers</p>
+            <p className="font-playfair text-sand text-xl mb-3">Cambridge by the Numbers</p>
             <h2 className="font-playfair text-3xl md:text-5xl font-light text-white">
               A Presence That <em className="font-semibold text-sand">Spans the Globe</em>
             </h2>
@@ -134,8 +134,8 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       {/* ═══ RECOGNITION ═══ */}
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <p className="font-playfair text-navy text-xl italic mb-3">Globally Trusted</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">Globally Trusted</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             Where a Cambridge <em className="font-semibold text-navy">Qualification</em> Is Recognised
           </h2>
         </div>
@@ -151,7 +151,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
                   {r.icon}
                 </div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{r.title}</h3>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{r.title}</h3>
                 <p className="text-text-light text-sm leading-[1.85] font-dm">{r.desc}</p>
               </div>
             );
@@ -166,8 +166,8 @@ export default function CambridgeEducationPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-mauve text-xl italic mb-3">Why This Matters</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-mauve text-xl mb-3">Why This Matters</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               What <em className="font-semibold text-navy">Cambridge</em> Means for Your Child
             </h2>
           </div>
@@ -179,7 +179,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
                 className="bg-white rounded-3xl p-7 md:p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group"
               >
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper group-hover:text-royal-blue transition-colors">{b.title}</h3>
+                <h3 className="font-playfair text-xl font-semibold mb-3 text-ink group-hover:text-royal-blue transition-colors">{b.title}</h3>
                 <p className="text-text-light text-sm leading-[1.9] font-dm">{b.desc}</p>
               </div>
             ))}

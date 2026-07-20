@@ -222,8 +222,8 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-last md:order-none">
             <Reveal>
-              <p className="font-playfair text-crimson text-xl italic mb-4">Who We Are</p>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-navy-deeper">
+              <p className="font-playfair text-crimson text-xl mb-4">Who We Are</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-ink">
                 A Family. <br />
                 <em className="font-semibold text-navy">A Movement.</em><br />
                 A Legacy.
@@ -233,7 +233,7 @@ export default function AboutPage() {
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
                 Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Seedling International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
-              {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6 italic">
+              {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
               </p> */}
             </Reveal>
@@ -289,8 +289,8 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="font-playfair text-crimson text-xl italic mb-3">Our Guiding Principles</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-crimson text-xl mb-3">Our Guiding Principles</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Core Values of <em className="font-semibold text-navy">Seedling</em>
             </h2>
           </Reveal>
@@ -358,7 +358,7 @@ export default function AboutPage() {
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${value.bg} ${value.color} group-hover:scale-110 transition-transform duration-500`}>
                     {value.icon}
                   </div>
-                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-navy-deeper">{value.title}</h3>
+                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-ink">{value.title}</h3>
                   <p className="text-text-light text-base leading-relaxed font-dm">{value.desc}</p>
                 </div>
               </Reveal>
@@ -373,8 +373,8 @@ export default function AboutPage() {
       <section className="pt-16 pb-10 bg-white max-w-7xl mx-auto px-5 sm:px-6">
         <div className="max-w-7xl mx-auto md:px-6">
           <Reveal className="text-center mb-8 md:mb-20">
-            <p className="font-playfair text-mauve text-xl italic mb-3">Our Journey</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-mauve text-xl mb-3">Our Journey</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               From <em className="font-semibold text-crimson">Nursery</em><br />to University
             </h2>
             <div className="w-16 h-px bg-sand mx-auto mt-8" />
@@ -408,7 +408,7 @@ export default function AboutPage() {
                   <div className="md:w-5/12">
                     <div className={`${item.side === "left" ? "md:text-right" : ""}`}>
                       {/* <span className="font-playfair text-7xl font-light text-sand/40 leading-none block">{item.year}</span> */}
-                      <h3 className="font-playfair text-3xl font-semibold mt-2 mb-4 text-navy-deeper">{item.title}</h3>
+                      <h3 className="font-playfair text-3xl font-semibold mt-2 mb-4 text-ink">{item.title}</h3>
                       <p className="text-text-light leading-[1.9] text-base font-dm">{item.desc}</p>
                     </div>
                   </div>
@@ -432,11 +432,11 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="font-playfair text-sand text-3xl italic mb-6 tracking-wide">Our Philosophy</p>
+            <p className="font-playfair text-sand text-3xl mb-6 tracking-wide">Our Philosophy</p>
             <blockquote className="font-playfair text-4xl md:text-5xl font-light leading-[1.1] mb-10 text-white">
               "हस्ये नयतु नः ब्रह्मज्ञानं"
             </blockquote>
-            <p className="font-playfair text-2xl font-light italic text-sand mb-12">
+            <p className="font-playfair text-2xl font-light text-sand mb-12">
               We aim at wisdom and the ability to comprehend.
             </p>
           </Reveal>
@@ -445,7 +445,7 @@ export default function AboutPage() {
               We believe education must be joyful, reflective, and creative — developing students who are resilient, adaptable, and equipped to continue learning long after they leave our halls.
             </p>
             <div className="h-px w-24 bg-crimson mx-auto mb-10" />
-            <p className="font-playfair text-2xl italic text-sand">
+            <p className="font-playfair text-2xl text-sand">
               "उप नो सश्रा कृतवो यन्तु विश्रमः"
             </p>
             <p className="text-white/50 text-sm mt-2 tracking-wider uppercase" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -460,7 +460,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-10 sm:py-16  max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal className="text-center mb-20">
-          <p className="font-playfair text-navy text-xl italic mb-3">Direction & Purpose</p>
+          <p className="font-playfair text-navy text-xl mb-3">Direction & Purpose</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light">
             Vision &amp; <em className="font-semibold">Mission</em>
           </h2>
@@ -527,8 +527,8 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">What Makes Us Special</p>
-            <h2 className="font-playfair text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">What Makes Us Special</p>
+            <h2 className="font-playfair text-5xl font-light text-ink">
               Seedling's <em className="font-semibold text-mauve">Differentiators</em>
             </h2>
           </Reveal>
@@ -544,7 +544,7 @@ export default function AboutPage() {
               <Reveal key={p.title} delay={i * 80}>
                 <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group">
                   <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">{p.emoji}</span>
-                  <h4 className="font-playfair text-2xl font-semibold mb-4 text-navy">{p.title}</h4>
+                  <h4 className="font-playfair text-2xl font-semibold mb-4 text-ink">{p.title}</h4>
                   <p className="text-text-light text-sm leading-[1.9] font-dm">{p.desc}</p>
                 </div>
               </Reveal>
@@ -560,7 +560,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="font-playfair text-sand text-xl italic mb-3">Campus Life</p>
+            <p className="font-playfair text-sand text-xl mb-3">Campus Life</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               A Glimpse of<br />
               <em className="font-semibold text-crimson">Our World</em>

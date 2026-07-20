@@ -171,7 +171,7 @@ export default function EventsPage() {
       <section className="py-48 bg-white border-y border-black/5 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <span className="text-label mb-8 block uppercase tracking-[0.3em]">Be Part of the Scene</span>
-          <h2 className="text-heading text-6xl md:text-[8rem] mb-12">Host an <br /> <span className="text-primary tracking-tighter italic">Event.</span></h2>
+          <h2 className="text-heading text-6xl md:text-[8rem] mb-12">Host an <br /> <span className="text-primary tracking-tighter">Event.</span></h2>
           <p className="text-xl text-neutral-500 font-medium leading-relaxed mb-16 max-w-2xl mx-auto">
             Our campus spaces are available for collaborative educational events, seminars, and workshops that align with our mission.
           </p>

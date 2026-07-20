@@ -104,7 +104,7 @@ export default function TermsConditionsPage() {
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${section.isLast ? 'bg-crimson text-white' : 'bg-navy text-white'}`}>
                     <section.icon className="w-5 h-5" />
                   </div>
-                  <h2 className="font-playfair text-xl font-bold text-navy">{section.title}</h2>
+                  <h2 className="font-playfair text-xl font-bold text-ink">{section.title}</h2>
                 </div>
                 <div className="px-6 py-5">
                   {section.content.split('\n\n').map((paragraph, pIndex) => (

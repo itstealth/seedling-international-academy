@@ -123,8 +123,8 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           transition={{ duration: 0.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
-        <p className="font-playfair text-crimson text-xl italic mb-4">The Senior Years</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">The Senior Years</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Depth, specialisation,<br />
           <em className="font-semibold text-navy">a passport to the world.</em>
         </h2>
@@ -147,8 +147,8 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-navy text-xl italic mb-3">The Qualifications</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">The Qualifications</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Four Ways to <em className="font-semibold text-navy">Excel</em>
             </h2>
           </motion.div>
@@ -174,7 +174,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                     {q.code}
                   </div>
                   <div>
-                    <h3 className="font-playfair text-xl md:text-2xl font-semibold mb-3 text-navy-deeper">{q.name}</h3>
+                    <h3 className="font-playfair text-xl md:text-2xl font-semibold mb-3 text-ink">{q.name}</h3>
                     <p className="text-text-light text-sm md:text-base leading-[1.85] font-dm">{q.desc}</p>
                   </div>
                 </motion.div>
@@ -187,7 +187,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
       {/* ═══ SUBJECT GROUPS ═══ */}
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div
@@ -198,7 +198,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-sand text-xl italic mb-3">50+ Subjects · Six Groups</p>
+            <p className="font-playfair text-sand text-xl mb-3">50+ Subjects · Six Groups</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               Design Your <em className="font-semibold text-sand">Specialisation</em>
             </h2>
@@ -249,8 +249,8 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.45, ease: EASE }}
         >
-          <p className="font-playfair text-navy text-xl italic mb-3">Where Cambridge Advanced Leads</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">Where Cambridge Advanced Leads</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             Doors Opened <em className="font-semibold text-navy">Worldwide</em>
           </h2>
           <p className="mt-6 text-text-light text-lg max-w-2xl mx-auto font-dm leading-relaxed">
@@ -273,7 +273,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
               transition={{ duration: 0.4, ease: EASE }}
               className="bg-white rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border border-sand/40"
             >
-              <h3 className="font-playfair text-lg font-semibold mb-4 text-navy-deeper">{d.region}</h3>
+              <h3 className="font-playfair text-lg font-semibold mb-4 text-ink">{d.region}</h3>
               <ul className="space-y-2">
                 {d.items.map((uni) => (
                   <li key={uni} className="text-sm text-text-light flex items-start gap-2">
@@ -301,8 +301,8 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-mauve text-xl italic mb-3">The Pathway</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-mauve text-xl mb-3">The Pathway</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               From Year 12 to <em className="font-semibold text-navy">University</em>
             </h2>
           </motion.div>
@@ -331,7 +331,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                     <div className={`relative w-20 h-20 md:w-24 md:h-24 mx-auto mb-5 rounded-full ${c.bg} ${c.text} flex items-center justify-center font-playfair text-xl md:text-2xl font-semibold border-4 border-white shadow-lg`}>
                       {s.num}
                     </div>
-                    <h3 className="font-playfair text-lg font-semibold mb-2 text-navy-deeper">{s.title}</h3>
+                    <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{s.title}</h3>
                     <p className="text-text-light text-sm leading-[1.85] font-dm max-w-[220px] mx-auto">{s.desc}</p>
                   </motion.div>
                 );
@@ -360,7 +360,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl italic mb-4">The Final Stretch</p>
+          <p className="font-playfair text-sand text-xl mb-4">The Final Stretch</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Two years that open<br />
             <em className="font-semibold text-sand">a lifetime of doors.</em>

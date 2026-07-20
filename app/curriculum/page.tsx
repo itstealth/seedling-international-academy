@@ -210,7 +210,7 @@ export default function AcademicsPage() {
       <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-10 md:mb-16">
           {/* <Tag color="navy">Curriculum Overview</Tag> */}
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             <em className="font-semibold text-crimson">Curriculum</em>
           </h2>
         </Reveal>
@@ -228,7 +228,7 @@ export default function AcademicsPage() {
               {/* <div className="inline-block text-navy text-[10px] font-black tracking-[0.2em] uppercase mb-4 border border-navy/10 px-4 py-1 rounded-full font-dm">
                 Cambridge
               </div> */}
-              <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">Cambridge Curriculum</h3>
+              <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-ink mb-6 leading-snug">Cambridge Curriculum</h3>
               <p className="text-text-light leading-[1.9] text-lg font-dm font-light mb-8">
                 Affiliated with the Cambridge Board , our Cambridge schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
               </p>
@@ -293,7 +293,7 @@ export default function AcademicsPage() {
 
           <Reveal delay={500}>
             <div className="mt-8 md:mt-16 border-t border-white/10 pt-12 text-center">
-              <blockquote className="font-playfair text-xl md:text-2xl text-white italic max-w-3xl mx-auto leading-relaxed">
+              <blockquote className="font-playfair text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
                 "Part of the art of teaching is the ability to rearrange the world for students to guide them to see
                 things in a new way."
               </blockquote>
@@ -312,7 +312,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-10 md:mb-14">
             <Tag color="crimson">How We Teach</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Our Learning <em className="font-semibold text-navy">Approach</em>
             </h2>
           </Reveal>
@@ -332,7 +332,7 @@ export default function AcademicsPage() {
                   </div>
                   <div className={i % 2 === 1 ? "[direction:ltr]" : ""}>
                     <Tag color={i % 2 === 1 ? "mauve" : "navy"}>{item.tag}</Tag>
-                    <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-navy-deeper mb-6 leading-snug">{item.title}</h3>
+                    <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-ink mb-6 leading-snug">{item.title}</h3>
                     <p className="text-text-light leading-[1.9] text-lg font-dm font-light">{item.body}</p>
                     <div className="mt-10 w-16 h-1 bg-sand rounded-full" />
                   </div>
@@ -388,7 +388,7 @@ export default function AcademicsPage() {
       <section className="pt-16 pb-8 max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           {/* <Tag color="mauve">Programme Levels</Tag> */}
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             A Journey From<br />
             <em className="font-semibold text-crimson">First Steps to Future Paths</em>
           </h2>
@@ -481,7 +481,7 @@ export default function AcademicsPage() {
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <Reveal>
               <Tag color="crimson">Start Your Joyride</Tag>
-              <h2 className="font-playfair text-5xl font-light leading-tight mb-8 text-navy-deeper">
+              <h2 className="font-playfair text-5xl font-light leading-tight mb-8 text-ink">
                 12 Reasons to Choose<br />
                 <em className="font-semibold text-navy">Seedling International School</em>
               </h2>
@@ -521,7 +521,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Faculty Who<br />
               <em className="font-semibold text-crimson">Inspire, Not Just Instruct</em>
             </h2>
@@ -543,7 +543,7 @@ export default function AcademicsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-8">
-                    <h4 className="font-playfair text-2xl font-semibold text-navy-deeper mb-2">{f.name}</h4>
+                    <h4 className="font-playfair text-2xl font-semibold text-ink mb-2">{f.name}</h4>
                     <p className="text-crimson text-sm font-black tracking-widest uppercase font-dm">{f.subject}</p>
                     <div className="mt-6 w-10 h-1 bg-sand group-hover:w-20 group-hover:bg-navy transition-all duration-500 rounded-full" />
                   </div>

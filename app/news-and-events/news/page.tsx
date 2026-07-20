@@ -133,7 +133,7 @@ export default function NewsCoveragePage() {
       <section className="pt-16 pb-10 bg-neutral-950 text-white rounded-t-[5rem] mx-4 md:mx-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Calendar className="w-16 h-16 text-secondary mx-auto mb-10" />
-          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 italic font-serif">News Archives.</h2>
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-12 font-serif">News Archives.</h2>
           <p className="text-white/50 text-xl font-medium mb-16 max-w-xl mx-auto leading-relaxed">
             Looking for older milestones? Explore our complete library of press releases and media clippings since 1993.
           </p>

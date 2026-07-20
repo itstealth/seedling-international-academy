@@ -28,7 +28,7 @@ export default function VisionPage() {
         <div className="text-center mb-32">
           <span className="text-label mb-8 block uppercase">Defining Excellence</span>
           <h2 className="text-heading text-6xl md:text-[9rem] leading-[0.85] tracking-tighter">
-            Our Core <br /> <span className="text-primary italic font-serif">Philosophy.</span>
+            Our Core <br /> <span className="text-primary font-serif">Philosophy.</span>
           </h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function VisionPage() {
       <section className="pt-16 pb-10 bg-neutral-950 text-white rounded-[5rem] mx-4 md:mx-8 mb-20 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-10 text-center">
-          <p className="serif italic text-4xl md:text-6xl text-white/90 font-light leading-tight mb-16">
+          <p className="serif text-4xl md:text-6xl text-white/90 font-light leading-tight mb-16">
             "Education is not the filling of a pail, but the lighting of a fire."
           </p>
           <div className="flex flex-col items-center">
@@ -77,7 +77,7 @@ export default function VisionPage() {
       {/* Final Journey CTA */}
       <section className="pt-16 pb-10 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-heading text-4xl md:text-5xl mb-16 italic font-serif">Experience <br /> <span className="text-primary tracking-tighter">Growth.</span></h2>
+          <h2 className="text-heading text-4xl md:text-5xl mb-16 font-serif">Experience <br /> <span className="text-primary tracking-tighter">Growth.</span></h2>
           <Link
             href="/admissions"
             className="inline-flex h-24 px-16 bg-neutral-950 text-white rounded-full items-center justify-center font-black text-2xl shadow-editorial hover:bg-primary transition-all group"

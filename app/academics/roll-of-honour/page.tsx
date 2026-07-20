@@ -105,7 +105,7 @@ export default function RollOfHonourPage() {
                   className="group flex flex-col md:flex-row items-center justify-between p-12 rounded-[3.5rem] border border-black/5 hover:border-primary/20 transition-all duration-700 group cursor-default"
                 >
                    <div className="flex items-center gap-12 mb-8 md:mb-0">
-                      <div className="text-8xl font-black text-black/[0.03] group-hover:text-primary/10 select-none font-serif italic">
+                      <div className="text-8xl font-black text-black/[0.03] group-hover:text-primary/10 select-none font-serif">
                          0{i+1}
                       </div>
                       <div className="text-left">

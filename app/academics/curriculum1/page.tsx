@@ -121,7 +121,7 @@ export default function CurriculumPage() {
                 className="bg-white rounded-[5rem] border border-black/3 shadow-editorial relative overflow-hidden"
               >
                 {/* Floating Big Index Text */}
-                <div className="absolute top-0 right-0 p-20 text-[20rem] font-black text-black/[0.02] select-none pointer-events-none italic font-serif leading-none">
+                <div className="absolute top-0 right-0 p-20 text-[20rem] font-black text-black/[0.02] select-none pointer-events-none font-serif leading-none">
                   {activeContent.id[0]}
                 </div>
 
@@ -164,7 +164,7 @@ export default function CurriculumPage() {
                         <div className="w-12 h-12 rounded-full glass-white flex items-center justify-center">
                           <Sparkles className="w-6 h-6 text-white" />
                         </div>
-                        <p className="text-2xl font-serif italic text-white/90 leading-tight">
+                        <p className="text-2xl font-serif text-white/90 leading-tight">
                           &quot;{activeContent.highlight}&quot;
                         </p>
                       </div>

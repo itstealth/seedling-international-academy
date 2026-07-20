@@ -52,7 +52,7 @@ export const Text: React.FC<TextProps> = ({
     lead: "text-lg md:text-xl text-primary/80 font-light",
     body: "text-base text-slate-700 font-medium",
     small: "text-sm text-slate-600",
-    muted: "text-sm text-slate-500 italic",
+    muted: "text-sm text-slate-500",
   };
 
   return (

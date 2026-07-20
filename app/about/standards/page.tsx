@@ -128,8 +128,8 @@ export default function OurStandardsPage(): React.JSX.Element {
       {/* ═══ INTRO ═══ */}
       <section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Quality &amp; Integrity</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Quality &amp; Integrity</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Every grade, <em className="font-semibold text-navy">earned</em>
         </h2>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
@@ -144,8 +144,8 @@ export default function OurStandardsPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">How We Assess</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">How We Assess</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               The Four Pillars of <em className="font-semibold text-navy">Assessment Quality</em>
             </h2>
           </div>
@@ -161,7 +161,7 @@ export default function OurStandardsPage(): React.JSX.Element {
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
                     {p.icon}
                   </div>
-                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-navy-deeper">{p.title}</h3>
+                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-ink">{p.title}</h3>
                   <p className="text-text-light text-sm leading-[1.85] font-dm">{p.desc}</p>
                 </div>
               );
@@ -173,11 +173,11 @@ export default function OurStandardsPage(): React.JSX.Element {
       {/* ═══ AWARDING STANDARDS ═══ */}
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-sand text-xl italic mb-3">Our Awarding Standards</p>
+            <p className="font-playfair text-sand text-xl mb-3">Our Awarding Standards</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               How a Seedling Grade is <em className="font-semibold text-sand">Decided</em>
             </h2>
@@ -204,8 +204,8 @@ export default function OurStandardsPage(): React.JSX.Element {
       {/* ═══ REPORTING TOUCHPOINTS ═══ */}
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <p className="font-playfair text-navy text-xl italic mb-3">Continuous &amp; Clear</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">Continuous &amp; Clear</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             How We <em className="font-semibold text-navy">Report</em> Progress
           </h2>
         </div>
@@ -222,7 +222,7 @@ export default function OurStandardsPage(): React.JSX.Element {
                 </div>
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">{r.label}</span>
               </div>
-              <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{r.title}</h3>
+              <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{r.title}</h3>
               <p className="text-text-light text-sm leading-[1.85] font-dm">{r.desc}</p>
             </div>
           ))}
@@ -233,11 +233,11 @@ export default function OurStandardsPage(): React.JSX.Element {
       <section className="relative py-14 md:py-20 px-5 sm:px-6 overflow-hidden bg-crimson">
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-          <p className="font-playfair text-sand text-2xl italic mb-6 tracking-wide">Our Standard</p>
+          <p className="font-playfair text-sand text-2xl mb-6 tracking-wide">Our Standard</p>
           <blockquote className="font-playfair text-3xl md:text-4xl font-light leading-[1.2] mb-8 text-white">
             &ldquo;A grade is not the goal. The grade is the evidence that a real learning goal was met. Our standard is the evidence.&rdquo;
           </blockquote>
-          <p className="font-playfair text-lg italic text-sand">— Seedling Awarding Standards Charter</p>
+          <p className="font-playfair text-lg text-sand">— Seedling Awarding Standards Charter</p>
         </div>
       </section>
 

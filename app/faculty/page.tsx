@@ -69,7 +69,7 @@ export default function FacultyPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-24">
             <Tag color="mauve">Our Educators</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Faculty Who<br />
               <em className="font-semibold text-crimson">Inspire, Not Just Instruct</em>
             </h2>
@@ -91,7 +91,7 @@ export default function FacultyPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-8">
-                    <h4 className="font-playfair text-2xl font-semibold text-navy-deeper mb-2">{f.name}</h4>
+                    <h4 className="font-playfair text-2xl font-semibold text-ink mb-2">{f.name}</h4>
                     <p className="text-crimson text-sm font-black tracking-widest uppercase font-dm">{f.subject}</p>
                     <div className="mt-6 w-10 h-1 bg-sand group-hover:w-20 group-hover:bg-navy transition-all duration-500 rounded-full" />
                   </div>

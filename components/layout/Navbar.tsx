@@ -119,7 +119,7 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-navy-deeper/75 backdrop-blur-[2px]"
+            className="fixed inset-0 z-[200] bg-ink/60 backdrop-blur-[2px]"
             onClick={onClose}
           />
           <motion.div
@@ -236,7 +236,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-navy-deeper/75 backdrop-blur-[2px]"
+            className="fixed inset-0 z-[200] bg-ink/60 backdrop-blur-[2px]"
             onClick={onClose}
           />
           <motion.div
@@ -246,7 +246,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             className="fixed left-1/2 top-1/2 z-[210] w-[calc(100%-2rem)] max-w-[400px] [translate:-50%_-50%] bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
           >
             <div className="relative px-8 pt-8 pb-3">
-              <h3 className="font-playfair text-3xl font-semibold text-center text-navy-deeper tracking-tight">Enquiry Form</h3>
+              <h3 className="font-playfair text-3xl font-semibold text-center text-ink tracking-tight">Enquiry Form</h3>
               <button
                 onClick={onClose}
                 className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy-deeper/80 text-navy-deeper hover:bg-navy-deeper hover:text-white transition-colors"
@@ -259,7 +259,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             <div className="flex-1 overflow-y-auto px-8 pb-8">
               {submitted ? (
                 <div className="text-center py-10">
-                  <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-3">Thank You!</h3>
+                  <h3 className="font-playfair text-3xl font-semibold text-ink mb-3">Thank You!</h3>
                   <p className="text-text-light font-dm mb-7 leading-relaxed">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
                   <button
                     onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }}
@@ -416,7 +416,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky top-0 left-0 right-0 z-50 bg-navy-deeper">
+      <div className="sticky top-0 left-0 right-0 z-50 bg-royal-blue">
         {/* ── ANNOUNCEMENT TICKER (commented out)
         <div className="overflow-hidden h-8 flex items-center border-b border-white/[0.06]">
           <div className="flex items-center gap-0 whitespace-nowrap animate-marquee">
@@ -432,23 +432,17 @@ export default function Navbar() {
 
         {/* ── MAIN HEADER ── */}
         <motion.header
-          className="bg-navy-deeper relative overflow-hidden"
+          className="bg-royal-blue relative overflow-hidden"
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Animated shimmer band */}
           <motion.div
-            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-royal-blue to-transparent"
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink/25 to-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-          {/* Subtle moving glow */}
-          <motion.div
-            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-royal-blue/10 blur-3xl rounded-full pointer-events-none"
-            animate={{ x: ["-50%", "-30%", "-50%"] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <div className="max-w-[1600px] mx-auto px-4 py-4 sm:px-6 lg:px-10 relative z-10">
@@ -460,35 +454,37 @@ export default function Navbar() {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link href="/" className="flex items-center gap-2 sm:gap-4 md:gap-6">
-                  {/* SIA LOGO */}
+                <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-6">
+                  {/* SIA LOGO — normalised to the SMIA lockup: identical 1550x380 canvas,
+                      globe height and cap height, so one shared height class renders both
+                      at matching scale and weight. */}
                   <Image
-                    src="/assets/Home/SIA_Logo_transparent.webp"
-                    alt="Seedling International Academy Logo"
-                    width={130}
-                    height={65}
-                    className="h-8 sm:h-11 md:h-13 w-auto object-contain"
+                    src="/assets/Home/SIA_Logo_v3.png"
+                    alt="Seedling International Academy"
+                    width={1550}
+                    height={380}
+                    className="h-7 sm:h-9 md:h-10 w-auto object-contain"
                     priority
                   />
                   {/* Cambridge shield divider */}
-                  <div className="h-6 w-px bg-white/20 hidden sm:block" />
+                  <div className="h-6 w-px bg-ink/15 hidden sm:block" />
                   {/* Cambridge shield logo */}
                   <Image
                     src="/assets/Home/cambridge_shield_v2.webp"
                     alt="Cambridge Shield Logo"
                     width={50}
                     height={50}
-                    className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-90"
+                    className="h-8 sm:h-10 md:h-11 w-auto object-contain"
                     priority
                   />
-                  <div className="h-6 w-px bg-white/20 hidden sm:block" />
-                  {/* SMIA LOGO */}
+                  <div className="h-6 w-px bg-ink/15 hidden sm:block" />
+                  {/* SMIA LOGO — full lockup, same canvas + height class as SIA */}
                   <Image
-                    src="/assets/Home/SMIA_Logo_transparent.webp"
-                    alt="Seedling Modern International Academy Logo"
-                    width={130}
-                    height={65}
-                    className="h-8 sm:h-11 md:h-13 w-auto object-contain"
+                    src="/assets/Home/SMIA_Logo_v3.png"
+                    alt="Seedling Modern International Academy"
+                    width={1550}
+                    height={380}
+                    className="h-7 sm:h-9 md:h-10 w-auto object-contain"
                     priority
                   />
                 </Link>
@@ -503,7 +499,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/"
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-ink/70 hover:text-ink transition-all hover:scale-110"
                   aria-label="Home"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
@@ -512,7 +508,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={() => setShowSearchPopup(true)}
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110 hover:rotate-6"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-ink/70 hover:text-ink transition-all hover:scale-110 hover:rotate-6"
                   aria-label="Open search"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
@@ -521,7 +517,7 @@ export default function Navbar() {
                 </button>
                 <motion.button
                   onClick={() => setIsOpen(true)}
-                  className="relative flex items-center gap-3 bg-royal-blue text-white px-4 sm:px-6 py-2.5 sm:py-3 overflow-hidden group"
+                  className="relative flex items-center gap-3 bg-ink text-white px-4 sm:px-6 py-2.5 sm:py-3 overflow-hidden group"
                   aria-label="Open menu"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
@@ -547,7 +543,7 @@ export default function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[80] bg-royal-blue/10 backdrop-blur-2xl"
+                className="fixed inset-0 z-[80] bg-ink/20 backdrop-blur-2xl"
                 onClick={() => setIsOpen(false)}
               />
               <motion.div
@@ -555,15 +551,15 @@ export default function Navbar() {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", bounce: 0, duration: 0.5 }}
-                className="fixed inset-y-0 right-0 z-[90] w-full sm:w-[480px] sm:max-w-[90%] bg-navy-deeper/85 backdrop-blur-2xl border-l border-white/10 overflow-y-auto flex flex-col shadow-2xl"
+                className="fixed inset-y-0 right-0 z-[90] w-full sm:w-[480px] sm:max-w-[90%] bg-ivory/95 backdrop-blur-2xl border-l border-hairline overflow-y-auto flex flex-col shadow-2xl"
               >
-                <div className="flex items-center justify-end p-4 sm:p-6 border-b border-white/10 gap-4">
+                <div className="flex items-center justify-end p-4 sm:p-6 border-b border-hairline gap-4">
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 text-white hover:text-white transition-colors group flex-shrink-0"
+                    className="flex items-center gap-3 text-ink hover:text-ink transition-colors group flex-shrink-0"
                     aria-label="Close menu"
                   >
-                    <span className="inline-flex items-center justify-center w-11 h-11 bg-royal-blue text-white rounded-full transition-colors group-hover:bg-[#16459e]">
+                    <span className="inline-flex items-center justify-center w-11 h-11 bg-royal-blue text-ink rounded-full transition-colors group-hover:bg-navy group-hover:text-white">
                       <X className="w-5 h-5" strokeWidth={2.5} />
                     </span>
                   </button>
@@ -574,17 +570,17 @@ export default function Navbar() {
                     {navItems.filter(item => item.name !== "Home").map((item) => {
                       const isOpenDrop = openDropdown === item.name;
                       return (
-                        <div key={item.name} className="border-b border-white/5 pb-3 mb-3">
+                        <div key={item.name} className="border-b border-hairline pb-3 mb-3">
                           <div className="flex items-center justify-between">
                             {item.dropdown ? (
                               <button
                                 type="button"
                                 onClick={() => setOpenDropdown(isOpenDrop ? null : item.name)}
-                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-sand" : "text-white"}`}
+                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-crimson" : "text-ink"}`}
                               >
                                 <span>{item.name}</span>
                                 <ChevronDown
-                                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isOpenDrop ? "rotate-180 text-sand" : "text-white/60"}`}
+                                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${isOpenDrop ? "rotate-180 text-crimson" : "text-ink/50"}`}
                                   strokeWidth={2.5}
                                 />
                               </button>
@@ -592,7 +588,7 @@ export default function Navbar() {
                               <Link
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors hover:text-royal-blue ${pathname === item.href ? "text-sand" : "text-white"}`}
+                                className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors hover:text-crimson ${pathname === item.href ? "text-crimson" : "text-ink"}`}
                               >
                                 {item.name}
                               </Link>
@@ -608,13 +604,13 @@ export default function Navbar() {
                                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/40 pl-4 sm:pl-6 space-y-1 mt-1 pb-1">
+                                  <div className="ml-4 sm:ml-6 border-l-2 border-royal-blue/60 pl-4 sm:pl-6 space-y-1 mt-1 pb-1">
                                     {item.dropdown.map((child) => (
                                       <Link
                                         key={child.name}
                                         href={child.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-royal-blue" : "text-white/60 hover:text-white"}`}
+                                        className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-crimson" : "text-ink-soft hover:text-ink"}`}
                                       >
                                         {child.name}
                                       </Link>

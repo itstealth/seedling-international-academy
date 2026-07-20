@@ -265,7 +265,7 @@ export default function CampusHighlightsPage() {
                   <span className="w-8 h-px bg-navy" />
                   Media Coverage
                 </span>
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
+                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
                   In the {" "}
                   <span className="text-crimson">News</span>
                 </h2>
@@ -305,7 +305,7 @@ export default function CampusHighlightsPage() {
             <div className="mb-12 flex items-end justify-between">
               <div>
                
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
+                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
                   Founder's <span className="text-crimson">Day</span>
                 </h2>
               </div>
@@ -332,7 +332,7 @@ export default function CampusHighlightsPage() {
                 Campus Events
               </span>
               <div className="flex items-end justify-between">
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
+                <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
                   Moments That<br />
                   <span className="text-crimson">Define Us</span>
                 </h2>
@@ -381,7 +381,7 @@ export default function CampusHighlightsPage() {
                       <span className="font-playfair text-3xl font-bold text-crimson">{event.date}</span>
                       <span className="text-[10px] font-black text-text-light uppercase tracking-widest font-dm">{event.year}</span>
                     </div>
-                    <h3 className="font-playfair text-xl font-semibold text-navy-deeper mb-2 leading-tight">{event.title}</h3>
+                    <h3 className="font-playfair text-xl font-semibold text-ink mb-2 leading-tight">{event.title}</h3>
                     <p className="text-text-light text-sm leading-relaxed font-dm font-light line-clamp-2">{event.description}</p>
                     <div className="mt-5 w-8 h-1 bg-sand/40 group-hover:w-16 group-hover:bg-sand transition-all duration-500 rounded-full" />
                   </div>
@@ -404,7 +404,7 @@ export default function CampusHighlightsPage() {
                 <span className="w-8 h-px bg-navy" />
                 Snippets of Seedling International School
               </span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-none">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
                 Life at<br />
                 <span className="text-crimson">Seedling</span>
               </h2>
@@ -742,7 +742,7 @@ function NewsCard({ item = newsItems[0], large = false, delay = 0, onClick }: { 
       <div className={`p-5 ${large ? "md:p-7" : ""}`}>
         <p className="text-text-light text-[10px] font-black tracking-widest uppercase mb-2 font-dm">{item.date}</p>
         <h3
-          className={`font-playfair font-bold text-navy-deeper leading-tight group-hover:text-crimson transition-colors duration-200 ${
+          className={`font-playfair font-bold text-ink leading-tight group-hover:text-crimson transition-colors duration-200 ${
             large ? "text-2xl md:text-3xl" : "text-lg"
           }`}
         >

@@ -59,7 +59,7 @@ export default function AdmissionProcessPage() {
               transition={{ delay: i * 0.1 }}
               className="group relative bg-white p-12 rounded-[3.5rem] shadow-editorial border border-black/5 hover:border-primary/20 transition-all duration-700"
             >
-              <div className="absolute top-0 right-0 p-10 text-7xl font-black text-black/[0.03] select-none font-serif italic group-hover:text-primary/[0.05] transition-colors">
+              <div className="absolute top-0 right-0 p-10 text-7xl font-black text-black/[0.03] select-none font-serif group-hover:text-primary/[0.05] transition-colors">
                 0{i + 1}
               </div>
 

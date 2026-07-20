@@ -32,8 +32,8 @@ export default function CambridgeEarlyYearsPage(): React.JSX.Element {
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Where Learning Begins</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Where Learning Begins</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           The best start in life,<br />
           <em className="font-semibold text-navy">in school and beyond.</em>
         </h2>
@@ -48,8 +48,8 @@ export default function CambridgeEarlyYearsPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-3">Six Pillars of Early Years</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">Six Pillars of Early Years</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               What Makes Early Years <em className="font-semibold text-navy">Work</em>
             </h2>
           </motion.div>
@@ -60,7 +60,7 @@ export default function CambridgeEarlyYearsPage(): React.JSX.Element {
               return (
                 <motion.div key={p.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border}`}>
                   <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{p.icon}</div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{p.title}</h3>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{p.title}</h3>
                   <p className="text-text-light text-sm leading-[1.85] font-dm">{p.desc}</p>
                 </motion.div>
               );
@@ -72,7 +72,7 @@ export default function CambridgeEarlyYearsPage(): React.JSX.Element {
       <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <p className="font-playfair text-sand text-xl italic mb-4">Begin The Journey</p>
+          <p className="font-playfair text-sand text-xl mb-4">Begin The Journey</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             The first chapter of a Cambridge story<br />
             <em className="font-semibold text-sand">that lasts a lifetime.</em>

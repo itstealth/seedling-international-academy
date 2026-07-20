@@ -14,16 +14,16 @@ interface MapProps {
 
 export default function WorldMap({
   dots = [],
-  lineColor = "#a3123f",
+  lineColor = "#00bdb6",
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
   const svgMap = map.getSVG({
     radius: 0.22,
-    color: "#0e244038",
+    color: "#1f212138",
     shape: "circle",
-    backgroundColor: "#f4f6f9",
+    backgroundColor: "#f7fafa",
   });
 
   const projectPoint = (lat: number, lng: number) => {

@@ -147,8 +147,8 @@ export default function InternationalCambridgePage(): React.JSX.Element {
           transition={{ duration: 0.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
-        <p className="font-playfair text-crimson text-xl italic mb-4">A Global Standard for Education</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">A Global Standard for Education</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           One curriculum.<br />
           <em className="font-semibold text-navy">A world of possibility.</em>
         </h2>
@@ -160,7 +160,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
       {/* ═══ BIG FACTS BAND ═══ */}
       <section className="relative py-14 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div
@@ -171,7 +171,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-sand text-xl italic mb-3">Cambridge by the Numbers</p>
+            <p className="font-playfair text-sand text-xl mb-3">Cambridge by the Numbers</p>
             <h2 className="font-playfair text-3xl md:text-5xl font-light text-white">
               How Big <em className="font-semibold text-sand">Cambridge</em> Is
             </h2>
@@ -208,8 +208,8 @@ export default function InternationalCambridgePage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-navy text-xl italic mb-3">What Makes It International</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">What Makes It International</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Seven Principles of a <em className="font-semibold text-navy">Cambridge</em> Education
             </h2>
           </div>
@@ -228,7 +228,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
                     {p.icon}
                   </div>
                   <div>
-                    <h3 className="font-playfair text-xl md:text-2xl font-semibold mb-2 text-navy-deeper">{p.title}</h3>
+                    <h3 className="font-playfair text-xl md:text-2xl font-semibold mb-2 text-ink">{p.title}</h3>
                     <p className="text-text-light text-sm md:text-base leading-[1.85] font-dm">{p.desc}</p>
                   </div>
                   <div className="hidden md:block">
@@ -251,8 +251,8 @@ export default function InternationalCambridgePage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-playfair text-navy text-xl italic mb-3">The Cambridge Pathway</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">The Cambridge Pathway</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             A Clear Path from <em className="font-semibold text-navy">Age 3 to 19</em>
           </h2>
           <p className="mt-6 text-text-light text-lg max-w-2xl mx-auto font-dm leading-relaxed">
@@ -277,7 +277,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson rounded-t-2xl" />
               <span className="text-[10px] font-black tracking-[0.25em] uppercase text-crimson mb-3 block">Stage {s.num}</span>
-              <h3 className="font-playfair text-lg font-semibold mb-1 text-navy-deeper">{s.name}</h3>
+              <h3 className="font-playfair text-lg font-semibold mb-1 text-ink">{s.name}</h3>
               <p className="text-[10px] uppercase tracking-widest text-text-light font-bold mb-3">{s.age}</p>
               <p className="text-text-light text-xs leading-relaxed font-dm">{s.desc}</p>
               <motion.div
@@ -304,7 +304,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-playfair text-sand text-2xl italic mb-6 tracking-wide">What Cambridge Builds</p>
+          <p className="font-playfair text-sand text-2xl mb-6 tracking-wide">What Cambridge Builds</p>
           <blockquote className="font-playfair text-3xl md:text-4xl font-light leading-[1.15] mb-8">
             &ldquo;Cambridge students develop an <em>informed curiosity</em> and a <em>lasting passion for learning</em>. They gain the essential skills they need for success at university and in their future careers.&rdquo;
           </blockquote>

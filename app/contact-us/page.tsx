@@ -237,7 +237,7 @@ export default function ContactPage() {
               Contact Information
             </p>
             <h2
-              className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper"
+              className="font-playfair text-3xl md:text-4xl font-bold text-ink"
             >
               Find us at every campus
             </h2>
@@ -315,7 +315,7 @@ export default function ContactPage() {
             <div>
               <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-3 font-dm">Send a Message</p>
               <h2
-                className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper mb-5 leading-tight"
+                className="font-playfair text-3xl md:text-4xl font-bold text-ink mb-5 leading-tight"
               >
                 We&apos;ll get back to you<br />within one working day.
               </h2>
@@ -364,7 +364,7 @@ export default function ContactPage() {
                   <CheckIcon className="w-7 h-7 text-navy" />
                 </div>
                 <h3
-                  className="font-playfair text-2xl font-bold text-navy-deeper"
+                  className="font-playfair text-2xl font-bold text-ink"
                 >
                   Message received!
                 </h3>
@@ -485,7 +485,7 @@ export default function ContactPage() {
           <div className="mb-6">
             <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Our Locations</p>
             <h2
-              className="font-playfair text-3xl md:text-4xl font-bold text-navy-deeper"
+              className="font-playfair text-3xl md:text-4xl font-bold text-ink"
             >
               Visit us on campus
             </h2>
@@ -549,7 +549,7 @@ export default function ContactPage() {
             <div>
               <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Availability</p>
               <h2
-                className="font-playfair text-3xl font-bold text-navy-deeper mb-4 leading-tight"
+                className="font-playfair text-3xl font-bold text-ink mb-4 leading-tight"
               >
                 When to reach us
               </h2>

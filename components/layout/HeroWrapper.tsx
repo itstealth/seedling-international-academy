@@ -44,15 +44,15 @@ export default function HeroWrapper({
         />
       )}
       {/* top accent */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#a3123f] via-[#f7941e] to-[#a3123f] z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00bdb6] via-[#8ee8d8] to-[#00bdb6] z-10" />
       {/* dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#010e3a]/62 to-[#010e3a]/78" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#133844]/62 to-[#133844]/78" />
       {/* centered content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6 pb-8">
         <div className="flex items-center gap-2.5">
-          <span className="block w-6 h-[1.5px] bg-[#f7941e]" />
-          <span className="text-[#f7941e] text-[10px] font-bold tracking-[0.55em] uppercase">{badge}</span>
-          <span className="block w-6 h-[1.5px] bg-[#f7941e]" />
+          <span className="block w-6 h-[1.5px] bg-[#00bdb6]" />
+          <span className="text-[#00bdb6] text-[10px] font-bold tracking-[0.55em] uppercase">{badge}</span>
+          <span className="block w-6 h-[1.5px] bg-[#00bdb6]" />
         </div>
         <h1
           className="font-serif font-bold text-white leading-[1.1]"
@@ -67,12 +67,12 @@ export default function HeroWrapper({
         )}
       </div>
       {/* breadcrumb bar */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#01217e] rounded-t-[10px] flex items-center overflow-hidden whitespace-nowrap z-10">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#133844] rounded-t-[10px] flex items-center overflow-hidden whitespace-nowrap z-10">
         <Link href="/" className="px-5 py-[11px] text-[12px] font-semibold text-white/70 hover:text-white transition-colors">
           Home
         </Link>
         <span className="text-white/30 text-[11px]">›</span>
-        <span className="px-5 py-[11px] text-[12px] font-bold text-[#f7941e]">{breadcrumbs[0]?.label || title}</span>
+        <span className="px-5 py-[11px] text-[12px] font-bold text-[#00bdb6]">{breadcrumbs[0]?.label || title}</span>
       </div>
     </div>
   );

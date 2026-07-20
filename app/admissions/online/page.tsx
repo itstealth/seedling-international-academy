@@ -262,7 +262,7 @@ export default function OnlineAdmissionPage() {
       {/* ── MAIN FORM SECTION ── */}
       <section className="py-14 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-12">
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper tracking-tight mb-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink tracking-tight mb-4">
             Admission<span className="text-crimson ml-3">Form</span>
           </h2>
           <p className="text-text-light max-w-xl mx-auto leading-relaxed font-dm">
@@ -275,7 +275,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 1: SCHOOL & CLASS SELECTION ── */}
           <Reveal className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">1</span>
                 School & Class Selection
               </h3>
@@ -319,7 +319,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 2: STUDENT INFORMATION ── */}
           <Reveal delay={60} className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">2</span>
                 Student Information
               </h3>
@@ -433,7 +433,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 3: PARENT INFORMATION ── */}
           <Reveal delay={80} className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">3</span>
                 Parent / Guardian Information
               </h3>
@@ -479,7 +479,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 4: CONTACT DETAILS ── */}
           <Reveal delay={100} className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">4</span>
                 Contact Details
               </h3>
@@ -507,7 +507,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 5: ADDRESS ── */}
           <Reveal delay={120} className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">5</span>
                 Residential Address
               </h3>
@@ -574,7 +574,7 @@ export default function OnlineAdmissionPage() {
           {/* ── SECTION 6: PREVIOUS SCHOOL & SIBLING ── */}
           <Reveal delay={140} className="mb-8">
             <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight flex items-center gap-3">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">6</span>
                 Previous School & Sibling Details
               </h3>

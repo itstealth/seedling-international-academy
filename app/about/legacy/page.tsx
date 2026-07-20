@@ -80,7 +80,7 @@ export default function LegacyPage() {
             <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-linear-to-b from-neutral-950 to-neutral-950/40">
               The Seedling International School <br /> Journey
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 font-medium italic leading-relaxed">
+            <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
               &quot;The life of one we love is never lost. Its influence goes on through all the lives it ever touched.&quot;
             </p>
             <div className="mt-8 flex flex-col items-center">

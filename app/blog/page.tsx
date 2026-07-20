@@ -194,7 +194,7 @@ export default function BlogPage() {
 
           {/* Blog Grid */}
           {paginated.length === 0 ? (
-            <div className="py-20 text-center text-text-light font-light italic">
+            <div className="py-20 text-center text-text-light font-light">
               No articles found in this category.
             </div>
           ) : (
@@ -227,7 +227,7 @@ export default function BlogPage() {
                           {Math.max(1, Math.ceil(stripHtml(post.excerpt.rendered).split(' ').length / 200))} min read
                         </span>
                       </div>
-                      <h3 className="font-playfair text-lg md:text-xl font-bold text-navy-deeper leading-tight mb-3 group-hover:text-crimson transition-colors duration-300">
+                      <h3 className="font-playfair text-lg md:text-xl font-bold text-ink leading-tight mb-3 group-hover:text-crimson transition-colors duration-300">
                         {stripHtml(post.title.rendered)}
                       </h3>
                       <p className="text-text-light text-sm leading-relaxed mb-6 font-light line-clamp-2 flex-1">

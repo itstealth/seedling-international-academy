@@ -18,8 +18,8 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
       {/* ═══ INTRO ═══ */}
       <section className="py-10 md:py-16 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
-        <p className="font-playfair text-crimson text-xl italic mb-4">A Word From The Principal</p>
-        <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight text-navy-deeper">
+        <p className="font-playfair text-crimson text-xl mb-4">A Word From The Principal</p>
+        <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight text-ink">
           One voice.<br />
           <em className="font-semibold text-navy">One vision.</em>
         </h2>
@@ -61,7 +61,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 <span className="block w-10 h-px bg-navy" />
                 <p className="text-[10px] font-black tracking-[0.3em] uppercase text-navy">A Personal Letter</p>
               </div>
-              <h3 className="font-playfair text-3xl md:text-4xl font-light text-navy-deeper leading-tight mb-2">
+              <h3 className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-2">
                 Ms. Shruti Kakkar
               </h3>
               <p className="text-sm font-bold tracking-widest uppercase text-navy mb-1">Principal</p>
@@ -70,7 +70,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
               <div className="bg-white rounded-2xl p-7 md:p-9 shadow-lg border border-sand/30 relative">
                 <span className="absolute -top-5 left-6 text-7xl font-serif leading-none text-navy opacity-20">&ldquo;</span>
 
-                <p className="italic font-medium text-base md:text-lg mb-5 text-navy">
+                <p className="font-medium text-base md:text-lg mb-5 text-navy">
                   Dear Parents, Students, and Friends of Seedling,
                 </p>
 
@@ -90,7 +90,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 </div>
 
                 <div className="mt-7 pt-5 border-t border-sand/30">
-                  <p className="text-text-light italic text-sm">With warm regards,</p>
+                  <p className="text-text-light text-sm">With warm regards,</p>
                   <p className="font-playfair text-xl font-semibold text-navy mt-1">Ms. Shruti Kakkar</p>
                   <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Principal, Seedling International Academy</p>
                 </div>
@@ -105,7 +105,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <span className="block w-px h-10 bg-sand mx-auto mb-5" />
-          <p className="font-playfair text-sand text-xl italic mb-4">One Last Word</p>
+          <p className="font-playfair text-sand text-xl mb-4">One Last Word</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-8">
             We don&rsquo;t just run schools.<br />
             <em className="font-semibold text-sand">We grow people.</em>

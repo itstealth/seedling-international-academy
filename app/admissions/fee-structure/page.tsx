@@ -106,7 +106,7 @@ export default function FeeStructurePage() {
       <section className="py-48 text-center bg-neutral-950 rounded-t-[5rem] mx-4 md:mx-8 mt-20 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="text-heading text-white text-4xl md:text-5xl mb-16 italic font-serif">
+          <h2 className="text-heading text-white text-4xl md:text-5xl mb-16 font-serif">
             Financial <br /> <span className="text-secondary tracking-tighter">Assistance.</span>
           </h2>
           <p className="text-white/60 text-xl font-medium mb-16 max-w-2xl mx-auto leading-relaxed">

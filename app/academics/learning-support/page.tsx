@@ -97,7 +97,7 @@ export default function LearningSupportPage() {
               {/* Content Container */}
               <div className="flex-1 space-y-12">
                 <div className="relative">
-                  <div className="absolute top-0 left-0 p-8 text-[15rem] font-black text-black/[0.03] select-none pointer-events-none italic font-serif -translate-y-1/2 -translate-x-12">
+                  <div className="absolute top-0 left-0 p-8 text-[15rem] font-black text-black/[0.03] select-none pointer-events-none font-serif -translate-y-1/2 -translate-x-12">
                     0{i + 1}
                   </div>
                   <span className="text-label text-secondary mb-6 block font-black uppercase">Support Pillar</span>

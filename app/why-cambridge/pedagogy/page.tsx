@@ -122,8 +122,8 @@ export default function PedagogyPage(): React.JSX.Element {
           transition={{ duration: 0.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
-        <p className="font-playfair text-crimson text-xl italic mb-4">What Makes Cambridge Work</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">What Makes Cambridge Work</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Curriculum, pedagogy &amp; assessment,<br />
           <em className="font-semibold text-navy">speaking the same language.</em>
         </h2>
@@ -139,7 +139,7 @@ export default function PedagogyPage(): React.JSX.Element {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <blockquote className="font-playfair italic text-lg md:text-xl text-navy-deeper leading-relaxed">
+          <blockquote className="font-playfair text-lg md:text-xl text-navy-deeper leading-relaxed">
             &ldquo;An education system is coherent when the national curriculum content, textbooks, teaching content, pedagogy and assessment all are aligned and reinforce one another.&rdquo;
           </blockquote>
           <figcaption className="mt-4 text-[10px] font-black tracking-[0.2em] uppercase text-text-light">
@@ -162,8 +162,8 @@ export default function PedagogyPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-navy text-xl italic mb-3">The Coherence Model</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">The Coherence Model</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Three parts. <em className="font-semibold text-navy">One language.</em>
             </h2>
           </motion.div>
@@ -189,7 +189,7 @@ export default function PedagogyPage(): React.JSX.Element {
                       <span className="block w-10 h-px bg-current opacity-30" />
                       <span className={`text-[10px] font-black tracking-[0.3em] uppercase ${c.text}`}>{p.label}</span>
                     </div>
-                    <h3 className="font-playfair text-2xl md:text-3xl font-semibold mb-4 text-navy-deeper">{p.title}</h3>
+                    <h3 className="font-playfair text-2xl md:text-3xl font-semibold mb-4 text-ink">{p.title}</h3>
                     <p className="text-text-light text-base md:text-[17px] leading-[1.85] font-dm mb-6">{p.desc}</p>
                     <ul className="space-y-2">
                       {p.points.map((pt, idx) => (
@@ -227,7 +227,7 @@ export default function PedagogyPage(): React.JSX.Element {
       {/* ═══ PRACTICAL EXAMPLE ═══ */}
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-5xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div
@@ -238,7 +238,7 @@ export default function PedagogyPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-sand text-xl italic mb-3">In The Classroom</p>
+            <p className="font-playfair text-sand text-xl mb-3">In The Classroom</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               How It Works in <em className="font-semibold text-sand">Practice</em>
             </h2>
@@ -306,8 +306,8 @@ export default function PedagogyPage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-playfair text-navy text-xl italic mb-3">Why It Matters</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">Why It Matters</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             What Coherence <em className="font-semibold text-navy">Delivers</em>
           </h2>
         </motion.div>
@@ -328,7 +328,7 @@ export default function PedagogyPage(): React.JSX.Element {
               className="bg-white rounded-3xl p-7 md:p-8 shadow-sm hover:shadow-2xl border border-sand/40 cursor-default"
             >
               <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
-              <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{b.title}</h3>
+              <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{b.title}</h3>
               <p className="text-text-light text-sm leading-[1.9] font-dm">{b.desc}</p>
             </motion.div>
           ))}
@@ -346,7 +346,7 @@ export default function PedagogyPage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-playfair text-sand text-2xl italic mb-6 tracking-wide">The Research</p>
+          <p className="font-playfair text-sand text-2xl mb-6 tracking-wide">The Research</p>
           <blockquote className="font-playfair text-3xl md:text-4xl font-light leading-[1.15] mb-8">
             &ldquo;Extensive research between 1995 and 2017 by Bill Schmidt and William Prawat shows that <em>high-performing education systems align their curriculum, textbooks, pedagogy and assessment.</em>&rdquo;
           </blockquote>
@@ -375,7 +375,7 @@ export default function PedagogyPage(): React.JSX.Element {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl italic mb-4">In Practice</p>
+          <p className="font-playfair text-sand text-xl mb-4">In Practice</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Coherence you can feel<br />
             <em className="font-semibold text-sand">in every classroom.</em>

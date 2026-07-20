@@ -95,11 +95,11 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       {/* ═══ INTRO / VISION ═══ */}
       <section className="py-12 md:py-20 max-w-5xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Our Guiding Compass</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Our Guiding Compass</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Wisdom &amp; <em className="font-semibold text-navy">Comprehension</em>
         </h2>
-        <p className="font-playfair text-2xl md:text-3xl italic text-sand mb-8">
+        <p className="font-playfair text-2xl md:text-3xl text-sand mb-8">
           "हस्ये नयतु नः ब्रह्मज्ञानं"
         </p>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-3xl mx-auto">
@@ -114,8 +114,8 @@ export default function MissionAndValuesPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-mauve text-xl italic mb-3">Our Compass</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-mauve text-xl mb-3">Our Compass</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               The <em className="font-semibold text-navy">Mission</em>
             </h2>
           </div>
@@ -130,7 +130,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
                 </svg>
               </div>
               <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Vision</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-navy-deeper">Wisdom & Comprehension</h3>
+              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Wisdom & Comprehension</h3>
               <p className="text-text-light leading-[1.9] text-sm font-dm">
                 To be a beacon of wisdom — nurturing young minds that can comprehend, question, and contribute meaningfully to the world. We envision graduates who are life-ready and life-worthy, open to noble thoughts from every direction.
               </p>
@@ -144,7 +144,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
                 </svg>
               </div>
               <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Mission</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-navy-deeper">Joyful, Whole-Child Learning</h3>
+              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Joyful, Whole-Child Learning</h3>
               <p className="text-text-light leading-[1.9] text-sm font-dm">
                 To provide a joyful learning environment that empowers students to reach their educational and personal potential while nurturing self-confidence and self-esteem — developing resilient, adaptable, socially responsible adults.
               </p>
@@ -158,7 +158,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
                 </svg>
               </div>
               <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Promise</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-navy-deeper">Community & Collaboration</h3>
+              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Community & Collaboration</h3>
               <p className="text-text-light leading-[1.9] text-sm font-dm">
                 Every stakeholder — student, parent, teacher — matters. We commit to active communication, holistic well-being, and an environment where every child feels seen, valued, and motivated to grow.
               </p>
@@ -170,11 +170,11 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       {/* ═══ VALUES ═══ */}
       <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-sand text-xl italic mb-3">Our Compass</p>
+            <p className="font-playfair text-sand text-xl mb-3">Our Compass</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
               The Values That <em className="font-semibold text-sand">Guide Us</em>
             </h2>
@@ -207,8 +207,8 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       {/* ═══ OUR PROMISES ═══ */}
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="text-center mb-12 md:mb-16">
-          <p className="font-playfair text-navy text-xl italic mb-3">In Practice</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-3">In Practice</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             What This <em className="font-semibold text-navy">Looks Like</em>
           </h2>
         </div>
@@ -223,7 +223,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
                 {p.num}
               </div>
               <div>
-                <h4 className="text-lg font-black text-navy-deeper mb-1 uppercase tracking-tight font-dm">{p.title}</h4>
+                <h4 className="text-lg font-black text-ink mb-1 uppercase tracking-tight font-dm">{p.title}</h4>
                 <p className="text-sm text-text-light leading-relaxed font-dm">{p.desc}</p>
               </div>
             </div>
@@ -235,11 +235,11 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-crimson">
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-          <p className="font-playfair text-sand text-3xl italic mb-6 tracking-wide">From the Seedling Charter</p>
+          <p className="font-playfair text-sand text-3xl mb-6 tracking-wide">From the Seedling Charter</p>
           <blockquote className="font-playfair text-3xl md:text-4xl font-light leading-[1.15] mb-10 text-white">
             &ldquo;उप नो सश्रा कृतवो यन्तु विश्रमः&rdquo;
           </blockquote>
-          <p className="font-playfair text-2xl font-light italic text-sand mb-12">
+          <p className="font-playfair text-2xl font-light text-sand mb-12">
             Open the doors from all sides so that noble thoughts come in unhindered.
           </p>
           <a

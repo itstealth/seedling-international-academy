@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, ArrowRight, CalendarDays, Camera, Pencil, Mail, Phone, ArrowDown, ChevronDown, ShieldCheck, Handshake, Compass, Lightbulb, Globe } from 'lucide-react';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
 import WorldMapDemo from "@/components/world-map-demo";
+import HeroVideo from "@/components/ui/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -194,50 +195,45 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     {
       title: "Cambridge Early Years",
       age: "Age 3+",
-      rule: "bg-camb-ey",
-      ink: "text-camb-ey-ink",
-      bg: "bg-pastel-purple-bg",
-      border: "border-pastel-purple-border",
+      color: "from-[#8b26e6] to-[#6f22d8]",
+      bg: "bg-[#f2e9ff]",
+      border: "border-[#8b26e6]",
       points: ["A play-based programme", "A holistic curriculum", "Engaging resources", "Support to measure progress"],
       footer: "6 curriculum areas including Personal, social and emotional development",
     },
     {
       title: "Cambridge Primary",
       age: "Age 5+",
-      rule: "bg-camb-p",
-      ink: "text-camb-p-ink",
-      bg: "bg-pastel-blue-bg",
-      border: "border-pastel-blue-border",
+      color: "from-[#5f72f2] to-[#4458e5]",
+      bg: "bg-[#edf0ff]",
+      border: "border-[#5f72f2]",
       points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to understand potential"],
       footer: "10+ subjects including English, Mathematics and Science",
     },
     {
       title: "Cambridge Lower Secondary",
       age: "Age 11+",
-      rule: "bg-camb-ls",
-      ink: "text-camb-ls-ink",
-      bg: "bg-pastel-green-bg",
-      border: "border-pastel-green-border",
+      color: "from-[#06951d] to-[#007f17]",
+      bg: "bg-[#e8f8ea]",
+      border: "border-[#06951d]",
       points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to predict performance"],
       footer: "10+ subjects including English, Mathematics and Science",
     },
     {
       title: "Cambridge Upper Secondary",
       age: "Age 14+",
-      rule: "bg-camb-us",
-      ink: "text-camb-us-ink",
-      bg: "bg-pastel-orange-bg",
-      border: "border-pastel-orange-border",
+      color: "from-[#ee4a25] to-[#d63c1c]",
+      bg: "bg-[#fff0ea]",
+      border: "border-[#ee4a25]",
       points: ["Broad, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to optimise achievement"],
       footer: "Cambridge IGCSE: 70+ subjects. Cambridge O Level: 40+ subjects. Cambridge ICE.",
     },
     {
       title: "Cambridge Advanced",
       age: "Age 16+",
-      rule: "bg-camb-a",
-      ink: "text-camb-a-ink",
-      bg: "bg-pastel-rose-bg",
-      border: "border-pastel-rose-border",
+      color: "from-[#a20f27] to-[#7f0d21]",
+      bg: "bg-[#fff0f3]",
+      border: "border-[#a20f27]",
       points: ["In-depth, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to predict performance"],
       footer: "Cambridge International AS & A Level: 50+ subjects. Cambridge AICE, Cambridge IPQ.",
     },
@@ -248,25 +244,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-[480px] md:min-h-screen overflow-hidden px-4 pt-16 md:pt-28">
-        {/* Background Video with Overlay (chunked streaming for smooth playback) */}
+        {/* Background video — HLS-segmented so it starts on the first segment
+            rather than waiting for the whole clip. See components/ui/HeroVideo. */}
         <div className="absolute inset-0 z-0">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/assets/Home/building-from-top.jpg"
-            disablePictureInPicture
-            disableRemotePlayback
-          >
-            <source
-              src="/assets/Home/hero-chunk-1.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a3a5c]/70 via-[#1a3a5c]/60 to-[#1a3a5c]/80" />
+          <HeroVideo className="w-full h-full object-cover" />
         </div>
 
         {/* Decorative SVG Elements */}
@@ -306,10 +287,12 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </filter>
         </svg>
 
-        {/* Hero Content */}
+        {/* Hero Content — headline hidden for now (video-only hero).
+            Kept in the tree behind `sr-only` so the page still has an <h1>
+            for SEO/a11y; remove that class to bring the text back. */}
         <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
-          <h1 className="mt-8 max-w-6xl !font-dm text-[clamp(2rem,7vw,7.25rem)] font-medium leading-[1.05] tracking-normal !text-white">
-            Where Learning <span className="whitespace-nowrap">Inspires Transformation.</span>
+          <h1 className="sr-only">
+            Where Learning Inspires Transformation.
           </h1>
         </div>
       </section>
@@ -317,8 +300,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
       {/* ─── OUR CAMPUSES ─── */}
       <section className="bg-white pt-20 pb-24 relative overflow-hidden" id="campuses">
-        {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600" />
+        {/* Accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         {/* Subtle mesh decoration */}
         <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
 
@@ -329,8 +312,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               <span className="block w-px h-10 bg-sand" />
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us">Our Campuses</span>
             </div>
-            <h2 className="font-playfair text-4xl md:text-6xl font-light text-navy-deeper leading-tight mb-6">
-              Two campuses, <em className="font-semibold italic text-crimson">one vision</em>
+            <h2 className="font-playfair text-4xl md:text-6xl font-light text-ink leading-tight mb-6">
+              Two campuses, <em className="font-semibold text-crimson">one vision</em>
             </h2>
             <p className="text-sm md:text-base text-text-light leading-relaxed font-light max-w-2xl mx-auto">
               Two distinct schools, united by the same Cambridge board — Seedling International Academy (SIA) and Seedling Modern International Academy (SMIA) deliver globally benchmarked education, each with its own unique identity.
@@ -414,15 +397,15 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── WHY CAMBRIDGE INTERNATIONAL SCHOOL — light editorial panel ─── */}
-      <section className="relative bg-stone py-20 md:py-28 overflow-hidden border-y border-hairline">
-        {/* faint navy radial so the panel doesn't read flat */}
-        <div className="absolute inset-0 pointer-events-none [background:radial-gradient(70%_55%_at_15%_0%,rgba(3,78,162,0.07),transparent_60%)]" />
+      <section className="relative bg-mint py-20 md:py-28 overflow-hidden border-y border-hairline">
+        {/* faint teal radial so the panel doesn't read flat */}
+        <div className="absolute inset-0 pointer-events-none [background:radial-gradient(70%_55%_at_15%_0%,rgba(0,189,182,0.10),transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid lg:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-crimson mb-5 block">Why Choose Us</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight mb-4">
-                Why <em className="font-semibold italic text-crimson">Cambridge</em>?
+                Why <em className="font-semibold text-crimson">Cambridge</em>?
               </h2>
               <p className="text-sm md:text-base text-ink-soft font-light leading-relaxed max-w-md mb-12">
                 One curriculum, recognised by universities and employers in every corner of the world — taught the Seedling way.
@@ -464,7 +447,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       <section className="bg-stone pt-16 md:pt-24 pb-24 relative overflow-hidden border-t border-hairline">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            className="rounded-[4px] border border-hairline bg-ivory p-6 md:p-10"
+            className="rounded-[4px] border border-hairline bg-ivory p-5 md:p-8"
             initial={{ opacity: 0, y: 36 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.18 }}
@@ -473,9 +456,9 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="mb-8 flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-center">
               <span className="hidden h-px w-28 bg-hairline lg:block" />
               <div className="flex items-center gap-4">
-                <div className="text-left font-playfair text-3xl font-normal leading-none text-ink md:text-4xl">
+                <div className="text-left font-playfair text-3xl font-semibold leading-none text-ink md:text-4xl">
                   Cambridge<br />
-                  <span className="italic text-crimson">Pathway</span>
+                  <span className="text-crimson">Pathway</span>
                 </div>
                 <motion.div
                   className="h-16 w-16"
@@ -483,79 +466,56 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <svg viewBox="0 0 72 72" className="h-full w-full" aria-hidden="true">
-                    <path d="M15 8L58 36L15 64L26 36L15 8Z" fill="none" stroke="#1d4370" strokeWidth="4" strokeLinejoin="round" />
+                    <path d="M15 8L58 36L15 64L26 36L15 8Z" fill="none" stroke="#036268" strokeWidth="5" strokeLinejoin="round" />
                   </svg>
                 </motion.div>
               </div>
-              <p className="max-w-xl text-base font-light text-ink-soft md:text-lg">
+              <p className="max-w-xl text-base font-medium text-ink-soft md:text-lg">
                 A clear path for educational success from age 3 to 19
               </p>
               <span className="hidden h-px w-28 bg-hairline lg:block" />
             </div>
 
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 items-stretch">
-              {cambridgePathwayStages.map((stage, index) => {
-                const isFirst = index === 0;
-                const isLast = index === cambridgePathwayStages.length - 1;
-                return (
-                <motion.div
+              {cambridgePathwayStages.map((stage, index) => (
+                <motion.article
                   key={stage.title}
-                  className="flex flex-col"
+                  className={`group flex flex-col overflow-hidden rounded-2xl border-2 ${stage.border} ${stage.bg} shadow-lg shadow-black/5`}
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -8, scale: 1.015 }}
                 >
-                  {/* ── the pathway itself: a spine, with each age as a node ── */}
-                  <div className="relative mb-4 hidden h-14 items-center justify-center lg:flex">
-                    <span
-                      className={`absolute top-1/2 h-px bg-ink/15 ${
-                        isFirst ? 'left-1/2 right-0' : isLast ? 'left-0 right-1/2' : 'left-0 right-0'
-                      }`}
-                    />
-                    <span
-                      className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border bg-ivory font-playfair text-[15px] leading-none ${stage.ink}`}
-                      style={{ borderColor: 'currentColor' }}
-                    >
-                      {stage.age.replace(/^Age\s*/i, '')}
-                    </span>
+                  <div className={`relative min-h-[88px] bg-gradient-to-br ${stage.color} px-5 py-4 text-white`}>
+                    <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                    <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                      {stage.title}
+                    </h3>
                   </div>
 
-                  <article className="group flex flex-1 flex-col overflow-hidden rounded-[3px] border border-hairline bg-ivory transition-colors duration-300 hover:border-ink/25">
-                    <span className={`block h-[3px] w-full ${stage.rule}`} />
-
-                    <div className="flex min-h-24 flex-col px-5 pb-4 pt-5">
-                      <p className={`mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] lg:hidden ${stage.ink}`}>
-                        {stage.age}
-                      </p>
-                      <h3 className="font-playfair text-[17px] font-semibold leading-snug text-ink">
-                        {stage.title}
-                      </h3>
+                  <div className="flex flex-1 flex-col">
+                    <div className="flex-1 px-5 py-5">
+                      <p className="mb-3 text-[13px] font-black uppercase tracking-wider text-navy-deeper">{stage.age}</p>
+                      <ul className="space-y-2.5 text-[13px] leading-snug">
+                        {stage.points.map((point) => (
+                          <li key={point} className="flex gap-2.5">
+                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-navy" />
+                            <span className="text-text-base">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-
-                    <div className="flex flex-1 flex-col border-t border-hairline">
-                      <div className="flex-1 px-5 py-5">
-                        <ul className="space-y-3 text-[13px] leading-snug">
-                          {stage.points.map((point) => (
-                            <li key={point} className="flex gap-2.5">
-                              <ArrowRight className={`mt-[3px] h-3 w-3 flex-shrink-0 ${stage.ink}`} strokeWidth={2} aria-hidden="true" />
-                              <span className="font-light text-ink-soft">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="border-t border-hairline px-5 py-4 text-[12.5px] font-medium leading-relaxed text-ink">
-                        {stage.footer}
-                      </div>
+                    <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[13px] font-bold leading-relaxed text-navy-deeper">
+                      {stage.footer}
                     </div>
-                  </article>
-                </motion.div>
-                );
-              })}
+                  </div>
+                </motion.article>
+              ))}
             </div>
 
             <motion.div
-              className="mt-5 rounded-[3px] border border-hairline bg-stone px-5 py-4 text-center font-playfair text-base font-normal italic text-ink md:text-lg"
+              className="mt-5 rounded-xl bg-navy-deeper px-5 py-4 text-center font-playfair text-base font-black text-white shadow-lg md:text-lg"
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -577,7 +537,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   animate={{ rotate: [0, -4, 4, 0] }}
                   transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <path d="M6 4H42V36L24 50L6 36V4Z" fill="none" stroke="#1e4db7" strokeWidth="4" />
+                  <path d="M6 4H42V36L24 50L6 36V4Z" fill="none" stroke="#00bdb6" strokeWidth="4" />
                 </motion.svg>
               </div>
               <span className="h-px w-24 bg-royal-blue/20 md:w-44" />
@@ -587,7 +547,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── WORLD MAP / GLOBAL REACH ─── */}
-      <section className="bg-stone w-full border-b border-hairline" id="global-reach">
+      <section className="bg-mint w-full border-b border-hairline" id="global-reach">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
           <WorldMapDemo />
         </div>
@@ -607,7 +567,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us mb-4 block">Cambridge board</span>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-              Cambridge <em className="font-semibold italic text-crimson">Learner Attributes</em>
+              Cambridge <em className="font-semibold text-crimson">Learner Attributes</em>
             </h2>
             <p className="text-sm md:text-base text-text-light leading-relaxed font-light mt-4">
               Our curriculum is designed to help students develop these five core qualities, preparing them to be successful in an ever-changing world.
@@ -684,7 +644,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            Voices from our <em className="font-semibold italic text-crimson">Community</em>.
+            Voices from our <em className="font-semibold text-crimson">Community</em>.
           </motion.h2>
 
           {/* Category cards with testimony */}
@@ -737,7 +697,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   </h3>
                   <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
 
-                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light italic mb-6">
+                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6">
                     &ldquo;{card.quote}&rdquo;
                   </blockquote>
 
@@ -765,7 +725,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div>
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us mb-4 block">Campus Life</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-                Vibrant <em className="font-semibold italic text-crimson">Memories</em>.
+                Vibrant <em className="font-semibold text-crimson">Memories</em>.
               </h2>
             </div>
             {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
@@ -866,7 +826,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div>
               <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-                Trending <em className="font-semibold text-navy italic">Updates</em>.
+                Trending <em className="font-semibold text-navy">Updates</em>.
               </h2>
             </div>
             <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
@@ -915,7 +875,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-navy-deeper text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
+                        <h4 className="text-ink text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
                         <ArrowUpRight size={17} strokeWidth={2.5} className="text-crimson flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
@@ -959,7 +919,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="max-w-3xl">
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-crimson mb-4 block">Infrastructure</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-                World-Class <em className="font-semibold italic text-crimson">Facilities</em>
+                World-Class <em className="font-semibold text-crimson">Facilities</em>
               </h2>
             </div>
 
@@ -1046,7 +1006,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className='px-2'>
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us mb-6 block">Join the Family</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight mb-8">
-                Enroll Your Child <em className="font-semibold italic text-crimson">Today</em>.
+                Enroll Your Child <em className="font-semibold text-crimson">Today</em>.
               </h2>
               <p className="text-xl text-text-light leading-relaxed mb-12 font-light">
                 Admissions for 2026–27 are now open. Experience the difference of a school that truly cares about every child's growth and happiness.
@@ -1068,7 +1028,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
             <div className="bg-ivory border border-hairline p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <h3 className="font-playfair text-3xl font-semibold text-navy-deeper mb-8">Admission Enquiry 2026–27</h3>
+              <h3 className="font-playfair text-3xl font-semibold text-ink mb-8">Admission Enquiry 2026–27</h3>
               <CallbackForm />
             </div>
           </div>

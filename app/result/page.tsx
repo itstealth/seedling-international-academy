@@ -73,7 +73,7 @@ export default function ResultPage() {
                   <span className="h-px w-8 bg-crimson/70" />
                   Cambridge Results
                 </span>
-                <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-navy-deeper">
+                <h2 className="mt-4 font-playfair text-3xl md:text-4xl font-light leading-tight text-ink">
                   Academic<br />
                   <em className="font-semibold text-navy">Excellence</em>
                 </h2>
@@ -117,7 +117,7 @@ export default function ResultPage() {
                 <span className="inline-block bg-crimson/5 text-crimson text-xs font-bold tracking-[0.3em] uppercase px-5 py-2 rounded-full border border-crimson/10 mb-4 font-dm backdrop-blur-sm">
                   Cambridge Grading
                 </span>
-                <h3 className="font-playfair text-3xl md:text-5xl font-light text-navy-deeper">
+                <h3 className="font-playfair text-3xl md:text-5xl font-light text-ink">
                   Understanding <em className="font-semibold text-navy">Grades</em>
                 </h3>
               </div>
@@ -149,7 +149,7 @@ export default function ResultPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-navy-light rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-crimson text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-navy-deeper">100% Pass Rate</h3>
+                <h3 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 text-ink">100% Pass Rate</h3>
                 <p className="text-text-light mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">
                   Seedling International Academy students consistently achieve excellent results in Cambridge International examinations. Our students receive distinctions and strong grades, opening doors to top universities worldwide — in India and abroad.
                 </p>

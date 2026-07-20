@@ -110,7 +110,7 @@ export default function TermsAndConditions() {
                 <div className="bg-crimson rounded-[2rem] p-8 text-white shadow-xl shadow-crimson/20">
                   <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/60 mb-4">Legal Framework</p>
                   <p className="text-sm font-bold uppercase tracking-widest leading-relaxed">
-                    Governed by the<br /><span className="text-2xl font-playfair lowercase italic font-light tracking-normal">laws of India</span>
+                    Governed by the<br /><span className="text-2xl font-playfair lowercase font-light tracking-normal">laws of India</span>
                   </p>
                 </div>
               </div>

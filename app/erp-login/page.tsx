@@ -63,7 +63,7 @@ export default function ERPLoginPage() {
           <div className="w-8 h-[2px] bg-[#f7941e] mb-6" />
           <blockquote className="font-serif text-3xl xl:text-4xl font-bold text-white leading-snug mb-4">
             Learning today,<br />
-            <span className="italic text-[#f7941e]">leading tomorrow.</span>
+            <span className="text-[#f7941e]">leading tomorrow.</span>
           </blockquote>
           <p className="text-white/45 text-[13px] leading-relaxed">
             Access your personalised dashboard — academics, attendance, fee records, and more.
@@ -89,7 +89,7 @@ export default function ERPLoginPage() {
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 lg:px-16 bg-[#f8f9fc] relative overflow-hidden">
 
         {/* Subtle background accent */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#a3123f]/5 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#036268]/5 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f7941e]/5 blur-3xl pointer-events-none" />
 
         <div className="w-full max-w-[420px] relative z-10">
@@ -103,11 +103,11 @@ export default function ERPLoginPage() {
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-2">
               <span className="w-5 h-[1.5px] bg-[#f7941e] inline-block" />
-              <span className="text-[#a3123f] text-[9.5px] font-bold tracking-[0.5em] uppercase">ERP Portal</span>
+              <span className="text-[#036268] text-[9.5px] font-bold tracking-[0.5em] uppercase">ERP Portal</span>
             </div>
             <h1 className="font-serif text-[2rem] font-bold text-[#010e3a] leading-tight mb-1">
               Sign in to your<br />
-              <span className="italic text-[#a3123f]">dashboard</span>
+              <span className="text-[#036268]">dashboard</span>
             </h1>
             <p className="text-[#010e3a]/45 text-[13px] mt-2">
               Use credentials provided by your school administrator.
@@ -153,7 +153,7 @@ export default function ERPLoginPage() {
                   onChange={(e) => setUserId(e.target.value)}
                   placeholder={placeholders[role]}
                   required
-                  className="w-full pl-10 pr-4 py-3 text-[13px] text-[#010e3a] bg-white border border-[#010e3a]/12 rounded-xl outline-none focus:border-[#a3123f]/50 focus:ring-2 focus:ring-[#a3123f]/10 transition-all placeholder:text-[#010e3a]/25"
+                  className="w-full pl-10 pr-4 py-3 text-[13px] text-[#010e3a] bg-white border border-[#010e3a]/12 rounded-xl outline-none focus:border-[#036268]/50 focus:ring-2 focus:ring-[#036268]/10 transition-all placeholder:text-[#010e3a]/25"
                 />
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function ERPLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
-                  className="w-full pl-10 pr-11 py-3 text-[13px] text-[#010e3a] bg-white border border-[#010e3a]/12 rounded-xl outline-none focus:border-[#a3123f]/50 focus:ring-2 focus:ring-[#a3123f]/10 transition-all placeholder:text-[#010e3a]/25"
+                  className="w-full pl-10 pr-11 py-3 text-[13px] text-[#010e3a] bg-white border border-[#010e3a]/12 rounded-xl outline-none focus:border-[#036268]/50 focus:ring-2 focus:ring-[#036268]/10 transition-all placeholder:text-[#010e3a]/25"
                 />
                 <button
                   type="button"
@@ -200,7 +200,7 @@ export default function ERPLoginPage() {
 
             {/* Forgot password */}
             <div className="flex justify-end">
-              <button type="button" className="text-[11.5px] text-[#a3123f] hover:text-[#8a0f34] font-semibold transition-colors">
+              <button type="button" className="text-[11.5px] text-[#036268] hover:text-[#025573] font-semibold transition-colors">
                 Forgot password?
               </button>
             </div>
@@ -208,7 +208,7 @@ export default function ERPLoginPage() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#a3123f] hover:bg-[#8a0f34] text-white text-[12px] font-bold tracking-[0.15em] uppercase rounded-xl transition-colors duration-200 shadow-lg shadow-[#a3123f]/20"
+              className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#036268] hover:bg-[#025573] text-white text-[12px] font-bold tracking-[0.15em] uppercase rounded-xl transition-colors duration-200 shadow-lg shadow-[#036268]/20"
             >
               Sign In
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -222,7 +222,7 @@ export default function ERPLoginPage() {
           <div className="mt-8 pt-6 border-t border-[#010e3a]/8">
             <p className="text-center text-[12px] text-[#010e3a]/40">
               Having trouble signing in?{" "}
-              <Link href="/contact-us" className="text-[#010e3a]/65 hover:text-[#a3123f] font-semibold transition-colors">
+              <Link href="/contact-us" className="text-[#010e3a]/65 hover:text-[#036268] font-semibold transition-colors">
                 Contact your administrator
               </Link>
             </p>

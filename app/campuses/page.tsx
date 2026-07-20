@@ -144,7 +144,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               <span className={`size-2.5 rounded-full ${campus.key === "sia" ? "bg-crimson" : "bg-royal-blue"}`} />
               <span className="text-[10px] font-black tracking-[0.3em] uppercase text-navy">{campus.badge}</span>
             </div>
-            <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
               {campus.fullName.split("Seedling ").join("Seedling ")}
               <br />
               <span
@@ -179,9 +179,9 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-crimson text-xl italic mb-3">{campus.motto}</p>
+            <p className="font-playfair text-crimson text-xl mb-3">{campus.motto}</p>
             <h3
-              className="font-playfair text-3xl md:text-4xl font-light text-navy-deeper leading-tight mb-5"
+              className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-5"
               dangerouslySetInnerHTML={{ __html: campus.introHeadline }}
             />
             <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm mb-6">{campus.introLead}</p>
@@ -205,8 +205,8 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
 
         {/* Highlights */}
         <motion.div className="text-center mb-8 md:mb-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-          <p className="font-playfair text-navy text-xl italic mb-2">What Makes {campus.shortName} Special</p>
-          <h3 className="font-playfair text-3xl md:text-4xl font-light text-navy-deeper">
+          <p className="font-playfair text-navy text-xl mb-2">What Makes {campus.shortName} Special</p>
+          <h3 className="font-playfair text-3xl md:text-4xl font-light text-ink">
             Six <em className="font-semibold text-navy">Pillars</em>
           </h3>
         </motion.div>
@@ -216,7 +216,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             return (
               <motion.div key={h.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border ${c.border}`}>
                 <div className="text-4xl mb-3 transition-transform duration-300 group-hover:scale-110">{h.icon}</div>
-                <h4 className="font-playfair text-lg font-semibold mb-2 text-navy-deeper">{h.title}</h4>
+                <h4 className="font-playfair text-lg font-semibold mb-2 text-ink">{h.title}</h4>
                 <p className="text-text-light text-sm leading-[1.85] font-dm">{h.desc}</p>
               </motion.div>
             );
@@ -226,8 +226,8 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
         {/* Facilities + Map split */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-2">The Campus</p>
-            <h3 className="font-playfair text-2xl md:text-3xl font-light text-navy-deeper leading-tight mb-5">
+            <p className="font-playfair text-navy text-xl mb-2">The Campus</p>
+            <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
               Facilities &amp; Spaces
             </h3>
             <div className="space-y-3">
@@ -253,8 +253,8 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl italic mb-2">Visit</p>
-            <h3 className="font-playfair text-2xl md:text-3xl font-light text-navy-deeper leading-tight mb-5">
+            <p className="font-playfair text-navy text-xl mb-2">Visit</p>
+            <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
               Find Your Way
             </h3>
             <p className="text-text-light text-base leading-relaxed font-dm mb-5">{campus.address}</p>
@@ -336,8 +336,8 @@ export default function CampusesPage(): React.JSX.Element {
           transition={{ duration: 0.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
-        <p className="font-playfair text-crimson text-xl italic mb-3">One Vision, Two Campuses</p>
-        <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight text-navy-deeper mb-5">
+        <p className="font-playfair text-crimson text-xl mb-3">One Vision, Two Campuses</p>
+        <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight text-ink mb-5">
           Choose <em className="font-semibold text-navy">the campus</em> that fits your family.
         </h2>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
@@ -397,7 +397,7 @@ export default function CampusesPage(): React.JSX.Element {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl italic mb-4">Visit Us</p>
+          <p className="font-playfair text-sand text-xl mb-4">Visit Us</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Walk the corridors<br />
             <em className="font-semibold text-sand">of a Seedling school.</em>

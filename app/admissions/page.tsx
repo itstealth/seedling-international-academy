@@ -491,7 +491,7 @@ export default function AdmissionsPage() {
       <section id="enquire" className="pt-14 pb-8 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-4 md:mb-14">
           {/* <Tag>Admission Inquiry</Tag> */}
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
            Admission
             <span className="text-crimson ml-4">Inquiry</span>
           </h2>
@@ -501,7 +501,7 @@ export default function AdmissionsPage() {
           {/* Left — Requisites */}
           <Reveal>
             <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-8 tracking-tight">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight">
                 Requisites for Online Application
               </h3>
               <ul className="space-y-5">
@@ -556,7 +556,7 @@ export default function AdmissionsPage() {
           {/* Right — Form */}
           <Reveal delay={100}>
             <div className="bg-white border border-sand/20 rounded-3xl p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-navy-deeper mb-2 tracking-tight">Online Admission Inquiry</h3>
+              <h3 className="font-playfair text-2xl font-black text-ink mb-2 tracking-tight">Online Admission Inquiry</h3>
               <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
 
               <form onSubmit={handleFormSubmit} className="space-y-5">
@@ -655,7 +655,7 @@ export default function AdmissionsPage() {
       <section className="pt-14 md:pb-8 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-8 md:mb-14">
           <Tag>Why Seedling</Tag>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
             Six Reasons Parents<br />
             <span className="text-crimson">Choose Us</span>
           </h2>
@@ -667,7 +667,7 @@ export default function AdmissionsPage() {
               <div className="group bg-white border border-sand/20 rounded-3xl p-10 hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.1)] hover:-translate-y-2 transition-all duration-500 h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-sand/5 rounded-bl-full transition-transform duration-500 group-hover:scale-110" />
                 <span className="text-5xl mb-8 block transition-all duration-300">{w.icon}</span>
-                <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-4 tracking-tight">{w.title}</h4>
+                <h4 className="font-playfair text-2xl font-black text-ink mb-4 tracking-tight">{w.title}</h4>
                 <p className="text-text-light text-sm leading-[1.8] font-dm">{w.desc}</p>
                 <div className="mt-8 flex items-center gap-3">
                   <div className="w-10 h-0.5 bg-crimson transform origin-left transition-all duration-500 group-hover:w-16" />
@@ -686,7 +686,7 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Admission Process</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
               Six Simple Steps<br />
               <span className="text-crimson">to Join Us</span>
             </h2>
@@ -746,7 +746,7 @@ export default function AdmissionsPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-playfair text-3xl md:text-4xl font-black text-navy-deeper leading-tight mb-5">
+                    <h3 className="font-playfair text-3xl md:text-4xl font-black text-ink leading-tight mb-5">
                       {activeAdmissionStep.title}
                     </h3>
                     <p className="text-text-light text-base leading-[1.85] font-dm max-w-3xl">
@@ -785,7 +785,7 @@ export default function AdmissionsPage() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-start">
           <Reveal>
             <Tag>Eligibility & Requirements</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] mb-8 tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] mb-8 tracking-tight">
               Documents<br />
               <span className="text-crimson">Required</span>
             </h2>
@@ -833,7 +833,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-16">
             <Tag>Fee Structure</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
               Transparent &<br />
               <span className="text-crimson">Straightforward</span>
             </h2>
@@ -892,7 +892,7 @@ export default function AdmissionsPage() {
                   <div className="w-16 h-16 bg-off-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                     {s.icon}
                   </div>
-                  <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-3 tracking-tight">{s.title}</h4>
+                  <h4 className="font-playfair text-2xl font-black text-ink mb-3 tracking-tight">{s.title}</h4>
                   <p className="text-text-light text-sm leading-[1.8] font-dm">{s.desc}</p>
                 </div>
               ))}
@@ -908,7 +908,7 @@ export default function AdmissionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="text-center mb-20">
             <Tag>Transport Facility</Tag>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
               Safe & Reliable<br />
               <span className="text-crimson">School Transport</span>
             </h2>
@@ -920,7 +920,7 @@ export default function AdmissionsPage() {
                 <div className="bg-off-white border border-sand/20 rounded-3xl p-10 flex gap-8 hover:shadow-xl hover:border-sand/40 transition-all duration-500 group">
                   <span className="text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-500">{t.icon}</span>
                   <div>
-                    <h4 className="font-playfair text-2xl font-black text-navy-deeper mb-3 tracking-tight">{t.title}</h4>
+                    <h4 className="font-playfair text-2xl font-black text-ink mb-3 tracking-tight">{t.title}</h4>
                     <p className="text-text-light text-sm leading-[1.9] font-dm">{t.desc}</p>
                   </div>
                 </div>
@@ -1060,7 +1060,7 @@ export default function AdmissionsPage() {
       {/* <section className="py-20 max-w-6xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <Tag>Common Questions</Tag>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-navy-deeper leading-[1.1] tracking-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
             Parents Ask,<br />
             <span className="text-crimson">We Answer</span>
           </h2>
@@ -1104,7 +1104,7 @@ export default function AdmissionsPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
-            <p className="display text-sand text-xl italic mb-4">The Seedling International School Family Awaits</p>
+            <p className="display text-sand text-xl mb-4">The Seedling International School Family Awaits</p>
             <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-white">
               Where Every{" "}
               <em className="font-semibold text-sand">Student</em>{" "}

@@ -51,7 +51,7 @@ export default function AffiliationPage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-950 leading-[0.9] mb-8">
               Globally <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary italic font-serif">Recognized.</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary font-serif">Recognized.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
               At Seedling International School, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.

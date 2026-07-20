@@ -380,7 +380,7 @@ function SportsGrid() {
                   }}>{sport.name}</h3>
                   <div style={{
                     fontFamily: "'Barlow', sans-serif", fontSize: 14, color: sport.color,
-                    fontStyle: "italic", marginBottom: isHovered ? 12 : 0,
+                    marginBottom: isHovered ? 12 : 0,
                     opacity: 1, transition: "margin 0.3s",
                   }}>{sport.tagline}</div>
                   <p style={{

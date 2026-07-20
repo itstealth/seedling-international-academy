@@ -229,7 +229,7 @@ function AlumniCard({
           <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${alumniItem.accent}`} />
         </div>
         <div className="p-6">
-          <h3 className="font-playfair text-xl font-bold text-navy-deeper mb-1">{alumniItem.name}</h3>
+          <h3 className="font-playfair text-xl font-bold text-ink mb-1">{alumniItem.name}</h3>
           <p className={`text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r ${alumniItem.accent} mb-4 font-dm`}>
             {alumniItem.role}
           </p>
@@ -282,7 +282,7 @@ function FeaturedAlumniSection() {
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-2 leading-tight text-white">
               Harshil Mathur
             </h2>
-            <p className="font-playfair text-xl text-sand font-medium mb-8 italic">
+            <p className="font-playfair text-xl text-sand font-medium mb-8">
               CEO, Razorpay
             </p>
 
@@ -335,7 +335,7 @@ function AlumniGrid() {
             </span>
             <div className="w-8 h-px bg-sand" />
           </div> */}
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper leading-tight">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-tight">
             The Pride of Seedling International School
           </h2>
           <p className="mt-4 text-text-light max-w-xl mx-auto text-lg font-dm font-light">
@@ -366,7 +366,7 @@ function AchievementsSection() {
             </span>
             <div className="w-8 h-px bg-crimson" />
           </div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink">
             Empowering Educational Excellence{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-crimson to-navy">
               Globally
@@ -400,7 +400,7 @@ function AchievementsSection() {
               <div className="flex items-start gap-4">
                 <div className="text-3xl flex-shrink-0">{a.icon}</div>
                 <div>
-                  <h3 className="font-playfair font-bold text-navy-deeper text-lg mb-2">{a.title}</h3>
+                  <h3 className="font-playfair font-bold text-ink text-lg mb-2">{a.title}</h3>
                   <p className="text-text-light text-sm leading-relaxed font-dm font-light">{a.body}</p>
                 </div>
               </div>
@@ -505,7 +505,7 @@ function GalleryStrip() {
                 Happy Kids Make a Happy School
               </span>
             </div>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy-deeper">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink">
               Students Speak
             </h2>
           </div>

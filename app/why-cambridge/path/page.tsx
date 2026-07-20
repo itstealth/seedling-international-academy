@@ -187,8 +187,8 @@ export default function YourPathYourWayPage(): React.JSX.Element {
           transition={{ duration: 0.4, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
-        <p className="font-playfair text-crimson text-xl italic mb-4">Education That Adapts To You</p>
-        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-navy-deeper mb-6">
+        <p className="font-playfair text-crimson text-xl mb-4">Education That Adapts To You</p>
+        <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           The same <em className="font-semibold text-navy">rigour</em>.<br />
           A <em className="font-semibold text-navy">thousand</em> different journeys.
         </h2>
@@ -211,8 +211,8 @@ export default function YourPathYourWayPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-navy text-xl italic mb-3">How Cambridge Adapts</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">How Cambridge Adapts</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Four Pillars of a <em className="font-semibold text-navy">Personalised</em> Curriculum
             </h2>
           </motion.div>
@@ -241,7 +241,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   >
                     {p.icon}
                   </motion.div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-navy-deeper">{p.title}</h3>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{p.title}</h3>
                   <p className="text-text-light text-sm leading-[1.85] font-dm">{p.desc}</p>
                 </motion.div>
               );
@@ -264,8 +264,8 @@ export default function YourPathYourWayPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-navy text-xl italic mb-3">Real Stories</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+            <p className="font-playfair text-navy text-xl mb-3">Real Stories</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               Three Students. <em className="font-semibold text-navy">Three Paths.</em>
             </h2>
             <p className="mt-6 text-text-light text-lg max-w-2xl mx-auto font-dm leading-relaxed">
@@ -309,7 +309,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   <div className="p-7 md:p-8">
                     <p className={`text-[10px] font-black tracking-[0.25em] uppercase ${c.text} mb-2`}>Path {String(i + 1).padStart(2, "0")} · {p.track}</p>
 
-                    <blockquote className="font-playfair italic text-text-base md:text-lg leading-relaxed mb-5 border-l-4 pl-5" style={{ borderColor: "currentColor" }}>
+                    <blockquote className="font-playfair text-text-base md:text-lg leading-relaxed mb-5 border-l-4 pl-5" style={{ borderColor: "currentColor" }}>
                       &ldquo;{p.quote}&rdquo;
                     </blockquote>
 
@@ -355,8 +355,8 @@ export default function YourPathYourWayPage(): React.JSX.Element {
           variants={fadeUp}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-playfair text-mauve text-xl italic mb-3">The Cambridge Journey</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light text-navy-deeper">
+          <p className="font-playfair text-mauve text-xl mb-3">The Cambridge Journey</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
             Five Stages. <em className="font-semibold text-navy">One Continuous Path.</em>
           </h2>
         </motion.div>
@@ -383,7 +383,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   <span className={`text-[10px] font-black tracking-[0.25em] uppercase ${c.text}`}>Stage {s.stage}</span>
                   <span className="text-[10px] font-semibold text-text-light uppercase tracking-widest">{s.age}</span>
                 </div>
-                <h3 className="font-playfair text-lg font-semibold mb-2 text-navy-deeper">{s.name}</h3>
+                <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{s.name}</h3>
                 <p className="text-text-light text-xs leading-relaxed font-dm">{s.desc}</p>
                 <motion.div
                   className={`mt-4 h-1 rounded-full ${c.bg.replace('/10', '')}`}
@@ -418,7 +418,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl italic mb-4">Designed For You</p>
+          <p className="font-playfair text-sand text-xl mb-4">Designed For You</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             One Cambridge curriculum.<br />
             <em className="font-semibold text-sand">A path as unique as your child.</em>

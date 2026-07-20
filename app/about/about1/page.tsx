@@ -75,7 +75,7 @@ export default function AboutPage() {
             <span className="text-label mb-8 block">The Seedling International School Legacy</span>
             <h1 className="text-heading text-7xl md:text-[12rem] leading-[0.8] mb-16">
               Shaping <br />
-              <span className="text-primary italic">Generations.</span>
+              <span className="text-primary">Generations.</span>
             </h1>
             <div className="w-px h-32 bg-linear-to-b from-primary/30 to-transparent mx-auto" />
           </motion.div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-950 mb-8 font-serif italic">The Seedling International School Story.</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-950 mb-8 font-serif">The Seedling International School Story.</h2>
               <p className="text-xl text-neutral-600 font-medium leading-relaxed mb-8">
                 Founded over three decades ago, Seedling International School Group began with a vision to revolutionize the educational landscape of Jaipur.
               </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
 
                 {/* Content Container */}
                 <div className="flex-1 space-y-10 relative">
-                  <div className="absolute top-0 left-0 p-8 text-[15rem] font-black text-black/[0.03] select-none pointer-events-none italic font-serif -translate-y-1/2 -translate-x-12 group-hover:text-primary/[0.05] transition-colors">
+                  <div className="absolute top-0 left-0 p-8 text-[15rem] font-black text-black/[0.03] select-none pointer-events-none font-serif -translate-y-1/2 -translate-x-12 group-hover:text-primary/[0.05] transition-colors">
                     {leader.initials}
                   </div>
 
@@ -144,7 +144,7 @@ export default function AboutPage() {
                     <h3 className="text-4xl md:text-6xl font-black text-neutral-950 mb-4 tracking-tighter">{leader.name}</h3>
                     <span className="text-sm font-black text-primary uppercase tracking-[0.3em] block mb-10">{leader.role}</span>
 
-                    <p className="text-2xl md:text-3xl text-neutral-600 font-serif italic leading-snug mb-12">
+                    <p className="text-2xl md:text-3xl text-neutral-600 font-serif leading-snug mb-12">
                       &quot;{leader.quote}&quot;
                     </p>
 
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
             <div className="relative z-10">
               <span className="text-white/60 font-black uppercase tracking-[0.4em] text-xs mb-8 block">Projecting Future</span>
-              <h2 className="text-white text-4xl md:text-5xl font-black tracking-tighter mb-10 italic font-serif">The Mission.</h2>
+              <h2 className="text-white text-4xl md:text-5xl font-black tracking-tighter mb-10 font-serif">The Mission.</h2>
               <p className="text-xl text-white/80 font-medium leading-relaxed max-w-md">
                 To provide an environment that facilitates intellectual curiosity, character development, and academic excellence, empowering students to lead with purpose.
               </p>
