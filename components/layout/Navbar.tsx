@@ -457,11 +457,10 @@ export default function Navbar() {
                 transition={{ duration: 0.3, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Link href="/" className="flex items-center gap-3 sm:gap-4 md:gap-6">
-                  {/* SIA LOGO — normalised to the SMIA lockup: identical 1550x380 canvas,
-                      globe height and cap height, so one shared height class renders both
-                      at matching scale and weight. */}
+                  {/* SIA LOGO — full lockup, identical 1550x380 canvas to the SMIA logo
+                      so one shared height class renders both at matching scale. */}
                   <Image
-                    src="/assets/Home/SIA_Logo_v3.png"
+                    src="/assets/Home/sia-logo.png"
                     alt="Seedling International Academy"
                     width={1550}
                     height={380}
@@ -482,7 +481,7 @@ export default function Navbar() {
                   <div className="h-6 w-px bg-ink/15 hidden sm:block" />
                   {/* SMIA LOGO — full lockup, same canvas + height class as SIA */}
                   <Image
-                    src="/assets/Home/SMIA_Logo_v3.png"
+                    src="/assets/Home/smia-logo.png"
                     alt="Seedling Modern International Academy"
                     width={1550}
                     height={380}
