@@ -100,6 +100,17 @@
   --shadow-editorial: 0 20px 80px -10px rgba(0, 0, 0, 0.05), 0 10px 30px -5px rgba(0, 0, 0, 0.02);
 }
 
+/* Paragraph baseline — 16px / 400 site-wide.
+   Deliberately UNLAYERED: Tailwind's size/weight utilities (text-sm,
+   font-light, …) live in @layer utilities, and an unlayered rule wins over
+   any cascade layer, so this overrides those classes on <p> without needing
+   !important. Elements that must stay small (eyebrows, captions) should use a
+   tag other than <p>, or be excluded here if any real <p> needs to differ. */
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 /* 🌍 GLOBAL BASE STYLES */
 @layer base {
   body {
