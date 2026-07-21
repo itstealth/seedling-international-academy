@@ -31,10 +31,10 @@ const schools = [
 
 export default function Footer() {
   return (
-    <section className="bg-[#060e1c] font-dmSans">
+    <section className="bg-[#1f2121] font-dmSans">
       <div className="px-4 sm:px-6 lg:px-10">
         {/* Main Black Footer Area */}
-        <div className="bg-[#060e1c] pt-16 md:pt-20 pb-10 px-6 md:px-12 text-white relative overflow-hidden">
+        <div className="bg-[#1f2121] pt-16 md:pt-20 pb-10 px-6 md:px-12 text-white relative overflow-hidden">
           {/* Subtle mesh decoration */}
           <div className="absolute top-0 right-0 w-[60%] h-[60%] mesh-gradient opacity-[0.05] pointer-events-none" />
 
@@ -138,7 +138,7 @@ export default function Footer() {
                       href="https://www.instagram.com/seedlinginternational/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#060e1c] transition-all duration-500"
+                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#1f2121] transition-all duration-500"
                       aria-label="Instagram"
                     >
                       <Instagram className="size-4" />
@@ -147,7 +147,7 @@ export default function Footer() {
                       href="https://www.facebook.com/seedlinginternationalacademy"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#060e1c] transition-all duration-500"
+                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#1f2121] transition-all duration-500"
                       aria-label="Facebook"
                     >
                       <Facebook className="size-4" />
@@ -156,7 +156,7 @@ export default function Footer() {
                       href="https://www.youtube.com/@seedlinginternationalacade1802"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#060e1c] transition-all duration-500"
+                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#1f2121] transition-all duration-500"
                       aria-label="YouTube"
                     >
                       <Youtube className="size-4" />
@@ -165,7 +165,7 @@ export default function Footer() {
                       href="https://www.linkedin.com/company/seedling-international-academy/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#060e1c] transition-all duration-500"
+                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#1f2121] transition-all duration-500"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="size-4" />

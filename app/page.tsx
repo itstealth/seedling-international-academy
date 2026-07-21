@@ -572,12 +572,12 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             filter: "saturate(0.80) brightness(0.95)",
           }}
         />
-        {/* Layer 2: Cream wash overlay for legibility */}
+        {/* Layer 2: Mint wash overlay for legibility */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(250,246,239,0.88) 0%, rgba(245,240,229,0.82) 50%, rgba(250,246,239,0.88) 100%)",
+              "linear-gradient(180deg, rgba(215,253,245,0.88) 0%, rgba(215,253,245,0.82) 50%, rgba(215,253,245,0.88) 100%)",
           }}
         />
         {/* Layer 3: Soft corner accents */}
@@ -616,7 +616,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 className="h-px w-6"
                 style={{ background: "linear-gradient(90deg, transparent, #0d5c53)" }}
               />
-              <span className="text-[11px] font-semibold tracking-[0.4em] uppercase text-[#0d5c53]">
+              <span className="text-[13px] font-semibold tracking-[0.4em] uppercase text-[#025055]">
                 Cambridge board
               </span>
               <span
@@ -627,14 +627,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
               Cambridge{" "}
               <em
-                className="font-semibold italic"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, #0d5c53 0%, #0a4f49 50%, #a20f27 100%)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  color: "transparent",
-                }}
+                className="font-semibold not-italic"
+                style={{ color: "#025055" }}
               >
                 Learner Attributes
               </em>

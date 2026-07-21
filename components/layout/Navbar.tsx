@@ -517,7 +517,7 @@ export default function Navbar() {
                 </button>
                 <motion.button
                   onClick={() => setIsOpen(true)}
-                  className="relative flex items-center gap-3 bg-ink text-white px-4 sm:px-6 py-2.5 sm:py-3 overflow-hidden group"
+                  className="relative flex items-center gap-0 sm:gap-3 bg-ink text-white p-2.5 sm:px-6 sm:py-3 rounded-full sm:rounded-none overflow-hidden group"
                   aria-label="Open menu"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
@@ -525,7 +525,7 @@ export default function Navbar() {
                 >
                   {/* Shimmer sweep on hover */}
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-                  <span className="relative font-black text-[12px] sm:text-[13px] uppercase tracking-[0.2em]">Menu</span>
+                  <span className="relative font-black text-[12px] sm:text-[13px] uppercase tracking-[0.2em] hidden sm:inline">Menu</span>
                   <svg className="relative w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
                   </svg>
