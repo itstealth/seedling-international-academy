@@ -186,18 +186,7 @@ export default function Footer() {
               <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             </nav>
 
-            {/* Back to top */}
-            <div className="py-5 border-t border-white/10 flex justify-center items-center gap-3">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition-colors"
-              >
-                Back to top
-                <div className="size-8 bg-white text-black rounded-full flex items-center justify-center">
-                  <ArrowUp className="size-4" />
-                </div>
-              </button>
-            </div>
+            {/* Back to top — removed (replaced by floating back-to-top button in Navbar) */}
           </div>
         </div>
       </div>

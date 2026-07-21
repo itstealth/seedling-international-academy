@@ -443,7 +443,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* Cambridge Pathway */}
-      <section className="bg-stone pt-16 md:pt-24 pb-24 relative overflow-hidden border-t border-hairline">
+      <section className="bg-stone pt-16 md:pt-24 pb-6 md:pb-16 relative overflow-hidden border-t border-hairline">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             className="rounded-[4px] border border-hairline bg-ivory p-5 md:p-8"
@@ -526,8 +526,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="mt-7 flex items-center justify-center gap-4 text-center">
               <span className="h-px w-24 bg-royal-blue/20 md:w-44" />
               <div className="flex items-center gap-3">
-                <span className="font-playfair text-2xl font-semibold leading-none text-navy-deeper md:text-3xl">
-                  Ready for<br />the world
+                <span className="font-playfair text-2xl font-semibold leading-none text-navy-deeper md:text-3xl whitespace-nowrap">
+                  Ready for<br className="hidden md:inline" /> the world
                 </span>
                 <motion.svg
                   viewBox="0 0 48 56"
@@ -547,7 +547,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
       {/* ─── CAMBRIDGE WORLDWIDE / GLOBAL REACH ─── */}
       <section className="bg-white w-full border-b border-hairline" id="global-reach">
-        <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
+        <div className="mx-auto max-w-7xl px-6 py-6 md:py-10">
           <motion.img
             src="/assets/Home/cambridge-worldwide-map.png"
             alt="Cambridge Worldwide — empowering learners and schools to shape a better world. 10,000+ schools, 160+ countries, 40+ governments."
