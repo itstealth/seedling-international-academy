@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, ArrowRight, CalendarDays, Camera, Pencil, Mail, Phone, ArrowDown, ChevronDown, ShieldCheck, Handshake, Compass, Lightbulb, Globe } from 'lucide-react';
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
-import WorldMapDemo from "@/components/world-map-demo";
 import HeroVideo from "@/components/ui/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -546,55 +545,216 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ─── WORLD MAP / GLOBAL REACH ─── */}
-      <section className="bg-mint w-full border-b border-hairline" id="global-reach">
+      {/* ─── CAMBRIDGE WORLDWIDE / GLOBAL REACH ─── */}
+      <section className="bg-white w-full border-b border-hairline" id="global-reach">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
-          <WorldMapDemo />
+          <motion.img
+            src="/assets/Home/cambridge-worldwide.png"
+            alt="Cambridge Worldwide — empowering learners and schools to shape a better world. 10,000+ schools, 160+ countries, 40+ governments."
+            className="w-full h-auto block rounded-lg"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            loading="lazy"
+          />
         </div>
       </section>
 
 
       {/* ─── CAMBRIDGE LEARNER ATTRIBUTES ─── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden border-t border-hairline" id="learner-attributes">
-        <div className="absolute inset-0 mesh-gradient opacity-10 pointer-events-none" />
-        <motion.div
-          className="max-w-7xl mx-auto px-6"
-          initial={{ opacity: 0, y: 54 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us mb-4 block">Cambridge board</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-              Cambridge <em className="font-semibold text-crimson">Learner Attributes</em>
-            </h2>
-            <p className="text-sm md:text-base text-text-light leading-relaxed font-light mt-4">
-              Our curriculum is designed to help students develop these five core qualities, preparing them to be successful in an ever-changing world.
-            </p>
-          </div>
+      <section className="relative py-16 md:py-24 overflow-hidden" id="learner-attributes">
+        {/* Layer 1: Cambridge UK building photo background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{
+            backgroundImage: "url('/assets/Home/cambridge_uk_building.jpg')",
+            filter: "saturate(0.80) brightness(0.95)",
+          }}
+        />
+        {/* Layer 2: Cream wash overlay for legibility */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(250,246,239,0.88) 0%, rgba(245,240,229,0.82) 50%, rgba(250,246,239,0.88) 100%)",
+          }}
+        />
+        {/* Layer 3: Soft corner accents */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 40% at 0% 0%, rgba(13,92,83,0.10), transparent 55%), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(162,15,39,0.06), transparent 55%)",
+          }}
+        />
+        {/* Layer 4: Film grain (multiply blend) */}
+        <div
+          className="absolute inset-0 opacity-25 mix-blend-multiply pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+          }}
+        />
+        {/* Layer 5: Top hairline */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+          style={{ background: "linear-gradient(90deg, transparent 0%, #0d5c53 50%, transparent 100%)" }}
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
-            {learnerAttributes.map((attr, idx) => (
+        <div className="relative max-w-6xl mx-auto px-6">
+          {/* Header */}
+          <motion.div
+            className="text-center max-w-2xl mx-auto mb-14"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="inline-flex items-center gap-2.5 mb-5">
+              <span
+                className="h-px w-6"
+                style={{ background: "linear-gradient(90deg, transparent, #0d5c53)" }}
+              />
+              <span className="text-[11px] font-semibold tracking-[0.4em] uppercase text-[#0d5c53]">
+                Cambridge board
+              </span>
+              <span
+                className="h-px w-6"
+                style={{ background: "linear-gradient(90deg, #0d5c53, transparent)" }}
+              />
+            </div>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
+              Cambridge{" "}
+              <em
+                className="font-semibold italic"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #0d5c53 0%, #0a4f49 50%, #a20f27 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                Learner Attributes
+              </em>
+            </h2>
+            <p className="text-sm md:text-base text-[#3a4a4a] font-light leading-relaxed mt-4">
+              Our curriculum is designed to help students develop these five core qualities,
+              preparing them to be successful in an ever-changing world.
+            </p>
+          </motion.div>
+
+          {/* Row 1: 3 cards in a grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {learnerAttributes.slice(0, 3).map((attr, idx) => (
               <motion.div
                 key={attr.title}
-                className={`flex flex-col gap-5 p-8 rounded-[8px] border border-hairline bg-ivory transition-all duration-300 hover:border-ink/25 group ${attr.color} ${idx >= 3 ? 'lg:translate-x-1/2' : ''}`}
+                className="group relative overflow-hidden rounded-2xl border-[1.5px] border-[#0d5c53] p-8 min-h-[300px] flex flex-col gap-5"
+                style={{
+                  background: "#1f2121",
+                  boxShadow:
+                    "0 16px 44px -10px rgba(15,30,45,0.45), 0 4px 12px rgba(15,30,45,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
+                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{
+                  y: -10,
+                  boxShadow:
+                    "0 28px 60px -10px rgba(7,80,73,0.55), 0 14px 28px rgba(7,80,73,0.20), 0 0 0 3px rgba(0,189,182,0.18), inset 0 1px 0 rgba(255,255,255,0.10)",
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="w-12 h-12 rounded-2xl bg-white/80 border border-black/5 shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <attr.Icon className="w-5 h-5" strokeWidth={1.75} aria-hidden="true" />
+                <div
+                  className="absolute top-0 left-0 right-0 h-0.5"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #00bdb6 50%, transparent 100%)",
+                  }}
+                />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center border-[1.5px] border-[#00bdb6] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.80) 100%)",
+                    boxShadow: "0 4px 14px rgba(0,189,182,0.30)",
+                  }}
+                >
+                  <attr.Icon
+                    className="w-5 h-5"
+                    style={{ color: "#0d5c53" }}
+                    strokeWidth={1.85}
+                    aria-hidden="true"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3 font-dm uppercase tracking-wide leading-none text-inherit">{attr.title}</h3>
-                  <p className="text-xs text-text-light leading-relaxed font-light">{attr.desc}</p>
+                  <h3 className="font-playfair text-2xl font-semibold text-white mb-3 leading-tight tracking-tight">
+                    {attr.title}
+                  </h3>
+                  <p className="text-sm text-white font-light leading-relaxed">
+                    {attr.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+
+          {/* Row 2: 2 cards in a centered flex container */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {learnerAttributes.slice(3).map((attr, idx) => (
+              <motion.div
+                key={attr.title}
+                className="group relative overflow-hidden rounded-2xl border-[1.5px] border-[#0d5c53] p-8 min-h-[300px] flex flex-col gap-5 basis-full md:basis-[calc((100%-48px)/3)]"
+                style={{
+                  background: "#1f2121",
+                  boxShadow:
+                    "0 16px 44px -10px rgba(15,30,45,0.45), 0 4px 12px rgba(15,30,45,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{
+                  y: -10,
+                  boxShadow:
+                    "0 28px 60px -10px rgba(7,80,73,0.55), 0 14px 28px rgba(7,80,73,0.20), 0 0 0 3px rgba(0,189,182,0.18), inset 0 1px 0 rgba(255,255,255,0.10)",
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55, delay: (idx + 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div
+                  className="absolute top-0 left-0 right-0 h-0.5"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #00bdb6 50%, transparent 100%)",
+                  }}
+                />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center border-[1.5px] border-[#00bdb6] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.80) 100%)",
+                    boxShadow: "0 4px 14px rgba(0,189,182,0.30)",
+                  }}
+                >
+                  <attr.Icon
+                    className="w-5 h-5"
+                    style={{ color: "#0d5c53" }}
+                    strokeWidth={1.85}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-playfair text-2xl font-semibold text-white mb-3 leading-tight tracking-tight">
+                    {attr.title}
+                  </h3>
+                  <p className="text-sm text-white font-light leading-relaxed">
+                    {attr.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ─── COMMUNITY VOICES ─── */}

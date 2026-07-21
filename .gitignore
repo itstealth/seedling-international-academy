@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Large video originals (use chunked versions for commits)
 public/assets/Home/WhatsApp Video *.mp4
+
+# Brainstorm scratch files (visual companion sessions)
+.superpowers/
