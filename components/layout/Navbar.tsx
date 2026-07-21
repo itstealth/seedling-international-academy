@@ -481,7 +481,7 @@ export default function Navbar() {
                   <div className="h-6 w-px bg-ink/15 hidden sm:block" />
                   {/* SMIA LOGO — full lockup, same canvas + height class as SIA */}
                   <Image
-                    src="/assets/Home/smia-logo.png"
+                    src="/assets/Home/SMIA-logo.png"
                     alt="Seedling Modern International Academy"
                     width={1550}
                     height={380}
