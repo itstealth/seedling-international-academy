@@ -549,7 +549,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       <section className="bg-white w-full border-b border-hairline" id="global-reach">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
           <motion.img
-            src="/assets/Home/cambridge-worldwide.png"
+            src="/assets/Home/cambridge-worldwide-map.png"
             alt="Cambridge Worldwide — empowering learners and schools to shape a better world. 10,000+ schools, 160+ countries, 40+ governments."
             className="w-full h-auto block rounded-lg"
             initial={{ opacity: 0, y: 24 }}
@@ -753,10 +753,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
       {/* ─── COMMUNITY VOICES ─── */}
       <section className="relative bg-white py-16 md:py-24 overflow-hidden" id="testimonials">
-        {/* Subtle architectural background */}
+        {/* Subtle architectural background — Cambridge building sketch */}
         <div
-          className="absolute inset-0 opacity-[0.15] bg-contain bg-no-repeat bg-bottom pointer-events-none"
-          style={{ backgroundImage: "url('/assets/Home/cambridge_uk_building.jpg')" }}
+          className="absolute inset-0 opacity-[0.18] bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/assets/Home/cambridge-sketch.jpeg')" }}
         />
 
         {/* Right-side floating action buttons */}

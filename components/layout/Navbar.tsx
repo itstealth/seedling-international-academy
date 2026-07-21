@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Phone, Mail, MapPin, X, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, X, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
@@ -396,6 +396,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const [showSearchPopup, setShowSearchPopup] = useState(false);
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -404,6 +405,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      setShowBackToTop(window.scrollY > 400);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -576,7 +578,7 @@ export default function Navbar() {
                               <button
                                 type="button"
                                 onClick={() => setOpenDropdown(isOpenDrop ? null : item.name)}
-                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-crimson" : "text-ink"}`}
+                                className={`flex-1 flex items-center justify-between gap-3 py-3 text-base font-bold uppercase tracking-wider transition-colors text-left ${pathname.startsWith(item.href) ? "text-crimson" : "text-ink"}`}
                               >
                                 <span>{item.name}</span>
                                 <ChevronDown
@@ -588,7 +590,7 @@ export default function Navbar() {
                               <Link
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`flex-1 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors hover:text-crimson ${pathname === item.href ? "text-crimson" : "text-ink"}`}
+                                className={`flex-1 py-3 text-base font-bold uppercase tracking-wider transition-colors hover:text-crimson ${pathname === item.href ? "text-crimson" : "text-ink"}`}
                               >
                                 {item.name}
                               </Link>
@@ -610,7 +612,7 @@ export default function Navbar() {
                                         key={child.name}
                                         href={child.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-crimson" : "text-ink-soft hover:text-ink"}`}
+                                        className={`block py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${pathname === child.href ? "text-crimson" : "text-ink-soft hover:text-ink"}`}
                                       >
                                         {child.name}
                                       </Link>
@@ -631,7 +633,7 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-      <div className="fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[110] flex flex-col items-start gap-2 sm:gap-3">
+      <div className="fixed left-3 sm:left-6 bottom-[76px] sm:bottom-[96px] z-[110] flex flex-col items-start gap-2 sm:gap-3">
         <a
           href="tel:+917413012351"
           className="group flex items-center justify-center gap-0 bg-navy-deeper hover:bg-navy text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 border border-white/10 overflow-hidden"
@@ -657,17 +659,38 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className={`fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : ""}`}>
+      <div className={`fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : ""}`}>
         <button
           onClick={() => setShowInquiryPopup(true)}
-          className="flex items-center gap-2 bg-crimson hover:bg-crimson-dark text-white px-4 py-3 sm:px-6 sm:py-3.5 rounded-full font-black text-xs sm:text-sm tracking-widest uppercase shadow-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
+          className="group flex items-center justify-center gap-0 bg-crimson hover:bg-crimson-dark text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden"
+          aria-label="Open enquiry form"
+          title="Enquire Now"
         >
           <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          Enquire Now
+          <span className="max-w-0 group-hover:max-w-[120px] group-hover:ml-2 overflow-hidden whitespace-nowrap transition-all duration-300">Enquire Now</span>
         </button>
+
       </div>
+
+      {/* Back to top — right side, floating, appears after scrolling past hero */}
+      <AnimatePresence>
+        {showBackToTop && !isOpen && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 12 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed right-3 sm:right-6 bottom-5 sm:bottom-8 z-[65] w-11 h-11 bg-ink/85 hover:bg-ink text-white rounded-full shadow-xl backdrop-blur-sm flex items-center justify-center transition-colors"
+            aria-label="Back to top"
+          >
+            <ChevronUp className="w-5 h-5" strokeWidth={2.5} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       {/* <style jsx global>{`
         @keyframes marquee {
           0%   { transform: translateX(0); }
