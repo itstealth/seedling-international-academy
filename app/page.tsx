@@ -402,7 +402,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid lg:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
-              <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-crimson mb-5 block">Why Choose Us</span>
+              <span className="text-[13px] font-semibold tracking-[0.4em] uppercase text-crimson mb-5 block">Why Choose Us</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight mb-4">
                 Why <em className="font-semibold text-crimson">Cambridge</em>?
               </h2>
