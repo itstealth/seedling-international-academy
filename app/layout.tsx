@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist_Mono, Source_Sans_3 } from "next/font/google";
+import { Italiana, Geist_Mono, Source_Sans_3 } from "next/font/google";
 import { headers } from "next/headers";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
@@ -20,11 +20,10 @@ const sourceSans = Source_Sans_3({
 
 // Premium display serif for hero / editorial focal points.
 // Loaded alongside Source Sans 3 — used sparingly, never site-wide.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const italiana = Italiana({
+  variable: "--font-italiana",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +43,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${sourceSans.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${sourceSans.variable} ${italiana.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
         <NavbarWrapper />
