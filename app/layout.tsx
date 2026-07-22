@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Italiana, Geist_Mono, Source_Sans_3 } from "next/font/google";
+import { Geist_Mono, Marcellus, Source_Sans_3 } from "next/font/google";
 import { headers } from "next/headers";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
@@ -20,8 +20,8 @@ const sourceSans = Source_Sans_3({
 
 // Premium display serif for hero / editorial focal points.
 // Loaded alongside Source Sans 3 — used sparingly, never site-wide.
-const italiana = Italiana({
-  variable: "--font-italiana",
+const marcellus = Marcellus({
+  variable: "--font-marcellus",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -43,7 +43,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${sourceSans.variable} ${italiana.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${sourceSans.variable} ${marcellus.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
         <NavbarWrapper />

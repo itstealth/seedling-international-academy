@@ -264,6 +264,17 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <HeroVideo className="w-full h-full object-cover" />
         </div>
 
+        {/* Bottom fade — dark gradient anchored to the bottom of the hero so
+            the headline stays readable regardless of the video frame. */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[60%] z-[2] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.70) 28%, rgba(8,12,24,0.30) 60%, transparent 100%)",
+          }}
+          aria-hidden="true"
+        />
+
         {/* Decorative SVG Elements */}
         <svg
           width="358"
@@ -301,14 +312,25 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </filter>
         </svg>
 
-        {/* Hero Content — headline hidden for now (video-only hero).
-            Kept in the tree behind `sr-only` so the page still has an <h1>
-            for SEO/a11y; remove that class to bring the text back. */}
-        <div className="relative z-10 text-center px-4 flex flex-col items-center max-w-7xl mx-auto">
-          <h1 className="sr-only">
-            Where Learning Inspires Transformation.
-          </h1>
-        </div>
+        {/* Hero Content — bottom-left headline. Premium display serif in
+            warm ivory, title case across 2 lines. Only essential words
+            capitalised so it reads as the editorial focal point without
+            shouting. Fades in after the video has had a moment to
+            establish. */}
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display absolute bottom-10 left-6 md:bottom-16 md:left-14 lg:bottom-20 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
+          style={{
+            color: "#f5ead2",
+            textShadow:
+              "0 2px 28px rgba(0,0,0,0.65), 0 10px 50px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.55)",
+          }}
+        >
+          Where Curiosity<br />
+          Meets Character.
+        </motion.h1>
       </section>
 
 

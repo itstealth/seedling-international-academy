@@ -92,9 +92,9 @@
   --font-dm: var(--font-source-sans);
   --font-sans: var(--font-source-sans);
 
-  /* Premium display serif — Italiana. Used sparingly on hero /
+  /* Premium display serif — Marcellus. Used sparingly on hero /
      editorial focal points only; not a body font. */
-  --font-display: var(--font-italiana);
+  --font-display: var(--font-marcellus);
 
   /* Warm ivory — premium headline colour, distinct from the navy/crimson
      site palette and readable on the hero video. */
@@ -183,5 +183,5 @@ p {
    that pins everything to Source Sans. Use sparingly on editorial focal
    points (hero, key headings) only. */
 .font-display {
-  font-family: var(--font-italiana) !important;
+  font-family: var(--font-marcellus) !important;
 }
