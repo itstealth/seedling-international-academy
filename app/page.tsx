@@ -156,37 +156,52 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     'Annual Sports Day – March 2025',
   ];
 
-  // Cambridge Learner Attributes data
+  // Cambridge Learner Attributes data — Cambridge Pathway brand colours, keyed to each stage
   const learnerAttributes = [
     {
       title: "Confident",
       desc: "Confident in working with information and ideas – their own and those of others. Secure in their knowledge, willing to take intellectual risks, and ready to communicate and defend their views.",
       Icon: ShieldCheck,
-      color: "text-camb-ey-ink"
+      color: "text-white",
+      bg: "#7e25e0",
+      bgTo: "#5a1aa3",
+      accent: "#ffffff"
     },
     {
       title: "Responsible",
       desc: "Responsible for themselves, responsive to and respectful of others. Taking ownership of learning, acting with integrity, and understanding their impact on the global community.",
       Icon: Handshake,
-      color: "text-camb-p-ink"
+      color: "text-white",
+      bg: "#5165ec",
+      bgTo: "#3849b0",
+      accent: "#ffffff"
     },
     {
       title: "Reflective",
       desc: "Reflective as learners, developing their ability to learn. Understanding themselves as students, focusing on progress, and adopting active strategies to become lifelong learners.",
       Icon: Compass,
-      color: "text-camb-ls-ink"
+      color: "text-white",
+      bg: "#028819",
+      bgTo: "#015a0e",
+      accent: "#ffffff"
     },
     {
       title: "Innovative",
       desc: "Innovative and equipped for new and future challenges. Resourceful, creative, and capable of applying academic knowledge to solve real-world, unfamiliar problems.",
       Icon: Lightbulb,
-      color: "text-camb-us-ink"
+      color: "text-white",
+      bg: "#e04220",
+      bgTo: "#a82e16",
+      accent: "#ffffff"
     },
     {
       title: "Engaged",
       desc: "Engaged intellectually and socially, ready to make a difference. Driven by a spirit of inquiry and curiosity, ready to learn new skills and participate constructively in society.",
       Icon: Globe,
-      color: "text-camb-a-ink"
+      color: "text-white",
+      bg: "#8c0e24",
+      bgTo: "#5e0a18",
+      accent: "#ffffff"
     }
   ];
 
@@ -644,49 +659,45 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {learnerAttributes.slice(0, 3).map((attr, idx) => (
               <motion.div
                 key={attr.title}
-                className="group relative overflow-hidden rounded-2xl border-[1.5px] border-[#0d5c53] p-8 min-h-[300px] flex flex-col gap-5"
+                className="group relative overflow-hidden rounded-2xl border border-white/15 p-8 min-h-[300px] flex flex-col gap-5"
                 style={{
-                  background: "#1f2121",
+                  background: `linear-gradient(160deg, ${attr.bg} 0%, ${attr.bgTo} 100%)`,
                   boxShadow:
-                    "0 16px 44px -10px rgba(15,30,45,0.45), 0 4px 12px rgba(15,30,45,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
                 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{
                   y: -10,
-                  boxShadow:
-                    "0 28px 60px -10px rgba(7,80,73,0.55), 0 14px 28px rgba(7,80,73,0.20), 0 0 0 3px rgba(0,189,182,0.18), inset 0 1px 0 rgba(255,255,255,0.10)",
+                  boxShadow: `0 32px 70px -14px ${attr.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
                 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-0.5"
+                  className="absolute top-0 left-0 right-0 h-px"
                   style={{
-                    background:
-                      "linear-gradient(90deg, transparent 0%, #00bdb6 50%, transparent 100%)",
+                    background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)",
                   }}
                 />
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center border-[1.5px] border-[#00bdb6] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/95 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
                   style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.80) 100%)",
-                    boxShadow: "0 4px 14px rgba(0,189,182,0.30)",
+                    boxShadow: "0 6px 18px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.6)",
                   }}
                 >
                   <attr.Icon
                     className="w-5 h-5"
-                    style={{ color: "#0d5c53" }}
+                    style={{ color: attr.bg }}
                     strokeWidth={1.85}
                     aria-hidden="true"
                   />
                 </div>
                 <div>
-                  <h3 className="font-playfair text-2xl font-semibold text-white mb-3 leading-tight tracking-tight">
+                  <h3 className={`font-playfair text-2xl font-semibold mb-3 leading-tight tracking-tight ${attr.color}`}>
                     {attr.title}
                   </h3>
-                  <p className="text-sm text-white font-light leading-relaxed">
+                  <p className="text-sm text-white/80 font-light leading-relaxed">
                     {attr.desc}
                   </p>
                 </div>
@@ -699,49 +710,45 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {learnerAttributes.slice(3).map((attr, idx) => (
               <motion.div
                 key={attr.title}
-                className="group relative overflow-hidden rounded-2xl border-[1.5px] border-[#0d5c53] p-8 min-h-[300px] flex flex-col gap-5 basis-full md:basis-[calc((100%-48px)/3)]"
+                className="group relative overflow-hidden rounded-2xl border border-white/15 p-8 min-h-[300px] flex flex-col gap-5 basis-full md:basis-[calc((100%-48px)/3)]"
                 style={{
-                  background: "#1f2121",
+                  background: `linear-gradient(160deg, ${attr.bg} 0%, ${attr.bgTo} 100%)`,
                   boxShadow:
-                    "0 16px 44px -10px rgba(15,30,45,0.45), 0 4px 12px rgba(15,30,45,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
                 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{
                   y: -10,
-                  boxShadow:
-                    "0 28px 60px -10px rgba(7,80,73,0.55), 0 14px 28px rgba(7,80,73,0.20), 0 0 0 3px rgba(0,189,182,0.18), inset 0 1px 0 rgba(255,255,255,0.10)",
+                  boxShadow: `0 32px 70px -14px ${attr.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
                 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: (idx + 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-0.5"
+                  className="absolute top-0 left-0 right-0 h-px"
                   style={{
-                    background:
-                      "linear-gradient(90deg, transparent 0%, #00bdb6 50%, transparent 100%)",
+                    background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)",
                   }}
                 />
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center border-[1.5px] border-[#00bdb6] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/95 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
                   style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.80) 100%)",
-                    boxShadow: "0 4px 14px rgba(0,189,182,0.30)",
+                    boxShadow: "0 6px 18px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.6)",
                   }}
                 >
                   <attr.Icon
                     className="w-5 h-5"
-                    style={{ color: "#0d5c53" }}
+                    style={{ color: attr.bg }}
                     strokeWidth={1.85}
                     aria-hidden="true"
                   />
                 </div>
                 <div>
-                  <h3 className="font-playfair text-2xl font-semibold text-white mb-3 leading-tight tracking-tight">
+                  <h3 className={`font-playfair text-2xl font-semibold mb-3 leading-tight tracking-tight ${attr.color}`}>
                     {attr.title}
                   </h3>
-                  <p className="text-sm text-white font-light leading-relaxed">
+                  <p className="text-sm text-white/80 font-light leading-relaxed">
                     {attr.desc}
                   </p>
                 </div>
