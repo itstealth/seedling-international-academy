@@ -305,7 +305,7 @@ export default function LeadershipPage() {
             <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
                   <div className="w-12 h-px bg-crimson" />
-                  <span className="font-playfair text-xl text-navy-deeper">Dr. Preeti Bakshi</span>
+                  <span className="font-playfair text-xl text-[#133844]">Dr. Preeti Bakshi</span>
                 </div>
                 <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling International School</p>
               </Reveal>

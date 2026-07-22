@@ -59,7 +59,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left bg-white hover:bg-off-white transition-colors duration-200"
       >
-        <span className="font-playfair font-black text-navy-deeper text-lg leading-snug">{q}</span>
+        <span className="font-playfair font-black text-[#133844] text-lg leading-snug">{q}</span>
         <span className={`flex-shrink-0 w-8 h-8 rounded-full border-2 ${open ? "border-crimson bg-crimson text-white rotate-45" : "border-sand/40 text-sand"} flex items-center justify-center transition-all duration-300 text-lg font-light`}>
           +
         </span>
@@ -224,8 +224,8 @@ function ExperienceSection() {
   }, []);
 
   return (
-    <section className="py-16 pb-8 bg-crimson relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
+    <section className="h-1.5 bg-royal-blue relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
         <svg viewBox="0 0 600 800" className="w-full h-full">
           <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle"
             fontSize="300" fill="#D6D1CF" fontFamily="serif" fontWeight="900">
@@ -309,7 +309,7 @@ export default function AdmissionsPage() {
         <div className="bg-white border-t border-sand/30 shadow-2xl px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <p className="font-playfair font-black text-xl text-navy-deeper tracking-tight">Admissions Open 2026–27</p>
+              <p className="font-playfair font-black text-xl text-[#133844] tracking-tight">Admissions Open 2026–27</p>
               <p className="text-text-light text-xs mt-0.5 font-dm font-medium">Seats are limited — early bird incentives available</p>
             </div>
             <div className="flex gap-3 flex-wrap">
@@ -343,8 +343,8 @@ export default function AdmissionsPage() {
           alt="Admissions at Seedling"
           className="absolute inset-0 w-full h-full object-cover object-top scale-105 transition-transform duration-[10s] hover:scale-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper/95 via-navy-deeper/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#133844]/95 via-[#133844]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/40 to-transparent" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-32 grid md:grid-cols-2 gap-16 items-center">
           <div>
@@ -373,7 +373,7 @@ export default function AdmissionsPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
-                <a href="#enquire" className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-navy-deeper px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
+                <a href="#enquire" className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-[#133844] px-10 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
                   Enquire Now
                 </a>
               </div>
@@ -464,10 +464,10 @@ export default function AdmissionsPage() {
       </section> */}
 
       {/* STATS BAND — matches About page exactly */}
-      <section className="bg-navy-deeper text-white py-12 relative overflow-hidden">
+      <section className="bg-[#d4f4ed] text-[#133844] py-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
             {[
               { value: "10k+", label: "Students" },
               { value: "20:1", label: "Alumni Network Ratio" },
@@ -477,8 +477,8 @@ export default function AdmissionsPage() {
               { value: "1993", label: "Est." },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
-                <p className="font-playfair text-4xl font-black text-sand mb-1">{s.value}</p>
-                <p className="text-white/40 text-[10px] font-black tracking-[0.25em] uppercase">{s.label}</p>
+                <p className="font-playfair text-4xl font-black text-[#133844] mb-1">{s.value}</p>
+                <p className="text-[#133844]/40 text-[10px] font-black tracking-[0.25em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -516,13 +516,13 @@ export default function AdmissionsPage() {
                     <span className="w-7 h-7 bg-sand/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-crimson text-sm font-black">{i + 1}</span>
                     </span>
-                    <span className="text-navy-deeper font-dm text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#133844] font-dm text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">
-                <p className="text-navy-deeper font-dm text-sm leading-relaxed">
+                <p className="text-[#133844] font-dm text-sm leading-relaxed">
                   <span className="font-black text-crimson">Note:</span> There are no direct admissions in Class 10th and 12th except as per Cambridge bye-laws. Admissions in Classes 9th & 11th will only be done after the student clears the entrance examination.
                 </p>
               </div>
@@ -535,7 +535,7 @@ export default function AdmissionsPage() {
                       <span className="text-xl">🏫</span>
                     </span>
                     <div>
-                      <p className="text-navy-deeper text-sm font-black font-dm">Jawahar Nagar Branch</p>
+                      <p className="text-[#133844] text-sm font-black font-dm">Jawahar Nagar Branch</p>
                       <a href="tel:+917413012351" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7413012351</a>
                     </div>
                   </div>
@@ -544,7 +544,7 @@ export default function AdmissionsPage() {
                       <span className="text-xl">🏫</span>
                     </span>
                     <div>
-                      <p className="text-navy-deeper text-sm font-black font-dm">Durgapura Branch</p>
+                      <p className="text-[#133844] text-sm font-black font-dm">Durgapura Branch</p>
                       <a href="tel:+917412044410" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7412044410</a>
                     </div>
                   </div> */}
@@ -561,7 +561,7 @@ export default function AdmissionsPage() {
 
               <form onSubmit={handleFormSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Candidate Name <span className="text-crimson">*</span>
                   </label>
                   <input type="text" required placeholder="Enter candidate name" value={formData.candidateName} onChange={handleFormChange("candidateName")}
@@ -570,7 +570,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Select Class <span className="text-crimson">*</span>
                   </label>
                   <select required value={formData.className} onChange={handleFormChange("className")}
@@ -595,7 +595,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Parent's Name <span className="text-crimson">*</span>
                   </label>
                   <input type="text" required placeholder="Enter parent's name" value={formData.parentName} onChange={handleFormChange("parentName")}
@@ -604,7 +604,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Mob. <span className="text-crimson">*</span>
                   </label>
                   <input type="tel" required placeholder="10-digit mobile number" maxLength={10}
@@ -615,7 +615,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Gender <span className="text-crimson">*</span>
                   </label>
                   <select required value={formData.gender} onChange={handleFormChange("gender")}
@@ -627,7 +627,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+                  <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
                     Message <span className="text-crimson">*</span>
                   </label>
                   <textarea required rows={3} placeholder="Any specific queries or requirements..." value={formData.message} onChange={handleFormChange("message")}
@@ -717,7 +717,7 @@ export default function AdmissionsPage() {
                         className="group flex flex-col items-center gap-3 text-center"
                         aria-current={active ? "step" : undefined}
                       >
-                        <span className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center font-playfair text-base sm:text-xl font-black shadow-sm transition-all duration-500 ${active ? "bg-crimson border-crimson text-white ring-4 sm:ring-8 ring-crimson/10 scale-110" : complete ? "bg-navy-deeper border-navy-deeper text-white" : "bg-white border-sand/30 text-navy-deeper"}`}>
+                        <span className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center font-playfair text-base sm:text-xl font-black shadow-sm transition-all duration-500 ${active ? "bg-crimson border-crimson text-white ring-4 sm:ring-8 ring-crimson/10 scale-110" : complete ? "bg-[#d4f4ed] border-[#d4f4ed] text-[#133844]" : "bg-white border-sand/30 text-[#133844]"}`}>
                           {step.num}
                         </span>
                         <span className={`hidden sm:block text-[10px] font-black uppercase tracking-[0.18em] font-dm transition-colors duration-300 ${active ? "text-crimson" : "text-text-light"}`}>
@@ -739,7 +739,7 @@ export default function AdmissionsPage() {
                       <p className="text-crimson text-xs font-black uppercase tracking-[0.24em] font-dm mb-2">
                         Step {activeAdmissionStep.num}
                       </p>
-                      <p className="font-playfair text-5xl font-black text-navy-deeper/10 leading-none">
+                      <p className="font-playfair text-5xl font-black text-[#133844]/10 leading-none">
                         {activeAdmissionStep.num}
                       </p>
                     </div>
@@ -760,16 +760,16 @@ export default function AdmissionsPage() {
 
           {/* inline CTA after process */}
           <Reveal className="mt-16 text-center">
-            <div className="bg-navy-deeper rounded-[2.5rem] p-12 text-white relative overflow-hidden group">
+            <div className="bg-[#d4f4ed] rounded-[2.5rem] p-12 text-[#133844] relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-sand opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2" />
-              <p className="font-dm text-sand text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
-              <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight text-white">Start Your Application Today</h3>
+              <p className="font-dm text-[#133844] text-lg font-black tracking-[0.2em] uppercase mb-4">Ready to take the first step?</p>
+              <h3 className="font-playfair text-4xl md:text-5xl font-black mb-10 tracking-tight text-[#133844]">Start Your Application Today</h3>
               <div className="flex gap-4 justify-center flex-wrap">
                 <a href="/admissions#enquire"
                   className="bg-crimson text-white hover:bg-crimson-dark px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40">
                   Fill Online Form
                 </a>
-                <a href="tel:+917413012351" className="border-2 border-white/20 text-white hover:bg-white hover:text-navy-deeper px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300">
+                <a href="tel:+917413012351" className="border-2 border-[#133844]/20 text-[#133844] hover:bg-white hover:text-[#133844] px-12 py-5 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300">
                   Call +91 74130 12351
                 </a>
               </div>
@@ -794,7 +794,7 @@ export default function AdmissionsPage() {
             </p>
             <div className="bg-sand/10 border border-sand/20 rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-crimson" />
-              <p className="font-playfair text-2xl font-black text-navy-deeper mb-6 tracking-tight">📌 Important Notes</p>
+              <p className="font-playfair text-2xl font-black text-[#133844] mb-6 tracking-tight">📌 Important Notes</p>
               <ul className="space-y-4 text-sm text-text-light leading-relaxed font-dm">
                 <li className="flex gap-3"><span className="text-crimson font-black">01</span>All applications must be submitted on the prescribed form with a non-refundable amount.</li>
                 <li className="flex gap-3"><span className="text-crimson font-black">02</span>Re-admission is done in Class XI. All Class X students must re-apply.</li>
@@ -815,7 +815,7 @@ export default function AdmissionsPage() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <p className="text-navy-deeper text-base font-black font-playfair tracking-tight">{d.doc}</p>
+                    <p className="text-[#133844] text-base font-black font-playfair tracking-tight">{d.doc}</p>
                     <p className="text-text-light text-xs mt-0.5 font-dm">{d.note}</p>
                   </div>
                   <span className="text-[10px] text-crimson bg-crimson/5 border border-crimson/10 px-3 py-1 rounded-full font-black uppercase tracking-widest flex-shrink-0">Required</span>
@@ -846,7 +846,7 @@ export default function AdmissionsPage() {
             <div className="overflow-x-auto rounded-3xl border border-sand/20 shadow-xl">
               <table className="w-full min-w-[800px] text-sm font-dm">
                 <thead>
-                  <tr className="bg-navy-deeper text-white">
+                  <tr className="bg-[#133844] text-white">
                     <th className="text-left px-8 py-6 font-black tracking-widest uppercase text-[10px]">School</th>
                     <th className="text-left px-6 py-6 font-black tracking-widest uppercase text-[10px]">Level</th>
                     <th className="text-center px-6 py-6 font-black tracking-widest uppercase text-[10px]">Annual Fee</th>
@@ -859,16 +859,16 @@ export default function AdmissionsPage() {
                     <tr key={row.school}
                       className={`border-t border-sand/10 transition-colors duration-300 hover:bg-sand/5 ${i % 2 === 0 ? "bg-white" : "bg-off-white"}`}>
                       <td className="px-8 py-6">
-                        <p className="font-black text-navy-deeper font-playfair text-lg tracking-tight leading-snug">{row.school}</p>
+                        <p className="font-black text-[#133844] font-playfair text-lg tracking-tight leading-snug">{row.school}</p>
                         {row.note && <p className="text-crimson text-[10px] font-black uppercase tracking-widest mt-1.5">{row.note}</p>}
                       </td>
                       <td className="px-6 py-6 text-text-light font-medium">{row.level}</td>
                       <td className="px-6 py-6 text-center">
-                        <span className="font-playfair text-xl font-black text-navy-deeper">{row.annual}</span>
+                        <span className="font-playfair text-xl font-black text-[#133844]">{row.annual}</span>
                       </td>
                       <td className="px-6 py-6 text-center text-text-light font-medium">{row.admission}</td>
                       <td className="px-6 py-6 text-center">
-                        <span className="bg-sand/10 text-navy-deeper border border-sand/20 text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest">{row.transport}</span>
+                        <span className="bg-sand/10 text-[#133844] border border-sand/20 text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest">{row.transport}</span>
                       </td>
                     </tr>
                   ))}
@@ -935,7 +935,7 @@ export default function AdmissionsPage() {
               <div className="flex border-b border-sand/10">
                 {campusLocations.map((campus, i) => (
                   <button key={campus.name} onClick={() => setActiveTab(i)}
-                    className={`flex-1 px-8 py-6 text-sm font-black transition-all duration-300 text-left uppercase tracking-widest ${activeTab === i ? "bg-navy-deeper text-white" : "bg-white text-text-light hover:bg-off-white"}`}>
+                    className={`flex-1 px-8 py-6 text-sm font-black transition-all duration-300 text-left uppercase tracking-widest ${activeTab === i ? "bg-[#d4f4ed] text-[#133844]" : "bg-white text-text-light hover:bg-off-white"}`}>
                     <span className="block text-[10px] opacity-60 mb-1">Campus</span>
                     {campus.name}
                   </button>
@@ -944,18 +944,18 @@ export default function AdmissionsPage() {
 
               <div className="grid md:grid-cols-2">
                 {/* map iframe placeholder */}
-                <div className="h-80 md:h-[500px] bg-navy-deeper relative overflow-hidden group">
+                <div className="h-80 md:h-[500px] bg-[#d4f4ed] relative overflow-hidden group">
                   <div className="absolute inset-0 bg-[url('/assets/img/sps-banner.jpg')] bg-cover bg-center opacity-20 transition-transform duration-[10s] group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper via-navy-deeper/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#d4f4ed] via-[#d4f4ed]/80 to-transparent" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center p-8 z-10">
                     <div className="w-20 h-20 bg-sand/10 rounded-full flex items-center justify-center mb-2">
                       <span className="text-4xl">📍</span>
                     </div>
-                    <p className="font-playfair text-3xl font-black text-white tracking-tight">{campusLocations[activeTab].name}</p>
-                    <p className="text-white/60 text-sm leading-relaxed max-w-xs font-dm">{campusLocations[activeTab].address}</p>
+                    <p className="font-playfair text-3xl font-black text-[#133844] tracking-tight">{campusLocations[activeTab].name}</p>
+                    <p className="text-[#133844]/60 text-sm leading-relaxed max-w-xs font-dm">{campusLocations[activeTab].address}</p>
                     <a href={`https://www.google.com/maps/search/${encodeURIComponent(campusLocations[activeTab].address)}`}
                       target="_blank" rel="noopener noreferrer"
-                      className="mt-4 bg-sand text-navy-deeper hover:bg-white text-[10px] px-8 py-3.5 rounded-full font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl">
+                      className="mt-4 bg-sand text-[#133844] hover:bg-white text-[10px] px-8 py-3.5 rounded-full font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl">
                       Open in Google Maps ↗
                     </a>
                   </div>
@@ -964,7 +964,7 @@ export default function AdmissionsPage() {
                 {/* campus info */}
                 <div className="p-12 flex flex-col justify-between bg-white">
                   <div>
-                    <p className="font-playfair text-4xl font-black text-navy-deeper mb-8 tracking-tight">{campusLocations[activeTab].name}</p>
+                    <p className="font-playfair text-4xl font-black text-[#133844] mb-8 tracking-tight">{campusLocations[activeTab].name}</p>
                     <div className="space-y-6 mb-10">
                       <div className="flex gap-4 items-start">
                         <span className="w-10 h-10 bg-off-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10">📍</span>
@@ -991,7 +991,7 @@ export default function AdmissionsPage() {
                   </div>
                   <div className="mt-12 pt-8 border-t border-sand/10 flex gap-4">
                     <a href={`tel:${campusLocations[activeTab].phone}`}
-                      className="flex-1 bg-navy-deeper hover:bg-navy-dark text-white py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
+                      className="flex-1 bg-[#d4f4ed] hover:bg-navy-dark text-[#133844] py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
                       Call Campus
                     </a>
                     <a href="#enquire"
@@ -1015,7 +1015,7 @@ export default function AdmissionsPage() {
           alt="Book a campus visit"
           className="absolute inset-0 w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-crimson/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/80 to-crimson/40" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
           <Reveal>
@@ -1031,7 +1031,7 @@ export default function AdmissionsPage() {
           <Reveal delay={120}>
             <div className="flex gap-6 justify-center flex-wrap">
               <a href="#enquire"
-                className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-navy-deeper px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
+                className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-[#133844] px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
                 Enquire Online
               </a>
             </div>
@@ -1080,10 +1080,10 @@ export default function AdmissionsPage() {
         <Reveal className="mt-16 text-center">
           <p className="text-text-light text-sm mb-6 font-dm font-medium">Still have questions? We'd love to talk.</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="tel:+917413012351" className="inline-flex items-center gap-3 bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 hover:shadow-xl">
+            <a href="tel:+917413012351" className="inline-flex items-center gap-3 bg-[#133844] hover:bg-navy-dark text-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 hover:shadow-xl">
               📞 +91 74130 12351 (Jawahar Nagar)
             </a>
-            <a href="tel:+919587772837" className="inline-flex items-center gap-3 border-2 border-navy-deeper/20 text-navy-deeper hover:bg-off-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300">
+            <a href="tel:+919587772837" className="inline-flex items-center gap-3 border-2 border-[#133844]/20 text-[#133844] hover:bg-off-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300">
               📞 +91 95877 72837 (Durgapura)
             </a>
           </div>
@@ -1093,24 +1093,16 @@ export default function AdmissionsPage() {
       {/* ══════════════════════════════════════════════════
           9. FINAL CTA
       ══════════════════════════════════════════════════ */}
-      <section className="py-20 bg-navy-deeper relative overflow-hidden">
-        <img
-          src="/assets/Home/library.jpg"
-          alt="Join Seedling International School"
-          className="absolute inset-0 w-full h-full object-cover opacity-15"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/90 to-navy/60" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sand/10 rounded-full blur-3xl" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <section className="py-20 bg-[#d4f4ed] relative overflow-hidden">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-[#133844]">
           <Reveal>
-            <p className="display text-sand text-xl mb-4">The Seedling International School Family Awaits</p>
-            <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-white">
+            <p className="display text-[#133844] text-xl mb-4">The Seedling International School Family Awaits</p>
+            <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-[#133844]">
               Where Every{" "}
-              <em className="font-semibold text-sand">Student</em>{" "}
+              <em className="font-semibold text-[#133844]">Student</em>{" "}
               Matters.
             </h2>
-            <p className="text-white/55 text-lg leading-relaxed mb-12 max-w-xl mx-auto">
+            <p className="text-[#133844] text-lg leading-relaxed mb-12 max-w-xl mx-auto">
               Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling International School advantage — from Play Group to University.
             </p>
           </Reveal>
@@ -1124,7 +1116,7 @@ export default function AdmissionsPage() {
                 </svg>
               </a>
               <a href="tel:+917413012351"
-                className="inline-flex items-center gap-2 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300">
+                className="inline-flex items-center gap-2 border border-[#133844]/30 text-[#133844] hover:bg-white hover:text-[#133844] px-10 py-5 rounded-full text-sm tracking-widest uppercase transition-all duration-300">
                 Call Us Now
               </a>
             </div>
@@ -1132,7 +1124,7 @@ export default function AdmissionsPage() {
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
               {["🎓 Cambridge Board", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 10k+ Students"].map((b) => (
-                <span key={b} className="bg-white/8 border border-white/15 text-white/60 text-xs px-5 py-2 rounded-full">
+                <span key={b} className="bg-white border border-[#133844]/15 text-[#133844] text-xs px-5 py-2 rounded-full">
                   {b}
                 </span>
               ))}

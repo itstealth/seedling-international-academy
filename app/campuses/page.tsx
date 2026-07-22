@@ -157,7 +157,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             href={campus.mapHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start md:self-auto inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-crimson hover:text-navy-deeper transition-colors"
+            className="self-start md:self-auto inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-crimson hover:text-[#133844] transition-colors"
           >
             View on Google Maps
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
@@ -244,7 +244,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="font-playfair text-sm font-semibold text-navy-deeper leading-tight">{f.name}</p>
+                    <p className="font-playfair text-sm font-semibold text-[#133844] leading-tight">{f.name}</p>
                     <p className="text-xs text-text-light leading-relaxed font-dm">{f.desc}</p>
                   </div>
                 </motion.div>
@@ -264,14 +264,14 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                 <a key={phone.value} href={`tel:${phone.tel}`} className="flex items-start gap-3 group">
                   <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center flex-shrink-0 text-xs">📞</span>
                   <div>
-                    <p className="text-navy-deeper font-semibold group-hover:text-crimson transition-colors">{phone.value}</p>
+                    <p className="text-[#133844] font-semibold group-hover:text-crimson transition-colors">{phone.value}</p>
                     <p className="text-[10px] uppercase tracking-widest text-text-light font-dm">{phone.label}</p>
                   </div>
                 </a>
               ))}
               <a href={`mailto:${campus.email}`} className="flex items-start gap-3 group">
                 <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center flex-shrink-0 text-xs">✉</span>
-                <p className="text-navy-deeper font-semibold break-all group-hover:text-crimson transition-colors">{campus.email}</p>
+                <p className="text-[#133844] font-semibold break-all group-hover:text-crimson transition-colors">{campus.email}</p>
               </a>
             </div>
 
@@ -380,7 +380,7 @@ export default function CampusesPage(): React.JSX.Element {
 
       {/* Closing CTA */}
       <motion.section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper"
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -388,21 +388,21 @@ export default function CampusesPage(): React.JSX.Element {
         transition={{ duration: 0.45, ease: EASE }}
       >
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <motion.span
-            className="block w-px h-10 bg-sand mx-auto mb-5"
+            className="block w-px h-10 bg-[#133844] mx-auto mb-5"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl mb-4">Visit Us</p>
+          <p className="font-playfair text-[#133844] text-xl mb-4">Visit Us</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Walk the corridors<br />
-            <em className="font-semibold text-sand">of a Seedling school.</em>
+            <em className="font-semibold text-[#133844]">of a Seedling school.</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+          <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Book a campus visit and see the Seedling difference in person — at either SIA or SMIA, whichever is closer to home.
           </p>
           <motion.div
@@ -416,10 +416,10 @@ export default function CampusesPage(): React.JSX.Element {
               Begin Application
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </motion.a>
-            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#sia" className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
+            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#sia" className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
               ↑ SIA
             </motion.a>
-            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#smia" className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
+            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#smia" className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
               ↑ SMIA
             </motion.a>
           </motion.div>

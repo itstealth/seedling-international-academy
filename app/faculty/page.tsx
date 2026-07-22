@@ -88,7 +88,7 @@ export default function FacultyPage() {
                       alt={f.name}
                       className="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#d4f4ed]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-8">
                     <h4 className="font-playfair text-2xl font-semibold text-ink mb-2">{f.name}</h4>
@@ -127,7 +127,7 @@ export default function FacultyPage() {
           alt="Join Seedling International School"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-navy-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/80 to-navy-dark/70" />
         <div className="absolute inset-0 mesh-gradient opacity-10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
@@ -156,7 +156,7 @@ export default function FacultyPage() {
               </a>
               <a
                 href="/contact-us#contact-form"
-                className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
+                className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#133844] px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
               >
                 Enquire Now
               </a>

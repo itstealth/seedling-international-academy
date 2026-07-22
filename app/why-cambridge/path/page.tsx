@@ -34,6 +34,15 @@ const cardPop = {
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
+// Cambridge Learner Attributes card palette — cycled sequentially.
+const claPalette = [
+  { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
+  { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
+  { bg: "#028819", bgTo: "#015a0e" }, // Reflective
+  { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
+  { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
+];
+
 const pillars = [
   {
     icon: (
@@ -126,35 +135,30 @@ const stages = [
     name: "Cambridge Early Years",
     age: "Age 3+",
     desc: "Play-based, holistic learning that builds the curiosity and confidence every future Seedling student needs.",
-    color: "crimson",
   },
   {
     stage: "02",
     name: "Cambridge Primary",
     age: "Age 5+",
     desc: "A clear, adaptable curriculum with engaging resources — where reading, writing and reasoning take root.",
-    color: "navy",
   },
   {
     stage: "03",
     name: "Cambridge Lower Secondary",
     age: "Age 11+",
     desc: "Subjects deepen, choice begins. Students start shaping the path that matches their strengths.",
-    color: "mauve",
   },
   {
     stage: "04",
     name: "Cambridge Upper Secondary",
     age: "Age 14+",
     desc: "IGCSE / O Level — 70+ subjects let students design a curriculum as unique as they are.",
-    color: "royal-blue",
   },
   {
     stage: "05",
     name: "Cambridge Advanced",
     age: "Age 16+",
     desc: "AS & A Level, Cambridge IPQ, Cambridge AICE — depth, specialisation and a passport to the world's top universities.",
-    color: "crimson",
   },
 ];
 
@@ -297,11 +301,11 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                     >
                       {p.initials}
                     </motion.div>
-                    <p className="font-playfair text-xl font-semibold text-navy-deeper">{p.name}</p>
+                    <p className="font-playfair text-xl font-semibold text-[#133844]">{p.name}</p>
                     <p className={`text-[10px] font-black tracking-[0.2em] uppercase ${c.text} mt-2`}>{p.stage}</p>
                     <div className="mt-4 pt-4 border-t border-sand/30 w-full">
                       <p className="text-[10px] uppercase tracking-widest text-text-light mb-1">Aspiration</p>
-                      <p className="text-sm font-bold text-navy-deeper">{p.aspiration}</p>
+                      <p className="text-sm font-bold text-[#133844]">{p.aspiration}</p>
                     </div>
                   </div>
 
@@ -369,24 +373,31 @@ export default function YourPathYourWayPage(): React.JSX.Element {
           variants={stagger}
         >
           {stages.map((s, i) => {
-            const c = colorMap[s.color];
+            const c = claPalette[i % 5];
             return (
               <motion.div
                 key={s.name}
                 variants={cardPop}
-                whileHover={{ y: -8, scale: 1.03 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border ${c.border} cursor-default`}
+                whileHover={{
+                  y: -10,
+                  boxShadow: `0 32px 70px -14px ${c.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
+                }}
+                transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="relative group overflow-hidden rounded-2xl border border-white/15 p-6 min-h-[260px] flex flex-col cursor-default"
+                style={{
+                  background: `linear-gradient(160deg, ${c.bg} 0%, ${c.bgTo} 100%)`,
+                  boxShadow: "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
+                }}
               >
-                <div className={`absolute top-0 left-0 right-0 h-1 ${c.bg.replace('/10', '')}`} />
+                <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-[10px] font-black tracking-[0.25em] uppercase ${c.text}`}>Stage {s.stage}</span>
-                  <span className="text-[10px] font-semibold text-text-light uppercase tracking-widest">{s.age}</span>
+                  <span className="text-[10px] font-black tracking-[0.25em] uppercase text-white">Stage {s.stage}</span>
+                  <span className="text-[10px] font-semibold text-white/75 uppercase tracking-widest">{s.age}</span>
                 </div>
-                <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{s.name}</h3>
-                <p className="text-text-light text-xs leading-relaxed font-dm">{s.desc}</p>
+                <h3 className="font-playfair text-lg font-semibold mb-2 leading-tight tracking-tight text-white">{s.name}</h3>
+                <p className="text-white/80 text-xs leading-relaxed font-light flex-1">{s.desc}</p>
                 <motion.div
-                  className={`mt-4 h-1 rounded-full ${c.bg.replace('/10', '')}`}
+                  className="mt-4 h-1 rounded-full bg-white/40"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -401,7 +412,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
 
       {/* ═══ CLOSING CTA ═══ */}
       <motion.section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper"
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -409,21 +420,21 @@ export default function YourPathYourWayPage(): React.JSX.Element {
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <motion.span
-            className="block w-px h-10 bg-sand mx-auto mb-5"
+            className="block w-px h-10 bg-[#133844]/40 mx-auto mb-5"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl mb-4">Designed For You</p>
+          <p className="font-playfair text-[#133844]/70 text-xl mb-4">Designed For You</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             One Cambridge curriculum.<br />
-            <em className="font-semibold text-sand">A path as unique as your child.</em>
+            <em className="font-semibold text-[#133844]">A path as unique as your child.</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+          <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Talk to our admissions team about how your child can begin designing their own Cambridge journey at Seedling.
           </p>
           <motion.div
@@ -450,7 +461,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
               href="/why-cambridge/education"
-              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
+              className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
               Cambridge Education
             </motion.a>

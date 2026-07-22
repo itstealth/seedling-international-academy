@@ -153,7 +153,7 @@ export default function TransportFacilityPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="bg-navy-deeper rounded-3xl p-7 text-white">
+                <div className="bg-[#133844] rounded-3xl p-7 text-white">
                   <Clock className="h-8 w-8 text-sand mb-5" />
                   <p className="font-playfair text-2xl font-black text-white leading-tight">
                     Timely, supervised, and parent-friendly.
@@ -191,8 +191,8 @@ export default function TransportFacilityPage() {
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/70 to-transparent" />
-                    <div className="absolute left-6 bottom-6 h-14 w-14 rounded-2xl bg-sand text-navy-deeper flex items-center justify-center shadow-xl">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#d4f4ed]/70 to-transparent" />
+                    <div className="absolute left-6 bottom-6 h-14 w-14 rounded-2xl bg-sand text-[#133844] flex items-center justify-center shadow-xl">
                       <Icon className="h-7 w-7" />
                     </div>
                   </div>
@@ -211,19 +211,19 @@ export default function TransportFacilityPage() {
         </div>
       </section>
 
-      <section className="pt-14 pb-16 bg-navy-deeper text-white relative overflow-hidden">
+      <section className="pt-14 pb-16 bg-[#d4f4ed] text-[#133844] relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-20 items-start">
             <div>
-              <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-sand font-dm">
+              <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-[#133844] font-dm">
                 <span className="h-px w-8 bg-sand" />
                 Route Coverage
               </span>
-              <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-white leading-[1.08]">
+              <h2 className="mt-5 font-playfair text-4xl md:text-5xl font-black text-[#133844] leading-[1.08]">
                 Connecting major Jaipur neighbourhoods.
               </h2>
-              <p className="mt-7 text-white/70 text-base md:text-lg leading-[1.9]">
+              <p className="mt-7 text-[#133844]/70 text-base md:text-lg leading-[1.9]">
                 Routes are reviewed by the school transport team and adjusted according to campus requirements, student enrolment, and practical pickup points.
               </p>
               {/* <div className="mt-9 bg-white/5 border border-white/10 rounded-3xl p-7">
@@ -241,7 +241,7 @@ export default function TransportFacilityPage() {
                   className="bg-white/[0.07] border border-white/10 rounded-2xl px-5 py-5 flex items-center gap-3 hover:bg-white/10 transition-colors"
                 >
                   <span className="h-2.5 w-2.5 rounded-full bg-sand flex-shrink-0" />
-                  <span className="text-white/85 text-sm font-bold">{area}</span>
+                  <span className="text-[#133844]/85 text-sm font-bold">{area}</span>
                 </div>
               ))}
             </div>
@@ -261,7 +261,7 @@ export default function TransportFacilityPage() {
               <div className="mt-10 space-y-7">
                 {routeSteps.map((step, index) => (
                   <div key={step.title} className="flex gap-5">
-                    <div className="h-11 w-11 rounded-full bg-navy-deeper text-sand flex items-center justify-center font-playfair font-black flex-shrink-0">
+                    <div className="h-11 w-11 rounded-full bg-[#d4f4ed] text-[#133844] flex items-center justify-center font-playfair font-black flex-shrink-0">
                       {index + 1}
                     </div>
                     <div>
@@ -275,13 +275,13 @@ export default function TransportFacilityPage() {
               </div>
             </div>
 
-            <div className="bg-navy-deeper rounded-[2rem] p-8 md:p-10 text-white shadow-editorial">
-             
-                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white font-dm">
+            <div className="bg-[#d4f4ed] rounded-[2rem] p-8 md:p-10 text-[#133844] shadow-editorial">
+
+                <span className="inline-flex items-center gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-[#133844] font-dm">
       <span className="h-px w-8 bg-white" />
     Parent Assurance
     </span>
-              <h2 className="mt-5 font-playfair text-3xl md:text-4xl font-black text-white leading-tight">
+              <h2 className="mt-5 font-playfair text-3xl md:text-4xl font-black text-[#133844] leading-tight">
                 Safety checks that families can count on.
               </h2>
 
@@ -289,7 +289,7 @@ export default function TransportFacilityPage() {
                 {assurances.map((item) => (
                   <div key={item} className="flex gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
                     <CheckCircle2 className="h-5 w-5 text-sand flex-shrink-0 mt-0.5" />
-                    <span className="text-white/75 text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#133844]/75 text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -300,7 +300,7 @@ export default function TransportFacilityPage() {
 
       <section className="px-6 pb-14 md:pb-20 bg-off-white">
         <div className="max-w-7xl mx-auto relative overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-white border border-sand/30 shadow-editorial">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deeper via-navy-deeper/95 to-crimson-deeper/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#d4f4ed] via-[#d4f4ed]/95 to-crimson-deeper/90" />
           <Image
             src="/assets/transport-facility/camera.jpeg"
             alt="Seedling International School transport safety support"
@@ -310,27 +310,27 @@ export default function TransportFacilityPage() {
           />
           <div className="relative z-10 px-7 py-12 md:p-14 lg:p-16 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
             <div>
-              <span className="text-sand text-[10px] font-black uppercase tracking-[0.35em]">
+              <span className="text-[#133844] text-[10px] font-black uppercase tracking-[0.35em]">
                 Transport Assistance
               </span>
-              <h2 className="mt-5 font-playfair text-3xl md:text-5xl font-black text-white leading-tight">
+              <h2 className="mt-5 font-playfair text-3xl md:text-5xl font-black text-[#133844] leading-tight">
                 Need help finding the right school bus route?
               </h2>
-              <p className="mt-5 text-white/70 text-base md:text-lg leading-[1.8] max-w-2xl">
+              <p className="mt-5 text-[#133844]/70 text-base md:text-lg leading-[1.8] max-w-2xl">
                 Share your locality with our team and we will guide you with available route options, pickup points, and transport fee details for your preferred Seedling International School campus.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4">
               <a
                 href="tel:+917413012351"
-                className="inline-flex items-center justify-center gap-3 bg-sand text-navy-deeper hover:bg-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 bg-sand text-[#133844] hover:bg-white px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
               >
                 <PhoneCall className="h-4 w-4" />
                 +91 74130 12351
               </a>
               {/* <Link
                 href="/admissions"
-                className="inline-flex items-center justify-center gap-3 border border-white/25 text-white hover:bg-white hover:text-navy-deeper px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 border border-white/25 text-white hover:bg-white hover:text-[#133844] px-8 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300"
               >
                 Admissions Enquiry
               </Link> */}

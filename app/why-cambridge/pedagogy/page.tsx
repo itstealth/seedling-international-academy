@@ -19,6 +19,15 @@ const cardRise = {
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
+// Cambridge Learner Attributes card palette — cycled sequentially.
+const claPalette = [
+  { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
+  { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
+  { bg: "#028819", bgTo: "#015a0e" }, // Reflective
+  { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
+  { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
+];
+
 const slideIn = (direction: "left" | "right") => ({
   hidden: { opacity: 0, x: direction === "left" ? -60 : 60 },
   visible: { opacity: 1, x: 0 },
@@ -139,7 +148,7 @@ export default function PedagogyPage(): React.JSX.Element {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <blockquote className="font-playfair text-lg md:text-xl text-navy-deeper leading-relaxed">
+          <blockquote className="font-playfair text-lg md:text-xl text-[#133844] leading-relaxed">
             &ldquo;An education system is coherent when the national curriculum content, textbooks, teaching content, pedagogy and assessment all are aligned and reinforce one another.&rdquo;
           </blockquote>
           <figcaption className="mt-4 text-[10px] font-black tracking-[0.2em] uppercase text-text-light">
@@ -225,7 +234,7 @@ export default function PedagogyPage(): React.JSX.Element {
       </section>
 
       {/* ═══ PRACTICAL EXAMPLE ═══ */}
-      <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
@@ -238,9 +247,9 @@ export default function PedagogyPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-sand text-xl mb-3">In The Classroom</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              How It Works in <em className="font-semibold text-sand">Practice</em>
+            <p className="font-playfair text-[#133844]/70 text-xl mb-3">In The Classroom</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
+              How It Works in <em className="font-semibold text-[#133844]">Practice</em>
             </h2>
           </motion.div>
 
@@ -251,9 +260,9 @@ export default function PedagogyPage(): React.JSX.Element {
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-7 md:p-10"
           >
-            <p className="text-sand text-[10px] font-black tracking-[0.3em] uppercase mb-3">Example · Stage 4 Mathematics</p>
-            <h3 className="font-playfair text-2xl md:text-3xl font-light text-white mb-6">
-              Learning Objective <span className="text-sand font-semibold">4Np.02</span>
+            <p className="text-[#133844]/70 text-[10px] font-black tracking-[0.3em] uppercase mb-3">Example · Stage 4 Mathematics</p>
+            <h3 className="font-playfair text-2xl md:text-3xl font-light text-[#133844] mb-6">
+              Learning Objective <span className="text-[#133844] font-semibold">4Np.02</span>
             </h3>
 
             <div className="grid md:grid-cols-3 gap-5 md:gap-6">
@@ -283,12 +292,12 @@ export default function PedagogyPage(): React.JSX.Element {
                   className="bg-white/5 border border-white/10 rounded-2xl p-6"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-sand text-navy-deeper flex items-center justify-center font-black text-sm">
+                    <div className="w-9 h-9 rounded-xl bg-sand text-[#133844] flex items-center justify-center font-black text-sm">
                       {s.step}
                     </div>
-                    <span className="text-white text-xs font-black tracking-[0.2em] uppercase">{s.title}</span>
+                    <span className="text-[#133844] text-xs font-black tracking-[0.2em] uppercase">{s.title}</span>
                   </div>
-                  <p className="text-white/75 text-sm leading-[1.85] font-dm">{s.desc}</p>
+                  <p className="text-[#133844]/75 text-sm leading-[1.85] font-dm">{s.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -319,19 +328,31 @@ export default function PedagogyPage(): React.JSX.Element {
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          {benefits.map((b, i) => (
-            <motion.div
-              key={b.title}
-              variants={cardRise}
-              whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white rounded-3xl p-7 md:p-8 shadow-sm hover:shadow-2xl border border-sand/40 cursor-default"
-            >
-              <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
-              <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{b.title}</h3>
-              <p className="text-text-light text-sm leading-[1.9] font-dm">{b.desc}</p>
-            </motion.div>
-          ))}
+          {benefits.map((b, i) => {
+            // 4-card section: skip the green (index 2) so the order reads purple / blue / orange / crimson
+            const c = claPalette[[0, 1, 3, 4][i]];
+            return (
+              <motion.div
+                key={b.title}
+                variants={cardRise}
+                whileHover={{
+                  y: -10,
+                  boxShadow: `0 32px 70px -14px ${c.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
+                }}
+                transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative overflow-hidden rounded-3xl border border-white/15 p-7 md:p-8 min-h-[220px] flex flex-col cursor-default"
+                style={{
+                  background: `linear-gradient(160deg, ${c.bg} 0%, ${c.bgTo} 100%)`,
+                  boxShadow: "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
+                }}
+              >
+                <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
+                <span className="relative z-10 text-[10px] font-black tracking-[0.25em] uppercase text-white/75 mb-3 block">0{i + 1}</span>
+                <h3 className="relative z-10 font-playfair text-xl font-semibold mb-3 leading-tight tracking-tight text-white">{b.title}</h3>
+                <p className="relative z-10 text-sm text-white/80 font-light leading-[1.9]">{b.desc}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </section>
 
@@ -358,7 +379,7 @@ export default function PedagogyPage(): React.JSX.Element {
 
       {/* ═══ CLOSING CTA ═══ */}
       <motion.section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper"
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -366,21 +387,21 @@ export default function PedagogyPage(): React.JSX.Element {
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <motion.span
-            className="block w-px h-10 bg-sand mx-auto mb-5"
+            className="block w-px h-10 bg-[#133844]/40 mx-auto mb-5"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl mb-4">In Practice</p>
+          <p className="font-playfair text-[#133844]/70 text-xl mb-4">In Practice</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Coherence you can feel<br />
-            <em className="font-semibold text-sand">in every classroom.</em>
+            <em className="font-semibold text-[#133844]">in every classroom.</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+          <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Visit a Seedling campus and you will see the Cambridge coherence model in action — in the planning, in the teaching, in the way every student is supported forward.
           </p>
           <motion.div
@@ -407,7 +428,7 @@ export default function PedagogyPage(): React.JSX.Element {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
               href="/why-cambridge/path"
-              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
+              className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
               Your Path, Your Way
             </motion.a>

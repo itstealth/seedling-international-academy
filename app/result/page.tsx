@@ -97,7 +97,7 @@ export default function ResultPage() {
                       <p className="font-playfair text-3xl md:text-4xl font-semibold leading-none text-navy">
                         {a.value}
                       </p>
-                      <p className="mt-3 text-sm font-black tracking-tight text-navy-deeper font-dm">
+                      <p className="mt-3 text-sm font-black tracking-tight text-[#133844] font-dm">
                         {a.label}
                       </p>
                       <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-text-light font-dm">
@@ -135,8 +135,8 @@ export default function ResultPage() {
                 ))}
               </div>
 
-              <div className="mt-10 bg-navy-deeper rounded-[2rem] p-8 md:p-12 text-center">
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed font-dm font-light max-w-3xl mx-auto">
+              <div className="mt-10 bg-[#d4f4ed] rounded-[2rem] p-8 md:p-12 text-center">
+                <p className="text-[#133844]/80 text-lg md:text-xl leading-relaxed font-dm font-light max-w-3xl mx-auto">
                   Unlike traditional rank-based systems, Cambridge International focuses on criterion-referenced assessment. Each student's performance is measured against set standards, not against other students — ensuring fair and meaningful evaluation of individual mastery.
                 </p>
               </div>

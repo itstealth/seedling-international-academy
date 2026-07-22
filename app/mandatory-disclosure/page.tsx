@@ -26,7 +26,7 @@ const MandatoryDisclosure = () => {
           <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-110" />
 
           <div className="flex items-center gap-6 mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-navy-deeper flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-navy/20">
+            <div className="w-14 h-14 rounded-2xl bg-[#d4f4ed] flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-navy/20">
               01
             </div>
             <h3 className="font-playfair text-3xl font-bold text-ink">School Information</h3>
@@ -36,7 +36,7 @@ const MandatoryDisclosure = () => {
             <div className="space-y-6">
               <div>
                 <label className="block text-[10px] font-black text-crimson uppercase tracking-[0.2em] mb-2">School Name & Address</label>
-                <div className="text-navy-deeper leading-relaxed">
+                <div className="text-[#133844] leading-relaxed">
                   <strong className="text-xl block mb-1">Seedling International School</strong>
                   <p className="text-text-light font-light">Sector-4, Park Lane, Jawahar Nagar,<br />Jaipur — 302004, Rajasthan</p>
                 </div>
@@ -68,7 +68,7 @@ const MandatoryDisclosure = () => {
                 { label: "Campus Area", val: "3330 m²" },
               ].map((item) => (
                 <div key={item.label} className="bg-sand/10 border border-sand/30 rounded-2xl p-6 text-center">
-                  <div className="font-playfair text-3xl font-bold text-navy-deeper mb-1">{item.val}</div>
+                  <div className="font-playfair text-3xl font-bold text-[#133844] mb-1">{item.val}</div>
                   <div className="text-[10px] font-black text-text-light uppercase tracking-widest">{item.label}</div>
                 </div>
               ))}
@@ -81,7 +81,7 @@ const MandatoryDisclosure = () => {
           {/* Affiliation */}
           <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-sand/30">
             <div className="flex items-center gap-5 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-navy-deeper font-playfair text-xl font-bold">
+              <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-[#133844] font-playfair text-xl font-bold">
                 02
               </div>
               <h3 className="font-playfair text-2xl font-bold text-ink">Affiliation Status</h3>
@@ -93,11 +93,11 @@ const MandatoryDisclosure = () => {
               </div>
               <div className="flex justify-between items-center pb-4 border-b border-sand/20">
                 <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Affiliated Since</span>
-                <span className="font-bold text-navy-deeper">1993</span>
+                <span className="font-bold text-[#133844]">1993</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Valid Upto</span>
-                <span className="font-bold text-navy-deeper">31 March 2025</span>
+                <span className="font-bold text-[#133844]">31 March 2025</span>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ const MandatoryDisclosure = () => {
           {/* Trust */}
           <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-sand/30">
             <div className="flex items-center gap-5 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-navy-deeper font-playfair text-xl font-bold">
+              <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-[#133844] font-playfair text-xl font-bold">
                 03
               </div>
               <h3 className="font-playfair text-2xl font-bold text-ink">Trust Details</h3>
@@ -113,18 +113,18 @@ const MandatoryDisclosure = () => {
             <div className="space-y-5">
               <div className="flex justify-between items-start pb-4 border-b border-sand/20">
                 <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Trust Name</span>
-                <span className="font-bold text-navy-deeper text-right max-w-[180px]">Mahima Shiksha Samiti</span>
+                <span className="font-bold text-[#133844] text-right max-w-[180px]">Mahima Shiksha Samiti</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Reg. Valid Upto</span>
-                <span className="font-bold text-navy-deeper">10 May 2024</span>
+                <span className="font-bold text-[#133844]">10 May 2024</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Section 4: Documents */}
-        <div className="bg-navy-deeper rounded-[3rem] p-8 md:p-16 mb-10 overflow-hidden relative">
+        <div className="bg-[#d4f4ed] rounded-[3rem] p-8 md:p-16 mb-10 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
@@ -132,9 +132,9 @@ const MandatoryDisclosure = () => {
               <div className="w-14 h-14 rounded-2xl bg-crimson flex items-center justify-center text-white font-playfair text-2xl font-bold shadow-xl shadow-crimson/20 mb-6">
                 04
               </div>
-              <h3 className="font-playfair text-4xl md:text-5xl font-bold text-white leading-tight">Documents &<br /><span className="text-sand">Certificates</span></h3>
+              <h3 className="font-playfair text-4xl md:text-5xl font-bold text-[#133844] leading-tight">Documents &<br /><span className="text-[#133844]">Certificates</span></h3>
             </div>
-            <p className="text-white/60 max-w-sm text-lg font-light leading-relaxed">
+            <p className="text-[#133844]/60 max-w-sm text-lg font-light leading-relaxed">
               Official records and certifications as per regulatory requirements. Click to view full documents.
             </p>
           </div>
@@ -161,14 +161,14 @@ const MandatoryDisclosure = () => {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 rounded-2xl p-5 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-sand group-hover:bg-sand group-hover:text-navy-deeper transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-sand group-hover:bg-sand group-hover:text-[#133844] transition-all duration-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-white/40 text-[9px] font-black uppercase tracking-widest mb-1">{doc.id}</p>
-                  <p className="text-white text-sm font-bold truncate group-hover:text-sand transition-colors">{doc.name}</p>
+                  <p className="text-[#133844]/40 text-[9px] font-black uppercase tracking-widest mb-1">{doc.id}</p>
+                  <p className="text-[#133844] text-sm font-bold truncate group-hover:text-sand transition-colors">{doc.name}</p>
                 </div>
               </a>
             ))}
@@ -178,7 +178,7 @@ const MandatoryDisclosure = () => {
         {/* Section 5: Infrastructure */}
         <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-sand/30">
           <div className="flex items-center gap-6 mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-navy-deeper font-playfair text-2xl font-bold shadow-xl shadow-sand/20">
+            <div className="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-[#133844] font-playfair text-2xl font-bold shadow-xl shadow-sand/20">
               05
             </div>
             <h3 className="font-playfair text-3xl font-bold text-ink">Infrastructure & Facilities</h3>
@@ -196,7 +196,7 @@ const MandatoryDisclosure = () => {
               <div key={item.label} className="bg-off-white border border-sand/40 rounded-2xl p-6 flex items-start gap-4">
                 <span className="text-2xl">{item.icon}</span>
                 <div>
-                  <p className="text-navy-deeper font-bold text-sm mb-1">{item.label}</p>
+                  <p className="text-[#133844] font-bold text-sm mb-1">{item.label}</p>
                   <p className="text-crimson font-black uppercase tracking-widest text-[10px]">{item.val}</p>
                 </div>
               </div>

@@ -102,7 +102,7 @@ export default function BlogDetailPage() {
       <h2 class="text-[10px] font-black uppercase tracking-[0.25em] text-text-light mb-4">In This Article</h2>
       <nav class="space-y-1">
         ${headings.map((h) => `
-          <a href="#${h.id}" class="block w-full text-left text-sm font-bold text-navy-deeper/70 hover:text-crimson transition-colors py-1.5 ${h.level === 2 ? 'pl-0' : h.level === 3 ? 'pl-5 text-[13px]' : 'pl-10 text-[12px]'}">${h.text}</a>
+          <a href="#${h.id}" class="block w-full text-left text-sm font-bold text-[#133844]/70 hover:text-crimson transition-colors py-1.5 ${h.level === 2 ? 'pl-0' : h.level === 3 ? 'pl-5 text-[13px]' : 'pl-10 text-[12px]'}">${h.text}</a>
         `).join('')}
       </nav>
     </div></div>`;
@@ -144,7 +144,7 @@ export default function BlogDetailPage() {
           <p className="text-text-light text-sm mt-2">The article you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 mt-6 text-navy-deeper font-black text-sm uppercase tracking-widest hover:text-crimson transition-colors"
+            className="inline-flex items-center gap-2 mt-6 text-[#133844] font-black text-sm uppercase tracking-widest hover:text-crimson transition-colors"
           >
             <ArrowLeft size={14} /> Back to Blog
           </Link>
@@ -172,7 +172,7 @@ export default function BlogDetailPage() {
       <div className="pt-32 px-6 max-w-7xl mx-auto">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-navy-deeper/60 font-black text-[11px] uppercase tracking-widest hover:text-navy-deeper transition-colors"
+          className="inline-flex items-center gap-2 text-[#133844]/60 font-black text-[11px] uppercase tracking-widest hover:text-[#133844] transition-colors"
         >
           <ArrowLeft size={14} /> Back to Blog
         </Link>
@@ -186,7 +186,7 @@ export default function BlogDetailPage() {
             {postCategories.map((cat) => (
               <span
                 key={cat}
-                className="bg-navy-deeper/10 text-navy-deeper text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest"
+                className="bg-[#133844]/10 text-[#133844] text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest"
               >
                 {cat}
               </span>
@@ -219,7 +219,7 @@ export default function BlogDetailPage() {
         {/* Article Content (TOC is injected inside content at first h2) */}
         <div className="max-w-3xl mx-auto">
           <div
-            className="font-dm text-navy-deeper leading-relaxed [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-navy-deeper [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pl-4 [&_h2]:border-l-4 [&_h2]:border-crimson [&_h3]:font-playfair [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-navy-deeper [&_h3]:mt-8 [&_h3]:mb-4 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:text-navy-deeper [&_h4]:mt-6 [&_h4]:mb-3 [&_p]:text-base [&_p]:leading-8 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_li]:text-base [&_li]:leading-7 [&_a]:text-crimson [&_a]:underline [&_a]:hover:text-crimson-dark [&_blockquote]:border-l-4 [&_blockquote]:border-sand [&_blockquote]:pl-5 [&_blockquote]:py-3 [&_blockquote]:my-6 [&_blockquote]:text-text-light [&_img]:w-full [&_img]:rounded-2xl [&_img]:my-8 [&_img]:shadow-lg [&_figure]:my-8 [&_figcaption]:text-center [&_figcaption]:text-text-light [&_figcaption]:text-sm [&_figcaption]:mt-3 [&_hr]:border-sand/30 [&_hr]:my-10 [&_strong]:font-bold [&_em]:not-italic"
+            className="font-dm text-[#133844] leading-relaxed [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-[#133844] [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pl-4 [&_h2]:border-l-4 [&_h2]:border-crimson [&_h3]:font-playfair [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-[#133844] [&_h3]:mt-8 [&_h3]:mb-4 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:text-[#133844] [&_h4]:mt-6 [&_h4]:mb-3 [&_p]:text-base [&_p]:leading-8 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_li]:text-base [&_li]:leading-7 [&_a]:text-crimson [&_a]:underline [&_a]:hover:text-crimson-dark [&_blockquote]:border-l-4 [&_blockquote]:border-sand [&_blockquote]:pl-5 [&_blockquote]:py-3 [&_blockquote]:my-6 [&_blockquote]:text-text-light [&_img]:w-full [&_img]:rounded-2xl [&_img]:my-8 [&_img]:shadow-lg [&_figure]:my-8 [&_figcaption]:text-center [&_figcaption]:text-text-light [&_figcaption]:text-sm [&_figcaption]:mt-3 [&_hr]:border-sand/30 [&_hr]:my-10 [&_strong]:font-bold [&_em]:not-italic"
             dangerouslySetInnerHTML={{ __html: processedContent }}
           />
         </div>

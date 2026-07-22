@@ -245,21 +245,21 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           3. BUILT FOR THE FUTURE, ROOTED IN VALUES
       ══════════════════════════════════════════════════════ */}
-      <section className="pt-16 md:pt-20 pb-8 bg-navy-deeper overflow-hidden">
+      <section className="pt-16 md:pt-20 pb-8 bg-[#d4f4ed] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal>
             <div className="mb-14 text-center">
-              <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-sand uppercase mb-4 font-dm">
-                <span className="w-8 h-px bg-sand" />
+              <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-[#133844] uppercase mb-4 font-dm">
+                <span className="w-8 h-px bg-[#133844]" />
                 What Makes Us Special
-                <span className="w-8 h-px bg-sand" />
+                <span className="w-8 h-px bg-[#133844]" />
               </span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#133844] leading-tight">
                 Built for the Future,
                 <br />
-                <span className="text-sand">Rooted in Values</span>
+                <span className="text-[#133844]">Rooted in Values</span>
               </h2>
-              <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto font-dm font-light">
+              <p className="text-[#133844]/60 text-lg mt-4 max-w-2xl mx-auto font-dm font-light">
                 Our goal is to equip students with knowledge and skills they need to succeed while promoting their
                 personal growth and holistic development.
               </p>
@@ -274,16 +274,16 @@ export default function AcademicsPage() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-[#133844]/40 to-transparent" />
                   </div>
                   <div className="p-5">
                     <div className="text-2xl mb-3">{item.icon}</div>
                     <h3 className="font-playfair text-base font-bold text-white leading-tight group-hover:text-sand transition-colors duration-200 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed line-clamp-3 font-dm font-light">{item.excerpt}</p>
+                    <p className="text-white/80 text-sm leading-relaxed line-clamp-3 font-dm font-light">{item.excerpt}</p>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-sand transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </div>
@@ -292,12 +292,12 @@ export default function AcademicsPage() {
           </div>
 
           <Reveal delay={500}>
-            <div className="mt-8 md:mt-16 border-t border-white/10 pt-12 text-center">
-              <blockquote className="font-playfair text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
+            <div className="mt-8 md:mt-16 border-t border-[#133844]/10 pt-12 text-center">
+              <blockquote className="font-playfair text-xl md:text-2xl text-[#133844] max-w-3xl mx-auto leading-relaxed">
                 "Part of the art of teaching is the ability to rearrange the world for students to guide them to see
                 things in a new way."
               </blockquote>
-              <cite className="text-sand text-[10px] font-black uppercase tracking-widest mt-4 block not-italic font-dm">
+              <cite className="text-[#133844] text-[10px] font-black uppercase tracking-widest mt-4 block not-italic font-dm">
                 — Sunny Decker
               </cite>
             </div>
@@ -346,34 +346,34 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           CAMBRIDGE LEARNER PROFILE
       ══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-navy-deeper text-white relative overflow-hidden">
+      <section className="py-20 bg-[#d4f4ed] text-[#133844] relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <Reveal className="text-center mb-10 md:mb-16">
             {/* <span className="inline-block bg-sand/10 text-sand text-xs font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-sand/20 mb-6 font-dm">
               Cambridge Learner Profile
             </span> */}
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              We train <em className="font-semibold text-sand">Seedlites</em> <span className="ml-2">to be.....</span>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
+              We train <em className="font-semibold text-[#133844]">Seedlites</em> <span className="ml-2">to be.....</span>
             </h2>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {learnerProfile.map((lp, i) => (
               <Reveal key={lp.trait} delay={i * 80}>
-                <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-sand/40 transition-all duration-500 hover:-translate-y-2 text-center pb-8">
+                <div className="group bg-white/70 border border-[#133844]/10 rounded-3xl overflow-hidden hover:bg-white/90 hover:border-[#133844]/40 transition-all duration-500 hover:-translate-y-2 text-center pb-8">
                   <div className="h-44 overflow-hidden relative">
                     <img
                       src={lp.img}
                       alt={lp.trait}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 to-transparent" />
                   </div>
                   <div className="p-6 px-4">
                     <span className="text-4xl mb-4 block group-hover:scale-125 transition-transform duration-500">{lp.emoji}</span>
-                    <h4 className="font-playfair text-2xl font-semibold text-sand mb-3">{lp.trait}</h4>
-                    <p className="text-white/60 text-xs leading-relaxed font-dm font-light">{lp.desc}</p>
+                    <h4 className="font-playfair text-2xl font-semibold text-[#133844] mb-3">{lp.trait}</h4>
+                    <p className="text-[#133844]/70 text-xs leading-relaxed font-dm font-light">{lp.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -397,7 +397,7 @@ export default function AcademicsPage() {
         <div className="grid md:grid-cols-4 gap-4">
           {[
             { ...programs[0], color: "from-mauve/90" },
-            { ...programs[1], color: "from-navy-deeper/90" },
+            { ...programs[1], color: "from-[#d4f4ed]/90" },
             { ...programs[2], color: "from-crimson/90" },
             { ...programs[3], color: "from-crimson/90" },
           ].map((p, i) => (
@@ -425,7 +425,7 @@ export default function AcademicsPage() {
       {/* ══════════════════════════════════════════════════════
           5. ACHIEVEMENTS
       ══════════════════════════════════════════════════════ */}
-      {/* <section className="py-32 bg-gradient-to-br from-navy-deeper via-navy-dark to-navy text-white relative overflow-hidden">
+      {/* <section className="py-32 bg-gradient-to-br from-[#133844] via-navy-dark to-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-mauve/10 rounded-full blur-[100px]" />
         <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-sand/10 rounded-full blur-[100px]" />
@@ -455,7 +455,7 @@ export default function AcademicsPage() {
           </div>
 
           <Reveal delay={200}>
-            <div className="mt-20 bg-navy-deeper/60 border border-white/10 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
+            <div className="mt-20 bg-[#133844]/60 border border-white/10 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 backdrop-blur-xl shadow-editorial group overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
@@ -463,7 +463,7 @@ export default function AcademicsPage() {
                 <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling International School Group has consistently achieved 100% results in both Cambridge and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
-                <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-navy-deeper transition-colors duration-500">
+                <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-[#133844] transition-colors duration-500">
                   <span className="font-playfair text-5xl font-bold">100%</span>
                   <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
                 </div>
@@ -540,7 +540,7 @@ export default function AcademicsPage() {
                       alt={f.name}
                       className="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-8">
                     <h4 className="font-playfair text-2xl font-semibold text-ink mb-2">{f.name}</h4>
@@ -581,7 +581,7 @@ export default function AcademicsPage() {
           alt="Join Seedling International School"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/80 to-navy-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/80 to-navy-dark/70" />
         <div className="absolute inset-0 mesh-gradient opacity-10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
@@ -606,7 +606,7 @@ export default function AcademicsPage() {
               </a>
               <a
                 href="/contact-us#contact-form"
-                className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-navy-deeper px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
+                className="inline-flex items-center gap-3 bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#133844] px-12 py-6 rounded-full text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 backdrop-blur-md font-dm"
               >
                 Enquire Now
               </a>

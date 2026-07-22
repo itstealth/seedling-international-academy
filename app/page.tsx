@@ -406,7 +406,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       ))}
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-navy-deeper/35 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-[#133844]/35 to-transparent pointer-events-none" />
 
                   {/* Tag */}
                   <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full z-10">
@@ -468,7 +468,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               <div className="absolute -right-3 -top-3 h-full w-full rounded-[8px] border-2 border-navy/15 pointer-events-none" />
               <div className="rounded-[8px] overflow-hidden h-[440px] md:h-[520px] relative shadow-xl shadow-navy/10">
                 <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/35 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/35 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="absolute -bottom-6 -left-4 bg-white border-l-4 border-crimson rounded-[8px] px-7 py-6 z-10 shadow-lg">
                 <strong className="block text-5xl font-playfair text-crimson mb-1 leading-none">33+</strong>
@@ -532,7 +532,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
                   <div className="flex flex-1 flex-col">
                     <div className="flex-1 px-5 py-5">
-                      <p className="mb-3 text-[13px] font-black uppercase tracking-wider text-navy-deeper">{stage.age}</p>
+                      <p className="mb-3 text-[13px] font-black uppercase tracking-wider text-[#133844]">{stage.age}</p>
                       <ul className="space-y-2.5 text-[13px] leading-snug">
                         {stage.points.map((point) => (
                           <li key={point} className="flex gap-2.5">
@@ -542,7 +542,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                         ))}
                       </ul>
                     </div>
-                    <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[13px] font-bold leading-relaxed text-navy-deeper">
+                    <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[13px] font-bold leading-relaxed text-[#133844]">
                       {stage.footer}
                     </div>
                   </div>
@@ -551,7 +551,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
             <motion.div
-              className="mt-5 rounded-xl bg-navy-deeper px-5 py-4 text-center font-playfair text-base font-black text-white shadow-lg md:text-lg"
+              className="mt-5 rounded-xl bg-[#133844] px-5 py-4 text-center font-playfair text-base font-black text-white shadow-lg md:text-lg"
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -563,7 +563,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="mt-7 flex items-center justify-center gap-4 text-center">
               <span className="h-px w-24 bg-royal-blue/20 md:w-44" />
               <div className="flex items-center gap-3">
-                <span className="font-playfair text-2xl font-semibold leading-none text-navy-deeper md:text-3xl whitespace-nowrap">
+                <span className="font-playfair text-2xl font-semibold leading-none text-[#133844] md:text-3xl whitespace-nowrap">
                   Ready for<br className="hidden md:inline" /> the world
                 </span>
                 <motion.svg
@@ -821,7 +821,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* Header */}
           <motion.h2
-            className="text-center font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-navy-deeper leading-[1.5] mb-10 md:mb-14"
+            className="text-center font-playfair text-3xl sm:text-4xl md:text-5xl font-light text-[#133844] leading-[1.5] mb-10 md:mb-14"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -885,7 +885,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   </blockquote>
 
                   <div className="pt-5 border-t border-sand/40 inline-flex flex-col items-center min-w-[180px]">
-                    <p className="font-playfair text-base font-semibold text-navy-deeper leading-tight">
+                    <p className="font-playfair text-base font-semibold text-[#133844] leading-tight">
                       {card.name}
                     </p>
                     <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
@@ -911,7 +911,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 Vibrant <em className="font-semibold text-crimson">Memories</em>.
               </h2>
             </div>
-            {/* <a href="/news-and-events" className="bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-navy-deeper/40">View Gallery</a> */}
+            {/* <a href="/news-and-events" className="bg-[#133844] hover:bg-navy-dark text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 shadow-xl hover:shadow-[#133844]/40">View Gallery</a> */}
           </div>
           {/* Gallery Grid - Mobile: 2-col boxes | Desktop: asymmetric layout */}
           <div className="hidden md:block space-y-4">
@@ -919,19 +919,19 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 row-span-2 group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/ANNUAL FUNCTION/5.webp" alt="Annual Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                   <span className="text-white text-lg font-semibold font-playfair">Annual Day</span>
                 </div>
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/STELLAR SATURDAYS/2.webp" alt="Stellar Saturdays" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Stellar Saturdays</span>
                 </div>
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/JAISELMER TRIP/1.webp" alt="Jaiselmer Trip" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Jaiselmer Trip</span>
                 </div>
               </div>
@@ -941,13 +941,13 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/BOOT CAMP/1.webp" alt="Boot Camp" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Boot Camp</span>
                 </div>
               </div>
               <div className="col-span-1 row-span-2 group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/FAREWELL 12TH/2.webp" alt="Diwali Dance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Diwali Dance</span>
                 </div>
               </div>
@@ -957,19 +957,19 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/SPORTS DAY/3.webp" alt="Sports Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Sports Day</span>
                 </div>
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/PRIMARY OUTING/1.webp" alt="Primary Outing" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Primary Outing</span>
                 </div>
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src="/assets/SPARKLE FEST/1.webp" alt="Sparkle Fest" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <span className="text-white text-sm font-semibold font-playfair">Sparkle Fest</span>
                 </div>
               </div>
@@ -990,7 +990,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             ].map(({ img, label }) => (
               <div key={label} className="group relative rounded-[8px] overflow-hidden aspect-square">
                 <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
                   <span className="text-white text-xs font-semibold font-playfair">{label}</span>
                 </div>
               </div>
@@ -1012,20 +1012,20 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 Trending <em className="font-semibold text-navy">Updates</em>.
               </h2>
             </div>
-            <Link href="/blog" className="bg-navy-deeper border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+            <Link href="/blog" className="bg-[#133844] border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
               All Updates
               <ArrowUpRight size={16} strokeWidth={2.5} />
             </Link>
           </div>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
-            <a href="https://www.instagram.com/p/Dac7NwvoH72/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[8px] bg-navy-deeper shadow-editorial border border-sand/30">
+            <a href="https://www.instagram.com/p/Dac7NwvoH72/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[8px] bg-[#133844] shadow-editorial border border-sand/30">
               <img
                 src="/assets/Home/challenge.png"
                 alt="Cambridge Kaleidoscope Challenge"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper via-navy-deeper/45 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#133844] via-[#133844]/45 to-transparent" />
               <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
                 <strong className="block text-2xl font-playfair leading-none">6</strong>
                 <span className="text-[10px] font-black tracking-widest uppercase mt-1">JUL</span>
@@ -1067,7 +1067,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 ))}
               </div>
 
-              <a href="https://www.instagram.com/seedlinginternational/" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-navy-deeper text-white px-5 py-4 hover:bg-crimson transition-colors">
+              <a href="https://www.instagram.com/seedlinginternational/" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-[#133844] text-white px-5 py-4 hover:bg-crimson transition-colors">
                 <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
                   <Camera size={18} strokeWidth={2.5} />
                   Follow Updates
@@ -1117,7 +1117,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   {activeTab === key && (
                     <motion.span
                       layoutId="facility-active-tab"
-                      className="absolute inset-0 rounded-[6px] bg-navy-deeper"
+                      className="absolute inset-0 rounded-[6px] bg-[#133844]"
                       transition={{ type: "spring", stiffness: 420, damping: 34 }}
                     />
                   )}
@@ -1143,7 +1143,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   alt={infraData[activeTab][0].alt}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1800ms] group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-navy-deeper/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-[#133844]/25 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-7 md:p-10 text-white">
                   <span className="inline-block bg-white/15 text-white text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5 border border-white/25 backdrop-blur-md">
                     {infraData[activeTab][0].tag}
@@ -1201,7 +1201,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   'Counselling Available Online & Offline',
                   'Flexible curriculum tailored to individual needs',
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-navy-deeper font-bold text-sm uppercase tracking-widest">
+                  <div key={item} className="flex items-center gap-4 text-[#133844] font-bold text-sm uppercase tracking-widest">
                     <span className="w-6 h-6 rounded-full bg-camb-us text-white flex items-center justify-center text-[10px]">✓</span> {item}
                   </div>
                 ))}

@@ -95,14 +95,14 @@ const activities = [
     title: "Annual Day",
     desc: "A grand celebration of student talent with performances spanning music, dance, drama and spoken word.",
     image: "/assets/img/SMHS-Annual-Day.jpg",
-    color: "from-navy/80 to-navy-deeper/80",
+    color: "from-navy/80 to-[#133844]/80",
   },
   {
     icon: "🧘",
     title: "Yoga & Meditation",
     desc: "Integrated wellness programmes that nurture mental clarity, physical balance, and emotional resilience.",
     image: "/assets/img/yoga1.jpg",
-    color: "from-mauve/80 to-navy-deeper/80",
+    color: "from-mauve/80 to-[#133844]/80",
   },
   {
     icon: "🎄",
@@ -116,7 +116,7 @@ const activities = [
     title: "Skaters Sunday Bash",
     desc: "Weekend skating events that promote active lifestyles, peer bonding, and a love for movement.",
     image: "/assets/img/skaters.jpg",
-    color: "from-navy-dark/80 to-navy-deeper/80",
+    color: "from-navy-dark/80 to-[#133844]/80",
   },
   {
     icon: "🌺",
@@ -130,7 +130,7 @@ const activities = [
     title: "Celebrating Talent",
     desc: "We celebrate academic excellence with our toppers, honouring their hard work and dedication.",
     image: "/assets/img/Celebrating-Talent.jpeg",
-    color: "from-black/60 to-navy-deeper/80",
+    color: "from-black/60 to-[#133844]/80",
   },
 ];
 
@@ -252,7 +252,7 @@ function MasonryGallery() {
   const [lightbox, setLightbox] = useState<(typeof galleryItems)[0] | null>(null);
 
   return (
-    <section id="gallery" className="py-16 pb-8 bg-navy-deeper relative overflow-hidden">
+    <section id="gallery" className="py-16 pb-8 bg-[#d4f4ed] relative overflow-hidden">
       {/* Subtle background texture */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -267,18 +267,18 @@ function MasonryGallery() {
         {/* Section header */}
         <div className="flex items-end justify-between mb-16">
           <div>
-            <span className="text-sand text-sm uppercase tracking-[0.3em] font-light">
+            <span className="text-[#133844] text-sm uppercase tracking-[0.3em] font-light">
               Visual Journal
             </span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-2">
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-[#133844] mt-2">
               Snippets of
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-white/60">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#133844] to-[#133844]/60">
                 Seedling International School
               </span>
             </h2>
           </div>
-          <p className="hidden md:block text-white/40 text-sm max-w-xs text-right leading-relaxed font-dm">
+          <p className="hidden md:block text-[#133844]/40 text-sm max-w-xs text-right leading-relaxed font-dm">
             Every frame tells the story of a vibrant, thriving community
           </p>
         </div>
@@ -305,10 +305,10 @@ function MasonryGallery() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Category badge */}
                 <div
-                  className={`absolute top-3 left-3 bg-sand text-navy-deeper text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+                  className={`absolute top-3 left-3 bg-sand text-[#133844] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-300 ${activeItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
                     }`}
                 >
                   {item.category}
@@ -333,7 +333,7 @@ function MasonryGallery() {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 bg-navy-deeper/95 backdrop-blur-md flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-[#133844]/95 backdrop-blur-md flex items-center justify-center p-6"
           onClick={() => setLightbox(null)}
         >
           <div
@@ -345,7 +345,7 @@ function MasonryGallery() {
               alt={lightbox.title}
               className="w-full max-h-[80vh] object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-deeper/80 p-6">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#133844]/80 p-6">
               <span className="text-sand text-xs uppercase tracking-widest">{lightbox.category}</span>
               <h3 className="text-white text-2xl font-bold mt-1 font-playfair">{lightbox.title}</h3>
             </div>
@@ -367,7 +367,7 @@ function SportsSection() {
     <section className="py-16 pb-8 bg-off-white relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-sand/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-navy-deeper/5 rounded-full translate-x-1/3 translate-y-1/3" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#133844]/5 rounded-full translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
@@ -393,7 +393,7 @@ function SportsSection() {
               {/* Image side */}
               <div className="w-full lg:w-[55%] relative group">
                 <div
-                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-navy-deeper/10 transition-all duration-500 group-hover:scale-[1.02] ${block.reverse ? "-right-4 left-auto" : "-left-4 right-auto"
+                  className={`absolute -inset-4 rounded-3xl bg-gradient-to-br from-sand/20 to-[#133844]/10 transition-all duration-500 group-hover:scale-[1.02] ${block.reverse ? "-right-4 left-auto" : "-left-4 right-auto"
                     }`}
                 />
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
@@ -402,7 +402,7 @@ function SportsSection() {
                     alt={block.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/40 to-transparent" />
                   {/* Tag badge */}
                   <div className="absolute top-4 left-4 bg-crimson text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
                     {block.tag}
@@ -422,7 +422,7 @@ function SportsSection() {
                   {block.highlights.map((h) => (
                     <span
                       key={h}
-                      className="px-4 py-2 border border-sand/40 text-navy-deeper text-sm rounded-full hover:bg-sand hover:text-navy-deeper transition-colors duration-200 cursor-default font-dm font-bold"
+                      className="px-4 py-2 border border-sand/40 text-[#133844] text-sm rounded-full hover:bg-sand hover:text-[#133844] transition-colors duration-200 cursor-default font-dm font-bold"
                     >
                       {h}
                     </span>
@@ -486,7 +486,7 @@ function ActivitiesGrid() {
     <section className="py-8 md:pt-14  pb-8 bg-white relative overflow-hidden">
       {/* Large decorative text */}
       {/* <div className="absolute top-8 left-0 right-0 text-center pointer-events-none select-none">
-        <span className="text-[10rem] font-black text-navy-deeper/[0.03] leading-none font-playfair">BEYOND</span>
+        <span className="text-[10rem] font-black text-[#133844]/[0.03] leading-none font-playfair">BEYOND</span>
       </div> */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -552,7 +552,7 @@ function ActivitiesGrid() {
       {/* Popup Modal */}
       {selectedActivity !== null && (
         <div
-          className="fixed inset-0 z-50 bg-navy-deeper/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-50 bg-[#133844]/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
           onClick={() => setSelectedActivity(null)}
         >
           <div
@@ -600,7 +600,7 @@ function ActivitiesGrid() {
 
             {/* Thumbnail strip */}
             {currentImages.length > 1 && (
-              <div className="flex gap-2 p-4 bg-navy-deeper overflow-x-auto">
+              <div className="flex gap-2 p-4 bg-[#133844] overflow-x-auto">
                 {currentImages.map((img, idx) => (
                   <button
                     key={idx}
@@ -667,9 +667,9 @@ function ExperienceSection() {
                 alt={current.name}
                 className="w-full h-full object-cover object-top animate-fade-in"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/60 to-transparent" />
               <div className="absolute bottom-6 left-6">
-                <span className="bg-sand text-navy-deeper text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider">
+                <span className="bg-sand text-[#133844] text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider">
                   {current.highlight}
                 </span>
               </div>
@@ -700,7 +700,7 @@ function ExperienceSection() {
               key={i}
               onClick={() => setActive(i)}
               className={`relative overflow-hidden rounded-full transition-all duration-300 ${active === i
-                ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-navy-deeper"
+                ? "w-14 h-14 ring-2 ring-sand ring-offset-2 ring-offset-[#133844]"
                 : "w-12 h-12 opacity-50 hover:opacity-80"
                 }`}
             >
@@ -744,13 +744,13 @@ function GalleryStrip() {
           <div className="flex gap-3">
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full border-2 border-navy-deeper/20 hover:border-crimson hover:bg-crimson hover:text-white text-navy-deeper transition-all duration-300 flex items-center justify-center font-black"
+              className="w-12 h-12 rounded-full border-2 border-[#133844]/20 hover:border-crimson hover:bg-crimson hover:text-white text-[#133844] transition-all duration-300 flex items-center justify-center font-black"
             >
               ←
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full border-2 border-navy-deeper/20 hover:border-crimson hover:bg-crimson hover:text-white text-navy-deeper transition-all duration-300 flex items-center justify-center font-black"
+              className="w-12 h-12 rounded-full border-2 border-[#133844]/20 hover:border-crimson hover:bg-crimson hover:text-white text-[#133844] transition-all duration-300 flex items-center justify-center font-black"
             >
               →
             </button>
@@ -773,7 +773,7 @@ function GalleryStrip() {
               alt={img.label}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-0 left-0 right-0 p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
               <span className="text-white font-black text-lg font-playfair">{img.label}</span>
             </div>
@@ -846,7 +846,7 @@ function CTASection() {
           backgroundImage: "url('/assets/DESIGN CAREER FAIR/5.webp')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 via-navy-deeper/85 to-sand/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/85 to-sand/30" />
 
       {/* Decorative circles */}
       <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full border border-sand/10" />
@@ -885,7 +885,7 @@ function CTASection() {
           </a>
           {/* <a
             href="/admissions#enquire"
-            className="group px-12 py-5 border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-navy-deeper transition-all duration-300"
+            className="group px-12 py-5 border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white hover:text-[#133844] transition-all duration-300"
           >
             Book a Visit
           </a> */}

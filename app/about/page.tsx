@@ -202,7 +202,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           STATS BAND
       ══════════════════════════════════════════════════════════════ */}
-      {/* <section className="bg-navy-deeper text-white py-12 border-y border-sand/20">
+      {/* <section className="bg-[#133844] text-white py-12 border-y border-sand/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-sand/20">
             {stats.map((s) => (
@@ -433,7 +433,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <Reveal>
             <p className="font-playfair text-sand text-3xl mb-6 tracking-wide">Our Philosophy</p>
-            <blockquote className="font-playfair text-4xl md:text-5xl font-light leading-[1.1] mb-10 text-white">
+            <blockquote className="font-playfair text-4xl md:text-5xl font-light leading-[1.1] mb-10 text-black">
               "हस्ये नयतु नः ब्रह्मज्ञानं"
             </blockquote>
             <p className="font-playfair text-2xl font-light text-sand mb-12">
@@ -556,12 +556,12 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════
           7. CAMPUS GLIMPSES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="pt-16 pb-10 bg-navy-deeper relative overflow-hidden">
+      <section className="pt-16 pb-10 bg-[#d4f4ed] relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <Reveal className="text-center mb-16">
-            <p className="font-playfair text-sand text-xl mb-3">Campus Life</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
+            <p className="font-playfair text-[#133844] text-xl mb-3">Campus Life</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
               A Glimpse of<br />
               <em className="font-semibold text-crimson">Our World</em>
             </h2>
@@ -571,7 +571,7 @@ export default function AboutPage() {
             {campusImages.map((img, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div
-                  className="relative overflow-hidden rounded-3xl aspect-square h-full group cursor-pointer border border-white/5"
+                  className="relative overflow-hidden rounded-3xl aspect-square h-full group cursor-pointer border border-[#133844]/10"
                   onClick={() => setSelectedImage(img.src)}
                 >
                   <img
@@ -579,7 +579,7 @@ export default function AboutPage() {
                     alt={img.label}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
                 </div>
               </Reveal>

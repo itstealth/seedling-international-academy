@@ -25,7 +25,7 @@ export default function PageHero({ title, subtitle, image }: PageHeroProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deeper/80 via-navy-deeper/20 to-off-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#d4f4ed]/80 via-[#d4f4ed]/20 to-off-white/10" />
       </motion.div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl pt-20">
@@ -34,13 +34,13 @@ export default function PageHero({ title, subtitle, image }: PageHeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.4em] text-sand mb-8 block drop-shadow-md font-dm">
+          <span className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.4em] text-[#133844] mb-8 block drop-shadow-md font-dm">
             Seedling International School Group
           </span>
-          <h1 className="text-6xl md:text-[7rem] font-black tracking-tight text-white leading-[1.1] mb-8 drop-shadow-2xl font-playfair">
+          <h1 className="text-6xl md:text-[7rem] font-black tracking-tight text-[#133844] leading-[1.1] mb-8 drop-shadow-2xl font-playfair">
             {title}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg font-dm">
+          <p className="text-lg md:text-xl text-[#133844]/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg font-dm">
             {subtitle}
           </p>
         </motion.div>

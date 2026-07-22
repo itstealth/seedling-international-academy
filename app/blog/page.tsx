@@ -68,7 +68,7 @@ const CategoryBadge = ({ category, active, onClick }: { category: string; active
     className={`px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-200 font-dm
       ${active
         ? "bg-crimson text-white shadow-lg"
-        : "bg-white text-navy-deeper border border-sand/40 hover:border-navy hover:bg-navy/5"
+        : "bg-white text-[#133844] border border-sand/40 hover:border-navy hover:bg-navy/5"
       }`}
   >
     {category}
@@ -214,7 +214,7 @@ export default function BlogPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       {getPostCategories(post)[0] && (
-                        <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-navy-deeper text-[8px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest">
+                        <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-[#133844] text-[8px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest">
                           {getPostCategories(post)[0]}
                         </span>
                       )}
@@ -247,7 +247,7 @@ export default function BlogPage() {
           {totalPages > 1 && (
             <nav className="flex items-center justify-center gap-2 mt-16" aria-label="Pagination">
               <button
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-navy-deeper hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-[#133844] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
               >
@@ -258,8 +258,8 @@ export default function BlogPage() {
                   key={page}
                   className={`w-10 h-10 flex items-center justify-center rounded-full text-[11px] font-black transition-all duration-200
                     ${currentPage === page
-                      ? "bg-navy-deeper text-white shadow-lg"
-                      : "text-navy-deeper hover:bg-navy-light border border-transparent"
+                      ? "bg-[#133844] text-white shadow-lg"
+                      : "text-[#133844] hover:bg-navy-light border border-transparent"
                     }`}
                   onClick={() => setCurrentPage(page)}
                 >
@@ -267,7 +267,7 @@ export default function BlogPage() {
                 </button>
               ))}
               <button
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-navy-deeper hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-sand/40 text-[#133844] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 disabled:opacity-30"
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
               >

@@ -1,6 +1,16 @@
 "use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import { motion } from "framer-motion";
+
+// Cambridge Learner Attributes card palette — cycled sequentially.
+const claPalette = [
+  { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
+  { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
+  { bg: "#028819", bgTo: "#015a0e" }, // Reflective
+  { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
+  { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
+];
 
 const assessmentPillars = [
   {
@@ -171,32 +181,57 @@ export default function OurStandardsPage(): React.JSX.Element {
       </section>
 
       {/* ═══ AWARDING STANDARDS ═══ */}
-      <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(at 50% 0%, rgba(19,56,68,0.06) 0px, transparent 55%), radial-gradient(at 0% 100%, rgba(162,15,39,0.10) 0px, transparent 50%)",
+          }}
+        />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-sand text-xl mb-3">Our Awarding Standards</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              How a Seedling Grade is <em className="font-semibold text-sand">Decided</em>
+            <p className="font-playfair text-[#133844]/70 text-xl mb-3">Our Awarding Standards</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
+              How a Seedling Grade is <em className="font-semibold text-[#133844]">Decided</em>
             </h2>
-            <p className="mt-6 text-white/75 text-lg max-w-2xl mx-auto font-dm leading-relaxed">
+            <p className="mt-6 text-[#133844]/75 text-lg max-w-2xl mx-auto font-dm leading-relaxed">
               Five principles govern every grade, mark and rank our school issues — at every stage from the Early Years through Cambridge Advanced.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {awardingPrinciples.map((p) => (
-              <div
-                key={p.num}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-7 border border-white/10 hover:border-sand/50 transition-all duration-500 hover:-translate-y-1"
-              >
-                <span className="absolute top-5 right-5 text-5xl font-black text-sand/20 leading-none select-none">{p.num}</span>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-white pr-12">{p.title}</h3>
-                <p className="text-white/75 text-sm leading-[1.85] font-dm">{p.desc}</p>
-              </div>
-            ))}
+            {awardingPrinciples.map((p, i) => {
+              const c = claPalette[i % 5];
+              return (
+                <motion.div
+                  key={p.num}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: `0 32px 70px -14px ${c.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
+                  }}
+                  transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative overflow-hidden rounded-2xl border border-white/15 p-7 min-h-[260px] flex flex-col"
+                  style={{
+                    background: `linear-gradient(160deg, ${c.bg} 0%, ${c.bgTo} 100%)`,
+                    boxShadow: "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
+                  }}
+                >
+                  <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
+                  <span className="absolute top-5 right-5 text-5xl font-black text-white/15 leading-none select-none">{p.num}</span>
+                  <div className="relative z-10">
+                    <h3 className="font-playfair text-xl font-semibold mb-3 leading-tight tracking-tight text-white pr-12">{p.title}</h3>
+                    <p className="text-sm text-white/80 font-light leading-relaxed">{p.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -242,14 +277,14 @@ export default function OurStandardsPage(): React.JSX.Element {
       </section>
 
       {/* ═══ CLOSING CTA ═══ */}
-      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper">
+      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <span className="block w-px h-10 bg-sand mx-auto mb-5" />
-          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
-            Want to see our standards <em className="font-semibold text-sand">in action?</em>
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
+          <span className="block w-px h-10 bg-[#133844]/40 mx-auto mb-5" />
+          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6 text-[#133844]">
+            Want to see our standards <em className="font-semibold text-[#133844]">in action?</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm mb-10">
+          <p className="text-[#133844] text-lg leading-[1.85] max-w-2xl mx-auto font-dm mb-10">
             Speak with our admissions team or visit a campus to experience the Seedling standard — in our classrooms, our interactions and our results.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -264,7 +299,7 @@ export default function OurStandardsPage(): React.JSX.Element {
             </a>
             <a
               href="/about/welcome-from-the-head"
-              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
+              className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
               Read From The Head
             </a>

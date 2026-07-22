@@ -243,7 +243,7 @@ export default function CampusHighlightsPage() {
                 { value: "100%", label: "Academic Results" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center px-4">
-                  <p className="font-playfair text-2xl md:text-3xl font-bold text-navy-deeper">{value}</p>
+                  <p className="font-playfair text-2xl md:text-3xl font-bold text-[#133844]">{value}</p>
                   <p className="text-text-light text-[10px] font-black mt-1 uppercase tracking-widest font-dm">{label}</p>
                 </div>
               ))}
@@ -825,7 +825,7 @@ const events = [
       "The campus comes alive with carols, decorations, and the festive spirit shared by the entire  Seedling International School community.",
     image: "/assets/XMAS CARNIVAL/christmas.webp",
     tag: "Festival",
-    tagColor: "bg-navy-deeper",
+    tagColor: "bg-[#133844]",
     gallery: christmasGallery,
   },
 ];

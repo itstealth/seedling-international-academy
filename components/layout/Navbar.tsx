@@ -144,7 +144,7 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
               <button
                 type="button"
                 onClick={onClose}
-                className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-navy-deeper/80 text-navy-deeper hover:bg-navy-deeper hover:text-white transition-colors flex-shrink-0"
+                className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-[#133844]/80 text-[#133844] hover:bg-[#133844] hover:text-white transition-colors flex-shrink-0"
                 aria-label="Close search"
               >
                 <X className="w-4 h-4" strokeWidth={2} />
@@ -159,7 +159,7 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                     key={s}
                     type="button"
                     onClick={() => handleSuggestionClick(s)}
-                    className="px-4 py-2 rounded-full bg-navy-deeper/5 hover:bg-royal-blue hover:text-white text-sm font-semibold text-navy-deeper transition-colors"
+                    className="px-4 py-2 rounded-full bg-[#133844]/5 hover:bg-royal-blue hover:text-white text-sm font-semibold text-[#133844] transition-colors"
                   >
                     {s}
                   </button>
@@ -249,7 +249,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               <h3 className="font-playfair text-3xl font-semibold text-center text-ink tracking-tight">Enquiry Form</h3>
               <button
                 onClick={onClose}
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy-deeper/80 text-navy-deeper hover:bg-navy-deeper hover:text-white transition-colors"
+                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#133844]/80 text-[#133844] hover:bg-[#133844] hover:text-white transition-colors"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" strokeWidth={1.8} />
@@ -263,7 +263,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                   <p className="text-text-light font-dm mb-7 leading-relaxed">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
                   <button
                     onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }}
-                    className="w-full h-11 bg-navy-deeper text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy transition-colors"
+                    className="w-full h-11 bg-[#133844] text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy transition-colors"
                   >
                     Submit Another Inquiry
                   </button>
@@ -379,7 +379,7 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                     {formErrors.message && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.message}</p>}
                   </div>
 
-                  <button type="submit" disabled={submitting} className="w-full h-11 bg-navy-deeper text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy disabled:opacity-60 transition-colors">
+                  <button type="submit" disabled={submitting} className="w-full h-11 bg-[#133844] text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy disabled:opacity-60 transition-colors">
                     {submitting ? "Submitting..." : "Submit"}
                   </button>
                 </form>
@@ -635,7 +635,7 @@ export default function Navbar() {
       <div className="fixed left-3 sm:left-6 bottom-[76px] sm:bottom-[96px] z-[110] flex flex-col items-start gap-2 sm:gap-3">
         <a
           href="tel:+917413012351"
-          className="group flex items-center justify-center gap-0 bg-navy-deeper hover:bg-navy text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 border border-white/10 overflow-hidden"
+          className="group flex items-center justify-center gap-0 bg-[#133844] hover:bg-navy text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 border border-white/10 overflow-hidden"
           aria-label="Call Seedling International School"
           title="Call Us"
         >

@@ -101,16 +101,16 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
       </section>
 
       {/* ═══ CLOSING NOTE ═══ */}
-      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper">
+      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <span className="block w-px h-10 bg-sand mx-auto mb-5" />
-          <p className="font-playfair text-sand text-xl mb-4">One Last Word</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-8">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
+          <span className="block w-px h-10 bg-[#133844] mx-auto mb-5" />
+          <p className="font-playfair text-[#133844] text-xl mb-4">One Last Word</p>
+          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-8 text-[#133844]">
             We don&rsquo;t just run schools.<br />
-            <em className="font-semibold text-sand">We grow people.</em>
+            <em className="font-semibold text-[#133844]">We grow people.</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+          <p className="text-[#133844] text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Every letter carries the same quiet promise — that every child who comes to Seedling will be seen, known, and grown with intention. We are honoured to grow with you.
           </p>
         </div>

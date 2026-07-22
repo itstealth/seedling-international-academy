@@ -146,7 +146,7 @@ function InputField({
 }) {
   return (
     <div>
-      <label className="block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm">
+      <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
         {label} {required && <span className="text-crimson">*</span>}
       </label>
       {children}
@@ -214,13 +214,13 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           STATS STRIP
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="bg-navy-deeper py-8">
+      <section className="bg-[#d4f4ed] py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-white">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-[#133844]">
             {STATS.map(({ value, label }) => (
               <div key={label}>
                 <p className="font-playfair text-2xl font-bold">{value}</p>
-                <p className="text-sand text-[10px] font-black mt-0.5 uppercase tracking-[0.2em] font-dm">{label}</p>
+                <p className="text-[#133844] text-[10px] font-black mt-0.5 uppercase tracking-[0.2em] font-dm">{label}</p>
               </div>
             ))}
           </div>
@@ -263,7 +263,7 @@ export default function ContactPage() {
               </ContactItem>
             </InfoCard>
 
-            <InfoCard icon={<EmailIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-navy-deeper" accent="bg-sand" label="Email Us">
+            <InfoCard icon={<EmailIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-[#133844]" accent="bg-sand" label="Email Us">
               <ContactItem label="SPS / SIA">
                 <a href="mailto:cambridgeacademy@hotmail.com" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">cambridgeacademy@hotmail.com</a>
               </ContactItem>
@@ -288,7 +288,7 @@ export default function ContactPage() {
               </ContactItem>
             </InfoCard>
 
-            <InfoCard icon={<ClockIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-navy-deeper" accent="bg-sand" label="Office Hours">
+            <InfoCard icon={<ClockIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-[#133844]" accent="bg-sand" label="Office Hours">
               <ContactItem label="Mon – Fri">
                 <p className="text-text-base text-sm font-semibold">8:30 AM – 6:30 PM</p>
               </ContactItem>
@@ -349,7 +349,7 @@ export default function ContactPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-navy-deeper/50 to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white text-sm font-bold font-dm drop-shadow">State-of-the-art learning environment</p>
                   <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Seedling International School, Jaipur</p>
@@ -566,7 +566,7 @@ export default function ContactPage() {
                     key={day}
                     className={`flex items-center justify-between px-6 py-4 ${i < HOURS.length - 1 ? 'border-b border-sand/40' : ''}`}
                   >
-                    <span className="text-navy-deeper text-sm font-bold font-dm">{day}</span>
+                    <span className="text-[#133844] text-sm font-bold font-dm">{day}</span>
                     <span className={`text-sm font-black font-dm uppercase tracking-widest ${open ? 'text-crimson' : 'text-text-light'}`}>
                       {time}
                     </span>
@@ -582,7 +582,7 @@ export default function ContactPage() {
                   <PhoneIcon className="w-4 h-4 text-navy shrink-0" />
                   <div>
                     <p className="text-[9px] font-black text-navy uppercase tracking-widest font-dm">SPS / SIA</p>
-                    <p className="text-navy-deeper text-sm font-bold font-dm">+91 74130 12351</p>
+                    <p className="text-[#133844] text-sm font-bold font-dm">+91 74130 12351</p>
                   </div>
                 </a>
                 
@@ -599,20 +599,20 @@ export default function ContactPage() {
       <section className="py-12 bg-off-white border-t border-sand/40">
         <div className="max-w-6xl mx-auto px-6">
           <div
-            className="relative bg-navy-deeper rounded-[2rem] overflow-hidden px-8 md:px-14 py-12 md:py-14 text-white"
+            className="relative bg-[#d4f4ed] rounded-[2rem] overflow-hidden px-8 md:px-14 py-12 md:py-14 text-[#133844]"
             style={{
-              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+              backgroundImage: 'radial-gradient(circle, rgba(19,56,68,0.1) 1px, transparent 1px)',
               backgroundSize: '20px 20px',
             }}
           >
             {/* Decorative circles */}
-            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white opacity-5" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-white opacity-5" />
+            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[#133844] opacity-5" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#133844] opacity-5" />
 
             <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div className="max-w-xl">
-                <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-5 font-dm">
-                  <svg className="w-4 h-4 text-sand" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <div className="inline-flex items-center gap-2 bg-white/60 border border-[#133844]/20 rounded-full px-4 py-1.5 mb-5 font-dm">
+                  <svg className="w-4 h-4 text-[#133844]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                     <path d="M6 12v5c3 3 9 3 12 0v-5" />
                   </svg>
@@ -620,11 +620,11 @@ export default function ContactPage() {
                 </div>
 
                 <h2
-                  className="font-playfair text-3xl md:text-4xl font-bold leading-tight mb-3 text-white"
+                  className="font-playfair text-3xl md:text-4xl font-bold leading-tight mb-3 text-[#133844]"
                 >
                   Ready to join the<br />Seedling International School family?
                 </h2>
-                <p className="text-white/75 text-base leading-relaxed font-dm font-light">
+                <p className="text-[#133844]/75 text-base leading-relaxed font-dm font-light">
                   Visit any of our campuses or start your online application today.
                   Three decades of excellence — and a future built for your child.
                 </p>
@@ -633,7 +633,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-3 shrink-0 font-dm">
                 <a
                   href="/admissions#enquire"
-                  className="inline-flex items-center justify-center gap-2 bg-sand text-navy-deeper font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 bg-sand text-[#133844] font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   Enquire Now
                   <ArrowRightIcon className="w-4 h-4" />

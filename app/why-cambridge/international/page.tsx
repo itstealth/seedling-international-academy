@@ -158,7 +158,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
       </motion.section>
 
       {/* ═══ BIG FACTS BAND ═══ */}
-      <section className="relative py-14 md:py-20 bg-navy-deeper overflow-hidden">
+      <section className="relative py-14 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
@@ -171,9 +171,9 @@ export default function InternationalCambridgePage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-playfair text-sand text-xl mb-3">Cambridge by the Numbers</p>
-            <h2 className="font-playfair text-3xl md:text-5xl font-light text-white">
-              How Big <em className="font-semibold text-sand">Cambridge</em> Is
+            <p className="font-playfair text-[#133844] text-xl mb-3">Cambridge by the Numbers</p>
+            <h2 className="font-playfair text-3xl md:text-5xl font-light text-[#133844]">
+              How Big <em className="font-semibold text-[#133844]">Cambridge</em> Is
             </h2>
           </motion.div>
 
@@ -190,11 +190,11 @@ export default function InternationalCambridgePage(): React.JSX.Element {
                 variants={cardRise}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 cursor-default"
+                className="bg-white/70 backdrop-blur-sm border border-[#133844]/10 rounded-2xl p-6 md:p-8 cursor-default"
               >
-                <p className="font-playfair text-4xl md:text-6xl font-semibold text-sand leading-none mb-3">{f.value}</p>
-                <p className="font-playfair text-lg md:text-xl text-white font-semibold mb-2">{f.label}</p>
-                <p className="text-white/70 text-xs md:text-sm leading-relaxed font-dm">{f.sub}</p>
+                <p className="font-playfair text-4xl md:text-6xl font-semibold text-[#133844] leading-none mb-3">{f.value}</p>
+                <p className="font-playfair text-lg md:text-xl text-[#133844] font-semibold mb-2">{f.label}</p>
+                <p className="text-[#133844]/70 text-xs md:text-sm leading-relaxed font-dm">{f.sub}</p>
               </motion.div>
             ))}
           </motion.div>

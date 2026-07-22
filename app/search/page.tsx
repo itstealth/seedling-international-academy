@@ -204,7 +204,7 @@ function highlight(text: string, q: string) {
   const parts = text.split(re);
   return parts.map((p, i) =>
     re.test(p) ? (
-      <mark key={i} className="bg-sand/40 text-navy-deeper rounded px-0.5">
+      <mark key={i} className="bg-sand/40 text-[#133844] rounded px-0.5">
         {p}
       </mark>
     ) : (
@@ -251,7 +251,7 @@ function SearchResults() {
           method="GET"
           className="flex items-center gap-3 bg-white rounded-2xl shadow-lg border border-sand/40 px-5 py-4"
         >
-          <Search className="w-5 h-5 text-navy-deeper flex-shrink-0" />
+          <Search className="w-5 h-5 text-[#133844] flex-shrink-0" />
           <input
             type="text"
             name="q"
@@ -263,7 +263,7 @@ function SearchResults() {
           {q && (
             <Link
               href="/search"
-              className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-300 text-text-light hover:bg-navy-deeper hover:text-white transition-colors"
+              className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-300 text-text-light hover:bg-[#d4f4ed] hover:text-[#133844] transition-colors"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -278,18 +278,18 @@ function SearchResults() {
               {results.length > 0 ? (
                 <>
                   Found{" "}
-                  <span className="font-black text-navy-deeper">
+                  <span className="font-black text-[#133844]">
                     {results.length}
                   </span>{" "}
                   result{results.length === 1 ? "" : "s"} for{" "}
-                  <span className="font-black text-navy-deeper">
+                  <span className="font-black text-[#133844]">
                     &ldquo;{q}&rdquo;
                   </span>
                 </>
               ) : (
                 <>
                   No results found for{" "}
-                  <span className="font-black text-navy-deeper">
+                  <span className="font-black text-[#133844]">
                     &ldquo;{q}&rdquo;
                   </span>
                   . Try a different keyword.
@@ -334,15 +334,15 @@ function SearchResults() {
           <div className="bg-white rounded-2xl border border-sand/40 p-10 text-center">
             <p className="text-text-light">
               Try searching for{" "}
-              <span className="font-semibold text-navy-deeper">
+              <span className="font-semibold text-[#133844]">
                 admissions
               </span>
               ,{" "}
-              <span className="font-semibold text-navy-deeper">curriculum</span>
+              <span className="font-semibold text-[#133844]">curriculum</span>
               ,{" "}
-              <span className="font-semibold text-navy-deeper">transport</span>
+              <span className="font-semibold text-[#133844]">transport</span>
               , or{" "}
-              <span className="font-semibold text-navy-deeper">faculty</span>.
+              <span className="font-semibold text-[#133844]">faculty</span>.
             </p>
           </div>
         )}

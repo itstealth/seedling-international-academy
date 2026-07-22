@@ -198,7 +198,7 @@ function JobCard({
   onApply: (role: (typeof openRoles)[0]) => void;
 }) {
   return (
-    <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-xl hover:border-navy-deeper/20 hover:-translate-y-0.5 transition-all duration-300">
+    <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-xl hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300">
       <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
         <div className="flex items-center gap-3 flex-wrap">
           {role.urgent && (
@@ -239,7 +239,7 @@ function JobCard({
         </div>
         <button
           onClick={() => onApply(role)}
-          className="inline-flex items-center gap-2 bg-navy-deeper hover:bg-navy-dark text-white text-[11px] font-black tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-navy-deeper/30 hover:gap-3 font-dm"
+          className="inline-flex items-center gap-2 bg-[#133844] hover:bg-navy-dark text-white text-[11px] font-black tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#133844]/30 hover:gap-3 font-dm"
         >
           Apply Now
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +318,7 @@ function ApplyModal({
           {submitted ? (
             <div className="text-center py-10">
               <span className="text-6xl block mb-4">🌱</span>
-              <p className="font-playfair text-2xl font-semibold text-navy-deeper mb-2">
+              <p className="font-playfair text-2xl font-semibold text-[#133844] mb-2">
                 Thank You!
               </p>
               <p className="text-text-light text-sm leading-relaxed font-dm">
@@ -480,7 +480,7 @@ function ApplyModal({
 
               <button
                 type="submit"
-                className="w-full bg-navy-deeper hover:bg-navy-dark text-white py-4 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-navy-deeper/30 font-dm"
+                className="w-full bg-[#133844] hover:bg-navy-dark text-white py-4 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#133844]/30 font-dm"
               >
                 Submit Interest Form →
               </button>
@@ -532,20 +532,20 @@ export default function CareersPage() {
       {/* ══════════════════════════════════════════════════
           STATS
       ══════════════════════════════════════════════════ */}
-      <section className="bg-navy-deeper text-white py-8 border-y border-sand/20">
+      <section className="bg-[#d4f4ed] text-[#133844] py-8 border-y border-[#133844]/20">
 
          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">
         <div className="max-w-2xl text-center">
-          <h1 className="font-playfair text-sand font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
+          <h1 className="font-playfair text-[#133844] font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
             Career Opportunities at Seedling International School
           </h1>
-          <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
+          <p className="text-[#133844]/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
             Not Just a Job. A Journey of Impact, Growth & Excellence.
           </p>
         </div>
       </div>
         <div className="max-w-5xl mx-auto md:px-6">
-          <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-sand/20">
+          <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-[#133844]/20">
             {[
               { value: "2", label: "Schools" },
               { value: "10k+", label: "Students" },
@@ -554,8 +554,8 @@ export default function CareersPage() {
               { value: "1993", label: "Est." },
             ].map((s) => (
               <div key={s.label} className="px-4 py-4 text-center">
-                <p className="font-playfair text-3xl md:text-4xl font-semibold text-sand">{s.value}</p>
-                <p className="text-white/60 text-[10px] font-black mt-1 tracking-[0.2em] uppercase font-dm">{s.label}</p>
+                <p className="font-playfair text-3xl md:text-4xl font-semibold text-[#133844]">{s.value}</p>
+                <p className="text-[#133844]/60 text-[10px] font-black mt-1 tracking-[0.2em] uppercase font-dm">{s.label}</p>
               </div>
             ))}
           </div>
@@ -580,7 +580,7 @@ export default function CareersPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {whyWork.map((w, i) => (
             <Reveal key={w.title} delay={i * 70}>
-              <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-lg hover:border-navy-deeper/20 hover:-translate-y-0.5 transition-all duration-300 h-full">
+              <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-lg hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300 h-full">
                 <div className="w-11 h-11 bg-sand/10 group-hover:bg-crimson border border-sand/40 group-hover:border-crimson rounded-xl flex items-center justify-center text-crimson group-hover:text-white transition-all duration-300 mb-5 flex-shrink-0">
                   {w.icon}
                 </div>
@@ -626,7 +626,7 @@ export default function CareersPage() {
                 key={f}
                 onClick={() => setActiveFilter(i)}
                 className={`text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200 font-dm ${activeFilter === i
-                  ? "bg-navy-deeper text-white border-navy-deeper"
+                  ? "bg-[#133844] text-white border-[#133844]"
                   : "bg-white text-text-light border-sand/40 hover:border-navy/20 hover:text-navy"
                   }`}
               >
@@ -656,7 +656,7 @@ export default function CareersPage() {
           <div className="bg-sand/10 border border-sand/30 rounded-2xl px-7 py-5 flex items-start gap-4">
             <span className="text-2xl flex-shrink-0 mt-0.5">📌</span>
             <div>
-              <p className="font-black text-navy-deeper text-xs tracking-widest uppercase mb-1 font-dm">How Applications Work</p>
+              <p className="font-black text-[#133844] text-xs tracking-widest uppercase mb-1 font-dm">How Applications Work</p>
               <p className="text-text-light text-sm leading-relaxed font-dm font-light">
                 Fill in the Interest Form with your details and CV. We will reach out as soon as we open our recruitments. All roles are open across both campuses — Jawahar Nagar and Durgapura.
               </p>
@@ -681,7 +681,7 @@ export default function CareersPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 120}>
-                <div className="group bg-off-white border border-sand/40 rounded-2xl p-8 hover:shadow-lg hover:border-navy-deeper/20 transition-all duration-300 relative overflow-hidden h-full">
+                <div className="group bg-off-white border border-sand/40 rounded-2xl p-8 hover:shadow-lg hover:border-[#133844]/20 transition-all duration-300 relative overflow-hidden h-full">
                   {/* decorative quote mark */}
                   <div className="absolute top-3 right-6 font-playfair text-[7rem] leading-none text-sand/20 font-bold select-none pointer-events-none">
                     "
@@ -693,7 +693,7 @@ export default function CareersPage() {
                       className="w-12 h-12 md:w-20 md:h-20 rounded-full object-cover object-top border-2 border-sand/40 flex-shrink-0"
                     />
                     <div>
-                      <p className="font-playfair font-normal text-lg text-navy-deeper">{t.name}</p>
+                      <p className="font-playfair font-normal text-lg text-[#133844]">{t.name}</p>
                       <p className="text-crimson text-[10px] font-black tracking-widest uppercase font-dm">Seedling Educator</p>
                     </div>
                   </div>
@@ -729,10 +729,10 @@ export default function CareersPage() {
                   { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered" },
                   { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed" },
                 ].map((item) => (
-                  <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-navy-deeper/20 transition-colors duration-200">
+                  <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-[#133844]/20 transition-colors duration-200">
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
                     <div>
-                      <p className="font-black text-navy-deeper text-[11px] tracking-widest uppercase mb-1 font-dm">{item.label}</p>
+                      <p className="font-black text-[#133844] text-[11px] tracking-widest uppercase mb-1 font-dm">{item.label}</p>
                       <p className="text-text-light text-[10px] font-dm font-light">{item.sub}</p>
                     </div>
                   </div>
@@ -740,7 +740,7 @@ export default function CareersPage() {
               </div>
               <button
                 onClick={() => setOpenGeneral(true)}
-                className="inline-flex items-center gap-2 bg-navy-deeper hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-navy-deeper/30 hover:gap-3 font-dm"
+                className="inline-flex items-center gap-2 bg-[#133844] hover:bg-navy-dark text-white px-8 py-4 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:shadow-[#133844]/30 hover:gap-3 font-dm"
               >
                 Send Your CV
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -824,7 +824,7 @@ export default function CareersPage() {
           alt="Join the Seedling International School team"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deeper/95 to-crimson-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 to-crimson-dark/70" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-navy/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">

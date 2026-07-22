@@ -185,7 +185,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
       </section>
 
       {/* ═══ SUBJECT GROUPS ═══ */}
-      <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
@@ -198,9 +198,9 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-sand text-xl mb-3">50+ Subjects · Six Groups</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              Design Your <em className="font-semibold text-sand">Specialisation</em>
+            <p className="font-playfair text-[#133844] text-xl mb-3">50+ Subjects · Six Groups</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
+              Design Your <em className="font-semibold text-[#133844]">Specialisation</em>
             </h2>
           </motion.div>
 
@@ -223,11 +223,11 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-white">{g.group}</h3>
+                    <h3 className="font-playfair text-lg font-semibold text-[#133844]">{g.group}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {g.items.map((s) => (
-                      <span key={s} className="text-xs font-medium text-white/80 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                      <span key={s} className="text-xs font-medium text-[#133844]/80 bg-white/5 border border-white/10 rounded-full px-3 py-1">
                         {s}
                       </span>
                     ))}
@@ -343,7 +343,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
 
       {/* ═══ CLOSING CTA ═══ */}
       <motion.section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-navy-deeper"
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -351,7 +351,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
         transition={{ duration: 0.45, ease: EASE }}
       >
         <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <motion.span
             className="block w-px h-10 bg-sand mx-auto mb-5"
             initial={{ scaleY: 0 }}
@@ -360,12 +360,12 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{ transformOrigin: "top" }}
           />
-          <p className="font-playfair text-sand text-xl mb-4">The Final Stretch</p>
+          <p className="font-playfair text-[#133844] text-xl mb-4">The Final Stretch</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
             Two years that open<br />
-            <em className="font-semibold text-sand">a lifetime of doors.</em>
+            <em className="font-semibold text-[#133844]">a lifetime of doors.</em>
           </h2>
-          <p className="text-white/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
+          <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Talk to our Cambridge Advanced team about how your child can begin shaping the next chapter — at Seedling and beyond.
           </p>
           <motion.div
@@ -392,7 +392,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
               href="/academics/upper-secondary"
-              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-navy-deeper text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm"
+              className="inline-flex items-center gap-3 border border-white/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm"
             >
               Cambridge Upper Secondary
             </motion.a>

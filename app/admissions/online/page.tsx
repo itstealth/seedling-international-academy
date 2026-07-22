@@ -129,7 +129,7 @@ const defaultForm: AdmissionFormData = {
    FIELD CLASSES
 ───────────────────────────────────────────── */
 const fieldCls = "w-full rounded-xl border border-sand/40 bg-white px-4 py-3 text-sm text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors font-dm";
-const labelCls = "block text-[10px] font-black text-navy-deeper mb-1.5 tracking-[0.2em] uppercase font-dm";
+const labelCls = "block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm";
 const selectCls = "w-full rounded-xl border border-sand/40 bg-white px-4 py-3 text-sm text-text-base focus:outline-none focus:border-navy transition-colors font-dm appearance-none";
 
 export default function OnlineAdmissionPage() {
@@ -618,7 +618,7 @@ export default function OnlineAdmissionPage() {
 
               {/* Important Notes */}
               <div className="mb-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">
-                <p className="text-navy-deeper font-dm text-sm leading-relaxed">
+                <p className="text-[#133844] font-dm text-sm leading-relaxed">
                   <span className="font-black text-crimson">📌 Important Notes:</span>
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-text-light leading-relaxed font-dm list-disc pl-5">
@@ -658,19 +658,19 @@ export default function OnlineAdmissionPage() {
 
         {/* ── CONTACT HELPLINE ── */}
         <Reveal delay={200} className="mt-10">
-          <div className="bg-navy-deeper rounded-3xl p-8 md:p-10 text-white flex flex-col sm:flex-row items-center gap-8 justify-between">
+          <div className="bg-[#d4f4ed] rounded-3xl p-8 md:p-10 text-[#133844] flex flex-col sm:flex-row items-center gap-8 justify-between">
             <div>
-              <p className="text-sand text-xs font-black tracking-[0.3em] uppercase mb-3">Need Assistance?</p>
+              <p className="text-[#133844] text-xs font-black tracking-[0.3em] uppercase mb-3">Need Assistance?</p>
               <h3 className="font-playfair text-3xl font-black tracking-tight mb-2">Contact our Admissions Helpline</h3>
-              <p className="text-white/60 font-dm text-sm leading-relaxed">Our team is available Mon–Sat, 8:00 AM – 4:00 PM to help with your queries.</p>
+              <p className="text-[#133844]/60 font-dm text-sm leading-relaxed">Our team is available Mon–Sat, 8:00 AM – 4:00 PM to help with your queries.</p>
             </div>
             <div className="flex flex-col sm:items-end gap-3 shrink-0">
               <a href="tel:+917413012351"
-                className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-6 py-3.5 rounded-xl font-black text-sm transition-colors">
+                className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-[#133844] px-6 py-3.5 rounded-xl font-black text-sm transition-colors">
                 📞 +91-74130-12351
               </a>
               <a href="mailto:seedlingacademy@hotmail.com"
-                className="flex items-center gap-3 text-white/60 hover:text-white text-sm font-dm transition-colors">
+                className="flex items-center gap-3 text-[#133844]/60 hover:text-[#133844] text-sm font-dm transition-colors">
                 ✉️ seedlingacademy@hotmail.com
               </a>
             </div>

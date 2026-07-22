@@ -1,6 +1,16 @@
 "use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import { motion } from "framer-motion";
+
+// Cambridge Learner Attributes card palette — cycled sequentially.
+const claPalette = [
+  { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
+  { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
+  { bg: "#028819", bgTo: "#015a0e" }, // Reflective
+  { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
+  { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
+];
 
 const values = [
   {
@@ -11,7 +21,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    color: "crimson",
   },
   {
     title: "Reflective",
@@ -21,7 +30,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    color: "navy",
   },
   {
     title: "Responsible",
@@ -31,7 +39,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    color: "mauve",
   },
   {
     title: "Innovative",
@@ -41,7 +48,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
-    color: "sand",
   },
   {
     title: "Engaged",
@@ -51,7 +57,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    color: "crimson",
   },
   {
     title: "Empowered",
@@ -61,17 +66,8 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    color: "royal-blue",
   },
 ];
-
-const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
-  sand: { bg: "bg-sand/15", text: "text-sand", border: "border-sand/40" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
-};
 
 const promises = [
   { num: "01", title: "Holistic Development", desc: "Intellectual, social, moral, spiritual, emotional and physical growth for every child." },
@@ -99,7 +95,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
         <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
           Wisdom &amp; <em className="font-semibold text-navy">Comprehension</em>
         </h2>
-        <p className="font-playfair text-2xl md:text-3xl text-sand mb-8">
+        <p className="font-playfair text-2xl md:text-3xl text-black mb-8">
           "हस्ये नयतु नः ब्रह्मज्ञानं"
         </p>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-3xl mx-auto">
@@ -168,36 +164,61 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       </section>
 
       {/* ═══ VALUES ═══ */}
-      <section className="relative py-12 md:py-20 bg-navy-deeper overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(at 50% 0%, rgba(19,56,68,0.06) 0px, transparent 55%), radial-gradient(at 100% 100%, rgba(162,15,39,0.10) 0px, transparent 50%)",
+          }}
+        />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-sand text-xl mb-3">Our Compass</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-white">
-              The Values That <em className="font-semibold text-sand">Guide Us</em>
+            <p className="font-playfair text-[#133844]/70 text-xl mb-3">Our Compass</p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
+              The Values That <em className="font-semibold text-[#133844]">Guide Us</em>
             </h2>
-            <p className="mt-6 text-white/75 text-lg max-w-2xl mx-auto font-dm leading-relaxed">
+            <p className="mt-6 text-[#133844]/75 text-lg max-w-2xl mx-auto font-dm leading-relaxed">
               Six values shape every classroom, every conversation, and every decision at Seedling.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
             {values.map((v, i) => {
-              const c = colorMap[v.color];
+              const c = claPalette[i % 5];
               return (
-                <div
+                <motion.div
                   key={v.title}
-                  className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-7 md:p-8 border ${c.border} hover:border-sand/60 transition-all duration-500 hover:-translate-y-1`}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: `0 32px 70px -14px ${c.bgTo}, 0 14px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.25)`,
+                  }}
+                  transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative overflow-hidden rounded-2xl border border-white/15 p-7 md:p-8 min-h-[280px] flex flex-col gap-5"
+                  style={{
+                    background: `linear-gradient(160deg, ${c.bg} 0%, ${c.bgTo} 100%)`,
+                    boxShadow: "0 24px 50px -16px rgba(0,0,0,0.55), 0 6px 14px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18)",
+                  }}
                 >
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
+                  <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center bg-white/95 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-[4deg]"
+                    style={{ boxShadow: "0 6px 18px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.6)", color: c.bg }}
+                  >
                     {v.icon}
                   </div>
-                  <p className={`text-[10px] font-black tracking-[0.25em] uppercase ${c.text} mb-2`}>Value 0{i + 1}</p>
-                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-white">{v.title}</h3>
-                  <p className="text-white/75 text-sm leading-[1.85] font-dm">{v.desc}</p>
-                </div>
+                  <div>
+                    <p className="text-[10px] font-black tracking-[0.25em] uppercase text-white/75 mb-2">Value 0{i + 1}</p>
+                    <h3 className="font-playfair text-2xl font-semibold mb-3 leading-tight tracking-tight text-white">{v.title}</h3>
+                    <p className="text-sm text-white/80 font-light leading-relaxed">{v.desc}</p>
+                  </div>
+                </motion.div>
               );
             })}
           </div>
@@ -244,7 +265,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           </p>
           <a
             href="/about/welcome-from-the-head"
-            className="inline-flex items-center gap-3 bg-white text-navy-deeper px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black hover:bg-sand hover:text-white transition-all duration-500 font-dm"
+            className="inline-flex items-center gap-3 bg-white text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black hover:bg-sand hover:text-[#133844] transition-all duration-500 font-dm"
           >
             Read From The Head
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
