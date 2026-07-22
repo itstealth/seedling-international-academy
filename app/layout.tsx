@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Source_Sans_3 } from "next/font/google";
+import { Bodoni_Moda, Geist_Mono, Source_Sans_3 } from "next/font/google";
 import { headers } from "next/headers";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
@@ -16,6 +16,15 @@ const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
+});
+
+// Premium display serif for hero / editorial focal points.
+// Loaded alongside Source Sans 3 — used sparingly, never site-wide.
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +44,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${sourceSans.variable} h-full antialiased`}
+      className={`${geistMono.variable} ${sourceSans.variable} ${bodoni.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
         <NavbarWrapper />

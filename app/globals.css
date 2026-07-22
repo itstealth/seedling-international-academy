@@ -92,6 +92,14 @@
   --font-dm: var(--font-source-sans);
   --font-sans: var(--font-source-sans);
 
+  /* Premium display serif — Bodoni Moda. Used sparingly on hero /
+     editorial focal points only; not a body font. */
+  --font-display: var(--font-bodoni);
+
+  /* Warm ivory — premium headline colour, distinct from the navy/crimson
+     site palette and readable on the hero video. */
+  --color-ivory-warm: #f5ead2;
+
   /* Standard radii and shadows for consistency */
   --radius-premium: 3.5rem;
   --radius-button: 1.25rem;
@@ -163,10 +171,17 @@ p {
   }
 
   .mesh-gradient {
-    background-image: 
+    background-image:
       radial-gradient(at 0% 0%, rgba(0, 189, 182, 0.07) 0px, transparent 50%),
       radial-gradient(at 100% 0%, rgba(142, 232, 216, 0.09) 0px, transparent 50%),
       radial-gradient(at 100% 100%, rgba(3, 98, 104, 0.05) 0px, transparent 50%),
       radial-gradient(at 0% 100%, rgba(0, 189, 182, 0.07) 0px, transparent 50%);
   }
+}
+
+/* Premium display font utility — overrides the base h1..h6 font-family rule
+   that pins everything to Source Sans. Use sparingly on editorial focal
+   points (hero, key headings) only. */
+.font-display {
+  font-family: var(--font-bodoni) !important;
 }
