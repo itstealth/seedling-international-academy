@@ -323,7 +323,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           transition={{ duration: 1.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-display absolute bottom-10 left-6 md:bottom-16 md:left-14 lg:bottom-20 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
           style={{
-            color: "#f5ead2",
+            color: "#ffffff",
             textShadow:
               "0 2px 28px rgba(0,0,0,0.65), 0 10px 50px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.55)",
           }}
