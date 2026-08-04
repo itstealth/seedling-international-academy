@@ -15,21 +15,21 @@ const navItems = [
       { name: "Welcome from the Head's", href: "/about/welcome-from-the-head" },
       { name: "Mission and Values", href: "/about/mission" },
       { name: "Our Standards", href: "/about/standards" },
-      { name: "Seedling Legacy", href: "/about/legacy" },
-      { name: "Leadership Teams", href: "/about/leadership" },
+      // { name: "Seedling Legacy", href: "/about/legacy" },
+      { name: "Seedling Leadership", href: "/about/leadership" },
     ]
   },
   {
-    name: "Why Cambridge", href: "/why-cambridge", dropdown: [
-      { name: "Cambridge Education", href: "/why-cambridge/education" },
-      { name: "Your Path Your Way", href: "/why-cambridge/path" },
-      { name: "International Cambridge", href: "/why-cambridge/international" },
-      { name: "Pedagogy", href: "/why-cambridge/pedagogy" },
-    ]
+    name: "Cambridge Education", href: "/why-cambridge/education",
+    // dropdown: [
+    //   { name: "Your Path Your Way", href: "/why-cambridge/path" },
+    //   { name: "International Cambridge", href: "/why-cambridge/international" },
+    //   { name: "Pedagogy", href: "/why-cambridge/pedagogy" },
+    // ]
   },
   {
     name: "Academics", href: "/academics", dropdown: [
-      { name: "Cambridge Early Years", href: "/academics/early-years" },
+      // { name: "Cambridge Early Years", href: "/academics/early-years" },
       { name: "Cambridge Primary", href: "/academics/primary" },
       { name: "Cambridge Lower Secondary", href: "/academics/lower-secondary" },
       { name: "Cambridge Upper Secondary", href: "/academics/upper-secondary" },
@@ -42,8 +42,8 @@ const navItems = [
   {
     name: "Admissions", href: "/admissions", dropdown: [
       { name: "Procedure", href: "/admissions" },
-      { name: "Transport Facility", href: "/transport-facility" },
-      { name: "Result", href: "/result" },
+      // { name: "Transport Facility", href: "/transport-facility" },
+      // { name: "Result", href: "/result" },
     ]
   },
   {
@@ -93,7 +93,6 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
     "Admissions",
     "Curriculum",
     "Fee Structure",
-    "Transport Facility",
     "Mandatory Disclosures",
   ];
 
@@ -393,6 +392,149 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 }
 
 
+function DesktopNav({ pathname }: { pathname: string }) {
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const handleEnter = (name: string) => {
+    cancelClose();
+    setOpenMenu(name);
+  };
+
+  const handleLeaveArea = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 160);
+  };
+
+  // Close on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenMenu(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  return (
+    <nav
+      className="hidden xl:flex items-center gap-0.5 flex-shrink min-w-0"
+      aria-label="Primary"
+      onMouseLeave={handleLeaveArea}
+    >
+      {navItems.filter((item) => item.name !== "Home").map((item) => {
+        const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+        const hasDropdown = !!item.dropdown;
+        const isOpen = openMenu === item.name;
+
+        return (
+          <div
+            key={item.name}
+            className="relative"
+            onMouseEnter={() => hasDropdown && handleEnter(item.name)}
+          >
+            {/* Parent label — a real Next.js Link so clicking navigates to the parent page */}
+            <Link
+              href={item.href}
+              aria-haspopup={hasDropdown ? "true" : undefined}
+              aria-expanded={hasDropdown ? isOpen : undefined}
+              className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
+                isActive
+                  ? "bg-white text-[#133844]"
+                  : "text-white/90 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              <span>{item.name}</span>
+              {hasDropdown && (
+                <ChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  strokeWidth={2.5}
+                />
+              )}
+            </Link>
+
+            {/* Animated dropdown card with children — appears on hover */}
+            {hasDropdown && (
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                    transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                    onMouseEnter={cancelClose}
+                    onMouseLeave={handleLeaveArea}
+                    className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-[55]"
+                  >
+                    {/* Small upward arrow connecting card to parent */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rotate-45 bg-white border-l border-t border-hairline" />
+
+                    {/* Card */}
+                    <div className="relative w-[260px] bg-white border border-hairline rounded-lg shadow-2xl shadow-black/30 overflow-hidden">
+                      {/* Top accent line */}
+                      <div className="h-1 bg-gradient-to-r from-[#133844] via-crimson to-[#133844]" />
+
+                      {/* Children list */}
+                      <ul className="py-1.5">
+                        {item.dropdown!.map((child, idx) => {
+                          const isChildActive = pathname === child.href;
+                          return (
+                            <motion.li
+                              key={child.name}
+                              initial={{ opacity: 0, x: -6 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.18, delay: idx * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                              <Link
+                                href={child.href}
+                                onClick={() => setOpenMenu(null)}
+                                className={`group flex items-center gap-3 px-4 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.1em] transition-colors ${
+                                  isChildActive
+                                    ? "bg-[#133844] text-white"
+                                    : "text-ink hover:bg-stone hover:text-crimson"
+                                }`}
+                              >
+                                <span
+                                  className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors ${
+                                    isChildActive
+                                      ? "bg-white"
+                                      : "bg-ink/30 group-hover:bg-crimson"
+                                  }`}
+                                />
+                                <span className="flex-1">{child.name}</span>
+                                <svg
+                                  className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth={2.5}
+                                  viewBox="0 0 24 24"
+                                  aria-hidden="true"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5 15.75 12 8.25 19.5" />
+                                </svg>
+                              </Link>
+                            </motion.li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            )}
+          </div>
+        );
+      })}
+    </nav>
+  );
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -434,22 +576,22 @@ export default function Navbar() {
 
         {/* ── MAIN HEADER ── */}
         <motion.header
-          className="bg-royal-blue relative overflow-hidden"
+          className="bg-royal-blue relative"
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Animated shimmer band */}
           <motion.div
-            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink/25 to-transparent"
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink/25 to-transparent pointer-events-none z-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <div className="max-w-[1600px] mx-auto px-4 py-4 sm:px-6 lg:px-10 relative z-10">
-            <div className="flex items-center justify-between gap-4 lg:gap-8">
-              {/* CENTER: Logos side by side */}
+            <div className="flex items-center justify-between gap-4 lg:gap-6">
+              {/* LEFT: Logos side by side */}
               <motion.div
                 className="flex-shrink-0"
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -491,16 +633,19 @@ export default function Navbar() {
                 </Link>
               </motion.div>
 
+              {/* INLINE NAV — parent items in header (xl+ only) with animated child cards on hover */}
+              <DesktopNav pathname={pathname} />
+
               {/* RIGHT: Actions */}
               <motion.div
-                className="flex items-center gap-3 sm:gap-5 flex-1 justify-end min-w-0"
+                className="flex items-center gap-3 sm:gap-4 flex-shrink-0"
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <Link
                   href="/"
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-ink/70 hover:text-ink transition-all hover:scale-110"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110"
                   aria-label="Home"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
@@ -509,7 +654,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={() => setShowSearchPopup(true)}
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-ink/70 hover:text-ink transition-all hover:scale-110 hover:rotate-6"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110 hover:rotate-6"
                   aria-label="Open search"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
@@ -518,7 +663,7 @@ export default function Navbar() {
                 </button>
                 <motion.button
                   onClick={() => setIsOpen(true)}
-                  className="relative flex items-center gap-0 sm:gap-3 bg-ink text-white p-2.5 sm:px-6 sm:py-3 rounded-full sm:rounded-none overflow-hidden group"
+                  className="xl:hidden relative flex items-center gap-0 sm:gap-3 bg-ink text-white p-2.5 sm:px-6 sm:py-3 rounded-full sm:rounded-none overflow-hidden group"
                   aria-label="Open menu"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}

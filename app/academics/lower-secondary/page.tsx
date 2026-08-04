@@ -9,12 +9,17 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, de
 const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
 
 const subjects = [
-  { group: "Core", items: ["English", "English as a Second Language", "Mathematics", "Science"], color: "crimson" },
-  { group: "Humanities", items: ["Geography", "History", "Global Perspectives"], color: "mauve" },
-  { group: "Languages", items: ["French", "Spanish", "German", "Mandarin", "Hindi"], color: "navy" },
-  { group: "Creative", items: ["Art & Design", "Music", "Drama"], color: "royal-blue" },
+  // { group: "Core", items: ["English", "English as a Second Language", "Mathematics", "Science"], color: "crimson" },
+  { group: "Core", items: ["English as a Second Language", "Mathematics", "Science"], color: "crimson" },
+  // { group: "Humanities", items: ["Geography", "History", "Global Perspectives"], color: "mauve" },
+  { group: "Humanities", items: ["History"], color: "mauve" },
+  // { group: "Languages", items: ["French", "Spanish", "German", "Mandarin", "Hindi"], color: "navy" },
+  { group: "Languages", items: ["French", "Hindi"], color: "navy" },
+  // { group: "Creative", items: ["Art & Design", "Music", "Drama"], color: "royal-blue" },
+  { group: "Creative", items: ["Music", "Drama"], color: "royal-blue" },
   { group: "Digital", items: ["Computing & Digital Literacy"], color: "crimson" },
-  { group: "Wellbeing", items: ["Physical Education", "Wellbeing"], color: "navy" },
+  // { group: "Wellbeing", items: ["Physical Education", "Wellbeing"], color: "navy" },
+  { group: "Wellbeing", items: ["Sports", "Wellbeing"], color: "navy" },
 ];
 
 const features = [

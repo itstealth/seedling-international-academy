@@ -21,7 +21,7 @@ const assessmentPillars = [
     ),
     title: "Reliability",
     desc: "Every assessment is designed to measure what it claims to measure — consistently, fairly and without bias — so that every grade a Seedling student earns is one they can stand on.",
-    color: "crimson",
+    color: "red",
   },
   {
     icon: (
@@ -31,7 +31,7 @@ const assessmentPillars = [
     ),
     title: "Validity",
     desc: "Tasks mirror real skills and understanding — not memorisation tricks. Students are assessed on the abilities they will actually need at university, in the workplace and in life.",
-    color: "navy",
+    color: "blue",
   },
   {
     icon: (
@@ -41,7 +41,7 @@ const assessmentPillars = [
     ),
     title: "Progression",
     desc: "Marks are tracked over time. We do not just see where a student is today — we look at how far they have come, and what they are ready for next.",
-    color: "mauve",
+    color: "green",
   },
   {
     icon: (
@@ -51,7 +51,7 @@ const assessmentPillars = [
     ),
     title: "Transparency",
     desc: "Students and parents see exactly what is being assessed, how it is being marked, and what the next steps are. There are no surprises at Seedling.",
-    color: "royal-blue",
+    color: "purple",
   },
 ];
 
@@ -116,11 +116,31 @@ const reportingTouchpoints = [
   },
 ];
 
-const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
+const colorMap: Record<string, { glass: string; text: string; border: string; ring: string }> = {
+  red: {
+    glass: "bg-red-500/30 backdrop-blur-xl",
+    text: "text-red-700",
+    border: "border-red-500/50",
+    ring: "ring-red-500/20",
+  },
+  blue: {
+    glass: "bg-blue-500/30 backdrop-blur-xl",
+    text: "text-blue-700",
+    border: "border-blue-500/50",
+    ring: "ring-blue-500/20",
+  },
+  green: {
+    glass: "bg-green-500/30 backdrop-blur-xl",
+    text: "text-green-700",
+    border: "border-green-500/50",
+    ring: "ring-green-500/20",
+  },
+  purple: {
+    glass: "bg-purple-500/30 backdrop-blur-xl",
+    text: "text-purple-700",
+    border: "border-purple-500/50",
+    ring: "ring-purple-500/20",
+  },
 };
 
 export default function OurStandardsPage(): React.JSX.Element {
@@ -166,9 +186,10 @@ export default function OurStandardsPage(): React.JSX.Element {
               return (
                 <div
                   key={p.title}
-                  className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 border ${c.border} hover:-translate-y-1`}
+                  className={`group relative rounded-2xl p-7 transition-all duration-500 border ${c.glass} ${c.border} hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 ring-1 ${c.ring}`}
+                  style={{ boxShadow: "0 10px 40px -20px rgba(0,0,0,0.08)" }}
                 >
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-white/90 backdrop-blur-md border ${c.border} ${c.text} group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
                     {p.icon}
                   </div>
                   <h3 className="font-playfair text-2xl font-semibold mb-3 text-ink">{p.title}</h3>
@@ -195,8 +216,8 @@ export default function OurStandardsPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
             <p className="font-playfair text-[#133844]/70 text-xl mb-3">Our Awarding Standards</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              How a Seedling Grade is <em className="font-semibold text-[#133844]">Decided</em>
+            <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844] uppercase tracking-[0.04em]">
+              GRADING <em className="font-semibold text-[#133844]">STANDARDS</em>
             </h2>
             <p className="mt-6 text-[#133844]/75 text-lg max-w-2xl mx-auto font-dm leading-relaxed">
               Five principles govern every grade, mark and rank our school issues — at every stage from the Early Years through Cambridge Advanced.
@@ -265,7 +286,7 @@ export default function OurStandardsPage(): React.JSX.Element {
       </section>
 
       {/* ═══ PULL QUOTE ═══ */}
-      <section className="relative py-14 md:py-20 px-5 sm:px-6 overflow-hidden bg-crimson">
+      {/* <section className="relative py-14 md:py-20 px-5 sm:px-6 overflow-hidden bg-crimson">
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <p className="font-playfair text-sand text-2xl mb-6 tracking-wide">Our Standard</p>
@@ -274,7 +295,7 @@ export default function OurStandardsPage(): React.JSX.Element {
           </blockquote>
           <p className="font-playfair text-lg text-sand">— Seedling Awarding Standards Charter</p>
         </div>
-      </section>
+      </section> */}
 
       {/* ═══ CLOSING CTA ═══ */}
       <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">

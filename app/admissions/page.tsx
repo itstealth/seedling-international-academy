@@ -79,13 +79,22 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 
 const whyUs = [
-  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses." },
-  { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education." },
-  { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Seedling International School values, globally recognised credentials." },
-  { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care." },
-  { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning." },
-  { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student." },
+  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses.", color: "red" },
+  { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education.", color: "blue" },
+  { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Seedling International School values, globally recognised credentials.", color: "green" },
+  { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care.", color: "purple" },
+  { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning.", color: "amber" },
+  { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student.", color: "rose" },
 ];
+
+const whyUsColorMap: Record<string, { glass: string; text: string; border: string; accent: string; iconBg: string }> = {
+  red:    { glass: "bg-red-500/15 backdrop-blur-xl",    text: "text-red-700",    border: "border-red-500/30",    accent: "bg-red-500",    iconBg: "bg-red-500/10" },
+  blue:   { glass: "bg-blue-500/15 backdrop-blur-xl",   text: "text-blue-700",   border: "border-blue-500/30",   accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
+  green:  { glass: "bg-green-500/15 backdrop-blur-xl",  text: "text-green-700",  border: "border-green-500/30",  accent: "bg-green-500",  iconBg: "bg-green-500/10" },
+  purple: { glass: "bg-purple-500/15 backdrop-blur-xl", text: "text-purple-700", border: "border-purple-500/30", accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
+  amber:  { glass: "bg-amber-500/15 backdrop-blur-xl",  text: "text-amber-700",  border: "border-amber-500/30",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
+  rose:   { glass: "bg-rose-500/15 backdrop-blur-xl",   text: "text-rose-700",   border: "border-rose-500/30",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
+};
 
 const steps = [
   {
@@ -662,20 +671,33 @@ export default function AdmissionsPage() {
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {whyUs.map((w, i) => (
-            <Reveal key={w.title} delay={i * 80}>
-              <div className="group bg-white border border-sand/20 rounded-3xl p-10 hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.1)] hover:-translate-y-2 transition-all duration-500 h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-sand/5 rounded-bl-full transition-transform duration-500 group-hover:scale-110" />
-                <span className="text-5xl mb-8 block transition-all duration-300">{w.icon}</span>
-                <h4 className="font-playfair text-2xl font-black text-ink mb-4 tracking-tight">{w.title}</h4>
-                <p className="text-text-light text-sm leading-[1.8] font-dm">{w.desc}</p>
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="w-10 h-0.5 bg-crimson transform origin-left transition-all duration-500 group-hover:w-16" />
-                  <span className="text-crimson text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-500">Excellence</span>
+          {whyUs.map((w, i) => {
+            const c = whyUsColorMap[w.color];
+            return (
+              <Reveal key={w.title} delay={i * 80}>
+                <div className={`group rounded-3xl p-10 border ${c.glass} ${c.border} hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.15)] hover:-translate-y-2 transition-all duration-500 h-full relative overflow-hidden`}>
+                  {/* Decorative color blob */}
+                  <div className={`absolute -top-12 -right-12 w-32 h-32 ${c.iconBg} rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125`} />
+                  <div className={`absolute top-0 right-0 w-24 h-24 ${c.iconBg} rounded-bl-full transition-transform duration-500 group-hover:scale-110`} />
+
+                  {/* Icon */}
+                  <div className={`relative w-16 h-16 rounded-2xl ${c.iconBg} ${c.text} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                    <span className="text-3xl">{w.icon}</span>
+                  </div>
+
+                  {/* Content */}
+                  <h4 className={`font-playfair text-2xl font-black mb-4 tracking-tight ${c.text}`}>{w.title}</h4>
+                  <p className="text-text-light text-sm leading-[1.8] font-dm">{w.desc}</p>
+
+                  {/* Footer accent line */}
+                  <div className="mt-8 flex items-center gap-3">
+                    <div className={`w-10 h-0.5 ${c.accent} transform origin-left transition-all duration-500 group-hover:w-16`} />
+                    <span className={`${c.text} text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-500`}>Excellence</span>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 

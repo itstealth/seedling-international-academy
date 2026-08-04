@@ -1,73 +1,73 @@
 "use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 // Cambridge Learner Attributes card palette — cycled sequentially.
-const claPalette = [
-  { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
-  { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
-  { bg: "#028819", bgTo: "#015a0e" }, // Reflective
-  { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
-  { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
-];
+// const claPalette = [
+//   { bg: "#7e25e0", bgTo: "#5a1aa3" }, // Confident
+//   { bg: "#5165ec", bgTo: "#3849b0" }, // Responsible
+//   { bg: "#028819", bgTo: "#015a0e" }, // Reflective
+//   { bg: "#e04220", bgTo: "#a82e16" }, // Innovative
+//   { bg: "#8c0e24", bgTo: "#5e0a18" }, // Engaged
+// ];
 
-const values = [
-  {
-    title: "Confident",
-    desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum, they gain the confidence to face challenges and express their ideas with clarity and conviction.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Reflective",
-    desc: "We foster a reflective approach to learning, where students evaluate their work, identify strengths and weaknesses, and continuously make improvements — becoming their own best teachers.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Responsible",
-    desc: "Responsibility is a core value at Seedling. We encourage our students to take ownership of their learning and actions, preparing them to be ethical leaders and contributing members of society.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Innovative",
-    desc: "We encourage innovation in problem-solving and creative thinking. Seedling nurtures innovative thinking by allowing students to explore new ideas, embrace technology, and engage in hands-on learning experiences.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Engaged",
-    desc: "We ensure that our students are actively engaged in their learning journey — curious about new ideas, passionate about discovery, and prepared for success in a rapidly changing world.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Empowered",
-    desc: "We empower every learner to discover their own voice, take initiative, and grow into the confident, capable and compassionate human being they are uniquely meant to be.",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  },
-];
+// const values = [
+//   {
+//     title: "Confident",
+//     desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum, they gain the confidence to face challenges and express their ideas with clarity and conviction.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Reflective",
+//     desc: "We foster a reflective approach to learning, where students evaluate their work, identify strengths and weaknesses, and continuously make improvements — becoming their own best teachers.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Responsible",
+//     desc: "Responsibility is a core value at Seedling. We encourage our students to take ownership of their learning and actions, preparing them to be ethical leaders and contributing members of society.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Innovative",
+//     desc: "We encourage innovation in problem-solving and creative thinking. Seedling nurtures innovative thinking by allowing students to explore new ideas, embrace technology, and engage in hands-on learning experiences.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Engaged",
+//     desc: "We ensure that our students are actively engaged in their learning journey — curious about new ideas, passionate about discovery, and prepared for success in a rapidly changing world.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Empowered",
+//     desc: "We empower every learner to discover their own voice, take initiative, and grow into the confident, capable and compassionate human being they are uniquely meant to be.",
+//     icon: (
+//       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 const promises = [
   { num: "01", title: "Holistic Development", desc: "Intellectual, social, moral, spiritual, emotional and physical growth for every child." },
@@ -164,7 +164,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       </section>
 
       {/* ═══ VALUES ═══ */}
-      <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
+      {/* <section className="relative py-12 md:py-20 bg-[#d4f4ed] overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -223,7 +223,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ═══ OUR PROMISES ═══ */}
       <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">

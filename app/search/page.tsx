@@ -35,13 +35,13 @@ const SEARCH_INDEX: Array<{
     keywords: ["leadership", "principal", "director", "team", "staff"],
     category: "About",
   },
-  {
-    title: "Our Legacy",
-    description: "Three decades of nurturing excellence since 1993.",
-    href: "/about/legacy",
-    keywords: ["legacy", "1993", "history", "milestone"],
-    category: "About",
-  },
+  // {
+  //   title: "Our Legacy",
+  //   description: "Three decades of nurturing excellence since 1993.",
+  //   href: "/about/legacy",
+  //   keywords: ["legacy", "1993", "history", "milestone"],
+  //   category: "About",
+  // },
   {
     title: "Vision",
     description: "Our vision for the future of education at Seedling.",
@@ -111,20 +111,6 @@ const SEARCH_INDEX: Array<{
     href: "/admissions/fee-structure",
     keywords: ["fee", "fees", "structure", "cost", "tuition", "price"],
     category: "Admissions",
-  },
-  {
-    title: "Transport Facility",
-    description: "Safe and reliable school transport across Jaipur.",
-    href: "/transport-facility",
-    keywords: ["transport", "bus", "pickup", "drop", "facility", "vehicle"],
-    category: "Admissions",
-  },
-  {
-    title: "Results",
-    description: "Cambridge IGCSE and A-Level results year after year.",
-    href: "/result",
-    keywords: ["result", "results", "score", "toppers", "merit", "performance", "100 percent"],
-    category: "Academics",
   },
   {
     title: "News & Events",

@@ -237,12 +237,12 @@ export default function CambridgeEducationPage(): React.JSX.Element {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a
+            {/* <a
               href="/why-cambridge/path"
               className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
               Your Path, Your Way
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

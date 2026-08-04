@@ -93,10 +93,10 @@ export default function LeadershipPage() {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
-        title="Leadership Teams"
+        title="Seedling Leadership"
         position={70}
         badge="Anchored In Purpose. Driven By A Vision"
-        breadcrumbs={[{ label: "Leadership Teams" }]}
+        breadcrumbs={[{ label: "Seedling Leadership" }]}
       />
 
           <section className="py-10  bg-white">
@@ -370,6 +370,114 @@ export default function LeadershipPage() {
                 <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
               </div>
               <p className="text-navy text-sm font-dm mt-1">Principal, Seedling International School</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          JOINT DIRECTOR'S MESSAGE — MS. AKANSHA BAKSHI
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="self-start md:sticky md:top-28">
+            <Reveal>
+              <div className="relative">
+                <img
+                  src="/assets/img/akansha.jpeg"
+                  alt="Ms. Akansha Bakshi, Joint Director Seedling International School"
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Ms. Akansha Bakshi</p>
+                  <p className="text-purple-700 text-sm font-dm">Joint Director</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div>
+            <Reveal>
+              <p className="font-playfair text-purple-700 text-xl mb-4">Joint Director's Message</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
+                Building Futures,<br />
+                <em className="font-semibold">Empowering Generations</em>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                At Seedling International School, we believe that education is more than academics — it is the foundation upon which confident, compassionate and capable individuals are built. Every initiative we undertake is shaped by a single, enduring purpose: to prepare our students to lead meaningful lives in a rapidly evolving world.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                As Joint Director, I work closely with our leadership teams to ensure that the vision of our institution translates into a lived, breathing experience for every child who walks through our doors. From the classrooms to the playing fields, from the arts studio to the robotics lab — every space is designed to inspire curiosity, character and courage.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                We are equally committed to the partnership we share with parents. When schools and families work together with shared purpose, the impact on a child's growth is profound and lasting. It is this trust — between educators, parents and learners — that defines the Seedling way.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
+                Together, we will continue to raise the bar — nurturing young minds who are academically excellent, emotionally secure, ethically grounded and ready to shape a better tomorrow.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="mt-10 flex items-center gap-4">
+                <div className="w-12 h-px bg-purple-700" />
+                <span className="font-playfair text-xl text-text-light">Ms. Akansha Bakshi</span>
+              </div>
+              <p className="text-purple-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          JOINT DIRECTOR'S MESSAGE — MS. AISHWARYA BAKSHI
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-10 md:py-16 max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="self-start md:sticky md:top-28">
+            <Reveal>
+              <div className="relative">
+                <img
+                  src="/assets/img/Aishwarya-Bakshi.jpeg"
+                  alt="Ms. Aishwarya Bakshi, Joint Director Seedling International School"
+                  className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs border border-sand">
+                  <p className="font-playfair text-lg font-semibold text-text-base">Ms. Aishwarya Bakshi</p>
+                  <p className="text-blue-700 text-sm font-dm">Joint Director</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div>
+            <Reveal>
+              <p className="font-playfair text-blue-700 text-xl mb-4">Joint Director's Message</p>
+              <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
+                Learning with Heart,<br />
+                <em className="font-semibold">Leading with Purpose</em>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                Seedling International School stands for something deeply personal to us — the belief that every child deserves an education that sees them, hears them and challenges them to become their very best. As Joint Director, I am privileged to support the realisation of that belief across every aspect of school life.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                Our focus extends beyond academic results. We are intentional about building environments where students feel safe to take intellectual risks, where creativity is celebrated, where diversity is honoured, and where service to others is woven into the daily rhythm of school. These are the qualities that will define the leaders of tomorrow.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                I am deeply grateful to our educators, our students and our parent community for the trust they place in us. It is a privilege — and a responsibility — that we honour every single day, in every classroom, in every decision.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
+                As we look to the future, our commitment remains unchanged: to light the spark of curiosity in every child, to strengthen the values that hold them steady, and to equip them to lead lives of purpose, integrity and impact.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="mt-10 flex items-center gap-4">
+                <div className="w-12 h-px bg-blue-700" />
+                <span className="font-playfair text-xl text-text-light">Ms. Aishwarya Bakshi</span>
+              </div>
+              <p className="text-blue-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
             </Reveal>
           </div>
         </div>
