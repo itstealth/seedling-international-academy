@@ -9,15 +9,6 @@ const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.02 } } };
 const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
 
-const highlights = [
-  { title: "Jawahar Nagar Campus", desc: "Our flagship campus in the heart of Jaipur — a 5-acre green campus serving the SIA community for over three decades.", icon: "🌳", color: "crimson" },
-  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels.", icon: "📚", color: "navy" },
-  { title: "Experienced Faculty", desc: "Trained Cambridge educators with a 20:1 student-to-teacher ratio and personalised attention for every learner.", icon: "👩‍🏫", color: "mauve" },
-  { title: "Holistic Campus Life", desc: "Sports, performing arts, clubs, and community service — a Seedling student grows in every dimension.", icon: "🎨", color: "royal-blue" },
-  { title: "Safe & Nurturing", desc: "A secure campus with trained counsellors, medical support, and a culture of care that puts student well-being first.", icon: "❤️", color: "crimson" },
-  { title: "Strong Alumni Network", desc: "5,000+ Seedling alumni across 50+ nations — proof that a Seedling education travels.", icon: "🌍", color: "navy" },
-];
-
 const facilities = [
   { name: "Modern Classrooms", desc: "Smart classrooms with AV, ergonomic furniture and natural light." },
   { name: "Science Labs", desc: "Dedicated Physics, Chemistry, Biology and Computer Science laboratories." },
@@ -33,13 +24,6 @@ const stats = [
   { value: "5 Acres", label: "Green Campus" },
   { value: "100%", label: "Cambridge Results" },
 ];
-
-const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
-};
 
 export default function SIAPage(): React.JSX.Element {
   return (
@@ -74,32 +58,7 @@ export default function SIAPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="relative py-12 md:py-20 bg-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-mauve/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-sand/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl mb-3">What Makes SIA Special</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Six <em className="font-semibold text-navy">Pillars</em> of the SIA Experience
-            </h2>
-          </motion.div>
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {highlights.map((h) => {
-              const c = colorMap[h.color];
-              return (
-                <motion.div key={h.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border}`}>
-                  <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{h.icon}</div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{h.title}</h3>
-                  <p className="text-text-light text-sm leading-[1.85] font-dm">{h.desc}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
+      {/* Six Pillars removed — shared component retained for SMIA */}
 
       {/* Facilities */}
       <section className="relative py-12 md:py-20 bg-navy-light/40 overflow-hidden">

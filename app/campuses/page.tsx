@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import SixPillars from "@/components/campus/SixPillars";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
@@ -24,7 +25,7 @@ type Campus = {
   studentTeacher: string;
   campusSize: string;
   results: string;
-  highlights: { title: string; desc: string; icon: string; color: "crimson" | "navy" | "mauve" | "royal-blue" }[];
+  // highlights: { title: string; desc: string; icon: string; color: "crimson" | "navy" | "mauve" | "royal-blue" }[];
   facilities: { name: string; desc: string }[];
   address: string;
   phones: { label: string; value: string; tel: string }[];
@@ -58,14 +59,14 @@ const campuses: Campus[] = [
     results: "100%",
     tagline: "Where Cambridge meets three decades of Seedling.",
     motto: "Holistic. Joyful. Rigorous.",
-    highlights: [
-      { title: "Jawahar Nagar Campus", desc: "Our flagship campus in the heart of Jaipur — a 5-acre green campus serving the SIA community for over three decades.", icon: "🌳", color: "crimson" },
-      { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels.", icon: "📚", color: "navy" },
-      { title: "Experienced Faculty", desc: "Trained Cambridge educators with personalised attention and a strong student well-being programme.", icon: "👩‍🏫", color: "mauve" },
-      { title: "Holistic Campus Life", desc: "Sports, performing arts, clubs, and community service — a Seedling student grows in every dimension.", icon: "🎨", color: "royal-blue" },
-      { title: "Safe & Nurturing", desc: "A secure campus with trained counsellors, medical support, and a culture of care that puts well-being first.", icon: "❤️", color: "crimson" },
-      { title: "Strong Alumni Network", desc: "5,000+ Seedling alumni across 50+ nations — proof that a Seedling education travels.", icon: "🌍", color: "navy" },
-    ],
+    // highlights: [
+    //   { title: "Jawahar Nagar Campus", desc: "Our flagship campus in the heart of Jaipur — a 5-acre green campus serving the SIA community for over three decades.", icon: "🌳", color: "crimson" },
+    //   { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels.", icon: "📚", color: "navy" },
+    //   { title: "Experienced Faculty", desc: "Trained Cambridge educators with personalised attention and a strong student well-being programme.", icon: "👩‍🏫", color: "mauve" },
+    //   { title: "Holistic Campus Life", desc: "Sports, performing arts, clubs, and community service — a Seedling student grows in every dimension.", icon: "🎨", color: "royal-blue" },
+    //   { title: "Safe & Nurturing", desc: "A secure campus with trained counsellors, medical support, and a culture of care that puts well-being first.", icon: "❤️", color: "crimson" },
+    //   { title: "Strong Alumni Network", desc: "5,000+ Seedling alumni across 50+ nations — proof that a Seedling education travels.", icon: "🌍", color: "navy" },
+    // ],
     facilities: [
       { name: "Modern Classrooms", desc: "Smart classrooms with AV, ergonomic furniture and natural light." },
       { name: "Science Labs", desc: "Dedicated Physics, Chemistry, Biology and Computer Science laboratories." },
@@ -98,14 +99,14 @@ const campuses: Campus[] = [
     results: "100%",
     tagline: "Modern facilities. Timeless Seedling values.",
     motto: "Vibrant. Connected. Forward-looking.",
-    highlights: [
-      { title: "Durgapura Campus", desc: "Our second Seedling campus — serving families across central Jaipur with the same Cambridge excellence as SIA.", icon: "🏛️", color: "crimson" },
-      { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — same world-class standards.", icon: "📚", color: "navy" },
-      { title: "Modern Facilities", desc: "Newly built spaces, smart classrooms, dedicated STEM labs and vibrant arts and sports zones.", icon: "🏗️", color: "mauve" },
-      { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service.", icon: "🎭", color: "royal-blue" },
-      { title: "Student Well-being", desc: "Trained counsellors, mentors, and a culture of care that prioritises every child's emotional and physical health.", icon: "❤️", color: "crimson" },
-      { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades and university placements.", icon: "🏆", color: "navy" },
-    ],
+    // highlights: [
+    //   { title: "Durgapura Campus", desc: "Our second Seedling campus — serving families across central Jaipur with the same Cambridge excellence as SIA.", icon: "🏛️", color: "crimson" },
+    //   { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — same world-class standards.", icon: "📚", color: "navy" },
+    //   { title: "Modern Facilities", desc: "Newly built spaces, smart classrooms, dedicated STEM labs and vibrant arts and sports zones.", icon: "🏗️", color: "mauve" },
+    //   { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service.", icon: "🎭", color: "royal-blue" },
+    //   { title: "Student Well-being", desc: "Trained counsellors, mentors, and a culture of care that prioritises every child's emotional and physical health.", icon: "❤️", color: "crimson" },
+    //   { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades and university placements.", icon: "🏆", color: "navy" },
+    // ],
     facilities: [
       { name: "Smart Classrooms", desc: "Modern AV-equipped classrooms with interactive whiteboards and ergonomic furniture." },
       { name: "STEM Labs", desc: "Purpose-built Physics, Chemistry, Biology and Robotics laboratories." },
@@ -203,25 +204,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
           </motion.div>
         </div>
 
-        {/* Highlights */}
-        <motion.div className="text-center mb-8 md:mb-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-          <p className="font-playfair text-navy text-xl mb-2">What Makes {campus.shortName} Special</p>
-          <h3 className="font-playfair text-3xl md:text-4xl font-light text-ink">
-            Six <em className="font-semibold text-navy">Pillars</em>
-          </h3>
-        </motion.div>
-        <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-14 md:mb-20" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-          {campus.highlights.map((h) => {
-            const c = colorMap[h.color];
-            return (
-              <motion.div key={h.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border ${c.border}`}>
-                <div className="text-4xl mb-3 transition-transform duration-300 group-hover:scale-110">{h.icon}</div>
-                <h4 className="font-playfair text-lg font-semibold mb-2 text-ink">{h.title}</h4>
-                <p className="text-text-light text-sm leading-[1.85] font-dm">{h.desc}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        {/* Six Pillars — moved out to a single shared section, rendered once below */}
 
         {/* Facilities + Map split */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -377,6 +360,9 @@ export default function CampusesPage(): React.JSX.Element {
       {campuses.map((campus, i) => (
         <CampusBlock key={campus.id} campus={campus} index={i} />
       ))}
+
+      {/* Shared Six Pillars — one common section for both campuses */}
+      <SixPillars />
 
       {/* Closing CTA */}
       <motion.section

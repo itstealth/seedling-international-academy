@@ -2,20 +2,12 @@
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
+import SixPillars from "@/components/campus/SixPillars";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.02 } } };
 const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
-
-const highlights = [
-  { title: "Durgapura Campus", desc: "Our second Seedling campus — serving families across central Jaipur with the same Cambridge excellence as SIA.", icon: "🏛️", color: "crimson" },
-  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — same world-class standards.", icon: "📚", color: "navy" },
-  { title: "Modern Facilities", desc: "Newly built spaces, smart classrooms, dedicated STEM labs and vibrant arts and sports zones.", icon: "🏗️", color: "mauve" },
-  { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service.", icon: "🎭", color: "royal-blue" },
-  { title: "Student Well-being", desc: "Trained counsellors, mentors, and a culture of care that prioritises every child's emotional and physical health.", icon: "❤️", color: "crimson" },
-  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades and university placements.", icon: "🏆", color: "navy" },
-];
 
 const facilities = [
   { name: "Smart Classrooms", desc: "Modern AV-equipped classrooms with interactive whiteboards and ergonomic furniture." },
@@ -32,13 +24,6 @@ const stats = [
   { value: "Modern", label: "Campus" },
   { value: "100%", label: "Cambridge Results" },
 ];
-
-const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
-};
 
 export default function SMIAPage(): React.JSX.Element {
   return (
@@ -73,32 +58,8 @@ export default function SMIAPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="relative py-12 md:py-20 bg-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-mauve/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-sand/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl mb-3">What Makes SMIA Special</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Six <em className="font-semibold text-navy">Pillars</em> of the SMIA Experience
-            </h2>
-          </motion.div>
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {highlights.map((h) => {
-              const c = colorMap[h.color];
-              return (
-                <motion.div key={h.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border}`}>
-                  <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{h.icon}</div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{h.title}</h3>
-                  <p className="text-text-light text-sm leading-[1.85] font-dm">{h.desc}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
+      {/* Highlights — shared Six Pillars section */}
+      <SixPillars />
 
       {/* Facilities */}
       <section className="relative py-12 md:py-20 bg-navy-light/40 overflow-hidden">
