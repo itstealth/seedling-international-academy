@@ -8,19 +8,21 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, de
 const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
 
 const pillars = [
-  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels, the same world-class standards across both campuses.", icon: "📚", color: "crimson" },
-  { title: "Experienced Faculty", desc: "Trained Cambridge educators with a 20:1 student-to-teacher ratio and personalised attention for every learner at both SIA and SMIA.", icon: "👩‍🏫", color: "navy" },
-  { title: "Modern Facilities", desc: "Smart classrooms, dedicated STEM labs, library, performing arts spaces, and multi-sport zones — purpose-built for deep, joyful learning.", icon: "🏛️", color: "mauve" },
-  { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service shape the complete learner.", icon: "🎨", color: "royal-blue" },
-  { title: "Safe & Nurturing", desc: "Secure campuses with trained counsellors, mentors, and a culture of care that puts every child's emotional and physical well-being first.", icon: "❤️", color: "crimson" },
-  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network across 50+ nations.", icon: "🏆", color: "navy" },
+  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels, the same world-class standards across both campuses.", icon: "📚", color: "red" },
+  { title: "Experienced Faculty", desc: "Trained Cambridge educators with a 20:1 student-to-teacher ratio and personalised attention for every learner at both SIA and SMIA.", icon: "👩‍🏫", color: "blue" },
+  { title: "Modern Facilities", desc: "Smart classrooms, dedicated STEM labs, library, performing arts spaces, and multi-sport zones — purpose-built for deep, joyful learning.", icon: "🏛️", color: "green" },
+  { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service shape the complete learner.", icon: "🎨", color: "purple" },
+  { title: "Safe & Nurturing", desc: "Secure campuses with trained counsellors, mentors, and a culture of care that puts every child's emotional and physical well-being first.", icon: "❤️", color: "amber" },
+  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network across 50+ nations.", icon: "🏆", color: "rose" },
 ];
 
-const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
+const colorMap: Record<string, { glass: string; text: string; border: string; accent: string; iconBg: string }> = {
+  red:    { glass: "bg-red-500/15 backdrop-blur-xl",    text: "text-red-700",    border: "border-red-500/30",    accent: "bg-red-500",    iconBg: "bg-red-500/10" },
+  blue:   { glass: "bg-blue-500/15 backdrop-blur-xl",   text: "text-blue-700",   border: "border-blue-500/30",   accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
+  green:  { glass: "bg-green-500/15 backdrop-blur-xl",  text: "text-green-700",  border: "border-green-500/30",  accent: "bg-green-500",  iconBg: "bg-green-500/10" },
+  purple: { glass: "bg-purple-500/15 backdrop-blur-xl", text: "text-purple-700", border: "border-purple-500/30", accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
+  amber:  { glass: "bg-amber-500/15 backdrop-blur-xl",  text: "text-amber-700",  border: "border-amber-500/30",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
+  rose:   { glass: "bg-rose-500/15 backdrop-blur-xl",   text: "text-rose-700",   border: "border-rose-500/30",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
 };
 
 export default function SixPillars() {
@@ -40,10 +42,24 @@ export default function SixPillars() {
           {pillars.map((p) => {
             const c = colorMap[p.color];
             return (
-              <motion.div key={p.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border}`}>
-                <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{p.icon}</div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{p.title}</h3>
+              <motion.div key={p.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group rounded-2xl p-7 border ${c.glass} ${c.border} hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.15)] relative overflow-hidden`}>
+                {/* Decorative color blob */}
+                <div className={`absolute -top-12 -right-12 w-32 h-32 ${c.iconBg} rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125`} />
+                <div className={`absolute top-0 right-0 w-24 h-24 ${c.iconBg} rounded-bl-full transition-transform duration-500 group-hover:scale-110`} />
+
+                {/* Icon */}
+                <div className={`relative w-16 h-16 rounded-2xl ${c.iconBg} ${c.text} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500`}>
+                  <span className="text-3xl">{p.icon}</span>
+                </div>
+
+                {/* Content */}
+                <h3 className={`font-playfair text-xl font-semibold mb-3 ${c.text}`}>{p.title}</h3>
                 <p className="text-text-light text-sm leading-[1.85] font-dm">{p.desc}</p>
+
+                {/* Footer accent line */}
+                <div className="mt-6 flex items-center gap-3">
+                  <div className={`w-10 h-0.5 ${c.accent} transform origin-left transition-all duration-500 group-hover:w-16`} />
+                </div>
               </motion.div>
             );
           })}
