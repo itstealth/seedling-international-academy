@@ -473,10 +473,10 @@ export default function AdmissionsPage() {
       </section> */}
 
       {/* STATS BAND — highlighted with larger bold text */}
-      <section className="bg-[#d4f4ed] text-[#133844] py-14 md:py-20 relative overflow-hidden">
+      <section className="bg-[#d4f4ed] text-[#133844] py-8 md:py-10 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
             {[
               { value: "10k+", label: "Students" },
               { value: "20:1", label: "Student–Teacher Ratio" },
@@ -486,8 +486,8 @@ export default function AdmissionsPage() {
               { value: "1993", label: "Year Established" },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
-                <p className="font-playfair text-5xl md:text-6xl font-black text-[#133844] mb-2 leading-none">{s.value}</p>
-                <p className="text-[#133844]/50 text-[10px] md:text-[11px] font-black tracking-[0.25em] uppercase">{s.label}</p>
+                <p className="font-playfair text-5xl md:text-6xl font-black text-[#062125] mb-2 leading-none">{s.value}</p>
+                <p className="text-[#133844]/90 text-[10px] md:text-[11px] font-black tracking-[0.25em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -564,9 +564,18 @@ export default function AdmissionsPage() {
 
           {/* Right — Form */}
           <Reveal delay={100}>
-            <div className="bg-white border border-sand/30 rounded-3xl p-10 shadow-sm">
-              <h3 className="font-playfair text-2xl font-black text-ink mb-2 tracking-tight">Online Admission Inquiry</h3>
-              <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
+            <div className="bg-pathway-blue-bg border-2 border-blue-700 rounded-3xl overflow-hidden shadow-xl">
+              {/* Header band */}
+              <div className="relative bg-blue-700 px-6 py-5 text-white">
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                <h3 className="relative z-10 font-playfair text-xl font-black text-white pr-10">
+                  Online Admission Inquiry
+                </h3>
+              </div>
+
+              {/* Body */}
+              <div className="p-7 md:p-10">
+                <p className="text-[#133844] text-sm font-dm mb-6 font-medium">Fill in the form below and our team will get back to you.</p>
 
               <form onSubmit={handleFormSubmit} className="space-y-5">
                 <div>
@@ -644,10 +653,11 @@ export default function AdmissionsPage() {
                   {formErrors.message && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.message}</p>}
                 </div>
 
-                <button type="submit" disabled={submitting} className="w-full bg-crimson hover:bg-crimson-dark disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
+                <button type="submit" disabled={submitting} className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
                   {submitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
               </form>
+              </div>
             </div>
           </Reveal>
         </div>

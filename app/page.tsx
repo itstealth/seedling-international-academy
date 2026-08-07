@@ -377,7 +377,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               },
             ].map((campus, i) => {
               const campusBgs = ["bg-blue-100", "bg-red-100"];
-              const campusBorders = ["border-blue-700", "border-red-700"];
+              const campusBorders = ["border-blue-200", "border-red-200"];
               return (
               <motion.div
                 key={campus.name}
@@ -843,6 +843,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 quote: "I came to Seedling in Grade 9 and immediately felt at home. Today I'm an A-Level topper and a published debater. This place changed my life.",
                 name: "Isha Rathore",
                 role: "Student — Grade 12",
+                bg: "bg-purple-700",
+                border: "border-purple-700",
+                accentText: "text-white",
+                shadow: "shadow-2xl shadow-purple-700/60",
               },
               {
                 label: "PARENT",
@@ -850,6 +854,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 quote: "Seedling International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
                 name: "Vatan Parnami & Anku Sapra",
                 role: "Parents",
+                bg: "bg-blue-700",
+                border: "border-blue-700",
+                accentText: "text-white",
+                shadow: "shadow-2xl shadow-blue-700/60",
               },
               {
                 label: "FACULTY",
@@ -857,10 +865,12 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 quote: "As an educator myself, I'm amazed by Seedling's teaching standards. The faculty genuinely cares, and the leadership is always open to dialogue and growth.",
                 name: "Dr. Neha Kapoor",
                 role: "Educator & Parent",
+                bg: "bg-green-700",
+                border: "border-green-700",
+                accentText: "text-white",
+                shadow: "shadow-2xl shadow-green-700/60",
               },
             ].map((card, i) => {
-              const testBgs = ["bg-red-100", "bg-purple-100", "bg-blue-100"];
-              const testBorders = ["border-red-700", "border-purple-700", "border-blue-700"];
               return (
               <>
               {card.label === "FACULTY" ? (
@@ -872,10 +882,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -6 }}
-                  className={`group ${testBgs[i]} border-2 ${testBorders[i]} rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden cursor-pointer h-full`}
+                  className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer h-full`}
                 >
                 {/* Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-sand/60 m-3 mb-0">
+                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
                   <img
                     src={card.img}
                     alt={card.label}
@@ -885,24 +895,24 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
                 {/* Body */}
                 <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
-                  <h3 className="font-playfair text-xl sm:text-2xl tracking-[0.15em] text-text-light font-light mb-2">
+                  <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
                     {card.label}
                   </h3>
-                  <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
+                  <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
 
-                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6">
+                  <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
                     &ldquo;{card.quote}&rdquo;
                   </blockquote>
 
-                  <div className="pt-5 border-t border-sand/40 inline-flex flex-col items-center min-w-[180px]">
-                    <p className="font-playfair text-base font-semibold text-[#133844] leading-tight">
+                  <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
+                    <p className="font-playfair text-base font-semibold text-white leading-tight">
                       {card.name}
                     </p>
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
                       {card.role}
                     </p>
                     {card.label === "FACULTY" && (
-                      <span className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[#133844] font-semibold underline underline-offset-4">
+                      <span className="mt-3 text-[10px] uppercase tracking-[0.18em] text-white font-semibold underline underline-offset-4">
                         Read full testimonial →
                       </span>
                     )}
@@ -918,10 +928,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ y: -6 }}
-                className={`group ${testBgs[i]} border-2 ${testBorders[i]} rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden`}
+                className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden`}
               >
                 {/* Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-sand/60 m-3 mb-0">
+                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
                   <img
                     src={card.img}
                     alt={card.label}
@@ -931,19 +941,19 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
                 {/* Body */}
                 <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
-                  <h3 className="font-playfair text-xl sm:text-2xl tracking-[0.15em] text-text-light font-light mb-2">
+                  <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
                     {card.label}
                   </h3>
-                  <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
-                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6">
+                  <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
+                  <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
                     &ldquo;{card.quote}&rdquo;
                   </blockquote>
 
-                  <div className="pt-5 border-t border-sand/40 inline-flex flex-col items-center min-w-[180px]">
-                    <p className="font-playfair text-base font-semibold text-[#133844] leading-tight">
+                  <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
+                    <p className="font-playfair text-base font-semibold text-white leading-tight">
                       {card.name}
                     </p>
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
                       {card.role}
                     </p>
                   </div>
@@ -1102,14 +1112,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </div>
             </a>
 
-            <div className="bg-red-100 rounded-[2.5rem] border border-red-700 p-5 md:p-7 flex flex-col justify-between">
+            <div className="bg-red-100 rounded-[2.5rem] border border-red-200 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
                   { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
                   { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
                 ].map(({ day, month, title, desc, url }, index) => (
-                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-700 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-200 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
                       <strong className="block text-xl font-playfair leading-none">{day}</strong>
                       <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
@@ -1217,22 +1227,26 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
               <div className="grid gap-6">
                 {infraData[activeTab].slice(1).map(({ img, alt, tag, title, desc }, idx) => {
-                  const infraBgs = ["bg-blue-100", "bg-red-100"];
-                  const infraBorders = ["border-blue-700", "border-red-700"];
+                  const infraPalette = [
+                    { bg: "bg-purple-700", border: "border-purple-700", accent: "text-white", shadow: "shadow-2xl shadow-purple-700/60" },
+                    { bg: "bg-blue-700", border: "border-blue-700", accent: "text-white", shadow: "shadow-2xl shadow-blue-700/60" },
+                    { bg: "bg-orange-700", border: "border-orange-700", accent: "text-white", shadow: "shadow-2xl shadow-orange-700/60" },
+                  ];
+                  const c = infraPalette[idx % infraPalette.length];
                   return (
                   <article
                     key={title}
-                    className={`group grid sm:grid-cols-[180px_1fr] ${infraBgs[idx]} rounded-[8px] overflow-hidden border ${infraBorders[idx]} hover:border-ink/25 transition-colors duration-300`}
+                    className={`group grid sm:grid-cols-[180px_1fr] ${c.bg} rounded-3xl overflow-hidden border-2 ${c.border} ${c.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500`}
                   >
                     <div className="h-52 sm:h-full min-h-[200px] overflow-hidden">
                       <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
                     <div className="p-6 flex flex-col justify-center">
-                      <span className="inline-block w-fit text-crimson text-[10px] font-bold tracking-widest uppercase mb-3 border-b border-crimson/30 pb-1">
+                      <span className="inline-block w-fit text-white text-[10px] font-bold tracking-widest uppercase mb-3 border-b border-white/30 pb-1">
                         {tag}
                       </span>
-                      <h3 className="font-playfair text-xl font-semibold text-ink mb-2 leading-tight">{title}</h3>
-                      <p className="text-[13px] text-ink-soft leading-relaxed font-light">{desc}</p>
+                      <h3 className="font-playfair text-xl font-semibold text-white mb-2 leading-tight">{title}</h3>
+                      <p className="text-[13px] text-white/85 leading-relaxed font-light">{desc}</p>
                     </div>
                   </article>
                   );
@@ -1271,7 +1285,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
 
-            <div className="bg-blue-100 border border-blue-700 p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
+            <div className="bg-blue-100 border border-blue-200 p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-ink mb-8">Admission Enquiry 2026–27</h3>
               <CallbackForm />

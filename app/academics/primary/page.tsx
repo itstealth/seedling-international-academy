@@ -71,24 +71,36 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
           </motion.div>
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {subjects.map((s, idx) => {
-              const c = colorMap[s.color];
-              const pastel = [
-                "bg-pathway-purple-bg border-pathway-purple-border",
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-green-bg border-pathway-green-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-              ][idx] || "bg-pathway-purple-bg border-pathway-purple-border";
+            {[
+              { group: "Languages", items: ["English", "Hindi", "French", "Sanskrit"], color: "purple" },
+              { group: "Sciences", items: ["Physics", "Chemistry", "Biology"], color: "blue" },
+              { group: "Mathematics", items: ["Algebra", "Geometry", "Calculus"], color: "green" },
+              { group: "Humanities", items: ["History", "Geography", "Civics"], color: "orange" },
+              { group: "Arts", items: ["Music", "Dance", "Visual Arts"], color: "red" },
+              { group: "Physical Education", items: ["Sports", "Yoga", "Athletics"], color: "purple" },
+            ].map((s, idx) => {
+              const palette = [
+                { bg: "bg-purple-700", border: "border-purple-700", dot: "bg-purple-300", shadow: "shadow-2xl shadow-purple-700/60" },
+                { bg: "bg-blue-700", border: "border-blue-700", dot: "bg-blue-300", shadow: "shadow-2xl shadow-blue-700/60" },
+                { bg: "bg-green-700", border: "border-green-700", dot: "bg-green-300", shadow: "shadow-2xl shadow-green-700/60" },
+                { bg: "bg-orange-700", border: "border-orange-700", dot: "bg-orange-300", shadow: "shadow-2xl shadow-orange-700/60" },
+                { bg: "bg-red-700", border: "border-red-700", dot: "bg-red-300", shadow: "shadow-2xl shadow-red-700/60" },
+              ];
+              const c = palette[idx % palette.length];
               return (
-                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} rounded-2xl p-6 shadow-sm hover:shadow-lg border`}>
+                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl p-6 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500 overflow-hidden`}>
+                  {/* Decorative blob */}
+                  <div className="absolute -top-10 -right-10 w-28 h-28 bg-white/15 rounded-full blur-2xl pointer-events-none" />
                   <div className="flex items-center gap-3 mb-4">
-                    <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-ink">{s.group}</h3>
+                    <span className={`w-2 h-2 rounded-full ${c.dot}`} />
+                    <h3 className="font-playfair text-lg font-semibold text-white">{s.group}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {s.items.map((i) => (<span key={i} className="text-xs font-medium text-text-light bg-white border border-sand/40 rounded-full px-3 py-1">{i}</span>))}
+                    {s.items.map((i) => (
+                      <span key={i} className="text-xs font-medium text-white bg-white/15 border border-white/30 rounded-full px-3 py-1">
+                        {i}
+                      </span>
+                    ))}
                   </div>
                 </motion.div>
               );
@@ -161,7 +173,21 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
         </div>
       </section>
 
-      <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+      <motion.section
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeUp}
+        transition={{ duration: 0.45, ease: EASE }}
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/classroom.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <p className="font-playfair text-[#133844] text-xl mb-4">Where Primary Leads</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">

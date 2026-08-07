@@ -93,7 +93,7 @@ const campuses: Campus[] = [
     heroImage: "/assets/Home/SMIA_collage_v3.webp",
     introHeadline: "Modern facilities. <em class='font-semibold text-navy'>Timeless Seedling values.</em>",
     introLead: "Seedling Modern International Academy (SMIA) at Durgapura brings the same globally benchmarked Cambridge education to central Jaipur — modern, vibrant and built for the next generation of learners.",
-    established: "2010",
+    established: "1993",
     studentTeacher: "20:1",
     campusSize: "Modern",
     results: "100%",
@@ -188,7 +188,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm mb-6">{campus.introLead}</p>
 
             {/* Stats row */}
-            <div className="grid grid-cols-2 gap-3 max-w-sm">
+            <div className="grid grid-cols-2 gap-4 max-w-2xl">
               {[
                 { v: campus.established, l: "Established", palette: "purple" },
                 { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },
@@ -202,9 +202,9 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                   orange: "bg-orange-100 border-orange-700",
                 };
                 return (
-                <div key={s.l} className={`${paletteMap[s.palette]} rounded-xl p-3 border shadow-sm`}>
-                  <p className="font-playfair text-xl font-semibold text-navy leading-tight">{s.v}</p>
-                  <p className="text-[10px] uppercase tracking-widest text-text-light font-dm mt-0.5">{s.l}</p>
+                <div key={s.l} className={`${paletteMap[s.palette]} rounded-2xl p-5 border-2 shadow-md hover:shadow-lg transition-all`}>
+                  <p className="font-playfair text-3xl md:text-4xl font-black text-navy leading-none mb-1.5">{s.v}</p>
+                  <p className="text-[11px] uppercase tracking-widest text-text-light font-dm font-semibold">{s.l}</p>
                 </div>
                 );
               })}
@@ -215,7 +215,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
         {/* Six Pillars — moved out to a single shared section, rendered once below */}
 
         {/* Facilities + Map split */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-2">The Campus</p>
             <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
@@ -239,14 +239,14 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.35, delay: i * 0.04, ease: EASE }}
-                  className={`flex gap-3 p-3 ${paletteClass} rounded-xl border`}
+                  className={`flex gap-4 p-4 ${paletteClass} rounded-2xl border-2`}
                 >
-                  <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                  <span className="size-9 rounded-xl bg-crimson text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="font-playfair text-sm font-semibold text-[#133844] leading-tight">{f.name}</p>
-                    <p className="text-xs text-text-light leading-relaxed font-dm">{f.desc}</p>
+                    <p className="font-playfair text-base font-semibold text-[#133844] leading-tight">{f.name}</p>
+                    <p className="text-[13px] text-text-light leading-relaxed font-dm">{f.desc}</p>
                   </div>
                 </motion.div>
                 );
@@ -277,7 +277,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               </a>
             </div>
 
-            <div className="rounded-[8px] overflow-hidden border border-sand/40 shadow-lg h-[280px]">
+            <div className={`rounded-2xl overflow-hidden border border-sand/40 shadow-lg ${campus.key === "smia" ? "h-[450px]" : "h-[330px]"}`}>
               <iframe
                 src={campus.mapEmbed}
                 width="100%"

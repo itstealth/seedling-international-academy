@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 
@@ -83,6 +84,39 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 };
 
 export default function CambridgeAdvancedPage(): React.JSX.Element {
+  const [activePathwayStep, setActivePathwayStep] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-advance every 3 seconds; loop back to 0 after last step
+  // Pause when user clicks a step
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setTimeout(() => {
+      setActivePathwayStep((prev) => (prev + 1) % pathwaySteps.length);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [activePathwayStep, isPaused]);
+
+  const handleStepClick = (i: number) => {
+    setActivePathwayStep(i);
+    setIsPaused(true);
+  };
+
+  const pathwaySteps = [
+    { num: "01", title: "Year 12", desc: "AS Level chosen subjects — 3 to 4 typically. Regular mock exams, IPQ planning, university shortlisting.", color: "purple" },
+    { num: "02", title: "Year 13", desc: "A2 continuation + AS-only subjects. Final Cambridge exams in May–June, IPQ submission.", color: "blue" },
+    { num: "03", title: "Summer", desc: "Results day in August. UCAS, Common App, Indian university applications all finalised.", color: "green" },
+    { num: "04", title: "University", desc: "Matriculation at a leading university — in India or abroad.", color: "orange" },
+  ];
+  const pathwayPalette = [
+    { bg: "bg-purple-700", border: "border-purple-700", text: "text-white", shadow: "shadow-2xl shadow-purple-700/60", ring: "ring-purple-300/40" },
+    { bg: "bg-blue-700", border: "border-blue-700", text: "text-white", shadow: "shadow-2xl shadow-blue-700/60", ring: "ring-blue-300/40" },
+    { bg: "bg-green-700", border: "border-green-700", text: "text-white", shadow: "shadow-2xl shadow-green-700/60", ring: "ring-green-300/40" },
+    { bg: "bg-orange-700", border: "border-orange-700", text: "text-white", shadow: "shadow-2xl shadow-orange-700/60", ring: "ring-orange-300/40" },
+  ];
+  const activeStep = pathwaySteps[activePathwayStep];
+  const activePalette = pathwayPalette[activePathwayStep];
+
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
@@ -203,51 +237,45 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             {[
               {
                 title: "Sciences",
-                headerBg: "bg-purple-700",
-                bg: "bg-purple-100",
+                bg: "bg-purple-700",
                 border: "border-purple-700",
                 items: ["Biology", "Chemistry", "Physics", "Marine Science", "Environmental Management", "Computer Science"],
-                footer: "Advanced scientific thinking and research",
+                shadow: "shadow-2xl shadow-purple-700/60",
               },
               {
                 title: "Mathematics & Further",
-                headerBg: "bg-blue-700",
-                bg: "bg-blue-100",
+                bg: "bg-blue-700",
                 border: "border-blue-700",
                 items: ["Mathematics", "Further Mathematics", "Statistics"],
-                footer: "From core to competition-level mathematics",
+                shadow: "shadow-2xl shadow-blue-700/60",
               },
               {
                 title: "Humanities",
-                headerBg: "bg-green-700",
-                bg: "bg-green-100",
+                bg: "bg-green-700",
                 border: "border-green-700",
                 items: ["English Literature", "English Language", "History", "Geography", "Religious Studies", "Sociology"],
-                footer: "Reading, writing, and rigorous inquiry",
+                shadow: "shadow-2xl shadow-green-700/60",
               },
               {
                 title: "Languages",
-                headerBg: "bg-orange-700",
-                bg: "bg-orange-100",
+                bg: "bg-orange-700",
                 border: "border-orange-700",
                 items: ["French", "Spanish", "German", "Hindi", "Urdu", "Mandarin Chinese"],
-                footer: "World languages, deep fluency",
+                shadow: "shadow-2xl shadow-orange-700/60",
               },
               {
                 title: "Business & Social Sciences",
-                headerBg: "bg-red-700",
-                bg: "bg-red-100",
+                bg: "bg-red-700",
                 border: "border-red-700",
                 items: ["Business", "Economics", "Accounting", "Psychology", "Global Perspectives & Research"],
-                footer: "Strategy, analysis, and human behaviour",
+                shadow: "shadow-2xl shadow-red-700/60",
               },
               {
                 title: "Creative & Vocational",
-                headerBg: "bg-purple-700",
-                bg: "bg-purple-100",
+                bg: "bg-purple-700",
                 border: "border-purple-700",
                 items: ["Art & Design", "Music", "Drama", "Media Studies", "Physical Education", "Design & Technology"],
-                footer: "Expressive, practical, and hands-on",
+                shadow: "shadow-2xl shadow-purple-700/60",
               },
             ].map((c) => (
               <motion.div
@@ -257,23 +285,15 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                 transition={{ duration: 0.4, ease: EASE }}
                 className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}
               >
-                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
-                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
-                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
-                    {c.title}
-                  </h3>
-                </div>
-                <div className="px-5 py-5">
+                <div className="relative z-10 p-6">
+                  <h3 className="font-playfair text-xl font-semibold text-white mb-4">{c.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {c.items.map((s) => (
-                      <span key={s} className="text-xs font-medium text-[#133844] bg-white border border-[#133844]/10 rounded-full px-3 py-1">
+                      <span key={s} className="text-xs font-medium text-white bg-white/15 border border-white/30 rounded-full px-3 py-1">
                         {s}
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
-                  {c.footer}
                 </div>
               </motion.div>
             ))}
@@ -301,31 +321,80 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
         </motion.div>
 
         <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          {destinations.map((d, idx) => {
-            const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][idx] || "bg-pathway-purple-bg border-pathway-purple-border";
+          {[
+            {
+              region: "India",
+              tagline: "Top Destinations",
+              items: ["IIT Delhi", "IIT Bombay", "IIT Madras", "NLSIU Bangalore", "St. Stephen's College", "Ashoka University"],
+              footer: "India's leading engineering, law & liberal arts colleges",
+            },
+            {
+              region: "United Kingdom",
+              tagline: "Top Destinations",
+              items: ["University of Oxford", "University of Cambridge", "Imperial College London", "LSE", "UCL", "University of Edinburgh"],
+              footer: "The gold standard of higher education",
+            },
+            {
+              region: "United States",
+              tagline: "Top Destinations",
+              items: ["Harvard University", "MIT", "Stanford", "Princeton", "Yale", "Columbia University"],
+              footer: "Ivy League & top research universities",
+            },
+            {
+              region: "Worldwide",
+              tagline: "Top Destinations",
+              items: ["NUS Singapore", "University of Melbourne", "TU Munich", "McGill", "University of Toronto", "Hong Kong University"],
+              footer: "Premier universities across continents",
+            },
+          ].map((d, idx) => {
+            const palette = [
+              { header: "bg-purple-700", border: "border-purple-700", body: "bg-purple-100", text: "text-[#133844]", dot: "bg-purple-700", accent: "text-purple-700" },
+              { header: "bg-blue-700", border: "border-blue-700", body: "bg-blue-100", text: "text-[#133844]", dot: "bg-blue-700", accent: "text-blue-700" },
+              { header: "bg-green-700", border: "border-green-700", body: "bg-green-100", text: "text-[#133844]", dot: "bg-green-700", accent: "text-green-700" },
+              { header: "bg-orange-700", border: "border-orange-700", body: "bg-orange-100", text: "text-[#133844]", dot: "bg-orange-700", accent: "text-orange-700" },
+            ];
+            const c = palette[idx % palette.length];
             return (
             <motion.div
               key={d.region}
               variants={cardRise}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               transition={{ duration: 0.4, ease: EASE }}
-              className={`${pastel} rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border`}
+              className={`group relative ${c.body} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
-              <h3 className="font-playfair text-lg font-semibold mb-4 text-ink">{d.region}</h3>
-              <ul className="space-y-2">
-                {d.items.map((uni) => (
-                  <li key={uni} className="text-sm text-text-light flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-crimson" />
-                    <span>{uni}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Header band */}
+              <div className={`relative ${c.header} px-5 py-4 text-white`}>
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                  {d.region}
+                </h3>
+              </div>
+
+              {/* Body */}
+              <div className="px-5 py-5">
+                <p className={`text-[11px] font-black uppercase tracking-wider ${c.accent} mb-3`}>
+                  {d.tagline}
+                </p>
+                <ul className="space-y-2.5 text-sm leading-snug">
+                  {d.items.map((uni) => (
+                    <li key={uni} className={`flex gap-2.5 ${c.text}`}>
+                      <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${c.dot}`} />
+                      <span>{uni}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Footer band */}
+              <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                {d.footer}
+              </div>
             </motion.div>
             );
           })}
@@ -353,34 +422,100 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           </motion.div>
 
           <div className="relative">
-            {/* Connecting line */}
-            <div className="absolute top-12 left-0 right-0 h-0.5 bg-sand/50 hidden md:block" />
+            {/* Stepper with progress bar */}
+            <div className="relative mb-14">
+              {/* Background progress line */}
+              <motion.div
+                className="absolute left-0 right-0 top-7 sm:top-9 h-1 rounded-full bg-sand/40"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: EASE }}
+                style={{ transformOrigin: "left" }}
+              />
+              {/* Active progress line — animates as user clicks */}
+              <motion.div
+                className="absolute left-0 top-7 sm:top-9 h-1 rounded-full bg-[#133844]"
+                initial={{ width: "0%" }}
+                animate={{ width: `${(activePathwayStep / (pathwaySteps.length - 1)) * 100}%` }}
+                transition={{ duration: 0.7, ease: EASE }}
+              />
 
-            <div className="grid md:grid-cols-4 gap-6 md:gap-4 relative">
-              {[
-                { num: "01", title: "Year 12", desc: "AS Level chosen subjects — 3 to 4 typically. Regular mock exams, IPQ planning, university shortlisting.", color: "crimson" },
-                { num: "02", title: "Year 13", desc: "A2 continuation + AS-only subjects. Final Cambridge exams in May–June, IPQ submission.", color: "navy" },
-                { num: "03", title: "Summer", desc: "Results day in August. UCAS, Common App, Indian university applications all finalised.", color: "mauve" },
-                { num: "04", title: "University", desc: "Matriculation at a leading university — in India or abroad.", color: "royal-blue" },
-              ].map((s, i) => {
-                const c = colorMap[s.color];
-                return (
-                  <motion.div
-                    key={s.num}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08, ease: EASE }}
-                    className="relative text-center"
-                  >
-                    <div className={`relative w-20 h-20 md:w-24 md:h-24 mx-auto mb-5 rounded-full ${c.bg} ${c.text} flex items-center justify-center font-playfair text-xl md:text-2xl font-semibold border-4 border-white shadow-lg`}>
-                      {s.num}
-                    </div>
-                    <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{s.title}</h3>
-                    <p className="text-text-light text-sm leading-[1.85] font-dm max-w-[220px] mx-auto">{s.desc}</p>
-                  </motion.div>
-                );
-              })}
+              {/* Step circles */}
+              <div className="relative z-10 grid grid-cols-4 gap-2 sm:gap-4">
+                {pathwaySteps.map((s, i) => {
+                  const active = i === activePathwayStep;
+                  const complete = i < activePathwayStep;
+                  return (
+                    <motion.button
+                      key={s.num}
+                      type="button"
+                      onClick={() => handleStepClick(i)}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.4, delay: i * 0.1, ease: EASE }}
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex flex-col items-center gap-3 text-center"
+                      aria-current={active ? "step" : undefined}
+                    >
+                      <motion.span
+                        animate={{
+                          scale: active ? 1.15 : 1,
+                        }}
+                        transition={{ duration: 0.4, ease: EASE }}
+                        className={`relative w-14 h-14 sm:w-18 sm:h-18 rounded-full flex items-center justify-center font-playfair text-base sm:text-xl font-black shadow-md transition-colors duration-500 ${active ? "bg-[#133844] text-white ring-4 sm:ring-8 ring-[#133844]/20" : complete ? "bg-[#133844] text-white" : "bg-white border-2 border-sand/40 text-[#133844]"}`}
+                      >
+                        {s.num}
+                      </motion.span>
+                      <span className={`hidden sm:block text-[10px] font-black uppercase tracking-[0.18em] font-dm transition-colors duration-300 ${active ? "text-[#133844]" : "text-text-light"}`}>
+                        Step
+                      </span>
+                    </motion.button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Active step content card — neutral colors */}
+            <motion.div
+              key={activeStep.num}
+              initial={{ opacity: 0, y: 20, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.45, ease: EASE }}
+              className="bg-white border-2 border-sand/30 rounded-3xl p-7 md:p-10 shadow-[0_28px_70px_-40px_rgba(10,31,58,0.25)]"
+            >
+              <div className="grid gap-6 md:grid-cols-[140px_1fr] md:items-center">
+                <div className="flex items-center gap-5 md:flex-col md:items-center md:text-center">
+                  <div className="w-20 h-20 rounded-2xl bg-off-white border-2 border-sand/30 flex items-center justify-center shadow-md">
+                    <span className="text-[#133844] font-playfair font-black text-2xl">{activeStep.num}</span>
+                  </div>
+                  <div>
+                    <p className="text-text-light text-xs font-black uppercase tracking-[0.24em] font-dm mb-2">
+                      Step {activeStep.num}
+                    </p>
+                    <h3 className="font-playfair text-3xl md:text-4xl font-black text-ink leading-tight">
+                      {activeStep.title}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm">
+                  {activeStep.desc}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Step labels */}
+            <div className="grid md:grid-cols-4 gap-3 mt-6">
+              {pathwaySteps.map((s, i) => (
+                <div
+                  key={s.num}
+                  className={`text-center text-[10px] font-black uppercase tracking-[0.18em] font-dm transition-colors duration-300 ${i === activePathwayStep ? "text-[#133844]" : "text-text-light"}`}
+                >
+                  {s.title}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -390,6 +525,13 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
       <motion.section
         className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/building-from-top.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeUp}

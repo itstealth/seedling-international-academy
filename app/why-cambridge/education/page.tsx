@@ -155,9 +155,9 @@ export default function CambridgeEducationPage(): React.JSX.Element {
                   }}
                 >
                   <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
-                  <p className="relative z-10 font-playfair text-4xl md:text-6xl font-semibold text-white leading-none mb-3">{s.value}</p>
+                  <p className="relative z-10 font-playfair text-5xl md:text-7xl font-black text-white leading-none mb-3">{s.value}</p>
                   <div className="relative z-10">
-                    <p className="font-playfair text-lg md:text-xl text-white font-semibold mb-2">{s.label}</p>
+                    <p className="font-playfair text-lg md:text-xl text-white font-black uppercase tracking-wider mb-2">{s.label}</p>
                     <p className="text-white/75 text-xs md:text-sm leading-relaxed font-dm">{s.sub}</p>
                   </div>
                 </motion.div>

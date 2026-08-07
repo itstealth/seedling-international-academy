@@ -89,69 +89,59 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
             {[
               {
                 title: "Sciences",
-                headerBg: "bg-purple-700",
-                bg: "bg-purple-100",
+                bg: "bg-purple-700",
                 border: "border-purple-700",
                 items: ["Biology", "Chemistry", "Physics", "Combined Science", "Marine Science", "Environmental Management", "Computer Science"],
-                footer: "Exploring the natural and digital worlds",
+                shadow: "shadow-2xl shadow-purple-700/60",
               },
               {
                 title: "Mathematics",
-                headerBg: "bg-blue-700",
-                bg: "bg-blue-100",
+                bg: "bg-blue-700",
                 border: "border-blue-700",
                 items: ["Mathematics A", "Mathematics B", "Additional Mathematics", "Statistics"],
-                footer: "From foundations to higher mathematics",
+                shadow: "shadow-2xl shadow-blue-700/60",
               },
               {
                 title: "Humanities",
-                headerBg: "bg-green-700",
-                bg: "bg-green-100",
+                bg: "bg-green-700",
                 border: "border-green-700",
                 items: ["English Language", "English Literature", "History", "Geography", "Global Perspectives", "Religious Studies", "Sociology", "Economics"],
-                footer: "Understanding people, society, and ideas",
+                shadow: "shadow-2xl shadow-green-700/60",
               },
               {
                 title: "Languages",
-                headerBg: "bg-orange-700",
-                bg: "bg-orange-100",
+                bg: "bg-orange-700",
                 border: "border-orange-700",
                 items: ["French", "Spanish", "German", "Hindi", "Urdu", "Mandarin Chinese", "Arabic"],
-                footer: "Fluency across global tongues",
+                shadow: "shadow-2xl shadow-orange-700/60",
               },
               {
                 title: "Business & Tech",
-                headerBg: "bg-red-700",
-                bg: "bg-red-100",
+                bg: "bg-red-700",
                 border: "border-red-700",
                 items: ["Business Studies", "Accounting", "Computer Science", "Information & Communication Technology", "Entrepreneurship"],
-                footer: "Skills for the modern economy",
+                shadow: "shadow-2xl shadow-red-700/60",
               },
               {
                 title: "Creative & Vocational",
-                headerBg: "bg-purple-700",
-                bg: "bg-purple-100",
+                bg: "bg-purple-700",
                 border: "border-purple-700",
                 items: ["Art & Design", "Music", "Drama", "Media Studies", "Physical Education", "Design & Technology", "Food & Nutrition"],
-                footer: "Hands-on, expressive, and practical",
+                shadow: "shadow-2xl shadow-purple-700/60",
               },
             ].map((c) => (
-              <motion.div key={c.title} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
-                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
-                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
-                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
-                    {c.title}
-                  </h3>
-                </div>
-                <div className="px-5 py-5">
+              <motion.div key={c.title} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500`}>
+                {/* Decorative blob */}
+                <div className="absolute -top-10 -right-10 w-28 h-28 bg-white/15 rounded-full blur-2xl pointer-events-none" />
+                <div className="relative z-10 p-6">
+                  <h3 className="font-playfair text-xl font-semibold text-white mb-4">{c.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {c.items.map((i) => (
-                      <span key={i} className="text-xs font-medium text-[#133844] bg-white border border-[#133844]/10 rounded-full px-3 py-1">{i}</span>
+                      <span key={i} className="text-xs font-medium text-white bg-white/15 border border-white/30 rounded-full px-3 py-1">
+                        {i}
+                      </span>
                     ))}
                   </div>
-                </div>
-                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
-                  {c.footer}
                 </div>
               </motion.div>
             ))}
@@ -159,7 +149,21 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
         </div>
       </section>
 
-      <motion.section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+      <motion.section
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeUp}
+        transition={{ duration: 0.45, ease: EASE }}
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/classroom1.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <p className="font-playfair text-[#133844] text-xl mb-4">The Final Stretch</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
