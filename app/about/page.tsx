@@ -133,6 +133,14 @@ const leaders = [
     img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
   },
+  {
+    name: "Ms. Shruti Kukkr",
+    role: "Principal",
+    sub: "Seedling International School Group of Institutions",
+    quote: "Education is the kindling of a flame, not the filling of a vessel.",
+    img: "/assets/Home/principle.jpeg",
+    tag: "Inspiring the Next Generation",
+  },
 ];
 
 const campusImages = [
@@ -352,9 +360,12 @@ export default function AboutPage() {
                 color: "text-crimson",
                 bg: "bg-crimson/10",
               },
-            ].map((value, i) => (
+            ].map((value, i) => {
+              const coreBgs = ["bg-pathway-purple-bg", "bg-pathway-blue-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg", "bg-pathway-rose-bg"];
+              const coreBorders = ["border-pathway-purple-border", "border-pathway-blue-border", "border-pathway-green-border", "border-pathway-orange-border", "border-pathway-rose-border"];
+              return (
               <Reveal key={value.title} delay={i * 100}>
-                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-off-white hover:border-sand/40 group h-full flex flex-col items-center text-center">
+                <div className={`${coreBgs[i]} rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border ${coreBorders[i]} hover:border-sand/40 group h-full flex flex-col items-center text-center`}>
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${value.bg} ${value.color} group-hover:scale-110 transition-transform duration-500`}>
                     {value.icon}
                   </div>
@@ -362,7 +373,8 @@ export default function AboutPage() {
                   <p className="text-text-light text-base leading-relaxed font-dm">{value.desc}</p>
                 </div>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -384,7 +396,10 @@ export default function AboutPage() {
             {/* Vertical Line */}
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-sand/50 -translate-x-1/2 hidden md:block" />
 
-            {timeline.map((item, i) => (
+            {timeline.map((item, i) => {
+              const tlBgs = ["bg-pathway-purple-bg", "bg-pathway-blue-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg", "bg-pathway-rose-bg", "bg-pathway-orange-bg"];
+              const tlBorders = ["border-pathway-purple-border", "border-pathway-blue-border", "border-pathway-green-border", "border-pathway-orange-border", "border-pathway-rose-border", "border-pathway-green-border"];
+              return (
               <Reveal key={item.year} delay={i * 60}>
                 <div className={`relative flex flex-col md:flex-row items-center gap-4 md:gap-8 ${i === 5 ? "mb-4" : "mb-12 md:mb-20"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
                   {/* dot */}
@@ -392,7 +407,7 @@ export default function AboutPage() {
 
                   {/* image */}
                   <div className="w-full md:w-5/12">
-                    <div className="overflow-hidden rounded-2xl shadow-xl group border border-sand/30">
+                    <div className={`overflow-hidden rounded-2xl shadow-xl group border ${tlBorders[i]} ${tlBgs[i]}`}>
                       <img
                         src={item.img}
                         alt={item.title}
@@ -414,7 +429,8 @@ export default function AboutPage() {
                   </div>
                 </div>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -502,9 +518,12 @@ export default function AboutPage() {
               body: "Every stakeholder — student, parent, teacher — matters. We commit to active communication, holistic well-being, and an environment where every child feels seen, valued, and motivated to grow into their fullest potential.",
               accent: "bg-crimson",
             },
-          ].map((card, i) => (
+          ].map((card, i) => {
+            const vmBgs = ["bg-pathway-purple-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg"];
+            const vmBorders = ["border-pathway-purple-border", "border-pathway-green-border", "border-pathway-orange-border"];
+            return (
             <Reveal key={card.label} delay={i * 120}>
-              <div className="group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-off-white overflow-hidden">
+              <div className={`group relative ${vmBgs[i]} rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border ${vmBorders[i]} overflow-hidden`}>
                 <div className={`absolute top-0 left-0 right-0 h-1 ${card.accent}`} />
                 <div className={`inline-flex p-3 rounded-xl ${card.accent} text-white mb-6`}>
                   {card.icon}
@@ -514,7 +533,8 @@ export default function AboutPage() {
                 <p className="text-text-light leading-[1.9] text-sm font-dm">{card.body}</p>
               </div>
             </Reveal>
-          ))}
+              );
+          })}
         </div>
       </section>
 
@@ -542,7 +562,7 @@ export default function AboutPage() {
               { emoji: "🏫", title: "Safe and secure Campus", desc: "A nurturing environment where students feel safe, valued, and empowered to learn." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <div className="bg-white rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group">
+                <div className="bg-pathway-green-bg rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-pathway-green-border group">
                   <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">{p.emoji}</span>
                   <h4 className="font-playfair text-2xl font-semibold mb-4 text-ink">{p.title}</h4>
                   <p className="text-text-light text-sm leading-[1.9] font-dm">{p.desc}</p>

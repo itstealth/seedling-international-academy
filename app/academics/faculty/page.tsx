@@ -99,14 +99,16 @@ export default function FacultyPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {leadership.map((member, i) => (
+            {leadership.map((member, i) => {
+              const pastel = ["bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-rose-bg border-pathway-rose-border"][i] || "bg-pathway-blue-bg border-pathway-blue-border";
+              return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative bg-neutral-50 rounded-[4rem] overflow-hidden border border-black/5 transition-all duration-700 hover:shadow-editorial"
+                className={`group relative ${pastel} rounded-[4rem] overflow-hidden border transition-all duration-700 hover:shadow-editorial`}
               >
                  <div className="flex flex-col md:flex-row h-full">
                     {/* Portrait */}
@@ -137,7 +139,8 @@ export default function FacultyPage() {
                     </div>
                  </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -145,14 +148,16 @@ export default function FacultyPage() {
       {/* Faculty Statistics: Modern Dashboard */}
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {facultyStats.map((stat, i) => (
-               <motion.div 
+            {facultyStats.map((stat, i) => {
+               const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][i] || "bg-pathway-purple-bg border-pathway-purple-border";
+               return (
+               <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white p-10 rounded-[3rem] border border-black/5 flex flex-col items-center text-center group hover:bg-primary transition-all duration-700 shadow-editorial"
+                  className={`${pastel} p-10 rounded-[3rem] border flex flex-col items-center text-center group hover:bg-primary transition-all duration-700 shadow-editorial`}
                >
                   <div className="w-16 h-16 rounded-2xl bg-neutral-50 flex items-center justify-center text-primary mb-6 group-hover:bg-white/10 group-hover:text-white transition-all shadow-inner">
                      {(() => {
@@ -163,7 +168,8 @@ export default function FacultyPage() {
                   <div className="text-4xl md:text-5xl font-black text-neutral-950 mb-2 tracking-tighter group-hover:text-white transition-all">{stat.value}</div>
                   <div className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 group-hover:text-white/60 transition-all">{stat.label}</div>
                </motion.div>
-            ))}
+            );
+            })}
          </div>
       </section>
 

@@ -240,7 +240,7 @@ export default function BlogDetailPage() {
                 <Link
                   key={relatedPost.id}
                   href={`/blog/${relatedPost.slug}`}
-                  className="group flex flex-col bg-off-white rounded-3xl overflow-hidden border border-sand/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group flex flex-col bg-pathway-rose-bg rounded-3xl overflow-hidden border border-pathway-rose-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img

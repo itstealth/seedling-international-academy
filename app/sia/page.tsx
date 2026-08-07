@@ -70,13 +70,24 @@ export default function SIAPage(): React.JSX.Element {
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {facilities.map((f, i) => (
-              <motion.div key={f.name} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className="bg-white rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border border-sand/40">
+            {facilities.map((f, i) => {
+              const palettes = [
+                "bg-pathway-purple-bg border-pathway-purple-border",
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-green-bg border-pathway-green-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+              ];
+              const paletteClass = palettes[i % palettes.length];
+              return (
+              <motion.div key={f.name} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`${paletteClass} rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border`}>
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-crimson mb-3 block">0{i + 1}</span>
                 <h3 className="font-playfair text-lg font-semibold mb-2 text-ink">{f.name}</h3>
                 <p className="text-text-light text-sm leading-[1.85] font-dm">{f.desc}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </section>

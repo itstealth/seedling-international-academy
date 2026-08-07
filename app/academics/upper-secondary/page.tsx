@@ -59,10 +59,11 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
           </motion.div>
 
           <motion.div className="grid md:grid-cols-2 gap-6 md:gap-8" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {routes.map((r) => {
+            {routes.map((r, idx) => {
               const c = colorMap[r.color];
+              const pastel = ["bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-rose-bg border-pathway-rose-border"][idx] || "bg-pathway-blue-bg border-pathway-blue-border";
               return (
-                <motion.div key={r.name} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`bg-off-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border ${c.border}`}>
+                <motion.div key={r.name} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border`}>
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="font-playfair text-2xl font-semibold text-ink">{r.name}</h3>
                     <span className={`text-3xl md:text-4xl font-bold ${c.text}`}>{r.count}</span>
@@ -80,16 +81,25 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-[#133844] text-xl mb-3">The Subject Catalogue</p>
+            <p className="font-playfair text-navy text-xl mb-3">The Subject Catalogue</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              Over <em className="font-semibold text-[#133844]">100 Subjects</em>, One Curriculum
+              Over <em className="font-semibold text-navy">100 Subjects</em>, One Curriculum
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {subjectGroups.map((g) => {
+            {subjectGroups.map((g, idx) => {
               const c = colorMap[g.color];
+              const cardColors = [
+                "bg-pathway-purple-bg border-pathway-purple-border",
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-green-bg border-pathway-green-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+              ];
+              const pastel = cardColors[idx] || "bg-pathway-purple-bg border-pathway-purple-border";
               return (
-                <motion.div key={g.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-sand/40 transition-colors">
+                <motion.div key={g.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}>
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
                     <h3 className="font-playfair text-lg font-semibold text-[#133844]">{g.group}</h3>

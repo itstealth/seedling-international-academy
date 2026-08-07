@@ -117,7 +117,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="group relative bg-off-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-sand/40 hover:border-navy/30 overflow-hidden">
+            <div className="group relative bg-pathway-purple-bg rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-pathway-purple-border hover:border-navy/30 overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-navy" />
               <div className="inline-flex p-3 rounded-xl bg-navy text-white mb-6">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
               </p>
             </div>
 
-            <div className="group relative bg-off-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-sand/40 hover:border-mauve/30 overflow-hidden">
+            <div className="group relative bg-pathway-green-bg rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-pathway-green-border hover:border-mauve/30 overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-mauve" />
               <div className="inline-flex p-3 rounded-xl bg-mauve text-white mb-6">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
               </p>
             </div>
 
-            <div className="group relative bg-off-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-sand/40 hover:border-crimson/30 overflow-hidden">
+            <div className="group relative bg-pathway-orange-bg rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-pathway-orange-border hover:border-crimson/30 overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson" />
               <div className="inline-flex p-3 rounded-xl bg-crimson text-white mb-6">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,7 +238,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           {promises.map((p, i) => (
             <div
               key={p.num}
-              className="flex gap-6 items-start p-7 bg-white rounded-[2rem] shadow-sm border border-sand/40 hover:border-navy/20 hover:shadow-xl transition-all group"
+              className={`flex gap-6 items-start p-7 rounded-[2rem] shadow-sm border hover:border-navy/20 hover:shadow-xl transition-all group ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border"][i % 4]}`}
             >
               <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
                 {p.num}

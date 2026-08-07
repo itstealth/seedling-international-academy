@@ -98,7 +98,7 @@ export default function TermsConditionsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.03 }}
-                className={`bg-white rounded-2xl shadow-md overflow-hidden border ${section.isLast ? 'border-crimson/20 bg-crimson/5' : 'border-navy/10'}`}
+                className={`bg-pathway-rose-bg rounded-2xl shadow-md overflow-hidden border ${section.isLast ? 'border-pathway-rose-border bg-crimson/5' : 'border-pathway-rose-border'}`}
               >
                 <div className="flex items-center gap-4 px-6 py-5 bg-linear-to-r from-navy/5 to-transparent border-b border-neutral-100">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${section.isLast ? 'bg-crimson text-white' : 'bg-navy text-white'}`}>

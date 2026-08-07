@@ -1,8 +1,8 @@
 "use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
-import WorldMapDemo from "@/components/world-map-demo";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Cambridge Learner Attributes card palette — cycled sequentially.
 const claPalette = [
@@ -81,6 +81,21 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
   "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
 };
 
+const cardColors5 = [
+  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+  "bg-pathway-rose-bg border-pathway-rose-border",
+];
+
+const cardColors4 = [
+  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+];
+
 export default function CambridgeEducationPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
@@ -152,10 +167,17 @@ export default function CambridgeEducationPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ═══ WORLD MAP ═══ */}
+      {/* ═══ CAMBRIDGE WORLDWIDE MAP ═══ */}
       <section className="relative py-12 md:py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <WorldMapDemo />
+          <Image
+            src="/cambridge map.png"
+            alt="Cambridge Worldwide — A global community with 10,000+ schools across 160+ countries and 40+ governments"
+            width={1600}
+            height={900}
+            className="w-full h-auto"
+            priority
+          />
         </div>
       </section>
 
@@ -169,12 +191,12 @@ export default function CambridgeEducationPage(): React.JSX.Element {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {recognition.map((r) => {
+          {recognition.map((r, i) => {
             const c = colorMap[r.color];
             return (
               <div
                 key={r.title}
-                className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 border ${c.border} hover:-translate-y-1`}
+                className={`group ${cardColors4[i]} rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
               >
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
                   {r.icon}
@@ -194,7 +216,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-playfair text-mauve text-xl mb-3">Why This Matters</p>
+            <p className="font-playfair text-navy text-xl mb-3">Why This Matters</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               What <em className="font-semibold text-navy">Cambridge</em> Means for Your Child
             </h2>
@@ -204,7 +226,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
             {benefits.map((b, i) => (
               <div
                 key={b.title}
-                className="bg-white rounded-3xl p-7 md:p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/50 group"
+                className={`${cardColors5[i % 5]} rounded-3xl p-7 md:p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 group`}
               >
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
                 <h3 className="font-playfair text-xl font-semibold mb-3 text-ink group-hover:text-royal-blue transition-colors">{b.title}</h3>

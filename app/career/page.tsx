@@ -197,8 +197,15 @@ function JobCard({
   role: (typeof openRoles)[0];
   onApply: (role: (typeof openRoles)[0]) => void;
 }) {
+  const palettes = [
+    "bg-pathway-purple-bg border-pathway-purple-border",
+    "bg-pathway-blue-bg border-pathway-blue-border",
+    "bg-pathway-green-bg border-pathway-green-border",
+    "bg-pathway-orange-bg border-pathway-orange-border",
+  ];
+  const paletteClass = palettes[(role.id - 1) % palettes.length];
   return (
-    <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-xl hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300">
+    <div className={`group ${paletteClass} border rounded-2xl p-7 hover:shadow-xl hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300`}>
       <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
         <div className="flex items-center gap-3 flex-wrap">
           {role.urgent && (
@@ -292,11 +299,11 @@ function ApplyModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto border border-[#F0EDE8]"
+        className="bg-pathway-blue-bg rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto border border-pathway-blue-border"
         onClick={(e) => e.stopPropagation()}
       >
         {/* header */}
-        <div className="sticky top-0 bg-white border-b border-sand/30 px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
+        <div className="sticky top-0 bg-pathway-blue-bg border-b border-pathway-blue-border px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
           <div>
             <p className="text-crimson text-xs font-black tracking-widest uppercase mb-1 font-dm">
               Interest Form
@@ -307,7 +314,7 @@ function ApplyModal({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-sand/10 hover:bg-red-50 hover:text-red-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-text-light text-lg mt-0.5"
+            className="w-8 h-8 rounded-full bg-sand/10 hover:bg-pathway-rose-bg-50 hover:text-navy-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-text-light text-lg mt-0.5"
           >
             ✕
           </button>
@@ -578,9 +585,19 @@ export default function CareersPage() {
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {whyWork.map((w, i) => (
+          {whyWork.map((w, i) => {
+            const palettes = [
+              "bg-pathway-purple-bg border-pathway-purple-border",
+              "bg-pathway-blue-bg border-pathway-blue-border",
+              "bg-pathway-green-bg border-pathway-green-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+              "bg-pathway-rose-bg border-pathway-rose-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+            ];
+            const paletteClass = palettes[i % palettes.length];
+            return (
             <Reveal key={w.title} delay={i * 70}>
-              <div className="group bg-white border border-sand/40 rounded-2xl p-7 hover:shadow-lg hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300 h-full">
+              <div className={`group ${paletteClass} border rounded-2xl p-7 hover:shadow-lg hover:border-[#133844]/20 hover:-translate-y-0.5 transition-all duration-300 h-full`}>
                 <div className="w-11 h-11 bg-sand/10 group-hover:bg-crimson border border-sand/40 group-hover:border-crimson rounded-xl flex items-center justify-center text-crimson group-hover:text-white transition-all duration-300 mb-5 flex-shrink-0">
                   {w.icon}
                 </div>
@@ -588,7 +605,8 @@ export default function CareersPage() {
                 <p className="text-text-light text-sm leading-[1.9] font-dm font-light">{w.desc}</p>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -679,9 +697,15 @@ export default function CareersPage() {
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((t, i) => (
+            {testimonials.map((t, i) => {
+              const palettes = [
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+              ];
+              const paletteClass = palettes[i % palettes.length];
+              return (
               <Reveal key={t.name} delay={i * 120}>
-                <div className="group bg-off-white border border-sand/40 rounded-2xl p-8 hover:shadow-lg hover:border-[#133844]/20 transition-all duration-300 relative overflow-hidden h-full">
+                <div className={`group ${paletteClass} border rounded-2xl p-8 hover:shadow-lg hover:border-[#133844]/20 transition-all duration-300 relative overflow-hidden h-full`}>
                   {/* decorative quote mark */}
                   <div className="absolute top-3 right-6 font-playfair text-[7rem] leading-none text-sand/20 font-bold select-none pointer-events-none">
                     "
@@ -702,7 +726,8 @@ export default function CareersPage() {
                   </blockquote>
                 </div>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -725,11 +750,11 @@ export default function CareersPage() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more" },
-                  { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered" },
-                  { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed" },
+                  { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more", palette: "bg-pathway-purple-bg border-pathway-purple-border" },
+                  { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered", palette: "bg-pathway-green-bg border-pathway-green-border" },
+                  { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed", palette: "bg-pathway-orange-bg border-pathway-orange-border" },
                 ].map((item) => (
-                  <div key={item.label} className="flex gap-4 p-4 bg-white border border-sand/40 rounded-xl hover:border-[#133844]/20 transition-colors duration-200">
+                  <div key={item.label} className={`flex gap-4 p-4 ${item.palette} border rounded-xl hover:border-[#133844]/20 transition-colors duration-200`}>
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
                     <div>
                       <p className="font-black text-[#133844] text-[11px] tracking-widest uppercase mb-1 font-dm">{item.label}</p>
@@ -775,10 +800,16 @@ export default function CareersPage() {
                   //   email: "smhsjaipur@jnujaipur.ac.in",
                   //   color: "border-l-crimson",
                   // },
-                ].map((campus) => (
+                ].map((campus, i) => {
+                  const palettes = [
+                    "bg-pathway-blue-bg border-pathway-blue-border",
+                    "bg-pathway-rose-bg border-pathway-rose-border",
+                  ];
+                  const paletteClass = palettes[i % palettes.length];
+                  return (
                   <div
                     key={campus.campus}
-                    className={`bg-white border border-[#E8E3DA] border-l-4 ${campus.color} rounded-2xl p-6 hover:shadow-md transition-shadow duration-300`}
+                    className={`${paletteClass} border border-l-4 ${campus.color} rounded-2xl p-6 hover:shadow-md transition-shadow duration-300`}
                   >
                     <p className="display font-semibold text-lg text-[#1C1C1E] mb-0.5">{campus.campus}</p>
                     <p className="text-navy text-xs font-semibold mb-4">{campus.schools}</p>
@@ -801,7 +832,8 @@ export default function CareersPage() {
                       </p>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
 
                 <div className="bg-[#F5F0E8] rounded-2xl p-5 text-center">
                   <p className="text-[#777] text-xs">

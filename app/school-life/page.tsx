@@ -807,10 +807,20 @@ function FeaturesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((f, i) => (
+          {features.map((f, i) => {
+            const palettes = [
+              "bg-pathway-purple-bg border-pathway-purple-border",
+              "bg-pathway-blue-bg border-pathway-blue-border",
+              "bg-pathway-green-bg border-pathway-green-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+              "bg-pathway-rose-bg border-pathway-rose-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+            ];
+            const paletteClass = palettes[i % palettes.length];
+            return (
             <div
               key={i}
-              className="group relative bg-off-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+              className={`group relative ${paletteClass} rounded-2xl overflow-hidden border hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
             >
               {/* Image at top */}
               <div className="h-48 overflow-hidden">
@@ -829,7 +839,8 @@ function FeaturesSection() {
               {/* Gold accent bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sand via-crimson to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

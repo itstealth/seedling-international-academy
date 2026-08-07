@@ -118,6 +118,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
   "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
 };
 
+const cardColors5 = [
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-green-bg border-pathway-green-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+  "bg-pathway-rose-bg border-pathway-rose-border",
+];
+
 export default function InternationalCambridgePage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
@@ -220,7 +228,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
               return (
                 <div
                   key={p.title}
-                  className={`group bg-off-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 border ${c.border} grid md:grid-cols-[80px_1fr_auto] gap-5 md:gap-7 items-center`}
+                  className={`group ${cardColors5[i % 5]} rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 grid md:grid-cols-[80px_1fr_auto] gap-5 md:gap-7 items-center`}
                 >
                   <div
                     className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center ${c.bg} ${c.text} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
@@ -273,7 +281,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
               variants={cardRise}
               whileHover={{ y: -8, scale: 1.03 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-sand/40 cursor-default"
+              className={`relative group ${cardColors5[i]} rounded-2xl p-6 shadow-sm hover:shadow-xl cursor-default`}
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson rounded-t-2xl" />
               <span className="text-[10px] font-black tracking-[0.25em] uppercase text-crimson mb-3 block">Stage {s.num}</span>

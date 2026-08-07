@@ -210,13 +210,20 @@ function AlumniCard({
     return () => observer.disconnect();
   }, [index]);
 
+  const palettes = [
+    "bg-pathway-purple-bg border-pathway-purple-border",
+    "bg-pathway-blue-bg border-pathway-blue-border",
+    "bg-pathway-green-bg border-pathway-green-border",
+  ];
+  const paletteClass = palettes[index % palettes.length];
+
   return (
     <div
       ref={ref}
       className="opacity-0 translate-y-8 transition-all duration-700 ease-out group"
     >
       <div
-        className={`rounded-2xl overflow-hidden bg-white border border-sand/40 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+        className={`rounded-2xl overflow-hidden ${paletteClass} border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
       >
         <div className="relative h-72 overflow-hidden">
           <Image
@@ -375,10 +382,18 @@ function AchievementsSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat) => (
+          {stats.map((stat, i) => {
+            const palettes = [
+              "bg-pathway-purple-bg border-pathway-purple-border",
+              "bg-pathway-blue-bg border-pathway-blue-border",
+              "bg-pathway-green-bg border-pathway-green-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+            ];
+            const paletteClass = palettes[i % palettes.length];
+            return (
             <div
               key={stat.label}
-              className="group relative rounded-2xl bg-white border border-sand/40 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6 text-center overflow-hidden"
+              className={`group relative rounded-2xl ${paletteClass} border shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6 text-center overflow-hidden`}
             >
               <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${stat.color} rounded-t-2xl`} />
               <div className="text-3xl mb-3">{stat.icon}</div>
@@ -388,14 +403,23 @@ function AchievementsSection() {
               <p className="text-[10px] font-black tracking-widest uppercase text-[#133844] mt-1 font-dm">{stat.label}</p>
               <p className="text-xs text-text-light mt-2 leading-relaxed font-dm font-light">{stat.description}</p>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {achievements.map((a) => (
+          {achievements.map((a, i) => {
+            const palettes = [
+              "bg-pathway-purple-bg border-pathway-purple-border",
+              "bg-pathway-blue-bg border-pathway-blue-border",
+              "bg-pathway-green-bg border-pathway-green-border",
+              "bg-pathway-orange-bg border-pathway-orange-border",
+            ];
+            const paletteClass = palettes[i % palettes.length];
+            return (
             <div
               key={a.title}
-              className={`rounded-2xl border ${a.color} p-7 transition-all duration-300 hover:shadow-md`}
+              className={`rounded-2xl border ${paletteClass} p-7 transition-all duration-300 hover:shadow-md`}
             >
               <div className="flex items-start gap-4">
                 <div className="text-3xl flex-shrink-0">{a.icon}</div>
@@ -405,7 +429,8 @@ function AchievementsSection() {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -516,10 +541,20 @@ function GalleryStrip() {
       </div>
 
       <div className="flex gap-5 overflow-x-auto no-scrollbar px-6 pb-4 snap-x snap-mandatory">
-        {studentsList.map((s) => (
+        {studentsList.map((s, i) => {
+          const palettes = [
+            "bg-pathway-purple-bg border-pathway-purple-border",
+            "bg-pathway-blue-bg border-pathway-blue-border",
+            "bg-pathway-green-bg border-pathway-green-border",
+            "bg-pathway-orange-bg border-pathway-orange-border",
+            "bg-pathway-rose-bg border-pathway-rose-border",
+            "bg-pathway-orange-bg border-pathway-orange-border",
+          ];
+          const paletteClass = palettes[i % palettes.length];
+          return (
           <div
             key={s.name}
-            className="group flex-shrink-0 snap-start w-56 md:w-64 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white"
+            className={`group flex-shrink-0 snap-start w-56 md:w-64 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ${paletteClass} border`}
           >
             <div className="relative h-72 overflow-hidden">
               <Image
@@ -534,7 +569,8 @@ function GalleryStrip() {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <style jsx global>{`

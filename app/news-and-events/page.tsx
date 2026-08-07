@@ -235,7 +235,7 @@ export default function CampusHighlightsPage() {
 
           {/* Stats Band */}
           {/* <Reveal delay={400}>
-            <div className="mt-12 bg-white rounded-[2rem] border border-sand/40 shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
+            <div className="mt-12 bg-pathway-orange-bg rounded-[2rem] border border-pathway-orange-border shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
               {[
                 { value: "10k+", label: "Students" },
                 { value: "20:1", label: "Student-Teacher Ratio" },
@@ -348,7 +348,16 @@ export default function CampusHighlightsPage() {
 
           {/* Events Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, i) => (
+            {events.map((event, i) => {
+              const palettes = [
+                "bg-pathway-purple-bg border-pathway-purple-border",
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-green-bg border-pathway-green-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+              ];
+              const paletteClass = palettes[i % palettes.length];
+              return (
               <Reveal key={event.id} delay={i * 80}>
                 <a
                   href="#"
@@ -359,7 +368,7 @@ export default function CampusHighlightsPage() {
                       setGalleryIndex(0);
                     }
                   }}
-                  className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-500 hover:-translate-y-2 border border-sand/20"
+                  className={`group block ${paletteClass} rounded-2xl overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-500 hover:-translate-y-2 border`}
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
@@ -387,7 +396,8 @@ export default function CampusHighlightsPage() {
                   </div>
                 </a>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -717,12 +727,21 @@ const newsItems = [
 
 function NewsCard({ item = newsItems[0], large = false, delay = 0, onClick }: { item?: (typeof newsItems)[0]; large?: boolean; delay?: number; onClick?: () => void }) {
   const { ref, visible } = useReveal<HTMLDivElement>();
+  const palettes = [
+    "bg-pathway-purple-bg border-pathway-purple-border",
+    "bg-pathway-blue-bg border-pathway-blue-border",
+    "bg-pathway-green-bg border-pathway-green-border",
+    "bg-pathway-orange-bg border-pathway-orange-border",
+    "bg-pathway-rose-bg border-pathway-rose-border",
+    "bg-pathway-orange-bg border-pathway-orange-border",
+  ];
+  const paletteClass = palettes[(item.id - 1) % palettes.length];
   return (
     <div
       role="button"
       tabIndex={0}
       onClick={onClick}
-      className={`group block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-white cursor-pointer ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      className={`group block overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ${paletteClass} border cursor-pointer ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       ref={ref}
       style={{ transitionDelay: `${delay}ms`, transitionProperty: "opacity, transform", transitionDuration: "700ms" }}
     >

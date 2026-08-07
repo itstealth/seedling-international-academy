@@ -274,7 +274,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 1: SCHOOL & CLASS SELECTION ── */}
           <Reveal className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">1</span>
                 School & Class Selection
@@ -318,7 +318,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 2: STUDENT INFORMATION ── */}
           <Reveal delay={60} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">2</span>
                 Student Information
@@ -432,7 +432,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 3: PARENT INFORMATION ── */}
           <Reveal delay={80} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">3</span>
                 Parent / Guardian Information
@@ -478,7 +478,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 4: CONTACT DETAILS ── */}
           <Reveal delay={100} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">4</span>
                 Contact Details
@@ -506,7 +506,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 5: ADDRESS ── */}
           <Reveal delay={120} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">5</span>
                 Residential Address
@@ -573,7 +573,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 6: PREVIOUS SCHOOL & SIBLING ── */}
           <Reveal delay={140} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
               <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight flex items-center gap-3">
                 <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center text-crimson text-lg font-black">6</span>
                 Previous School & Sibling Details
@@ -614,7 +614,7 @@ export default function OnlineAdmissionPage() {
 
           {/* ── SECTION 7: DECLARATION & SUBMIT ── */}
           <Reveal delay={160} className="mb-8">
-            <div className="bg-white border border-sand/20 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border rounded-3xl p-8 md:p-10 shadow-sm">
 
               {/* Important Notes */}
               <div className="mb-8 p-6 bg-sand/5 rounded-2xl border border-sand/20">

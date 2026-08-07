@@ -79,7 +79,7 @@ export default function EventsPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="group relative flex flex-col lg:flex-row bg-white rounded-[4rem] overflow-hidden shadow-editorial mb-20 border border-black/5"
+          className="group relative flex flex-col lg:flex-row bg-pathway-purple-bg rounded-[4rem] overflow-hidden shadow-editorial mb-20 border border-pathway-purple-border"
         >
           <div className="lg:w-1/2 relative h-[400px] lg:h-auto overflow-hidden">
             <Image src={events[0].image} alt={events[0].title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -124,7 +124,7 @@ export default function EventsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group bg-white rounded-[3.5rem] overflow-hidden shadow-editorial border border-black/5 flex flex-col"
+              className="group bg-pathway-rose-bg rounded-[3.5rem] overflow-hidden shadow-editorial border border-pathway-rose-border flex flex-col"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image src={event.image} alt={event.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />

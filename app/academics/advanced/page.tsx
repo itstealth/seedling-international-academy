@@ -160,15 +160,16 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
           >
-            {qualifications.map((q) => {
+            {qualifications.map((q, idx) => {
               const c = colorMap[q.color];
+              const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][idx] || "bg-pathway-purple-bg border-pathway-purple-border";
               return (
                 <motion.div
                   key={q.code}
                   variants={cardRise}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.4, ease: EASE }}
-                  className={`group bg-off-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border ${c.border} flex gap-5 md:gap-7 items-start`}
+                  className={`group ${pastel} rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border flex gap-5 md:gap-7 items-start`}
                 >
                   <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center ${c.bg} ${c.text} font-playfair text-xl md:text-2xl font-semibold flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
                     {q.code}
@@ -198,7 +199,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-[#133844] text-xl mb-3">50+ Subjects · Six Groups</p>
+            <p className="font-playfair text-navy text-xl mb-3">50+ Subjects · Six Groups</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
               Design Your <em className="font-semibold text-[#133844]">Specialisation</em>
             </h2>
@@ -211,15 +212,16 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
           >
-            {subjectGroups.map((g) => {
+            {subjectGroups.map((g, idx) => {
               const c = colorMap[g.color];
+              const pastel = ["bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border"][idx] || "bg-pathway-orange-bg border-pathway-orange-border";
               return (
                 <motion.div
                   key={g.group}
                   variants={cardRise}
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.4, ease: EASE }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-sand/40 transition-colors"
+                  className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
@@ -265,13 +267,15 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          {destinations.map((d) => (
+          {destinations.map((d, idx) => {
+            const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][idx] || "bg-pathway-purple-bg border-pathway-purple-border";
+            return (
             <motion.div
               key={d.region}
               variants={cardRise}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.4, ease: EASE }}
-              className="bg-white rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border border-sand/40"
+              className={`${pastel} rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border`}
             >
               <h3 className="font-playfair text-lg font-semibold mb-4 text-ink">{d.region}</h3>
               <ul className="space-y-2">
@@ -283,7 +287,8 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                 ))}
               </ul>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </section>
 

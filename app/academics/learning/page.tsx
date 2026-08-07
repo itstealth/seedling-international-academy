@@ -287,6 +287,12 @@ function ModernLearning() {
 }
 
 // ─── WELLBEING ────────────────────────────────────────────────────────────────
+const cardColors = [
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-green-bg border-pathway-green-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+];
+
 function WellbeingSection() {
   const { ref, visible } = useInView();
   return (
@@ -310,8 +316,8 @@ function WellbeingSection() {
                 { icon: <IconHeart />, label: "Emotional Support", color: "#A41546" },
                 { icon: <IconUser />, label: "Counselling Support", color: "#175190" },
                 { icon: <IconStar />, label: "Confidence Building", color: "#896B85" },
-              ].map(item => (
-                <div key={item.label} className="flex items-center gap-4 p-5 rounded-2xl bg-white shadow-sm">
+              ].map((item, index) => (
+                <div key={item.label} className={`flex items-center gap-4 p-5 rounded-2xl border shadow-sm ${cardColors[index]}`}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${item.color}15`, color: item.color }}>{item.icon}</div>
                   <span className="font-semibold text-lg" style={{ color: "#2c2c2c", fontFamily: "'DM Sans', sans-serif" }}>{item.label}</span>
                 </div>

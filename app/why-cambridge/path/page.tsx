@@ -93,6 +93,21 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
   "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30" },
 };
 
+const cardColors4 = [
+  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+];
+
+const cardColors5 = [
+  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+  "bg-pathway-rose-bg border-pathway-rose-border",
+];
+
 const pathways = [
   {
     initials: "AS",
@@ -228,7 +243,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
           >
-            {pillars.map((p) => {
+            {pillars.map((p, i) => {
               const c = colorMap[p.color];
               return (
                 <motion.div
@@ -236,7 +251,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   variants={cardRise}
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className={`group bg-off-white rounded-2xl p-7 shadow-sm hover:shadow-xl border ${c.border} cursor-default`}
+                  className={`group ${cardColors4[i]} rounded-2xl p-7 shadow-sm hover:shadow-xl cursor-default`}
                 >
                   <motion.div
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${c.bg} ${c.text}`}
@@ -290,7 +305,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   variants={direction}
                   transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -4, scale: 1.005 }}
-                  className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/40 overflow-hidden grid md:grid-cols-[260px_1fr] gap-0"
+                  className={`group ${cardColors5[i % 5]} rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden grid md:grid-cols-[260px_1fr] gap-0`}
                 >
                   {/* Student identity */}
                   <div className={`bg-gradient-to-br from-white to-${p.color === 'crimson' ? 'crimson/5' : p.color === 'navy' ? 'navy/5' : p.color === 'mauve' ? 'mauve/5' : 'royal-blue/5'} p-7 md:p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-sand/30`}>

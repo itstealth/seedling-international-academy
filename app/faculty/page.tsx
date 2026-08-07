@@ -79,9 +79,11 @@ export default function FacultyPage() {
           </Reveal>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-            {faculty.map((f, i) => (
+            {faculty.map((f, i) => {
+              const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][i] || "bg-pathway-purple-bg border-pathway-purple-border";
+              return (
               <Reveal key={f.name} delay={i * 80}>
-                <div className="group bg-off-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-sand/40">
+                <div className={`group ${pastel} rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border`}>
                   <div className="relative overflow-hidden h-72">
                     <img
                       src={f.img}
@@ -97,7 +99,8 @@ export default function FacultyPage() {
                   </div>
                 </div>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
 
           <Reveal delay={100}>
@@ -106,15 +109,22 @@ export default function FacultyPage() {
                 { icon: "📚", title: "Experienced & Qualified", desc: "Faculty members are continuously trained, experienced, and deeply passionate about teaching. Regular tests, remedial classes, and doubt-clearing sessions help students strengthen their understanding." },
                 { icon: "🎯", title: "Student-Centric Approach", desc: "A personalised, inclusive approach ensures every child receives individual attention and guidance. Our teachers promote inquiry, fellowship, and joy — setting high standards for character and discipline." },
                 { icon: "🔄", title: "Mentors, Not Just Teachers", desc: "Our teachers go beyond knowledge delivery — they build confidence, nurture personality, and create a positive atmosphere where every student feels valued, motivated, and ready for life's challenges." },
-              ].map((item) => (
-                <div key={item.title} className="bg-white border border-[#EEECEA] rounded-2xl p-7 flex gap-5 items-start">
+              ].map((item, i) => {
+                const helperPastel = [
+                  "bg-pathway-purple-bg border-pathway-purple-border",
+                  "bg-pathway-green-bg border-pathway-green-border",
+                  "bg-pathway-orange-bg border-pathway-orange-border",
+                ][i];
+                return (
+                <div key={item.title} className={`${helperPastel} border rounded-2xl p-7 flex gap-5 items-start`}>
                   <span className="text-3xl">{item.icon}</span>
                   <div>
                     <h4 className="font-playfair text-lg font-semibold mb-2">{item.title}</h4>
                     <p className="text-[#666] text-sm leading-[1.8]">{item.desc}</p>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </Reveal>
         </div>

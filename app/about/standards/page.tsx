@@ -118,28 +118,28 @@ const reportingTouchpoints = [
 
 const colorMap: Record<string, { glass: string; text: string; border: string; ring: string }> = {
   red: {
-    glass: "bg-red-500/30 backdrop-blur-xl",
-    text: "text-red-700",
-    border: "border-red-500/50",
-    ring: "ring-red-500/20",
+    glass: "bg-pathway-rose-bg",
+    text: "text-navy-700",
+    border: "border-pathway-rose-border",
+    ring: "ring-pastel-rose-border",
   },
   blue: {
-    glass: "bg-blue-500/30 backdrop-blur-xl",
-    text: "text-blue-700",
-    border: "border-blue-500/50",
-    ring: "ring-blue-500/20",
+    glass: "bg-pathway-blue-bg",
+    text: "text-navy-700",
+    border: "border-pathway-blue-border",
+    ring: "ring-pastel-blue-border",
   },
   green: {
-    glass: "bg-green-500/30 backdrop-blur-xl",
-    text: "text-green-700",
-    border: "border-green-500/50",
-    ring: "ring-green-500/20",
+    glass: "bg-pathway-green-bg",
+    text: "text-navy-700",
+    border: "border-pathway-green-border",
+    ring: "ring-pastel-green-border",
   },
   purple: {
-    glass: "bg-purple-500/30 backdrop-blur-xl",
-    text: "text-purple-700",
-    border: "border-purple-500/50",
-    ring: "ring-purple-500/20",
+    glass: "bg-pathway-purple-bg",
+    text: "text-navy-700",
+    border: "border-pathway-purple-border",
+    ring: "ring-pastel-purple-border",
   },
 };
 
@@ -270,7 +270,7 @@ export default function OurStandardsPage(): React.JSX.Element {
           {reportingTouchpoints.map((r, i) => (
             <div
               key={r.title}
-              className="group bg-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-sand/40 hover:border-navy/30"
+              className={`group rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 border hover:border-navy/30 ${["bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-green-bg border-pathway-green-border","bg-pathway-orange-bg border-pathway-orange-border"][i % 3]}`}
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-12 h-12 rounded-2xl bg-navy text-white flex items-center justify-center group-hover:scale-110 transition-transform">

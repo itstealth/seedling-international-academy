@@ -118,7 +118,7 @@ export default function CurriculumPage() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
-                className="bg-white rounded-[5rem] border border-black/3 shadow-editorial relative overflow-hidden"
+                className="bg-pathway-rose-bg rounded-[5rem] border border-pathway-rose-border shadow-editorial relative overflow-hidden"
               >
                 {/* Floating Big Index Text */}
                 <div className="absolute top-0 right-0 p-20 text-[20rem] font-black text-black/[0.02] select-none pointer-events-none font-serif leading-none">

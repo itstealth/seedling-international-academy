@@ -16,13 +16,13 @@ const pillars = [
   { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network across 50+ nations.", icon: "🏆", color: "rose" },
 ];
 
-const colorMap: Record<string, { glass: string; text: string; border: string; accent: string; iconBg: string }> = {
-  red:    { glass: "bg-red-500/15 backdrop-blur-xl",    text: "text-red-700",    border: "border-red-500/30",    accent: "bg-red-500",    iconBg: "bg-red-500/10" },
-  blue:   { glass: "bg-blue-500/15 backdrop-blur-xl",   text: "text-blue-700",   border: "border-blue-500/30",   accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
-  green:  { glass: "bg-green-500/15 backdrop-blur-xl",  text: "text-green-700",  border: "border-green-500/30",  accent: "bg-green-500",  iconBg: "bg-green-500/10" },
-  purple: { glass: "bg-purple-500/15 backdrop-blur-xl", text: "text-purple-700", border: "border-purple-500/30", accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
-  amber:  { glass: "bg-amber-500/15 backdrop-blur-xl",  text: "text-amber-700",  border: "border-amber-500/30",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
-  rose:   { glass: "bg-rose-500/15 backdrop-blur-xl",   text: "text-rose-700",   border: "border-rose-500/30",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
+const colorMap: Record<string, { bg: string; text: string; border: string; accent: string; iconBg: string }> = {
+  red:    { bg: "bg-pathway-rose-bg",     text: "text-navy-700",    border: "border-pathway-rose-border",    accent: "bg-rose-500",    iconBg: "bg-rose-500/10" },
+  blue:   { bg: "bg-pathway-blue-bg",     text: "text-navy-700",   border: "border-pathway-blue-border",    accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
+  green:  { bg: "bg-pathway-green-bg",    text: "text-navy-700",  border: "border-pathway-green-border",   accent: "bg-green-500",  iconBg: "bg-green-500/10" },
+  purple: { bg: "bg-pathway-purple-bg",   text: "text-navy-700", border: "border-pathway-purple-border",  accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
+  amber:  { bg: "bg-pathway-orange-bg",   text: "text-amber-700",  border: "border-pathway-orange-border",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
+  rose:   { bg: "bg-pathway-orange-bg",               text: "text-rose-700",   border: "border-pathway-green-border",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
 };
 
 export default function SixPillars() {
@@ -42,7 +42,7 @@ export default function SixPillars() {
           {pillars.map((p) => {
             const c = colorMap[p.color];
             return (
-              <motion.div key={p.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group rounded-2xl p-7 border ${c.glass} ${c.border} hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.15)] relative overflow-hidden`}>
+              <motion.div key={p.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`group rounded-2xl p-7 border ${c.bg} ${c.border} hover:shadow-[0_32px_64px_-16px_rgba(10,31,58,0.15)] relative overflow-hidden`}>
                 {/* Decorative color blob */}
                 <div className={`absolute -top-12 -right-12 w-32 h-32 ${c.iconBg} rounded-full blur-2xl transition-transform duration-500 group-hover:scale-125`} />
                 <div className={`absolute top-0 right-0 w-24 h-24 ${c.iconBg} rounded-bl-full transition-transform duration-500 group-hover:scale-110`} />

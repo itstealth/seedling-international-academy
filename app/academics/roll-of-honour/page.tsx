@@ -93,17 +93,24 @@ export default function RollOfHonourPage() {
            </div>
 
            <div className="space-y-8">
-              {[
-                { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },
-                { name: "Subject Toppers", count: "45 Students", sub: "Achieved perfect 100 in various subjects" },
-                { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at National level" },
-                { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in IVY League" }
-              ].map((row, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ x: 20, backgroundColor: 'rgba(23,81,144,0.03)' }}
-                  className="group flex flex-col md:flex-row items-center justify-between p-12 rounded-[3.5rem] border border-black/5 hover:border-primary/20 transition-all duration-700 group cursor-default"
-                >
+              {(() => {
+                const cardColors = [
+                  "bg-pathway-purple-bg border-pathway-purple-border",
+                  "bg-pathway-blue-bg border-pathway-blue-border",
+                  "bg-pathway-green-bg border-pathway-green-border",
+                  "bg-pathway-orange-bg border-pathway-orange-border",
+                ];
+                return [
+                  { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },
+                  { name: "Subject Toppers", count: "45 Students", sub: "Achieved perfect 100 in various subjects" },
+                  { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at National level" },
+                  { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in IVY League" }
+                ].map((row, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 20, backgroundColor: 'rgba(23,81,144,0.03)' }}
+                    className={`group flex flex-col md:flex-row items-center justify-between p-12 rounded-[3.5rem] border ${cardColors[i % 4]} transition-all duration-700 group cursor-default`}
+                  >
                    <div className="flex items-center gap-12 mb-8 md:mb-0">
                       <div className="text-8xl font-black text-black/[0.03] group-hover:text-primary/10 select-none font-serif">
                          0{i+1}
@@ -119,8 +126,9 @@ export default function RollOfHonourPage() {
                          View Details <ArrowRight className="w-4 h-4" />
                       </Link>
                    </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ));
+              })()}
            </div>
         </div>
       </section>

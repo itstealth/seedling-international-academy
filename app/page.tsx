@@ -375,10 +375,13 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 ],
                 tag: "SMIA",
               },
-            ].map((campus, i) => (
+            ].map((campus, i) => {
+              const campusBgs = ["bg-pathway-blue-bg", "bg-pathway-rose-bg"];
+              const campusBorders = ["border-pathway-blue-border", "border-pathway-rose-border"];
+              return (
               <motion.div
                 key={campus.name}
-                className="group relative overflow-hidden rounded-[8px] border border-[#eaeaea] shadow-2xl shadow-black/5 bg-white backdrop-blur-sm"
+                className={`group relative overflow-hidden rounded-[8px] border ${campusBorders[i]} shadow-2xl shadow-black/5 ${campusBgs[i]} backdrop-blur-sm`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -427,7 +430,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -854,16 +858,22 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 name: "Dr. Neha Kapoor",
                 role: "Educator & Parent",
               },
-            ].map((card, i) => (
-              <motion.div
-                key={card.label}
-                initial={{ opacity: 0, y: 36 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
-                className="group bg-white border-2 border-sand/50 rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden"
-              >
+            ].map((card, i) => {
+              const testBgs = ["bg-pathway-rose-bg", "bg-pathway-purple-bg", "bg-pathway-blue-bg"];
+              const testBorders = ["border-pathway-rose-border", "border-pathway-purple-border", "border-pathway-blue-border"];
+              return (
+              <>
+              {card.label === "FACULTY" ? (
+                <Link href="/faculty-testimonials" className="block">
+                <motion.div
+                  key={card.label}
+                  initial={{ opacity: 0, y: 36 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -6 }}
+                  className={`group ${testBgs[i]} border-2 ${testBorders[i]} rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden cursor-pointer h-full`}
+                >
                 {/* Image */}
                 <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-sand/60 m-3 mb-0">
                   <img
@@ -891,10 +901,58 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
                       {card.role}
                     </p>
+                    {card.label === "FACULTY" && (
+                      <span className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[#133844] font-semibold underline underline-offset-4">
+                        Read full testimonial →
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>
-            ))}
+                </Link>
+              ) : (
+              <motion.div
+                key={card.label}
+                initial={{ opacity: 0, y: 36 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6 }}
+                className={`group ${testBgs[i]} border-2 ${testBorders[i]} rounded-sm shadow-sm hover:shadow-2xl hover:border-crimson/40 transition-all duration-500 overflow-hidden`}
+              >
+                {/* Image */}
+                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-sand/60 m-3 mb-0">
+                  <img
+                    src={card.img}
+                    alt={card.label}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Body */}
+                <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
+                  <h3 className="font-playfair text-xl sm:text-2xl tracking-[0.15em] text-text-light font-light mb-2">
+                    {card.label}
+                  </h3>
+                  <span className="block w-12 h-px bg-text-light/30 mx-auto mb-5" />
+                  <blockquote className="text-text-base text-sm sm:text-[15px] leading-relaxed font-light mb-6">
+                    &ldquo;{card.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="pt-5 border-t border-sand/40 inline-flex flex-col items-center min-w-[180px]">
+                    <p className="font-playfair text-base font-semibold text-[#133844] leading-tight">
+                      {card.name}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-text-light font-semibold mt-1">
+                      {card.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              )}
+              </>
+            );
+          })}
           </div>
         </div>
       </section>
@@ -1044,14 +1102,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </div>
             </a>
 
-            <div className="bg-off-white rounded-[2.5rem] border border-sand/40 p-5 md:p-7 flex flex-col justify-between">
+            <div className="bg-pathway-rose-bg rounded-[2.5rem] border border-pathway-rose-border p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
                   { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
                   { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
                 ].map(({ day, month, title, desc, url }, index) => (
-                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-white rounded-[1.75rem] p-5 border border-sand/30 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-pathway-blue-bg rounded-[1.75rem] p-5 border border-pathway-blue-border transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
                       <strong className="block text-xl font-playfair leading-none">{day}</strong>
                       <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
@@ -1158,10 +1216,13 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </article>
 
               <div className="grid gap-6">
-                {infraData[activeTab].slice(1).map(({ img, alt, tag, title, desc }) => (
+                {infraData[activeTab].slice(1).map(({ img, alt, tag, title, desc }, idx) => {
+                  const infraBgs = ["bg-pathway-blue-bg", "bg-pathway-rose-bg"];
+                  const infraBorders = ["border-pathway-blue-border", "border-pathway-rose-border"];
+                  return (
                   <article
                     key={title}
-                    className="group grid sm:grid-cols-[180px_1fr] bg-ivory rounded-[8px] overflow-hidden border border-hairline hover:border-ink/25 transition-colors duration-300"
+                    className={`group grid sm:grid-cols-[180px_1fr] ${infraBgs[idx]} rounded-[8px] overflow-hidden border ${infraBorders[idx]} hover:border-ink/25 transition-colors duration-300`}
                   >
                     <div className="h-52 sm:h-full min-h-[200px] overflow-hidden">
                       <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -1174,7 +1235,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       <p className="text-[13px] text-ink-soft leading-relaxed font-light">{desc}</p>
                     </div>
                   </article>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -1209,7 +1271,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
 
-            <div className="bg-ivory border border-hairline p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
+            <div className="bg-pathway-blue-bg border border-pathway-blue-border p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-ink mb-8">Admission Enquiry 2026–27</h3>
               <CallbackForm />

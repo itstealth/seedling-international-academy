@@ -359,9 +359,17 @@ export default function AcademicsPage() {
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {learnerProfile.map((lp, i) => (
-              <Reveal key={lp.trait} delay={i * 80}>
-                <div className="group bg-white/70 border border-[#133844]/10 rounded-3xl overflow-hidden hover:bg-white/90 hover:border-[#133844]/40 transition-all duration-500 hover:-translate-y-2 text-center pb-8">
+            {(() => {
+              const cardColors = [
+                "bg-pathway-purple-bg border-pathway-purple-border",
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-green-bg border-pathway-green-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+              ];
+              return learnerProfile.map((lp, i) => (
+                <Reveal key={lp.trait} delay={i * 80}>
+                  <div className={`group ${cardColors[i]} rounded-3xl overflow-hidden hover:opacity-90 hover:border-[#133844]/40 transition-all duration-500 hover:-translate-y-2 text-center pb-8`}>
                   <div className="h-44 overflow-hidden relative">
                     <img
                       src={lp.img}
@@ -376,8 +384,9 @@ export default function AcademicsPage() {
                     <p className="text-[#133844]/70 text-xs leading-relaxed font-dm font-light">{lp.desc}</p>
                   </div>
                 </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ));
+            })()}
           </div>
         </div>
       </section>
@@ -533,7 +542,7 @@ export default function AcademicsPage() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
             {faculty.map((f, i) => (
               <Reveal key={f.name} delay={i * 80}>
-                <div className="group bg-off-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-sand/40">
+                <div className="group bg-pathway-green-bg rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-pathway-green-border">
                   <div className="relative overflow-hidden h-72">
                     <img
                       src={f.img}

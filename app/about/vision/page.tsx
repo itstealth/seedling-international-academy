@@ -40,7 +40,7 @@ export default function VisionPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white p-16 rounded-[4rem] border border-black/5 shadow-editorial hover:bg-primary group transition-all duration-700"
+              className={`p-16 rounded-[4rem] border shadow-editorial hover:bg-primary group transition-all duration-700 ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border","bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border"][i % 6]}`}
             >
               <div className="w-20 h-20 rounded-3xl bg-neutral-50 flex items-center justify-center text-secondary mb-12 shadow-inner group-hover:bg-white group-hover:scale-110 transition-all">
                 {(() => {

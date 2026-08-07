@@ -48,7 +48,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="absolute -bottom-5 left-6 bg-white rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy">
+                <div className="absolute -bottom-5 left-6 bg-pathway-purple-bg rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy border-pathway-purple-border">
                   <p className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">Principal</p>
                   <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling International Academy</p>
                 </div>
@@ -67,7 +67,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
               <p className="text-sm font-bold tracking-widest uppercase text-navy mb-1">Principal</p>
               <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling International Academy (SIA)</p>
 
-              <div className="bg-white rounded-2xl p-7 md:p-9 shadow-lg border border-sand/30 relative">
+              <div className="bg-pathway-blue-bg rounded-2xl p-7 md:p-9 shadow-lg border border-pathway-blue-border relative">
                 <span className="absolute -top-5 left-6 text-7xl font-serif leading-none text-navy opacity-20">&ldquo;</span>
 
                 <p className="font-medium text-base md:text-lg mb-5 text-navy">

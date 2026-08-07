@@ -44,6 +44,12 @@ const supportSystems = [
   }
 ];
 
+const cardColors = [
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-green-bg border-pathway-green-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+];
+
 export default function LearningSupportPage() {
   return (
     <div className="bg-neutral-bg min-h-screen pt-32 overflow-x-hidden">

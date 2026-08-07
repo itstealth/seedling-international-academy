@@ -190,16 +190,24 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             {/* Stats row */}
             <div className="grid grid-cols-2 gap-3 max-w-sm">
               {[
-                { v: campus.established, l: "Established" },
-                { v: campus.studentTeacher, l: "Student : Teacher" },
-                { v: campus.campusSize, l: "Campus" },
-                { v: campus.results, l: "Cambridge Results" },
-              ].map((s) => (
-                <div key={s.l} className="bg-white rounded-xl p-3 border border-sand/40 shadow-sm">
+                { v: campus.established, l: "Established", palette: "purple" },
+                { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },
+                { v: campus.campusSize, l: "Campus", palette: "green" },
+                { v: campus.results, l: "Cambridge Results", palette: "orange" },
+              ].map((s) => {
+                const paletteMap: Record<string, string> = {
+                  purple: "bg-pathway-purple-bg border-pathway-purple-border",
+                  blue: "bg-pathway-blue-bg border-pathway-blue-border",
+                  green: "bg-pathway-green-bg border-pathway-green-border",
+                  orange: "bg-pathway-orange-bg border-pathway-orange-border",
+                };
+                return (
+                <div key={s.l} className={`${paletteMap[s.palette]} rounded-xl p-3 border shadow-sm`}>
                   <p className="font-playfair text-xl font-semibold text-navy leading-tight">{s.v}</p>
                   <p className="text-[10px] uppercase tracking-widest text-text-light font-dm mt-0.5">{s.l}</p>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -214,14 +222,24 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               Facilities &amp; Spaces
             </h3>
             <div className="space-y-3">
-              {campus.facilities.map((f, i) => (
+              {campus.facilities.map((f, i) => {
+                const palettes = [
+                  "bg-pathway-purple-bg border-pathway-purple-border",
+                  "bg-pathway-blue-bg border-pathway-blue-border",
+                  "bg-pathway-green-bg border-pathway-green-border",
+                  "bg-pathway-orange-bg border-pathway-orange-border",
+                  "bg-pathway-rose-bg border-pathway-rose-border",
+                  "bg-pathway-orange-bg border-pathway-orange-border",
+                ];
+                const paletteClass = palettes[i % palettes.length];
+                return (
                 <motion.div
                   key={f.name}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.35, delay: i * 0.04, ease: EASE }}
-                  className="flex gap-3 p-3 bg-white rounded-xl border border-sand/40"
+                  className={`flex gap-3 p-3 ${paletteClass} rounded-xl border`}
                 >
                   <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0">
                     {String(i + 1).padStart(2, "0")}
@@ -231,7 +249,8 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                     <p className="text-xs text-text-light leading-relaxed font-dm">{f.desc}</p>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 

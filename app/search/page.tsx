@@ -235,7 +235,7 @@ function SearchResults() {
         <form
           action="/search"
           method="GET"
-          className="flex items-center gap-3 bg-white rounded-2xl shadow-lg border border-sand/40 px-5 py-4"
+          className="flex items-center gap-3 bg-pathway-green-bg rounded-2xl shadow-lg border border-pathway-green-border px-5 py-4"
         >
           <Search className="w-5 h-5 text-[#133844] flex-shrink-0" />
           <input
@@ -296,7 +296,7 @@ function SearchResults() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="group flex items-start justify-between gap-4 bg-white rounded-2xl border border-sand/40 p-5 hover:border-royal-blue/40 hover:shadow-lg transition-all"
+                  className="group flex items-start justify-between gap-4 bg-pathway-orange-bg rounded-2xl border border-pathway-orange-border p-5 hover:border-pathway-orange-border hover:shadow-lg transition-all"
                 >
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] font-black tracking-[0.2em] uppercase text-crimson">
@@ -317,7 +317,7 @@ function SearchResults() {
         )}
 
         {q && results.length === 0 && (
-          <div className="bg-white rounded-2xl border border-sand/40 p-10 text-center">
+          <div className="bg-pathway-purple-bg rounded-2xl border border-pathway-purple-border p-10 text-center">
             <p className="text-text-light">
               Try searching for{" "}
               <span className="font-semibold text-[#133844]">

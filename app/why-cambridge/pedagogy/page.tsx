@@ -102,6 +102,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string; ring:
   "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30", ring: "ring-royal-blue/40" },
 };
 
+const cardColors5 = [
+  "bg-pathway-purple-bg border-pathway-purple-border",
+  "bg-pathway-blue-bg border-pathway-blue-border",
+  "bg-pathway-green-bg border-pathway-green-border",
+  "bg-pathway-orange-bg border-pathway-orange-border",
+  "bg-pathway-rose-bg border-pathway-rose-border",
+];
+
 export default function PedagogyPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
@@ -142,7 +150,7 @@ export default function PedagogyPage(): React.JSX.Element {
 
         {/* Expert quote */}
         <motion.figure
-          className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm"
+          className="mt-12 max-w-3xl mx-auto bg-pathway-blue-bg border border-pathway-blue-border rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -190,7 +198,7 @@ export default function PedagogyPage(): React.JSX.Element {
                   variants={slideIn(direction)}
                   transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -4, scale: 1.005 }}
-                  className="group bg-off-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-sand/40 overflow-hidden grid md:grid-cols-[1fr_280px] gap-0"
+                  className={`group ${cardColors5[i]} rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden grid md:grid-cols-[1fr_280px] gap-0`}
                 >
                   <div className="p-7 md:p-10">
                     <div className="flex items-center gap-3 mb-4">

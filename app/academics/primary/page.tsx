@@ -50,7 +50,7 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
           Cambridge Primary provides a strong foundation for students at the beginning of their schooling — preparing them to progress through the Cambridge Pathway in an age-appropriate way.
         </p>
-        <motion.figure className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm text-left" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, delay: 0.1, ease: EASE }}>
+        <motion.figure className="mt-12 max-w-3xl mx-auto bg-pathway-blue-bg rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm text-left border-pathway-blue-border" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45, delay: 0.1, ease: EASE }}>
           <blockquote className="font-playfair text-lg md:text-xl text-[#133844] leading-relaxed">
             &ldquo;Cambridge Primary has a very flexible curriculum. It is not restrictive. I can bring local and international examples into my class, and it works very well with my students.&rdquo;
           </blockquote>
@@ -71,10 +71,18 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
           </motion.div>
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {subjects.map((s) => {
+            {subjects.map((s, idx) => {
               const c = colorMap[s.color];
+              const pastel = [
+                "bg-pathway-purple-bg border-pathway-purple-border",
+                "bg-pathway-blue-bg border-pathway-blue-border",
+                "bg-pathway-green-bg border-pathway-green-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-pathway-orange-bg border-pathway-orange-border",
+              ][idx] || "bg-pathway-purple-bg border-pathway-purple-border";
               return (
-                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`bg-off-white rounded-2xl p-6 shadow-sm hover:shadow-lg border ${c.border}`}>
+                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} rounded-2xl p-6 shadow-sm hover:shadow-lg border`}>
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
                     <h3 className="font-playfair text-lg font-semibold text-ink">{s.group}</h3>
@@ -100,10 +108,11 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {features.map((f) => {
+            {features.map((f, idx) => {
               const c = colorMap[f.color];
+              const pastel = ["bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border"][idx] || "bg-pathway-orange-bg border-pathway-orange-border";
               return (
-                <motion.div key={f.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-sand/40 transition-colors">
+                <motion.div key={f.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}>
                   <div className="text-4xl mb-4">{f.icon}</div>
                   <h3 className="font-playfair text-lg font-semibold mb-2 text-[#133844]">{f.title}</h3>
                   <p className="text-[#133844]/75 text-sm leading-[1.85] font-dm">{f.desc}</p>

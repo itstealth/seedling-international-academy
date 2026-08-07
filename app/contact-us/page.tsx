@@ -112,7 +112,7 @@ function InfoCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="group bg-white rounded-2xl p-6 shadow-sm border border-sand/40 transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5">
+    <div className="group bg-pathway-blue-bg rounded-2xl p-6 shadow-sm border border-pathway-blue-border transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5">
       <div className="flex items-start gap-3 mb-5">
         <div className={`${iconBg} rounded-xl p-2.5 shrink-0`}>{icon}</div>
         <div className="pt-0.5">
@@ -307,7 +307,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT FORM
       ══════════════════════════════════════════════════════════════════════ */}
-      <section id="contact-form" className="pt-12 pb-8 md:pt-16 md:pb-10 bg-white border-y border-sand/40 scroll-mt-6">
+      <section id="contact-form" className="pt-12 pb-8 md:pt-16 md:pb-10 bg-pathway-blue-bg border-y border-pathway-blue-border scroll-mt-6">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
@@ -560,7 +560,7 @@ export default function ContactPage() {
             </div>
 
             <div className="md:col-span-2">
-              <div className="bg-off-white rounded-2xl border border-sand/40 overflow-hidden mb-5">
+              <div className="bg-pathway-blue-bg rounded-2xl border border-pathway-blue-border overflow-hidden mb-5">
                 {HOURS.map(({ day, time, open }, i) => (
                   <div
                     key={day}
