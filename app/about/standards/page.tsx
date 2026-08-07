@@ -181,22 +181,60 @@ export default function OurStandardsPage(): React.JSX.Element {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {assessmentPillars.map((p) => {
-              const c = colorMap[p.color];
-              return (
-                <div
-                  key={p.title}
-                  className={`group relative rounded-2xl p-7 transition-all duration-500 border ${c.glass} ${c.border} hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 ring-1 ${c.ring}`}
-                  style={{ boxShadow: "0 10px 40px -20px rgba(0,0,0,0.08)" }}
-                >
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-white/90 backdrop-blur-md border ${c.border} ${c.text} group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                    {p.icon}
-                  </div>
-                  <h3 className="font-playfair text-2xl font-semibold mb-3 text-ink">{p.title}</h3>
-                  <p className="text-text-light text-sm leading-[1.85] font-dm">{p.desc}</p>
+            {[
+              {
+                title: "Reliability",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                desc: "Every assessment is designed to measure what it claims to measure — consistently, fairly and without bias — so that every grade a Seedling student earns is one they can stand on.",
+                footer: "Internal moderation on every grade",
+              },
+              {
+                title: "Validity",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                desc: "Tasks mirror real skills and understanding — not memorisation tricks. Students are assessed on the abilities they will actually need at university, in the workplace and in life.",
+                footer: "Aligned with Cambridge International grade descriptors",
+              },
+              {
+                title: "Progression",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                desc: "Marks are tracked over time. We do not just see where a student is today — we look at how far they have come, and what they are ready for next.",
+                footer: "A clear path of growth across every stage",
+              },
+              {
+                title: "Transparency",
+                headerBg: "bg-orange-700",
+                bg: "bg-orange-100",
+                border: "border-orange-700",
+                desc: "Students and parents see exactly what is being assessed, how it is being marked, and what the next steps are. There are no surprises at Seedling.",
+                footer: "Criteria and rubrics shared openly",
+              },
+            ].map((c) => (
+              <div key={c.title} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+                {/* Header band */}
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
                 </div>
-              );
-            })}
+
+                {/* Body */}
+                <div className="px-5 py-5">
+                  <p className="text-[#133844] text-sm leading-[1.85] font-dm">{c.desc}</p>
+                </div>
+
+                {/* Footer band */}
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                  {c.footer}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -267,19 +305,54 @@ export default function OurStandardsPage(): React.JSX.Element {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {reportingTouchpoints.map((r, i) => (
-            <div
-              key={r.title}
-              className={`group rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 border hover:border-navy/30 ${["bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-green-bg border-pathway-green-border","bg-pathway-orange-bg border-pathway-orange-border"][i % 3]}`}
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-12 h-12 rounded-2xl bg-navy text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                  {r.icon}
-                </div>
-                <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">{r.label}</span>
+          {[
+            {
+              label: "Continuous",
+              title: "Day-to-day Feedback",
+              headerBg: "bg-purple-700",
+              bg: "bg-purple-100",
+              border: "border-purple-700",
+              desc: "Verbal and written feedback after every significant task — in the moment, when it matters most.",
+              footer: "Immediate, actionable feedback",
+            },
+            {
+              label: "Termly",
+              title: "Parent–Teacher Conferences",
+              headerBg: "bg-blue-700",
+              bg: "bg-blue-100",
+              border: "border-blue-700",
+              desc: "Three formal conversations a year to discuss progress, effort and next steps.",
+              footer: "Three structured conversations annually",
+            },
+            {
+              label: "Annual",
+              title: "Detailed Progress Report",
+              headerBg: "bg-green-700",
+              bg: "bg-green-100",
+              border: "border-green-700",
+              desc: "A comprehensive written report summarising attainment, attitude, contribution and recommended next steps.",
+              footer: "A full written record each year",
+            },
+          ].map((c) => (
+            <div key={c.title} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+              {/* Header band */}
+              <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                  {c.title}
+                </h3>
               </div>
-              <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{r.title}</h3>
-              <p className="text-text-light text-sm leading-[1.85] font-dm">{r.desc}</p>
+
+              {/* Body */}
+              <div className="px-5 py-5">
+                <p className="text-[11px] font-black uppercase tracking-wider text-[#133844] mb-3">{c.label}</p>
+                <p className="text-[#133844] text-sm leading-[1.85] font-dm">{c.desc}</p>
+              </div>
+
+              {/* Footer band */}
+              <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                {c.footer}
+              </div>
             </div>
           ))}
         </div>

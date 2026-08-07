@@ -33,18 +33,6 @@ const qualifications = [
     desc: "The gold standard for university admission worldwide. A two-year course with deep specialisation, examined at the end of Year 13.",
     color: "navy",
   },
-  {
-    code: "IPQ",
-    name: "Cambridge International Project Qualification",
-    desc: "An extended research project on a topic of the student's choice. Equivalent to half an A Level — and prized by admissions teams for evidence of independent thinking.",
-    color: "mauve",
-  },
-  {
-    code: "AICE",
-    name: "Cambridge AICE Diploma",
-    desc: "A group certificate awarded to students who pass Cambridge AS/A Levels across multiple subject groups. Recognised by leading US and UK universities for breadth.",
-    color: "royal-blue",
-  },
 ];
 
 const subjectGroups = [
@@ -149,7 +137,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           >
             <p className="font-playfair text-navy text-xl mb-3">The Qualifications</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Four Ways to <em className="font-semibold text-navy">Excel</em>
+              Two Pathways to <em className="font-semibold text-navy">Excel</em>
             </h2>
           </motion.div>
 
@@ -212,31 +200,83 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
           >
-            {subjectGroups.map((g, idx) => {
-              const c = colorMap[g.color];
-              const pastel = ["bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border"][idx] || "bg-pathway-orange-bg border-pathway-orange-border";
-              return (
-                <motion.div
-                  key={g.group}
-                  variants={cardRise}
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.4, ease: EASE }}
-                  className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-[#133844]">{g.group}</h3>
-                  </div>
+            {[
+              {
+                title: "Sciences",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                items: ["Biology", "Chemistry", "Physics", "Marine Science", "Environmental Management", "Computer Science"],
+                footer: "Advanced scientific thinking and research",
+              },
+              {
+                title: "Mathematics & Further",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                items: ["Mathematics", "Further Mathematics", "Statistics"],
+                footer: "From core to competition-level mathematics",
+              },
+              {
+                title: "Humanities",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                items: ["English Literature", "English Language", "History", "Geography", "Religious Studies", "Sociology"],
+                footer: "Reading, writing, and rigorous inquiry",
+              },
+              {
+                title: "Languages",
+                headerBg: "bg-orange-700",
+                bg: "bg-orange-100",
+                border: "border-orange-700",
+                items: ["French", "Spanish", "German", "Hindi", "Urdu", "Mandarin Chinese"],
+                footer: "World languages, deep fluency",
+              },
+              {
+                title: "Business & Social Sciences",
+                headerBg: "bg-red-700",
+                bg: "bg-red-100",
+                border: "border-red-700",
+                items: ["Business", "Economics", "Accounting", "Psychology", "Global Perspectives & Research"],
+                footer: "Strategy, analysis, and human behaviour",
+              },
+              {
+                title: "Creative & Vocational",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                items: ["Art & Design", "Music", "Drama", "Media Studies", "Physical Education", "Design & Technology"],
+                footer: "Expressive, practical, and hands-on",
+              },
+            ].map((c) => (
+              <motion.div
+                key={c.title}
+                variants={cardRise}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.4, ease: EASE }}
+                className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}
+              >
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
+                </div>
+                <div className="px-5 py-5">
                   <div className="flex flex-wrap gap-2">
-                    {g.items.map((s) => (
-                      <span key={s} className="text-xs font-medium text-[#133844]/80 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                    {c.items.map((s) => (
+                      <span key={s} className="text-xs font-medium text-[#133844] bg-white border border-[#133844]/10 rounded-full px-3 py-1">
                         {s}
                       </span>
                     ))}
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                  {c.footer}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>

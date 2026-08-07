@@ -96,17 +96,55 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {features.map((f, idx) => {
-              const c = colorMap[f.color];
-              const pastel = ["bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-orange-bg border-pathway-orange-border", "bg-pathway-purple-bg border-pathway-purple-border"][idx] || "bg-pathway-orange-bg border-pathway-orange-border";
-              return (
-                <motion.div key={f.title} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}>
-                  <div className="text-4xl mb-4">{f.icon}</div>
-                  <h3 className="font-playfair text-lg font-semibold mb-2 text-[#133844]">{f.title}</h3>
-                  <p className="text-[#133844]/75 text-sm leading-[1.85] font-dm">{f.desc}</p>
-                </motion.div>
-              );
-            })}
+            {[
+              {
+                title: "10+ Subjects",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                desc: "Core subjects plus creativity, expression, and wellbeing — a balanced curriculum for every learner.",
+                footer: "Balance across every dimension",
+              },
+              {
+                title: "Checkpoint Assessment",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                desc: "Cambridge Lower Secondary Checkpoint offers optional, external benchmarks of student progress.",
+                footer: "External benchmarks available",
+              },
+              {
+                title: "Progression Tests",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                desc: "Regular formative tests that help teachers track learning and tailor support to each student.",
+                footer: "Track every learner's growth",
+              },
+              {
+                title: "Curriculum Frameworks",
+                headerBg: "bg-orange-700",
+                bg: "bg-orange-100",
+                border: "border-orange-700",
+                desc: "Detailed subject frameworks and high-quality teaching resources for every stage of learning.",
+                footer: "Detailed, stage-appropriate frameworks",
+              },
+            ].map((c) => (
+              <motion.div key={c.title} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
+                </div>
+                <div className="px-5 py-5">
+                  <p className="text-[#133844] text-sm leading-[1.85] font-dm">{c.desc}</p>
+                </div>
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                  {c.footer}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>

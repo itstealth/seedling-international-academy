@@ -19,7 +19,7 @@ const facilities = [
 ];
 
 const stats = [
-  { value: "2010s", label: "Established" },
+  { value: "2010", label: "Established" },
   { value: "20:1", label: "Student–Teacher Ratio" },
   { value: "Modern", label: "Campus" },
   { value: "100%", label: "Cambridge Results" },

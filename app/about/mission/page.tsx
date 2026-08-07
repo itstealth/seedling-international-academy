@@ -117,48 +117,75 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="group relative bg-purple-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-700 hover:border-navy/30 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-navy" />
-              <div className="inline-flex p-3 rounded-xl bg-navy text-white mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              </div>
-              <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Vision</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Wisdom & Comprehension</h3>
-              <p className="text-text-light leading-[1.9] text-sm font-dm">
-                To be a beacon of wisdom — nurturing young minds that can comprehend, question, and contribute meaningfully to the world. We envision graduates who are life-ready and life-worthy, open to noble thoughts from every direction.
-              </p>
-            </div>
+            {[
+              {
+                eyebrow: "Our Vision",
+                title: "Wisdom & Comprehension",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                points: [
+                  "A beacon of wisdom for every learner",
+                  "Question, comprehend, contribute meaningfully",
+                  "Graduates who are life-ready and life-worthy",
+                ],
+                footer: "Open to noble thoughts from every direction",
+              },
+              {
+                eyebrow: "Our Mission",
+                title: "Joyful, Whole-Child Learning",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                points: [
+                  "Joyful learning environment for every child",
+                  "Self-confidence and personal potential nurtured",
+                  "Resilient, adaptable, socially responsible adults",
+                ],
+                footer: "Education that empowers beyond the classroom",
+              },
+              {
+                eyebrow: "Our Promise",
+                title: "Community & Collaboration",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                points: [
+                  "Every stakeholder truly matters",
+                  "Active communication with families",
+                  "An environment where every child feels seen",
+                ],
+                footer: "Holistic well-being is everyone's commitment",
+              },
+            ].map((c) => (
+              <div key={c.title} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500`}>
+                {/* Header band */}
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
+                </div>
 
-            <div className="group relative bg-green-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-green-700 hover:border-mauve/30 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-mauve" />
-              <div className="inline-flex p-3 rounded-xl bg-mauve text-white mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Mission</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Joyful, Whole-Child Learning</h3>
-              <p className="text-text-light leading-[1.9] text-sm font-dm">
-                To provide a joyful learning environment that empowers students to reach their educational and personal potential while nurturing self-confidence and self-esteem — developing resilient, adaptable, socially responsible adults.
-              </p>
-            </div>
+                {/* Body */}
+                <div className="px-5 py-5">
+                  <p className="mb-3 text-[11px] font-black uppercase tracking-wider text-[#133844]">{c.eyebrow}</p>
+                  <ul className="space-y-2.5 text-sm leading-snug text-[#133844]">
+                    {c.points.map((point, idx) => (
+                      <li key={idx} className="flex gap-2.5">
+                        <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${c.headerBg}`} />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            <div className="group relative bg-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-orange-700 hover:border-crimson/30 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-crimson" />
-              <div className="inline-flex p-3 rounded-xl bg-crimson text-white mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+                {/* Footer band */}
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-sm font-bold leading-relaxed text-[#133844]">
+                  {c.footer}
+                </div>
               </div>
-              <p className="text-xs tracking-[0.2em] uppercase text-text-light mb-2 font-dm">Our Promise</p>
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-ink">Community & Collaboration</h3>
-              <p className="text-text-light leading-[1.9] text-sm font-dm">
-                Every stakeholder — student, parent, teacher — matters. We commit to active communication, holistic well-being, and an environment where every child feels seen, valued, and motivated to grow.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -235,17 +262,91 @@ export default function MissionAndValuesPage(): React.JSX.Element {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
-          {promises.map((p, i) => (
-            <div
-              key={p.num}
-              className={`flex gap-6 items-start p-7 rounded-[2rem] shadow-sm border hover:border-navy/20 hover:shadow-xl transition-all group ${["bg-red-100 border-red-700","bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-orange-100 border-orange-700"][i % 4]}`}
-            >
-              <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center font-black text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                {p.num}
+          {[
+            {
+              num: "01",
+              eyebrow: "Our Promise",
+              title: "Safe & Nurturing",
+              headerBg: "bg-purple-700",
+              bg: "bg-purple-100",
+              border: "border-purple-700",
+              points: [
+                "Secure campuses with trained counsellors",
+                "Mentors who care for every child",
+                "Emotional and physical well-being first",
+              ],
+              footer: "A culture of care at the heart of Seedling",
+            },
+            {
+              num: "02",
+              eyebrow: "Our Promise",
+              title: "Holistic Development",
+              headerBg: "bg-blue-700",
+              bg: "bg-blue-100",
+              border: "border-blue-700",
+              points: [
+                "Sports, performing arts, clubs, leadership",
+                "Community service shapes character",
+                "Every learner blossoms beyond academics",
+              ],
+              footer: "Educating the whole child, every day",
+            },
+            {
+              num: "03",
+              eyebrow: "Our Promise",
+              title: "Strong Results",
+              headerBg: "bg-green-700",
+              bg: "bg-green-100",
+              border: "border-green-700",
+              points: [
+                "Cambridge IGCSE & AS/A Level cohorts",
+                "Top grades with proven university placements",
+                "Global alumni network across 50+ nations",
+              ],
+              footer: "Excellence that opens doors worldwide",
+            },
+            {
+              num: "04",
+              eyebrow: "Our Promise",
+              title: "Future-Ready Learners",
+              headerBg: "bg-orange-700",
+              bg: "bg-orange-100",
+              border: "border-orange-700",
+              points: [
+                "Inquiry-led and future-focused learning",
+                "Critical thinking and creativity",
+                "Empathy, courage, and purpose in every child",
+              ],
+              footer: "Equipped to lead in an ever-changing world",
+            },
+          ].map((c) => (
+            <div key={c.num} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500`}>
+              {/* Header band */}
+              <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                  {c.title}
+                </h3>
               </div>
-              <div>
-                <h4 className="text-lg font-black text-ink mb-1 uppercase tracking-tight font-dm">{p.title}</h4>
-                <p className="text-sm text-text-light leading-relaxed font-dm">{p.desc}</p>
+
+              {/* Body */}
+              <div className="px-5 py-5">
+                <p className="mb-3 text-[11px] font-black uppercase tracking-wider text-[#133844]">
+                  <span className="opacity-70 mr-1">0{c.num.slice(-1)}</span>· {c.eyebrow}
+                </p>
+                <ul className="space-y-2.5 text-sm leading-snug text-[#133844]">
+                  {c.points.map((point, idx) => (
+                    <li key={idx} className="flex gap-2.5">
+                      <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${c.headerBg}`} />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Footer band */}
+              <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-sm font-bold leading-relaxed text-[#133844]">
+                {c.footer}
               </div>
             </div>
           ))}

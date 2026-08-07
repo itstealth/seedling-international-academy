@@ -93,7 +93,7 @@ const campuses: Campus[] = [
     heroImage: "/assets/Home/SMIA_collage_v3.webp",
     introHeadline: "Modern facilities. <em class='font-semibold text-navy'>Timeless Seedling values.</em>",
     introLead: "Seedling Modern International Academy (SMIA) at Durgapura brings the same globally benchmarked Cambridge education to central Jaipur — modern, vibrant and built for the next generation of learners.",
-    established: "2010s",
+    established: "2010",
     studentTeacher: "20:1",
     campusSize: "Modern",
     results: "100%",

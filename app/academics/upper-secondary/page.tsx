@@ -10,7 +10,6 @@ const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacit
 
 const routes = [
   { name: "Cambridge IGCSE", count: "70+", desc: "International General Certificate of Secondary Education — globally recognised, modular-friendly, accepted by leading universities worldwide.", color: "crimson" },
-  { name: "Cambridge O Level", count: "40+", desc: "A more locally relevant alternative to IGCSE, available in selected subjects. Often used where national curriculum alignment matters.", color: "navy" },
 ];
 
 const subjectGroups = [
@@ -32,7 +31,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <HeroWrapper backgroundImage="/assets/img/sps-banner.jpg" title="Cambridge Upper Secondary" badge="Ages 14–16 · IGCSE & O Level" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" />
+      <HeroWrapper backgroundImage="/assets/img/sps-banner.jpg" title="Cambridge Upper Secondary" badge="Ages 14–16 · Cambridge IGCSE" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
@@ -52,23 +51,23 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl mb-3">Two Routes</p>
+            <p className="font-playfair text-navy text-xl mb-3">The Cambridge Standard</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              <em className="font-semibold text-navy">IGCSE</em> or <em className="font-semibold text-navy">O Level</em>
+              <em className="font-semibold text-navy">Cambridge IGCSE</em>
             </h2>
           </motion.div>
 
-          <motion.div className="grid md:grid-cols-2 gap-6 md:gap-8" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+          <motion.div className="flex justify-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {routes.map((r, idx) => {
               const c = colorMap[r.color];
               const pastel = ["bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-rose-bg border-pathway-rose-border"][idx] || "bg-pathway-blue-bg border-pathway-blue-border";
               return (
-                <motion.div key={r.name} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-xl border`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="font-playfair text-2xl font-semibold text-ink">{r.name}</h3>
+                <motion.div key={r.name} variants={cardRise} whileHover={{ y: -6 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} rounded-2xl p-7 md:p-10 shadow-sm hover:shadow-xl border max-w-2xl w-full text-center`}>
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <h3 className="font-playfair text-2xl md:text-3xl font-semibold text-ink">{r.name}</h3>
                     <span className={`text-3xl md:text-4xl font-bold ${c.text}`}>{r.count}</span>
                   </div>
-                  <p className="text-text-light text-sm md:text-base leading-[1.85] font-dm">{r.desc}</p>
+                  <p className="text-text-light text-sm md:text-base leading-[1.85] font-dm max-w-xl mx-auto">{r.desc}</p>
                 </motion.div>
               );
             })}
@@ -87,29 +86,75 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
-            {subjectGroups.map((g, idx) => {
-              const c = colorMap[g.color];
-              const cardColors = [
-                "bg-pathway-purple-bg border-pathway-purple-border",
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-green-bg border-pathway-green-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-              ];
-              const pastel = cardColors[idx] || "bg-pathway-purple-bg border-pathway-purple-border";
-              return (
-                <motion.div key={g.group} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`${pastel} backdrop-blur-sm rounded-2xl p-6 hover:border-sand/40 transition-colors`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className={`w-2 h-2 rounded-full ${c.bg.replace('/10', '')}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-[#133844]">{g.group}</h3>
-                  </div>
+            {[
+              {
+                title: "Sciences",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                items: ["Biology", "Chemistry", "Physics", "Combined Science", "Marine Science", "Environmental Management", "Computer Science"],
+                footer: "Exploring the natural and digital worlds",
+              },
+              {
+                title: "Mathematics",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                items: ["Mathematics A", "Mathematics B", "Additional Mathematics", "Statistics"],
+                footer: "From foundations to higher mathematics",
+              },
+              {
+                title: "Humanities",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                items: ["English Language", "English Literature", "History", "Geography", "Global Perspectives", "Religious Studies", "Sociology", "Economics"],
+                footer: "Understanding people, society, and ideas",
+              },
+              {
+                title: "Languages",
+                headerBg: "bg-orange-700",
+                bg: "bg-orange-100",
+                border: "border-orange-700",
+                items: ["French", "Spanish", "German", "Hindi", "Urdu", "Mandarin Chinese", "Arabic"],
+                footer: "Fluency across global tongues",
+              },
+              {
+                title: "Business & Tech",
+                headerBg: "bg-red-700",
+                bg: "bg-red-100",
+                border: "border-red-700",
+                items: ["Business Studies", "Accounting", "Computer Science", "Information & Communication Technology", "Entrepreneurship"],
+                footer: "Skills for the modern economy",
+              },
+              {
+                title: "Creative & Vocational",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                items: ["Art & Design", "Music", "Drama", "Media Studies", "Physical Education", "Design & Technology", "Food & Nutrition"],
+                footer: "Hands-on, expressive, and practical",
+              },
+            ].map((c) => (
+              <motion.div key={c.title} variants={cardRise} whileHover={{ y: -4 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
+                </div>
+                <div className="px-5 py-5">
                   <div className="flex flex-wrap gap-2">
-                    {g.items.map((i) => (<span key={i} className="text-xs font-medium text-[#133844]/80 bg-white/5 border border-white/10 rounded-full px-3 py-1">{i}</span>))}
+                    {c.items.map((i) => (
+                      <span key={i} className="text-xs font-medium text-[#133844] bg-white border border-[#133844]/10 rounded-full px-3 py-1">{i}</span>
+                    ))}
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                  {c.footer}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>

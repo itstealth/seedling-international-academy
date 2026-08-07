@@ -191,21 +191,55 @@ export default function CambridgeEducationPage(): React.JSX.Element {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {recognition.map((r, i) => {
-            const c = colorMap[r.color];
-            return (
-              <div
-                key={r.title}
-                className={`group ${cardColors4[i]} rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
-              >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${c.bg} ${c.text} group-hover:scale-110 transition-transform duration-500`}>
-                  {r.icon}
-                </div>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-ink">{r.title}</h3>
-                <p className="text-text-light text-sm leading-[1.85] font-dm">{r.desc}</p>
+          {[
+            {
+              title: "Recognised by Top Universities",
+              headerBg: "bg-purple-700",
+              bg: "bg-purple-100",
+              border: "border-purple-700",
+              desc: "Cambridge International AS & A Levels are accepted by every leading university in the UK, US, Canada, Australia and beyond — including the Ivy League, Oxbridge, IITs and NITs.",
+              footer: "Every leading university worldwide",
+            },
+            {
+              title: "Trusted by Governments",
+              headerBg: "bg-blue-700",
+              bg: "bg-blue-100",
+              border: "border-blue-700",
+              desc: "Cambridge is the chosen international curriculum of ministries of education across continents — from Singapore and Malaysia to the UAE, Egypt, South Africa and beyond.",
+              footer: "Adopted by national education systems",
+            },
+            {
+              title: "Endorsed by Employers",
+              headerBg: "bg-green-700",
+              bg: "bg-green-100",
+              border: "border-green-700",
+              desc: "Multinational employers — from finance and consulting to tech and engineering — actively recruit Cambridge graduates for their analytical rigour and global mindset.",
+              footer: "Recruited by global companies",
+            },
+            {
+              title: "Aligned with NEP 2020",
+              headerBg: "bg-orange-700",
+              bg: "bg-orange-100",
+              border: "border-orange-700",
+              desc: "Cambridge International's flexible, inquiry-led approach aligns naturally with India's National Education Policy 2020 — making the transition seamless for our students.",
+              footer: "Aligned with India's NEP 2020",
+            },
+          ].map((c) => (
+            <div key={c.title} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+              <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                  {c.title}
+                </h3>
               </div>
-            );
-          })}
+              <div className="px-5 py-5">
+                <p className="text-[#133844] text-sm leading-[1.85] font-dm">{c.desc}</p>
+              </div>
+              <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                {c.footer}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -223,14 +257,78 @@ export default function CambridgeEducationPage(): React.JSX.Element {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {benefits.map((b, i) => (
-              <div
-                key={b.title}
-                className={`${cardColors5[i % 5]} rounded-3xl p-7 md:p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 group`}
-              >
-                <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mb-3 block">0{i + 1}</span>
-                <h3 className="font-playfair text-xl font-semibold mb-3 text-ink group-hover:text-royal-blue transition-colors">{b.title}</h3>
-                <p className="text-text-light text-sm leading-[1.9] font-dm">{b.desc}</p>
+            {[
+              {
+                num: "01",
+                title: "Globally Portable",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                desc: "Cambridge qualifications travel with the student — whether they pursue higher education in India, the UK, the US, Australia or anywhere else.",
+                footer: "Accepted across 160+ countries",
+              },
+              {
+                num: "02",
+                title: "Recognised Excellence",
+                headerBg: "bg-blue-700",
+                bg: "bg-blue-100",
+                border: "border-blue-700",
+                desc: "A Cambridge diploma is one of the most recognised credentials in international education, opening doors at top universities and competitive careers.",
+                footer: "Among the most respected credentials globally",
+              },
+              {
+                num: "03",
+                title: "Future-Ready Skills",
+                headerBg: "bg-green-700",
+                bg: "bg-green-100",
+                border: "border-green-700",
+                desc: "The Cambridge approach develops critical thinking, research, collaboration and problem-solving — skills that define the next generation of leaders.",
+                footer: "Skills for an evolving world",
+              },
+              {
+                num: "04",
+                title: "Flexible Pathways",
+                headerBg: "bg-orange-700",
+                bg: "bg-orange-100",
+                border: "border-orange-700",
+                desc: "From Early Years through Cambridge Advanced, students can shape a learning path that matches their strengths and ambitions.",
+                footer: "A path tailored to every learner",
+              },
+              {
+                num: "05",
+                title: "Internationally Connected",
+                headerBg: "bg-red-700",
+                bg: "bg-red-100",
+                border: "border-red-700",
+                desc: "Joining a global community of Cambridge learners — competing, collaborating, and connecting with peers across 160+ countries.",
+                footer: "A global peer network from day one",
+              },
+              {
+                num: "06",
+                title: "Holistic Growth",
+                headerBg: "bg-purple-700",
+                bg: "bg-purple-100",
+                border: "border-purple-700",
+                desc: "Beyond academics, Cambridge nurtures curiosity, resilience, and global citizenship — shaping well-rounded young people ready for an interconnected world.",
+                footer: "Educating the whole child, every day",
+              },
+            ].map((c) => (
+              <div key={c.num} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}>
+                <div className={`relative ${c.headerBg} px-5 py-4 text-white`}>
+                  <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
+                  <h3 className="relative z-10 font-playfair text-base font-black leading-tight text-white pr-10">
+                    {c.title}
+                  </h3>
+                </div>
+                <div className="px-5 py-5">
+                  <p className="text-[11px] font-black uppercase tracking-wider text-[#133844] mb-3">
+                    <span className="opacity-70 mr-1">0{c.num.slice(-1)}</span>· Why it matters
+                  </p>
+                  <p className="text-[#133844] text-sm leading-[1.85] font-dm">{c.desc}</p>
+                </div>
+                <div className="border-t border-black/10 bg-white/50 px-5 py-4 text-[12px] font-bold uppercase tracking-[0.18em] text-[#133844]">
+                  {c.footer}
+                </div>
               </div>
             ))}
           </div>
