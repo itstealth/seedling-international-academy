@@ -122,8 +122,8 @@
 
   /* ── Vibrant fill palette (card / heading accents) ────────────────────
      Tailwind v4 only generates utility classes for colors declared here.
-     Without these tokens, bg-pathway-purple-bg / bg-pathway-blue-bg / bg-pathway-green-bg / bg-pathway-orange-bg /
-     bg-pathway-rose-bg compile to empty rules and the card fills never paint. */
+     Without these tokens, bg-purple-100 / bg-blue-100 / bg-green-100 / bg-orange-100 /
+     bg-red-100 compile to empty rules and the card fills never paint. */
   --color-red-50:  #fef2f2;
   --color-red-100: #fee2e2;
   --color-red-200: #fecaca;

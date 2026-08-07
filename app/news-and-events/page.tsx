@@ -235,7 +235,7 @@ export default function CampusHighlightsPage() {
 
           {/* Stats Band */}
           {/* <Reveal delay={400}>
-            <div className="mt-12 bg-pathway-orange-bg rounded-[2rem] border border-pathway-orange-border shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
+            <div className="mt-12 bg-orange-100 rounded-[2rem] border border-orange-700 shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
               {[
                 { value: "10k+", label: "Students" },
                 { value: "20:1", label: "Student-Teacher Ratio" },
@@ -350,11 +350,11 @@ export default function CampusHighlightsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((event, i) => {
               const palettes = [
-                "bg-pathway-purple-bg border-pathway-purple-border",
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-green-bg border-pathway-green-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-purple-100 border-purple-700",
+                "bg-blue-100 border-blue-700",
+                "bg-green-100 border-green-700",
+                "bg-orange-100 border-orange-700",
+                "bg-red-100 border-red-700",
               ];
               const paletteClass = palettes[i % palettes.length];
               return (
@@ -428,7 +428,7 @@ export default function CampusHighlightsPage() {
                 <div
                   key={i}
                   onClick={() => snap.gallery && setSelectedSnapGallery({ images: snap.gallery, index: 0 })}
-                  className="group relative break-inside-avoid overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  className="group relative break-inside-avoid overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 >
                   <div className={`relative ${snap.aspect} overflow-hidden bg-stone-100`}>
                     <img
@@ -728,12 +728,12 @@ const newsItems = [
 function NewsCard({ item = newsItems[0], large = false, delay = 0, onClick }: { item?: (typeof newsItems)[0]; large?: boolean; delay?: number; onClick?: () => void }) {
   const { ref, visible } = useReveal<HTMLDivElement>();
   const palettes = [
-    "bg-pathway-purple-bg border-pathway-purple-border",
-    "bg-pathway-blue-bg border-pathway-blue-border",
-    "bg-pathway-green-bg border-pathway-green-border",
-    "bg-pathway-orange-bg border-pathway-orange-border",
-    "bg-pathway-rose-bg border-pathway-rose-border",
-    "bg-pathway-orange-bg border-pathway-orange-border",
+    "bg-purple-100 border-purple-700",
+    "bg-blue-100 border-blue-700",
+    "bg-green-100 border-green-700",
+    "bg-orange-100 border-orange-700",
+    "bg-red-100 border-red-700",
+    "bg-orange-100 border-orange-700",
   ];
   const paletteClass = palettes[(item.id - 1) % palettes.length];
   return (

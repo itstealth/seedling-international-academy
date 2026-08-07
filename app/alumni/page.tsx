@@ -211,9 +211,9 @@ function AlumniCard({
   }, [index]);
 
   const palettes = [
-    "bg-pathway-purple-bg border-pathway-purple-border",
-    "bg-pathway-blue-bg border-pathway-blue-border",
-    "bg-pathway-green-bg border-pathway-green-border",
+    "bg-purple-100 border-purple-700",
+    "bg-blue-100 border-blue-700",
+    "bg-green-100 border-green-700",
   ];
   const paletteClass = palettes[index % palettes.length];
 
@@ -384,10 +384,10 @@ function AchievementsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {stats.map((stat, i) => {
             const palettes = [
-              "bg-pathway-purple-bg border-pathway-purple-border",
-              "bg-pathway-blue-bg border-pathway-blue-border",
-              "bg-pathway-green-bg border-pathway-green-border",
-              "bg-pathway-orange-bg border-pathway-orange-border",
+              "bg-purple-100 border-purple-700",
+              "bg-blue-100 border-blue-700",
+              "bg-green-100 border-green-700",
+              "bg-orange-100 border-orange-700",
             ];
             const paletteClass = palettes[i % palettes.length];
             return (
@@ -410,10 +410,10 @@ function AchievementsSection() {
         <div className="grid md:grid-cols-2 gap-6">
           {achievements.map((a, i) => {
             const palettes = [
-              "bg-pathway-purple-bg border-pathway-purple-border",
-              "bg-pathway-blue-bg border-pathway-blue-border",
-              "bg-pathway-green-bg border-pathway-green-border",
-              "bg-pathway-orange-bg border-pathway-orange-border",
+              "bg-purple-100 border-purple-700",
+              "bg-blue-100 border-blue-700",
+              "bg-green-100 border-green-700",
+              "bg-orange-100 border-orange-700",
             ];
             const paletteClass = palettes[i % palettes.length];
             return (
@@ -543,12 +543,12 @@ function GalleryStrip() {
       <div className="flex gap-5 overflow-x-auto no-scrollbar px-6 pb-4 snap-x snap-mandatory">
         {studentsList.map((s, i) => {
           const palettes = [
-            "bg-pathway-purple-bg border-pathway-purple-border",
-            "bg-pathway-blue-bg border-pathway-blue-border",
-            "bg-pathway-green-bg border-pathway-green-border",
-            "bg-pathway-orange-bg border-pathway-orange-border",
-            "bg-pathway-rose-bg border-pathway-rose-border",
-            "bg-pathway-orange-bg border-pathway-orange-border",
+            "bg-purple-100 border-purple-700",
+            "bg-blue-100 border-blue-700",
+            "bg-green-100 border-green-700",
+            "bg-orange-100 border-orange-700",
+            "bg-red-100 border-red-700",
+            "bg-orange-100 border-orange-700",
           ];
           const paletteClass = palettes[i % palettes.length];
           return (

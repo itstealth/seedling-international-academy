@@ -92,7 +92,7 @@ export default function LeadershipPage() {
   return (
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/0V8A8608.JPG"
         title="Seedling Leadership"
         position={70}
         badge="Anchored In Purpose. Driven By A Vision"
@@ -111,7 +111,7 @@ export default function LeadershipPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {leaders.map((l, i) => (
               <Reveal key={l.name} delay={i * 100}>
-                <div className={`group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border","bg-pathway-rose-bg border-pathway-rose-border"][i % 5]}`}>
+                <div className={`group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border ${["bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-green-100 border-green-700","bg-orange-100 border-orange-700","bg-red-100 border-red-700"][i % 5]}`}>
                   <div className="relative overflow-hidden h-72">
                     <img
                       src={l.img}
@@ -150,7 +150,7 @@ export default function LeadershipPage() {
                   alt="Dr. Sandeep Bakshi, CEO CEO & Director Seedling Director Seedling International School Group"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-orange-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-orange-border">
+                <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
                   <p className="text-navy text-sm font-dm">CEO & Director, Seedling International School Group</p>
                 </div>
@@ -211,7 +211,7 @@ export default function LeadershipPage() {
                  
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-purple-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-purple-border">
+                <div className="absolute -bottom-6 -right-6 bg-purple-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-purple-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
                   <p className="text-navy text-sm font-dm">CEO & Director's Message</p>
                 </div>
@@ -252,7 +252,7 @@ export default function LeadershipPage() {
               </Reveal>
             <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
-                  <div className="w-12 h-px bg-pathway-blue-bg-400" />
+                  <div className="w-12 h-px bg-blue-100-400" />
                   <span className="font-playfair text-xl text-white">Dr. Sandeep Bakshi</span>
                 </div>
                 <p className="text-navy-400 text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
@@ -275,7 +275,7 @@ export default function LeadershipPage() {
                   alt="Dr. Preeti Bakshi, Executive Director Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-rose-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-rose-border">
+                <div className="absolute -bottom-6 -right-6 bg-red-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-red-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Dr. Preeti Bakshi</p>
                   <p className="text-crimson text-sm font-dm">Executive Director's Message</p>
                 </div>
@@ -325,7 +325,7 @@ export default function LeadershipPage() {
                   alt="Ms. Akansha Bakshi, Joint Director Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-green-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-green-border">
+                <div className="absolute -bottom-6 -right-6 bg-green-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-green-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Ms. Akansha Bakshi</p>
                   <p className="text-navy-700 text-sm font-dm">Joint Director</p>
                 </div>
@@ -357,7 +357,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-pathway-purple-bg-700" />
+                <div className="w-12 h-px bg-purple-100-700" />
                 <span className="font-playfair text-xl text-text-light">Ms. Akansha Bakshi</span>
               </div>
               <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
@@ -379,7 +379,7 @@ export default function LeadershipPage() {
                   alt="Ms. Aishwarya Bakshi, Joint Director Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-orange-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-orange-border">
+                <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Ms. Aishwarya Bakshi</p>
                   <p className="text-navy-700 text-sm font-dm">Joint Director</p>
                 </div>
@@ -411,7 +411,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-pathway-blue-bg-700" />
+                <div className="w-12 h-px bg-blue-100-700" />
                 <span className="font-playfair text-xl text-text-light">Ms. Aishwarya Bakshi</span>
               </div>
               <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
@@ -433,7 +433,7 @@ export default function LeadershipPage() {
                   alt="Shruti Kukar, Principal Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-pathway-blue-bg rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-pathway-blue-border">
+                <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
                   <p className="text-navy text-sm font-dm">Principal, Seedling International School</p>
                 </div>

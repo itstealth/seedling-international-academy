@@ -51,7 +51,7 @@ export default function FeeStructurePage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-pathway-purple-bg rounded-[4rem] overflow-hidden shadow-editorial border border-pathway-purple-border"
+          className="bg-purple-100 rounded-[4rem] overflow-hidden shadow-editorial border border-purple-700"
         >
           <div className="overflow-x-auto">
             <table className="w-full text-left">
@@ -88,7 +88,7 @@ export default function FeeStructurePage() {
             { icon: CreditCard, title: "Flexible Payment", desc: "Fees can be paid online via our ERP portal or at the school accounts office." },
             { icon: Info, title: "Sibling Discount", desc: "Special concessions are available for siblings enrolled in the same session." }
           ].map((note, i) => (
-            <div key={i} className={`p-10 rounded-[3rem] border shadow-sm hover:shadow-editorial transition-all duration-700 ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border"][i % 4]}`}>
+            <div key={i} className={`p-10 rounded-[3rem] border shadow-sm hover:shadow-editorial transition-all duration-700 ${["bg-red-100 border-red-700","bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-orange-100 border-orange-700"][i % 4]}`}>
               <div className="w-14 h-14 rounded-2xl bg-neutral-50 flex items-center justify-center text-primary mb-8 shadow-inner">
                 {(() => {
                   const Icon = note.icon;

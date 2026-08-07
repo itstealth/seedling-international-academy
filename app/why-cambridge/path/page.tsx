@@ -94,18 +94,18 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 };
 
 const cardColors4 = [
-  "bg-pathway-rose-bg border-pathway-rose-border",
-  "bg-pathway-purple-bg border-pathway-purple-border",
-  "bg-pathway-blue-bg border-pathway-blue-border",
-  "bg-pathway-orange-bg border-pathway-orange-border",
+  "bg-red-100 border-red-700",
+  "bg-purple-100 border-purple-700",
+  "bg-blue-100 border-blue-700",
+  "bg-orange-100 border-orange-700",
 ];
 
 const cardColors5 = [
-  "bg-pathway-rose-bg border-pathway-rose-border",
-  "bg-pathway-purple-bg border-pathway-purple-border",
-  "bg-pathway-blue-bg border-pathway-blue-border",
-  "bg-pathway-orange-bg border-pathway-orange-border",
-  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-red-100 border-red-700",
+  "bg-purple-100 border-purple-700",
+  "bg-blue-100 border-blue-700",
+  "bg-orange-100 border-orange-700",
+  "bg-red-100 border-red-700",
 ];
 
 const pathways = [
@@ -251,7 +251,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
                   variants={cardRise}
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className={`group ${cardColors4[i]} rounded-2xl p-7 shadow-sm hover:shadow-xl cursor-default`}
+                  className={`group ${cardColors4[i]} rounded-2xl p-7 shadow-lg hover:shadow-2xl cursor-default`}
                 >
                   <motion.div
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${c.bg} ${c.text}`}
@@ -478,7 +478,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
               href="/why-cambridge/education"
               className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
-              Cambridge Education
+              Cambridge Canvas
             </motion.a>
           </motion.div>
         </div>

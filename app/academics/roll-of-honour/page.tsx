@@ -95,10 +95,10 @@ export default function RollOfHonourPage() {
            <div className="space-y-8">
               {(() => {
                 const cardColors = [
-                  "bg-pathway-purple-bg border-pathway-purple-border",
-                  "bg-pathway-blue-bg border-pathway-blue-border",
-                  "bg-pathway-green-bg border-pathway-green-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
+                  "bg-purple-100 border-purple-700",
+                  "bg-blue-100 border-blue-700",
+                  "bg-green-100 border-green-700",
+                  "bg-orange-100 border-orange-700",
                 ];
                 return [
                   { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },

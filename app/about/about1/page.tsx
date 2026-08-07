@@ -189,7 +189,7 @@ export default function AboutPage() {
           {/* Vision */}
           <motion.div
             whileHover={{ scale: 0.98 }}
-            className="group relative h-[800px] rounded-[5rem] overflow-hidden bg-pathway-blue-bg border border-pathway-blue-border p-20 flex flex-col justify-end transition-all duration-700 shadow-editorial"
+            className="group relative h-[800px] rounded-[5rem] overflow-hidden bg-blue-100 border border-blue-700 p-20 flex flex-col justify-end transition-all duration-700 shadow-editorial"
           >
             <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-neutral-50 flex items-center justify-center border border-black/5 group-hover:scale-110 transition-transform shadow-inner">
               <Eye className="w-16 h-16 text-primary" />

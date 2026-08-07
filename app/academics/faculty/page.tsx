@@ -100,7 +100,7 @@ export default function FacultyPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             {leadership.map((member, i) => {
-              const pastel = ["bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-rose-bg border-pathway-rose-border"][i] || "bg-pathway-blue-bg border-pathway-blue-border";
+              const pastel = ["bg-blue-100 border-blue-700", "bg-red-100 border-red-700"][i] || "bg-blue-100 border-blue-700";
               return (
               <motion.div
                 key={i}
@@ -149,7 +149,7 @@ export default function FacultyPage() {
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {facultyStats.map((stat, i) => {
-               const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][i] || "bg-pathway-purple-bg border-pathway-purple-border";
+               const pastel = ["bg-purple-100 border-purple-700", "bg-blue-100 border-blue-700", "bg-green-100 border-green-700", "bg-orange-100 border-orange-700"][i] || "bg-purple-100 border-purple-700";
                return (
                <motion.div
                   key={i}

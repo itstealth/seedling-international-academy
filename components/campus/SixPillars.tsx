@@ -17,12 +17,12 @@ const pillars = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; accent: string; iconBg: string }> = {
-  red:    { bg: "bg-pathway-rose-bg",     text: "text-navy-700",    border: "border-pathway-rose-border",    accent: "bg-rose-500",    iconBg: "bg-rose-500/10" },
-  blue:   { bg: "bg-pathway-blue-bg",     text: "text-navy-700",   border: "border-pathway-blue-border",    accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
-  green:  { bg: "bg-pathway-green-bg",    text: "text-navy-700",  border: "border-pathway-green-border",   accent: "bg-green-500",  iconBg: "bg-green-500/10" },
-  purple: { bg: "bg-pathway-purple-bg",   text: "text-navy-700", border: "border-pathway-purple-border",  accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
-  amber:  { bg: "bg-pathway-orange-bg",   text: "text-amber-700",  border: "border-pathway-orange-border",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
-  rose:   { bg: "bg-pathway-orange-bg",               text: "text-rose-700",   border: "border-pathway-green-border",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
+  red:    { bg: "bg-red-100",     text: "text-navy-700",    border: "border-red-700",    accent: "bg-rose-500",    iconBg: "bg-rose-500/10" },
+  blue:   { bg: "bg-blue-100",     text: "text-navy-700",   border: "border-blue-700",    accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
+  green:  { bg: "bg-green-100",    text: "text-navy-700",  border: "border-green-700",   accent: "bg-green-500",  iconBg: "bg-green-500/10" },
+  purple: { bg: "bg-purple-100",   text: "text-navy-700", border: "border-purple-700",  accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
+  amber:  { bg: "bg-orange-100",   text: "text-amber-700",  border: "border-orange-700",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
+  rose:   { bg: "bg-orange-100",               text: "text-rose-700",   border: "border-green-700",   accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
 };
 
 export default function SixPillars() {

@@ -361,11 +361,11 @@ export default function AboutPage() {
                 bg: "bg-crimson/10",
               },
             ].map((value, i) => {
-              const coreBgs = ["bg-pathway-purple-bg", "bg-pathway-blue-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg", "bg-pathway-rose-bg"];
-              const coreBorders = ["border-pathway-purple-border", "border-pathway-blue-border", "border-pathway-green-border", "border-pathway-orange-border", "border-pathway-rose-border"];
+              const coreBgs = ["bg-purple-100", "bg-blue-100", "bg-green-100", "bg-orange-100", "bg-red-100"];
+              const coreBorders = ["border-purple-700", "border-blue-700", "border-green-700", "border-orange-700", "border-red-700"];
               return (
               <Reveal key={value.title} delay={i * 100}>
-                <div className={`${coreBgs[i]} rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border ${coreBorders[i]} hover:border-sand/40 group h-full flex flex-col items-center text-center`}>
+                <div className={`${coreBgs[i]} rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border ${coreBorders[i]} hover:border-sand/40 group h-full flex flex-col items-center text-center`}>
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${value.bg} ${value.color} group-hover:scale-110 transition-transform duration-500`}>
                     {value.icon}
                   </div>
@@ -397,8 +397,8 @@ export default function AboutPage() {
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-sand/50 -translate-x-1/2 hidden md:block" />
 
             {timeline.map((item, i) => {
-              const tlBgs = ["bg-pathway-purple-bg", "bg-pathway-blue-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg", "bg-pathway-rose-bg", "bg-pathway-orange-bg"];
-              const tlBorders = ["border-pathway-purple-border", "border-pathway-blue-border", "border-pathway-green-border", "border-pathway-orange-border", "border-pathway-rose-border", "border-pathway-green-border"];
+              const tlBgs = ["bg-purple-100", "bg-blue-100", "bg-green-100", "bg-orange-100", "bg-red-100", "bg-orange-100"];
+              const tlBorders = ["border-purple-700", "border-blue-700", "border-green-700", "border-orange-700", "border-red-700", "border-green-700"];
               return (
               <Reveal key={item.year} delay={i * 60}>
                 <div className={`relative flex flex-col md:flex-row items-center gap-4 md:gap-8 ${i === 5 ? "mb-4" : "mb-12 md:mb-20"} ${item.side === "left" ? "md:flex-row-reverse" : ""}`}>
@@ -519,8 +519,8 @@ export default function AboutPage() {
               accent: "bg-crimson",
             },
           ].map((card, i) => {
-            const vmBgs = ["bg-pathway-purple-bg", "bg-pathway-green-bg", "bg-pathway-orange-bg"];
-            const vmBorders = ["border-pathway-purple-border", "border-pathway-green-border", "border-pathway-orange-border"];
+            const vmBgs = ["bg-purple-100", "bg-green-100", "bg-orange-100"];
+            const vmBorders = ["border-purple-700", "border-green-700", "border-orange-700"];
             return (
             <Reveal key={card.label} delay={i * 120}>
               <div className={`group relative ${vmBgs[i]} rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border ${vmBorders[i]} overflow-hidden`}>
@@ -562,7 +562,7 @@ export default function AboutPage() {
               { emoji: "🏫", title: "Safe and secure Campus", desc: "A nurturing environment where students feel safe, valued, and empowered to learn." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <div className="bg-pathway-green-bg rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-pathway-green-border group">
+                <div className="bg-green-100 rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-green-700 group">
                   <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">{p.emoji}</span>
                   <h4 className="font-playfair text-2xl font-semibold mb-4 text-ink">{p.title}</h4>
                   <p className="text-text-light text-sm leading-[1.9] font-dm">{p.desc}</p>

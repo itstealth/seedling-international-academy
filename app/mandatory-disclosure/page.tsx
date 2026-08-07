@@ -22,7 +22,7 @@ const MandatoryDisclosure = () => {
       <main className="max-w-6xl mx-auto px-6 py-20">
 
         {/* Section 1: School Info */}
-        <div className="bg-pathway-orange-bg rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-pathway-orange-border mb-10 overflow-hidden relative group">
+        <div className="bg-orange-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-orange-700 mb-10 overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-navy/5 rounded-bl-full pointer-events-none transition-transform duration-500 group-hover:scale-110" />
 
           <div className="flex items-center gap-6 mb-10">
@@ -79,7 +79,7 @@ const MandatoryDisclosure = () => {
         {/* Section 2: Affiliation & Trust */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Affiliation */}
-          <div className="bg-pathway-purple-bg rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-pathway-purple-border">
+          <div className="bg-purple-100 rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-purple-700">
             <div className="flex items-center gap-5 mb-8">
               <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-[#133844] font-playfair text-xl font-bold">
                 02
@@ -103,7 +103,7 @@ const MandatoryDisclosure = () => {
           </div>
 
           {/* Trust */}
-          <div className="bg-pathway-rose-bg rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-pathway-rose-border">
+          <div className="bg-red-100 rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-red-700">
             <div className="flex items-center gap-5 mb-8">
               <div className="w-12 h-12 rounded-xl bg-sand/20 flex items-center justify-center text-[#133844] font-playfair text-xl font-bold">
                 03
@@ -176,7 +176,7 @@ const MandatoryDisclosure = () => {
         </div>
 
         {/* Section 5: Infrastructure */}
-        <div className="bg-pathway-blue-bg rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-pathway-blue-border">
+        <div className="bg-blue-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-blue-700">
           <div className="flex items-center gap-6 mb-10">
             <div className="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-[#133844] font-playfair text-2xl font-bold shadow-xl shadow-sand/20">
               05

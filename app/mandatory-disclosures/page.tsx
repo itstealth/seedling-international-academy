@@ -93,7 +93,7 @@ export default function MandatoryDisclosuresPage() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Table Container */}
           <div
-            className="bg-pathway-green-bg rounded-2xl shadow-xl shadow-navy/5 border border-pathway-green-border"
+            className="bg-green-100 rounded-2xl shadow-xl shadow-navy/5 border border-green-700"
           >
             <div className="overflow-x-auto">
             <table className="w-full min-w-150">

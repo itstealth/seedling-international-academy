@@ -57,7 +57,7 @@ export default function AdmissionProcessPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`group relative p-12 rounded-[3.5rem] shadow-editorial border hover:border-primary/20 transition-all duration-700 ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border"][i % 4]}`}
+              className={`group relative p-12 rounded-[3.5rem] shadow-editorial border hover:border-primary/20 transition-all duration-700 ${["bg-red-100 border-red-700","bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-orange-100 border-orange-700"][i % 4]}`}
             >
               <div className="absolute top-0 right-0 p-10 text-7xl font-black text-black/[0.03] select-none font-serif group-hover:text-primary/[0.05] transition-colors">
                 0{i + 1}
@@ -119,7 +119,7 @@ export default function AdmissionProcessPage() {
                 <motion.div
                   key={i}
                   whileHover={{ x: 10 }}
-                  className={`p-8 rounded-3xl border flex items-center gap-4 transition-all ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border","bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border"][i % 6]}`}
+                  className={`p-8 rounded-3xl border flex items-center gap-4 transition-all ${["bg-red-100 border-red-700","bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-orange-100 border-orange-700","bg-red-100 border-red-700","bg-purple-100 border-purple-700"][i % 6]}`}
                 >
                   <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm">
                     <ClipboardCheck className="w-5 h-5 text-secondary" />

@@ -201,7 +201,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           >
             <p className="font-playfair text-navy text-xl mb-3">50+ Subjects · Six Groups</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              Design Your <em className="font-semibold text-[#133844]">Specialisation</em>
+              Design Your <em className="font-semibold text-navy">Specialisation</em>
             </h2>
           </motion.div>
 

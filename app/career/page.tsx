@@ -198,10 +198,10 @@ function JobCard({
   onApply: (role: (typeof openRoles)[0]) => void;
 }) {
   const palettes = [
-    "bg-pathway-purple-bg border-pathway-purple-border",
-    "bg-pathway-blue-bg border-pathway-blue-border",
-    "bg-pathway-green-bg border-pathway-green-border",
-    "bg-pathway-orange-bg border-pathway-orange-border",
+    "bg-purple-100 border-purple-700",
+    "bg-blue-100 border-blue-700",
+    "bg-green-100 border-green-700",
+    "bg-orange-100 border-orange-700",
   ];
   const paletteClass = palettes[(role.id - 1) % palettes.length];
   return (
@@ -299,11 +299,11 @@ function ApplyModal({
       onClick={onClose}
     >
       <div
-        className="bg-pathway-blue-bg rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto border border-pathway-blue-border"
+        className="bg-blue-100 rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto border border-blue-700"
         onClick={(e) => e.stopPropagation()}
       >
         {/* header */}
-        <div className="sticky top-0 bg-pathway-blue-bg border-b border-pathway-blue-border px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
+        <div className="sticky top-0 bg-blue-100 border-b border-blue-700 px-8 py-5 rounded-t-3xl flex items-start justify-between gap-4">
           <div>
             <p className="text-crimson text-xs font-black tracking-widest uppercase mb-1 font-dm">
               Interest Form
@@ -314,7 +314,7 @@ function ApplyModal({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-sand/10 hover:bg-pathway-rose-bg-50 hover:text-navy-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-text-light text-lg mt-0.5"
+            className="w-8 h-8 rounded-full bg-sand/10 hover:bg-red-100-50 hover:text-navy-500 flex items-center justify-center flex-shrink-0 transition-colors duration-200 text-text-light text-lg mt-0.5"
           >
             ✕
           </button>
@@ -587,12 +587,12 @@ export default function CareersPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {whyWork.map((w, i) => {
             const palettes = [
-              "bg-pathway-purple-bg border-pathway-purple-border",
-              "bg-pathway-blue-bg border-pathway-blue-border",
-              "bg-pathway-green-bg border-pathway-green-border",
-              "bg-pathway-orange-bg border-pathway-orange-border",
-              "bg-pathway-rose-bg border-pathway-rose-border",
-              "bg-pathway-orange-bg border-pathway-orange-border",
+              "bg-purple-100 border-purple-700",
+              "bg-blue-100 border-blue-700",
+              "bg-green-100 border-green-700",
+              "bg-orange-100 border-orange-700",
+              "bg-red-100 border-red-700",
+              "bg-orange-100 border-orange-700",
             ];
             const paletteClass = palettes[i % palettes.length];
             return (
@@ -699,8 +699,8 @@ export default function CareersPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => {
               const palettes = [
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-blue-100 border-blue-700",
+                "bg-red-100 border-red-700",
               ];
               const paletteClass = palettes[i % palettes.length];
               return (
@@ -750,9 +750,9 @@ export default function CareersPage() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more", palette: "bg-pathway-purple-bg border-pathway-purple-border" },
-                  { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered", palette: "bg-pathway-green-bg border-pathway-green-border" },
-                  { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed", palette: "bg-pathway-orange-bg border-pathway-orange-border" },
+                  { icon: "🎓", label: "All Subjects Welcome", sub: "Maths, Science, English, Arts, Commerce, Humanities and more", palette: "bg-purple-100 border-purple-700" },
+                  { icon: "📋", label: "Teaching & Admin", sub: "Both teaching and non-teaching roles considered", palette: "bg-green-100 border-green-700" },
+                  { icon: "🌏", label: "Cambridge Board", sub: "Experience with Cambridge board welcomed", palette: "bg-orange-100 border-orange-700" },
                 ].map((item) => (
                   <div key={item.label} className={`flex gap-4 p-4 ${item.palette} border rounded-xl hover:border-[#133844]/20 transition-colors duration-200`}>
                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
@@ -802,8 +802,8 @@ export default function CareersPage() {
                   // },
                 ].map((campus, i) => {
                   const palettes = [
-                    "bg-pathway-blue-bg border-pathway-blue-border",
-                    "bg-pathway-rose-bg border-pathway-rose-border",
+                    "bg-blue-100 border-blue-700",
+                    "bg-red-100 border-red-700",
                   ];
                   const paletteClass = palettes[i % palettes.length];
                   return (

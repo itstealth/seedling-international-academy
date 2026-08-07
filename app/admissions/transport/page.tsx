@@ -82,7 +82,7 @@ export default function TransportFacilityPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-12 rounded-[3.5rem] shadow-editorial border hover:border-primary/20 transition-all duration-700 ${["bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border","bg-pathway-blue-bg border-pathway-blue-border","bg-pathway-orange-bg border-pathway-orange-border","bg-pathway-rose-bg border-pathway-rose-border","bg-pathway-purple-bg border-pathway-purple-border"][i % 6]}`}
+              className={`p-12 rounded-[3.5rem] shadow-editorial border hover:border-primary/20 transition-all duration-700 ${["bg-red-100 border-red-700","bg-purple-100 border-purple-700","bg-blue-100 border-blue-700","bg-orange-100 border-orange-700","bg-red-100 border-red-700","bg-purple-100 border-purple-700"][i % 6]}`}
             >
               <div className="flex justify-between items-start mb-8">
                 <div className="w-16 h-16 rounded-2xl bg-neutral-50 flex items-center justify-center text-primary shadow-inner">

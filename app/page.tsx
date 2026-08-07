@@ -122,7 +122,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   // World-Class Facilities tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
-      { img: '/assets/Home/School2.webp', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+      { img: '/P1676425.JPG', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
       { img: '/assets/Home/science-lab.jpg', alt: 'Science Lab', tag: 'Science Lab', title: 'Modern Science Labs', desc: 'Modern science labs with advanced tools encouraging innovation and practical learning for every student.' },
       { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
@@ -376,8 +376,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 tag: "SMIA",
               },
             ].map((campus, i) => {
-              const campusBgs = ["bg-pathway-blue-bg", "bg-pathway-rose-bg"];
-              const campusBorders = ["border-pathway-blue-border", "border-pathway-rose-border"];
+              const campusBgs = ["bg-blue-100", "bg-red-100"];
+              const campusBorders = ["border-blue-700", "border-red-700"];
               return (
               <motion.div
                 key={campus.name}
@@ -859,8 +859,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 role: "Educator & Parent",
               },
             ].map((card, i) => {
-              const testBgs = ["bg-pathway-rose-bg", "bg-pathway-purple-bg", "bg-pathway-blue-bg"];
-              const testBorders = ["border-pathway-rose-border", "border-pathway-purple-border", "border-pathway-blue-border"];
+              const testBgs = ["bg-red-100", "bg-purple-100", "bg-blue-100"];
+              const testBorders = ["border-red-700", "border-purple-700", "border-blue-700"];
               return (
               <>
               {card.label === "FACULTY" ? (
@@ -1102,14 +1102,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </div>
             </a>
 
-            <div className="bg-pathway-rose-bg rounded-[2.5rem] border border-pathway-rose-border p-5 md:p-7 flex flex-col justify-between">
+            <div className="bg-red-100 rounded-[2.5rem] border border-red-700 p-5 md:p-7 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
                   { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
                   { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
                   { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
                 ].map(({ day, month, title, desc, url }, index) => (
-                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-pathway-blue-bg rounded-[1.75rem] p-5 border border-pathway-blue-border transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-700 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                     <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
                       <strong className="block text-xl font-playfair leading-none">{day}</strong>
                       <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
@@ -1217,8 +1217,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
               <div className="grid gap-6">
                 {infraData[activeTab].slice(1).map(({ img, alt, tag, title, desc }, idx) => {
-                  const infraBgs = ["bg-pathway-blue-bg", "bg-pathway-rose-bg"];
-                  const infraBorders = ["border-pathway-blue-border", "border-pathway-rose-border"];
+                  const infraBgs = ["bg-blue-100", "bg-red-100"];
+                  const infraBorders = ["border-blue-700", "border-red-700"];
                   return (
                   <article
                     key={title}
@@ -1271,7 +1271,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
 
-            <div className="bg-pathway-blue-bg border border-pathway-blue-border p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
+            <div className="bg-blue-100 border border-blue-700 p-10 md:p-12 rounded-[8px] relative group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
               <h3 className="font-playfair text-3xl font-semibold text-ink mb-8">Admission Enquiry 2026–27</h3>
               <CallbackForm />

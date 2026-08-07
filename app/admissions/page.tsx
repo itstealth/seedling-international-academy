@@ -88,12 +88,12 @@ const whyUs = [
 ];
 
 const whyUsColorMap: Record<string, { glass: string; text: string; border: string; accent: string; iconBg: string }> = {
-  red:    { glass: "bg-pathway-rose-bg",     text: "text-navy-700",    border: "border-pathway-rose-border",    accent: "bg-rose-500",    iconBg: "bg-rose-500/10" },
-  blue:   { glass: "bg-pathway-blue-bg",     text: "text-navy-700",   border: "border-pathway-blue-border",    accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
-  green:  { glass: "bg-pathway-green-bg",    text: "text-navy-700",  border: "border-pathway-green-border",   accent: "bg-green-500",  iconBg: "bg-green-500/10" },
-  purple: { glass: "bg-pathway-purple-bg",   text: "text-navy-700", border: "border-pathway-purple-border",  accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
-  amber:  { glass: "bg-pathway-orange-bg",   text: "text-amber-700",  border: "border-pathway-orange-border",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
-  rose:   { glass: "bg-pathway-rose-bg",                 text: "text-rose-700",   border: "border-pathway-rose-border",     accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
+  red:    { glass: "bg-red-100",     text: "text-navy-700",    border: "border-red-700",    accent: "bg-rose-500",    iconBg: "bg-rose-500/10" },
+  blue:   { glass: "bg-blue-100",     text: "text-navy-700",   border: "border-blue-700",    accent: "bg-blue-500",   iconBg: "bg-blue-500/10" },
+  green:  { glass: "bg-green-100",    text: "text-navy-700",  border: "border-green-700",   accent: "bg-green-500",  iconBg: "bg-green-500/10" },
+  purple: { glass: "bg-purple-100",   text: "text-navy-700", border: "border-purple-700",  accent: "bg-purple-500", iconBg: "bg-purple-500/10" },
+  amber:  { glass: "bg-orange-100",   text: "text-amber-700",  border: "border-orange-700",  accent: "bg-amber-500",  iconBg: "bg-amber-500/10" },
+  rose:   { glass: "bg-red-100",                 text: "text-rose-700",   border: "border-red-700",     accent: "bg-rose-500",   iconBg: "bg-rose-500/10" },
 };
 
 const steps = [
@@ -399,7 +399,7 @@ export default function AdmissionsPage() {
             </Reveal>
           </div>
           <Reveal delay={200} className="hidden md:block">
-            <div id="enquire" className="bg-pathway-blue-bg border-pathway-blue-border rounded-3xl shadow-2xl p-8 text-white">
+            <div id="enquire" className="bg-blue-100 border-blue-700 rounded-3xl shadow-2xl p-8 text-white">
               <div className="mb-6">
                 <p className="display text-2xl font-semibold text-[#1C1C1E] mb-1">Enquire Now</p>
                 <p className="text-[#777] text-sm">Our team will respond within 24 hours.</p>
@@ -472,22 +472,22 @@ export default function AdmissionsPage() {
         </div>
       </section> */}
 
-      {/* STATS BAND — matches About page exactly */}
-      <section className="bg-[#d4f4ed] text-[#133844] py-12 relative overflow-hidden">
+      {/* STATS BAND — highlighted with larger bold text */}
+      <section className="bg-[#d4f4ed] text-[#133844] py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
             {[
               { value: "10k+", label: "Students" },
-              { value: "20:1", label: "Alumni Network Ratio" },
-              { value: "10000+", label: "Alumni" },
-              { value: "100%", label: "Results" },
-              { value: "50+", label: "Nations" },
-              { value: "1993", label: "Est." },
+              { value: "20:1", label: "Student–Teacher Ratio" },
+              { value: "10,000+", label: "Alumni Worldwide" },
+              { value: "100%", label: "Board Results" },
+              { value: "50+", label: "Nations Represented" },
+              { value: "1993", label: "Year Established" },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
-                <p className="font-playfair text-4xl font-black text-[#133844] mb-1">{s.value}</p>
-                <p className="text-[#133844]/40 text-[10px] font-black tracking-[0.25em] uppercase">{s.label}</p>
+                <p className="font-playfair text-5xl md:text-6xl font-black text-[#133844] mb-2 leading-none">{s.value}</p>
+                <p className="text-[#133844]/50 text-[10px] md:text-[11px] font-black tracking-[0.25em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -509,8 +509,8 @@ export default function AdmissionsPage() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
           {/* Left — Requisites */}
           <Reveal>
-            <div className="bg-pathway-rose-bg border-pathway-rose-border rounded-3xl p-10 shadow-sm text-white">
-              <h3 className="font-playfair text-2xl font-black mb-8 tracking-tight">
+            <div className="bg-white border border-sand/30 rounded-3xl p-10 shadow-sm">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-8 tracking-tight">
                 Requisites for Online Application
               </h3>
               <ul className="space-y-5">
@@ -564,8 +564,8 @@ export default function AdmissionsPage() {
 
           {/* Right — Form */}
           <Reveal delay={100}>
-            <div className="bg-pathway-purple-bg border-pathway-purple-border rounded-3xl p-10 shadow-sm text-white">
-              <h3 className="font-playfair text-2xl font-black mb-2 tracking-tight">Online Admission Inquiry</h3>
+            <div className="bg-white border border-sand/30 rounded-3xl p-10 shadow-sm">
+              <h3 className="font-playfair text-2xl font-black text-ink mb-2 tracking-tight">Online Admission Inquiry</h3>
               <p className="text-text-light text-sm font-dm mb-8">Fill in the form below and our team will get back to you.</p>
 
               <form onSubmit={handleFormSubmit} className="space-y-5">
@@ -830,7 +830,7 @@ export default function AdmissionsPage() {
             <div className="grid grid-cols-1 gap-4">
               {documents.map((d, i) => (
                 <div key={d.doc}
-                  className={`flex items-center gap-5 bg-pathway-blue-bg border border-pathway-blue-border rounded-2xl px-6 py-5 hover:border-crimson transition-all duration-300 group shadow-sm hover:shadow-lg ${i % 5 === 0 ? "" : i % 5 === 1 ? "bg-pathway-purple-bg border-pathway-purple-border" : i % 5 === 2 ? "bg-pathway-green-bg border-pathway-green-border" : i % 5 === 3 ? "bg-pathway-orange-bg border-pathway-orange-border" : "bg-pathway-rose-bg border-pathway-rose-border"}`}>
+                  className={`flex items-center gap-5 bg-blue-100 border border-blue-700 rounded-2xl px-6 py-5 hover:border-crimson transition-all duration-300 group shadow-sm hover:shadow-lg ${i % 5 === 0 ? "" : i % 5 === 1 ? "bg-purple-100 border-purple-700" : i % 5 === 2 ? "bg-green-100 border-green-700" : i % 5 === 3 ? "bg-orange-100 border-orange-700" : "bg-red-100 border-red-700"}`}>
                   <div className="w-10 h-10 bg-sand/10 group-hover:bg-crimson rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500">
                     <svg className="w-5 h-5 text-crimson group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -952,7 +952,7 @@ export default function AdmissionsPage() {
 
           {/* Campus Maps — tabbed */}
           <Reveal>
-            <div className="bg-pathway-green-bg border-pathway-green-border rounded-[2.5rem] overflow-hidden shadow-2xl">
+            <div className="bg-green-100 border-green-700 rounded-[2.5rem] overflow-hidden shadow-2xl">
               {/* tab switcher */}
               <div className="flex border-b border-sand/10">
                 {campusLocations.map((campus, i) => (
@@ -989,11 +989,11 @@ export default function AdmissionsPage() {
                     <p className="font-playfair text-4xl font-black text-[#133844] mb-8 tracking-tight">{campusLocations[activeTab].name}</p>
                     <div className="space-y-6 mb-10">
                       <div className="flex gap-4 items-start">
-                        <span className="w-10 h-10 bg-pathway-green-bg rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-pathway-green-border">📍</span>
+                        <span className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-green-700">📍</span>
                         <p className="text-text-light text-base leading-relaxed font-dm">{campusLocations[activeTab].address}</p>
                       </div>
                       <div className="flex gap-4 items-start">
-                        <span className="w-10 h-10 bg-pathway-orange-bg rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-pathway-orange-border">📞</span>
+                        <span className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-orange-700">📞</span>
                         <a href={`tel:${campusLocations[activeTab].phone}`} className="text-crimson font-black text-lg font-playfair tracking-tight hover:text-crimson-dark transition-colors">
                           {campusLocations[activeTab].phone}
                         </a>

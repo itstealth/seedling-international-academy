@@ -72,12 +72,12 @@ export default function SIAPage(): React.JSX.Element {
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {facilities.map((f, i) => {
               const palettes = [
-                "bg-pathway-purple-bg border-pathway-purple-border",
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-green-bg border-pathway-green-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
+                "bg-purple-100 border-purple-700",
+                "bg-blue-100 border-blue-700",
+                "bg-green-100 border-green-700",
+                "bg-orange-100 border-orange-700",
+                "bg-red-100 border-red-700",
+                "bg-orange-100 border-orange-700",
               ];
               const paletteClass = palettes[i % palettes.length];
               return (

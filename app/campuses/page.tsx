@@ -196,10 +196,10 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
                 { v: campus.results, l: "Cambridge Results", palette: "orange" },
               ].map((s) => {
                 const paletteMap: Record<string, string> = {
-                  purple: "bg-pathway-purple-bg border-pathway-purple-border",
-                  blue: "bg-pathway-blue-bg border-pathway-blue-border",
-                  green: "bg-pathway-green-bg border-pathway-green-border",
-                  orange: "bg-pathway-orange-bg border-pathway-orange-border",
+                  purple: "bg-purple-100 border-purple-700",
+                  blue: "bg-blue-100 border-blue-700",
+                  green: "bg-green-100 border-green-700",
+                  orange: "bg-orange-100 border-orange-700",
                 };
                 return (
                 <div key={s.l} className={`${paletteMap[s.palette]} rounded-xl p-3 border shadow-sm`}>
@@ -224,12 +224,12 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             <div className="space-y-3">
               {campus.facilities.map((f, i) => {
                 const palettes = [
-                  "bg-pathway-purple-bg border-pathway-purple-border",
-                  "bg-pathway-blue-bg border-pathway-blue-border",
-                  "bg-pathway-green-bg border-pathway-green-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
-                  "bg-pathway-rose-bg border-pathway-rose-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
+                  "bg-purple-100 border-purple-700",
+                  "bg-blue-100 border-blue-700",
+                  "bg-green-100 border-green-700",
+                  "bg-orange-100 border-orange-700",
+                  "bg-red-100 border-red-700",
+                  "bg-orange-100 border-orange-700",
                 ];
                 const paletteClass = palettes[i % palettes.length];
                 return (

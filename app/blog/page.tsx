@@ -201,19 +201,19 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {paginated.map((post, idx) => {
                 const palettes = [
-                  "bg-pathway-purple-bg border-pathway-purple-border",
-                  "bg-pathway-blue-bg border-pathway-blue-border",
-                  "bg-pathway-green-bg border-pathway-green-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
-                  "bg-pathway-rose-bg border-pathway-rose-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
+                  "bg-purple-100 border-purple-700",
+                  "bg-blue-100 border-blue-700",
+                  "bg-green-100 border-green-700",
+                  "bg-orange-100 border-orange-700",
+                  "bg-red-100 border-red-700",
+                  "bg-orange-100 border-orange-700",
                 ];
                 const paletteClass = palettes[idx % palettes.length];
                 return (
                 <Reveal key={post.id} delay={idx * 50}>
                   <Link
                     href={postUrl(post.slug)}
-                    className={`group flex flex-col ${paletteClass} rounded-2xl overflow-hidden border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                    className={`group flex flex-col ${paletteClass} rounded-2xl overflow-hidden border shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300`}
                   >
                     <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
                       <img

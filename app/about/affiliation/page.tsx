@@ -69,7 +69,7 @@ export default function AffiliationPage() {
               transition={{ duration: 0.8, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="group relative"
             >
-              <div className={`relative h-full rounded-[4rem] p-16 border transition-all duration-500 hover:shadow-2xl hover:shadow-black/2 hover:-translate-y-2 overflow-hidden flex flex-col group ${i === 0 ? "bg-pathway-blue-bg border-pathway-blue-border" : "bg-pathway-rose-bg border-pathway-rose-border"}`}>
+              <div className={`relative h-full rounded-[4rem] p-16 border transition-all duration-500 hover:shadow-2xl hover:shadow-black/2 hover:-translate-y-2 overflow-hidden flex flex-col group ${i === 0 ? "bg-blue-100 border-blue-700" : "bg-red-100 border-red-700"}`}>
 
                 {/* Decorative Icon Background */}
                 <div className={`absolute top-0 right-0 w-40 h-40 bg-linear-to-br ${item.color} opacity-5 blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:opacity-10 transition-opacity`} />

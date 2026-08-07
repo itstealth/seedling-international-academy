@@ -10,8 +10,8 @@ const testimonials = [
       "Being a part of the Cambridge journey at Seedling International Academy has been both an honour and a joy. Over the years, I have had the privilege of watching young minds blossom into confident, thoughtful, and compassionate individuals who are eager to question, explore, and make a positive difference in the world. The Cambridge curriculum goes far beyond textbooks. It nurtures curiosity, creativity, critical thinking, and a lifelong love for learning, allowing every child to discover their unique strengths and potential. As an educator, there is no greater reward than witnessing that spark of understanding transform into confidence and achievement. SIA has created a vibrant learning community where every child is encouraged to dream boldly, think independently, and grow into a responsible global citizen. Being a part of this remarkable journey continues to inspire me every single day.",
     name: "Minnu Puri",
     role: "English Faculty",
-    bg: "bg-pathway-purple-bg",
-    border: "border-pathway-purple-border",
+    bg: "bg-purple-100",
+    border: "border-purple-700",
     accent: "text-[#8b26e6]",
   },
   {
@@ -19,8 +19,8 @@ const testimonials = [
       "Joining Seedling International Academy has been one of the best experiences of my life. Every day at school brings something new to learn, and our teachers always encourage us to ask questions, share our ideas, and believe in ourselves. The curriculum is unique and different that has made learning exciting because it teaches us to think, not just memorise. I have become more confident, independent, and willing to take on new challenges. What I love most is that our teachers care about us, not only in our studies but also as our guide, our councillors and our mentors. I feel happy, supported, and inspired here, and I know the lessons I have learned at Seedling will stay with me wherever life takes me.",
     name: "Arnav Ruchlani",
     role: "SIA Representative",
-    bg: "bg-pathway-blue-bg",
-    border: "border-pathway-blue-border",
+    bg: "bg-blue-100",
+    border: "border-blue-700",
     accent: "text-[#5f72f2]",
   },
 ];

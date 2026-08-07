@@ -103,11 +103,11 @@ const colorMap: Record<string, { bg: string; text: string; border: string; ring:
 };
 
 const cardColors5 = [
-  "bg-pathway-purple-bg border-pathway-purple-border",
-  "bg-pathway-blue-bg border-pathway-blue-border",
-  "bg-pathway-green-bg border-pathway-green-border",
-  "bg-pathway-orange-bg border-pathway-orange-border",
-  "bg-pathway-rose-bg border-pathway-rose-border",
+  "bg-purple-100 border-purple-700",
+  "bg-blue-100 border-blue-700",
+  "bg-green-100 border-green-700",
+  "bg-orange-100 border-orange-700",
+  "bg-red-100 border-red-700",
 ];
 
 export default function PedagogyPage(): React.JSX.Element {
@@ -150,7 +150,7 @@ export default function PedagogyPage(): React.JSX.Element {
 
         {/* Expert quote */}
         <motion.figure
-          className="mt-12 max-w-3xl mx-auto bg-pathway-blue-bg border border-pathway-blue-border rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm"
+          className="mt-12 max-w-3xl mx-auto bg-blue-100 border border-blue-700 rounded-2xl p-7 md:p-8 border-l-4 border-crimson shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}

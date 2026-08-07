@@ -361,11 +361,11 @@ export default function AcademicsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {(() => {
               const cardColors = [
-                "bg-pathway-purple-bg border-pathway-purple-border",
-                "bg-pathway-blue-bg border-pathway-blue-border",
-                "bg-pathway-green-bg border-pathway-green-border",
-                "bg-pathway-orange-bg border-pathway-orange-border",
-                "bg-pathway-rose-bg border-pathway-rose-border",
+                "bg-purple-100 border-purple-700",
+                "bg-blue-100 border-blue-700",
+                "bg-green-100 border-green-700",
+                "bg-orange-100 border-orange-700",
+                "bg-red-100 border-red-700",
               ];
               return learnerProfile.map((lp, i) => (
                 <Reveal key={lp.trait} delay={i * 80}>
@@ -542,7 +542,7 @@ export default function AcademicsPage() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
             {faculty.map((f, i) => (
               <Reveal key={f.name} delay={i * 80}>
-                <div className="group bg-pathway-green-bg rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-pathway-green-border">
+                <div className="group bg-green-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border border-green-700">
                   <div className="relative overflow-hidden h-72">
                     <img
                       src={f.img}

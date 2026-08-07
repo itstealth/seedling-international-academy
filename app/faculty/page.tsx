@@ -80,7 +80,7 @@ export default function FacultyPage() {
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
             {faculty.map((f, i) => {
-              const pastel = ["bg-pathway-purple-bg border-pathway-purple-border", "bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-green-bg border-pathway-green-border", "bg-pathway-orange-bg border-pathway-orange-border"][i] || "bg-pathway-purple-bg border-pathway-purple-border";
+              const pastel = ["bg-purple-100 border-purple-700", "bg-blue-100 border-blue-700", "bg-green-100 border-green-700", "bg-orange-100 border-orange-700"][i] || "bg-purple-100 border-purple-700";
               return (
               <Reveal key={f.name} delay={i * 80}>
                 <div className={`group ${pastel} rounded-[2rem] overflow-hidden shadow-sm hover:shadow-editorial transition-all duration-700 hover:-translate-y-2 border`}>
@@ -111,9 +111,9 @@ export default function FacultyPage() {
                 { icon: "🔄", title: "Mentors, Not Just Teachers", desc: "Our teachers go beyond knowledge delivery — they build confidence, nurture personality, and create a positive atmosphere where every student feels valued, motivated, and ready for life's challenges." },
               ].map((item, i) => {
                 const helperPastel = [
-                  "bg-pathway-purple-bg border-pathway-purple-border",
-                  "bg-pathway-green-bg border-pathway-green-border",
-                  "bg-pathway-orange-bg border-pathway-orange-border",
+                  "bg-purple-100 border-purple-700",
+                  "bg-green-100 border-green-700",
+                  "bg-orange-100 border-orange-700",
                 ][i];
                 return (
                 <div key={item.title} className={`${helperPastel} border rounded-2xl p-7 flex gap-5 items-start`}>
