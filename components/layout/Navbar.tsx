@@ -20,7 +20,7 @@ const navItems = [
     ]
   },
   {
-    name: "Cambridge Canvas", href: "/why-cambridge/education",
+    name: "Cambridge Canvas", href: "/cambridge-canvas",
     // dropdown: [
     //   { name: "Your Path Your Way", href: "/why-cambridge/path" },
     //   { name: "International Cambridge", href: "/why-cambridge/international" },

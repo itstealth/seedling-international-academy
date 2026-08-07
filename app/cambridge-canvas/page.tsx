@@ -128,8 +128,8 @@ export default function CambridgeEducationPage(): React.JSX.Element {
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="text-center mb-10 md:mb-14">
-            <p className="font-playfair text-[#133844]/70 text-xl mb-3">Cambridge by the Numbers</p>
-            <h2 className="font-playfair text-3xl md:text-5xl font-light text-[#133844]">
+            <p className="font-playfair text-[#133844]/70 text-xl font-black mb-3">Cambridge by the Numbers</p>
+            <h2 className="font-playfair text-3xl md:text-5xl font-black text-[#133844]">
               A Presence That <em className="font-semibold text-[#133844]">Spans the Globe</em>
             </h2>
           </div>

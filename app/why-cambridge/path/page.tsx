@@ -475,7 +475,7 @@ export default function YourPathYourWayPage(): React.JSX.Element {
               variants={cardRise}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              href="/why-cambridge/education"
+              href="/cambridge-canvas"
               className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 font-dm"
             >
               Cambridge Canvas
