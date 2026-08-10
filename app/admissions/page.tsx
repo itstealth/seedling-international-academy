@@ -161,23 +161,6 @@ const transport = [
 
 
 
-const campusLocations = [
-  {
-    name: "Jawahar Nagar Campus",
-    address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur, Rajasthan – 302004",
-    phone: "+91 74130 12351",
-    schools: ["Seedling International School (Cambridge)"],
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3!2d75.803!3d26.925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x1!2sSeedling+Public+School%2C+Jawahar+Nagar!5e0!3m2!1sen!2sin!4v1600000000000",
-  },
-  // {
-  //   name: "Durgapura Campus",
-  //   address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur, Rajasthan – 302018",
-  //   phone: "+91 95877 72837",
-  //   schools: ["Seedling International School (Cambridge)", "Cambridge International Academy", "Seedling International School Wonderland Kids League"],
-  //   mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d75.784!3d26.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db174e7a1a1a1%3A0x2!2sSeedling+Modern+High+School%2C+Durgapura!5e0!3m2!1sen!2sin!4v1600000000001",
-  // },
-];
-
 const experiences = [
   {
     name: "Vatan Parnami and Anku Sapra",
@@ -473,10 +456,11 @@ export default function AdmissionsPage() {
       </section> */}
 
       {/* STATS BAND — highlighted with larger bold text */}
-      <section className="bg-[#d4f4ed] text-[#133844] py-8 md:py-10 relative overflow-hidden">
+      <section className="bg-[#d4f4ed] text-[#133844] py-6 md:py-7 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6 divide-x-0 lg:divide-x lg:divide-[#133844]/10">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6">
             {[
               { value: "10k+", label: "Students" },
               { value: "20:1", label: "Student–Teacher Ratio" },
@@ -486,8 +470,8 @@ export default function AdmissionsPage() {
               { value: "1993", label: "Year Established" },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
-                <p className="font-playfair text-6xl md:text-7xl font-black text-[#062125] mb-3 leading-none tracking-tight">{s.value}</p>
-                <p className="text-[#062125] text-[11px] md:text-xs font-black tracking-[0.28em] uppercase">{s.label}</p>
+                <p className="font-playfair text-6xl md:text-[5rem] font-black text-[#062125] mb-1 leading-none">{s.value}</p>
+                <p className="text-[#062125] text-[10px] md:text-[11px] font-black tracking-[0.22em] uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -715,7 +699,8 @@ export default function AdmissionsPage() {
           3. ADMISSION PROCESS TIMELINE
       ══════════════════════════════════════════════════ */}
       <section id="process" className="pt-14 pb-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #D6D1CF 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <Reveal className="text-center mb-16">
             <Tag>Admission Process</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
@@ -959,130 +944,6 @@ export default function AdmissionsPage() {
               </Reveal>
             ))}
           </div>
-
-          {/* Campus Maps — tabbed */}
-          <Reveal>
-            <div className="bg-green-100 border-green-700 rounded-[2.5rem] overflow-hidden shadow-2xl">
-              {/* tab switcher */}
-              <div className="flex border-b border-sand/10">
-                {campusLocations.map((campus, i) => (
-                  <button key={campus.name} onClick={() => setActiveTab(i)}
-                    className={`flex-1 px-8 py-6 text-sm font-black transition-all duration-300 text-left uppercase tracking-widest ${activeTab === i ? "bg-[#d4f4ed] text-[#133844]" : "bg-white text-text-light hover:bg-off-white"}`}>
-                    <span className="block text-[10px] opacity-60 mb-1">Campus</span>
-                    {campus.name}
-                  </button>
-                ))}
-              </div>
-
-              <div className="grid md:grid-cols-2">
-                {/* map iframe placeholder */}
-                <div className="h-80 md:h-[500px] bg-[#d4f4ed] relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-[url('/assets/img/sps-banner.jpg')] bg-cover bg-center opacity-20 transition-transform duration-[10s] group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#d4f4ed] via-[#d4f4ed]/80 to-transparent" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center p-8 z-10">
-                    <div className="w-20 h-20 bg-sand/10 rounded-full flex items-center justify-center mb-2">
-                      <span className="text-4xl">📍</span>
-                    </div>
-                    <p className="font-playfair text-3xl font-black text-[#133844] tracking-tight">{campusLocations[activeTab].name}</p>
-                    <p className="text-[#133844]/60 text-sm leading-relaxed max-w-xs font-dm">{campusLocations[activeTab].address}</p>
-                    <a href={`https://www.google.com/maps/search/${encodeURIComponent(campusLocations[activeTab].address)}`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="mt-4 bg-sand text-[#133844] hover:bg-white text-[10px] px-8 py-3.5 rounded-full font-black tracking-widest uppercase transition-all duration-300 hover:shadow-xl">
-                      Open in Google Maps ↗
-                    </a>
-                  </div>
-                </div>
-
-                {/* campus info */}
-                <div className="p-12 flex flex-col justify-between bg-white">
-                  <div>
-                    <p className="font-playfair text-4xl font-black text-[#133844] mb-8 tracking-tight">{campusLocations[activeTab].name}</p>
-                    <div className="space-y-6 mb-10">
-                      <div className="flex gap-4 items-start">
-                        <span className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-green-700">📍</span>
-                        <p className="text-text-light text-base leading-relaxed font-dm">{campusLocations[activeTab].address}</p>
-                      </div>
-                      <div className="flex gap-4 items-start">
-                        <span className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 text-xl border border-sand/10 border-orange-700">📞</span>
-                        <a href={`tel:${campusLocations[activeTab].phone}`} className="text-crimson font-black text-lg font-playfair tracking-tight hover:text-crimson-dark transition-colors">
-                          {campusLocations[activeTab].phone}
-                        </a>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-black tracking-[0.3em] uppercase text-sand mb-5">Schools at this campus</p>
-                      <div className="space-y-3">
-                        {campusLocations[activeTab].schools.map(s => (
-                          <div key={s} className="flex items-center gap-3 text-sm text-text-base font-dm font-medium">
-                            <span className="w-2 h-2 bg-crimson rounded-full flex-shrink-0" />
-                            {s}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-12 pt-8 border-t border-sand/10 flex gap-4">
-                    <a href={`tel:${campusLocations[activeTab].phone}`}
-                      className="flex-1 bg-[#d4f4ed] hover:bg-navy-dark text-[#133844] py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
-                      Call Campus
-                    </a>
-                    <a href="#enquire"
-                      className="flex-1 border-2 border-crimson text-crimson hover:bg-crimson/5 py-4 rounded-xl text-xs font-black uppercase tracking-widest text-center transition-all duration-300">
-                      Enquire
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          7. CAMPUS VISIT CTA
-      ══════════════════════════════════════════════════ */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <img
-          src="/assets/Home/MainCampus.webp"
-          alt="Book a campus visit"
-          className="absolute inset-0 w-full h-full object-cover scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/80 to-crimson/40" />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-          <Reveal>
-            <p className="font-dm text-sand text-lg font-black tracking-[0.4em] mb-6 uppercase">Experience Seedling Firsthand</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black leading-[1.05] mb-8 tracking-tighter text-white">
-              Book a<br />
-              <span className="text-sand">Campus Visit</span>
-            </h2>
-            <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-xl mx-auto font-dm font-light">
-              Walk through our campuses, meet our teachers, and feel the Seedling International School difference. Parent counselling is available both online and offline. Come feel the buzz.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="flex gap-6 justify-center flex-wrap">
-              <a href="#enquire"
-                className="inline-flex items-center gap-2 border-2 border-white/40 text-white hover:bg-white hover:text-[#133844] px-12 py-5 rounded-full text-sm font-black tracking-widest uppercase transition-all duration-300">
-                Enquire Online
-              </a>
-            </div>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
-              {[
-                ["🏫", "In-Person", "Campus Tour"],
-                ["💻", "Online", "Counselling"],
-                ["📅", "Flexible", "Scheduling"],
-                ["🆓", "Completely", "Free"],
-              ].map(([icon, line1, line2]) => (
-                <div key={line2} className="text-center group">
-                  <div className="text-4xl block mb-3 group-hover:scale-125 transition-transform duration-500">{icon}</div>
-                  <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] leading-relaxed">{line1}<br />{line2}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
         </div>
       </section>
 

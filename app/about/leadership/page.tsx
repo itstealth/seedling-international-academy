@@ -119,7 +119,7 @@ export default function LeadershipPage() {
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    {/* <span className="absolute top-4 right-4 bg-navy/90 text-white text-xs px-3 py-1 rounded-full font-dm">
+                    {/* <span className="absolute top-4 right-4 bg-navy/90 text-black text-xs px-3 py-1 rounded-full font-dm">
                       {l.tag}
                     </span> */}
                   </div>
@@ -200,7 +200,7 @@ export default function LeadershipPage() {
         </div>
       </section> */}
 
-  <section className="bg-crimson py-10 md:py-16  ">
+  <section className="py-10 md:py-16">
         <div className="grid md:grid-cols-2 gap-16 items-start max-w-7xl mx-auto px-5 sm:px-6">
           <div className="self-start md:sticky md:top-28">
             <Reveal>
@@ -221,41 +221,41 @@ export default function LeadershipPage() {
 
           <div>
              <Reveal>
-                <p className="font-playfair text-navy-300 text-xl mb-4">CEO & Director's Message</p>
-                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-white">
+                <p className="font-playfair text-black text-xl mb-4">CEO & Director's Message</p>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-black">
                   "Life Ready<br />
                   <em className="font-semibold">& Life Worthy"</em>
                 </h2>
               </Reveal>
           <Reveal delay={100}>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   Welcome to the Seedling International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   At Seedling International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
-                <p className="text-white leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   As you explore our website, I warmly invite you to experience the spirit of Seedling International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
-                <p className="text-white leading-[1.9] text-base font-dm font-semibold">
+                <p className="text-black leading-[1.9] text-base font-dm font-semibold">
                   Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
                 </p>
               </Reveal>
             <Reveal delay={200}>
                 <div className="mt-10 flex items-center gap-4">
                   <div className="w-12 h-px bg-blue-100-400" />
-                  <span className="font-playfair text-xl text-white">Dr. Sandeep Bakshi</span>
+                  <span className="font-playfair text-xl text-black">Dr. Sandeep Bakshi</span>
                 </div>
-                <p className="text-navy-400 text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
+                <p className="text-black text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
               </Reveal>
            
           </div>
@@ -357,7 +357,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-purple-100-700" />
+                <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Ms. Akansha Bakshi</span>
               </div>
               <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
@@ -411,7 +411,7 @@ export default function LeadershipPage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
-                <div className="w-12 h-px bg-blue-100-700" />
+                <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Ms. Aishwarya Bakshi</span>
               </div>
               <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>

@@ -122,7 +122,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   // World-Class Facilities tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
-      { img: '/P1676425.JPG', alt: 'School Campus', tag: 'Campus', title: 'Sprawling Green Campus', desc: 'Our 5-acre green campus provides a serene, distraction-free environment ideal for focused learning and outdoor activities.' },
+      { img: '/P1676425.JPG', alt: 'Green Smart City Project', tag: 'Sustainability', title: 'Green Smart City Project', desc: 'Our students engineered a working model of a sustainable city — comparing air pollution in India and China with a green-smart-city solution powered by solar energy, electric vehicles, and clean urban design.' },
       { img: '/assets/Home/science-lab.jpg', alt: 'Science Lab', tag: 'Science Lab', title: 'Modern Science Labs', desc: 'Modern science labs with advanced tools encouraging innovation and practical learning for every student.' },
       { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],

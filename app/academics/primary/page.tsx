@@ -182,7 +182,7 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
         transition={{ duration: 0.45, ease: EASE }}
         style={{
           backgroundImage:
-            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/classroom.jpg')",
+            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/building-from-top.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
