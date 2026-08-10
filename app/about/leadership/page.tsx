@@ -285,21 +285,75 @@ export default function LeadershipPage() {
 
           <div>
              <Reveal>
-                <p className="font-playfair text-crimson text-xl mb-4">Executive Director's Message</p>
+                <p className="font-playfair text-crimson text-xl mb-4">A Message from the Executive Director</p>
                 <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8 text-ink">
-                  Education for a<br />
-                  <em className="font-semibold">Brighter Tomorrow</em>
+                  Beyond Achievement:<br />
+                  <em className="font-semibold">Educating the Whole Child</em>
                 </h2>
               </Reveal>
           <Reveal delay={100}>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  At Seedling INTERNATIONAL SCHOOL, we believe that education is the key to unlocking a brighter and more successful future. As one of the best schools in Jaipur and a top school in Jaipur, our commitment is to provide an inspiring learning environment where students are encouraged to achieve academic excellence while developing strong values, confidence, and leadership qualities.
+                  Education has never been only about what a child knows. At its finest, education is about who a child becomes.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  We understand that every child is unique, and our dedicated educators strive to nurture their individual talents through innovative teaching methods, modern infrastructure, and a student-centred approach. Along with academics, we place equal emphasis on sports, arts, creativity, and co-curricular activities to ensure the holistic development of every learner.
+                  At Seedling International Academy and Seedling Modern International Academy, our Cambridge education is founded on this deeper understanding of learning. We believe that academic achievement is important—but it is only one part of a much larger journey.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                  Our vision is to shape responsible global citizens who are compassionate, capable, and prepared to meet the challenges of tomorrow. At CAMBRIDGE INTERNATIONAL SCHOOL, we continue to set new standards in education and warmly welcome every child to be a part of our journey towards excellence.
+                  A truly meaningful education should help a young person discover their strengths, develop their voice, understand their responsibilities and build the confidence to navigate an increasingly complex world.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  This is why we believe in an education that goes beyond the pursuit of marks and outcomes.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  The Cambridge approach gives our learners the opportunity to question, investigate, analyse, communicate and make connections. But beyond these academic competencies lies something even more important: the development of curiosity, independence, reflection, resilience and a genuine love for learning.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  We want our students to become learners who do not simply ask, &ldquo;What is the right answer?&rdquo; but also, &ldquo;Why is this so? What else could be possible? What can I do with what I have learned?&rdquo;
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  That shift—from receiving knowledge to engaging with it—is at the heart of our educational philosophy.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  At Seedling International Academy and Seedling Modern International Academy, we see the learner not as a passive recipient of information, but as an active participant in their own learning journey. Our Cambridge environment encourages students to take ownership, to think independently, to collaborate meaningfully and to develop the confidence to express ideas with clarity and conviction.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Yet, we believe that a child's education cannot end with intellectual development.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  The world needs young people who can think deeply and feel deeply; who can achieve and empathise; who can lead and listen; who can be ambitious and remain grounded in values.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  That is why character is central to our understanding of education.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  We want our learners to develop the courage to face setbacks, the humility to learn from others, the integrity to make responsible choices and the resilience to keep moving forward when the path is uncertain.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  For us, the purpose of a Cambridge education is therefore not simply to create successful students.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  It is to nurture capable, confident and compassionate human beings.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Young people who know themselves.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Young people who value others.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  Young people who think for themselves.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  And young people who understand that with knowledge comes responsibility.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  We may not be able to predict the world our children will inherit. But we can give them something more enduring than predictions: the capacity to learn, adapt, question, create and contribute.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  That, to us, is education beyond achievement.
+                </p>
+                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                  And that is the promise we seek to make to every learner who walks through the doors of Seedling International Academy and Seedling Modern International Academy.
                 </p>
               </Reveal>
             <Reveal delay={200}>
@@ -307,7 +361,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-crimson" />
                   <span className="font-playfair text-xl text-[#133844]">Dr. Preeti Bakshi</span>
                 </div>
-                <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling International School</p>
+                <p className="text-crimson text-sm font-dm mt-1">Executive Director, Seedling Group of Schools</p>
               </Reveal>
           </div>
         </div>
