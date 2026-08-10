@@ -254,42 +254,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-navy text-xl mb-2">Visit</p>
-            <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
-              Find Your Way
-            </h3>
-            <p className="text-text-light text-base leading-relaxed font-dm mb-5">{campus.address}</p>
-
-            <div className="space-y-2.5 text-sm mb-5">
-              {campus.phones.map((phone) => (
-                <a key={phone.value} href={`tel:${phone.tel}`} className="flex items-start gap-3 group">
-                  <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center flex-shrink-0 text-xs">📞</span>
-                  <div>
-                    <p className="text-[#133844] font-semibold group-hover:text-crimson transition-colors">{phone.value}</p>
-                    <p className="text-[10px] uppercase tracking-widest text-text-light font-dm">{phone.label}</p>
-                  </div>
-                </a>
-              ))}
-              <a href={`mailto:${campus.email}`} className="flex items-start gap-3 group">
-                <span className="size-7 rounded-lg bg-crimson text-white flex items-center justify-center flex-shrink-0 text-xs">✉</span>
-                <p className="text-[#133844] font-semibold break-all group-hover:text-crimson transition-colors">{campus.email}</p>
-              </a>
-            </div>
-
-            <div className={`rounded-2xl overflow-hidden border border-sand/40 shadow-lg ${campus.key === "smia" ? "h-[450px]" : "h-[330px]"}`}>
-              <iframe
-                src={campus.mapEmbed}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`${campus.fullName} location`}
-              />
-            </div>
-          </motion.div>
+          {/* Visit / Find Your Way section removed per user request */}
         </div>
       </div>
     </section>
@@ -383,53 +348,7 @@ export default function CampusesPage(): React.JSX.Element {
       {/* Shared Six Pillars — one common section for both campuses */}
       <SixPillars />
 
-      {/* Closing CTA */}
-      <motion.section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeUp}
-        transition={{ duration: 0.45, ease: EASE }}
-      >
-        <div className="absolute inset-0 mesh-gradient opacity-10" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
-          <motion.span
-            className="block w-px h-10 bg-[#133844] mx-auto mb-5"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            style={{ transformOrigin: "top" }}
-          />
-          <p className="font-playfair text-[#133844] text-xl mb-4">Visit Us</p>
-          <h2 className="font-playfair text-4xl md:text-5xl font-light leading-[1.15] mb-6">
-            Walk the corridors<br />
-            <em className="font-semibold text-[#133844]">of a Seedling school.</em>
-          </h2>
-          <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
-            Book a campus visit and see the Seedling difference in person — at either SIA or SMIA, whichever is closer to home.
-          </p>
-          <motion.div
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={stagger}
-          >
-            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="/admissions" className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40 font-dm">
-              Begin Application
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </motion.a>
-            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#sia" className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
-              ↑ SIA
-            </motion.a>
-            <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="#smia" className="inline-flex items-center gap-3 border border-[#133844]/30 hover:bg-white hover:text-[#133844] text-[#133844] px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 font-dm">
-              ↑ SMIA
-            </motion.a>
-          </motion.div>
-        </div>
-      </motion.section>
+      {/* Closing CTA - removed per user request */}
     </main>
   );
 }
