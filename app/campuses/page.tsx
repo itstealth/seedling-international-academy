@@ -216,6 +216,10 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
 
         {/* Facilities + Map split */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          {/* Empty left column spacer — keeps facilities pinned to the right */}
+          <div className="hidden md:block" />
+
+          {/* RIGHT: Facilities */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-2">The Campus</p>
             <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
@@ -277,10 +281,11 @@ export default function CampusesPage(): React.JSX.Element {
   }, []);
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/campus-images/3.jpeg"
         title="Our Campuses"
+        subtitle="Two Cambridge-affiliated campuses in Jaipur, one shared promise: every child is known by name, challenged at their own pace, and cared for as a whole person — not just a set of grades. From a three-year-old's first day in Early Years to a Class 12 student walking out with an A-Level result sheet in hand, the journey is built to feel like one continuous story, not a series of disconnected stages."
         badge="Two Distinct Schools, One Cambridge Standard"
         breadcrumbs={[{ label: "Campuses" }]}
         height="medium"

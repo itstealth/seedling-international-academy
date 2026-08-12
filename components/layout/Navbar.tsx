@@ -439,25 +439,36 @@ function DesktopNav({ pathname }: { pathname: string }) {
             className="relative"
             onMouseEnter={() => hasDropdown && handleEnter(item.name)}
           >
-            {/* Parent label — a real Next.js Link so clicking navigates to the parent page */}
-            <Link
-              href={item.href}
-              aria-haspopup={hasDropdown ? "true" : undefined}
-              aria-expanded={hasDropdown ? isOpen : undefined}
-              className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
-                isActive
-                  ? "bg-white text-[#133844]"
-                  : "text-white/90 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              <span>{item.name}</span>
-              {hasDropdown && (
+            {/* Parent label — Link when no dropdown, button when dropdown (children are the real links) */}
+            {hasDropdown ? (
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={isOpen}
+                className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
+                  isActive
+                    ? "bg-white text-[#133844]"
+                    : "text-white/90 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <span>{item.name}</span>
                 <ChevronDown
                   className={`w-3 h-3 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                   strokeWidth={2.5}
                 />
-              )}
-            </Link>
+              </button>
+            ) : (
+              <Link
+                href={item.href}
+                className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
+                  isActive
+                    ? "bg-white text-[#133844]"
+                    : "text-white/90 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <span>{item.name}</span>
+              </Link>
+            )}
 
             {/* Animated dropdown card with children — appears on hover */}
             {hasDropdown && (

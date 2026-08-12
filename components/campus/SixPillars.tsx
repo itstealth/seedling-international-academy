@@ -8,12 +8,12 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08, de
 const cardRise = { hidden: { opacity: 0, y: 20, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } };
 
 const pillars = [
-  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels, the same world-class standards across both campuses.", icon: "📚", color: "red" },
-  { title: "Experienced Faculty", desc: "Trained Cambridge educators with a 20:1 student-to-teacher ratio and personalised attention for every learner at both SIA and SMIA.", icon: "👩‍🏫", color: "blue" },
-  { title: "Modern Facilities", desc: "Smart classrooms, dedicated STEM labs, library, performing arts spaces, and multi-sport zones — purpose-built for deep, joyful learning.", icon: "🏛️", color: "green" },
-  { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service shape the complete learner.", icon: "🎨", color: "purple" },
-  { title: "Safe & Nurturing", desc: "Secure campuses with trained counsellors, mentors, and a culture of care that puts every child's emotional and physical well-being first.", icon: "❤️", color: "amber" },
-  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network across 50+ nations.", icon: "🏆", color: "rose" },
+  { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels, the same world-class standards delivered consistently across both campuses.", icon: "📚", color: "red" },
+  { title: "Experienced Faculty", desc: "Trained Cambridge educators with a 20:1 student-to-teacher ratio and genuinely personalised attention for every learner at both SIA and SMIA, not just on paper but in day-to-day classroom practice.", icon: "👩‍🏫", color: "blue" },
+  { title: "Modern Facilities", desc: "Smart classrooms, dedicated STEM labs, library, performing arts spaces, and multi-sport zones — purpose-built for deep, joyful learning rather than designed purely for a prospectus photograph.", icon: "🏛️", color: "green" },
+  { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service shape the complete learner, giving every student more than one way to find their strength.", icon: "🎨", color: "purple" },
+  { title: "Safe & Nurturing", desc: "Secure campuses with trained counsellors, mentors, and a genuine culture of care that puts every child's emotional and physical well-being first, every single day.", icon: "❤️", color: "amber" },
+  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network spread across 50+ nations.", icon: "🏆", color: "rose" },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; accent: string; iconBg: string }> = {

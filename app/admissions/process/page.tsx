@@ -38,6 +38,7 @@ export default function AdmissionProcessPage() {
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Admission Process"
+        subtitle="Begin your child's journey with Seedling International School — where excellence meets warmth, and where every enquiry is answered by a person, not a queue."
         badge="How to Apply"
         breadcrumbs={[{ label: "Admission Process" }]}
       />

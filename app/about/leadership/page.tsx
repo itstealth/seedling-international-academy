@@ -166,22 +166,22 @@ export default function LeadershipPage() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Welcome to the Seedling International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   At Seedling International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   As you explore our website, I warmly invite you to experience the spirit of Seedling International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base font-dm font-semibold">
@@ -292,67 +292,67 @@ export default function LeadershipPage() {
                 </h2>
               </Reveal>
           <Reveal delay={100}>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Education has never been only about what a child knows. At its finest, education is about who a child becomes.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   At Seedling International Academy and Seedling Modern International Academy, our Cambridge education is founded on this deeper understanding of learning. We believe that academic achievement is important—but it is only one part of a much larger journey.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   A truly meaningful education should help a young person discover their strengths, develop their voice, understand their responsibilities and build the confidence to navigate an increasingly complex world.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   This is why we believe in an education that goes beyond the pursuit of marks and outcomes.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   The Cambridge approach gives our learners the opportunity to question, investigate, analyse, communicate and make connections. But beyond these academic competencies lies something even more important: the development of curiosity, independence, reflection, resilience and a genuine love for learning.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   We want our students to become learners who do not simply ask, &ldquo;What is the right answer?&rdquo; but also, &ldquo;Why is this so? What else could be possible? What can I do with what I have learned?&rdquo;
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   That shift—from receiving knowledge to engaging with it—is at the heart of our educational philosophy.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   At Seedling International Academy and Seedling Modern International Academy, we see the learner not as a passive recipient of information, but as an active participant in their own learning journey. Our Cambridge environment encourages students to take ownership, to think independently, to collaborate meaningfully and to develop the confidence to express ideas with clarity and conviction.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Yet, we believe that a child's education cannot end with intellectual development.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   The world needs young people who can think deeply and feel deeply; who can achieve and empathise; who can lead and listen; who can be ambitious and remain grounded in values.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   That is why character is central to our understanding of education.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   We want our learners to develop the courage to face setbacks, the humility to learn from others, the integrity to make responsible choices and the resilience to keep moving forward when the path is uncertain.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   For us, the purpose of a Cambridge education is therefore not simply to create successful students.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   It is to nurture capable, confident and compassionate human beings.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Young people who know themselves.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Young people who value others.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Young people who think for themselves.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   And young people who understand that with knowledge comes responsibility.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   We may not be able to predict the world our children will inherit. But we can give them something more enduring than predictions: the capacity to learn, adapt, question, create and contribute.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   That, to us, is education beyond achievement.
                 </p>
-                <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+                <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   And that is the promise we seek to make to every learner who walks through the doors of Seedling International Academy and Seedling Modern International Academy.
                 </p>
               </Reveal>
@@ -396,16 +396,16 @@ export default function LeadershipPage() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 At Seedling International School, we believe that education is more than academics — it is the foundation upon which confident, compassionate and capable individuals are built. Every initiative we undertake is shaped by a single, enduring purpose: to prepare our students to lead meaningful lives in a rapidly evolving world.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 As Joint Director, I work closely with our leadership teams to ensure that the vision of our institution translates into a lived, breathing experience for every child who walks through our doors. From the classrooms to the playing fields, from the arts studio to the robotics lab — every space is designed to inspire curiosity, character and courage.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 We are equally committed to the partnership we share with parents. When schools and families work together with shared purpose, the impact on a child's growth is profound and lasting. It is this trust — between educators, parents and learners — that defines the Seedling way.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
                 Together, we will continue to raise the bar — nurturing young minds who are academically excellent, emotionally secure, ethically grounded and ready to shape a better tomorrow.
               </p>
             </Reveal>
@@ -443,24 +443,126 @@ export default function LeadershipPage() {
 
           <div>
             <Reveal>
-              <p className="font-playfair text-navy-700 text-xl mb-4">Joint Director's Message</p>
+              <p className="font-playfair text-navy-700 text-xl mb-4">A Message from the Joint Director, Seedling Group of Schools</p>
               <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
-                Learning with Heart,<br />
-                <em className="font-semibold">Leading with Purpose</em>
+                Learning Beyond the Classroom:<br />
+                <em className="font-semibold">From Knowledge to Real-World Impact</em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                Seedling International School stands for something deeply personal to us — the belief that every child deserves an education that sees them, hears them and challenges them to become their very best. As Joint Director, I am privileged to support the realisation of that belief across every aspect of school life.
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Education finds its true meaning when knowledge moves beyond the pages of a textbook and becomes part of how a young person thinks, responds, creates and contributes.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                Our focus extends beyond academic results. We are intentional about building environments where students feel safe to take intellectual risks, where creativity is celebrated, where diversity is honoured, and where service to others is woven into the daily rhythm of school. These are the qualities that will define the leaders of tomorrow.
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                At Seedling International Academy and Seedling Modern International Academy, we believe that the purpose of education is not simply to prepare learners for examinations, but to prepare them for life. The Cambridge approach gives us a powerful framework to make this philosophy a lived reality—connecting academic understanding with curiosity, experience, collaboration and real-world application.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
-                I am deeply grateful to our educators, our students and our parent community for the trust they place in us. It is a privilege — and a responsibility — that we honour every single day, in every classroom, in every decision.
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                When Learning Becomes Experience
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
-                As we look to the future, our commitment remains unchanged: to light the spark of curiosity in every child, to strengthen the values that hold them steady, and to equip them to lead lives of purpose, integrity and impact.
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A concept becomes truly meaningful when a learner can see it in the world around them.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A mathematical principle encountered in a classroom can become a tool for understanding everyday decisions. A scientific concept can lead to an investigation of the environment. A historical event can invite reflection on the choices societies make. A literary text can open a conversation about human emotions, relationships and perspectives.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                This is the kind of learning we aspire to create—learning that does not stop with &ldquo;I know this,&rdquo; but progresses to:
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                &ldquo;I understand this.&rdquo;<br />
+                &ldquo;I can apply this.&rdquo;<br />
+                &ldquo;I can connect this to the world around me.&rdquo;<br />
+                &ldquo;And perhaps, I can use it to make a difference.&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                The Classroom as a Launchpad
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The classroom should be a beginning, not a boundary.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our learners need opportunities to investigate, experiment, collaborate, present ideas, solve authentic problems and learn from experiences. When students work together on a project, conduct an investigation, design a solution or engage with a community issue, they begin to understand that knowledge is powerful because of what we do with it.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Such experiences also cultivate skills that cannot be developed through memorisation alone—communication, collaboration, creativity, critical thinking, decision-making and adaptability.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                These are not merely &ldquo;future skills&rdquo;. They are life skills.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Connecting Disciplines, Connecting Ideas
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The challenges of the real world rarely arrive neatly divided into subjects.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A problem may require scientific understanding, mathematical reasoning, technological awareness, communication skills and an appreciation of human behaviour—all at once.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                This is why interdisciplinary learning is so important.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                When learners make connections between different areas of knowledge, they begin to see the larger picture. They discover that mathematics can tell a story, science can inspire innovation, language can influence change and creativity can transform a solution.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Knowledge becomes more powerful when learners learn to connect it.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                From Learners to Contributors
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want our students to see themselves not merely as recipients of education, but as active contributors to the world around them.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A learner who identifies an environmental concern and thinks of a possible solution is already beginning to understand citizenship.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A learner who listens to another perspective before presenting an opinion is developing empathy.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A learner who works with peers to overcome a challenge is learning the value of collaboration.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A learner who takes an idea from conception to execution is developing initiative.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                These experiences shape young people who understand that their education carries a responsibility—to themselves, to their communities and to the wider world.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Preparing for a World That Keeps Changing
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The future will demand more than academic knowledge.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                It will require young people who can adapt without losing direction, innovate without losing values, and embrace technology without losing their humanity.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our responsibility is therefore to create learning environments where students are encouraged to experiment, take thoughtful risks, learn from setbacks and remain open to new possibilities.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want them to leave school not with the belief that they have learned everything, but with the confidence that they can learn anything they need to face what comes next.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Education with Purpose
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Ultimately, the measure of education is not only what a learner achieves personally, but also what that learner chooses to do with what they have learned.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                At Seedling, we aspire to create young people who can take knowledge into the world and turn it into ideas, solutions, relationships, opportunities and positive change.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Because the finest education does not end when the lesson ends.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                It begins when the learner steps outside the classroom and sees the world differently.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                That is the Cambridge journey we envision for our learners:<br />
+                from knowledge to understanding,<br />
+                from understanding to action,<br />
+                and from action to meaningful impact.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -468,7 +570,7 @@ export default function LeadershipPage() {
                 <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Ms. Aishwarya Bakshi</span>
               </div>
-              <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
+              <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling Group of Schools</p>
             </Reveal>
           </div>
         </div>
@@ -504,25 +606,25 @@ export default function LeadershipPage() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 At Seedling International School, we do not believe children are meant to simply pass examinations — they are meant to discover their voice, build their confidence, strengthen their values and step into the future with courage and clarity.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 In a world that is changing faster than ever before, we are committed to nurturing children who are not only academically capable, but emotionally secure, ethically grounded, creatively expressive and mentally resilient.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 From academics to innovation, sports to performing arts, leadership to public speaking, yoga to mindfulness and meditation — every experience at Seedling International School is designed to shape balanced, future-ready individuals who can thrive in life, not just in classrooms.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 And to every parent, we offer not just education, but partnership, reassurance and trust. Your child will be guided with warmth, challenged with purpose, heard with empathy and encouraged to grow into the finest version of themselves.
               </p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm font-semibold">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
                 Because at Seedling International School, we are not merely building successful students. We are nurturing happy minds, strong hearts, fearless voices, and extraordinary human beings ready to leave their mark on the world.
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
-              <p className="text-text-light leading-[1.9] text-base mb-4 font-dm">
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                 Welcome to our portals where every child grows to bloom.
               </p>
             </Reveal>

@@ -160,7 +160,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   const learnerAttributes = [
     {
       title: "Confident",
-      desc: "Confident in working with information and ideas – their own and those of others. Secure in their knowledge, willing to take intellectual risks, and ready to communicate and defend their views.",
+      desc: "Confident working with information and ideas — their own and those of others. Secure enough in their own knowledge to take intellectual risks, ask difficult questions, and communicate and defend their views clearly, whether in a classroom debate or in front of an audience.",
       Icon: ShieldCheck,
       color: "text-white",
       bg: "#7e25e0",
@@ -169,7 +169,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     },
     {
       title: "Responsible",
-      desc: "Responsible for themselves, responsive to and respectful of others. Taking ownership of learning, acting with integrity, and understanding their impact on the global community.",
+      desc: "Responsible for themselves, responsive to and respectful of others. Students learn to take genuine ownership of their learning and their actions, act with integrity even when no one is watching, and understand the ripple effect their choices have on their community and the wider world.",
       Icon: Handshake,
       color: "text-white",
       bg: "#5165ec",
@@ -178,7 +178,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     },
     {
       title: "Reflective",
-      desc: "Reflective as learners, developing their ability to learn. Understanding themselves as students, focusing on progress, and adopting active strategies to become lifelong learners.",
+      desc: "Reflective as learners, continually building their own ability to learn rather than simply absorbing content. Understanding themselves as students, focusing honestly on their own progress, and adopting active strategies that turn them into lifelong learners long after they leave a Seedling classroom.",
       Icon: Compass,
       color: "text-white",
       bg: "#028819",
@@ -187,7 +187,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     },
     {
       title: "Innovative",
-      desc: "Innovative and equipped for new and future challenges. Resourceful, creative, and capable of applying academic knowledge to solve real-world, unfamiliar problems.",
+      desc: "Innovative and equipped for challenges that don't have a textbook answer yet. Resourceful, creative, and genuinely capable of applying academic knowledge to solve real-world, unfamiliar problems — the kind of thinking that no amount of rote learning can substitute for.",
       Icon: Lightbulb,
       color: "text-white",
       bg: "#e04220",
@@ -196,7 +196,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     },
     {
       title: "Engaged",
-      desc: "Engaged intellectually and socially, ready to make a difference. Driven by a spirit of inquiry and curiosity, ready to learn new skills and participate constructively in society.",
+      desc: "Engaged intellectually and socially, ready to make a difference in ways big and small. Driven by a real spirit of inquiry and curiosity, ready to pick up new skills without being told to, and ready to participate constructively in the communities they belong to, in school and well beyond it.",
       Icon: Globe,
       color: "text-white",
       bg: "#8c0e24",
@@ -321,7 +321,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display absolute bottom-10 left-6 md:bottom-16 md:left-14 lg:bottom-20 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
+          className="font-display absolute bottom-24 md:bottom-28 lg:bottom-32 left-6 md:left-14 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
           style={{
             color: "#ffffff",
             textShadow:
@@ -331,6 +331,20 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           Where Curiosity<br />
           Meets Character.
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute bottom-4 left-6 md:bottom-8 md:left-14 lg:bottom-10 lg:left-20 right-6 md:right-14 lg:right-20 z-10 text-sm sm:text-base md:text-lg leading-[1.7] font-light"
+          style={{
+            color: "rgba(255,255,255,0.85)",
+            textShadow:
+              "0 1px 12px rgba(0,0,0,0.55), 0 4px 24px rgba(0,0,0,0.30)",
+          }}
+        >
+          Two Cambridge-affiliated campuses in Jaipur, one shared promise: every child is known by name, challenged at their own pace, and cared for as a whole person — not just a set of grades. From a three-year-old's first day in Early Years to a Class 12 student walking out with an A-Level result sheet in hand, the journey is built to feel like one continuous story, not a series of disconnected stages.
+        </motion.p>
       </section>
 
 
@@ -352,7 +366,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               Two campuses, <em className="font-semibold text-crimson">one vision</em>
             </h2>
             <p className="text-sm md:text-base text-text-light leading-relaxed font-light max-w-2xl mx-auto">
-              Two distinct schools, united by the same Cambridge board — Seedling International Academy (SIA) and Seedling Modern International Academy (SMIA) deliver globally benchmarked education, each with its own unique identity.
+              Two distinct schools, united by the same Cambridge board. Seedling International Academy (SIA) in Jawahar Nagar and Seedling Modern International Academy (SMIA) in Durgapura each carry their own character, their own community, and their own campus culture — one grown over three decades in Jaipur's oldest Cambridge neighbourhood, the other built fresh for families in the heart of the city.
             </p>
           </div>
 
@@ -452,10 +466,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9">
                 {[
-                  { title: 'Personalized Journeys', desc: "Tailored approaches for each child's strengths." },
-                  { title: 'Future-Ready Skills', desc: 'AI literacy and critical thinking integrated.' },
-                  { title: 'Global Mindset', desc: 'International exposure with Indian values.' },
-                  { title: 'University Counseling', desc: 'Dedicated guidance for global higher-education pathways.' },
+                  { title: 'Personalized Journeys', desc: "No two learners are alike, and we don't pretend they are. Every child's pace, interests, learning style and strengths shape how we teach them — not the other way round." },
+                  { title: 'Future-Ready Skills', desc: "AI literacy, critical thinking and structured problem-solving are woven into everyday learning from an early age, not bolted on as an occasional workshop." },
+                  { title: 'Global Mindset', desc: "An internationally benchmarked curriculum taught with Indian values firmly at its core — students who can discuss world affairs." },
+                  { title: 'University Counseling', desc: "Dedicated guidance that starts well before Class 12 and stays with every student through shortlisting, applications, personal statements and interview preparation for universities across India." },
                 ].map(({ title, desc }) => (
                   <div key={title} className="group border-t-2 border-ink/10 pt-5 transition-colors duration-300 hover:border-crimson/70">
                     <h4 className="text-[15px] font-bold text-ink mb-2 uppercase tracking-wide font-dm flex items-center gap-2.5">
@@ -476,7 +490,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </div>
               <div className="absolute -bottom-6 -left-4 bg-white border-l-4 border-crimson rounded-[8px] px-7 py-6 z-10 shadow-lg">
                 <strong className="block text-5xl font-playfair text-crimson mb-1 leading-none">33+</strong>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-ink-soft block mt-1 leading-tight">Years of Academic<br />Excellence</span>
+                <span className="text-[10px] font-bold tracking-widest uppercase text-ink-soft block mt-1 leading-tight">33+ Years of Academic<br />Excellence — three decades of Seedling families, faculty, and board results behind every classroom today, built one cohort of students at a time since 1993.</span>
               </div>
             </div>
           </div>

@@ -79,12 +79,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 
 const whyUs = [
-  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses.", color: "red" },
-  { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education.", color: "blue" },
-  { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Seedling International School values, globally recognised credentials.", color: "green" },
-  { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, guidance, and genuine care.", color: "purple" },
-  { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning.", color: "amber" },
-  { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student.", color: "rose" },
+  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses — a track record built through steady, individual attention rather than last-minute exam drilling.", color: "red" },
+  { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education, so families never have to choose between an international standard and domestic policy direction.", color: "blue" },
+  { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Seedling values, the same globally recognised credentials, whichever academic pathway fits your child best.", color: "green" },
+  { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, honest feedback, and genuine care — not just a seat in a crowded classroom.", color: "purple" },
+  { icon: "🏛️", title: "State-of-the-Art Facilities", desc: "Modern classrooms, science labs, digital whiteboards, outdoor spaces — all designed for deep learning rather than built purely to look impressive on a prospectus.", color: "amber" },
+  { icon: "❤️", title: "Holistic Well-being", desc: "Academic growth, emotional intelligence, sports, arts — we nurture the complete child, not just the student who shows up for exams.", color: "rose" },
 ];
 
 const whyUsColorMap: Record<string, { glass: string; text: string; border: string; accent: string; iconBg: string }> = {
@@ -286,7 +286,7 @@ export default function AdmissionsPage() {
   };
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <style>{`
         .duration-400 { transition-duration: 400ms; }
         @keyframes fade-in {
@@ -659,8 +659,8 @@ export default function AdmissionsPage() {
         <Reveal className="text-center mb-8 md:mb-14">
           <Tag>Why Seedling</Tag>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
-            Six Reasons Parents<br />
-            <span className="text-crimson">Choose Us</span>
+            Why Seedling —<br />
+            <span className="text-crimson">Six Reasons Parents Choose Us</span>
           </h2>
         </Reveal>
 
@@ -800,7 +800,7 @@ export default function AdmissionsPage() {
       ══════════════════════════════════════════════════ */}
       <section className="pt-10 md:pt-14 pb-4 md:pb-8 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-start">
-          <Reveal>
+          <Reveal className="md:sticky md:top-28 self-start">
             <Tag>Eligibility & Requirements</Tag>
             <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] mb-8 tracking-tight">
               Documents<br />
