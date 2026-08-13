@@ -100,6 +100,19 @@ function CallbackForm() {
   );
 }
 
+// Campus Life gallery images (new set)
+const campusGallery = [
+  "/DSC_2180.JPG",
+  "/DSC_2204.JPG",
+  "/WhatsApp%20Image%202026-04-01%20at%2011.24.51.jpeg",
+  "/IMG_5875.JPG",
+  "/IMG_5854.JPG",
+  "/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg",
+  "/WhatsApp%20Image%202026-08-01%20at%2009.35.14%20%281%29.jpeg",
+  "/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg",
+  "/WhatsApp%20Image%202026-08-07%20at%2013.37.25%20%281%29.jpeg",
+];
+
 // ─── Main Page Component ─────────────────────────────────────────────────────
 export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -321,7 +334,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display absolute bottom-24 md:bottom-28 lg:bottom-32 left-6 md:left-14 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
+          className="font-display absolute bottom-4 md:bottom-8 lg:bottom-12 left-6 md:left-14 lg:left-20 z-10 max-w-[88%] sm:max-w-2xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-[-0.01em]"
           style={{
             color: "#ffffff",
             textShadow:
@@ -343,7 +356,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               "0 1px 12px rgba(0,0,0,0.55), 0 4px 24px rgba(0,0,0,0.30)",
           }}
         >
-          Two Cambridge-affiliated campuses in Jaipur, one shared promise: every child is known by name, challenged at their own pace, and cared for as a whole person — not just a set of grades. From a three-year-old's first day in Early Years to a Class 12 student walking out with an A-Level result sheet in hand, the journey is built to feel like one continuous story, not a series of disconnected stages.
+          
         </motion.p>
       </section>
 
@@ -392,16 +405,17 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             ].map((campus, i) => {
               const campusBgs = ["bg-blue-100", "bg-red-100"];
               const campusBorders = ["border-blue-200", "border-red-200"];
+              const campusHref = campus.tag === "SIA" ? "/campuses#sia" : "/campuses#smia";
               return (
-              <motion.div
-                key={campus.name}
-                className={`group relative overflow-hidden rounded-[8px] border ${campusBorders[i]} shadow-2xl shadow-black/5 ${campusBgs[i]} backdrop-blur-sm`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
-              >
+              <Link key={campus.name} href={campusHref} className="block">
+                <motion.div
+                  className={`group relative overflow-hidden rounded-[8px] border ${campusBorders[i]} shadow-2xl shadow-black/5 ${campusBgs[i]} backdrop-blur-sm`}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -6 }}
+                >
                 {/* Collage of Images / Single Image */}
                 <div className="relative h-80 sm:h-96 md:h-[28rem] overflow-hidden bg-[#fafafa]">
                   {campus.images.length === 1 ? (
@@ -443,7 +457,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
+              </Link>
               );
             })}
           </div>
@@ -1000,81 +1015,45 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {/* Row 1 - Left big, Right stacked */}
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 row-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/ANNUAL FUNCTION/5.webp" alt="Annual Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <span className="text-white text-lg font-semibold font-playfair">Annual Day</span>
-                </div>
+                <img src={campusGallery[0]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/STELLAR SATURDAYS/2.webp" alt="Stellar Saturdays" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Stellar Saturdays</span>
-                </div>
+                <img src={campusGallery[1]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/JAISELMER TRIP/1.webp" alt="Jaiselmer Trip" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Jaiselmer Trip</span>
-                </div>
+                <img src={campusGallery[2]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
             {/* Row 2 - Wide left, 1 image right */}
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/BOOT CAMP/1.webp" alt="Boot Camp" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Boot Camp</span>
-                </div>
+                <img src={campusGallery[3]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="col-span-1 row-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/FAREWELL 12TH/2.webp" alt="Diwali Dance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Diwali Dance</span>
-                </div>
+                <img src={campusGallery[4]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
-            {/* Row 3 - Stacked left, 1 image right */}
+            {/* Row 3 - three across */}
             <div className="grid grid-cols-3 gap-4 h-[280px]">
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/SPORTS DAY/3.webp" alt="Sports Day" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Sports Day</span>
-                </div>
+                <img src={campusGallery[5]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/PRIMARY OUTING/1.webp" alt="Primary Outing" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Primary Outing</span>
-                </div>
+                <img src={campusGallery[6]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src="/assets/SPARKLE FEST/1.webp" alt="Sparkle Fest" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold font-playfair">Sparkle Fest</span>
-                </div>
+                <img src={campusGallery[7]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
           </div>
 
           {/* Mobile Gallery - Clean 2-column grid */}
           <div className="md:hidden grid grid-cols-2 gap-3">
-            {[
-              { img: '/assets/ANNUAL FUNCTION/5.webp', label: 'Annual Day' },
-              { img: '/assets/STELLAR SATURDAYS/2.webp', label: 'Stellar Saturdays' },
-              { img: '/assets/JAISELMER TRIP/1.webp', label: 'Jaiselmer Trip' },
-              { img: '/assets/BOOT CAMP/1.webp', label: 'Boot Camp' },
-              { img: '/assets/FAREWELL 12TH/2.webp', label: 'Diwali Dance' },
-              { img: '/assets/SPORTS DAY/3.webp', label: 'Sports Day' },
-              { img: '/assets/PRIMARY OUTING/1.webp', label: 'Primary Outing' },
-              { img: '/assets/SPARKLE FEST/1.webp', label: 'Sparkle Fest' },
-            ].map(({ img, label }) => (
-              <div key={label} className="group relative rounded-[8px] overflow-hidden aspect-square">
-                <img src={img} alt={label} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-3">
-                  <span className="text-white text-xs font-semibold font-playfair">{label}</span>
-                </div>
+            {campusGallery.slice(0, 8).map((img, i) => (
+              <div key={i} className="group relative rounded-[8px] overflow-hidden aspect-square">
+                <img src={img} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             ))}
           </div>

@@ -165,62 +165,67 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
           </a>
         </motion.div>
 
-        {/* Image + Intro grid */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.45, ease: EASE }}
-            className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg"
-          >
-            <img src={campus.heroImage} alt={campus.fullName} className="w-full h-full object-cover" />
-            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
-              <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">{campus.shortName}</span>
-            </div>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
-            <p className="font-playfair text-crimson text-xl mb-3">{campus.motto}</p>
-            <h3
-              className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-5"
-              dangerouslySetInnerHTML={{ __html: campus.introHeadline }}
-            />
-            <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm mb-6">{campus.introLead}</p>
+        {/* Intro — full width, image lives once in the sticky facilities section below */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.45, ease: EASE }}
+          className="mb-12 md:mb-16"
+        >
+          <p className="font-playfair text-crimson text-xl mb-3">{campus.motto}</p>
+          <h3
+            className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-5"
+            dangerouslySetInnerHTML={{ __html: campus.introHeadline }}
+          />
+          <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm mb-6">{campus.introLead}</p>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-2 gap-4 max-w-2xl">
-              {[
-                { v: campus.established, l: "Established", palette: "purple" },
-                { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },
-                { v: campus.campusSize, l: "Campus", palette: "green" },
-                { v: campus.results, l: "Cambridge Results", palette: "orange" },
-              ].map((s) => {
-                const paletteMap: Record<string, string> = {
-                  purple: "bg-purple-100 border-purple-700",
-                  blue: "bg-blue-100 border-blue-700",
-                  green: "bg-green-100 border-green-700",
-                  orange: "bg-orange-100 border-orange-700",
-                };
-                return (
-                <div key={s.l} className={`${paletteMap[s.palette]} rounded-2xl p-5 border-2 shadow-md hover:shadow-lg transition-all`}>
-                  <p className="font-playfair text-3xl md:text-4xl font-black text-navy leading-none mb-1.5">{s.v}</p>
-                  <p className="text-[11px] uppercase tracking-widest text-text-light font-dm font-semibold">{s.l}</p>
-                </div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
+          {/* Stats row */}
+          <div className="grid grid-cols-2 gap-4 max-w-2xl">
+            {[
+              { v: campus.established, l: "Established", palette: "purple" },
+              { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },
+              { v: campus.campusSize, l: "Campus", palette: "green" },
+              { v: campus.results, l: "Cambridge Results", palette: "orange" },
+            ].map((s) => {
+              const paletteMap: Record<string, string> = {
+                purple: "bg-purple-100 border-purple-700",
+                blue: "bg-blue-100 border-blue-700",
+                green: "bg-green-100 border-green-700",
+                orange: "bg-orange-100 border-orange-700",
+              };
+              return (
+              <div key={s.l} className={`${paletteMap[s.palette]} rounded-2xl p-5 border-2 shadow-md hover:shadow-lg transition-all`}>
+                <p className="font-playfair text-3xl md:text-4xl font-black text-navy leading-none mb-1.5">{s.v}</p>
+                <p className="text-[11px] uppercase tracking-widest text-text-light font-dm font-semibold">{s.l}</p>
+              </div>
+              );
+            })}
+          </div>
+        </motion.div>
 
         {/* Six Pillars — moved out to a single shared section, rendered once below */}
 
         {/* Facilities + Map split */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-          {/* Empty left column spacer — keeps facilities pinned to the right */}
-          <div className="hidden md:block" />
+          {/* LEFT: Sticky campus image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45, ease: EASE }}
+            className="md:sticky md:top-28 self-start"
+          >
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg">
+              <img src={campus.heroImage} alt={campus.fullName} className="w-full h-full object-cover" />
+              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
+                <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">{campus.shortName}</span>
+              </div>
+            </div>
+          </motion.div>
 
           {/* RIGHT: Facilities */}
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-2">The Campus</p>
             <h3 className="font-playfair text-2xl md:text-3xl font-light text-ink leading-tight mb-5">
               Facilities &amp; Spaces

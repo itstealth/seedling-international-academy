@@ -79,9 +79,9 @@ const leaders = [
     tag: "Promoting Global Citizenship",
   },
   {
-    name: "Ms. Shruti Kukkr",
+    name: "Ms. Shruti Kukar",
     role: "Principal",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Principal,Seedling international school group of institution",
     quote: "Education is the kindling of a flame, not the filling of a vessel.",
     img: "/assets/Home/principle.jpeg",
     tag: "Inspiring the Next Generation",
@@ -591,7 +591,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal, Seedling International School</p>
+                  <p className="text-navy text-sm font-dm">Principal, Seedling international school group of institution</p>
                 </div>
               </div>
             </Reveal>
@@ -633,7 +633,7 @@ export default function LeadershipPage() {
                 <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
               </div>
-              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling International School</p>
+              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling international school group of institution</p>
             </Reveal>
           </div>
         </div>

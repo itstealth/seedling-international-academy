@@ -67,12 +67,12 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {[
-              { group: "Languages", items: ["English", "Hindi", "French"], color: "purple" },
-              { group: "Sciences", items: ["Physics", "Chemistry", "Biology"], color: "blue" },
-              { group: "Mathematics", items: ["Mathematics A", "Mathematics B", "Statistics"], color: "green" },
-              { group: "Humanities", items: ["History", "Geography", "Civics"], color: "orange" },
-              { group: "Arts", items: ["Music", "Visual Arts", "Drama"], color: "red" },
-              { group: "Physical Education", items: ["Sports", "Yoga", "Athletics"], color: "purple" },
+              { group: "Languages", items: ["English", "English as a Second Language", "Modern Foreign Languages"], color: "purple" },
+              { group: "Sciences", items: ["Science", "Scientific Enquiry", "Environmental Studies"], color: "blue" },
+              { group: "Mathematics", items: ["Number", "Algebra", "Geometry"], color: "green" },
+              { group: "Humanities", items: ["Humanities", "Geography", "Global Perspectives"], color: "orange" },
+              { group: "Arts & Creativity", items: ["Art & Design", "Music", "Creative Expression"], color: "red" },
+              { group: "Technology & Wellbeing", items: ["Computing", "Digital Literacy", "Physical Education"], color: "purple" },
             ].map((s, idx) => {
               const palette = [
                 { bg: "bg-purple-700", border: "border-purple-700", dot: "bg-purple-300", shadow: "shadow-2xl shadow-purple-700/60" },

@@ -72,12 +72,12 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {[
-              { group: "Languages", items: ["English", "Hindi", "French", "Sanskrit"], color: "purple" },
-              { group: "Sciences", items: ["Physics", "Chemistry", "Biology"], color: "blue" },
-              { group: "Mathematics", items: ["Algebra", "Geometry", "Calculus"], color: "green" },
-              { group: "Humanities", items: ["History", "Geography", "Civics"], color: "orange" },
-              { group: "Arts", items: ["Music", "Dance", "Visual Arts"], color: "red" },
-              { group: "Physical Education", items: ["Sports", "Yoga", "Athletics"], color: "purple" },
+              { group: "Languages", items: ["English", "Hindi", "French"], color: "purple" },
+              { group: "Sciences", items: ["Science", "Scientific Enquiry", "Environment"], color: "blue" },
+              { group: "Mathematics", items: ["Numbers", "Geometry", "Measurement"], color: "green" },
+              { group: "Humanities", items: ["History", "Geography", "Global Perspectives"], color: "orange" },
+              { group: "Arts & Creativity", items: ["Art & Design", "Music", "Creative Expression"], color: "red" },
+              { group: "Technology & Wellbeing", items: ["Computing", "Digital Literacy", "Physical Education"], color: "purple" },
             ].map((s, idx) => {
               const palette = [
                 { bg: "bg-purple-700", border: "border-purple-700", dot: "bg-purple-300", shadow: "shadow-2xl shadow-purple-700/60" },
