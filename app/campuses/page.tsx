@@ -125,7 +125,7 @@ const campuses: Campus[] = [
 
 function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
   return (
-    <section id={campus.id} className={`relative scroll-mt-24 py-14 md:py-20 ${index % 2 === 0 ? "bg-white" : "bg-off-white"} overflow-hidden`}>
+    <section id={campus.id} className={`relative scroll-mt-24 py-14 md:py-20 ${index % 2 === 0 ? "bg-white" : "bg-off-white"} overflow-x-clip`}>
       {/* Soft accent blur */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-mauve/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-sand/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -181,7 +181,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
           <p className="text-text-light text-base md:text-lg leading-[1.85] font-dm mb-6">{campus.introLead}</p>
 
           {/* Stats row */}
-          <div className="grid grid-cols-2 gap-4 max-w-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { v: campus.established, l: "Established", palette: "purple" },
               { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },

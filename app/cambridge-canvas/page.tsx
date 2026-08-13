@@ -102,9 +102,9 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
-        title="Cambridge Education"
+        title="Cambridge Canvas"
         badge="A Global Standard"
-        breadcrumbs={[{ label: "Cambridge Education" }]}
+        breadcrumbs={[{ label: "Cambridge Canvas" }]}
         height="large"
       />
 
@@ -155,7 +155,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
                   }}
                 >
                   <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)" }} />
-                  <p className="relative z-10 font-playfair text-6xl md:text-8xl font-black text-white leading-none mb-4 tracking-tight">{s.value}</p>
+                  <p className="relative z-10 font-playfair text-7xl md:text-9xl font-black text-white leading-none mb-4 tracking-tight">{s.value}</p>
                   <div className="relative z-10">
                     <p className="font-playfair text-xl md:text-2xl text-white font-black uppercase tracking-[0.18em] mb-3">{s.label}</p>
                     <p className="text-white/85 text-xs md:text-sm leading-relaxed font-dm font-medium">{s.sub}</p>
@@ -336,7 +336,16 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       </section>
 
       {/* ═══ CLOSING CTA ═══ */}
-      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">
+      <section
+        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/building-from-top.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <span className="block w-px h-10 bg-[#133844]/40 mx-auto mb-5" />

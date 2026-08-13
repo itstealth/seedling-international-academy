@@ -179,7 +179,7 @@ const experiences = [
 
 const stripImages = [
   { src: "/assets/img/sps-1.jpg", label: "Campus Life" },
-  { src: "/assets/img/sps-2.JPG", label: "Classroom Innovation" },
+  { src: "/assets/img/sps-2.jpg", label: "Classroom Innovation" },
   { src: "/assets/img/sps-3.jpg", label: "Student Community" },
   { src: "/assets/img/feature-1.jpg", label: "NEP Curriculum" },
   { src: "/assets/img/feature-4.jpg", label: "Experiential Learning" },
@@ -274,7 +274,7 @@ function MasonryGallery() {
               Snippets of
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#133844] to-[#133844]/60">
-                Seedling International School
+                Seedling Schools
               </span>
             </h2>
           </div>
@@ -950,7 +950,7 @@ export default function SchoolLifePage() {
 
       <HeroWrapper
         backgroundImage="/assets/SHOWCASING WONDERLAND/1.JPG"
-        title="Life at Seedling International School"
+        title="Life at Seedling Schools"
         subtitle="Where every child discovers, learns, and grows into their brightest self."
         badge="School Life"
         breadcrumbs={[{ label: "School Life" }]}
