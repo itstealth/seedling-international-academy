@@ -109,7 +109,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       />
 
       {/* ═══ INTRO ═══ */}
-      <section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center">
+      <section className="py-14 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
         <p className="font-playfair text-crimson text-xl mb-4">A Passport to the World</p>
         <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
@@ -134,7 +134,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {stats.map((s, i) => {
               const c = claPalette[i % 5];
               return (
@@ -168,7 +168,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       </section>
 
       {/* ═══ CAMBRIDGE WORLDWIDE MAP ═══ */}
-      <section className="relative py-12 md:py-16 bg-white overflow-hidden">
+      <section className="relative py-14 md:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <Image
             src="/cambridge map.png"
@@ -182,7 +182,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       </section>
 
       {/* ═══ RECOGNITION ═══ */}
-      <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
+      <section className="py-14 md:py-20 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="text-center mb-12 md:mb-16">
           <p className="font-playfair text-navy text-xl mb-3">Globally Trusted</p>
           <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
@@ -244,7 +244,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       </section>
 
       {/* ═══ WHY IT MATTERS ═══ */}
-      <section className="relative py-12 md:py-20 bg-navy-light/40 overflow-hidden">
+      <section className="relative py-14 md:py-20 bg-navy-light/40 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-mauve/10 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-sand/20 rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none" />
 
@@ -337,7 +337,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
 
       {/* ═══ CLOSING CTA ═══ */}
       <section
-        className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
+        className="relative py-14 md:py-20 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(212,244,237,0.82), rgba(212,244,237,0.82)), url('/assets/Home/building-from-top.jpg')",

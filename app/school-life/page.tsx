@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 
 // --- Custom Styles for Portability ---
@@ -299,10 +300,12 @@ function MasonryGallery() {
                 onMouseEnter={() => setActiveItem(item.id)}
                 onMouseLeave={() => setActiveItem(null)}
               >
-                <img
+                <Image
                   src={item.src}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

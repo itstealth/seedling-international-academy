@@ -290,7 +290,6 @@ export default function CampusesPage(): React.JSX.Element {
       <HeroWrapper
         backgroundImage="/assets/campus-images/3.jpeg"
         title="Our Campuses"
-        subtitle="Two Cambridge-affiliated campuses in Jaipur, one shared promise: every child is known by name, challenged at their own pace, and cared for as a whole person — not just a set of grades. From a three-year-old's first day in Early Years to a Class 12 student walking out with an A-Level result sheet in hand, the journey is built to feel like one continuous story, not a series of disconnected stages."
         badge="Two Distinct Schools, One Cambridge Standard"
         breadcrumbs={[{ label: "Campuses" }]}
         height="medium"

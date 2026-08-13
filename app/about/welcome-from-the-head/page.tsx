@@ -36,7 +36,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
         <div className="max-w-6xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Photo */}
-            <div className="relative">
+            <div className="relative pb-14 md:pb-0">
               <div className="relative aspect-[4/5] max-w-md mx-auto">
                 <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] bg-navy opacity-20" />
                 <div className="relative h-full w-full overflow-hidden rounded-[2rem] border-4 border-white shadow-2xl">
@@ -48,7 +48,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="absolute -bottom-5 left-6 bg-purple-100 rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy border-purple-700">
+                <div className="absolute -bottom-5 left-6 right-6 md:right-auto bg-purple-100 rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy border-purple-700">
                   <p className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">Principal</p>
                   <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling International Academy</p>
                 </div>
