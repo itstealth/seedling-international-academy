@@ -71,9 +71,9 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
               "Hindi",
               "French",
               "Computing",
+              "Global Perspectives",
               "Science",
               "Maths",
-              "Global Perspectives",
             ].map((subject, idx) => {
               const palette = [
                 { bg: "bg-purple-700", border: "border-purple-700", dot: "bg-purple-300", shadow: "shadow-2xl shadow-purple-700/60" },
@@ -84,7 +84,7 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
               ];
               const c = palette[idx % palette.length];
               return (
-                <motion.div key={subject} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl p-6 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500 overflow-hidden`}>
+                <motion.div key={subject} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl p-6 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500 overflow-hidden lg:last:col-start-2`}>
                   {/* Decorative blob */}
                   <div className="absolute -top-10 -right-10 w-28 h-28 bg-white/15 rounded-full blur-2xl pointer-events-none" />
                   <div className="flex items-center gap-3">

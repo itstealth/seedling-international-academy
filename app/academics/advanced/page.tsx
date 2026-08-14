@@ -43,7 +43,7 @@ const subjectGroups = [
     items: ["Biology", "Chemistry", "Physics", "Marine Science", "Environmental Management", "Computer Science"],
   },
   {
-    group: "Mathematics & Further",
+    group: "Mathematics",
     color: "navy",
     items: ["Mathematics", "Further Mathematics", "Statistics"],
   },
@@ -243,7 +243,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                 shadow: "shadow-2xl shadow-purple-700/60",
               },
               {
-                title: "Mathematics & Further",
+                title: "Mathematics",
                 bg: "bg-blue-700",
                 border: "border-blue-700",
                 items: ["Mathematics"],
@@ -257,7 +257,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
                 shadow: "shadow-2xl shadow-orange-700/60",
               },
               {
-                title: "Economics",
+                title: "Commerce",
                 bg: "bg-red-700",
                 border: "border-red-700",
                 items: ["Business", "Economics", "Accounting"],

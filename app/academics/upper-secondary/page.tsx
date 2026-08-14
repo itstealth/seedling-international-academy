@@ -92,7 +92,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
               { title: "Hindi as a Second Language", bg: "bg-green-700", border: "border-green-700", shadow: "shadow-2xl shadow-green-700/60" },
               { title: "French", bg: "bg-orange-700", border: "border-orange-700", shadow: "shadow-2xl shadow-orange-700/60" },
               { title: "Combined Science", bg: "bg-red-700", border: "border-red-700", shadow: "shadow-2xl shadow-red-700/60" },
-              { title: "Coordinated Science", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
+              { title: "Coordinated Sciences", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
               { title: "Mathematics", bg: "bg-blue-700", border: "border-blue-700", shadow: "shadow-2xl shadow-blue-700/60" },
               { title: "Business", bg: "bg-green-700", border: "border-green-700", shadow: "shadow-2xl shadow-green-700/60" },
               { title: "Economics", bg: "bg-orange-700", border: "border-orange-700", shadow: "shadow-2xl shadow-orange-700/60" },
