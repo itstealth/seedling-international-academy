@@ -389,24 +389,120 @@ export default function LeadershipPage() {
 
           <div>
             <Reveal>
-              <p className="font-playfair text-navy-700 text-xl mb-4">Joint Director's Message</p>
+              <p className="font-playfair text-navy-700 text-xl mb-4">A Message from Ms. Akansha, Joint Director, Seedling Group of Schools</p>
               <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">
-                Building Futures,<br />
-                <em className="font-semibold">Empowering Generations</em>
+                The Cambridge Learner:<br />
+                <em className="font-semibold">Curious Minds, Confident Futures</em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                At Seedling International School, we believe that education is more than academics — it is the foundation upon which confident, compassionate and capable individuals are built. Every initiative we undertake is shaped by a single, enduring purpose: to prepare our students to lead meaningful lives in a rapidly evolving world.
+                Education, at its most meaningful, is not about placing information into a child's mind; it is about awakening the desire to learn, question, explore and discover.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                As Joint Director, I work closely with our leadership teams to ensure that the vision of our institution translates into a lived, breathing experience for every child who walks through our doors. From the classrooms to the playing fields, from the arts studio to the robotics lab — every space is designed to inspire curiosity, character and courage.
+                At Seedling International Academy and Seedling Modern International Academy, we believe that every learner enters the classroom with an innate sense of curiosity. Our responsibility as educators is to protect that curiosity, nurture it and transform it into the confidence to think independently and engage meaningfully with the world.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                We are equally committed to the partnership we share with parents. When schools and families work together with shared purpose, the impact on a child's growth is profound and lasting. It is this trust — between educators, parents and learners — that defines the Seedling way.
+                The Cambridge approach beautifully complements this vision. It encourages learners to move beyond simply remembering what they have been taught and towards understanding why it matters, how it works and what possibilities it creates.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
-                Together, we will continue to raise the bar — nurturing young minds who are academically excellent, emotionally secure, ethically grounded and ready to shape a better tomorrow.
+                From Questions to Understanding
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A curious learner does not accept knowledge passively.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                They ask Why?<br />
+                They ask How?<br />
+                They ask What if?<br />
+                And sometimes, most importantly, they ask Could there be another way?
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                These questions are the beginnings of deeper learning.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want our classrooms to be spaces where questions are valued as much as answers. Through inquiry, discussion, investigation and reflection, our learners are encouraged to develop their own perspectives while learning to appreciate those of others.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                This is where education becomes transformative—not when a child can reproduce an answer, but when the child can think, reason, connect and create.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Confidence to Think Independently
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                True confidence in a learner is not the confidence of always being right. It is the confidence to attempt, question, make mistakes, learn from them and try again.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our Cambridge learners are encouraged to become increasingly independent in the way they approach their learning. They learn to take responsibility for their choices, evaluate their progress and recognise that challenges are not barriers to success but opportunities for growth.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want every child to experience the quiet satisfaction of saying:
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                &ldquo;I worked this out.&rdquo;<br />
+                &ldquo;I found another way.&rdquo;<br />
+                &ldquo;I understand it now.&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                These moments build something far more valuable than marks—they build self-belief.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Learning That Extends Beyond the Textbook
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A truly educated child is not one who merely knows a great deal, but one who knows how to use knowledge wisely.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                That is why we encourage our learners to make connections across subjects, relate learning to real-world situations and look at problems from multiple perspectives. Academic knowledge becomes richer when it is connected to experience, imagination and purpose.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Whether a learner is investigating a scientific question, interpreting a literary text, analysing a mathematical problem, exploring a global issue or presenting an original idea, we want them to understand that learning is not a collection of separate subjects.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Learning is a way of seeing the world.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                Preparing Learners for an Uncertain Future
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The world our children will inherit is changing rapidly. Many of the careers, technologies and challenges they will encounter are still evolving.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Therefore, preparing children for the future cannot simply mean preparing them for a particular profession. It means giving them the intellectual agility, adaptability and confidence to continue learning throughout their lives.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want our learners to be comfortable with change, open to new ideas and willing to challenge assumptions. We want them to collaborate without losing their individuality, to communicate with clarity and to approach unfamiliar problems with curiosity rather than apprehension.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Most importantly, we want them to remain lifelong learners.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                The Learner We Aspire to Nurture
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our vision for a Cambridge learner goes beyond academic achievement.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We aspire to nurture young people who are:
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Curious enough to question.<br />
+                Confident enough to explore.<br />
+                Reflective enough to learn from experience.<br />
+                Resilient enough to persevere.<br />
+                Open-minded enough to embrace different perspectives.<br />
+                And courageous enough to imagine something better.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Because education should not merely prepare a child to succeed in an examination. It should prepare that child to think independently, participate responsibly and contribute meaningfully.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                When curiosity is nurtured, learning becomes joyful.<br />
+                When independent thinking is encouraged, confidence follows.<br />
+                And when confidence is combined with purpose, young people begin to recognise the possibilities within themselves.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                That is the Cambridge learner we aspire to develop at Seedling—a learner who does not simply ask for the answer, but has the courage to seek it, question it and, perhaps one day, create a better one.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -414,7 +510,7 @@ export default function LeadershipPage() {
                 <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Ms. Akansha Bakshi</span>
               </div>
-              <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling International School Group of Institutions</p>
+              <p className="text-navy-700 text-sm font-dm mt-1">Joint Director, Seedling Group of Schools</p>
             </Reveal>
           </div>
         </div>
@@ -591,7 +687,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal, Seedling international school group of institution</p>
+                  <p className="text-navy text-sm font-dm">Principal, Seedling International School Group of Institution</p>
                 </div>
               </div>
             </Reveal>
@@ -633,7 +729,7 @@ export default function LeadershipPage() {
                 <div className="w-12 h-px bg-navy" />
                 <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
               </div>
-              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling international school group of institution</p>
+              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling International School Group of Institution</p>
             </Reveal>
           </div>
         </div>

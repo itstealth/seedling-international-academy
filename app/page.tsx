@@ -505,7 +505,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </div>
               <div className="absolute -bottom-6 -left-4 bg-white border-l-4 border-crimson rounded-[8px] px-7 py-6 z-10 shadow-lg">
                 <strong className="block text-5xl font-playfair text-crimson mb-1 leading-none">33+</strong>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-ink-soft block mt-1 leading-tight">33+ Years of Academic<br /></span>
+                <span className="text-[10px] font-bold tracking-widest uppercase text-ink-soft block mt-1 leading-tight">Years of Academic Excellence<br /></span>
               </div>
             </div>
           </div>
