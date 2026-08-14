@@ -87,61 +87,23 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {[
-              {
-                title: "Languages",
-                bg: "bg-purple-700",
-                border: "border-purple-700",
-                items: ["English", "Hindi", "French"],
-                shadow: "shadow-2xl shadow-purple-700/60",
-              },
-              {
-                title: "Sciences",
-                bg: "bg-blue-700",
-                border: "border-blue-700",
-                items: ["Biology", "Chemistry", "Physics"],
-                shadow: "shadow-2xl shadow-blue-700/60",
-              },
-              {
-                title: "Mathematics",
-                bg: "bg-green-700",
-                border: "border-green-700",
-                items: ["Mathematics", "Additional Mathematics", "Statistics"],
-                shadow: "shadow-2xl shadow-green-700/60",
-              },
-              {
-                title: "Business & Economics",
-                bg: "bg-orange-700",
-                border: "border-orange-700",
-                items: ["Business Studies", "Economics", "Accounting"],
-                shadow: "shadow-2xl shadow-orange-700/60",
-              },
-              {
-                title: "Humanities & Social Sciences",
-                bg: "bg-red-700",
-                border: "border-red-700",
-                items: ["History", "Geography", "Psychology"],
-                shadow: "shadow-2xl shadow-red-700/60",
-              },
-              {
-                title: "Creative & Technology",
-                bg: "bg-purple-700",
-                border: "border-purple-700",
-                items: ["Art & Design", "Computer Science", "Design & Technology"],
-                shadow: "shadow-2xl shadow-purple-700/60",
-              },
+              { title: "First Language English", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
+              { title: "English as a Second Language", bg: "bg-blue-700", border: "border-blue-700", shadow: "shadow-2xl shadow-blue-700/60" },
+              { title: "Hindi as a Second Language", bg: "bg-green-700", border: "border-green-700", shadow: "shadow-2xl shadow-green-700/60" },
+              { title: "French", bg: "bg-orange-700", border: "border-orange-700", shadow: "shadow-2xl shadow-orange-700/60" },
+              { title: "Combined Science", bg: "bg-red-700", border: "border-red-700", shadow: "shadow-2xl shadow-red-700/60" },
+              { title: "Coordinated Science", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
+              { title: "Mathematics", bg: "bg-blue-700", border: "border-blue-700", shadow: "shadow-2xl shadow-blue-700/60" },
+              { title: "Business", bg: "bg-green-700", border: "border-green-700", shadow: "shadow-2xl shadow-green-700/60" },
+              { title: "Economics", bg: "bg-orange-700", border: "border-orange-700", shadow: "shadow-2xl shadow-orange-700/60" },
+              { title: "Psychology", bg: "bg-red-700", border: "border-red-700", shadow: "shadow-2xl shadow-red-700/60" },
+              { title: "Computer Science", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
             ].map((c) => (
               <motion.div key={c.title} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl overflow-hidden border-2 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500`}>
                 {/* Decorative blob */}
                 <div className="absolute -top-10 -right-10 w-28 h-28 bg-white/15 rounded-full blur-2xl pointer-events-none" />
                 <div className="relative z-10 p-6">
-                  <h3 className="font-playfair text-xl font-semibold text-white mb-4">{c.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {c.items.map((i) => (
-                      <span key={i} className="text-xs font-medium text-white bg-white/15 border border-white/30 rounded-full px-3 py-1">
-                        {i}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="font-playfair text-xl font-semibold text-white">{c.title}</h3>
                 </div>
               </motion.div>
             ))}

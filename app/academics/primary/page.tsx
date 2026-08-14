@@ -72,13 +72,13 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {[
-              { group: "Languages", items: ["English", "Hindi", "French"], color: "purple" },
-              { group: "Sciences", items: ["Science", "Scientific Enquiry", "Environment"], color: "blue" },
-              { group: "Mathematics", items: ["Numbers", "Geometry", "Measurement"], color: "green" },
-              { group: "Humanities", items: ["History", "Geography", "Global Perspectives"], color: "orange" },
-              { group: "Arts & Creativity", items: ["Art & Design", "Music", "Creative Expression"], color: "red" },
-              { group: "Technology & Wellbeing", items: ["Computing", "Digital Literacy", "Physical Education"], color: "purple" },
-            ].map((s, idx) => {
+              "Global English",
+              "Hindi",
+              "Science",
+              "Maths",
+              "Global Perspectives",
+              "Computing",
+            ].map((subject, idx) => {
               const palette = [
                 { bg: "bg-purple-700", border: "border-purple-700", dot: "bg-purple-300", shadow: "shadow-2xl shadow-purple-700/60" },
                 { bg: "bg-blue-700", border: "border-blue-700", dot: "bg-blue-300", shadow: "shadow-2xl shadow-blue-700/60" },
@@ -88,19 +88,12 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
               ];
               const c = palette[idx % palette.length];
               return (
-                <motion.div key={s.group} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl p-6 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500 overflow-hidden`}>
+                <motion.div key={subject} variants={cardRise} whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.4, ease: EASE }} className={`group relative ${c.bg} ${c.border} rounded-2xl p-6 shadow-lg hover:shadow-2xl ${c.shadow} transition-all duration-500 overflow-hidden`}>
                   {/* Decorative blob */}
                   <div className="absolute -top-10 -right-10 w-28 h-28 bg-white/15 rounded-full blur-2xl pointer-events-none" />
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3">
                     <span className={`w-2 h-2 rounded-full ${c.dot}`} />
-                    <h3 className="font-playfair text-lg font-semibold text-white">{s.group}</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {s.items.map((i) => (
-                      <span key={i} className="text-xs font-medium text-white bg-white/15 border border-white/30 rounded-full px-3 py-1">
-                        {i}
-                      </span>
-                    ))}
+                    <h3 className="font-playfair text-xl font-semibold text-white">{subject}</h3>
                   </div>
                 </motion.div>
               );

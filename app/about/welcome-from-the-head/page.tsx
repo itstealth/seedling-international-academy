@@ -50,7 +50,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 </div>
                 <div className="absolute -bottom-5 left-6 right-6 md:right-auto bg-purple-100 rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy border-purple-700">
                   <p className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">Principal</p>
-                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling International Academy</p>
+                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling International school Group of Institution Academy (SIA)</p>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 Ms. Shruti Kakkar
               </h3>
               <p className="text-sm font-bold tracking-widest uppercase text-navy mb-1">Principal</p>
-              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling International Academy (SIA)</p>
+              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling International school Group of Institution Academy (SIA)</p>
 
               <div className="bg-blue-100 rounded-2xl p-7 md:p-9 shadow-lg border border-blue-700 relative">
                 <span className="absolute -top-5 left-6 text-7xl font-serif leading-none text-navy opacity-20">&ldquo;</span>
@@ -92,7 +92,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 <div className="mt-7 pt-5 border-t border-sand/30">
                   <p className="text-text-light text-sm">With warm regards,</p>
                   <p className="font-playfair text-xl font-semibold text-navy mt-1">Ms. Shruti Kakkar</p>
-                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Principal, Seedling International Academy</p>
+                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Principal, Seedling International school Group of Institution Academy (SIA)</p>
                 </div>
               </div>
             </div>

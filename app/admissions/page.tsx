@@ -470,7 +470,7 @@ export default function AdmissionsPage() {
               { value: "1993", label: "Year Established" },
             ].map((s) => (
               <div key={s.label} className="px-4 text-center">
-                <p className="font-playfair text-7xl md:text-[6.5rem] font-black text-[#062125] mb-1 leading-none">{s.value}</p>
+                <h5 className="font-playfair text-2xl font-black text-[#062125] mb-1 leading-none">{s.value}</h5>
                 <p className="text-[#062125] text-[10px] md:text-[11px] font-black tracking-[0.22em] uppercase">{s.label}</p>
               </div>
             ))}

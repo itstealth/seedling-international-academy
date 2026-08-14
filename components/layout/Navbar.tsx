@@ -90,10 +90,10 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
   }, [isOpen, onClose]);
 
   const suggestions = [
-    "Admissions",
-    "Curriculum",
-    "Fee Structure",
-    "Mandatory Disclosures",
+    { label: "Admissions", href: "/admissions" },
+    { label: "School Life", href: "/school-life" },
+    { label: "SIA", href: "/campuses#sia" },
+    { label: "Our Campus", href: "/campuses#sia#smia" },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -105,9 +105,9 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
     }
   };
 
-  const handleSuggestionClick = (suggestion: string) => {
+  const handleSuggestionClick = (suggestion: { label: string; href: string }) => {
     onClose();
-    router.push(`/search?q=${encodeURIComponent(suggestion)}`);
+    router.push(suggestion.href);
   };
 
   return (
@@ -151,16 +151,16 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             </form>
 
             <div className="px-5 sm:px-7 py-5">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-text-light mb-3">Popular Searches</p>
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-text-light mb-3">Quick Links</p>
               <div className="flex flex-wrap gap-2">
                 {suggestions.map((s) => (
                   <button
-                    key={s}
+                    key={s.label}
                     type="button"
                     onClick={() => handleSuggestionClick(s)}
                     className="px-4 py-2 rounded-full bg-[#133844]/5 hover:bg-royal-blue hover:text-white text-sm font-semibold text-[#133844] transition-colors"
                   >
-                    {s}
+                    {s.label}
                   </button>
                 ))}
               </div>
