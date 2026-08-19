@@ -134,7 +134,7 @@ const leaders = [
     tag: "Promoting Global Citizenship",
   },
   {
-    name: "Ms. Shruti Kukar",
+    name: "Ms. Shruti Khokar",
     role: "Principal",
     sub: "Seedling International School Group of Institutions",
     quote: "Education is the kindling of a flame, not the filling of a vessel.",

@@ -79,7 +79,7 @@ const leaders = [
     tag: "Promoting Global Citizenship",
   },
   {
-    name: "Ms. Shruti Kukar",
+    name: "Ms. Shruti Khokar",
     role: "Principal",
     sub: "Principal,Seedling international school group of institution",
     quote: "Education is the kindling of a flame, not the filling of a vessel.",
@@ -682,12 +682,12 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/Home/principle.jpeg"
-                  alt="Shruti Kukar, Principal Seedling International School"
+                  alt="Shruti Khokar, Principal Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
-                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal, Seedling International School Group of Institution</p>
+                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Khokar</p>
+                  <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer Seedling International Academy</p>
                 </div>
               </div>
             </Reveal>
@@ -702,34 +702,187 @@ export default function LeadershipPage() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
+              <p className="font-playfair text-text-base text-xl mb-3 font-semibold">A Cambridge Education. A Seedling Mindset.</p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">Dear Parents,</p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-medium">Welcome to Seedling!</p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                At Seedling International School, we do not believe children are meant to simply pass examinations — they are meant to discover their voice, build their confidence, strengthen their values and step into the future with courage and clarity.
+                There are schools that offer the Cambridge curriculum. And then there are schools that truly believe in what a Cambridge education can make possible.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                In a world that is changing faster than ever before, we are committed to nurturing children who are not only academically capable, but emotionally secure, ethically grounded, creatively expressive and mentally resilient.
+                At Seedling International Academy, we aspire to be the latter.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                From academics to innovation, sports to performing arts, leadership to public speaking, yoga to mindfulness and meditation — every experience at Seedling International School is designed to shape balanced, future-ready individuals who can thrive in life, not just in classrooms.
+                Our fascination with Cambridge has never been limited to its academic rigour. What inspires us most is the philosophy beneath it&mdash;the belief that education must do more than prepare a child to answer questions. It must prepare them to ask better questions, think independently, engage deeply, and make meaning of the world around them.
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                And to every parent, we offer not just education, but partnership, reassurance and trust. Your child will be guided with warmth, challenged with purpose, heard with empathy and encouraged to grow into the finest version of themselves.
+                That is the learner we are committed to creating.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Not a child who knows more. A child who can do more with what they know.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want our students to move beyond the familiar architecture of schooling&mdash;memorise, reproduce, score, move on.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want them to wonder.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                To challenge an assumption.<br />
+                To defend an idea.<br />
+                To change their mind when evidence demands it.<br />
+                To connect mathematics with the real world, science with human possibility, language with empathy, and knowledge with action.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Because the world our children will inherit will not reward them merely for remembering what they were taught. It will increasingly reward those who can think when there is no answer key.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                That is where we believe the true promise of Cambridge lies.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our Cambridge advantage is not the curriculum alone.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                It is what we do with it.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                At Seedling International Academy, Cambridge is not treated as a syllabus to be completed. It is a way of thinking about a child.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Our classrooms are designed to make learners active participants rather than passive recipients. We value inquiry over instruction alone, understanding over memorisation, application over repetition, and reflection over simply getting the right answer.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                But we also believe that intellectual freedom must be accompanied by discipline, rigour and purpose.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                So we encourage our children to think boldly&mdash;but also to think precisely.<br />
+                To speak confidently&mdash;but listen generously.<br />
+                To be curious&mdash;but substantiate curiosity with evidence.<br />
+                To dream&mdash;but learn how to turn ideas into action.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                This is why our Cambridge offering is deliberately more expansive than examination preparation.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want every experience at Seedling to become part of the child&rsquo;s education.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                A discussion.<br />
+                A laboratory experiment.<br />
+                A presentation.<br />
+                A failure.<br />
+                A piece of writing.<br />
+                A performance.<br />
+                A community interaction.<br />
+                A difficult question.<br />
+                A moment when a child discovers something about themselves.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                All of it counts.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We are not preparing children for a world that exists today.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We are preparing them for one that does not yet exist.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Artificial intelligence is changing what knowledge means. Technology is redefining how we work. Careers are emerging that did not exist when many of us were children. Information is abundant, but wisdom is scarce. Answers are increasingly easy to access, while judgement, discernment and original thought are becoming more valuable than ever.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                In such a world, the greatest gift we can give a child is not certainty.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                It is intellectual confidence.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The confidence to say, &ldquo;I don&rsquo;t know yet, but I can find out.&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The confidence to say, &ldquo;I see it differently.&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                The confidence to ask, &ldquo;But why?&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                And eventually, the courage to ask, &ldquo;What if?&rdquo;
               </p>
               <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
-                Because at Seedling International School, we are not merely building successful students. We are nurturing happy minds, strong hearts, fearless voices, and extraordinary human beings ready to leave their mark on the world.
+                The Seedling Learner
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                When our children leave us, we do not want their defining identity to be that they studied at a Cambridge school.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want them to become Cambridge-minded human beings.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Curious, without being gullible.<br />
+                Knowledgeable, without being arrogant.<br />
+                Articulate, without losing the ability to listen.<br />
+                Ambitious, without losing empathy.<br />
+                Independent, without becoming disconnected.<br />
+                Resilient enough to fail.<br />
+                Reflective enough to learn from failure.<br />
+                And courageous enough to imagine a better possibility.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We want them to enter university not merely with a strong academic profile, but with a mind that is ready for university.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                And eventually, we want them to enter the world not asking merely,
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                &ldquo;What job can I get?&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                but,
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                &ldquo;What problem can I solve? What value can I create? What difference can I make?&rdquo;
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                That, to us, is the real measure of education.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm font-semibold">
+                A Partnership of Trust
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                As parents, you are entrusting us with something far more precious than academic performance.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                You are entrusting us with a growing mind, a developing identity, a child&rsquo;s confidence, curiosity and sense of possibility.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We do not take that responsibility lightly.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                At Seedling International Academy, we want to walk alongside you&mdash;not simply through examinations and university applications, but through the much larger journey of becoming.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Because education is not the filling of a mind.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                It is the awakening of one.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                And if there is one promise we would like to make to every family joining us, it is this:
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                We will never stop asking what more your child can become.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Welcome to Seedling International Academy.
+              </p>
+              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
+                Welcome to a Cambridge education that is not merely about what your child will learn, but about who your child will become because they learned it.
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">Curious Minds. Strong Values. Bold Futures.</p>
-              <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                Welcome to our portals where every child grows to bloom.
-              </p>
-            </Reveal>
-            <Reveal delay={300}>
               <div className="mt-10 flex items-center gap-4">
                 <div className="w-12 h-px bg-navy" />
-                <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
+                <span className="font-playfair text-xl text-text-light">Shruti Khokar</span>
               </div>
-              <p className="text-navy text-sm font-dm mt-1">Principal, Seedling International School Group of Institution</p>
+              <p className="text-navy text-sm font-dm mt-1">Principal &amp; Cambridge Exam Officer, Seedling International Academy</p>
             </Reveal>
           </div>
         </div>
