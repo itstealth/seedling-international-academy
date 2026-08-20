@@ -686,7 +686,7 @@ export default function LeadershipPage() {
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
-                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Khokar</p>
+                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Khakar</p>
                   <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer Seedling International Academy</p>
                 </div>
               </div>
