@@ -7,16 +7,16 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       {/* ═══ HERO ═══ */}
-      <HeroWrapper
+      {/* <HeroWrapper
         backgroundImage="/IMG_5875.JPG"
         title="Welcome from the Principal"
         badge="A Personal Note"
         breadcrumbs={[{ label: "Welcome from the Principal" }]}
         height="medium"
-      />
+      /> */}
 
       {/* ═══ INTRO ═══ */}
-      <section className="py-10 md:py-16 max-w-4xl mx-auto px-5 sm:px-6 text-center">
+      {/* <section className="py-10 md:py-16 max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
         <p className="font-playfair text-crimson text-xl mb-4">A Word From The Principal</p>
         <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight text-ink">
@@ -26,16 +26,15 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
         <p className="mt-6 text-text-light text-lg leading-[1.9] font-dm max-w-2xl mx-auto">
           A personal note from our Principal — on what Cambridge means to her, and what she hopes every child who walks through our gates will carry forward.
         </p>
-      </section>
+      </section> */}
 
       {/* ═══ LETTER ═══ */}
-      <section className="relative py-12 md:py-20 bg-white overflow-clip">
+      {/* <section className="relative py-12 md:py-20 bg-white overflow-clip">
         <div className="absolute top-0 right-0 w-72 h-72 bg-navy/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-navy/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-5 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-            {/* Photo */}
             <div className="relative pb-14 md:pb-0 self-start md:sticky md:top-28">
               <div className="relative aspect-[4/5] max-w-md mx-auto">
                 <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] bg-navy opacity-20" />
@@ -56,7 +55,6 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
               </div>
             </div>
 
-            {/* Letter */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="block w-10 h-px bg-navy" />
@@ -216,10 +214,10 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ═══ CLOSING NOTE ═══ */}
-      <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">
+      {/* <section className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]">
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="relative z-10 max-w-4xl mx-auto text-center text-[#133844]">
           <span className="block w-px h-10 bg-[#133844] mx-auto mb-5" />
@@ -232,7 +230,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
             Every letter carries the same quiet promise — that every child who comes to Seedling will be seen, known, and grown with intention. We are honoured to grow with you.
           </p>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
