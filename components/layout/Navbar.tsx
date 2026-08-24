@@ -612,10 +612,10 @@ export default function Navbar() {
                   {/* SIA LOGO — full lockup, identical 1550x380 canvas to the SMIA logo
                       so one shared height class renders both at matching scale. */}
                   <Image
-                    src="/assets/Home/sia-logo.png"
+                    src="/Logo%2003%20(1).png"
                     alt="Seedling International Academy"
-                    width={1550}
-                    height={380}
+                    width={402}
+                    height={114}
                     className="h-7 sm:h-9 md:h-10 w-auto object-contain"
                     priority
                   />
@@ -633,10 +633,10 @@ export default function Navbar() {
                   <div className="h-6 w-px bg-ink/15 hidden sm:block" />
                   {/* SMIA LOGO — full lockup, same canvas + height class as SIA */}
                   <Image
-                    src="/assets/Home/SMIA-logo.png"
+                    src="/Logo%2004.png"
                     alt="Seedling Modern International Academy"
-                    width={1550}
-                    height={380}
+                    width={402}
+                    height={114}
                     className="h-7 sm:h-9 md:h-10 w-auto object-contain"
                     priority
                   />

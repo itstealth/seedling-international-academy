@@ -7,7 +7,7 @@ const schools = [
   {
     name: "Seedling International Academy",
     subtitle: "",
-    logo: "/camb_logo.png",
+    logo: "/Logo%2006.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [
@@ -20,7 +20,7 @@ const schools = [
   {
     name: "Seedling Modern International Academy",
     subtitle: "(SMIA)",
-    logo: "/assets/Home/SMIA_Logo_transparent.webp",
+    logo: "/Logo%2005.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
@@ -61,8 +61,8 @@ export default function Footer() {
                     <Image
                       src={school.logo}
                       alt={`${school.name} Logo`}
-                      width={200}
-                      height={80}
+                      width={402}
+                      height={114}
                       className={`${school.logoHeight} w-auto object-contain max-w-full`}
                     />
                   </div>
