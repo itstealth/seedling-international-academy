@@ -86,6 +86,14 @@ const leaders = [
     img: "/assets/Home/principle.jpeg",
     tag: "Inspiring the Next Generation",
   },
+  {
+    name: "Ms. Gurpreet Puri",
+    role: "Vice Principal & Cambridge Coordinator",
+    sub: "Seedling Modern International Academy",
+    quote: "",
+    img: "/gurpreet.jpeg",
+    tag: "",
+  },
 ];
 
 export default function LeadershipPage() {
@@ -686,7 +694,7 @@ export default function LeadershipPage() {
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
-                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Khakar</p>
+                  <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
                   <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer Seedling Group of Schools</p>
                 </div>
               </div>
