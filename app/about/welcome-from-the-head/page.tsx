@@ -8,10 +8,10 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
-        backgroundImage="/assets/about/about-banner.jpg"
-        title="Welcome from the Head"
+        backgroundImage="/IMG_5875.JPG"
+        title="Welcome from the Principal"
         badge="A Personal Note"
-        breadcrumbs={[{ label: "Welcome from the Head" }]}
+        breadcrumbs={[{ label: "Welcome from the Principal" }]}
         height="medium"
       />
 
@@ -42,16 +42,16 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 <div className="relative h-full w-full overflow-hidden rounded-[2rem] border-4 border-white shadow-2xl">
                   <Image
                     src="/assets/img/heads.jpg"
-                    alt="Ms. Shruti Khokar"
+                    alt="Ms. Shruti Kukar"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
                 <div className="absolute -bottom-5 left-6 right-6 md:right-auto bg-purple-100 rounded-2xl px-5 py-3 shadow-xl border-l-4 border-navy border-purple-700">
-                  <p className="font-playfair text-base font-semibold text-text-base">Ms. Shruti Khokar</p>
+                  <p className="font-playfair text-base font-semibold text-text-base">Ms. Shruti Kukar</p>
                   <p className="text-[10px] font-black tracking-[0.25em] uppercase text-navy mt-0.5">Principal</p>
-                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling International school Group of Institution Academy</p>
+                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Seedling Group of Schools</p>
                 </div>
               </div>
             </div>
@@ -63,10 +63,10 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 <p className="text-[10px] font-black tracking-[0.3em] uppercase text-navy">A Personal Letter</p>
               </div>
               <h3 className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-2">
-                Ms. Shruti Khokar
+                Ms. Shruti Kukar
               </h3>
               <p className="text-sm font-bold tracking-widest uppercase text-navy mb-1">Principal</p>
-              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling International school Group of Institution Academy</p>
+              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling Group of Schools</p>
 
               <div className="bg-blue-100 rounded-2xl p-7 md:p-9 shadow-lg border border-blue-700 relative">
                 <span className="absolute -top-5 left-6 text-7xl font-serif leading-none text-navy opacity-20">&ldquo;</span>
@@ -209,8 +209,8 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
 
                 <div className="mt-7 pt-5 border-t border-sand/30">
                   <p className="text-text-light text-sm">With warmth and great hope for the journey ahead,</p>
-                  <p className="font-playfair text-xl font-semibold text-navy mt-1">Shruti Khokar</p>
-                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Principal &amp; Cambridge Exam Officer, Seedling International Academy</p>
+                  <p className="font-playfair text-xl font-semibold text-navy mt-1">Shruti Kukar</p>
+                  <p className="text-[10px] text-text-light tracking-widest uppercase font-dm mt-0.5">Principal &amp; Cambridge Exam Officer, Seedling Group of Schools</p>
                 </div>
               </div>
             </div>

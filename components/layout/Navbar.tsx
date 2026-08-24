@@ -12,11 +12,11 @@ const navItems = [
   { name: "Home", href: "/" },
   {
     name: "About", href: "/about", dropdown: [
-      { name: "Welcome from the Head's", href: "/about/welcome-from-the-head" },
+      { name: "Seedling Leadership", href: "/about/leadership" },
+      { name: "Welcome from the Principal", href: "/about/welcome-from-the-head" },
       { name: "Mission and Values", href: "/about/mission" },
       { name: "Our Standards", href: "/about/standards" },
       // { name: "Seedling Legacy", href: "/about/legacy" },
-      { name: "Seedling Leadership", href: "/about/leadership" },
     ]
   },
   {

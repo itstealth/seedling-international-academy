@@ -91,15 +91,12 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       {/* ═══ INTRO / VISION ═══ */}
       <section className="py-12 md:py-20 max-w-5xl mx-auto px-5 sm:px-6 text-center">
         <span className="block w-px h-12 bg-sand mx-auto mb-5" />
-        <p className="font-playfair text-crimson text-xl mb-4">Our Guiding Compass</p>
+        <p className="font-playfair text-crimson text-xl mb-4">Our Mission</p>
         <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
-          Wisdom &amp; <em className="font-semibold text-navy">Comprehension</em>
+          The Seedling <em className="font-semibold text-navy">Mission</em>
         </h2>
-        <p className="font-playfair text-2xl md:text-3xl text-black mb-8">
-          "हस्ये नयतु नः ब्रह्मज्ञानं"
-        </p>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-3xl mx-auto">
-          We aim at wisdom and the ability to comprehend. We believe education must be joyful, reflective and creative — developing students who are resilient, adaptable, and equipped to continue learning long after they leave our halls.
+          The mission of the Seedling Group is to provide a joyful learning environment that empowers students to reach their educational and personal potential. The Group is committed to nurturing active, reflective and creative learners, who are resilient and adaptable, equipped with the knowledge and skills of lifelong learners. The aim is to help students who can celebrate diversity and engage in meaningful collaboration to create a peaceful and equitable world.
         </p>
       </section>
 
@@ -112,11 +109,11 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           <div className="text-center mb-12 md:mb-16">
             <p className="font-playfair text-mauve text-xl mb-3">Our Compass</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              The <em className="font-semibold text-navy">Mission</em>
+              Vision &amp; <em className="font-semibold text-navy">Promise</em>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 eyebrow: "Our Vision",
@@ -130,19 +127,6 @@ export default function MissionAndValuesPage(): React.JSX.Element {
                   "Graduates who are life-ready and life-worthy",
                 ],
                 footer: "Open to noble thoughts from every direction",
-              },
-              {
-                eyebrow: "Our Mission",
-                title: "Joyful, Whole-Child Learning",
-                headerBg: "bg-blue-700",
-                bg: "bg-blue-100",
-                border: "border-blue-700",
-                points: [
-                  "Joyful learning environment for every child",
-                  "Self-confidence and personal potential nurtured",
-                  "Resilient, adaptable, socially responsible adults",
-                ],
-                footer: "Education that empowers beyond the classroom",
               },
               {
                 eyebrow: "Our Promise",

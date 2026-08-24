@@ -49,7 +49,7 @@ const leaders = [
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
     img: "/assets/img/Sandeep-Bakshi.jpg",
     tag: "Forever New Frontiers",
@@ -57,7 +57,7 @@ const leaders = [
   {
     name: "Dr. Preeti Bakshi",
     role: "Executive Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
     img: "/assets/img/preeti-bakshi.jpeg",
     tag: "Creating Fresh Pathways",
@@ -65,7 +65,7 @@ const leaders = [
   {
     name: "Ms. Akansha Bakshi",
     role: "Joint Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "Adaptability to change is itself a hallmark of successful education.",
     img: "/assets/img/akansha.jpeg",
     tag: "Engagement that Empowers",
@@ -73,15 +73,15 @@ const leaders = [
   {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/Aishwarya-Bakshi.jpeg",
     tag: "Promoting Global Citizenship",
   },
   {
-    name: "Ms. Shruti Khokar",
+    name: "Ms. Shruti Kukar",
     role: "Principal",
-    sub: "Principal,Seedling international school group of institution",
+    sub: "Seedling Group of Schools",
     quote: "Education is the kindling of a flame, not the filling of a vessel.",
     img: "/assets/Home/principle.jpeg",
     tag: "Inspiring the Next Generation",
@@ -152,7 +152,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Dr. Sandeep Bakshi</p>
-                  <p className="text-navy text-sm font-dm">CEO & Director, Seedling International School Group</p>
+                  <p className="text-navy text-sm font-dm">CEO & Director, Seedling Group of Schools</p>
                 </div>
               </div>
             </Reveal>
@@ -193,7 +193,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-navy" />
                   <span className="font-playfair text-xl text-text-light">Dr. Sandeep Bakshi</span>
                 </div>
-                <p className="text-navy text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
+                <p className="text-navy text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
               </Reveal>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function LeadershipPage() {
                   <div className="w-12 h-px bg-blue-100-400" />
                   <span className="font-playfair text-xl text-black">Dr. Sandeep Bakshi</span>
                 </div>
-                <p className="text-black text-sm font-dm mt-1">CEO & Director, Seedling International School Group</p>
+                <p className="text-black text-sm font-dm mt-1">CEO & Director, Seedling Group of Schools</p>
               </Reveal>
            
           </div>
@@ -381,7 +381,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-green-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-green-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Ms. Akansha Bakshi</p>
-                  <p className="text-navy-700 text-sm font-dm">Joint Director</p>
+                  <p className="text-navy-700 text-sm font-dm">Joint Director, Seedling Group of Schools</p>
                 </div>
               </div>
             </Reveal>
@@ -531,7 +531,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Ms. Aishwarya Bakshi</p>
-                  <p className="text-navy-700 text-sm font-dm">Joint Director</p>
+                  <p className="text-navy-700 text-sm font-dm">Joint Director, Seedling Group of Schools</p>
                 </div>
               </div>
             </Reveal>
@@ -682,12 +682,12 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/Home/principle.jpeg"
-                  alt="Shruti Khokar, Principal Seedling International School"
+                  alt="Shruti Kukar, Principal Seedling International School"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Khakar</p>
-                  <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer Seedling International Academy</p>
+                  <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer Seedling Group of Schools</p>
                 </div>
               </div>
             </Reveal>
@@ -880,9 +880,9 @@ export default function LeadershipPage() {
             <Reveal delay={200}>
               <div className="mt-10 flex items-center gap-4">
                 <div className="w-12 h-px bg-navy" />
-                <span className="font-playfair text-xl text-text-light">Shruti Khokar</span>
+                <span className="font-playfair text-xl text-text-light">Shruti Kukar</span>
               </div>
-              <p className="text-navy text-sm font-dm mt-1">Principal &amp; Cambridge Exam Officer, Seedling International Academy</p>
+              <p className="text-navy text-sm font-dm mt-1">Principal &amp; Cambridge Exam Officer, Seedling Group of Schools</p>
             </Reveal>
           </div>
         </div>

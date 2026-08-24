@@ -503,7 +503,7 @@ function ActivitiesGrid() {
             <span className="text-crimson"> Academics</span>
           </h2>
           <p className="mt-4 text-text-light max-w-xl mx-auto leading-relaxed font-dm">
-            At Seedling International School, we believe learning extends far beyond the classroom.
+            At Seedling International Academy, we believe learning extends far beyond the classroom.
             Our diverse extracurricular ecosystem shapes leaders, creators, and changemakers.
           </p>
         </div>

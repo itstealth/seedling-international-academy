@@ -319,7 +319,7 @@ export default function AdmissionsPage() {
       <HeroWrapper
         backgroundImage="/assets/Home/classroom-2.webp"
         title="Admissions"
-        subtitle="Begin your child's journey with Seedling International School — where excellence meets warmth."
+        subtitle="Begin your child's journey with Seedling International Academy — where excellence meets warmth."
         badge="Admissions Open · 2026-27"
         breadcrumbs={[{ label: "Admissions" }]}
         height="large"

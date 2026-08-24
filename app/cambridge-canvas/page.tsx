@@ -16,7 +16,7 @@ const claPalette = [
 const stats = [
   { value: "160+", label: "Countries", sub: "Cambridge operates in more than 160 countries worldwide." },
   { value: "10,000+", label: "Schools", sub: "Over ten thousand schools deliver the Cambridge curriculum globally." },
-  { value: "1M+", label: "Learners", sub: "More than a million students sit Cambridge exams each year." },
+  { value: "1M+", label: "Learners", sub: "More than a million students sit for Cambridge exams each year." },
   { value: "70+", label: "IGCSE Subjects", sub: "And 50+ AS & A Level subjects — the widest range in international education." },
   { value: "1,400+", label: "Universities", sub: "Cambridge qualifications are recognised by leading universities worldwide." },
   { value: "190+", label: "Years of Heritage", sub: "A pedagogy refined over more than a century of educational research." },
