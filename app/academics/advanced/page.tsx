@@ -121,7 +121,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
-        backgroundImage="/assets/img/sps-banner.jpg"
+        backgroundImage="/WhatsApp%20Image%202026-08-07%20at%2013.37.25%20(1).jpeg"
         title="Cambridge Advanced"
         badge="The Final Two Years · Age 16–19"
         breadcrumbs={[{ label: "Cambridge Advanced" }]}
