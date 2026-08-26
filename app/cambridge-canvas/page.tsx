@@ -101,7 +101,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
-        backgroundImage="/P1676350.JPG"
+        backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg"
         title="Cambridge Canvas"
         badge="A Global Standard"
         breadcrumbs={[{ label: "Cambridge Canvas" }]}
