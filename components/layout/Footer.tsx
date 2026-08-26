@@ -7,7 +7,7 @@ const schools = [
   {
     name: "Seedling International Academy",
     subtitle: "",
-    logo: "/Logo%2006.png",
+    logo: "/Logo%2005.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [
@@ -20,7 +20,7 @@ const schools = [
   {
     name: "Seedling Modern International Academy",
     subtitle: "(SMIA)",
-    logo: "/Logo%2005.png",
+    logo: "/Logo%2006.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
     email: "seedlingacademy@hotmail.com",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
