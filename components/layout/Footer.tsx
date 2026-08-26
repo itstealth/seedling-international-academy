@@ -16,6 +16,12 @@ const schools = [
     ],
     address: "Jawahar Nagar, Jaipur",
     mapQuery: "Seedling International Academy Jawahar Nagar Jaipur",
+    socials: [
+      { label: "Instagram", href: "https://www.instagram.com/seedlinginternational/", Icon: Instagram },
+      { label: "Facebook", href: "https://www.facebook.com/seedlinginternationalacademy", Icon: Facebook },
+      { label: "YouTube", href: "https://www.youtube.com/@seedlinginternationalacade1802", Icon: Youtube },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/seedling-international-academy/", Icon: Linkedin },
+    ],
   },
   {
     name: "Seedling Modern International Academy",
@@ -26,6 +32,12 @@ const schools = [
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
     address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
     mapQuery: "SMIA Seedling Mahaveer Nagar Durgapura Jaipur",
+    socials: [
+      { label: "Instagram", href: "https://www.instagram.com/smiajaipur/", Icon: Instagram },
+      { label: "Facebook", href: "https://www.facebook.com/SMIAJaipur", Icon: Facebook },
+      { label: "YouTube", href: "https://www.youtube.com/@seedlinginternationalacade1802", Icon: Youtube },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/seedling-international-academy/", Icon: Linkedin },
+    ],
   },
 ];
 
@@ -134,42 +146,18 @@ export default function Footer() {
 
                     {/* Social Icons */}
                   <div className="flex gap-2.5">
-                    <a
-                      href="https://www.instagram.com/seedlinginternational/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#133844] transition-all duration-500"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="size-4" />
-                    </a>
-                    <a
-                      href="https://www.facebook.com/seedlinginternationalacademy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#133844] transition-all duration-500"
-                      aria-label="Facebook"
-                    >
-                      <Facebook className="size-4" />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@seedlinginternationalacade1802"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#133844] transition-all duration-500"
-                      aria-label="YouTube"
-                    >
-                      <Youtube className="size-4" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/seedling-international-academy/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#133844] transition-all duration-500"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin className="size-4" />
-                    </a>
+                    {school.socials.map(({ label, href, Icon }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="size-9 rounded-xl border border-white/15 flex items-center justify-center text-white/50 hover:bg-white hover:text-[#133844] transition-all duration-500"
+                        aria-label={label}
+                      >
+                        <Icon className="size-4" />
+                      </a>
+                    ))}
                   </div>
                   </div>
                 </div>
