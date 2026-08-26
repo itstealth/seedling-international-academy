@@ -1013,7 +1013,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           {/* Gallery Grid - Mobile: 2-col boxes | Desktop: asymmetric layout */}
           <div className="hidden md:block space-y-4">
             {/* Row 1 - Left big, Right stacked */}
-            <div className="grid grid-cols-3 gap-4 h-[280px]">
+            <div className="grid grid-cols-3 gap-4 h-[360px] lg:h-[440px]">
               <div className="col-span-2 row-span-2 group relative rounded-[8px] overflow-hidden">
                 <img src={campusGallery[0]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
@@ -1026,7 +1026,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
             {/* Row 2 - Wide left, 1 image right */}
-            <div className="grid grid-cols-3 gap-4 h-[280px]">
+            <div className="grid grid-cols-3 gap-4 h-[360px] lg:h-[440px]">
               <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
                 <img src={campusGallery[3]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
@@ -1036,7 +1036,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             </div>
 
             {/* Row 3 - three across */}
-            <div className="grid grid-cols-3 gap-4 h-[280px]">
+            <div className="grid grid-cols-3 gap-4 h-[360px] lg:h-[440px]">
               <div className="group relative rounded-[8px] overflow-hidden">
                 <img src={campusGallery[5]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
