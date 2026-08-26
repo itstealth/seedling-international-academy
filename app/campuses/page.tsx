@@ -344,7 +344,7 @@ export default function CampusesPage(): React.JSX.Element {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-royal-blue text-white text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-xl hover:shadow-royal-blue/40"
           >
             SMIA · Durgapura
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="S19 14l-7 7-7-7M5 10l7 7 7-7" /></svg>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </motion.a>
         </motion.div>
       </motion.section>
