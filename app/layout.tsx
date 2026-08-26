@@ -27,7 +27,7 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
-  title: "Seedling International Academy | Best Cambridge School, Jawahar Nagar, Jaipur",
+  title: "Cambridge International School | Seedling International Academy, Jaipur",
   description: "Seedling International Academy is the best Cambridge IGCSE school in Jawahar Nagar, Jaipur, offering globally benchmarked education.",
 };
 
