@@ -31,7 +31,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <HeroWrapper backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.14%20(1).jpeg" title="Cambridge Upper Secondary" badge="Ages 14–16 · 70+ Subjects, One Global Standard" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" />
+      <HeroWrapper backgroundImage="/curriculum.jpg" title="Cambridge Upper Secondary" badge="Ages 14–16 · 70+ Subjects, One Global Standard" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
