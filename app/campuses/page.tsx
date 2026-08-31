@@ -25,7 +25,6 @@ type Campus = {
   studentTeacher: string;
   campusSize: string;
   results: string;
-  // highlights: { title: string; desc: string; icon: string; color: "crimson" | "navy" | "mauve" | "royal-blue" }[];
   facilities: { name: string; desc: string }[];
   address: string;
   phones: { label: string; value: string; tel: string }[];
@@ -34,13 +33,7 @@ type Campus = {
   mapHref: string;
   tagline: string;
   motto: string;
-};
-
-const colorMap: Record<string, { bg: string; text: string; border: string; solid: string }> = {
-  crimson: { bg: "bg-crimson/10", text: "text-crimson", border: "border-crimson/30", solid: "bg-crimson" },
-  navy: { bg: "bg-navy/10", text: "text-navy", border: "border-navy/30", solid: "bg-navy" },
-  mauve: { bg: "bg-mauve/10", text: "text-mauve", border: "border-mauve/30", solid: "bg-mauve" },
-  "royal-blue": { bg: "bg-royal-blue/10", text: "text-royal-blue", border: "border-royal-blue/30", solid: "bg-royal-blue" },
+  pageHref: string;
 };
 
 const campuses: Campus[] = [
@@ -59,14 +52,6 @@ const campuses: Campus[] = [
     results: "100%",
     tagline: "Where Cambridge meets three decades of Seedling.",
     motto: "Holistic. Joyful. Rigorous.",
-    // highlights: [
-    //   { title: "Jawahar Nagar Campus", desc: "Our flagship campus in the heart of Jaipur — a 5-acre green campus serving the SIA community for over three decades.", icon: "🌳", color: "crimson" },
-    //   { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — 70+ IGCSE subjects and 50+ AS & A Levels.", icon: "📚", color: "navy" },
-    //   { title: "Experienced Faculty", desc: "Trained Cambridge educators with personalised attention and a strong student well-being programme.", icon: "👩‍🏫", color: "mauve" },
-    //   { title: "Holistic Campus Life", desc: "Sports, performing arts, clubs, and community service — a Seedling student grows in every dimension.", icon: "🎨", color: "royal-blue" },
-    //   { title: "Safe & Nurturing", desc: "A secure campus with trained counsellors, medical support, and a culture of care that puts well-being first.", icon: "❤️", color: "crimson" },
-    //   { title: "Strong Alumni Network", desc: "5,000+ Seedling alumni across 50+ nations — proof that a Seedling education travels.", icon: "🌍", color: "navy" },
-    // ],
     facilities: [
       { name: "Modern Classrooms", desc: "Smart classrooms with AV, ergonomic furniture and natural light." },
       { name: "Science Labs", desc: "Dedicated Physics, Chemistry, Biology and Computer Science laboratories." },
@@ -83,6 +68,7 @@ const campuses: Campus[] = [
     email: "seedlingacademy@hotmail.com",
     mapEmbed: "https://www.google.com/maps?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur&output=embed",
     mapHref: "https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur",
+    pageHref: "/campuses/sia",
   },
   {
     key: "smia",
@@ -99,14 +85,6 @@ const campuses: Campus[] = [
     results: "100%",
     tagline: "Modern facilities. Timeless Seedling values.",
     motto: "Vibrant. Connected. Forward-looking.",
-    // highlights: [
-    //   { title: "Durgapura Campus", desc: "Our second Seedling campus — serving families across central Jaipur with the same Cambridge excellence as SIA.", icon: "🏛️", color: "crimson" },
-    //   { title: "Cambridge Curriculum", desc: "Full Cambridge International pathway from Early Years through Advanced — same world-class standards.", icon: "📚", color: "navy" },
-    //   { title: "Modern Facilities", desc: "Newly built spaces, smart classrooms, dedicated STEM labs and vibrant arts and sports zones.", icon: "🏗️", color: "mauve" },
-    //   { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service.", icon: "🎭", color: "royal-blue" },
-    //   { title: "Student Well-being", desc: "Trained counsellors, mentors, and a culture of care that prioritises every child's emotional and physical health.", icon: "❤️", color: "crimson" },
-    //   { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades and university placements.", icon: "🏆", color: "navy" },
-    // ],
     facilities: [
       { name: "Smart Classrooms", desc: "Modern AV-equipped classrooms with interactive whiteboards and ergonomic furniture." },
       { name: "STEM Labs", desc: "Purpose-built Physics, Chemistry, Biology and Robotics laboratories." },
@@ -120,6 +98,7 @@ const campuses: Campus[] = [
     email: "seedlingacademy@hotmail.com",
     mapEmbed: "https://www.google.com/maps?q=Seedling+Modern+International+Academy+Durgapura+Jaipur&output=embed",
     mapHref: "https://maps.google.com/?q=Seedling+Modern+International+Academy+Durgapura+Jaipur",
+    pageHref: "/campuses/smia",
   },
 ];
 
@@ -146,26 +125,33 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               <span className="text-[10px] font-black tracking-[0.3em] uppercase text-navy">{campus.badge}</span>
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
-              {campus.fullName.split("Seedling ").join("Seedling ")}
+              {campus.fullName}
               <br />
-              <span
-                className="text-[10px] font-black tracking-[0.3em] uppercase align-middle ml-2"
-                dangerouslySetInnerHTML={{ __html: campus.introHeadline.replace(/^[^<]*<em[^>]*>/, "").replace(/<\/em>.*$/, "").replace(/.*<em[^>]*>|<\/em>/g, "") }}
-              />
+              <span className="text-xs md:text-sm font-black tracking-[0.3em] uppercase align-middle text-navy ml-2">
+                {campus.key === "sia" ? "three decades of Seedling." : "Timeless Seedling values."}
+              </span>
             </h2>
           </div>
-          <a
-            href={campus.mapHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="self-start md:self-auto inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-crimson hover:text-[#133844] transition-colors"
-          >
-            View on Google Maps
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href={campus.pageHref}
+              className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-navy hover:text-crimson transition-colors"
+            >
+              Dedicated Page →
+            </a>
+            <a
+              href={campus.mapHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-crimson hover:text-[#133844] transition-colors"
+            >
+              View on Google Maps
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+            </a>
+          </div>
         </motion.div>
 
-        {/* Intro — full width, image lives once in the sticky facilities section below */}
+        {/* Intro — full width */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +159,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
           transition={{ duration: 0.45, ease: EASE }}
           className="mb-12 md:mb-16"
         >
-          <p className="font-playfair text-crimson text-xl mb-3">{campus.motto}</p>
+          <p className="font-playfair text-crimson text-xl mb-3 font-semibold">{campus.motto}</p>
           <h3
             className="font-playfair text-3xl md:text-4xl font-light text-ink leading-tight mb-5"
             dangerouslySetInnerHTML={{ __html: campus.introHeadline }}
@@ -203,8 +189,6 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             })}
           </div>
         </motion.div>
-
-        {/* Six Pillars — moved out to a single shared section, rendered once below */}
 
         {/* Facilities + Map split */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
@@ -262,8 +246,6 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               })}
             </div>
           </motion.div>
-
-          {/* Visit / Find Your Way section removed per user request */}
         </div>
       </div>
     </section>
@@ -271,7 +253,6 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
 }
 
 export default function CampusesPage(): React.JSX.Element {
-  // Smooth-scroll to hash section on mount (e.g. /campuses#smia)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const hash = window.location.hash;
@@ -331,33 +312,29 @@ export default function CampusesPage(): React.JSX.Element {
           <motion.a
             variants={cardRise}
             whileHover={{ y: -2, scale: 1.02 }}
-            href="#sia"
+            href="/campuses/sia"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-crimson text-white text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-xl hover:shadow-crimson/40"
           >
-            SIA · Jawahar Nagar
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            SIA Page →
           </motion.a>
           <motion.a
             variants={cardRise}
             whileHover={{ y: -2, scale: 1.02 }}
-            href="#smia"
+            href="/campuses/smia"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-royal-blue text-white text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-xl hover:shadow-royal-blue/40"
           >
-            SMIA · Durgapura
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            SMIA Page →
           </motion.a>
         </motion.div>
       </motion.section>
 
-      {/* Two campus sections (alternating bg) */}
+      {/* Two campus sections (exact original layout & styling) */}
       {campuses.map((campus, i) => (
         <CampusBlock key={campus.id} campus={campus} index={i} />
       ))}
 
-      {/* Shared Six Pillars — one common section for both campuses */}
+      {/* Shared Six Pillars */}
       <SixPillars />
-
-      {/* Closing CTA - removed per user request */}
     </main>
   );
 }

@@ -405,7 +405,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             ].map((campus, i) => {
               const campusBgs = ["bg-blue-100", "bg-red-100"];
               const campusBorders = ["border-blue-200", "border-red-200"];
-              const campusHref = campus.tag === "SIA" ? "/campuses#sia" : "/campuses#smia";
+              const campusHref = campus.tag === "SIA" ? "/campuses/sia" : "/campuses/smia";
               return (
               <Link key={campus.name} href={campusHref} className="block">
                 <motion.div

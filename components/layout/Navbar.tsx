@@ -47,8 +47,8 @@ const navItems = [
   },
   {
     name: "Campuses", href: "/campuses", dropdown: [
-      { name: "SIA", href: "/campuses#sia" },
-      { name: "SMIA", href: "/campuses#smia" },
+      { name: "SIA", href: "/campuses/sia" },
+      { name: "SMIA", href: "/campuses/smia" },
     ]
   },
 ];
@@ -91,8 +91,8 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
   const suggestions = [
     { label: "Admissions", href: "/admissions" },
     { label: "School Life", href: "/school-life" },
-    { label: "SIA", href: "/campuses#sia" },
-    { label: "Our Campus", href: "/campuses#sia#smia" },
+    { label: "SIA", href: "/campuses/sia" },
+    { label: "Our Campus", href: "/campuses" },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
