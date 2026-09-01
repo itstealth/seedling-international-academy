@@ -122,7 +122,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/academy.JPG"
-        title="Cambridge Advanced"
+        title="Cambridge Advanced — AS & A Levels in Jaipur"
         badge="The Final Two Years · Age 16–19"
         breadcrumbs={[{ label: "Cambridge Advanced" }]}
         height="large"

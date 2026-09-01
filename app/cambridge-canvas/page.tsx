@@ -102,7 +102,7 @@ export default function CambridgeEducationPage(): React.JSX.Element {
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg"
-        title="Cambridge Canvas"
+        title="Why Choose the Cambridge Curriculum in Jaipur?"
         badge="A Global Standard"
         breadcrumbs={[{ label: "Cambridge Canvas" }]}
         height="large"

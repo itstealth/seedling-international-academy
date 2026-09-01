@@ -30,7 +30,7 @@ export default function SMIAPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/Home/SMIA_collage_v3.webp"
-        title="Seedling Modern International Academy"
+        title="Seedling Modern International Academy (SMIA), Durgapura"
         badge="SMIA · Durgapura, Jaipur"
         breadcrumbs={[{ label: "Campuses", href: "/campuses" }, { label: "SMIA" }]}
         height="large"

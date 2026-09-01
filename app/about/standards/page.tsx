@@ -150,7 +150,7 @@ export default function OurStandardsPage(): React.JSX.Element {
       <HeroWrapper
         backgroundImage="/P1676425.JPG"
         position={50}
-        title="Our Standards"
+        title="Our Academic & Assessment Standards"
         badge="Quality You Can Measure"
         breadcrumbs={[{ label: "Our Standards" }]}
         height="medium"

@@ -318,7 +318,7 @@ export default function AdmissionsPage() {
 
       <HeroWrapper
         backgroundImage="/assets/Home/classroom-2.webp"
-        title="Admissions"
+        title="Cambridge School Admissions in Jaipur - 2026-27"
         subtitle="Begin your child's journey with Seedling International Academy — where excellence meets warmth."
         badge="Admissions Open · 2026-27"
         breadcrumbs={[{ label: "Admissions" }]}

@@ -157,7 +157,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-off-white font-dm">
       <HeroWrapper
         backgroundImage="/assets/Home/classroom-2.webp"
-        title="Blog"
+        title="Cambridge and IGCSE Guides for Jaipur Parents"
         badge="Stories & Updates"
         breadcrumbs={[{ label: "Blog" }]}
       />

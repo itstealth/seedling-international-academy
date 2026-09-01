@@ -83,7 +83,7 @@ export default function MandatoryDisclosuresPage() {
     <div className="bg-off-white">
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
-        title="Mandatory Disclosures"
+        title="Mandatory Disclosures and Accreditation"
         badge="Cambridge Compliance"
         breadcrumbs={[{ label: "Disclosures" }]}
       />

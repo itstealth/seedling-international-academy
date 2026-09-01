@@ -953,7 +953,7 @@ export default function SchoolLifePage() {
 
       <HeroWrapper
         backgroundImage="/assets/SHOWCASING WONDERLAND/1.JPG"
-        title="Life at Seedling Schools"
+        title="Life at a Cambridge School in Jaipur"
         subtitle="Where every child discovers, learns, and grows into their brightest self."
         badge="School Life"
         breadcrumbs={[{ label: "School Life" }]}

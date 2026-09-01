@@ -101,7 +101,7 @@ export default function LeadershipPage() {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/0V8A8608.JPG"
-        title="Seedling Leadership"
+        title="Leadership at Seedling International Academy & SMIA, Jaipur"
         position={70}
         badge="Anchored In Purpose. Driven By A Vision"
         breadcrumbs={[{ label: "Seedling Leadership" }]}

@@ -205,7 +205,7 @@ export default function ContactPage() {
 
       <HeroWrapper
         backgroundImage="/assets/campus-images/6.jpeg"
-        title="Contact Us"
+        title="Contact Our Jawahar Nagar and Durgapura Campuses"
         subtitle="We'd love to hear from you."
         badge="Get In Touch"
         breadcrumbs={[{ label: "Contact Us" }]}

@@ -82,7 +82,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg"
-        title="Mission & Values"
+        title="Our Mission, Vision & Values"
         badge="What We Stand For"
         breadcrumbs={[{ label: "Mission & Values" }]}
         height="medium"

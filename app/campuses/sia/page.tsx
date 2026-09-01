@@ -30,7 +30,7 @@ export default function SIAPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/Home/SIA_collage_v3.webp"
-        title="Seedling International Academy"
+        title="Seedling International Academy (SIA), Jawahar Nagar"
         badge="SIA · Jawahar Nagar, Jaipur"
         breadcrumbs={[{ label: "Campuses", href: "/campuses" }, { label: "SIA" }]}
         height="large"

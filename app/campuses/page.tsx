@@ -270,7 +270,7 @@ export default function CampusesPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/campus-images/3.jpeg"
-        title="Our Campuses"
+        title="Our Two Cambridge Campuses in Jaipur"
         badge="Two Distinct Schools, One Cambridge Standard"
         breadcrumbs={[{ label: "Campuses" }]}
         height="medium"

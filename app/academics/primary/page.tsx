@@ -38,7 +38,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgePrimaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-clip font-dm">
-      <HeroWrapper backgroundImage="/P1676350.JPG" title="Cambridge Primary" badge="Ages 5–11 · A Strong Foundation" breadcrumbs={[{ label: "Cambridge Primary" }]} height="large" />
+      <HeroWrapper backgroundImage="/P1676350.JPG" title="Cambridge Primary in Jaipur — Ages 5 to 11" badge="Ages 5–11 · A Strong Foundation" breadcrumbs={[{ label: "Cambridge Primary" }]} height="large" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
