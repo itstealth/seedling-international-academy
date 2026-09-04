@@ -125,7 +125,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
         title="Cambridge Advanced — AS & A Levels in Jaipur"
         badge="The Final Two Years · Age 16–19"
         breadcrumbs={[{ label: "Cambridge Advanced" }]}
-        height="large"
+        imageAlt="Cambridge A Level students at Seedling International Academy, Jaipur"
       />
 
       {/* ═══ INTRO ═══ */}
@@ -221,7 +221,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
             variants={fadeUp}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <p className="font-playfair text-navy text-xl mb-3">50+ Subjects · Six Groups</p>
+            <p className="font-playfair text-navy text-xl mb-3">50+ Subjects · Five Groups</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
               Design Your <em className="font-semibold text-navy">Specialisation</em>
             </h2>

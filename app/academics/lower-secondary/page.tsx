@@ -23,7 +23,7 @@ const subjects = [
 ];
 
 const features = [
-  { title: "10+ Subjects", desc: "Core subjects plus creativity, expression, and wellbeing — a balanced curriculum for every learner.", icon: "📚", color: "crimson" },
+  { title: "7 Subjects", desc: "Core subjects plus creativity, expression, and wellbeing — a balanced curriculum for every learner.", icon: "📚", color: "crimson" },
   { title: "Checkpoint Assessment", desc: "Cambridge Lower Secondary Checkpoint offers optional, external benchmarks of student progress.", icon: "🎯", color: "navy" },
   { title: "Progression Tests", desc: "Regular formative tests that help teachers track learning and tailor support to each student.", icon: "📈", color: "mauve" },
   { title: "Curriculum Frameworks", desc: "Detailed subject frameworks and high-quality teaching resources for every stage of learning.", icon: "🗂", color: "royal-blue" },
@@ -39,7 +39,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <HeroWrapper backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg" title="Cambridge Lower Secondary in Jaipur — Ages 11 to 14" badge="Ages 11–14 · Building Depth" breadcrumbs={[{ label: "Cambridge Lower Secondary" }]} height="large" />
+      <HeroWrapper backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg" title="Cambridge Lower Secondary in Jaipur — Ages 11 to 14" badge="Ages 11–14 · Building Depth" breadcrumbs={[{ label: "Cambridge Lower Secondary" }]} height="large" imageAlt="Students in Cambridge Lower Secondary class at Seedling International Academy" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
@@ -61,7 +61,7 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-3">Subjects At Lower Secondary</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Over <em className="font-semibold text-navy">Ten Subjects</em>, One Balanced Curriculum
+              Over <em className="font-semibold text-navy">Seven Subjects</em>, One Balanced Curriculum
             </h2>
           </motion.div>
 
@@ -111,7 +111,7 @@ export default function CambridgeLowerSecondaryPage(): React.JSX.Element {
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {[
               {
-                title: "10+ Subjects",
+                title: "7 Subjects",
                 headerBg: "bg-purple-700",
                 bg: "bg-purple-100",
                 border: "border-purple-700",

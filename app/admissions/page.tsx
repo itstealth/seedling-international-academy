@@ -100,7 +100,7 @@ const steps = [
   {
     num: "01",
     title: "Visit the Official Website",
-    desc: "Go to cambridgeinternationalschool.com and click on the Admissions tab. Select your preferred school — Jawahar Nagar or Durgapura.",
+    desc: "Go to cambridge.seedlingschools.com/admissions/apply and fill in the Online Admission Inquiry form.",
     icon: "🌐",
   },
   {
@@ -324,6 +324,7 @@ export default function AdmissionsPage() {
         breadcrumbs={[{ label: "Admissions" }]}
         height="large"
         overlayOpacity={0.4}
+        imageAlt="Students in a Seedling International Academy classroom"
       />
 
       {/* ══════════════════════════════════════════════════
@@ -532,15 +533,15 @@ export default function AdmissionsPage() {
                       <a href="tel:+917413012351" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7413012351</a>
                     </div>
                   </div>
-                  {/* <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <span className="w-10 h-10 bg-crimson/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <span className="text-xl">🏫</span>
                     </span>
                     <div>
                       <p className="text-[#133844] text-sm font-black font-dm">Durgapura Branch</p>
-                      <a href="tel:+917412044410" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-7412044410</a>
+                      <a href="tel:+919587772837" className="text-crimson font-playfair font-black text-lg hover:text-crimson-dark transition-colors">+91-95877 72837</a>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -590,6 +591,7 @@ export default function AdmissionsPage() {
                     <option value="Class 7">Class 7</option>
                     <option value="Class 8">Class 8</option>
                     <option value="Class 9">Class 9</option>
+                    <option value="Class 10">Class 10</option>
                     <option value="Class 11">Class 11</option>
                     <option value="Class 12">Class 12</option>
                   </select>

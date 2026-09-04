@@ -79,9 +79,9 @@ const campuses: Campus[] = [
     heroImage: "/assets/Home/SMIA_collage_v3.webp",
     introHeadline: "Modern facilities. <em class='font-semibold text-navy'>Timeless Seedling values.</em>",
     introLead: "Seedling Modern International Academy (SMIA) at Durgapura brings the same globally benchmarked Cambridge education to central Jaipur — modern, vibrant and built for the next generation of learners.",
-    established: "1993",
+    established: "2012",
     studentTeacher: "20:1",
-    campusSize: "Modern",
+    campusSize: "3 Acres",
     results: "100%",
     tagline: "Modern facilities. Timeless Seedling values.",
     motto: "Vibrant. Connected. Forward-looking.",
@@ -273,6 +273,7 @@ export default function CampusesPage(): React.JSX.Element {
         title="Our Two Cambridge Campuses in Jaipur"
         badge="Two Distinct Schools, One Cambridge Standard"
         breadcrumbs={[{ label: "Campuses" }]}
+        imageAlt="Seedling International Academy campus, Jaipur"
         height="medium"
       />
 

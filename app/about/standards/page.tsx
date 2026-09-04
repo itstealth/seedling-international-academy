@@ -384,7 +384,7 @@ export default function OurStandardsPage(): React.JSX.Element {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/admissions"
+              href="/contact-us"
               className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/40 font-dm"
             >
               Plan a Visit

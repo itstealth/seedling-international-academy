@@ -118,7 +118,11 @@ export default function TermsAndConditions() {
           </aside>
 
           {/* Content */}
-          <div className="flex-1 space-y-16">
+          <div className="flex-1">
+            <div className="text-right text-text-light text-sm italic font-dm mb-8">
+              Last Updated: September 2026
+            </div>
+            <div className="space-y-16">
             {sections.map((sec, idx) => (
               <section key={sec.id} id={sec.id} className="scroll-mt-32 group">
                 <div className="bg-white border border-sand/30 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500">
@@ -160,6 +164,7 @@ export default function TermsAndConditions() {
                 </div>
               </section>
             ))}
+          </div>
 
             {/* Agreement Box */}
             <div className="bg-[#d4f4ed] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden mt-20">

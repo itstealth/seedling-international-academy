@@ -31,9 +31,9 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
-      <HeroWrapper backgroundImage="/curriculum.jpg" title="Cambridge Upper Secondary (IGCSE) in Jaipur" badge="Ages 14–16 · 70+ Subjects, One Global Standard" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" />
+      <HeroWrapper backgroundImage="/curriculum.jpg" title="Cambridge Upper Secondary (IGCSE) in Jaipur" badge="Ages 14–16 · 70+ Subjects, One Global Standard" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" imageAlt="Cambridge IGCSE students at Seedling International Academy, Jaipur" />
 
-      <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+      <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" animate="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
         <p className="font-playfair text-crimson text-xl mb-4">Where Specialisation Begins</p>
         <h2 className="font-playfair text-4xl md:text-6xl font-light leading-tight text-ink mb-6">
@@ -50,14 +50,14 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-sand/15 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-3">The Cambridge Standard</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
               <em className="font-semibold text-navy">70+ Subjects, One Global Standard</em>
             </h2>
           </motion.div>
 
-          <motion.div className="flex justify-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+          <motion.div className="flex justify-center" initial="hidden" animate="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
             {routes.map((r, idx) => {
               const c = colorMap[r.color];
               const pastel = ["bg-pathway-blue-bg border-pathway-blue-border", "bg-pathway-rose-bg border-pathway-rose-border"][idx] || "bg-pathway-blue-bg border-pathway-blue-border";
@@ -79,13 +79,13 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
         <div className="absolute inset-0 mesh-gradient opacity-10" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy via-crimson to-navy" />
         <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
-          <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
+          <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-3">The Subject Catalogue</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              Over <em className="font-semibold text-navy">100 Subjects</em>, One Curriculum
+              Over <em className="font-semibold text-navy">70+ Subjects</em>, One Curriculum
             </h2>
           </motion.div>
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}>
+          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial={{ opacity: 1 }} animate={{ opacity: 1 }} variants={stagger}>
             {[
               { title: "First Language English", bg: "bg-purple-700", border: "border-purple-700", shadow: "shadow-2xl shadow-purple-700/60" },
               { title: "English as a Second Language", bg: "bg-blue-700", border: "border-blue-700", shadow: "shadow-2xl shadow-blue-700/60" },
@@ -114,7 +114,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
       <motion.section
         className="relative py-16 md:py-24 px-5 sm:px-6 overflow-hidden bg-[#d4f4ed]"
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeUp}
         transition={{ duration: 0.45, ease: EASE }}
@@ -135,7 +135,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
           <p className="text-[#133844]/80 text-lg leading-[1.85] max-w-2xl mx-auto font-dm">
             Cambridge Upper Secondary at Seedling International Academy — where every student builds the foundation for Cambridge Advanced and the world's best universities.
           </p>
-          <motion.div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={stagger}>
+          <motion.div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" initial="hidden" animate="visible" viewport={{ once: true, amount: 0.5 }} variants={stagger}>
             <motion.a variants={cardRise} whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} href="/admissions" className="inline-flex items-center gap-3 bg-crimson hover:bg-crimson-dark text-white px-8 py-4 rounded-full text-xs tracking-widest uppercase font-black transition-all duration-300 hover:shadow-2xl hover:shadow-crimson/40 font-dm">
               Enquire Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

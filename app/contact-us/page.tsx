@@ -21,15 +21,7 @@ type SubmitStatus = 'idle' | 'loading' | 'success'
 
 // ─── Static Data ──────────────────────────────────────────────────────────────
 
-const CAMPUS_MAPS = [
-  {
-    id: 0,
-    label: 'SPS — Jawahar Nagar',
-    address: 'Jawahar Nagar, Jaipur',
-    src: 'https://www.google.com/maps?q=Seedling+Public+School+Jawahar+Nagar+Jaipur&output=embed',
-    link: 'https://maps.google.com/?q=Seedling+Public+School+Jawahar+Nagar+Jaipur',
-  },
-]
+
 
 const SCHOOLS = [
   'Seedling International Academy (Cambridge IGCSE), Jawahar Nagar',
@@ -166,7 +158,7 @@ const inputCls = (hasError?: boolean) =>
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
-  const [activeMap, setActiveMap] = useState(0)
+
   const [form, setForm] = useState<FormData>({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' })
   const [errors, setErrors] = useState<FormErrors>({})
   const [status, setStatus] = useState<SubmitStatus>('idle')
@@ -195,7 +187,7 @@ export default function ContactPage() {
     setStatus('idle')
   }
 
-  const currentMap = CAMPUS_MAPS[activeMap]
+
 
   return (
     <main className="min-h-screen bg-off-white font-dm">
@@ -209,6 +201,7 @@ export default function ContactPage() {
         subtitle="We'd love to hear from you."
         badge="Get In Touch"
         breadcrumbs={[{ label: "Contact Us" }]}
+        imageAlt="Contact Seedling International Academy, Jaipur"
       />
 
       {/* ══════════════════════════════════════════════════════════════════════
@@ -245,7 +238,7 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-            <InfoCard icon={<PhoneIcon className="w-4 h-4" />} iconBg="bg-navy-light text-navy" accent="bg-navy" label="SPS & SIA Campus">
+            <InfoCard icon={<PhoneIcon className="w-4 h-4" />} iconBg="bg-navy-light text-navy" accent="bg-navy" label="SIA Campus">
               <ContactItem label="Mobile">
                 <a href="tel:+917413012351" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors">+91 74130 12351</a>
               </ContactItem>
@@ -254,7 +247,7 @@ export default function ContactPage() {
               </ContactItem>
             </InfoCard>
 
-            <InfoCard icon={<PhoneIcon className="w-4 h-4" />} iconBg="bg-crimson/5 text-crimson" accent="bg-crimson" label="SMHS & SMIA Campus">
+            <InfoCard icon={<PhoneIcon className="w-4 h-4" />} iconBg="bg-crimson/5 text-crimson" accent="bg-crimson" label="SMIA Campus">
               <ContactItem label="Mobile">
                 <a href="tel:+919587772837" className="text-text-base text-sm font-semibold hover:text-navy transition-colors">+91 95877 72837</a>
               </ContactItem>
@@ -264,15 +257,15 @@ export default function ContactPage() {
             </InfoCard>
 
             <InfoCard icon={<EmailIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-[#133844]" accent="bg-sand" label="Email Us">
-              <ContactItem label="SPS / SIA">
+              <ContactItem label="SIA">
                 <a href="mailto:cambridgeacademy@hotmail.com" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">cambridgeacademy@hotmail.com</a>
               </ContactItem>
-              <ContactItem label="SMHS / SMIA">
+              <ContactItem label="SMIA">
                 <a href="mailto:smhsjaipur@jnujaipur.ac.in" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">smhsjaipur@jnujaipur.ac.in</a>
               </ContactItem>
             </InfoCard>
 
-            <InfoCard icon={<MapPinIcon className="w-4 h-4" />} iconBg="bg-navy-light text-navy" accent="bg-navy" label="SPS & SIA Address">
+            <InfoCard icon={<MapPinIcon className="w-4 h-4" />} iconBg="bg-navy-light text-navy" accent="bg-navy" label="SIA Address">
               <ContactItem label="Location">
                 <p className="text-text-base text-sm font-medium leading-snug">
                   Bank St, Sector 4, Jawahar Nagar,<br />Jaipur, Rajasthan 302004
@@ -280,7 +273,7 @@ export default function ContactPage() {
               </ContactItem>
             </InfoCard>
 
-            <InfoCard icon={<MapPinIcon className="w-4 h-4" />} iconBg="bg-crimson/5 text-crimson" accent="bg-crimson" label="SMHS & SMIA Address">
+            <InfoCard icon={<MapPinIcon className="w-4 h-4" />} iconBg="bg-crimson/5 text-crimson" accent="bg-crimson" label="SMIA Address">
               <ContactItem label="Location">
                 <p className="text-text-base text-sm font-medium leading-snug">
                   Ashok Marg, Mahaveer Nagar II,<br />Durgapura, Jaipur 302018
@@ -344,7 +337,7 @@ export default function ContactPage() {
               <div className="relative rounded-2xl overflow-hidden h-52 border border-sand/40 shadow-sm">
                 <Image
                   src="/assets/STELLAR SATURDAYS/4.webp"
-                  alt="Students in a Seedling International School School classroom"
+                  alt="Students in a Seedling International Academy classroom"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
@@ -477,67 +470,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          MAP
-      ══════════════════════════════════════════════════════════════════════ */}
-      <section className="pt-12 pb-8 md:pt-14 md:pb-10 bg-off-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-6">
-            <p className="text-[10px] font-black text-text-light tracking-[0.3em] uppercase mb-2 font-dm">Our Locations</p>
-            <h2
-              className="font-playfair text-3xl md:text-4xl font-bold text-ink"
-            >
-              Visit us on campus
-            </h2>
-          </div>
 
-          <div className="flex gap-3 mb-6 flex-wrap">
-            {CAMPUS_MAPS.map((campus, idx) => (
-              <button
-                key={campus.id}
-                onClick={() => setActiveMap(idx)}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all duration-200 font-dm
-                  ${activeMap === idx
-                    ? 'bg-navy text-white border-navy shadow-lg'
-                    : 'bg-white text-navy border-sand/40 hover:border-navy hover:bg-navy/5'
-                  }`}
-              >
-                <MapPinIcon className="w-3.5 h-3.5" />
-                {campus.label}
-              </button>
-            ))}
-          </div>
-
-          <p className="text-text-light text-sm mb-6 flex items-start gap-2 font-dm font-light">
-            <MapPinIcon className="w-4 h-4 text-crimson shrink-0 mt-0.5" />
-            {currentMap.address}
-          </p>
-
-          <div className="rounded-3xl overflow-hidden border border-sand/40 shadow-xl aspect-square md:aspect-auto md:h-96 bg-sand/10">
-            <iframe
-              key={currentMap.id}
-              src={currentMap.src}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={`${currentMap.label} Map`}
-            />
-          </div>
-
-          <a
-            href={currentMap.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-4 text-[10px] font-black uppercase tracking-widest text-navy hover:text-crimson transition-colors underline underline-offset-4 font-dm"
-          >
-            <MapPinIcon className="w-3.5 h-3.5" />
-            Get Directions on Google Maps
-          </a>
-        </div>
-      </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
           HOURS
@@ -581,7 +514,7 @@ export default function ContactPage() {
                 >
                   <PhoneIcon className="w-4 h-4 text-navy shrink-0" />
                   <div>
-                    <p className="text-[9px] font-black text-navy uppercase tracking-widest font-dm">SPS / SIA</p>
+                    <p className="text-[9px] font-black text-navy uppercase tracking-widest font-dm">SIA</p>
                     <p className="text-[#133844] text-sm font-bold font-dm">+91 74130 12351</p>
                   </div>
                 </a>

@@ -155,7 +155,7 @@ export default function LeadershipPage() {
               <div className="relative md:sticky md:top-28 self-start">
                 <img
                   src="/assets/img/Sandeep-Bakshi.jpeg"
-                  alt="Dr. Sandeep Bakshi, CEO CEO & Director Seedling Director Seedling International School Group"
+                  alt="Dr. Sandeep Bakshi, CEO & Director, Seedling Group of Schools"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
@@ -175,22 +175,22 @@ export default function LeadershipPage() {
               </Reveal>
               <Reveal delay={100}>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                  Welcome to the Seedling International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                  At Seedling International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                  At Seedling International Academy, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International Academy, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base mb-2 font-dm">
-                  As you explore our website, I warmly invite you to experience the spirit of Seedling International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                  As you explore our website, I warmly invite you to experience the spirit of Seedling International Academy — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
                 <p className="text-text-light leading-[1.9] text-base font-dm font-semibold">
                   Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
@@ -215,7 +215,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/Sandeep-Bakshi.jpg"
-                  alt="Dr. Sandeep Bakshi, CEO CEO & Director Seedling Director Seedling International School Group"
+                  alt="Dr. Sandeep Bakshi, CEO & Director, Seedling Group of Schools"
                  
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
@@ -237,22 +237,22 @@ export default function LeadershipPage() {
               </Reveal>
           <Reveal delay={100}>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
-                  Welcome to the Seedling International School Group — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
+                  Welcome to the Seedling Group of Schools — a vibrant educational family where learning is inspired by vision, nurtured with care, and guided by the belief that every child carries within them the potential to create extraordinary possibilities.
                 </p>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
-                  At Seedling International School, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
+                  At Seedling International Academy, education is not confined to classrooms, textbooks, or examinations alone. We believe true education shapes character, ignites curiosity, strengthens confidence, and prepares young minds to lead with intelligence, empathy, courage, and purpose in an ever-changing world.
                 </p>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   Our schools have always stood for progressive learning blended with strong human values. We are committed to creating environments where children feel safe to question, inspired to explore, encouraged to dream, and empowered to discover their individual strengths.
                 </p>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
-                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International School, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
+                  The world our children are growing into demands far more than information. It requires emotional resilience, adaptability, creativity, collaboration, and ethical leadership. At Seedling International Academy, we continuously evolve our educational practices to ensure our learners are future-ready while remaining deeply rooted in compassion, integrity, and social responsibility.
                 </p>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
                   Equally important to us is the partnership we share with parents. Education becomes most impactful when schools and families walk together with trust, shared values, and a common commitment toward the holistic growth of every child.
                 </p>
                 <p className="text-black leading-[1.9] text-base mb-4 font-dm">
-                  As you explore our website, I warmly invite you to experience the spirit of Seedling International School — a spirit of excellence, innovation, inclusivity, and lifelong learning.
+                  As you explore our website, I warmly invite you to experience the spirit of Seedling International Academy — a spirit of excellence, innovation, inclusivity, and lifelong learning.
                 </p>
                 <p className="text-black leading-[1.9] text-base font-dm font-semibold">
                   Together, let us inspire children not merely to succeed in the world, but to contribute meaningfully to it and shape a brighter tomorrow.
@@ -280,7 +280,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/preeti-bakshi.jpeg"
-                  alt="Dr. Preeti Bakshi, Executive Director Seedling International School"
+                  alt="Dr. Preeti Bakshi, Executive Director Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-red-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-red-700">
@@ -384,7 +384,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/akansha.jpeg"
-                  alt="Ms. Akansha Bakshi, Joint Director Seedling International School"
+                  alt="Ms. Akansha Bakshi, Joint Director Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-green-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-green-700">
@@ -534,7 +534,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/Aishwarya-Bakshi.jpeg"
-                  alt="Ms. Aishwarya Bakshi, Joint Director Seedling International School"
+                  alt="Ms. Aishwarya Bakshi, Joint Director Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
@@ -690,7 +690,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/Home/principle.jpeg"
-                  alt="Shruti Kukar, Principal and Cambridge Exam officer Seedling International School"
+                  alt="Shruti Kukar, Principal and Cambridge Exam officer Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">

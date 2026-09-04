@@ -8,9 +8,9 @@ const mandatoryData = [
     field: "Name of the School with address",
     value: "CAMBRIDGE INTERNATIONAL SCHOOL\nSector- 4 Park Lane, Jawahar Nagar, Jaipur",
     details: [
-      { label: "E-mail", value: "cambridgeacademy@hotmail.com" },
-      { label: "Phone No.", value: "0141-7193000" },
-      { label: "Fax No.", value: "0141-2561684" },
+      { label: "E-mail", value: "seedlingacademy@hotmail.com" },
+      { label: "Phone No.", value: "0141-3623000" },
+      { label: "Fax No.", value: "0141-3623000" },
     ]
   },
   {
@@ -30,7 +30,7 @@ const mandatoryData = [
     details: [
       { label: "Affiliation Number", value: "1730084" },
       { label: "Affiliation with the Board since", value: "1993" },
-      { label: "Extension of Affiliation upto", value: "31.03.2025" },
+      { label: "Extension of Affiliation upto", value: "31.03.2027" },
     ]
   },
   {
@@ -65,7 +65,8 @@ const mandatoryData = [
   {
     section: "7",
     field: "Mandatory Public Disclosure",
-    value: "View"
+    value: "View",
+    link: "/mandatory-disclosures/report.pdf"
   },
   {
     section: "8",
@@ -137,6 +138,8 @@ export default function MandatoryDisclosuresPage() {
                             </div>
                           ))}
                         </div>
+                      ) : item.link ? (
+                        <a href={item.link} className="font-bold text-navy text-sm hover:text-crimson underline underline-offset-2">{item.value}</a>
                       ) : (
                         <span className="font-bold text-navy text-sm">{item.value}</span>
                       )}

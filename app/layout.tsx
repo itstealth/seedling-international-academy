@@ -64,8 +64,10 @@ export const metadata: Metadata = {
       "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: {
-    canonical: BASE_URL,
+  alternates: {},
+  manifest: "/manifest.json",
+  icons: {
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -85,6 +87,7 @@ export default async function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
+        <link rel="canonical" href={`${BASE_URL}${pathname}`} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-83PTXLJEJ1"
           strategy="afterInteractive"

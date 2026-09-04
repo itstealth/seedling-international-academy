@@ -23,7 +23,7 @@ export default function ERPLoginPage() {
   }
 
   const placeholders: Record<string, string> = {
-    student: "Student ID (e.g. SMHS2026001)",
+    student: "Student ID (e.g. SIA2026001)",
     parent: "Parent / Guardian ID",
     teacher: "Employee ID",
   };
@@ -176,6 +176,7 @@ export default function ERPLoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
+                  autoComplete="current-password"
                   className="w-full pl-10 pr-11 py-3 text-[13px] text-[#010e3a] bg-white border border-[#010e3a]/12 rounded-xl outline-none focus:border-[#036268]/50 focus:ring-2 focus:ring-[#036268]/10 transition-all placeholder:text-[#010e3a]/25"
                 />
                 <button

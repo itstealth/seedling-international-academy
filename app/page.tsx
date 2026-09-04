@@ -102,15 +102,14 @@ function CallbackForm() {
 
 // Campus Life gallery images (new set)
 const campusGallery = [
-  "/DSC_2180.JPG",
-  "/DSC_2204.JPG",
-  "/WhatsApp%20Image%202026-04-01%20at%2011.24.51.jpeg",
-  "/IMG_5875.JPG",
-  "/IMG_5865.JPG",
-  "/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg",
-  "/WhatsApp%20Image%202026-08-01%20at%2009.35.14%20%281%29.jpeg",
-  "/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg",
-  "/WhatsApp%20Image%202026-08-07%20at%2013.37.25%20%281%29.jpeg",
+  { src: "/DSC_2180.JPG", alt: "Educator pinning a badge of honor on a student's uniform during a school ceremony" },
+  { src: "/WhatsApp%20Image%202026-04-01%20at%2011.24.51.jpeg", alt: "Three young students proudly displaying their certificates in front of a colorful Values board" },
+  { src: "/IMG_5875.JPG", alt: "Group of students dressed up in various costumes for a school fancy dress and role play event" },
+  { src: "/IMG_5865.JPG", alt: "Student proudly holding a golden trophy and achievement certificate" },
+  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg", alt: "Students making heart shapes with their hands in front of an Earth Day celebration board" },
+  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.35.14%20%281%29.jpeg", alt: "Students participating in collaborative campus learning activities" },
+  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg", alt: "Engaged students taking part in interactive classroom sessions" },
+  { src: "/WhatsApp%20Image%202026-08-07%20at%2013.37.25%20%281%29.jpeg", alt: "Students enjoying outdoor campus life and school events" },
 ];
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
@@ -220,15 +219,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
   const cambridgePathwayStages = [
     {
-      title: "Cambridge Early Years",
-      age: "Age 3+",
-      color: "from-[#8b26e6] to-[#6f22d8]",
-      bg: "bg-[#f2e9ff]",
-      border: "border-[#8b26e6]",
-      points: ["A play-based programme", "A holistic curriculum", "Engaging resources", "Support to measure progress"],
-      footer: "6 curriculum areas including Personal, social and emotional development",
-    },
-    {
       title: "Cambridge Primary",
       age: "Age 5+",
       color: "from-[#5f72f2] to-[#4458e5]",
@@ -236,6 +226,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       border: "border-[#5f72f2]",
       points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to understand potential"],
       footer: "10+ subjects including English, Mathematics and Science",
+      link: "/academics/primary",
     },
     {
       title: "Cambridge Lower Secondary",
@@ -245,6 +236,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       border: "border-[#06951d]",
       points: ["Clear, adaptable curriculum", "Flexible assessment options", "Support and resources", "Insight to predict performance"],
       footer: "10+ subjects including English, Mathematics and Science",
+      link: "/academics/lower-secondary",
     },
     {
       title: "Cambridge Upper Secondary",
@@ -254,6 +246,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       border: "border-[#ee4a25]",
       points: ["Broad, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to optimise achievement"],
       footer: "Cambridge IGCSE: 70+ subjects. Cambridge O Level: 40+ subjects. Cambridge ICE.",
+      link: "/academics/upper-secondary",
     },
     {
       title: "Cambridge Advanced",
@@ -263,6 +256,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       border: "border-[#a20f27]",
       points: ["In-depth, adaptable curriculum", "Fair, valid, reliable assessment", "Support and resources", "Insight to predict performance"],
       footer: "Cambridge International AS & A Level: 50+ subjects. Cambridge AICE, Cambridge IPQ.",
+      link: "/academics/advanced",
     },
   ];
 
@@ -356,7 +350,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               "0 1px 12px rgba(0,0,0,0.55), 0 4px 24px rgba(0,0,0,0.30)",
           }}
         >
-          
+
         </motion.p>
       </section>
 
@@ -407,58 +401,58 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               const campusBorders = ["border-blue-200", "border-red-200"];
               const campusHref = campus.tag === "SIA" ? "/campuses/sia" : "/campuses/smia";
               return (
-              <Link key={campus.name} href={campusHref} className="block">
-                <motion.div
-                  className={`group relative overflow-hidden rounded-[8px] border ${campusBorders[i]} shadow-2xl shadow-black/5 ${campusBgs[i]} backdrop-blur-sm`}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ y: -6 }}
-                >
-                {/* Collage of Images / Single Image */}
-                <div className="relative h-80 sm:h-96 md:h-[28rem] overflow-hidden bg-[#fafafa]">
-                  {campus.images.length === 1 ? (
-                    <img
-                      src={campus.images[0]}
-                      alt={campus.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="grid grid-cols-2 grid-rows-2 gap-1 w-full h-full p-1 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
-                      {campus.images.map((imgSrc, idx) => (
-                        <div key={idx} className="relative overflow-hidden w-full h-full bg-[#eee]">
-                          <img
-                            src={imgSrc}
-                            alt={`${campus.name} student collage ${idx + 1}`}
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                          />
+                <Link key={campus.name} href={campusHref} className="block">
+                  <motion.div
+                    className={`group relative overflow-hidden rounded-[8px] border ${campusBorders[i]} shadow-2xl shadow-black/5 ${campusBgs[i]} backdrop-blur-sm`}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -6 }}
+                  >
+                    {/* Collage of Images / Single Image */}
+                    <div className="relative h-80 sm:h-96 md:h-[28rem] overflow-hidden bg-[#fafafa]">
+                      {campus.images.length === 1 ? (
+                        <img
+                          src={campus.images[0]}
+                          alt={campus.name}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="grid grid-cols-2 grid-rows-2 gap-1 w-full h-full p-1 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                          {campus.images.map((imgSrc, idx) => (
+                            <div key={idx} className="relative overflow-hidden w-full h-full bg-[#eee]">
+                              <img
+                                src={imgSrc}
+                                alt={`${campus.name} student collage ${idx + 1}`}
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                              />
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-[#133844]/35 to-transparent pointer-events-none" />
+
+                      {/* Tag */}
+                      <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full z-10">
+                        <span className="size-1.5 rounded-full bg-sand" />
+                        <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white">
+                          {campus.tag}
+                        </span>
+                      </div>
+
+                      {/* Title overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10 pointer-events-none">
+                        <h3 className="font-playfair text-2xl md:text-3xl font-semibold leading-tight mb-2 text-white drop-shadow-lg">
+                          {campus.name}
+                        </h3>
+                        <p className="text-white/90 text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
+                          {campus.subtitle}
+                        </p>
+                      </div>
                     </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-[#133844]/35 to-transparent pointer-events-none" />
-
-                  {/* Tag */}
-                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1.5 rounded-full z-10">
-                    <span className="size-1.5 rounded-full bg-sand" />
-                    <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white">
-                      {campus.tag}
-                    </span>
-                  </div>
-
-                  {/* Title overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10 pointer-events-none">
-                    <h3 className="font-playfair text-2xl md:text-3xl font-semibold leading-tight mb-2 text-white drop-shadow-lg">
-                      {campus.name}
-                    </h3>
-                    <p className="text-white/90 text-xs md:text-sm font-semibold tracking-[0.18em] uppercase drop-shadow-md">
-                      {campus.subtitle}
-                    </p>
-                  </div>
-                </div>
-                </motion.div>
-              </Link>
+                  </motion.div>
+                </Link>
               );
             })}
           </div>
@@ -481,10 +475,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9">
                 {[
-                  { title: 'Personalized Journeys', desc: "No two learners are alike, and we don't pretend they are. Every child's pace, interests, learning style and strengths shape how we teach them — not the other way round." },
+                  { title: 'Personalised Journeys', desc: "No two learners are alike, and we don't pretend they are. Every child's pace, interests, learning style and strengths shape how we teach them — not the other way round." },
                   { title: 'Future-Ready Skills', desc: "AI literacy, critical thinking and structured problem-solving are woven into everyday learning from an early age, not bolted on as an occasional workshop." },
                   { title: 'Global Mindset', desc: "An internationally benchmarked curriculum taught with Indian values firmly at its core — students who can discuss world affairs." },
-                  { title: 'University Counseling', desc: "Dedicated guidance that starts well before Class 12 and stays with every student through shortlisting, applications, personal statements and interview preparation for universities across India." },
+                  { title: 'University Counselling', desc: "Dedicated guidance that starts well before Class 12 and stays with every student through shortlisting, applications, personal statements and interview preparation for universities across India." },
                 ].map(({ title, desc }) => (
                   <div key={title} className="group border-t-2 border-ink/10 pt-5 transition-colors duration-300 hover:border-crimson/70">
                     <h4 className="text-[15px] font-bold text-ink mb-2 uppercase tracking-wide font-dm flex items-center gap-2.5">
@@ -547,7 +541,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
 
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5 items-stretch">
               {cambridgePathwayStages.map((stage, index) => (
-                <motion.article
+                <motion.a
+                  href={stage.link}
                   key={stage.title}
                   className={`group flex flex-col overflow-hidden rounded-2xl border-2 ${stage.border} ${stage.bg} shadow-lg shadow-black/5`}
                   initial={{ opacity: 0, y: 28 }}
@@ -579,7 +574,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       {stage.footer}
                     </div>
                   </div>
-                </motion.article>
+                </motion.a>
               ))}
             </div>
 
@@ -830,7 +825,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           {[
-            { icon: Pencil, label: "Write a review", href: "#" },
             { icon: CalendarDays, label: "Book a visit", href: "/admissions" },
             { icon: Mail, label: "Email us", href: "mailto:seedlingacademy@hotmail.com" },
             { icon: Phone, label: "Call us", href: "tel:+917413012351" },
@@ -880,7 +874,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               {
                 label: "PARENT",
                 img: "/assets/testimonial/Vatan Parnami and Anku Sapra.png",
-                quote: "Seedling International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+                quote: "Seedling International Academy has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SIA provides.",
                 name: "Vatan Parnami & Anku Sapra",
                 role: "Parents",
                 bg: "bg-blue-700",
@@ -901,97 +895,97 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               },
             ].map((card, i) => {
               return (
-              <>
-              {card.label === "FACULTY" ? (
-                <Link href="/faculty-testimonials" className="block">
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, y: 36 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ y: -6 }}
-                  className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer h-full`}
-                >
-                {/* Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
-                  <img
-                    src={card.img}
-                    alt={card.label}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+                <>
+                  {card.label === "FACULTY" ? (
+                    <Link href="/faculty-testimonials" className="block">
+                      <motion.div
+                        key={card.label}
+                        initial={{ opacity: 0, y: 36 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                        whileHover={{ y: -6 }}
+                        className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer h-full`}
+                      >
+                        {/* Image */}
+                        <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
+                          <img
+                            src={card.img}
+                            alt={card.name + " - Testimonial, Seedling International Academy"}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        </div>
 
-                {/* Body */}
-                <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
-                  <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
-                    {card.label}
-                  </h3>
-                  <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
+                        {/* Body */}
+                        <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
+                          <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
+                            {card.label}
+                          </h3>
+                          <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
 
-                  <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
-                    &ldquo;{card.quote}&rdquo;
-                  </blockquote>
+                          <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
+                            &ldquo;{card.quote}&rdquo;
+                          </blockquote>
 
-                  <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
-                    <p className="font-playfair text-base font-semibold text-white leading-tight">
-                      {card.name}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
-                      {card.role}
-                    </p>
-                    {card.label === "FACULTY" && (
-                      <span className="mt-3 text-[10px] uppercase tracking-[0.18em] text-white font-semibold underline underline-offset-4">
-                        Read full testimonial →
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-                </Link>
-              ) : (
-              <motion.div
-                key={card.label}
-                initial={{ opacity: 0, y: 36 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
-                className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden`}
-              >
-                {/* Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
-                  <img
-                    src={card.img}
-                    alt={card.label}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+                          <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
+                            <p className="font-playfair text-base font-semibold text-white leading-tight">
+                              {card.name}
+                            </p>
+                            <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
+                              {card.role}
+                            </p>
+                            {card.label === "FACULTY" && (
+                              <span className="mt-3 text-[10px] uppercase tracking-[0.18em] text-white font-semibold underline underline-offset-4">
+                                Read full testimonial →
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  ) : (
+                    <motion.div
+                      key={card.label}
+                      initial={{ opacity: 0, y: 36 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                      whileHover={{ y: -6 }}
+                      className={`group ${card.bg} border-2 ${card.border} rounded-3xl ${card.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500 overflow-hidden`}
+                    >
+                      {/* Image */}
+                      <div className="relative h-56 sm:h-64 overflow-hidden border-b-2 border-dashed border-white/30 m-3 mb-0">
+                        <img
+                          src={card.img}
+                          alt={card.name + " - Testimonial, Seedling International Academy"}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
 
-                {/* Body */}
-                <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
-                  <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
-                    {card.label}
-                  </h3>
-                  <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
-                  <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
-                    &ldquo;{card.quote}&rdquo;
-                  </blockquote>
+                      {/* Body */}
+                      <div className="px-6 sm:px-8 py-8 sm:py-10 text-center">
+                        <h3 className={`font-playfair text-xl sm:text-2xl tracking-[0.15em] ${card.accentText} font-light mb-2`}>
+                          {card.label}
+                        </h3>
+                        <span className="block w-12 h-px bg-white/50 mx-auto mb-5" />
+                        <blockquote className="text-white text-sm sm:text-[15px] leading-relaxed font-light mb-6">
+                          &ldquo;{card.quote}&rdquo;
+                        </blockquote>
 
-                  <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
-                    <p className="font-playfair text-base font-semibold text-white leading-tight">
-                      {card.name}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
-                      {card.role}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-              )}
-              </>
-            );
-          })}
+                        <div className="pt-5 border-t border-white/30 inline-flex flex-col items-center min-w-[180px]">
+                          <p className="font-playfair text-base font-semibold text-white leading-tight">
+                            {card.name}
+                          </p>
+                          <p className="text-[10px] uppercase tracking-[0.18em] text-white/75 font-semibold mt-1">
+                            {card.role}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1013,47 +1007,47 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           {/* Gallery Grid - Mobile: 2-col boxes | Desktop: asymmetric layout */}
           <div className="hidden md:block space-y-4">
             {/* Row 1 - Left big, Right stacked */}
-            <div className="grid grid-cols-3 gap-4 h-[260px] lg:h-[300px]">
+            <div className="grid grid-cols-3 gap-4 h-[400px] lg:h-[460px]">
               <div className="col-span-2 row-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[0]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[0].src} alt={campusGallery[0].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[1]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[1].src} alt={campusGallery[1].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[2]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[2].src} alt={campusGallery[2].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
-            {/* Row 2 - Wide left, 1 image right */}
-            <div className="grid grid-cols-3 gap-4 h-[260px] lg:h-[300px]">
-              <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[3]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-              </div>
+            {/* Row 2 - 1 image left, Wide right */}
+            <div className="grid grid-cols-3 gap-4 h-[300px] lg:h-[360px]">
               <div className="col-span-1 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[4]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[3].src} alt={campusGallery[3].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+              </div>
+              <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
+                <img src={campusGallery[4].src} alt={campusGallery[4].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
             {/* Row 3 - three across */}
-            <div className="grid grid-cols-3 gap-4 h-[260px] lg:h-[300px]">
+            <div className="grid grid-cols-3 gap-4 h-[260px] lg:h-[320px]">
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[5]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[5].src} alt={campusGallery[5].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[6]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[6].src} alt={campusGallery[6].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[7]} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[7].src} alt={campusGallery[7].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
           </div>
 
           {/* Mobile Gallery - Clean 2-column grid */}
           <div className="md:hidden grid grid-cols-2 gap-3">
-            {campusGallery.slice(0, 8).map((img, i) => (
+            {campusGallery.slice(0, 8).map((imgObj, i) => (
               <div key={i} className="group relative rounded-[8px] overflow-hidden aspect-square">
-                <img src={img} alt="Campus Life" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={imgObj.src} alt={imgObj.alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             ))}
           </div>
@@ -1061,100 +1055,100 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
 
-{/* ─── TRENDING UPDATES + INSTAGRAM (temporarily commented out) ─── */}
+      {/* ─── TRENDING UPDATES + INSTAGRAM (temporarily commented out) ─── */}
       {false && (
-      <section className="bg-white pt-16 pb-12 relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-            <div>
-              <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
-                Trending <em className="font-semibold text-navy">Updates</em>.
-              </h2>
-            </div>
-            <Link href="/blog" className="bg-[#133844] border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
-              All Updates
-              <ArrowUpRight size={16} strokeWidth={2.5} />
-            </Link>
-          </div>
-
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
-            <a href="https://www.instagram.com/p/Dac7NwvoH72/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[8px] bg-[#133844] shadow-editorial border border-sand/30">
-              <img
-                src="/assets/Home/challenge.png"
-                alt="Cambridge Kaleidoscope Challenge"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#133844] via-[#133844]/45 to-transparent" />
-              <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
-                <strong className="block text-2xl font-playfair leading-none">6</strong>
-                <span className="text-[10px] font-black tracking-widest uppercase mt-1">JUL</span>
+        <section className="bg-white pt-16 pb-12 relative overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-64 bg-off-white" />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+              <div>
+                <span className="text-[0.7rem] font-black tracking-[0.4em] uppercase text-crimson mb-4 block">Latest at Cambridge</span>
+                <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight">
+                  Trending <em className="font-semibold text-navy">Updates</em>.
+                </h2>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
-                <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
-                  <CalendarDays size={15} strokeWidth={2.5} />
-                  Campus Highlight
+              <Link href="/blog" className="bg-[#133844] border border-navy/30 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest uppercase transition-all duration-500 hover:bg-crimson hover:border-crimson inline-flex items-center gap-3 self-start md:self-auto">
+                All Updates
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </Link>
+            </div>
+
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-stretch">
+              <a href="https://www.instagram.com/p/Dac7NwvoH72/?img_index=1" target='_blank' className="group relative min-h-[430px] overflow-hidden rounded-[8px] bg-[#133844] shadow-editorial border border-sand/30">
+                <img
+                  src="/assets/Home/challenge.png"
+                  alt="Cambridge Kaleidoscope Challenge"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#133844] via-[#133844]/45 to-transparent" />
+                <div className="absolute top-6 left-6 bg-white text-crimson w-20 h-20 rounded-3xl flex flex-col items-center justify-center shadow-xl">
+                  <strong className="block text-2xl font-playfair leading-none">6</strong>
+                  <span className="text-[10px] font-black tracking-widest uppercase mt-1">JUL</span>
                 </div>
-                <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
-                 Cambridge Kaleidoscope <em className="font-semibold text-sand">Challenge</em>
-                </h3>
-                <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
-                Fostering Critical Thinking, Creativity &amp; Curiosity — students explored diverse perspectives through hands-on challenges, building confidence and collaborative problem-solving skills.
-                </p>
-              </div>
-            </a>
-
-            <div className="bg-red-100 rounded-[2.5rem] border border-red-200 p-5 md:p-7 flex flex-col justify-between">
-              <div className="space-y-4">
-                {[
-                  { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.',url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
-                  { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ",url:"https://www.instagram.com/p/DYJGy3BgX65/" },
-                  { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness',url:"https://www.instagram.com/p/DXaz2W8CcOI/" },
-                ].map(({ day, month, title, desc, url }, index) => (
-                  <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-200 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
-                    <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
-                      <strong className="block text-xl font-playfair leading-none">{day}</strong>
-                      <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-ink text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
-                        <ArrowUpRight size={17} strokeWidth={2.5} className="text-crimson flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              <a href="https://www.instagram.com/seedlinginternational/" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-[#133844] text-white px-5 py-4 hover:bg-crimson transition-colors">
-                <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
-                  <Camera size={18} strokeWidth={2.5} />
-                  Follow Updates
-                </span>
-                <ArrowUpRight size={17} strokeWidth={2.5} />
+                <div className="absolute bottom-0 left-0 right-0 p-7 md:p-10">
+                  <div className="inline-flex items-center gap-2 text-white/80 text-[10px] font-black tracking-[0.25em] uppercase mb-4">
+                    <CalendarDays size={15} strokeWidth={2.5} />
+                    Campus Highlight
+                  </div>
+                  <h3 className="font-playfair text-3xl md:text-5xl font-light text-white leading-tight mb-4">
+                    Cambridge Kaleidoscope <em className="font-semibold text-sand">Challenge</em>
+                  </h3>
+                  <p className="text-white/75 text-sm md:text-base leading-relaxed font-light max-w-xl">
+                    Fostering Critical Thinking, Creativity &amp; Curiosity — students explored diverse perspectives through hands-on challenges, building confidence and collaborative problem-solving skills.
+                  </p>
+                </div>
               </a>
-            </div>
 
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-2">
-                {[
-                  { src: '/assets/Home/TU1.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=6' },
-                  { src: '/assets/Home/TU2.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=2' },
-                  { src: '/assets/Home/TU3.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=3' },
-                  { src: '/assets/Home/TU4.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=4' },
-                  { src: '/assets/Home/TU5.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=5' },
-                ].map(({ src, url }, i) => (
-                  <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block rounded-[8px] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
-                    <img src={src} alt={`Seedling International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
-                  </a>
-                ))}
+              <div className="bg-red-100 rounded-[2.5rem] border border-red-200 p-5 md:p-7 flex flex-col justify-between">
+                <div className="space-y-4">
+                  {[
+                    { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.', url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
+                    { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ", url: "https://www.instagram.com/p/DYJGy3BgX65/" },
+                    { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness', url: "https://www.instagram.com/p/DXaz2W8CcOI/" },
+                  ].map(({ day, month, title, desc, url }, index) => (
+                    <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-200 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
+                      <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
+                        <strong className="block text-xl font-playfair leading-none">{day}</strong>
+                        <span className="text-[9px] font-black tracking-widest uppercase mt-1">{month}</span>
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-start justify-between gap-4">
+                          <h4 className="text-ink text-xl font-bold mb-2 font-playfair group-hover:text-crimson transition-colors">{title}</h4>
+                          <ArrowUpRight size={17} strokeWidth={2.5} className="text-crimson flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        <p className="text-text-light text-sm leading-relaxed font-light">{desc}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+
+                <a href="https://www.instagram.com/seedlinginternational/" target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-between gap-4 rounded-[1.5rem] bg-[#133844] text-white px-5 py-4 hover:bg-crimson transition-colors">
+                  <span className="inline-flex items-center gap-3 text-sm font-black tracking-widest uppercase">
+                    <Camera size={18} strokeWidth={2.5} />
+                    Follow Updates
+                  </span>
+                  <ArrowUpRight size={17} strokeWidth={2.5} />
+                </a>
+              </div>
+
+              <div className="lg:col-span-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-2">
+                  {[
+                    { src: '/assets/Home/TU1.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=6' },
+                    { src: '/assets/Home/TU2.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=2' },
+                    { src: '/assets/Home/TU3.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=3' },
+                    { src: '/assets/Home/TU4.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=4' },
+                    { src: '/assets/Home/TU5.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=5' },
+                  ].map(({ src, url }, i) => (
+                    <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block rounded-[8px] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
+                      <img src={src} alt={`Seedling International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       )}
       {/* ─── WORLD-CLASS FACILITIES — restored, light system ─── */}
       <section className="bg-white pt-16 pb-20 md:pt-24 md:pb-24 relative overflow-hidden border-t border-hairline" id="campus">
@@ -1227,21 +1221,21 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   ];
                   const c = infraPalette[idx % infraPalette.length];
                   return (
-                  <article
-                    key={title}
-                    className={`group grid sm:grid-cols-[180px_1fr] ${c.bg} rounded-3xl overflow-hidden border-2 ${c.border} ${c.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500`}
-                  >
-                    <div className="h-52 sm:h-full min-h-[200px] overflow-hidden">
-                      <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                    </div>
-                    <div className="p-6 flex flex-col justify-center">
-                      <span className="inline-block w-fit text-white text-[10px] font-bold tracking-widest uppercase mb-3 border-b border-white/30 pb-1">
-                        {tag}
-                      </span>
-                      <h3 className="font-playfair text-xl font-semibold text-white mb-2 leading-tight">{title}</h3>
-                      <p className="text-[13px] text-white/85 leading-relaxed font-light">{desc}</p>
-                    </div>
-                  </article>
+                    <article
+                      key={title}
+                      className={`group grid sm:grid-cols-[180px_1fr] ${c.bg} rounded-3xl overflow-hidden border-2 ${c.border} ${c.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500`}
+                    >
+                      <div className="h-52 sm:h-full min-h-[200px] overflow-hidden">
+                        <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                      </div>
+                      <div className="p-6 flex flex-col justify-center">
+                        <span className="inline-block w-fit text-white text-[10px] font-bold tracking-widest uppercase mb-3 border-b border-white/30 pb-1">
+                          {tag}
+                        </span>
+                        <h3 className="font-playfair text-xl font-semibold text-white mb-2 leading-tight">{title}</h3>
+                        <p className="text-[13px] text-white/85 leading-relaxed font-light">{desc}</p>
+                      </div>
+                    </article>
                   );
                 })}
               </div>
@@ -1258,7 +1252,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             <div className='px-2'>
               <span className="text-[0.7rem] font-semibold tracking-[0.4em] uppercase text-camb-us mb-6 block">Join the Family</span>
               <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink leading-tight mb-8">
-                Enroll Your Child <em className="font-semibold text-crimson">Today</em>.
+                Enrol Your Child <em className="font-semibold text-crimson">Today</em>.
               </h2>
               <p className="text-xl text-text-light leading-relaxed mb-12 font-light">
                 Admissions for 2026–27 are now open. Experience the difference of a school that truly cares about every child's growth and happiness.

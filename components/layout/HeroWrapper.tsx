@@ -18,6 +18,8 @@ interface HeroWrapperProps {
   breadcrumbs?: BreadcrumbItem[];
   height?: "small" | "medium" | "large";
   overlayOpacity?: number;
+  /** Descriptive alt text for the hero background image. Leave empty for decorative images. */
+  imageAlt?: string;
 }
 
 export default function HeroWrapper({
@@ -27,13 +29,14 @@ export default function HeroWrapper({
   subtitle,
   badge,
   breadcrumbs = [],
+  imageAlt = "",
 }: HeroWrapperProps): React.JSX.Element {
   return (
     <div className="relative h-[360px] md:h-[420px] lg:h-[500px] overflow-hidden">
       {backgroundImage && (
         <Image
           src={backgroundImage}
-          alt=""
+          alt={imageAlt}
           fill
           style={{
     objectPosition: `center ${position}%`,

@@ -30,12 +30,13 @@ export default function FacultyTestimonialsPage(): React.JSX.Element {
     <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
         backgroundImage="/0N9A9612.JPG"
-        title="FACULTY"
-        badge="In Their Own Words"
+        title="Faculty Testimonials"
+        badge="Hear From Our Educators"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Faculty Testimonials" },
         ]}
+        imageAlt="Faculty at Seedling International Academy, Jaipur"
         height="medium"
       />
 
@@ -68,7 +69,7 @@ export default function FacultyTestimonialsPage(): React.JSX.Element {
               <div className="flex items-center gap-3 mb-6">
                 <span className={`w-12 h-px ${t.border} bg-current ${t.accent}`} />
                 <span className={`text-[10px] font-black uppercase tracking-[0.3em] ${t.accent}`}>
-                  FACULTY
+                  {i === 0 ? "FACULTY" : "STUDENT"}
                 </span>
               </div>
 

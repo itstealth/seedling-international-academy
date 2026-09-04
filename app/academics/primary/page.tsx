@@ -38,7 +38,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 export default function CambridgePrimaryPage(): React.JSX.Element {
   return (
     <main className="bg-off-white text-text-base overflow-clip font-dm">
-      <HeroWrapper backgroundImage="/P1676350.JPG" title="Cambridge Primary in Jaipur — Ages 5 to 11" badge="Ages 5–11 · A Strong Foundation" breadcrumbs={[{ label: "Cambridge Primary" }]} height="large" />
+      <HeroWrapper backgroundImage="/P1676350.JPG" title="Cambridge Primary in Jaipur — Ages 5 to 11" badge="Ages 5–11 · A Strong Foundation" breadcrumbs={[{ label: "Cambridge Primary" }]} height="large" imageAlt="Cambridge Primary students at Seedling International Academy, Jaipur" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
         <motion.span className="block w-px h-12 bg-sand mx-auto mb-5" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, ease: "easeOut" }} style={{ transformOrigin: "top" }} />
@@ -66,7 +66,7 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-3">Subjects At Cambridge Primary</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Over <em className="font-semibold text-navy">Ten Subjects</em> To Explore
+              Over <em className="font-semibold text-navy">Six Subjects</em> To Explore
             </h2>
           </motion.div>
 
@@ -136,7 +136,7 @@ export default function CambridgePrimaryPage(): React.JSX.Element {
                 bg: "bg-green-100",
                 border: "border-green-700",
                 desc: "Engaging classroom materials plus endorsed resources from trusted publisher partners.",
-                footer: "Publisher-endored materials",
+                footer: "Publisher-endorsed materials",
               },
               {
                 title: "Clear Progression",
