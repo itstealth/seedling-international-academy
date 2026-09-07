@@ -74,8 +74,31 @@ export default function HeroWrapper({
         <Link href="/" className="px-5 py-[11px] text-[12px] font-semibold text-white/70 hover:text-white transition-colors">
           Home
         </Link>
-        <span className="text-white/30 text-[11px]">›</span>
-        <span className="px-5 py-[11px] text-[12px] font-bold text-[#00bdb6]">{breadcrumbs[0]?.label || title}</span>
+        {breadcrumbs.length > 0 ? (
+          breadcrumbs.map((crumb, index) => {
+            if (index === 0 && crumb.label.toLowerCase() === 'home') return null;
+            const isLast = index === breadcrumbs.length - 1;
+            return (
+              <span key={index} className="flex items-center">
+                <span className="text-white/30 text-[11px]">›</span>
+                {isLast || !crumb.href ? (
+                  <span className={`px-5 py-[11px] text-[12px] ${isLast ? 'font-bold text-[#00bdb6]' : 'font-semibold text-white/70'}`}>
+                    {crumb.label}
+                  </span>
+                ) : (
+                  <Link href={crumb.href} className="px-5 py-[11px] text-[12px] font-semibold text-white/70 hover:text-white transition-colors">
+                    {crumb.label}
+                  </Link>
+                )}
+              </span>
+            );
+          })
+        ) : (
+          <>
+            <span className="text-white/30 text-[11px]">›</span>
+            <span className="px-5 py-[11px] text-[12px] font-bold text-[#00bdb6]">{title}</span>
+          </>
+        )}
       </div>
     </div>
   );

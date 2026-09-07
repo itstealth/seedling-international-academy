@@ -69,7 +69,7 @@ export default function FacultyTestimonialsPage(): React.JSX.Element {
               <div className="flex items-center gap-3 mb-6">
                 <span className={`w-12 h-px ${t.border} bg-current ${t.accent}`} />
                 <span className={`text-[10px] font-black uppercase tracking-[0.3em] ${t.accent}`}>
-                  {i === 0 ? "FACULTY" : "STUDENT"}
+                  {i === 0 ? "FACULTY" : "FACULTY"}
                 </span>
               </div>
 

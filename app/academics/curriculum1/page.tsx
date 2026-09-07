@@ -28,7 +28,7 @@ const curriculumTabs = [
     description: "Our Primary curriculum is designed as a 'Joyride'—a period of discovery where emotional intelligence and curiosity are nurtured alongside core academic skills.",
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/about_page_hero_1776857790049.png",
     features: [
-      { title: "Personalized Journeys", desc: "Tailored learning paths that respect each child's pace.", icon: Target },
+      { title: "Personalised Journeys", desc: "Tailored learning paths that respect each child's pace.", icon: Target },
       { title: "Happy School Initiative", desc: "Prioritizing well-being and emotional growth.", icon: Sparkles },
       { title: "Inquiry-Based Learning", desc: "Fostering 'The Why' before 'The What'.", icon: Lightbulb },
       { title: "Literacy & Numeracy", desc: "Strong foundations in core academic pillars.", icon: BookOpen }

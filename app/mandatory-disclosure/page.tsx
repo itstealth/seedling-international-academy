@@ -50,11 +50,11 @@ const MandatoryDisclosure = () => {
                   </p>
                   <p className="flex items-center gap-3 text-text-light">
                     <span className="text-navy">Phone:</span>
-                    <span className="font-bold">0141-7193000</span>
+                    <a href="tel:01413623000" className="font-bold hover:text-navy transition-colors">0141-3623000</a>
                   </p>
                   <p className="flex items-center gap-3 text-text-light">
                     <span className="text-navy">Fax:</span>
-                    <span className="font-bold">0141-2561684</span>
+                    <span className="font-bold">0141-3623000</span>
                   </p>
                 </div>
               </div>

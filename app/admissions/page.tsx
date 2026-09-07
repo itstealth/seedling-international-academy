@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
+import Link from "next/link";
 
 /* ─────────────────────────────────────────────
    SCROLL REVEAL
@@ -100,7 +101,15 @@ const steps = [
   {
     num: "01",
     title: "Visit the Official Website",
-    desc: "Go to cambridge.seedlingschools.com/admissions/apply and fill in the Online Admission Inquiry form.",
+    desc: (
+      <>
+        Go to{" "}
+        <Link href="/admissions/apply" className="text-crimson hover:underline font-semibold">
+          cambridge.seedlingschools.com/admissions/apply
+        </Link>{" "}
+        and fill in the Online Admission Inquiry form.
+      </>
+    ),
     icon: "🌐",
   },
   {
@@ -579,21 +588,18 @@ export default function AdmissionsPage() {
                   <select required value={formData.className} onChange={handleFormChange("className")}
                     className={`w-full rounded-xl px-4 py-3 text-text-base text-sm border bg-white focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm ${formErrors.className ? 'border-crimson bg-crimson/5' : 'border-sand/40'}`}>
                     <option value="">Select Class</option>
-                    <option value="Nursery">Nursery</option>
-                    <option value="LKG">LKG</option>
-                    <option value="UKG">UKG</option>
-                    <option value="Class 1">Class 1</option>
-                    <option value="Class 2">Class 2</option>
-                    <option value="Class 3">Class 3</option>
-                    <option value="Class 4">Class 4</option>
-                    <option value="Class 5">Class 5</option>
-                    <option value="Class 6">Class 6</option>
-                    <option value="Class 7">Class 7</option>
-                    <option value="Class 8">Class 8</option>
-                    <option value="Class 9">Class 9</option>
-                    <option value="Class 10">Class 10</option>
-                    <option value="Class 11">Class 11</option>
-                    <option value="Class 12">Class 12</option>
+                    <option value="Cambridge Primary 1">Cambridge Primary 1</option>
+                    <option value="Cambridge Primary 2">Cambridge Primary 2</option>
+                    <option value="Cambridge Primary 3">Cambridge Primary 3</option>
+                    <option value="Cambridge Primary 4">Cambridge Primary 4</option>
+                    <option value="Cambridge Primary 5">Cambridge Primary 5</option>
+                    <option value="Lower Secondary 1 (Grade 6)">Lower Secondary 1 (Grade 6)</option>
+                    <option value="Lower Secondary 2 (Grade 7)">Lower Secondary 2 (Grade 7)</option>
+                    <option value="Lower Secondary 3 (Grade 8)">Lower Secondary 3 (Grade 8)</option>
+                    <option value="IGCSE 1 (Grade 9)">IGCSE 1 (Grade 9)</option>
+                    <option value="IGCSE 2 (Grade 10)">IGCSE 2 (Grade 10)</option>
+                    <option value="A Level 1 (Grade 11)">A Level 1 (Grade 11)</option>
+                    <option value="A Level 2 (Grade 12)">A Level 2 (Grade 12)</option>
                   </select>
                   {formErrors.className && <p className="text-crimson text-xs mt-1.5 pl-1">{formErrors.className}</p>}
                 </div>

@@ -95,14 +95,14 @@ const SEARCH_INDEX: Array<{
     title: "Admissions",
     description: "Apply for the 2026–27 academic session. Enquire now.",
     href: "/admissions",
-    keywords: ["admissions", "apply", "enquiry", "enroll", "registration", "admission open"],
+    keywords: ["admissions", "apply", "enquiry", "enrol", "registration", "admission open"],
     category: "Admissions",
   },
   {
     title: "Online Registration",
     description: "Register online for Seedling International School.",
     href: "/admissions/online",
-    keywords: ["registration", "online", "apply", "form", "enroll"],
+    keywords: ["registration", "online", "apply", "form", "enrol"],
     category: "Admissions",
   },
   {

@@ -87,6 +87,7 @@ export default function MandatoryDisclosuresPage() {
         title="Mandatory Disclosures and Accreditation"
         badge="Cambridge Compliance"
         breadcrumbs={[{ label: "Disclosures" }]}
+        imageAlt="Mandatory Disclosures — Seedling International Academy Cambridge school campus overview, Jaipur, Rajasthan"
       />
 
       {/* Content */}

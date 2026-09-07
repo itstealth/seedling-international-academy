@@ -94,6 +94,7 @@ export default function PrivacyPolicyPage() {
         title="Privacy Policy"
         badge="Privacy & Safety"
         breadcrumbs={[{ label: "Policies" }]}
+        imageAlt="Privacy Policy — Seedling International Academy main school building exterior, Jawahar Nagar, Jaipur"
       />
 
       {/* Content */}

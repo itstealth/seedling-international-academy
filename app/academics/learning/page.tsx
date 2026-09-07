@@ -93,7 +93,7 @@ const CARDS: FeatureCard[] = [
   },
   {
     icon: <IconUser />,
-    title: "Personalized Attention",
+    title: "Personalised Attention",
     text: "Teachers closely adapt their teaching strategies to suit individual learning styles, ensuring that no child is left behind.",
   },
   {

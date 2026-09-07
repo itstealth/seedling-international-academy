@@ -120,7 +120,7 @@ const CARDS: FeatureCard[] = [
   },
   {
     icon: <IconUser />,
-    title: "Personalized Attention & Academic Mentoring",
+    title: "Personalised Attention & Academic Mentoring",
     text: "Individual learning plans and one-on-one guidance sessions designed to cater to every learner's pace, strengths, and challenges.",
   },
   {

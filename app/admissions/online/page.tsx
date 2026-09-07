@@ -122,7 +122,7 @@ const defaultForm: AdmissionFormData = {
   placeOfBirth: "", address: "", state: "", district: "", pinCode: "",
   nri: "", physicallyHandicapped: "",
   previousSchool: "", previousMedium: "", annualIncome: "",
-  siblingName: "", siblingClass: "", fee: "", terms: false,
+  siblingName: "", siblingClass: "", fee: "1250", terms: false,
 };
 
 /* ─────────────────────────────────────────────
@@ -165,10 +165,13 @@ export default function OnlineAdmissionPage() {
     if (!formData.fee) errors.fee = "Required";
     if (!formData.studentName.trim()) errors.studentName = "Required";
     if (!formData.fatherName.trim()) errors.fatherName = "Required";
+    if (!formData.fatherOccupation.trim()) errors.fatherOccupation = "Required";
     if (!formData.motherName.trim()) errors.motherName = "Required";
+    if (!formData.motherOccupation.trim()) errors.motherOccupation = "Required";
     if (!formData.gender) errors.gender = "Required";
     if (!formData.category) errors.category = "Required";
     if (!formData.caste) errors.caste = "Required";
+    if (!formData.religion.trim()) errors.religion = "Required";
     if (!formData.aadhar.trim()) errors.aadhar = "Required";
     else if (formData.aadhar.replace(/\D/g, "").length !== 12) errors.aadhar = "Must be 12 digits";
     if (!formData.mobile || formData.mobile.length !== 10) errors.mobile = "Required — 10 digits";
@@ -303,14 +306,11 @@ export default function OnlineAdmissionPage() {
 
                 {/* Fee */}
                 <div>
-                  <label className={labelCls}>Fee Category <span className="text-crimson">*</span></label>
-                  <select value={formData.fee} onChange={handleChange("fee")} className={`${selectCls} ${formErrors.fee ? "border-crimson bg-crimson/5" : ""}`}>
-                    <option value="">— Select Fee Category —</option>
-                    <option>General</option>
-                    <option>Cambridge International</option>
-                    <option>Scholarship Applicant</option>
-                  </select>
-                  {formErrors.fee && <p className="text-crimson text-xs mt-1.5">{formErrors.fee}</p>}
+                  <label className={labelCls}>Fee <span className="text-crimson">*</span></label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-text-light font-medium">₹</span>
+                    <input type="text" readOnly value="1,250" className={`${fieldCls} pl-8 bg-sand/10 text-text-light cursor-not-allowed select-none focus:border-sand/40`} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -373,8 +373,10 @@ export default function OnlineAdmissionPage() {
 
                 {/* Religion */}
                 <div>
-                  <label className={labelCls}>Religion</label>
-                  <input type="text" placeholder="e.g. Hindu, Muslim, Christian, Sikh..." value={formData.religion} onChange={handleChange("religion")} className={fieldCls} />
+                  <label className={labelCls}>Religion <span className="text-crimson">*</span></label>
+                  <input type="text" placeholder="e.g. Hindu, Muslim, Christian, Sikh..." value={formData.religion} onChange={handleChange("religion")}
+                    className={`${fieldCls} ${formErrors.religion ? "border-crimson bg-crimson/5" : ""}`} />
+                  {formErrors.religion && <p className="text-crimson text-xs mt-1.5">{formErrors.religion}</p>}
                 </div>
 
                 {/* Aadhar */}
@@ -449,8 +451,10 @@ export default function OnlineAdmissionPage() {
 
                 {/* Father's Occupation */}
                 <div>
-                  <label className={labelCls}>Father&apos;s Occupation</label>
-                  <input type="text" placeholder="e.g. Engineer, Business, Doctor..." value={formData.fatherOccupation} onChange={handleChange("fatherOccupation")} className={fieldCls} />
+                  <label className={labelCls}>Father&apos;s Occupation <span className="text-crimson">*</span></label>
+                  <input type="text" placeholder="e.g. Engineer, Business, Doctor..." value={formData.fatherOccupation} onChange={handleChange("fatherOccupation")}
+                    className={`${fieldCls} ${formErrors.fatherOccupation ? "border-crimson bg-crimson/5" : ""}`} />
+                  {formErrors.fatherOccupation && <p className="text-crimson text-xs mt-1.5">{formErrors.fatherOccupation}</p>}
                 </div>
 
                 {/* Mother's Name */}
@@ -463,8 +467,10 @@ export default function OnlineAdmissionPage() {
 
                 {/* Mother's Occupation */}
                 <div>
-                  <label className={labelCls}>Mother&apos;s Occupation</label>
-                  <input type="text" placeholder="e.g. Homemaker, Teacher, Business..." value={formData.motherOccupation} onChange={handleChange("motherOccupation")} className={fieldCls} />
+                  <label className={labelCls}>Mother&apos;s Occupation <span className="text-crimson">*</span></label>
+                  <input type="text" placeholder="e.g. Homemaker, Teacher, Business..." value={formData.motherOccupation} onChange={handleChange("motherOccupation")}
+                    className={`${fieldCls} ${formErrors.motherOccupation ? "border-crimson bg-crimson/5" : ""}`} />
+                  {formErrors.motherOccupation && <p className="text-crimson text-xs mt-1.5">{formErrors.motherOccupation}</p>}
                 </div>
 
                 {/* Annual Income */}

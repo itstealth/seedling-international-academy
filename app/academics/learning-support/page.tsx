@@ -22,7 +22,7 @@ const supportSystems = [
     title: "Mental Wellness",
     desc: "We prioritize emotional resilience through integrated mindfulness sessions and regular support from dedicated counselors. A child's mental state is the foundation of their academic success.",
     icon: Heart,
-    points: ["Mindfulness Workshops", "Individual Counseling", "Stress Management", "Emotional Intelligence"],
+    points: ["Mindfulness Workshops", "Individual Counselling", "Stress Management", "Emotional Intelligence"],
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/learning_support_student_counseling_1776862833394.png",
     color: "secondary"
   },
