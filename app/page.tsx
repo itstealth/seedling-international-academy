@@ -103,13 +103,13 @@ function CallbackForm() {
 // Campus Life gallery images (new set)
 const campusGallery = [
   { src: "/DSC_2180.JPG", alt: "Educator pinning a badge of honor on a student's uniform during a school ceremony" },
-  { src: "/WhatsApp%20Image%202026-04-01%20at%2011.24.51.jpeg", alt: "Three young students proudly displaying their certificates in front of a colorful Values board" },
+  { src: "/students-values-board.jpeg", alt: "Three young students proudly displaying their certificates in front of a colorful Values board" },
   { src: "/IMG_5875.JPG", alt: "Group of students dressed up in various costumes for a school fancy dress and role play event" },
   { src: "/IMG_5865.JPG", alt: "Student proudly holding a golden trophy and achievement certificate" },
-  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg", alt: "Students making heart shapes with their hands in front of an Earth Day celebration board" },
-  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.35.14%20%281%29.jpeg", alt: "Students participating in collaborative campus learning activities" },
-  { src: "/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg", alt: "Engaged students taking part in interactive classroom sessions" },
-  { src: "/WhatsApp%20Image%202026-08-07%20at%2013.37.25%20%281%29.jpeg", alt: "Students enjoying outdoor campus life and school events" },
+  { src: "/DSC_2204.JPG", alt: "Students making heart shapes with their hands in front of an Earth Day celebration board" },
+  { src: "/collaborative-learning.jpeg", alt: "Students participating in collaborative campus learning activities" },
+  { src: "/interactive-classroom.jpeg", alt: "Engaged students taking part in interactive classroom sessions" },
+  { src: "/outdoor-campus-life.jpeg", alt: "Students enjoying outdoor campus life and school events" },
 ];
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
