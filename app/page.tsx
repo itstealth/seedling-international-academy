@@ -6,6 +6,7 @@ import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRigh
 import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
 import HeroVideo from "@/components/ui/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
+import { homepageJsonLd } from "@/lib/homepage-jsonld";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -261,7 +262,14 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   ];
 
   return (
-    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-[480px] md:min-h-screen overflow-hidden px-4 pt-16 md:pt-28">
@@ -1280,6 +1288,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
