@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -215,7 +215,7 @@ export default function OnlineAdmissionPage() {
   const years = Array.from({ length: 27 }, (_, i) => String(2026 - i));
 
 return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ── HERO ── */}
       <HeroWrapper
@@ -662,6 +662,6 @@ return (
         </Reveal>
 
       </section>
-    </main>
+    </div>
   );
 }

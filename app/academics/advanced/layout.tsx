@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Cambridge AS & A Levels at Seedling Jaipur — 50+ subjects, IPQ and university counselling.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/advanced" },
 };
 
 export default function AdvancedLayout({ children }: { children: React.ReactNode }) {

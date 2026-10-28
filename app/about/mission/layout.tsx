@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "The mission, vision and values behind Seedling's Cambridge schools in Jaipur.",
     images: ["/assets/about/about-banner.jpg"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/about/mission" },
 };
 
 export default function MissionLayout({ children }: { children: React.ReactNode }) {

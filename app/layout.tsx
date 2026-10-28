@@ -27,7 +27,15 @@ const marcellus = Marcellus({
   weight: ["400"],
 });
 
-const BASE_URL = "https://cambridge.seedlingschools.com";
+const BASE_URL = 'https://cambridge.seedlingschools.com';
+function getCanonicalUrl(rawPath: string | null) {
+  try {
+    const pathname = new URL(rawPath || '/', BASE_URL).pathname;
+    return new URL(pathname, BASE_URL).toString();
+  } catch {
+    return new URL('/', BASE_URL).toString();
+  }
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -64,7 +72,6 @@ export const metadata: Metadata = {
       "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: {},
   manifest: "/manifest.json",
   icons: {
     apple: "/apple-touch-icon.png",
@@ -77,7 +84,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const headersList = await headers();
-  const pathname = headersList.get("x-invoke-pathname") ?? headersList.get("next-url") ?? "/";
+  const rawPath = headersList.get('x-canonical-pathname') ?? headersList.get('x-invoke-pathname') ?? headersList.get('next-url') ?? '/';
+  const canonicalUrl = getCanonicalUrl(rawPath);
+  const pathname = new URL(canonicalUrl).pathname;
   const isErpLogin = pathname.startsWith("/erp-login");
 
   return (
@@ -86,8 +95,15 @@ export default async function RootLayout({
       className={`${geistMono.variable} ${sourceSans.variable} ${marcellus.variable} h-full antialiased`}
     >
       <head>
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW7KS65V');`}
+        </Script>
         <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
-        <link rel="canonical" href={`${BASE_URL}${pathname}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-83PTXLJEJ1"
           strategy="afterInteractive"
@@ -103,6 +119,14 @@ export default async function RootLayout({
         </Script>
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KW7KS65V"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <NavbarWrapper />
         <main className="flex-1 flex flex-col">
           {children}

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from 'react'
 import Image from 'next/image'
@@ -190,7 +190,7 @@ export default function ContactPage() {
 
 
   return (
-    <main className="min-h-screen bg-off-white font-dm">
+    <div className="min-h-screen bg-off-white font-dm">
 
       {/* ── Accent bar ─────────────────────────────────────────────────────── */}
       <div className="h-1 bg-gradient-to-r from-navy via-crimson to-sand" />
@@ -585,6 +585,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-    </main>
+    </div>
   )
 }

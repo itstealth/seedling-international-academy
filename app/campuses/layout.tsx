@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Two Cambridge campuses in Jaipur — SIA at Jawahar Nagar and SMIA at Durgapura.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/campuses" },
 };
 
 export default function CampusesLayout({ children }: { children: React.ReactNode }) {

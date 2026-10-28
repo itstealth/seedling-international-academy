@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -29,7 +29,7 @@ const pillars = [
 
 export default function CambridgeEarlyYearsPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper backgroundImage="/assets/img/sps-banner.jpg" title="Cambridge Early Years" badge="Ages 3–6 · The First Step" breadcrumbs={[{ label: "Cambridge Early Years" }]} height="large" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
@@ -117,6 +117,6 @@ export default function CambridgeEarlyYearsPage(): React.JSX.Element {
           </motion.div>
         </div>
       </motion.section>
-    </main>
+    </div>
   );
 }

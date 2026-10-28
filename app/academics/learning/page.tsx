@@ -1,4 +1,4 @@
-
+﻿
 
 "use client";
 
@@ -426,7 +426,7 @@ export default function LearningSupport() {
   return (
     <>
       <FontLoader />
-      <main style={{ background: "#f8f7f6" }}>
+      <div style={{ background: "#f8f7f6" }}>
         <HeroWrapper
           backgroundImage="/assets/img/sps-banner.jpg"
           title="Learning Support"
@@ -438,7 +438,7 @@ export default function LearningSupport() {
         <ModernLearning />
         <WellbeingSection />
         <Summary />
-      </main>
+      </div>
     </>
   );
 }

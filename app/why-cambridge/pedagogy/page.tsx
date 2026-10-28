@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -112,7 +112,7 @@ const cardColors5 = [
 
 export default function PedagogyPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
@@ -443,6 +443,6 @@ export default function PedagogyPage(): React.JSX.Element {
           </motion.div>
         </div>
       </motion.section>
-    </main>
+    </div>
   );
 }

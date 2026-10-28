@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Three decades of Cambridge excellence in Jaipur. Discover our story and leadership.",
     images: ["/assets/about/about-banner.jpg"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/about" },
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

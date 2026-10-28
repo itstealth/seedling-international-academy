@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -267,7 +267,7 @@ export default function CampusesPage(): React.JSX.Element {
   }, []);
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
+    <div className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/campus-images/3.jpeg"
         title="Our Two Cambridge Campuses in Jaipur"
@@ -336,6 +336,6 @@ export default function CampusesPage(): React.JSX.Element {
 
       {/* Shared Six Pillars */}
       <SixPillars />
-    </main>
+    </div>
   );
 }

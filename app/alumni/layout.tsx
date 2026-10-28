@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "5,000+ Seedling alumni across 50+ nations.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/alumni" },
 };
 
 export default function AlumniLayout({ children }: { children: React.ReactNode }) {

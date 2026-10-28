@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Secure ERP portal login for Seedling students, parents and staff.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/erp-login" },
 };
 
 export default function ERPLoginLayout({ children }: { children: React.ReactNode }) {

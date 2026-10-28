@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -16,7 +16,7 @@ const pillars = [
 
 export default function VisionPage() {
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
         title="Vision & Mission"
@@ -87,6 +87,6 @@ export default function VisionPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

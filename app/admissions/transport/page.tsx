@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -15,7 +15,7 @@ const routes = [
 
 export default function TransportFacilityPage() {
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Transport Facility"
@@ -133,6 +133,6 @@ export default function TransportFacilityPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

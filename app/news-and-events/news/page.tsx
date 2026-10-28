@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -39,7 +39,7 @@ const newsItems = [
 
 export default function NewsCoveragePage() {
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="News & Updates"
@@ -146,6 +146,6 @@ export default function NewsCoveragePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

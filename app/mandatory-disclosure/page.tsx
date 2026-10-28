@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import type { Metadata } from 'next';
 import HeroWrapper from '@/components/layout/HeroWrapper';
 
@@ -19,7 +19,7 @@ const MandatoryDisclosure = () => {
         breadcrumbs={[{ label: "Mandatory Disclosure" }]}
       />
 
-      <main className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-6xl mx-auto px-6 py-20">
 
         {/* Section 1: School Info */}
         <div className="bg-orange-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-orange-700 mb-10 overflow-hidden relative group">
@@ -203,7 +203,7 @@ const MandatoryDisclosure = () => {
             ))}
           </div>
         </div>
-      </main>
+      </div>
 
       <footer className="py-12 text-center border-t border-sand/30">
         <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">

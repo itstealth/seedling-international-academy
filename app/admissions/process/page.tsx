@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -34,7 +34,7 @@ const steps = [
 
 export default function AdmissionProcessPage() {
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Admission Process"
@@ -153,6 +153,6 @@ export default function AdmissionProcessPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

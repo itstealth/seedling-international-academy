@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -135,7 +135,7 @@ export default function TermsAndConditions() {
         imageAlt="Seedling International Academy campus, Jaipur — Terms and Conditions"
       />
 
-      <main className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex flex-col lg:flex-row gap-16">
 
           {/* Sidebar Navigation */}
@@ -269,7 +269,7 @@ export default function TermsAndConditions() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       <footer className="py-12 text-center border-t border-sand/30">
         <p className="text-text-light text-[10px] font-black uppercase tracking-[0.2em]">

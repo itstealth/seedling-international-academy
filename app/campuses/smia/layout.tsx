@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Modern Cambridge education at SMIA, Durgapura, Jaipur.",
     images: ["/assets/Home/SMIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/campuses/smia" },
 };
 
 export default function SMIALayout({ children }: { children: React.ReactNode }) {

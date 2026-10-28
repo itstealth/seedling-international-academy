@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -124,7 +124,7 @@ export default function CampusHighlightsPage() {
   const [selectedSnapGallery, setSelectedSnapGallery] = useState<{ images: string[]; index: number } | null>(null);
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ══════════════════════════════════════════════════════
           1. HERO BANNER
@@ -548,7 +548,7 @@ export default function CampusHighlightsPage() {
           )}
         </div>
       )}
-    </main>
+    </div>
   );
 }
 

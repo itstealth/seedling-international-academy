@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Cambridge IGCSE and A Level at Seedling International Academy, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/why-cambridge" },
 };
 
 export default function WhyCambridgeLayout({ children }: { children: React.ReactNode }) {

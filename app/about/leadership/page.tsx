@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -98,7 +98,7 @@ const leaders = [
 
 export default function LeadershipPage() {
   return (
-    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
+    <div className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/0V8A8608.JPG"
         title="Leadership at Seedling International Academy & SMIA, Jaipur"
@@ -900,6 +900,6 @@ export default function LeadershipPage() {
           LEADERSHIP
       ══════════════════════════════════════════════════════════════ */}
 
-    </main>
+    </div>
   );
 }

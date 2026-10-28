@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 
 export default function WelcomeFromTheHeadPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
+    <div className="bg-off-white text-text-base overflow-x-clip font-dm">
       {/* ═══ HERO ═══ */}
       {/* <HeroWrapper
         backgroundImage="/IMG_5875.JPG"
@@ -231,6 +231,6 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
           </p>
         </div>
       </section> */}
-    </main>
+    </div>
   );
 }

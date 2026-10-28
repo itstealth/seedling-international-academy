@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -16,7 +16,7 @@ const feeData = [
 
 export default function FeeStructurePage() {
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Fee Structure"
@@ -121,6 +121,6 @@ export default function FeeStructurePage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

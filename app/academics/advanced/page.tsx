@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -118,7 +118,7 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
   const activePalette = pathwayPalette[activePathwayStep];
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/academy.JPG"
@@ -579,6 +579,6 @@ export default function CambridgeAdvancedPage(): React.JSX.Element {
           </motion.div>
         </div>
       </motion.section>
-    </main>
+    </div>
   );
 }

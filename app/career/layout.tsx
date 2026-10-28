@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Join the Seedling International Academy team in Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/career" },
 };
 
 export default function CareerLayout({ children }: { children: React.ReactNode }) {

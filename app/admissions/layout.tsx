@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Apply to Seedling International Academy — Cambridge IGCSE & A Level school in Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/admissions" },
 };
 
 export default function AdmissionsLayout({ children }: { children: React.ReactNode }) {

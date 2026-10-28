@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Sports, arts and clubs at Seedling International Academy, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/school-life" },
 };
 
 export default function SchoolLifeLayout({ children }: { children: React.ReactNode }) {

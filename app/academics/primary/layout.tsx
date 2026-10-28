@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Cambridge Primary at Seedling Jaipur — ages 5 to 11.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/primary" },
 };
 
 export default function PrimaryLayout({ children }: { children: React.ReactNode }) {

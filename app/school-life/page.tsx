@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -943,7 +943,7 @@ function CTASection() {
 
 export default function SchoolLifePage() {
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* 
         This style block contains all the custom keyframes and font classes 
         that were originally in tailwind.config.ts, ensuring the file remains 
@@ -966,6 +966,6 @@ export default function SchoolLifePage() {
       <GalleryStrip />
       {/* <FeaturesSection /> */}
       {/* <CTASection /> */}
-    </main>
+    </div>
   );
 }

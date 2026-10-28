@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -693,7 +693,7 @@ export const metadata = {
 
 export default function AlumniPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Our Alumni"
@@ -707,6 +707,6 @@ export default function AlumniPage() {
       <AlumniNetwork />
       {/* <GalleryStrip /> */}
       <CTASection />
-    </main>
+    </div>
   );
 }

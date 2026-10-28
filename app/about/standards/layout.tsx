@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Academic and assessment standards at Seedling International Academy, Jaipur.",
     images: ["/assets/about/about-banner.jpg"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/about/standards" },
 };
 
 export default function StandardsLayout({ children }: { children: React.ReactNode }) {

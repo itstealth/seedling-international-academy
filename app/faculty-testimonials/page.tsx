@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import { motion } from "framer-motion";
@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function FacultyTestimonialsPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
         backgroundImage="/0N9A9612.JPG"
         title="Faculty Testimonials"
@@ -108,6 +108,6 @@ export default function FacultyTestimonialsPage(): React.JSX.Element {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

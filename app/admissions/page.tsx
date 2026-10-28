@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -295,7 +295,7 @@ export default function AdmissionsPage() {
   };
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
+    <div className="bg-off-white text-text-base overflow-x-clip font-dm">
       <style>{`
         .duration-400 { transition-duration: 400ms; }
         @keyframes fade-in {
@@ -1033,6 +1033,6 @@ export default function AdmissionsPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

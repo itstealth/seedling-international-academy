@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import { motion } from "framer-motion";
@@ -145,7 +145,7 @@ const colorMap: Record<string, { glass: string; text: string; border: string; ri
 
 export default function OurStandardsPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/P1676425.JPG"
@@ -401,6 +401,6 @@ export default function OurStandardsPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

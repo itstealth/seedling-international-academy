@@ -1,9 +1,9 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { CheckCircle, ArrowRight, Home, Phone, Mail } from "lucide-react";
 
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen bg-[#d4f4ed] flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#d4f4ed] flex items-center justify-center p-6 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-96 h-96 bg-sand rounded-full blur-3xl" />
@@ -65,6 +65,6 @@ export default function ThankYouPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Statutory and Cambridge accreditation disclosures for Seedling International Academy and SMIA, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/mandatory-disclosures" },
 };
 
 export default function MandatoryDisclosuresLayout({ children }: { children: React.ReactNode }) {

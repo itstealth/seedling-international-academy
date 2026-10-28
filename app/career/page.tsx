@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -524,7 +524,7 @@ export default function CareersPage() {
   };
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
         backgroundImage="/assets/img/career.jpeg"
         title="Careers"
@@ -910,6 +910,6 @@ export default function CareersPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

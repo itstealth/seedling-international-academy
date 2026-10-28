@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -51,7 +51,7 @@ const events = [
 export default function EventsPage() {
   const FeaturedIcon = events[0].icon;
   return (
-    <main className="bg-neutral-bg min-h-screen">
+    <div className="bg-neutral-bg min-h-screen">
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Events"
@@ -181,6 +181,6 @@ export default function EventsPage() {
           </button>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

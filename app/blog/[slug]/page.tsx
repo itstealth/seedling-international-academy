@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import { getMediaUrl, getPostCategories, stripHtml, formatDate, type WPPost } from "@/lib/wordpress";
+import "../wp-blocks.css";
 
 const ArrowLeft = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -37,7 +38,7 @@ export default function BlogDetailPage() {
     async function fetchData() {
       try {
         const [postsRes] = await Promise.all([
-          fetch('https://stealthlearn.in/cambridgeinternationalschool/wp-json/wp/v2/posts?per_page=100&_embed'),
+          fetch('https://cambridge.seedlingschools.com/cms/wp-json/wp/v2/posts?per_page=100&_embed'),
         ]);
 
         if (!postsRes.ok) throw new Error('Failed to fetch posts');
@@ -89,7 +90,7 @@ export default function BlogDetailPage() {
     content = content.replace(/<!--[^-]*-->/gi, '');
 
     // Remove internal links to WordPress domain
-    content = content.replace(/https:\/\/stealthlearn\.in\/cambridgeinternationalschool(?!\/wp-)/g, '');
+    content = content.replace(/https:\/\/cambridge\.seedlingschools\.com\/cms(?!\/wp-)/g, '');
 
     // Add IDs to headings for smooth scrolling
     content = content.replace(/<h([2-4])([^>]*)>(.*?)<\/h\1>/gi, (_, level, attrs, text) => {
@@ -98,7 +99,7 @@ export default function BlogDetailPage() {
     });
 
     // Build TOC HTML to inject at first heading position
-    const tocHtml = `<div class="max-w-3xl mx-auto mb-12"><div class="bg-white/80 backdrop-blur-sm border border-sand/40 rounded-2xl p-6 shadow-sm">
+    const tocHtml = `<div class="max-w-5xl mx-auto mb-12"><div class="bg-white/80 backdrop-blur-sm border border-sand/40 rounded-2xl p-6 shadow-sm">
       <h2 class="text-[10px] font-black uppercase tracking-[0.25em] text-text-light mb-4">In This Article</h2>
       <nav class="space-y-1">
         ${headings.map((h) => `
@@ -115,6 +116,75 @@ export default function BlogDetailPage() {
 
     return content;
   }, [post, headings]);
+
+  // The WordPress FAQ/accordion block ships its own CSS + JS, but WordPress only
+  // enqueues those on a WP-rendered page. The REST API hands us content.rendered
+  // as bare HTML, so on this headless front-end the accordion arrives unstyled and
+  // inert. Pull the plugin's two dependency-free front-end assets from the CMS
+  // (same origin) and run the plugin's own init once React has injected the markup
+  // -- the plugin binds on DOMContentLoaded, which fires long before that.
+  useEffect(() => {
+    if (!post) return;
+    let cancelled = false;
+
+    const PLUGIN = '/cms/wp-content/plugins/easy-accordion-free';
+    const JS_ID = 'sp-eab-accordion-js';
+
+    // Only the plugin's behaviour script is loaded. Its stylesheets are
+    // deliberately skipped -- the stock WordPress skin does not match this site.
+    // faq-accordion.css styles the same markup in the site's own teal system.
+
+    // `class EabAccordion` sits at the top level of a classic script, so it lands in
+    // the global LEXICAL scope, not on `window` -- a window lookup never finds it.
+    // A Function constructor body evaluates in global scope and can see it.
+    const getEab = (): (new (el: Element, o: object) => unknown) | null => {
+      try {
+        return new Function(
+          'return typeof EabAccordion !== "undefined" ? EabAccordion : null'
+        )() as (new (el: Element, o: object) => unknown) | null;
+      } catch {
+        return null;
+      }
+    };
+
+    const initAccordions = () => {
+      const Eab = getEab();
+      if (cancelled || typeof Eab !== 'function') return;
+      document
+        .querySelectorAll<HTMLElement>('.sp-eab-regular-accordion,.sp-eab-post-accordion,.sp-eab-product-accordion')
+        .forEach((block) => {
+          if (block.dataset.eabReady) return;
+          const el = block.querySelector('.sp-eab-accordion');
+          if (!el) return;
+          let options = {};
+          try {
+            options = JSON.parse(el.getAttribute('data-accordion-settings') || '{}');
+          } catch {
+            options = {};
+          }
+          new Eab(el, options);
+          block.dataset.eabReady = '1';
+        });
+    };
+
+    const existing = document.getElementById(JS_ID);
+    if (getEab()) {
+      initAccordions();
+    } else if (existing) {
+      existing.addEventListener('load', initAccordions);
+    } else {
+      const s = document.createElement('script');
+      s.id = JS_ID;
+      s.src = `${PLUGIN}/Blocks/assets/js/sp-eap-accordion.js`;
+      s.async = true;
+      s.onload = initAccordions;
+      document.body.appendChild(s);
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [post, processedContent]);
 
   const scrollToHeading = (id: string) => {
     const el = document.getElementById(id);
@@ -217,7 +287,7 @@ export default function BlogDetailPage() {
         </div>
 
         {/* Article Content (TOC is injected inside content at first h2) */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div
             className="font-dm text-[#133844] leading-relaxed [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-[#133844] [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pl-4 [&_h2]:border-l-4 [&_h2]:border-crimson [&_h3]:font-playfair [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-[#133844] [&_h3]:mt-8 [&_h3]:mb-4 [&_h4]:font-bold [&_h4]:text-lg [&_h4]:text-[#133844] [&_h4]:mt-6 [&_h4]:mb-3 [&_p]:text-base [&_p]:leading-8 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2.5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2.5 [&_li]:text-base [&_li]:leading-7 [&_a]:text-crimson [&_a]:underline [&_a]:hover:text-crimson-dark [&_blockquote]:border-l-4 [&_blockquote]:border-sand [&_blockquote]:pl-5 [&_blockquote]:py-3 [&_blockquote]:my-6 [&_blockquote]:text-text-light [&_img]:w-full [&_img]:rounded-2xl [&_img]:my-8 [&_img]:shadow-lg [&_figure]:my-8 [&_figcaption]:text-center [&_figcaption]:text-text-light [&_figcaption]:text-sm [&_figcaption]:mt-3 [&_hr]:border-sand/30 [&_hr]:my-10 [&_strong]:font-bold [&_em]:not-italic"
             dangerouslySetInnerHTML={{ __html: processedContent }}

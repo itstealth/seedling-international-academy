@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Privacy policy for Seedling International Academy and SMIA, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/policies" },
 };
 
 export default function PoliciesLayout({ children }: { children: React.ReactNode }) {

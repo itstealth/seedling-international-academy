@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Arts and creativity at Seedling International Academy, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/cambridge-canvas" },
 };
 
 export default function CambridgeCanvasLayout({ children }: { children: React.ReactNode }) {

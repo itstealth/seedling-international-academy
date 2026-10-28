@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import { motion } from "framer-motion";
@@ -98,7 +98,7 @@ const cardColors4 = [
 
 export default function CambridgeEducationPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg"
@@ -375,6 +375,6 @@ export default function CambridgeEducationPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

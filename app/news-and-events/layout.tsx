@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Latest news and events from Seedling International Academy, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/news-and-events" },
 };
 
 export default function NewsEventsLayout({ children }: { children: React.ReactNode }) {

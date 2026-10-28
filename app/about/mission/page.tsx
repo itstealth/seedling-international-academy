@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import HeroWrapper from "@/components/layout/HeroWrapper";
 // import { motion } from "framer-motion";
@@ -78,7 +78,7 @@ const promises = [
 
 export default function MissionAndValuesPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
         backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg"
@@ -359,6 +359,6 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           </a>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

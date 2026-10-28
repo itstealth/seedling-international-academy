@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -170,7 +170,7 @@ export default function AboutPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* Image Lightbox Modal */}
       {selectedImage && (
@@ -629,6 +629,6 @@ export default function AboutPage() {
           </Reveal>
         </div> */}
       </section>
-    </main>
+    </div>
   );
 }

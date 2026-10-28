@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Three decades of Cambridge excellence at SIA, Jawahar Nagar, Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/campuses/sia" },
 };
 
 export default function SIALayout({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -261,7 +261,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   ];
 
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-[480px] md:min-h-screen overflow-hidden px-4 pt-16 md:pt-28">
@@ -1280,6 +1280,6 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

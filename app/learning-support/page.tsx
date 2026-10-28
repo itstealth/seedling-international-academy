@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -455,7 +455,7 @@ export default function LearningSupport() {
   return (
     <>
       <FontLoader />
-      <main style={{ background: "#f8f7f6" }} className="overflow-x-hidden">
+      <div style={{ background: "#f8f7f6" }} className="overflow-x-hidden">
         <HeroWrapper
           backgroundImage="/assets/banner/learning-support.jpg"
           title="Learning Support"
@@ -467,7 +467,7 @@ export default function LearningSupport() {
         <ModernLearning />
         <WellbeingSection />
         <Summary />
-      </main>
+      </div>
     </>
   );
 }

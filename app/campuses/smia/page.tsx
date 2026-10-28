@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -27,7 +27,7 @@ const stats = [
 
 export default function SMIAPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-clip font-dm">
+    <div className="bg-off-white text-text-base overflow-x-clip font-dm">
       <HeroWrapper
         backgroundImage="/assets/Home/SMIA_collage_v3.webp"
         title="Seedling Modern International Academy (SMIA), Durgapura"
@@ -246,6 +246,6 @@ export default function SMIAPage(): React.JSX.Element {
           </motion.div>
         </div>
       </motion.section>
-    </main>
+    </div>
   );
 }

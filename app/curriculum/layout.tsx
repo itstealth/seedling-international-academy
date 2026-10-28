@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Full Cambridge pathway at Seedling International Academy, Jaipur.",
     images: ["/assets/curriculum.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/curriculum" },
 };
 
 export default function CurriculumLayout({ children }: { children: React.ReactNode }) {

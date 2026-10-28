@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Cambridge Lower Secondary at Seedling Jaipur — ages 11 to 14.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/lower-secondary" },
 };
 
 export default function LowerSecondaryLayout({ children }: { children: React.ReactNode }) {

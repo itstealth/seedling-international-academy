@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -56,7 +56,7 @@ const faculty = [
 
 export default function FacultyPage() {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper
         backgroundImage="/assets/Home/classroom1.webp"
         title="Faculty"
@@ -174,6 +174,6 @@ export default function FacultyPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

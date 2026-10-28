@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Meet the leadership team of Seedling International Academy & SMIA, Jaipur.",
     images: ["/assets/about/about-banner.jpg"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/about/leadership" },
 };
 
 export default function LeadershipLayout({ children }: { children: React.ReactNode }) {

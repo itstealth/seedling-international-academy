@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Reach Seedling International Academy's admissions team in Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/contact-us" },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

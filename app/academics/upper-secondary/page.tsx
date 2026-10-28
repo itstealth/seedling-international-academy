@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -30,7 +30,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string }> = {
 
 export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
   return (
-    <main className="bg-off-white text-text-base overflow-x-hidden font-dm">
+    <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       <HeroWrapper backgroundImage="/curriculum.jpg" title="Cambridge Upper Secondary (IGCSE) in Jaipur" badge="Ages 14–16 · 70+ Subjects, One Global Standard" breadcrumbs={[{ label: "Cambridge Upper Secondary" }]} height="large" imageAlt="Cambridge IGCSE students at Seedling International Academy, Jaipur" />
 
       <motion.section className="py-12 md:py-20 max-w-4xl mx-auto px-5 sm:px-6 text-center" initial="hidden" animate="visible" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
@@ -146,6 +146,6 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
           </motion.div>
         </div>
       </motion.section>
-    </main>
+    </div>
   );
 }

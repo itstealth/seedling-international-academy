@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Cambridge Upper Secondary (IGCSE) at Seedling Jaipur — 70+ subjects, ages 14-16.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
-  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/upper-secondary" },
 };
 
 export default function UpperSecondaryLayout({ children }: { children: React.ReactNode }) {
