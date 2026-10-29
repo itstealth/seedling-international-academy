@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/blog" },
   title: "Cambridge & IGCSE Insights for Parents | Seedling Blog",
   description:
     "Guides for Jaipur parents on IGCSE subject choices, A-Level pathways, university admissions and moving from CBSE to the Cambridge curriculum.",
   openGraph: {
     title: "Blog | Seedling International Academy",
     description:
-      "Insights, stories and perspectives from Seedling International Academy — Jaipur's Cambridge school community.",
+      "Insights, stories and perspectives from Seedling International Academy â€” Jaipur's Cambridge school community.",
     url: "https://cambridge.seedlingschools.com/blog",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Seedling International Academy Blog" }],
   },

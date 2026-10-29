@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/cambridge-canvas" },
   title: "Why the Cambridge Curriculum? IGCSE & A-Level in Jaipur",
   description:
     "How the Cambridge pathway works from Early Years to A-Level, why 1,400+ universities recognise it, and what it means for students in Jaipur.",
   openGraph: {
     title: "Cambridge Canvas | Seedling International Academy",
     description:
-      "Art, culture and creativity at Seedling International Academy — the Cambridge Canvas programme shapes well-rounded global learners.",
+      "Art, culture and creativity at Seedling International Academy â€” the Cambridge Canvas programme shapes well-rounded global learners.",
     url: "https://cambridge.seedlingschools.com/cambridge-canvas",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Cambridge Canvas at Seedling International Academy" }],
   },

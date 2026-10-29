@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/lower-secondary" },
   title: "Cambridge Lower Secondary in Jaipur (Ages 11-14) | Seedling",
   description:
     "Cambridge Lower Secondary at Seedling Jaipur, ages 11-14: 10+ subjects, Checkpoint and progression tests, and a strong bridge into Cambridge IGCSE.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cambridge Lower Secondary in Jaipur (Ages 11-14) | Seedling",
-    description: "Cambridge Lower Secondary at Seedling Jaipur — ages 11 to 14.",
+    description: "Cambridge Lower Secondary at Seedling Jaipur â€” ages 11 to 14.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

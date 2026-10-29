@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Our Story, Leadership & Vision",
+  alternates: { canonical: "https://cambridge.seedlingschools.com/about" },
+  title: "About â€” Our Story, Leadership & Vision",
   description:
-    "Learn about Seedling International Academy — three decades of Cambridge education in Jaipur, our founding story, leadership team, mission and vision.",
+    "Learn about Seedling International Academy â€” three decades of Cambridge education in Jaipur, our founding story, leadership team, mission and vision.",
   openGraph: {
     title: "About Seedling International Academy",
     description:

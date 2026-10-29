@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/about/standards" },
   title: "Academic & Assessment Standards | Seedling Cambridge Jaipur",
   description:
     "How Seedling grades and reports: criterion-referenced marking, internal moderation, Cambridge-benchmarked boundaries and transparent progress reporting.",

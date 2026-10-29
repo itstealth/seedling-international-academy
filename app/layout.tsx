@@ -27,18 +27,13 @@ const marcellus = Marcellus({
   weight: ["400"],
 });
 
-const BASE_URL = 'https://cambridge.seedlingschools.com';
-function getCanonicalUrl(rawPath: string | null) {
-  try {
-    const pathname = new URL(rawPath || '/', BASE_URL).pathname;
-    return new URL(pathname, BASE_URL).toString();
-  } catch {
-    return new URL('/', BASE_URL).toString();
-  }
-}
+const BASE_URL = "https://cambridge.seedlingschools.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  alternates: {
+    canonical: BASE_URL,
+  },
   title: {
     default: "Cambridge IGCSE School in Jaipur | Seedling Academy",
     template: "%s | Seedling International Academy",
@@ -84,9 +79,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const headersList = await headers();
-  const rawPath = headersList.get('x-canonical-pathname') ?? headersList.get('x-invoke-pathname') ?? headersList.get('next-url') ?? '/';
-  const canonicalUrl = getCanonicalUrl(rawPath);
-  const pathname = new URL(canonicalUrl).pathname;
+  const pathname = headersList.get("x-route-pathname") ?? "/";
   const isErpLogin = pathname.startsWith("/erp-login");
 
   return (
@@ -103,7 +96,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KW7KS65V');`}
         </Script>
         <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
-        <link rel="canonical" href={canonicalUrl} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-83PTXLJEJ1"
           strategy="afterInteractive"

@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/policies" },
   title: "Privacy Policy | Seedling International Academy, Jaipur",
   description:
     "How Seedling International Academy and SMIA collect, use and protect the personal data of students, parents and visitors to this website.",

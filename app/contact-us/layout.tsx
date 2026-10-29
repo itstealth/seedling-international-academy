@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/contact-us" },
   title: "Contact Us | Cambridge Schools in Jaipur | SIA & SMIA",
   description:
     "Contact Seedling International Academy, Jawahar Nagar and SMIA, Durgapura. Phone numbers, email, office hours and directions to both Jaipur campuses.",
   openGraph: {
     title: "Contact Us | Seedling International Academy",
     description:
-      "Reach Seedling International Academy's admissions team in Jaipur. SIA at Jawahar Nagar — +91 74130 12351. SMIA at Durgapura — +91 95877 72837.",
+      "Reach Seedling International Academy's admissions team in Jaipur. SIA at Jawahar Nagar â€” +91 74130 12351. SMIA at Durgapura â€” +91 95877 72837.",
     url: "https://cambridge.seedlingschools.com/contact-us",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Contact Seedling International Academy" }],
   },

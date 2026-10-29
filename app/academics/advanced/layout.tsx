@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/academics/advanced" },
   title: "Cambridge AS & A Level School in Jaipur | Seedling Advanced",
   description:
     "Cambridge Advanced at Seedling Jaipur: AS & A Levels across 50+ subjects, IPQ research and university counselling for the IITs, Oxbridge and the Ivy League.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cambridge AS & A Level School in Jaipur | Seedling Advanced",
-    description: "Cambridge AS & A Levels at Seedling Jaipur — 50+ subjects, IPQ and university counselling.",
+    description: "Cambridge AS & A Levels at Seedling Jaipur â€” 50+ subjects, IPQ and university counselling.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

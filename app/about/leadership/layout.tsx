@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/about/leadership" },
   title: "Leadership & Director's Message | Seedling Cambridge Jaipur",
   description:
-    "Meet the leadership of Seedling International Academy & SMIA Jaipur — Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
+    "Meet the leadership of Seedling International Academy & SMIA Jaipur â€” Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
   openGraph: {
     title: "Leadership & Director's Message | Seedling Cambridge Jaipur",
     description:
-      "Meet the leadership of Seedling International Academy & SMIA Jaipur — Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
+      "Meet the leadership of Seedling International Academy & SMIA Jaipur â€” Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
     url: "https://cambridge.seedlingschools.com/about/leadership",
     images: [{ url: "/assets/about/about-banner.jpg", width: 1200, height: 630, alt: "Leadership at Seedling International Academy" }],
   },

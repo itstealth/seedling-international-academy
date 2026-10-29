@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/mandatory-disclosures" },
   title: "Mandatory Disclosures | Seedling Cambridge Schools Jaipur",
   description:
     "Statutory and Cambridge accreditation disclosures for Seedling International Academy and SMIA, Jaipur - registration details, certificates and reports.",

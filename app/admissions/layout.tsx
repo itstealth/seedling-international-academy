@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://cambridge.seedlingschools.com/admissions" },
   title: "Cambridge School Admissions 2026-27 | Jaipur | Seedling",
   description:
     "Apply to Seedling's Cambridge schools in Jaipur for 2026-27. Eligibility, documents, entrance test details and the full step-by-step admission process.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Admissions | Seedling International Academy",
-    description: "Apply to Seedling International Academy — Cambridge IGCSE & A Level school in Jaipur.",
+    description: "Apply to Seedling International Academy â€” Cambridge IGCSE & A Level school in Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };
