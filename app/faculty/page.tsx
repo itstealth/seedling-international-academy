@@ -46,10 +46,10 @@ function Tag({ children, color = "navy" }: { children: React.ReactNode, color?: 
 }
 
 const faculty = [
-  { name: "Cambridge Faculty", subject: "Seedling International School", img: "/assets/img/feature-3.jpg" },
-  // { name: "Cambridge Faculty", subject: "Cambridge International Academy", img: "/assets/img/sia-faculty.jpg" },
+  { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/feature-3.jpg" },
+  // { name: "Cambridge Faculty", subject: "Seedling International Academy", img: "/assets/img/sia-faculty.jpg" },
   { name: "Sports & Co-Curricular", subject: "All Campuses", img: "/assets/img/smhs-sports.jpg" },
-  // { name: "Early Years Educators", subject: "Seedling International School Wonderland Kids League", img: "/assets/Home/classroom1.webp" },
+  // { name: "Early Years Educators", subject: "Seedling Wonderland Kids League", img: "/assets/Home/classroom1.webp" },
   { name: "Science & Labs", subject: "Practical Learning Wing", img: "/assets/img/feature-6.jpg" },
   { name: "Admissions & Counselling", subject: "All Schools", img: "/assets/img/counselling-1.jpg" },
 ];
@@ -134,7 +134,7 @@ export default function FacultyPage() {
       <section className="relative py-48 overflow-hidden">
         <img
           src="/assets/img/life-at-sps.jpg"
-          alt="Join Seedling International School"
+          alt="Join Seedling International Academy"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 via-[#133844]/80 to-navy-dark/70" />
@@ -147,7 +147,7 @@ export default function FacultyPage() {
             </span>
             <h2 className="font-playfair text-4xl md:text-5xl font-light mb-8 text-white">
               Join the{" "}
-              <em className="font-semibold text-sand">Seedling International School Family</em>
+              <em className="font-semibold text-sand">Seedling International Academy Family</em>
             </h2>
             <p className="text-white/70 text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-dm font-light">
               Come feel the Buzz! Parent counselling is available both online and offline. Early bird incentives and scholarships for meritorious students in academics and sports are available. Where every student matters — prioritising well-being since 1993.

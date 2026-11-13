@@ -68,7 +68,7 @@ const sportBlocks = [
     image: "/assets/SPORTS DAY/2.webp",
     tag: "Athletics",
     title: "Sports at Par with Academics",
-    body: "At Seedling International School, sports remain at par with academics, instilling qualities of confidence, teamwork, responsibility, discipline, and leadership. Our organized sports events span from intra-school to national levels, showcasing tremendous growth in students' techniques and performance.",
+    body: "At Seedling International Academy, sports remain at par with academics, instilling qualities of confidence, teamwork, responsibility, discipline, and leadership. Our organized sports events span from intra-school to national levels, showcasing tremendous growth in students' techniques and performance.",
     highlights: ["Intra-School Events", "National Level Tournaments", "Dedicated Coaches"],
     reverse: false,
   },
@@ -140,40 +140,40 @@ const experiences = [
     name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
     image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
-    quote: "Seedling International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
-    school: "Seedling International School",
+    quote: "Seedling International Academy has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Seedling International Academy",
     highlight: "Nurturing Environment",
   },
   {
     name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
     role: "Parents",
     image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
-    quote: "The academic excellence at Seedling International School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
-    school: "Seedling International School",
+    quote: "The academic excellence at Seedling International Academy is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    school: "Seedling International Academy",
     highlight: "Academic Excellence",
   },
   {
     name: "Meghna Manglani",
     role: "Parent",
     image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
-    quote: "At Seedling International School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
-    school: "Seedling International School",
+    quote: "At Seedling International Academy, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Seedling International Academy",
     highlight: "Holistic Development",
   },
   {
     name: "Deepak Adwani & Varsha Adwani",
     role: "Parents",
     image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
-    quote: "We chose Seedling International School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
-    school: "Seedling International School",
+    quote: "We chose Seedling International Academy for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
+    school: "Seedling International Academy",
     highlight: "Safe & Supportive",
   },
   {
     name: "Divya Soni",
     role: "Parent",
     image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
-    quote: "Seedling International School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
-    school: "Seedling International School",
+    quote: "Seedling International Academy prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
+    school: "Seedling International Academy",
     highlight: "Future-Ready",
   },
 ];
@@ -184,7 +184,7 @@ const stripImages = [
   { src: "/assets/img/sps-3.jpg", label: "Student Community" },
   { src: "/assets/img/feature-1.jpg", label: "NEP Curriculum" },
   { src: "/assets/img/feature-4.jpg", label: "Experiential Learning" },
-  { src: "/assets/img/life-at-sps.jpg", label: "Life at Seedling International School" },
+  { src: "/assets/img/life-at-sps.jpg", label: "Life at Seedling International Academy" },
   { src: "/assets/img/feature-2.jpg", label: "State-of-the-Art Facilities" },
   { src: "/assets/img/counselling-1.jpg", label: "Parent Counselling" },
   { src: "/assets/Home/classroom.jpg", label: "Modern Classrooms" },
@@ -648,7 +648,7 @@ function ExperienceSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-sand text-sm uppercase tracking-[0.3em] font-medium">
-            Voices of Seedling International School
+            Voices of Seedling International Academy
           </span>
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-white mt-3">
             Parent
@@ -878,7 +878,7 @@ function CTASection() {
           Join the
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand via-white/50 to-sand">
-            Seedling International School Family
+            Seedling International Academy Family
           </span>
         </h2>
 
@@ -935,9 +935,9 @@ function CTASection() {
   inside a server component that exports metadata.
 
   export const metadata = {
-    title: "School Life | Seedling International School Group",
+    title: "School Life | Seedling Group of Schools",
     description:
-      "Experience life at Seedling International School Group — Jaipur's premier educational institution since 1993. Explore our vibrant campus life, sports, arts, and beyond.",
+      "Experience life at Seedling Group of Schools — Jaipur's premier educational institution since 1993. Explore our vibrant campus life, sports, arts, and beyond.",
   };
 */
 

@@ -35,7 +35,7 @@ export default function PageHero({ title, subtitle, image }: PageHeroProps) {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.4em] text-[#133844] mb-8 block drop-shadow-md font-dm">
-            Seedling International School Group
+            Seedling Group of Schools
           </span>
           <h1 className="text-6xl md:text-[7rem] font-black tracking-tight text-[#133844] leading-[1.1] mb-8 drop-shadow-2xl font-playfair">
             {title}

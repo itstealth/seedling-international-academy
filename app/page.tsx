@@ -1038,7 +1038,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   {[
                     { day: '16', month: 'MAY', title: 'IGCSE Results 2026', desc: 'Cambridge students shine again with 100%.', url: 'https://www.instagram.com/p/DYkBE_6k6I4/?img_index=1' },
                     { day: '10', month: 'May', title: "Mother's Day Celebration", desc: "This Mother's Day, our little learners expressed their love through beautiful paper crafts, celebrating the warmth, care, and magic. ", url: "https://www.instagram.com/p/DYJGy3BgX65/" },
-                    { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International School turned learning into action! From planting saplings to spreading awareness', url: "https://www.instagram.com/p/DXaz2W8CcOI/" },
+                    { day: '26', month: 'APR', title: 'Earth Day Celebration', desc: 'This Earth Day, Seedling International Academy turned learning into action! From planting saplings to spreading awareness', url: "https://www.instagram.com/p/DXaz2W8CcOI/" },
                   ].map(({ day, month, title, desc, url }, index) => (
                     <a key={title} href={url} target="_blank" rel="noopener noreferrer" className="group flex gap-5 items-start bg-blue-100 rounded-[1.75rem] p-5 border border-blue-200 transition-all duration-500 hover:border-crimson/30 hover:shadow-editorial">
                       <div className={`${index === 0 ? 'bg-crimson text-white' : 'bg-navy-light text-navy'} w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 transition-transform group-hover:-translate-y-1`}>
@@ -1075,7 +1075,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                     { src: '/assets/Home/TU5.png', url: 'https://www.instagram.com/p/Dac7NwvoH72/?img_index=5' },
                   ].map(({ src, url }, i) => (
                     <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block rounded-[8px] overflow-hidden aspect-[4/5] border border-sand/30 hover:border-crimson/30 transition-all duration-500 group bg-off-white">
-                      <img src={src} alt={`Seedling International School update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
+                      <img src={src} alt={`Seedling International Academy update ${i + 1}`} className="w-full h-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-1000" />
                     </a>
                   ))}
                 </div>

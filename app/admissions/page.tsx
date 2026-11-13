@@ -139,7 +139,7 @@ const steps = [
   {
     num: "06",
     title: "Confirmation & Welcome",
-    desc: "Receive your admission confirmation. Pay the fee as per the schedule and collect the joining kit. Welcome to the Seedling International School Family!",
+    desc: "Receive your admission confirmation. Pay the fee as per the schedule and collect the joining kit. Welcome to the Seedling International Academy Family!",
     icon: "🎉",
   },
 ];
@@ -175,15 +175,15 @@ const experiences = [
     name: "Vatan Parnami and Anku Sapra",
     role: "Parents",
     image: "/assets/testimonial/school-life/Vatan Parnami and Anku Sapra.jpeg",
-    quote: "Seedling International School has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
-    school: "Seedling International School",
+    quote: "Seedling International Academy has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SPS provides.",
+    school: "Seedling International Academy",
     highlight: "Nurturing Environment",
   },
   {
     name: "Jasvinder Singh Wadhawan & Paramjeet Kaur",
     role: "Parents",
     image: "/assets/testimonial/school-life/JASVINDER SINGH WADHAWAN & PARAMJEET KAUR.jpeg",
-    quote: "The academic excellence at Seedling International School is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
+    quote: "The academic excellence at Seedling International Academy is outstanding. The teachers are dedicated, the curriculum is engaging, and the school ensures every child receives individual attention and guidance.",
     school: "",
     highlight: "Academic Excellence",
   },
@@ -191,24 +191,24 @@ const experiences = [
     name: "Meghna Manglani",
     role: "Parent",
     image: "/assets/testimonial/school-life/MEGHNA MANGLANI.jpeg",
-    quote: "At Seedling International School, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
-    school: "Seedling International School",
+    quote: "At Seedling International Academy, teachers go beyond academics to build character and confidence. Our child has grown not just in knowledge but as a compassionate and curious individual.",
+    school: "Seedling International Academy",
     highlight: "Holistic Development",
   },
   {
     name: "Deepak Adwani & Varsha Adwani",
     role: "Parents",
     image: "/assets/testimonial/school-life/DEEPAK ADWANI & VARSHA ADWANI.jpeg",
-    quote: "We chose Seedling International School for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
-    school: "Seedling International School",
+    quote: "We chose Seedling International Academy for its clean campus, safe environment, and excellent faculty. The school's focus on both studies and extracurricular activities makes it truly special.",
+    school: "Seedling International Academy",
     highlight: "Safe & Supportive",
   },
   {
     name: "Divya Soni",
     role: "Parent",
-    image: "/assets/testimonial/sSeedling International Schoolchool-life/Divya-Soni.jpeg",
-    quote: "Seedling International School prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
-    school: "Seedling International School",
+    image: "/assets/testimonial/school-life/Divya-Soni.jpeg",
+    quote: "Seedling International Academy prepares students for the future with its modern approach to education. The blend of tradition and innovation in teaching methods gives our children an edge in today's world.",
+    school: "Seedling International Academy",
     highlight: "Future-Ready",
   },
 ];
@@ -364,7 +364,7 @@ export default function AdmissionsPage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
-                Seedling International School Group — 5 schools, 2 campuses, Cambridge board. Prioritising student well-being and community interests since 1993.
+                Seedling Group of Schools — 5 schools, 2 campuses, Cambridge board. Prioritising student well-being and community interests since 1993.
               </p>
             </Reveal>
             <Reveal delay={360}>
@@ -401,7 +401,7 @@ export default function AdmissionsPage() {
                 <div className="text-center py-8">
                   <span className="text-5xl block mb-4">✅</span>
                   <p className="display text-2xl font-semibold text-navy mb-2">Thank You!</p>
-                  <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Seedling International School family!</p>
+                  <p className="text-[#555] text-sm leading-relaxed">Our admissions team will contact you within 24 hours. Welcome to the Seedling International Academy family!</p>
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -910,7 +910,7 @@ export default function AdmissionsPage() {
             <div className="mt-16 grid md:grid-cols-3 gap-8">
               {[
                 { icon: "🥇", title: "Merit Scholarships", desc: "Available for academically outstanding students across all schools. Contact the admissions office for eligibility criteria." },
-                { icon: "🏅", title: "Sports Scholarships", desc: "Exceptional athletes may be eligible for fee concessions. Seedling International School values sports performance at par with academic achievement." },
+                { icon: "🏅", title: "Sports Scholarships", desc: "Exceptional athletes may be eligible for fee concessions. Seedling International Academy values sports performance at par with academic achievement." },
                 { icon: "⏰", title: "Early Bird Incentive", desc: "Register early in the admission season to benefit from early bird incentives. Seats are limited — don't wait!" },
               ].map((s) => (
                 <div key={s.title} className={`bg-${["red","blue","green","orange","purple"][i % 5]} border-${["red","blue","green","orange","purple"][i % 5]} rounded-3xl p-8 hover:shadow-xl transition-all duration-500 group text-white`}>
@@ -997,14 +997,14 @@ export default function AdmissionsPage() {
       <section className="py-20 bg-[#d4f4ed] relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-[#133844]">
           <Reveal>
-            <p className="display text-[#133844] text-xl mb-4">The Seedling International School Family Awaits</p>
+            <p className="display text-[#133844] text-xl mb-4">The Seedling International Academy Family Awaits</p>
             <h2 className="display text-4xl md:text-5xl font-light leading-[1.0] mb-6 text-[#133844]">
               Where Every{" "}
               <em className="font-semibold text-[#133844]">Student</em>{" "}
               Matters.
             </h2>
             <p className="text-[#133844] text-lg leading-relaxed mb-12 max-w-xl mx-auto">
-              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling International School advantage — from Playgroup to University.
+              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling International Academy advantage — from Playgroup to University.
             </p>
           </Reveal>
           <Reveal delay={120}>

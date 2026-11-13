@@ -258,7 +258,7 @@ export default function ContactPage() {
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white text-sm font-bold font-dm drop-shadow">State-of-the-art learning environment</p>
-                  <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Seedling International School, Jaipur</p>
+                  <p className="text-white/70 text-[10px] font-black uppercase tracking-widest font-dm">Seedling International Academy, Jaipur</p>
                 </div> */}
               </div>
             </div>
@@ -355,7 +355,7 @@ export default function ContactPage() {
                 <h2
                   className="font-playfair text-3xl md:text-4xl font-bold leading-tight mb-3 text-[#133844]"
                 >
-                  Ready to join the<br />Seedling International School family?
+                  Ready to join the<br />Seedling International Academy family?
                 </h2>
                 <p className="text-[#133844]/75 text-base leading-relaxed font-dm font-light">
                   Visit any of our campuses or start your online application today.

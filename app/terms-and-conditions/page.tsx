@@ -75,8 +75,8 @@ const sections = [
   {
     id: "s8",
     title: "8. Intellectual Property & Copyright",
-    content: "All content published on this website — including text, images, logos, branding, curriculum summaries, and design elements — is the intellectual property of Seedling International School Group or its licensed partners. Content may be viewed and printed solely for personal reference and non-commercial purposes.",
-    callout: "The Seedling International School name, logo, and associated trademarks may not be reproduced, adapted, or used in any form without prior written authorisation from the School Group's management. Unauthorised use will be pursued under applicable Indian intellectual property law.",
+    content: "All content published on this website — including text, images, logos, branding, curriculum summaries, and design elements — is the intellectual property of Seedling Group of Schools or its licensed partners. Content may be viewed and printed solely for personal reference and non-commercial purposes.",
+    callout: "The Seedling International Academy name, logo, and associated trademarks may not be reproduced, adapted, or used in any form without prior written authorisation from the School Group's management. Unauthorised use will be pursued under applicable Indian intellectual property law.",
   },
   {
     id: "s9",
@@ -263,7 +263,7 @@ export default function TermsAndConditions() {
                   By continuing to use this website or enrolling a student at Seedling International Academy, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
                 </p>
                 <div className="pt-8 border-t border-white/10 text-[9px] font-black uppercase tracking-[0.5em] text-[#133844]/30">
-                  © Seedling International School Group | Jaipur, Rajasthan
+                  © Seedling Group of Schools | Jaipur, Rajasthan
                 </div>
               </div>
             </div>

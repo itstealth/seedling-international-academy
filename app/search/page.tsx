@@ -16,7 +16,7 @@ const SEARCH_INDEX: Array<{
 }> = [
   {
     title: "Home",
-    description: "Welcome to Seedling International School — beyond education, into transformation.",
+    description: "Welcome to Seedling International Academy — beyond education, into transformation.",
     href: "/",
     keywords: ["home", "main", "seedling", "international", "school"],
     category: "General",
@@ -30,7 +30,7 @@ const SEARCH_INDEX: Array<{
   },
   {
     title: "Leadership",
-    description: "Meet the leadership team guiding Seedling International School.",
+    description: "Meet the leadership team guiding Seedling International Academy.",
     href: "/about/leadership",
     keywords: ["leadership", "principal", "director", "team", "staff"],
     category: "About",
@@ -100,7 +100,7 @@ const SEARCH_INDEX: Array<{
   },
   {
     title: "Online Registration",
-    description: "Register online for Seedling International School.",
+    description: "Register online for Seedling International Academy.",
     href: "/admissions/online",
     keywords: ["registration", "online", "apply", "form", "enrol"],
     category: "Admissions",
@@ -149,7 +149,7 @@ const SEARCH_INDEX: Array<{
   },
   {
     title: "Contact Us",
-    description: "Get in touch with Seedling International School, Jaipur.",
+    description: "Get in touch with Seedling International Academy, Jaipur.",
     href: "/contact-us",
     keywords: ["contact", "phone", "email", "address", "location", "reach", "jaipur"],
     category: "Connect",

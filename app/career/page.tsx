@@ -97,7 +97,7 @@ const openRoles = [
     board: "All Schools",
     type: "Administrative",
     location: "Jawahar Nagar & Durgapura, Jaipur",
-    desc: "Seedling International School is growing, and so is our administrative team. We welcome organised, professional individuals ready to support the smooth functioning of our campuses and contribute to a thriving school community.",
+    desc: "Seedling International Academy is growing, and so is our administrative team. We welcome organised, professional individuals ready to support the smooth functioning of our campuses and contribute to a thriving school community.",
     tags: ["Administrative", "Operations"],
     urgent: false,
   },
@@ -120,7 +120,7 @@ const whyWork = [
       </svg>
     ),
     title: "Collaborative Culture",
-    desc: "Work alongside a league of exemplary educational leaders who inspire each other. We come together, adapt, and grow — as one Seedling International School family.",
+    desc: "Work alongside a league of exemplary educational leaders who inspire each other. We come together, adapt, and grow — as one Seedling International Academy family.",
   },
   {
     icon: (
@@ -129,7 +129,7 @@ const whyWork = [
       </svg>
     ),
     title: "Meaningful Impact",
-    desc: "Be the guiding light in a student's life. At Seedling International School, teachers impart not just textbook lessons but invaluable life lessons that shape futures.",
+    desc: "Be the guiding light in a student's life. At Seedling International Academy, teachers impart not just textbook lessons but invaluable life lessons that shape futures.",
   },
   {
     icon: (
@@ -165,7 +165,7 @@ const testimonials = [
     name: "Ms. Ishita Mendiratta",
     img: "/assets/testimonial/aditi-sharma.jpg",
     quote:
-      "Working at Seedling International School has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
+      "Working at Seedling International Academy has been a truly enriching experience. The learning environment here is contemporary, hands-on, and deeply connected to real-life experiences, making teaching both meaningful and inspiring. What stands out most is the beautiful teacher-student relationship built on trust, respect, and genuine connection. Every day at Seedling feels like an opportunity to grow, innovate, and make a difference.",
   },
   {
       name: "Ms. Topcee Ahuja",
@@ -598,7 +598,7 @@ export default function CareersPage() {
          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">
         <div className="max-w-2xl text-center">
           <h1 className="font-playfair text-[#133844] font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
-            Career Opportunities at Seedling International School
+            Career Opportunities at Seedling International Academy
           </h1>
           <p className="text-[#133844]/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
             Not Just a Job. A Journey of Impact, Growth & Excellence.
@@ -907,7 +907,7 @@ export default function CareersPage() {
       <section className="py-16 bg-[#1C1C1E] relative overflow-hidden">
         <img
           src="/assets/Home/smart-classroom.jpg"
-          alt="Join the Seedling International School team"
+          alt="Join the Seedling International Academy team"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#133844]/95 to-crimson-dark/70" />

@@ -38,7 +38,7 @@ export default function AdmissionProcessPage() {
       <HeroWrapper
         backgroundImage="/assets/img/sps-banner.jpg"
         title="Admission Process"
-        subtitle="Begin your child's journey with Seedling International School — where excellence meets warmth, and where every enquiry is answered by a person, not a queue."
+        subtitle="Begin your child's journey with Seedling International Academy — where excellence meets warmth, and where every enquiry is answered by a person, not a queue."
         badge="How to Apply"
         breadcrumbs={[{ label: "Admission Process" }]}
       />
@@ -47,7 +47,7 @@ export default function AdmissionProcessPage() {
       <section className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center mb-24">
           <span className="text-label mb-6 block uppercase">Step-by-Step Guide</span>
-          <h2 className="text-heading text-4xl md:text-5xl">Joining Seedling International School.</h2>
+          <h2 className="text-heading text-4xl md:text-5xl">Joining Seedling International Academy.</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -48,7 +48,7 @@ const indianStates = [
    SCHOOL OPTIONS
 ───────────────────────────────────────────── */
 const schoolOptions = [
-  "Seedling International School (Cambridge), Jawahar Nagar, Jaipur",
+  "Seedling International Academy (Cambridge), Jawahar Nagar, Jaipur",
   "Seedling Modern International Academy (Cambridge Board), Durgapura, Jaipur",
 ];
 
@@ -227,7 +227,7 @@ export default function OnlineAdmissionPage() {
   const years = Array.from({ length: 27 }, (_, i) => String(2026 - i));
 
   // Determine class options based on selected school
-  const isSeedlingInternational = formData.school === "Seedling International School (Cambridge), Jawahar Nagar, Jaipur";
+  const isSeedlingInternational = formData.school === "Seedling International Academy (Cambridge), Jawahar Nagar, Jaipur";
   const isSeedlingModern = formData.school === "Seedling Modern International Academy (Cambridge Board), Durgapura, Jaipur";
 
   const filteredClassOptions = isSeedlingInternational

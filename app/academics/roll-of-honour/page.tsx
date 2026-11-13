@@ -103,7 +103,7 @@ export default function RollOfHonourPage() {
                 return [
                   { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },
                   { name: "Subject Toppers", count: "45 Students", sub: "Achieved a perfect 100 in various subjects" },
-                  { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at national level" },
+                  { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International Academy at national level" },
                   { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in Ivy League" }
                 ].map((row, i) => (
                   <motion.div

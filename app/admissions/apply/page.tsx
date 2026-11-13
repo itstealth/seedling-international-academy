@@ -48,7 +48,7 @@ const indianStates = [
    SCHOOL OPTIONS
 ───────────────────────────────────────────── */
 const schoolOptions = [
-  "Seedling International School (Cambridge), Jawahar Nagar, Jaipur",
+  "Seedling International Academy (Cambridge), Jawahar Nagar, Jaipur",
   "Seedling Modern International Academy (Cambridge Board), Durgapura, Jaipur",
 ];
 

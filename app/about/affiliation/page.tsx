@@ -15,7 +15,7 @@ const affiliations = [
   },
   {
     name: "Cambridge Assessment International Education",
-    schools: "Cambridge International Academy & Cambridge International Academy",
+    schools: "Seedling International Academy & Seedling Modern International Academy",
     description: "Offering prestigious global programs such as IGCSE and A-Levels, empowering students with internationally recognized qualifications for elite higher education.",
     acronym: "CAIE",
     icon: Globe,
@@ -54,7 +54,7 @@ export default function AffiliationPage() {
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary font-serif">Recognized.</span>
             </h1>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
-              At Seedling International School, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
+              At Seedling International Academy, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
             </p>
           </motion.div>
         </div>

@@ -50,7 +50,7 @@ const timeline = [
   {
     year: "1993",
     title: "The Seed is Planted",
-    desc: "Late Ms. Mohini Bakshi founded Seedling International School Group of Institutions in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
+    desc: "Late Ms. Mohini Bakshi founded Seedling Group of Schools in Jaipur with a vision to nurture every child as a unique individual — prioritising student well-being and community values above all else.",
     img: "/assets/Home/kindergarten.webp",
     side: "right",
   },
@@ -86,7 +86,7 @@ const timeline = [
   {
     year: "2018",
     title: "Gateway to Higher Education",
-    desc: "Graduating from Seedling International School opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling International School significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
+    desc: "Graduating from Seedling International Academy opens doors to seamless higher education opportunities. With our strong academic foundation, passing out from Seedling International Academy significantly enhances your prospects of securing admission and pursuing advanced degrees at Jaipur National University.",
     img: "/assets/Home/jaipur-national-university.jpg",
     side: "left",
   },
@@ -96,7 +96,7 @@ const leaders = [
   {
     name: "Late Ms. Mohini Bakshi",
     role: "Founder Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "The life of one we love is never lost. Its influence goes on through all the lives it ever touched.",
     img: "/assets/img/mohini.png",
     tag: "Legacy",
@@ -104,7 +104,7 @@ const leaders = [
   {
     name: "Dr. Sandeep Bakshi",
     role: "CEO & Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "To make education monumentally effective, we must teach young people to grow their own plants rather than giving them cut flowers.",
     img: "/assets/img/sandeep.png",
     tag: "Forever New Frontiers",
@@ -112,7 +112,7 @@ const leaders = [
   {
     name: "Dr. Preeti Bakshi",
     role: "Executive Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "Give pupils something to do, not something to learn — and the doing demands thinking; learning naturally results.",
     img: "/assets/img/preeti.png",
     tag: "Creating Fresh Pathways",
@@ -120,7 +120,7 @@ const leaders = [
   {
     name: "Ms. Akansha Bakshi",
     role: "Joint Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "Adaptability to change is itself a hallmark of successful education.",
     img: "/assets/img/akansha.png",
     tag: "Engagement that Empowers",
@@ -128,7 +128,7 @@ const leaders = [
   {
     name: "Ms. Aishwarya Bakshi",
     role: "Joint Director",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "The only person who is educated is the one who has learned how to learn and change.",
     img: "/assets/img/aishwarya.png",
     tag: "Promoting Global Citizenship",
@@ -136,7 +136,7 @@ const leaders = [
   {
     name: "Ms. Shrut Kukar",
     role: "Principal",
-    sub: "Seedling International School Group of Institutions",
+    sub: "Seedling Group of Schools",
     quote: "Education is the kindling of a flame, not the filling of a vessel.",
     img: "/assets/Home/principle.jpeg",
     tag: "Inspiring the Next Generation",
@@ -239,7 +239,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
-                Founded in 1993 by the visionary late Ms. Mohini Bakshi, Seedling International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1993 by the visionary late Ms. Mohini Bakshi, Seedling Group of Schools was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
@@ -270,12 +270,12 @@ export default function AboutPage() {
             <div className="relative">
               <img
                 src="/assets/Home/MainCampus.webp"
-                alt="Seedling International School Students Learning"
+                alt="Seedling International Academy Students Learning"
                 className="w-full h-[560px] object-cover rounded-2xl shadow-2xl transition-all duration-700"
               />
               <img
                 src="/assets/about/grow.jpg"
-                alt="Seedling International School Campus Life"
+                alt="Seedling International Academy Campus Life"
                 className="absolute -bottom-8 -left-8 w-48 h-48 object-cover rounded-2xl shadow-xl border-4 border-white"
               />
               <div className="absolute -top-6 -right-6 bg-crimson text-white rounded-2xl px-6 py-4 shadow-xl">
@@ -441,7 +441,7 @@ export default function AboutPage() {
       <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden bg-crimson">
         {/* <img
           src="/assets/about/feature-education.png"
-          alt="Seedling International School Philosophy"
+          alt="Seedling International Academy Philosophy"
           className="absolute inset-0 w-full h-full object-cover object-center"
         /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-crimson via-crimson-dark/30 to-crimson-darker" />
@@ -612,7 +612,7 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-white mb-8">
               Ready to Join the<br />
-              <em className="font-semibold text-sand">Seedling International School Family?</em>
+              <em className="font-semibold text-sand">Seedling International Academy Family?</em>
             </h2>
             <p className="text-white/60 text-xl mb-12 font-dm max-w-2xl mx-auto">
               Admissions open for 2026–27. Step into a world of limitless possibilities.

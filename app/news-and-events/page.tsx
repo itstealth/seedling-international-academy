@@ -101,7 +101,7 @@ const foundationItems = [
   {
     id: 1,
     category: "Foundation",
-    title: "Foundation Day Celebrations at Seedling International School",
+    title: "Foundation Day Celebrations at Seedling International Academy",
     date: "2024",
     image: "/assets/Media/foundation/media-coverage-1.jpeg",
     color: "bg-navy",
@@ -224,7 +224,7 @@ export default function CampusHighlightsPage() {
                         SPS Annual Day
                       </h2>
                       <p className="text-white/70 text-xs mt-1 line-clamp-1 font-dm font-light">
-                        An evening of performances, awards, and shared pride across the Seedling International School family.
+                        An evening of performances, awards, and shared pride across the Seedling International Academy family.
                       </p>
                     </div>
                   </div>
@@ -412,7 +412,7 @@ export default function CampusHighlightsPage() {
             <div className="mb-12">
               <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-navy uppercase mb-3 font-dm">
                 <span className="w-8 h-px bg-navy" />
-                Snippets of Seedling International School
+                Snippets of Seedling International Academy
               </span>
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
                 Life at<br />
@@ -565,7 +565,7 @@ const newsItems = [
   {
     id: 2,
     category: "In the News",
-    title: "Challengers Trophy 2026 Winners Honoured by Seedling International School Group",
+    title: "Challengers Trophy 2026 Winners Honoured by Seedling Group of Schools",
     date: "26 Apr 2026",
     image: "/assets/Media/media-coverage-2.jpeg",
     color: "bg-crimson",
@@ -597,7 +597,7 @@ const newsItems = [
   {
     id: 6,
     category: "Media Spotlight",
-    title: "Sacred Guruji Satsang Held at Seedling International School",
+    title: "Sacred Guruji Satsang Held at Seedling International Academy",
     date: "13 Jan 2026",
     image: "/assets/Media/media-coverage-6.jpeg",
     color: "bg-navy",
@@ -605,7 +605,7 @@ const newsItems = [
   {
     id: 7,
     category: "Media Spotlight",
-    title: "Class of 2000 Alumni Reunite at Seedling International School to Celebrate 25th Anniversary",
+    title: "Class of 2000 Alumni Reunite at Seedling Public School to Celebrate 25th Anniversary",
     date: "11 Jan 2026",
     image: "/assets/Media/media-coverage-7.jpeg",
     color: "bg-crimson",
@@ -661,8 +661,8 @@ const newsItems = [
   // {
   //   id: 14,
   //   category: "Media Spotlight",
-  //   title: "Seedling International School Excellence Featured in News",
-  //   excerpt: "Catch the latest coverage of Seedling International School Group as we continue our journey of educational excellence.",
+  //   title: "Seedling International Academy Excellence Featured in News",
+  //   excerpt: "Catch the latest coverage of Seedling Group of Schools as we continue our journey of educational excellence.",
   //   date: "23 Nov 2025",
   //   image: "/assets/Media/media-coverage-14.jpeg",
   //   color: "bg-crimson-dark",
@@ -678,7 +678,7 @@ const newsItems = [
   {
     id: 16,
     category: "Media Spotlight",
-    title: "Patrika Plus: Seedling International School Students Excel in Annual Sports Day Athletics",
+    title: "Patrika Plus: Seedling Public School Students Excel in Annual Sports Day Athletics",
     date: "05 Nov 2025",
     image: "/assets/Media/media-coverage-16.jpeg",
     color: "bg-navy",
@@ -718,7 +718,7 @@ const newsItems = [
   {
     id: 21,
     category: "Media Spotlight",
-    title: "Seedling International School Students Shine in Cambridge Boards — Sanyam Agrawal Scores 99.2% in Commerce",
+    title: "Seedling Public School Students Shine in CBSE Boards — Sanyam Agrawal Scores 99.2% in Commerce",
     date: "15 May 2025",
     image: "/assets/Media/media-coverage-21.jpeg",
     color: "bg-navy",
@@ -829,7 +829,7 @@ const events = [
     date: "May 20",
     year: "2025",
     description:
-      "100% results year after year — celebrating the outstanding academic achievements of Seedling International School students.",
+      "100% results year after year — celebrating the outstanding academic achievements of Seedling International Academy students.",
     image: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",
@@ -841,7 +841,7 @@ const events = [
     date: "December 24",
     year: "2024",
     description:
-      "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling International School community.",
+      "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling International Academy community.",
     image: "/assets/XMAS CARNIVAL/christmas.webp",
     tag: "Festival",
     tagColor: "bg-[#133844]",
