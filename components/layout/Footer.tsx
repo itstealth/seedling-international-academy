@@ -110,7 +110,7 @@ export default function Footer() {
                             <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-sand" strokeWidth={2} />
                             <div>
                               <span className="block">{phone.value}</span>
-                              <span className="block text-[10px] uppercase tracking-widest text-white/40 mt-0.5">{phone.label}</span>
+                              <span className="block text-[10px] uppercase tracking-widest text-white/70 mt-0.5">{phone.label}</span>
                             </div>
                           </a>
                         ))}

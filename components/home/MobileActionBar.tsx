@@ -21,7 +21,7 @@ export default function MobileActionBar() {
         href={`https://wa.me/${ADMISSIONS_PHONE.slice(1)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex min-h-16 flex-col items-center justify-center gap-0.5 border-x border-slate-200 text-[#008d7b]"
+        className="flex min-h-16 flex-col items-center justify-center gap-0.5 border-x border-slate-200 text-[#007566]"
         aria-label="Message Seedling International Academy on WhatsApp"
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -33,7 +33,7 @@ export default function MobileActionBar() {
       <a
         href="/#home-enquiry"
         className="flex min-h-16 flex-col items-center justify-center gap-0.5 text-[#cf003d]"
-        aria-label="Go to the admission enquiry form"
+        aria-label="Enquire Now - Go to admission enquiry form"
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M14 5 19 10M3 21l5-1 13-13a2.83 2.83 0 0 0-4-4L4 16l-1 5Z" />

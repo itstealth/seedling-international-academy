@@ -18,14 +18,14 @@ function CallbackForm() {
 
 // Campus Life gallery images (new set)
 const campusGallery = [
-  { src: "/DSC_2180.JPG", alt: "Educator pinning a badge of honor on a student's uniform during a school ceremony" },
-  { src: "/students-values-board.jpeg", alt: "Three young students proudly displaying their certificates in front of a colorful Values board" },
-  { src: "/IMG_5875.JPG", alt: "Group of students dressed up in various costumes for a school fancy dress and role play event" },
-  { src: "/IMG_5865.JPG", alt: "Student proudly holding a golden trophy and achievement certificate" },
-  { src: "/DSC_2204.JPG", alt: "Students making heart shapes with their hands in front of an Earth Day celebration board" },
-  { src: "/collaborative-learning.jpeg", alt: "Students participating in collaborative campus learning activities" },
-  { src: "/interactive-classroom.jpeg", alt: "Engaged students taking part in interactive classroom sessions" },
-  { src: "/outdoor-campus-life.jpeg", alt: "Students enjoying outdoor campus life and school events" },
+  { src: "/DSC_2180.webp", alt: "Educator pinning a badge of honor on a student's uniform during a school ceremony" },
+  { src: "/students-values-board.webp", alt: "Three young students proudly displaying their certificates in front of a colorful Values board" },
+  { src: "/IMG_5875.webp", alt: "Group of students dressed up in various costumes for a school fancy dress and role play event" },
+  { src: "/IMG_5865.webp", alt: "Student proudly holding a golden trophy and achievement certificate" },
+  { src: "/DSC_2204.webp", alt: "Students making heart shapes with their hands in front of an Earth Day celebration board" },
+  { src: "/collaborative-learning.webp", alt: "Students participating in collaborative campus learning activities" },
+  { src: "/interactive-classroom.webp", alt: "Engaged students taking part in interactive classroom sessions" },
+  { src: "/outdoor-campus-life.webp", alt: "Students enjoying outdoor campus life and school events" },
 ];
 
 // ─── Main Page Component ─────────────────────────────────────────────────────
@@ -50,8 +50,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
   // World-Class Facilities tab data
   const infraData: Record<TabKey, Array<{ img: string; alt: string; tag: string; title: string; desc: string }>> = {
     campus: [
-      { img: '/P1676425.JPG', alt: 'Green Smart City Project', tag: 'Sustainability', title: 'Green Smart City Project', desc: 'Our students engineered a working model of a sustainable city — comparing air pollution in India and China with a green-smart-city solution powered by solar energy, electric vehicles, and clean urban design.' },
-      { img: '/assets/Home/science-lab.jpg', alt: 'Science Lab', tag: 'Science Lab', title: 'Modern Science Labs', desc: 'Modern science labs with advanced tools encouraging innovation and practical learning for every student.' },
+      { img: '/P1676425.webp', alt: 'Green Smart City Project', tag: 'Sustainability', title: 'Green Smart City Project', desc: 'Our students engineered a working model of a sustainable city — comparing air pollution in India and China with a green-smart-city solution powered by solar energy, electric vehicles, and clean urban design.' },
+      { img: '/assets/Home/science-lab.webp', alt: 'Science Lab', tag: 'Science Lab', title: 'Modern Science Labs', desc: 'Modern science labs with advanced tools encouraging innovation and practical learning for every student.' },
       { img: '/assets/STELLAR SATURDAYS/4.webp', alt: 'Library', tag: 'Library', title: 'Resource-Rich Library', desc: 'A vast collection of books, e-resources, and periodicals encouraging a love of reading and independent research.' },
     ],
     labs: [
@@ -62,7 +62,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     sports: [
       { img: '/assets/SPORTS DAY/1.webp', alt: 'Sports Ground', tag: 'Outdoor', title: 'Multi-Sport Ground', desc: 'Dedicated grounds for cricket, football, athletics, and kabaddi — built to national standards.' },
       { img: '/assets/STELLAR SATURDAYS/1.webp', alt: 'Swimming Pool', tag: 'Aquatics', title: 'Swimming Pool', desc: 'Swimming pool with qualified coaches for beginner and advanced swimmers from Grade 3 onwards.' },
-      { img: '/assets/SPORTS%20DAY/basketball.JPG', alt: 'Basketball', tag: 'Outdoor', title: 'Basketball', desc: 'Well-maintained basketball courts for competitive play and physical development.' },
+      { img: '/assets/SPORTS DAY/basketball.webp', alt: 'Basketball', tag: 'Outdoor', title: 'Basketball', desc: 'Well-maintained basketball courts for competitive play and physical development.' },
     ],
     arts: [
       { img: '/assets/ANNUAL FUNCTION/5.webp', alt: 'Music Room', tag: 'Music', title: 'Music & Dance Studio', desc: 'Fully equipped studios for classical and contemporary music, dance, and performing arts for all grades.' },
@@ -339,6 +339,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                         <img
                           src={campus.images[0]}
                           alt={campus.name}
+                          loading="lazy"
+                          decoding="async"
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                         />
                       ) : (
@@ -348,6 +350,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                               <img
                                 src={imgSrc}
                                 alt={`${campus.name} student collage ${idx + 1}`}
+                                loading="lazy"
+                                decoding="async"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                               />
                             </div>
@@ -404,10 +408,10 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                   { title: 'University Counselling', desc: "Dedicated guidance that starts well before Class 12 and stays with every student through shortlisting, applications, personal statements and interview preparation for universities across India." },
                 ].map(({ title, desc }) => (
                   <div key={title} className="group border-t-2 border-ink/10 pt-5 transition-colors duration-300 hover:border-crimson/70">
-                    <h4 className="text-[15px] font-bold text-ink mb-2 uppercase tracking-wide font-dm flex items-center gap-2.5">
+                    <h3 className="text-[15px] font-bold text-ink mb-2 uppercase tracking-wide font-dm flex items-center gap-2.5">
                       <ArrowRight className="h-3.5 w-3.5 text-crimson transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2} aria-hidden="true" />
                       {title}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-ink-soft leading-relaxed font-light">{desc}</p>
                   </div>
                 ))}
@@ -417,7 +421,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               {/* offset navy frame gives the photo weight without a dark ground */}
               <div className="absolute -right-3 -top-3 h-full w-full rounded-[8px] border-2 border-navy/15 pointer-events-none" />
               <div className="rounded-[8px] overflow-hidden h-[440px] md:h-[520px] relative shadow-xl shadow-navy/10">
-                <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
+                <img src="/assets/ANNUAL FUNCTION/2.webp" alt="Students Learning" loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/35 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="absolute -bottom-6 -left-4 bg-white border-l-4 border-crimson rounded-[8px] px-7 py-6 z-10 shadow-lg">
@@ -537,14 +541,17 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       <section className="bg-white w-full border-b border-hairline" id="global-reach">
         <div className="mx-auto max-w-7xl px-6 py-6 md:py-10">
           <motion.img
-            src="/assets/Home/cambridge-worldwide-map.png"
+            src="/assets/Home/cambridge-worldwide-map.webp"
             alt="Cambridge Worldwide — empowering learners and schools to shape a better world. 10,000+ schools, 160+ countries, 40+ governments."
+            width={1535}
+            height={981}
             className="w-full h-auto block rounded-lg"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -556,7 +563,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
           style={{
-            backgroundImage: "url('/assets/Home/cambridge_uk_building.jpg')",
+            backgroundImage: "url('/assets/Home/cambridge_uk_building.webp')",
             filter: "saturate(0.80) brightness(0.95)",
           }}
         />
@@ -736,7 +743,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         {/* Subtle architectural background — Cambridge building sketch */}
         <div
           className="absolute inset-0 opacity-[0.18] bg-cover bg-center pointer-events-none"
-          style={{ backgroundImage: "url('/assets/Home/cambridge-sketch.jpeg')" }}
+          style={{ backgroundImage: "url('/assets/Home/cambridge-sketch.webp')" }}
         />
 
         {/* Right-side floating action buttons */}
@@ -785,7 +792,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {[
               {
                 label: "STUDENT",
-                img: "/0N9A9674.JPG",
+                img: "/0N9A9674.webp",
                 quote: "I came to Seedling in Grade 9 and immediately felt at home. Today I'm an A-Level topper and a published debater. This place changed my life.",
                 name: "Isha Rathore",
                 role: "Student — Grade 12",
@@ -796,7 +803,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               },
               {
                 label: "PARENT",
-                img: "/assets/testimonial/Vatan Parnami and Anku Sapra.png",
+                img: "/assets/testimonial/Vatan Parnami and Anku Sapra.webp",
                 quote: "Seedling International Academy has been a second home for our child. The warmth, care, and attention given to every student is remarkable. We are grateful for the strong foundation SIA provides.",
                 name: "Vatan Parnami & Anku Sapra",
                 role: "Parents",
@@ -807,7 +814,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               },
               {
                 label: "FACULTY",
-                img: "/0N9A9612.JPG",
+                img: "/0N9A9612.webp",
                 quote: "As an educator myself, I'm amazed by Seedling's teaching standards. The faculty genuinely cares, and the leadership is always open to dialogue and growth.",
                 name: "Dr. Neha Kapoor",
                 role: "Educator & Parent",
@@ -836,6 +843,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                             src={card.img}
                             alt={card.name + " - Testimonial, Seedling International Academy"}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
 
@@ -882,6 +891,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                           src={card.img}
                           alt={card.name + " - Testimonial, Seedling International Academy"}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
 
@@ -932,36 +943,36 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
             {/* Row 1 - Left big, Right stacked */}
             <div className="grid grid-cols-3 gap-4 h-[400px] lg:h-[460px]">
               <div className="col-span-2 row-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[0].src} alt={campusGallery[0].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[0].src} alt={campusGallery[0].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[1].src} alt={campusGallery[1].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[1].src} alt={campusGallery[1].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[2].src} alt={campusGallery[2].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[2].src} alt={campusGallery[2].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
             {/* Row 2 - 1 image left, Wide right */}
             <div className="grid grid-cols-3 gap-4 h-[300px] lg:h-[360px]">
               <div className="col-span-1 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[3].src} alt={campusGallery[3].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[3].src} alt={campusGallery[3].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="col-span-2 group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[4].src} alt={campusGallery[4].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[4].src} alt={campusGallery[4].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
 
             {/* Row 3 - three across */}
             <div className="grid grid-cols-3 gap-4 h-[260px] lg:h-[320px]">
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[5].src} alt={campusGallery[5].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[5].src} alt={campusGallery[5].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[6].src} alt={campusGallery[6].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[6].src} alt={campusGallery[6].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
               <div className="group relative rounded-[8px] overflow-hidden">
-                <img src={campusGallery[7].src} alt={campusGallery[7].alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={campusGallery[7].src} alt={campusGallery[7].alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             </div>
           </div>
@@ -970,7 +981,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {campusGallery.slice(0, 8).map((imgObj, i) => (
               <div key={i} className="group relative rounded-[8px] overflow-hidden aspect-square">
-                <img src={imgObj.src} alt={imgObj.alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src={imgObj.src} alt={imgObj.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
             ))}
           </div>
@@ -1119,6 +1130,8 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                 <img
                   src={infraData[activeTab][0].img}
                   alt={infraData[activeTab][0].alt}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1800ms] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#133844]/90 via-[#133844]/25 to-transparent" />
@@ -1149,7 +1162,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       className={`group grid sm:grid-cols-[180px_1fr] ${c.bg} rounded-3xl overflow-hidden border-2 ${c.border} ${c.shadow} hover:shadow-lg hover:-translate-y-1 transition-all duration-500`}
                     >
                       <div className="h-52 sm:h-full min-h-[200px] overflow-hidden">
-                        <img src={img} alt={alt} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <img src={img} alt={alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                       </div>
                       <div className="p-6 flex flex-col justify-center">
                         <span className="inline-block w-fit text-white text-[10px] font-bold tracking-widest uppercase mb-3 border-b border-white/30 pb-1">

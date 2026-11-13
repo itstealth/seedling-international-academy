@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 const HLS_SRC = '/video/hero/playlist.m3u8';
 const WEBM_SRC = '/video/hero/fallback.webm';
-const POSTER = '/video/hero/poster.jpg';
+const POSTER = '/video/hero/poster.webp';
 
 /**
  * Hero background video.
@@ -28,6 +28,9 @@ export default function HeroVideo({
     const video = videoRef.current;
     if (!video) return;
 
+    let hlsInstance: import('hls.js').default | null = null;
+    let cancelled = false;
+
     // Autoplay is only permitted while muted; retry once if it's refused.
     const play = () => {
       video.play().catch(() => {
@@ -39,45 +42,46 @@ export default function HeroVideo({
     };
     video.addEventListener('loadeddata', play);
 
-    // Safari handles HLS without a library.
-    if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = HLS_SRC;
-      return () => video.removeEventListener('loadeddata', play);
-    }
+    // Defer non-critical video stream until main thread completes initial hydration
+    const timer = setTimeout(() => {
+      if (cancelled) return;
 
-    let hlsInstance: import('hls.js').default | null = null;
-    let cancelled = false;
+      // Safari handles HLS without a library.
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = HLS_SRC;
+        return;
+      }
 
-    import('hls.js')
-      .then(({ default: Hls }) => {
-        if (cancelled) return;
-        if (!Hls.isSupported()) {
-          // No MSE — use the progressive WebM instead of leaving it blank.
-          video.src = WEBM_SRC;
-          return;
-        }
-        hlsInstance = new Hls({
-          autoStartLoad: true,
-          startLevel: 0,
-          // Keep the whole clip buffered; it's only ~3MB and it loops.
-          maxBufferLength: 60,
-        });
-        hlsInstance.loadSource(HLS_SRC);
-        hlsInstance.attachMedia(video);
-        hlsInstance.on(Hls.Events.ERROR, (_e, data) => {
-          if (data.fatal) {
-            hlsInstance?.destroy();
-            hlsInstance = null;
+      import('hls.js')
+        .then(({ default: Hls }) => {
+          if (cancelled) return;
+          if (!Hls.isSupported()) {
             video.src = WEBM_SRC;
+            return;
           }
+          hlsInstance = new Hls({
+            autoStartLoad: true,
+            startLevel: 0,
+            maxBufferLength: 60,
+          });
+          hlsInstance.loadSource(HLS_SRC);
+          hlsInstance.attachMedia(video);
+          hlsInstance.on(Hls.Events.ERROR, (_e, data) => {
+            if (data.fatal) {
+              hlsInstance?.destroy();
+              hlsInstance = null;
+              video.src = WEBM_SRC;
+            }
+          });
+        })
+        .catch(() => {
+          if (!cancelled) video.src = WEBM_SRC;
         });
-      })
-      .catch(() => {
-        if (!cancelled) video.src = WEBM_SRC;
-      });
+    }, 2500);
 
     return () => {
       cancelled = true;
+      clearTimeout(timer);
       video.removeEventListener('loadeddata', play);
       hlsInstance?.destroy();
     };
@@ -91,7 +95,7 @@ export default function HeroVideo({
       muted
       loop
       playsInline
-      preload="auto"
+      preload="none"
       poster={POSTER}
       disablePictureInPicture
       disableRemotePlayback

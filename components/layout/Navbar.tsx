@@ -446,8 +446,8 @@ function DesktopNav({ pathname }: { pathname: string }) {
                 aria-expanded={isOpen}
                 className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? "bg-white text-[#133844]"
-                    : "text-white/90 hover:bg-white/10 hover:text-white"
+                    ? "bg-white text-[#133844] shadow-sm"
+                    : "text-[#082630] hover:bg-white/20 hover:text-black"
                 }`}
               >
                 <span>{item.name}</span>
@@ -461,8 +461,8 @@ function DesktopNav({ pathname }: { pathname: string }) {
                 href={item.href}
                 className={`group inline-flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.14em] transition-colors duration-200 whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? "bg-white text-[#133844]"
-                    : "text-white/90 hover:bg-white/10 hover:text-white"
+                    ? "bg-white text-[#133844] shadow-sm"
+                    : "text-[#082630] hover:bg-white/20 hover:text-black"
                 }`}
               >
                 <span>{item.name}</span>
@@ -655,7 +655,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/"
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-[#082630] hover:text-black transition-all hover:scale-110"
                   aria-label="Home"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
@@ -664,7 +664,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={() => setShowSearchPopup(true)}
-                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-white/80 hover:text-white transition-all hover:scale-110 hover:rotate-6"
+                  className="hidden sm:inline-flex items-center justify-center w-10 h-10 text-[#082630] hover:text-black transition-all hover:scale-110 hover:rotate-6"
                   aria-label="Open search"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">

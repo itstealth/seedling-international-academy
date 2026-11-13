@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Marcellus, Source_Sans_3 } from "next/font/google";
-import { headers } from "next/headers";
 import Script from "next/script";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
@@ -75,34 +74,37 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const pathname = headersList.get("x-route-pathname") ?? "/";
-  const isErpLogin = pathname.startsWith("/erp-login");
-
   return (
     <html
       lang="en"
       className={`${geistMono.variable} ${sourceSans.variable} ${marcellus.variable} h-full antialiased`}
     >
       <head>
-        <Script id="google-tag-manager" strategy="beforeInteractive">
+        <link
+          rel="preload"
+          as="image"
+          href="/video/hero/poster.webp"
+          fetchPriority="high"
+          type="image/webp"
+        />
+        <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MS6FKS3S');`}
         </Script>
-        <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-83PTXLJEJ1"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -113,13 +115,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body className="min-h-full flex flex-col pb-16 font-sans antialiased sm:pb-0">
-        <script dangerouslySetInnerHTML={{ __html: `var npf_d='https://apply.seedlingschools.com';var npf_c='7260';var npf_m='1';var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://track.nopaperforms.com/js/track.js";document.body.appendChild(s);` }} />
+        <Script id="npf-tracking" strategy="lazyOnload">
+          {`var npf_d='https://apply.seedlingschools.com';var npf_c='7260';var npf_m='1';var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://track.nopaperforms.com/js/track.js";document.body.appendChild(s);`}
+        </Script>
         <LeadAttribution />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MS6FKS3S"
             height="0"
             width="0"
+            title="Google Tag Manager"
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
@@ -128,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main className="flex-1 flex flex-col">
           {children}
         </main>
-        {!isErpLogin && <FooterWrapper />}
+        <FooterWrapper />
       </body>
     </html>
   );
