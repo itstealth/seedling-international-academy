@@ -123,15 +123,15 @@ const learningApproaches = [
 
 const programs = [
   {
-    level: "Pre Primary",
-    range: "Age 3-5",
+    level: "Pre-Primary",
+    range: "Ages 3-5",
     desc: "Play-based learning that builds strong foundations in literacy, numeracy, and creativity.",
     img: "/assets/SHOWCASING WONDERLAND/1.webp",
     color: "from-amber-500/80",
   },
   {
     level: "Primary",
-    range: "Class I-V",
+    range: "Classes I-V",
     desc: "Inquiry-led education encouraging curiosity, confidence, and a love for learning.",
     img: "/assets/Home/primary-school.jpg",
     color: "from-amber-500/80",
@@ -230,7 +230,7 @@ export default function AcademicsPage() {
               </div> */}
               <h3 className="font-playfair text-3xl md:text-4xl font-semibold text-ink mb-6 leading-snug">Cambridge Curriculum</h3>
               <p className="text-text-light leading-[1.9] text-lg font-dm font-light mb-8">
-                Affiliated with the Cambridge Board , our Cambridge schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
+                Affiliated with the Cambridge Board, our Cambridge schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["NEP Aligned", "100% Board Results", "Personalised Learning"].map((h) => (
@@ -260,7 +260,7 @@ export default function AcademicsPage() {
                 <span className="text-[#133844]">Rooted in Values</span>
               </h2>
               <p className="text-[#133844]/60 text-lg mt-4 max-w-2xl mx-auto font-dm font-light">
-                Our goal is to equip students with knowledge and skills they need to succeed while promoting their
+                Our goal is to equip students with the knowledge and skills they need to succeed while promoting their
                 personal growth and holistic development.
               </p>
             </div>
@@ -354,7 +354,7 @@ export default function AcademicsPage() {
               Cambridge Learner Profile
             </span> */}
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              We train <em className="font-semibold text-[#133844]">Seedlites</em> <span className="ml-2">to be.....</span>
+              We train <em className="font-semibold text-[#133844]">Seedlites</em> <span className="ml-2">to be...</span>
             </h2>
           </Reveal>
 

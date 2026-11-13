@@ -96,7 +96,7 @@ const MandatoryDisclosure = () => {
                 <span className="font-bold text-[#133844]">1993</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Valid Upto</span>
+                <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Valid Up To</span>
                 <span className="font-bold text-[#133844]">31 March 2025</span>
               </div>
             </div>
@@ -116,7 +116,7 @@ const MandatoryDisclosure = () => {
                 <span className="font-bold text-[#133844] text-right max-w-[180px]">Mahima Shiksha Samiti</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Reg. Valid Upto</span>
+                <span className="text-text-light text-sm uppercase tracking-widest font-black text-[10px]">Reg. Valid Up To</span>
                 <span className="font-bold text-[#133844]">10 May 2024</span>
               </div>
             </div>

@@ -7,12 +7,12 @@ const sections = [
   {
     id: "s1",
     title: "1. Admissions & Fee Policy",
-    content: "Admission to Seedling International Academy (Cambridge) is subject to availability of seats, age eligibility as per Cambridge International guidelines, and satisfactory completion of the interaction/assessment process. Submission of an online application form and payment of the registration fee does not guarantee admission.",
+    content: "Admission to Seedling International Academy (Cambridge) is subject to availability of seats, age eligibility as per Cambridge International guidelines, and satisfactory completion of the interaction/assessment process. Submission of an online application form and payment of the registration fee do not guarantee admission.",
     callout: "The registration fee is non-refundable under any circumstances. Tuition and other fees paid after confirmation of admission are governed by the Fee Refund Policy communicated at the time of admission. No cash refunds are processed after the academic session commences.",
     list: [
       "Direct admissions to Class 10 (IGCSE 2) and Class 12 (A Level 2) are not permitted except as per Cambridge bye-laws",
       "Admissions to Class 9 (IGCSE 1) and Class 11 (A Level 1) require passing of the school's entrance examination",
-      "Age criteria follow Cambridge International Education (CIE) standards and are verified at time of document submission",
+      "Age criteria follow Cambridge International Education (CIE) standards and are verified at the time of document submission",
       "The School reserves the right to withdraw an offer of admission if documents submitted are found to be incorrect or fraudulent",
     ],
   },
@@ -25,7 +25,7 @@ const sections = [
   {
     id: "s3",
     title: "3. Student Data & Privacy",
-    content: "Seedling International Academy collects and processes personal data — including student names, dates of birth, Aadhar numbers, academic records, and parent contact details — solely for the purpose of providing educational services, managing school operations, and fulfilling statutory reporting obligations.",
+    content: "Seedling International Academy collects and processes personal data — including student names, dates of birth, Aadhaar numbers, academic records, and parent contact details — solely for the purpose of providing educational services, managing school operations, and fulfilling statutory reporting obligations.",
     list: [
       "Data is stored securely and accessed only by authorised staff members",
       "Student data is not sold, rented, or shared with third parties for commercial purposes",

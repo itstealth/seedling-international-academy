@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Us | Seedling International Academy",
     description:
-      "Reach Seedling International Academy's admissions team in Jaipur. SIA at Jawahar Nagar â€” +91 74130 12351. SMIA at Durgapura â€” +91 95877 72837.",
+      "Reach Seedling International Academy's admissions team in Jaipur. SIA at Jawahar Nagar — +91 74130 12351. SMIA at Durgapura — +91 95877 72837.",
     url: "https://cambridge.seedlingschools.com/contact-us",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Contact Seedling International Academy" }],
   },

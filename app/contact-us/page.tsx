@@ -22,7 +22,7 @@ const STATS = [
 
 const HOURS = [
   { day: 'Monday – Friday', time: '8:30 AM – 6:30 PM', open: true },
-  { day: 'Saturday', time: '8.30 AM – 5.30 PM', open: true },
+  { day: 'Saturday', time: '8:30 AM – 5:30 PM', open: true },
   { day: 'Sunday', time: 'Closed', open: false },
   { day: 'Public Holidays', time: 'Closed', open: false },
 ]
@@ -232,7 +232,7 @@ export default function ContactPage() {
 
               <ul className="space-y-3 mb-10">
                 {[
-                  'Admissions open for 2026–27 session',
+                  'Admissions open for the 2026–27 session',
                   'Cambridge Board programmes available',
                   'NEP-aligned innovative curriculum',
                   'Three decades of excellence in education',

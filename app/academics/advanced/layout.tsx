@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cambridge AS & A Level School in Jaipur | Seedling Advanced",
-    description: "Cambridge AS & A Levels at Seedling Jaipur â€” 50+ subjects, IPQ and university counselling.",
+    description: "Cambridge AS & A Levels at Seedling Jaipur — 50+ subjects, IPQ and university counselling.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

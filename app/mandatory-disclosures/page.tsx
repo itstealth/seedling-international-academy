@@ -30,15 +30,15 @@ const mandatoryData = [
     details: [
       { label: "Affiliation Number", value: "1730084" },
       { label: "Affiliation with the Board since", value: "1993" },
-      { label: "Extension of Affiliation upto", value: "31.03.2027" },
+      { label: "Extension of Affiliation up to", value: "31.03.2027" },
     ]
   },
   {
     section: "5",
-    field: "Name of Trust/ Society/ Company registered under Section 25 of the Company Act, 1956",
+    field: "Name of Trust/ Society/ Company registered under Section 25 of the Companies Act, 1956",
     value: "Mahima Shiksha Samiti",
     details: [
-      { label: "Period upto which Registration of Trust/ Society is valid", value: "10.05.2024" },
+      { label: "Period up to which Registration of Trust/ Society is valid", value: "10.05.2024" },
     ]
   },
   {
@@ -56,9 +56,9 @@ const mandatoryData = [
       "Fee structure",
       "DEO Certificate",
       "Annual Academic Calendar",
-      "List Of School Management Committee (SMC)",
-      "List Of Parents Teacher Association (PTA) Members",
-      "Last Three-Year Result Of The Board Examination",
+      "List of School Management Committee (SMC)",
+      "List of Parents Teacher Association (PTA) Members",
+      "Last Three-Year Result of the Board Examination",
       "Fire Fighting Certificate",
     ]
   },

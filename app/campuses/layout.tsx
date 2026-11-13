@@ -6,16 +6,16 @@ export const metadata: Metadata = {
   description:
     "Compare Seedling's two Cambridge campuses in Jaipur - SIA at Jawahar Nagar and SMIA at Durgapura. Facilities, class sizes, results and how to visit.",
   openGraph: {
-    title: "Our Campuses â€” SIA & SMIA | Seedling International Academy",
+    title: "Our Campuses — SIA & SMIA | Seedling International Academy",
     description:
-      "Explore Seedling International Academy's two Cambridge campuses in Jaipur â€” SIA at Jawahar Nagar and SMIA at Durgapura.",
+      "Explore Seedling International Academy's two Cambridge campuses in Jaipur — SIA at Jawahar Nagar and SMIA at Durgapura.",
     url: "https://cambridge.seedlingschools.com/campuses",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Seedling Campuses" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Campuses â€” SIA & SMIA | Seedling International Academy",
-    description: "Two Cambridge campuses in Jaipur â€” SIA at Jawahar Nagar and SMIA at Durgapura.",
+    title: "Our Campuses — SIA & SMIA | Seedling International Academy",
+    description: "Two Cambridge campuses in Jaipur — SIA at Jawahar Nagar and SMIA at Durgapura.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

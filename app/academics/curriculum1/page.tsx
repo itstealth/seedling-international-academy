@@ -200,7 +200,7 @@ export default function CurriculumPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               { title: "Academic Rigor", desc: "Multi-disciplinary methods that ensure deep, cross-functional comprehension." },
-              { title: "Physical Growth", desc: "World-class sports infrastructure that nurtures olympic-standard health." },
+              { title: "Physical Growth", desc: "World-class sports infrastructure that nurtures Olympic-standard health." },
               { title: "Ethical Roots", desc: "Character building sessions from early years to senior secondary levels." }
             ].map((card, i) => (
               <motion.div

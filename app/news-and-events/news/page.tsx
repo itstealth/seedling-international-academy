@@ -18,7 +18,7 @@ const newsItems = [
     title: "Seedling International School Students Shine in Cambridge Class XII Results",
     date: "May 22, 2025",
     source: "Jaipur Times",
-    desc: "Over 40% students score above 90%, with school toppers reaching 98.4% in Science and Commerce streams.",
+    desc: "Over 40% of students score above 90%, with school toppers reaching 98.4% in Science and Commerce streams.",
     image: "https://images.unsplash.com/photo-1523580494863-6f30312248f5?auto=format&fit=crop&q=80"
   },
   {

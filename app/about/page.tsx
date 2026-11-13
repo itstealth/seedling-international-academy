@@ -200,7 +200,7 @@ export default function AboutPage() {
 
       <HeroWrapper
         backgroundImage="/assets/about/about-banner.jpg"
-        title="About us"
+        title="About Us"
         badge="Cambridge Affiliated · Jaipur"
         breadcrumbs={[{ label: "About" }]}
         height="large"
@@ -239,7 +239,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-text-base leading-[1.9] text-lg mb-6 font-dm">
-                Founded in 1993 by the visionary Late Ms. Mohini Bakshi, Seedling International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
+                Founded in 1993 by the visionary late Ms. Mohini Bakshi, Seedling International School Group was born from a simple but profound belief — that education must prioritise the whole child. Not just marks. Not just ranks. But the full, flourishing human being.
               </p>
               {/* <p className="text-text-light leading-[1.9] text-lg font-dm border-l-4 border-sand pl-6">
                 Today, under the leadership of Dr. Sandeep Bakshi, Dr. Preeti Bakshi, and the next generation of the Bakshi family, the group runs five schools across two Jaipur campuses.
@@ -555,11 +555,11 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { emoji: "🌍", title: "Strong International Focus", desc: "We prioritise international-mindedness and global competence alongside Indian values." },
-              { emoji: "📚", title: "Flexible curriculum", desc: "Our Cambridge-aligned curriculum adapts to individual student needs and learning styles." },
+              { emoji: "📚", title: "Flexible Curriculum", desc: "Our Cambridge-aligned curriculum adapts to individual student needs and learning styles." },
               { emoji: "📊", title: "School-driven Formative Assessments", desc: "Continuous, meaningful assessments that track progress and guide instruction." },
-              { emoji: "🔬", title: "Learning by doing", desc: "Hands-on projects, experiments, and real-world applications deepen understanding." },
-              { emoji: "💻", title: "Online performance tracking", desc: "Parents and teachers can monitor student progress through our digital platform." },
-              { emoji: "🏫", title: "Safe and secure Campus", desc: "A nurturing environment where students feel safe, valued, and empowered to learn." },
+              { emoji: "🔬", title: "Learning by Doing", desc: "Hands-on projects, experiments, and real-world applications deepen understanding." },
+              { emoji: "💻", title: "Online Performance Tracking", desc: "Parents and teachers can monitor student progress through our digital platform." },
+              { emoji: "🏫", title: "Safe and Secure Campus", desc: "A nurturing environment where students feel safe, valued, and empowered to learn." },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <div className="bg-green-100 rounded-3xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 border border-green-700 group">

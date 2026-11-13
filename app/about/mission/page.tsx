@@ -96,7 +96,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
           The Seedling <em className="font-semibold text-navy">Mission</em>
         </h2>
         <p className="text-text-light text-lg leading-[1.9] font-dm max-w-3xl mx-auto">
-          The mission of the Seedling Group is to provide a joyful learning environment that empowers students to reach their educational and personal potential. The Group is committed to nurturing active, reflective and creative learners, who are resilient and adaptable, equipped with the knowledge and skills of lifelong learners. The aim is to help students who can celebrate diversity and engage in meaningful collaboration to create a peaceful and equitable world.
+          The mission of the Seedling Group is to provide a joyful learning environment that empowers students to reach their educational and personal potential. The Group is committed to nurturing active, reflective and creative learners, who are resilient and adaptable, equipped with the knowledge and skills of lifelong learners. The aim is to help develop students who can celebrate diversity and engage in meaningful collaboration to create a peaceful and equitable world.
         </p>
       </section>
 

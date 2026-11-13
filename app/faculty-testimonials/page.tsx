@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     quote:
-      "Joining Seedling International Academy has been one of the best experiences of my life. Every day at school brings something new to learn, and our teachers always encourage us to ask questions, share our ideas, and believe in ourselves. The curriculum is unique and different that has made learning exciting because it teaches us to think, not just memorise. I have become more confident, independent, and willing to take on new challenges. What I love most is that our teachers care about us, not only in our studies but also as our guide, our councillors and our mentors. I feel happy, supported, and inspired here, and I know the lessons I have learned at Seedling will stay with me wherever life takes me.",
+      "Joining Seedling International Academy has been one of the best experiences of my life. Every day at school brings something new to learn, and our teachers always encourage us to ask questions, share our ideas, and believe in ourselves. The curriculum is unique and different, which has made learning exciting because it teaches us to think, not just memorise. I have become more confident, independent, and willing to take on new challenges. What I love most is that our teachers care about us, not only in our studies but also as our guide, our counsellors and our mentors. I feel happy, supported, and inspired here, and I know the lessons I have learned at Seedling will stay with me wherever life takes me.",
     name: "Arnav Ruchlani",
     role: "SIA Representative",
     bg: "bg-blue-100",

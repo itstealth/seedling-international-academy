@@ -8,8 +8,8 @@ import Link from "next/link";
 const steps = [
   {
     icon: ClipboardCheck,
-    title: "Inquiry & Registration",
-    desc: "Start your journey by filling out our online inquiry form or visiting any of our campuses for a registration kit.",
+    title: "Enquiry & Registration",
+    desc: "Start your journey by filling out our online enquiry form or visiting any of our campuses for a registration kit.",
     details: ["Online/Offline Registration", "Prospectus Collection", "Campus Visit Request"]
   },
   {
@@ -103,7 +103,7 @@ export default function AdmissionProcessPage() {
                 href="/admissions/contact"
                 className="inline-flex h-20 px-10 bg-neutral-950 text-white rounded-full items-center font-black hover:bg-primary transition-all group"
               >
-                Inquire for Assistance
+                Enquire for Assistance
                 <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -114,7 +114,7 @@ export default function AdmissionProcessPage() {
                 "Transfer Certificate",
                 "Previous Report Card",
                 "Passport Size Photos",
-                "Aadhar Card Copy",
+                "Aadhaar Card Copy",
                 "Residence Proof"
               ].map((doc, i) => (
                 <motion.div

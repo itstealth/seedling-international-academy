@@ -102,9 +102,9 @@ export default function RollOfHonourPage() {
                 ];
                 return [
                   { name: "Academic Stars", count: "150+ Students", sub: "Scored above 90% in 2024 Boards" },
-                  { name: "Subject Toppers", count: "45 Students", sub: "Achieved perfect 100 in various subjects" },
-                  { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at National level" },
-                  { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in IVY League" }
+                  { name: "Subject Toppers", count: "45 Students", sub: "Achieved a perfect 100 in various subjects" },
+                  { name: "Sports Nationals", count: "30+ Athletes", sub: "Representing Seedling International School at national level" },
+                  { name: "Global Scholars", count: "12 Students", sub: "Acquiring full scholarships in Ivy League" }
                 ].map((row, i) => (
                   <motion.div
                     key={i}
@@ -142,7 +142,7 @@ export default function RollOfHonourPage() {
                Excellence <br /> <span className="text-primary tracking-tighter">Endures.</span>
             </h2>
             <p className="text-2xl text-white/50 font-medium mb-20 leading-relaxed max-w-2xl mx-auto">
-               We celebrate not just the result, but the grit, determination, and consistency that leads to it.
+               We celebrate not just the result, but the grit, determination, and consistency that lead to it.
             </p>
             <Link 
                href="/contact-us"

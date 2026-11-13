@@ -9,7 +9,7 @@ const milestones = [
   {
     year: "1993",
     title: "Founding Vision",
-    description: "Seedling International School Group was established by Late Ms. Mohini Bakshi. A journey that began with a single vision to prioritize the holistic well-being of every child above all else.",
+    description: "Seedling International School Group was established by the late Ms. Mohini Bakshi. A journey that began with a single vision to prioritize the holistic well-being of every child above all else.",
     align: "right"
   },
   {

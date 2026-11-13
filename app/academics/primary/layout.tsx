@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cambridge Primary School in Jaipur (Ages 5-11) | Seedling",
-    description: "Cambridge Primary at Seedling Jaipur â€” ages 5 to 11.",
+    description: "Cambridge Primary at Seedling Jaipur — ages 5 to 11.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

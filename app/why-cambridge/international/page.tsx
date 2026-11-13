@@ -218,7 +218,7 @@ export default function InternationalCambridgePage(): React.JSX.Element {
           <div className="text-center mb-12 md:mb-16">
             <p className="font-playfair text-navy text-xl mb-3">What Makes It International</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-ink">
-              Seven Principles of a <em className="font-semibold text-navy">Cambridge</em> Education
+              Six Principles of a <em className="font-semibold text-navy">Cambridge</em> Education
             </h2>
           </div>
 

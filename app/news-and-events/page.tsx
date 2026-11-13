@@ -109,7 +109,7 @@ const foundationItems = [
   {
     id: 2,
     category: "Foundation",
-    title: "Annual Foundation Day Ceremony — Honoring Legacy and Excellence",
+    title: "Annual Foundation Day Ceremony — Honouring Legacy and Excellence",
     date: "2024",
     image: "/assets/Media/foundation/media-coverage-2.jpeg",
     color: "bg-crimson",
@@ -678,7 +678,7 @@ const newsItems = [
   {
     id: 16,
     category: "Media Spotlight",
-    title: "Patrika Plus:  Seedling International School Students Excel in Annual Sports Day Athletics",
+    title: "Patrika Plus: Seedling International School Students Excel in Annual Sports Day Athletics",
     date: "05 Nov 2025",
     image: "/assets/Media/media-coverage-16.jpeg",
     color: "bg-navy",
@@ -829,7 +829,7 @@ const events = [
     date: "May 20",
     year: "2025",
     description:
-      "100% results year after year — celebrating the outstanding academic achievements of  Seedling International School students.",
+      "100% results year after year — celebrating the outstanding academic achievements of Seedling International School students.",
     image: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",
@@ -841,7 +841,7 @@ const events = [
     date: "December 24",
     year: "2024",
     description:
-      "The campus comes alive with carols, decorations, and the festive spirit shared by the entire  Seedling International School community.",
+      "The campus comes alive with carols, decorations, and the festive spirit shared by the entire Seedling International School community.",
     image: "/assets/XMAS CARNIVAL/christmas.webp",
     tag: "Festival",
     tagColor: "bg-[#133844]",

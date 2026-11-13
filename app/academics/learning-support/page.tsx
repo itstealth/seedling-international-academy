@@ -20,7 +20,7 @@ import Link from "next/link";
 const supportSystems = [
   {
     title: "Mental Wellness",
-    desc: "We prioritize emotional resilience through integrated mindfulness sessions and regular support from dedicated counselors. A child's mental state is the foundation of their academic success.",
+    desc: "We prioritize emotional resilience through integrated mindfulness sessions and regular support from dedicated counsellors. A child's mental state is the foundation of their academic success.",
     icon: Heart,
     points: ["Mindfulness Workshops", "Individual Counselling", "Stress Management", "Emotional Intelligence"],
     image: "/home/danish/.gemini/antigravity/brain/88d0f26c-c4e1-47fe-80fd-53d2a15a8882/learning_support_student_counseling_1776862833394.png",
@@ -159,7 +159,7 @@ export default function LearningSupportPage() {
             href="/about/leadership"
             className="inline-flex h-24 px-16 bg-neutral-950 text-white rounded-full items-center justify-center font-black text-2xl shadow-editorial hover:bg-primary transition-all group"
           >
-            Connect with Counselors
+            Connect with Counsellors
             <ArrowRight className="ml-6 w-8 h-8 group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>

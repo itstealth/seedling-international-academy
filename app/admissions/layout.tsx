@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Admissions | Seedling International Academy",
-    description: "Apply to Seedling International Academy â€” Cambridge IGCSE & A Level school in Jaipur.",
+    description: "Apply to Seedling International Academy — Cambridge IGCSE & A Level school in Jaipur.",
     images: ["/assets/Home/SIA_collage_v3.webp"],
   },
 };

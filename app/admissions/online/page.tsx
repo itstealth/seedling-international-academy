@@ -257,7 +257,7 @@ export default function OnlineAdmissionPage() {
             Announcement
           </span>
           <p className="text-white/90 leading-relaxed">
-            <strong>Admission are open for all classes:</strong> Play Group to IX and XI
+            <strong>Admissions are open for all classes:</strong> Play Group to IX and XI
           </p>
         </div>
       </div>
@@ -381,8 +381,8 @@ export default function OnlineAdmissionPage() {
 
                 {/* Aadhar */}
                 <div>
-                  <label className={labelCls}>Aadhar Card No. <span className="text-crimson">*</span></label>
-                  <input type="text" placeholder="12-digit Aadhar number" maxLength={14}
+                  <label className={labelCls}>Aadhaar Card No. <span className="text-crimson">*</span></label>
+                  <input type="text" placeholder="12-digit Aadhaar number" maxLength={14}
                     value={formData.aadhar}
                     onChange={(e) => {
                       const raw = e.target.value.replace(/\D/g, "").slice(0, 12);
@@ -556,7 +556,7 @@ export default function OnlineAdmissionPage() {
 
                 {/* NRI */}
                 <div>
-                  <label className={labelCls}>Non-Residential Indian (NRI)?</label>
+                  <label className={labelCls}>Non-Resident Indian (NRI)?</label>
                   <select value={formData.nri} onChange={handleChange("nri")} className={selectCls}>
                     <option value="">— Select —</option>
                     <option value="No">No</option>

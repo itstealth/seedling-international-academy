@@ -117,7 +117,7 @@ const pathways = [
     electives: ["Physics", "Chemistry", "Biology", "Mathematics A", "English Language"],
     aspiration: "Medicine · AIIMS / MBBS",
     quote: "I loved the lab work from Year 9. Seedling let me lean into sciences without giving up English Literature — that combination made me a stronger applicant.",
-    next: "On track for IGCSEs in 2027; A-Levels in Biology, Chemistry, Maths.",
+    next: "On track for IGCSEs in 2027; A Levels in Biology, Chemistry, Maths.",
     color: "crimson",
   },
   {

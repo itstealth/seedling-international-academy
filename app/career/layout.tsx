@@ -2,7 +2,7 @@
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://cambridge.seedlingschools.com/career" },
-  title: "Career â€” Join the Seedling Team",
+  title: "Career — Join the Seedling Team",
   description:
     "Join Seedling International Academy, Jaipur's leading Cambridge school. Explore teaching and administrative roles across our SIA and SMIA campuses.",
   openGraph: {

@@ -301,7 +301,7 @@ function FeaturedAlumniSection() {
                 We take great pride in celebrating the remarkable achievements of our
                 esteemed alumni — showcasing their talents, dedication, and success
                 stories. Discover journeys of growth, resilience, and perseverance, and
-                gain insights into how  Seedling International School played a pivotal role in shaping
+                gain insights into how Seedling International School played a pivotal role in shaping
                 their path to success.
               </p>
             </blockquote>

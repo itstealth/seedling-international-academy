@@ -107,14 +107,14 @@ const steps = [
         <Link href="/admissions/apply" className="text-crimson hover:underline font-semibold">
           cambridge.seedlingschools.com/admissions/apply
         </Link>{" "}
-        and fill in the Online Admission Inquiry form.
+        and fill in the Online Admission Enquiry form.
       </>
     ),
     icon: "🌐",
   },
   {
     num: "02",
-    title: "Fill the Online Application Form",
+    title: "Fill in the Online Application Form",
     desc: "Complete the Online Form with your child's details, preferred class, and contact information. Submit the non-refundable application amount along with the form.",
     icon: "📝",
   },
@@ -147,14 +147,14 @@ const steps = [
 const documents = [
   { doc: "Transfer Certificate (TC)", note: "From previous school" },
   { doc: "Birth Certificate", note: "Original + photocopy" },
-  { doc: "Residence Proof", note: "Aadhar / utility bill" },
+  { doc: "Residence Proof", note: "Aadhaar / utility bill" },
   { doc: "Child's Photograph", note: "Passport size, recent" },
   { doc: "Parents' / Guardian's Photograph", note: "Passport size" },
   { doc: "Marksheet / Report Card", note: "If applicable (Class I+)" },
   { doc: "Medical Reports", note: "If any" },
   { doc: "Character Certificate", note: "From previous school" },
-  { doc: "Aadhar Card — Child", note: "Original + photocopy" },
-  { doc: "Aadhar Card — Parents", note: "Original + photocopy" },
+  { doc: "Aadhaar Card — Child", note: "Original + photocopy" },
+  { doc: "Aadhaar Card — Parents", note: "Original + photocopy" },
   { doc: "Achievement Certificates", note: "Sports / academics / arts" },
   { doc: "Category Verification Certificate", note: "If applicable" },
 ];
@@ -496,7 +496,7 @@ export default function AdmissionsPage() {
           {/* <Tag>Admission Inquiry</Tag> */}
           <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-[1.1] tracking-tight">
            Admission
-            <span className="text-crimson ml-4">Inquiry</span>
+            <span className="text-crimson ml-4">Enquiry</span>
           </h2>
         </Reveal>
 
@@ -513,7 +513,7 @@ export default function AdmissionsPage() {
                   "Aadhaar Card of the student",
                   "Birth Certificate of the student",
                   "Copy of report card of previous grade",
-                  "TC Required from the previous school",
+                  "TC required from the previous school",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <span className="w-7 h-7 bg-sand/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -563,7 +563,7 @@ export default function AdmissionsPage() {
               <div className="relative bg-blue-700 px-6 py-5 text-white">
                 <div className="absolute right-0 top-0 h-full w-11 bg-white/20 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%,35%_50%)]" />
                 <h3 className="relative z-10 font-playfair text-xl font-black text-white pr-10">
-                  Online Admission Inquiry
+                  Online Admission Enquiry
                 </h3>
               </div>
 
@@ -646,7 +646,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <button type="submit" disabled={submitting} className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 text-white py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
-                  {submitting ? "Submitting..." : "Submit Inquiry"}
+                  {submitting ? "Submitting..." : "Submit Enquiry"}
                 </button>
               </form>
               </div>
@@ -1004,7 +1004,7 @@ export default function AdmissionsPage() {
               Matters.
             </h2>
             <p className="text-[#133844] text-lg leading-relaxed mb-12 max-w-xl mx-auto">
-              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling International School advantage — from Play Group to University.
+              Admissions are open for 2026–27. Seats are limited. Enrol your child today and give them the Seedling International School advantage — from Playgroup to University.
             </p>
           </Reveal>
           <Reveal delay={120}>

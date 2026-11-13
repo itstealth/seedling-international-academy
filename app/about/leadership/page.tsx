@@ -280,7 +280,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/preeti-bakshi.jpeg"
-                  alt="Dr. Preeti Bakshi, Executive Director Seedling International Academy"
+                  alt="Dr. Preeti Bakshi, Executive Director, Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-red-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-red-700">
@@ -384,7 +384,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/akansha.jpeg"
-                  alt="Ms. Akansha Bakshi, Joint Director Seedling International Academy"
+                  alt="Ms. Akansha Bakshi, Joint Director, Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-green-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-green-700">
@@ -534,7 +534,7 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/img/Aishwarya-Bakshi.jpeg"
-                  alt="Ms. Aishwarya Bakshi, Joint Director Seedling International Academy"
+                  alt="Ms. Aishwarya Bakshi, Joint Director, Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-orange-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-orange-700">
@@ -690,18 +690,18 @@ export default function LeadershipPage() {
               <div className="relative">
                 <img
                   src="/assets/Home/principle.jpeg"
-                  alt="Shruti Kukar, Principal and Cambridge Exam officer Seedling International Academy"
+                  alt="Shruti Kukar, Principal and Cambridge Exam Officer, Seedling International Academy"
                   className="w-full h-auto aspect-[4/3] object-cover rounded-2xl shadow-2xl object-top"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl shadow-xl p-6 max-w-xs border border-sand border-blue-700">
                   <p className="font-playfair text-lg font-semibold text-text-base">Shruti Kukar</p>
-                  <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer,  Seedling International Academy</p>
+                  <p className="text-navy text-sm font-dm">Principal & Cambridge Exam Officer, Seedling International Academy</p>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          <div>oup of Schools
+          <div>
             <Reveal>
               <p className="font-playfair text-navy text-xl mb-4">Principal's Note</p>
               <h2 className="font-playfair text-4xl md:text-5xl font-light leading-tight mb-8">

@@ -64,7 +64,7 @@ export default function WelcomeFromTheHeadPage(): React.JSX.Element {
                 Ms. Shruti Kukar
               </h3>
               <p className="text-sm font-bold tracking-widest uppercase text-navy mb-1">Principal and Cambridge Exam Officer </p>
-              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling Internation Academy</p>
+              <p className="text-xs text-text-light tracking-widest uppercase mb-6 font-dm">Seedling International Academy</p>
 
               <div className="bg-blue-100 rounded-2xl p-7 md:p-9 shadow-lg border border-blue-700 relative">
                 <span className="absolute -top-5 left-6 text-7xl font-serif leading-none text-navy opacity-20">&ldquo;</span>

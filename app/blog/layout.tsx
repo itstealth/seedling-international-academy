@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog | Seedling International Academy",
     description:
-      "Insights, stories and perspectives from Seedling International Academy â€” Jaipur's Cambridge school community.",
+      "Insights, stories and perspectives from Seedling International Academy — Jaipur's Cambridge school community.",
     url: "https://cambridge.seedlingschools.com/blog",
     images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "Seedling International Academy Blog" }],
   },

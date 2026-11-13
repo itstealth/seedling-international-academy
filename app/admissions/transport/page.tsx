@@ -39,7 +39,7 @@ export default function TransportFacilityPage() {
               {[
                 "Real-time GPS Tracking for Parents",
                 "Speed Governors on all Vehicles",
-                "Female Attendants in Every Bus",
+                "Female Attendants on Every Bus",
                 "CCTV Surveillance & Monitoring",
                 "First-Aid Kits & Fire Extinguishers"
               ].map((feature, i) => (

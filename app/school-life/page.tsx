@@ -108,7 +108,7 @@ const activities = [
   {
     icon: "🎄",
     title: "Festivals & Celebrations",
-    desc: "From Christmas to Founders Day, our calendar is rich with cultural celebrations that build community.",
+    desc: "From Christmas to Founder's Day, our calendar is rich with cultural celebrations that build community.",
     image: "/assets/img/Christmas.jpeg",
     color: "from-crimson/80 to-crimson-dark/80",
   },

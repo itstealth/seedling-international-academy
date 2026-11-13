@@ -82,7 +82,7 @@ export default function CambridgeUpperSecondaryPage(): React.JSX.Element {
           <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} variants={fadeUp} transition={{ duration: 0.45, ease: EASE }}>
             <p className="font-playfair text-navy text-xl mb-3">The Subject Catalogue</p>
             <h2 className="font-playfair text-4xl md:text-5xl font-light text-[#133844]">
-              Over <em className="font-semibold text-navy">70+ Subjects</em>, One Curriculum
+              <em className="font-semibold text-navy">70+ Subjects</em>, One Curriculum
             </h2>
           </motion.div>
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial={{ opacity: 1 }} animate={{ opacity: 1 }} variants={stagger}>
