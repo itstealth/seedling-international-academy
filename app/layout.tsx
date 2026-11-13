@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   title: {
-    default: "Cambridge IGCSE School in Jaipur | Seedling Academy",
-    template: "%s | Seedling International Academy",
+    default: "Cambridge IGCSE & A Level Schools in Jaipur | SIA & SMIA",
+    template: "%s | SIA & SMIA Jaipur",
   },
   description:
     "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Seedling International Academy",
-    title: "Cambridge IGCSE School in Jaipur | Seedling Academy",
+    title: "Cambridge IGCSE & A Level Schools in Jaipur | SIA & SMIA",
     description:
       "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
     url: BASE_URL,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cambridge IGCSE School in Jaipur | Seedling Academy",
+    title: "Cambridge IGCSE & A Level Schools in Jaipur | SIA & SMIA",
     description:
       "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
     images: ["/assets/Home/SIA_collage_v3.webp"],

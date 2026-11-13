@@ -1,24 +1,13 @@
 ﻿import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "https://cambridge.seedlingschools.com/news-and-events" },
-  title: "News & Events — What's Happening at Seedling",
+export const metadata: Metadata = pageMetadata({
+  path: "/news-and-events",
+  title: "News & Events at Our Jaipur Cambridge Schools | SIA & SMIA",
   description:
     "Stay up to date with the latest news, events, achievements and announcements from Seedling International Academy — Jaipur's Cambridge school.",
-  openGraph: {
-    title: "News & Events | Seedling International Academy",
-    description:
-      "Latest news, events, achievements and announcements from Seedling International Academy — Jaipur's Cambridge school.",
-    url: "https://cambridge.seedlingschools.com/news-and-events",
-    images: [{ url: "/assets/Home/SIA_collage_v3.webp", width: 1200, height: 630, alt: "News and Events at Seedling International Academy" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "News & Events | Seedling International Academy",
-    description: "Latest news and events from Seedling International Academy, Jaipur.",
-    images: ["/assets/Home/SIA_collage_v3.webp"],
-  },
-};
+  imageAlt: "News and Events at Seedling International Academy",
+});
 
 export default function NewsEventsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

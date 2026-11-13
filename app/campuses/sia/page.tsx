@@ -58,13 +58,13 @@ export default function SIAPage(): React.JSX.Element {
                   SIA · Jawahar Nagar, Jaipur
                 </span>
               </div>
-              <h1 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
+              <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
                 Seedling International Academy
                 <br />
                 <span className="text-xs md:text-sm font-black tracking-[0.3em] uppercase align-middle text-navy ml-2">
                   three decades of Seedling.
                 </span>
-              </h1>
+              </h2>
             </div>
             <a
               href="https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur"

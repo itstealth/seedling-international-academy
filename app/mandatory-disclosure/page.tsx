@@ -1,10 +1,15 @@
 ﻿import React from 'react';
 import type { Metadata } from 'next';
 import HeroWrapper from '@/components/layout/HeroWrapper';
+import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Mandatory Public Disclosure | Seedling International School, Jaipur',
-  description: 'Mandatory public disclosure information for Seedling International School (SPS), Jaipur, as per Cambridge Affiliation Bye-Laws. Includes school info, affiliation status, and certificates.',
+  ...pageMetadata({
+    path: '/mandatory-disclosure',
+    title: 'Mandatory Public Disclosure | Seedling International Academy',
+    description:
+      'Mandatory public disclosure for Seedling International Academy, Jawahar Nagar, Jaipur: school information, affiliation status, trust details and certificates.',
+  }),
   keywords: 'Seedling International School, Jaipur, Mandatory Disclosure, Cambridge Compliance, School Information, Affiliation Status',
 };
 

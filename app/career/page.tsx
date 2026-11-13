@@ -597,9 +597,9 @@ export default function CareersPage() {
 
          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center mb-8">
         <div className="max-w-2xl text-center">
-          <h1 className="font-playfair text-[#133844] font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
+          <h2 className="font-playfair text-[#133844] font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-6">
             Career Opportunities at Seedling International Academy
-          </h1>
+          </h2>
           <p className="text-[#133844]/80 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto">
             Not Just a Job. A Journey of Impact, Growth & Excellence.
           </p>

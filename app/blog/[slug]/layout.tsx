@@ -24,7 +24,11 @@ export async function generateMetadata({
   const image = getMediaUrl(post);
 
   return {
-    title: `${title} | Seedling Academy Blog`,
+    // Keep the brand suffix only while the whole title stays within 60 chars.
+    title: {
+      absolute:
+        `${title} | Seedling Blog`.length <= 60 ? `${title} | Seedling Blog` : title,
+    },
     description,
     alternates: { canonical },
     openGraph: {

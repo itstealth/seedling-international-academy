@@ -60,7 +60,7 @@ export const homepageJsonLd = {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       url: `${siteUrl}/`,
-      name: "Cambridge IGCSE School in Jaipur | Seedling Academy",
+      name: "Cambridge IGCSE & A Level Schools in Jaipur | SIA & SMIA",
       description:
         "Seedling International Academy and SMIA — Cambridge IGCSE and A-Level schools in Jawahar Nagar and Durgapura, Jaipur. Admissions open for 2026-27.",
       inLanguage: "en-IN",

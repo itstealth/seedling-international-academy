@@ -49,10 +49,10 @@ export default function AffiliationPage() {
               <Award className="w-4 h-4" />
               <span className="text-[10px] font-bold uppercase tracking-widest">Certified Excellence</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-950 leading-[0.9] mb-8">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral-950 leading-[0.9] mb-8">
               Globally <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/80 to-secondary font-serif">Recognized.</span>
-            </h1>
+            </h2>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
               At Seedling International Academy, we uphold the highest academic standards through strategic partnerships with the world&apos;s leading educational boards.
             </p>

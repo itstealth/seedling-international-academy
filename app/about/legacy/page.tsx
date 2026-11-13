@@ -77,9 +77,9 @@ export default function LegacyPage() {
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <span className="text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 block">Our Heritage</span>
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-linear-to-b from-neutral-950 to-neutral-950/40">
+            <h2 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-linear-to-b from-neutral-950 to-neutral-950/40">
               The Seedling International Academy <br /> Journey
-            </h1>
+            </h2>
             <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed">
               &quot;The life of one we love is never lost. Its influence goes on through all the lives it ever touched.&quot;
             </p>

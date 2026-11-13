@@ -6,6 +6,10 @@ import HeroWrapper from "@/components/layout/HeroWrapper";
 export default function WelcomeFromTheHeadPage(): React.JSX.Element {
   return (
     <div className="bg-off-white text-text-base overflow-x-clip font-dm">
+      {/* Every visible section below is commented out, so this page has no
+          visible heading. Keep one accessible H1 for screen readers and search. */}
+      <h1 className="sr-only">Welcome from the Principal</h1>
+
       {/* ═══ HERO ═══ */}
       {/* <HeroWrapper
         backgroundImage="/IMG_5875.JPG"
