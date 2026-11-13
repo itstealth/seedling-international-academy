@@ -6,7 +6,7 @@ const widgetId = '1044b64843af99283fc04912e7ad8bec';
 const widgetScriptId = 'npf-cambridge-admissions-widget-script';
 const widgetScriptUrl = 'https://ke9zpvp4xn.in4.widgets.nopaperforms.com/vemwgts.js';
 
-export default function NpfAdmissionsForm() {
+export default function NpfAdmissionsForm({ height = 700 }: { height?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function NpfAdmissionsForm() {
       ref={containerRef}
       role="region"
       className="npf_wgts w-full min-h-[500px]"
-      data-height="700px"
+      data-height={`${height}px`}
       data-w={widgetId}
       aria-label="Admission enquiry form"
     />

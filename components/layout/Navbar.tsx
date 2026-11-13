@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Phone, Mail, MapPin, X, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, X, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
+import NpfAdmissionsForm from "@/components/NpfAdmissionsForm";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -172,59 +172,24 @@ function SearchPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 }
 
 function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [formData, setFormData] = useState({
-    candidateName: "",
-    className: "",
-    parentName: "",
-    email: "",
-    phone: "",
-    school: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [widgetHeight, setWidgetHeight] = useState(600);
 
-  // Reset form and errors when popup closes
   useEffect(() => {
-    if (!isOpen) {
-      setFormErrors({});
-    }
-  }, [isOpen]);
-
-  const handleFormChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [field]: e.target.value }));
-    if (formErrors[field]) {
-      setFormErrors(prev => ({ ...prev, [field]: '' }));
-    }
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const data: EnquiryFormData = {
-      parentName: formData.parentName,
-      candidateName: formData.candidateName,
-      phone: formData.phone,
-      className: formData.className,
-      gender: formData.school,
-      message: formData.message,
+    if (!isOpen) return;
+    const updateWidgetHeight = () => {
+      setWidgetHeight(Math.max(360, Math.floor(window.innerHeight * 0.92 - 110)));
     };
-    const errors = validateEnquiryForm(data);
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-    setFormErrors({});
-    setSubmitting(true);
-    try {
-      await submitEnquiryForm(data);
-      window.location.href = '/thank-you';
-    } catch (err) {
-      console.error("Form submission error:", err);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+    updateWidgetHeight();
+    window.addEventListener("resize", updateWidgetHeight);
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("resize", updateWidgetHeight);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
@@ -241,147 +206,23 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 z-[210] w-[calc(100%-2rem)] max-w-[400px] [translate:-50%_-50%] bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
+            className="fixed left-1/2 top-1/2 z-[210] flex max-h-[92vh] w-[calc(100%-2rem)] max-w-[560px] [translate:-50%_-50%] flex-col overflow-hidden rounded-lg bg-white shadow-2xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inquiry-popup-title"
           >
-            <div className="relative px-8 pt-8 pb-3">
-              <h3 className="font-playfair text-3xl font-semibold text-center text-ink tracking-tight">Enquiry Form</h3>
+            <div className="relative shrink-0 px-8 pb-3 pt-7">
+              <h3 id="inquiry-popup-title" className="text-center font-playfair text-3xl font-semibold tracking-tight text-ink">Enquiry Form</h3>
               <button
                 onClick={onClose}
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#133844]/80 text-[#133844] hover:bg-[#133844] hover:text-white transition-colors"
-                aria-label="Close"
+                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#133844]/80 text-[#133844] transition-colors hover:bg-[#133844] hover:text-white"
+                aria-label="Close enquiry form"
               >
-                <X className="w-5 h-5" strokeWidth={1.8} />
+                <X className="h-5 w-5" strokeWidth={1.8} />
               </button>
             </div>
-
-            <div className="flex-1 overflow-y-auto px-8 pb-8">
-              {submitted ? (
-                <div className="text-center py-10">
-                  <h3 className="font-playfair text-3xl font-semibold text-ink mb-3">Thank You!</h3>
-                  <p className="text-text-light font-dm mb-7 leading-relaxed">Your admission inquiry has been submitted. Our team will contact you within 24 hours.</p>
-                  <button
-                    onClick={() => { setSubmitted(false); setFormData({ candidateName: "", className: "", parentName: "", email: "", phone: "", school: "", message: "" }); }}
-                    className="w-full h-11 bg-[#133844] text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy transition-colors"
-                  >
-                    Submit Another Inquiry
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className="space-y-3.5">
-                  <div>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Parent's Name *"
-                      value={formData.parentName}
-                      onChange={handleFormChange("parentName")}
-                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
-                    />
-                    {formErrors.parentName && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.parentName}</p>}
-                  </div>
-
-                  <div>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Student Name *"
-                      value={formData.candidateName}
-                      onChange={handleFormChange("candidateName")}
-                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
-                    />
-                    {formErrors.candidateName && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.candidateName}</p>}
-                  </div>
-
-                  <div>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="Mobile Number *"
-                      value={formData.phone}
-                      onChange={(e) => {
-                        const val = e.target.value.replace(/\D/g, '').slice(0, 10);
-                        setFormData(prev => ({ ...prev, phone: val }));
-                        if (formErrors.phone) setFormErrors(prev => ({ ...prev, phone: '' }));
-                      }}
-                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
-                    />
-                    {formErrors.phone && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.phone}</p>}
-                  </div>
-
-                  {/* <input
-                    type="email"
-                    required
-                    placeholder="Email *"
-                    value={formData.email}
-                    onChange={handleFormChange("email")}
-                    className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy"
-                  /> */}
-
-                 
-
-                  <div>
-                    <select
-                      required
-                      value={formData.className}
-                      onChange={(e) => {
-                        handleFormChange("className")(e);
-                        if (formErrors.className) setFormErrors(prev => ({ ...prev, className: '' }));
-                      }}
-                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base focus:outline-none focus:border-navy"
-                    >
-                      <option value="">Grade Applying For *</option>
-                      <option value="Nursery">Nursery</option>
-                      <option value="LKG">LKG</option>
-                      <option value="UKG">UKG</option>
-                      <option value="Grade 1">Grade 1</option>
-                      <option value="Grade 2">Grade 2</option>
-                      <option value="Grade 3">Grade 3</option>
-                      <option value="Grade 4">Grade 4</option>
-                      <option value="Grade 5">Grade 5</option>
-                      <option value="Grade 6">Grade 6</option>
-                      <option value="Grade 7">Grade 7</option>
-                      <option value="Grade 8">Grade 8</option>
-                      <option value="Grade 9">Grade 9</option>
-                      <option value="Grade 10">Grade 10</option>
-                      <option value="Grade 11">Grade 11</option>
-                      <option value="Grade 12">Grade 12</option>
-                    </select>
-                    {formErrors.className && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.className}</p>}
-                  </div>
-
-                  <div>
-                    <select
-                      required
-                      value={formData.school}
-                      onChange={(e) => {
-                        handleFormChange("school")(e);
-                        if (formErrors.school) setFormErrors(prev => ({ ...prev, school: '' }));
-                      }}
-                      className="h-11 w-full rounded border border-[#cfcfcf] bg-white px-3 font-playfair text-base text-text-base focus:outline-none focus:border-navy"
-                    >
-                      <option value="">Select Gender *</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
-                    {formErrors.school && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.school}</p>}
-                  </div>
-
-                  <div>
-                    <textarea
-                      rows={3}
-                      placeholder="Message"
-                      value={formData.message}
-                      onChange={handleFormChange("message")}
-                      className="w-full rounded border border-[#cfcfcf] bg-white px-3 py-2 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy resize-none"
-                    />
-                    {formErrors.message && <p className="text-crimson text-xs mt-1 pl-1">{formErrors.message}</p>}
-                  </div>
-
-                  <button type="submit" disabled={submitting} className="w-full h-11 bg-[#133844] text-white border border-crimson rounded font-playfair font-black text-base uppercase hover:bg-navy disabled:opacity-60 transition-colors">
-                    {submitting ? "Submitting..." : "Submit"}
-                  </button>
-                </form>
-              )}
+            <div className="min-h-0 flex-1 overflow-hidden px-4 pb-5 sm:px-6">
+              <NpfAdmissionsForm height={widgetHeight} />
             </div>
           </motion.div>
         </>
@@ -389,7 +230,6 @@ function InquiryPopup({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     </AnimatePresence>
   );
 }
-
 
 function DesktopNav({ pathname }: { pathname: string }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -790,40 +630,37 @@ export default function Navbar() {
       <div className="fixed left-3 sm:left-6 bottom-[76px] sm:bottom-[96px] z-[110] hidden sm:flex flex-col items-start gap-2 sm:gap-3">
         <a
           href="tel:+917413012351"
-          className="group flex items-center justify-center gap-0 bg-[#133844] hover:bg-navy text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 border border-white/10 overflow-hidden"
+          className="flex items-center justify-center gap-2 bg-[#133844] hover:bg-navy text-white h-11 w-auto px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-colors duration-300 border border-white/10"
           aria-label="Call Seedling International School"
-          title="Call Us"
         >
           <Phone className="w-4 h-4 flex-shrink-0" />
-          <span className="max-w-0 group-hover:max-w-[100px] group-hover:ml-2 overflow-hidden whitespace-nowrap transition-all duration-300">Call Us</span>
+          <span className="whitespace-nowrap">Call Us</span>
         </a>
 
         <a
           href="https://wa.me/917413012351"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center justify-center gap-0 bg-[#25D366] hover:bg-[#1ebe5d] text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 overflow-hidden"
+          className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white h-11 w-auto px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-colors duration-300"
           aria-label="Message Seedling International School on WhatsApp"
-          title="WhatsApp"
         >
           <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
           </svg>
-          <span className="max-w-0 group-hover:max-w-[110px] group-hover:ml-2 overflow-hidden whitespace-nowrap transition-all duration-300">WhatsApp</span>
+          <span className="whitespace-nowrap">WhatsApp</span>
         </a>
       </div>
 
       <div className={`fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : "hidden sm:block"}`}>
         <button
           onClick={() => setShowInquiryPopup(true)}
-          className="group flex items-center justify-center gap-0 bg-crimson hover:bg-crimson-dark text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden"
+          className="flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white h-11 w-auto px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-2xl transition-colors duration-300 border border-white/10"
           aria-label="Open enquiry form"
-          title="Enquire Now"
         >
           <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <span className="max-w-0 group-hover:max-w-[120px] group-hover:ml-2 overflow-hidden whitespace-nowrap transition-all duration-300">Enquire Now</span>
+          <span className="whitespace-nowrap">Enquire Now</span>
         </button>
 
       </div>
