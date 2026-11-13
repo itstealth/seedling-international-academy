@@ -43,7 +43,8 @@ export function pageMetadata({
       title,
       description,
       url,
-      images: [{ url: image, width: 1200, height: 630, alt: imageAlt }],
+      // No width/height: the default collage is 1200x900 and pages may pass other images.
+      images: [{ url: image, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
