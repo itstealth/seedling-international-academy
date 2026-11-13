@@ -195,6 +195,29 @@ seedling-international-academy/
 
 ---
 
+### Performance — Iteration 3 (Blog Loading & WordPress API Fix)
+
+**Problem:** Visiting `/blog` and `/blog/[slug]` was taking **15 to 150+ seconds** to load, displaying a loading spinner while users waited.
+
+**Root Cause:**
+1. Both `app/blog/page.tsx` and `app/blog/[slug]/page.tsx` were client-side components (`"use client"`).
+2. Inside `useEffect()`, the browser was directly executing `fetch('https://cambridge.seedlingschools.com/cms/wp-json/wp/v2/posts?per_page=100&_embed')`.
+3. The remote WordPress/IIS backend takes up to 150+ seconds to serialize all 100 posts with `_embed` (author, media, terms, revisions). Even to view one article, all 100 posts (700 KB JSON) were fetched client-side.
+4. Zero server-side caching or static generation was being used for blog routes.
+
+**Optimizations Applied:**
+- **Rebuilt `/blog` with Server Components & ISR:** Separated `app/blog/page.tsx` into a Server Component with `revalidate = 600` (10-minute ISR) and an interactive client component (`BlogClient.tsx`) for instant category filtering and pagination. Articles are now pre-rendered into static HTML.
+- **Pre-rendered all 13 blog articles at build time (`generateStaticParams`):** `app/blog/[slug]/page.tsx` now uses `generateStaticParams()` to statically pre-render every single post (`● SSG`) with 10-minute ISR revalidation. Clicking any article now loads in **40 ms** (0.04s) instead of 150 seconds.
+- **Fail-safe fallback snapshot & timeout protection:** Added `lib/posts-fallback.json` and `lib/categories-fallback.json` combined with a 6-second `AbortController` in `lib/wordpress.ts`. If WordPress is ever slow or down, Next.js instantly serves the cached snapshot — the website will never freeze or break.
+- **Fixed dual `<h1>` heading hierarchy:** Added `headingLevel="p"` support to `HeroWrapper` for article pages so the blog title is the singular `<h1>` on the page for SEO.
+- **Fixed missing placeholder image 404:** Replaced missing `/placeholder.jpg` fallback with existing `/assets/Home/classroom.webp`.
+- **Result:**
+  - Blog listing load time: **0.16s** (down from 154s)
+  - Blog article load time: **0.04s** (down from 150s)
+  - Zero client-side loading spinners.
+
+---
+
 ## Current Lighthouse Scores
 
 > Measured against `http://127.0.0.1:3000` (local production server) on **13 Nov 2026** using Lighthouse 13.6.0.

@@ -20,6 +20,7 @@ interface HeroWrapperProps {
   overlayOpacity?: number;
   /** Descriptive alt text for the hero background image. Leave empty for decorative images. */
   imageAlt?: string;
+  headingLevel?: "h1" | "h2" | "p";
 }
 
 export default function HeroWrapper({
@@ -30,7 +31,9 @@ export default function HeroWrapper({
   badge,
   breadcrumbs = [],
   imageAlt = "",
+  headingLevel = "h1",
 }: HeroWrapperProps): React.JSX.Element {
+  const HeadingTag = headingLevel;
   return (
     <div className="relative h-[360px] md:h-[420px] lg:h-[500px] overflow-hidden">
       {backgroundImage && (
@@ -57,12 +60,12 @@ export default function HeroWrapper({
           <span className="text-[#00bdb6] text-[10px] font-bold tracking-[0.55em] uppercase">{badge}</span>
           <span className="block w-6 h-[1.5px] bg-[#00bdb6]" />
         </div>
-        <h1
+        <HeadingTag
           className="font-serif font-bold text-white leading-[1.1]"
           style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)" }}
         >
           {title}
-        </h1>
+        </HeadingTag>
         {subtitle && (
           <p className="text-white/80 text-lg md:text-xl max-w-xl leading-relaxed font-light">
             {subtitle}

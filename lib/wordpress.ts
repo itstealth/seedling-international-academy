@@ -1,3 +1,6 @@
+import fallbackPosts from './posts-fallback.json';
+import fallbackCategories from './categories-fallback.json';
+
 const BASE_URL = 'https://cambridge.seedlingschools.com/cms/wp-json/wp/v2';
 
 export interface WPPost {
@@ -22,32 +25,83 @@ export interface WPCategory {
   count: number;
 }
 
-export async function getPosts(perPage = 20): Promise<WPPost[]> {
-  const res = await fetch(`${BASE_URL}/posts?per_page=${perPage}&_embed`);
-  if (!res.ok) throw new Error('Failed to fetch posts');
-  return res.json();
+export async function getPosts(perPage = 50): Promise<WPPost[]> {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+    const res = await fetch(`${BASE_URL}/posts?per_page=${perPage}&_embed`, {
+      signal: controller.signal,
+      next: { revalidate: 600 },
+    });
+    clearTimeout(timeoutId);
+
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return data;
+    }
+    return fallbackPosts as WPPost[];
+  } catch (err) {
+    console.warn('[wordpress] Using cached fallback posts:', err instanceof Error ? err.message : err);
+    return fallbackPosts as WPPost[];
+  }
 }
 
 export async function getPostBySlug(slug: string): Promise<WPPost | null> {
-  const res = await fetch(`${BASE_URL}/posts?slug=${slug}&_embed`);
-  const posts: WPPost[] = await res.json();
-  return posts[0] ?? null;
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+    const res = await fetch(`${BASE_URL}/posts?slug=${encodeURIComponent(slug)}&_embed`, {
+      signal: controller.signal,
+      next: { revalidate: 600 },
+    });
+    clearTimeout(timeoutId);
+
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const posts: WPPost[] = await res.json();
+    if (Array.isArray(posts) && posts[0]) {
+      return posts[0];
+    }
+  } catch (err) {
+    console.warn(`[wordpress] Using cached fallback for slug "${slug}":`, err instanceof Error ? err.message : err);
+  }
+
+  const found = (fallbackPosts as WPPost[]).find((p) => p.slug === slug);
+  return found ?? null;
 }
 
 export async function getCategories(): Promise<WPCategory[]> {
-  const res = await fetch(`${BASE_URL}/categories?per_page=50`);
-  if (!res.ok) throw new Error('Failed to fetch categories');
-  return res.json();
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+    const res = await fetch(`${BASE_URL}/categories?per_page=50`, {
+      signal: controller.signal,
+      next: { revalidate: 600 },
+    });
+    clearTimeout(timeoutId);
+
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return data;
+    }
+    return fallbackCategories as WPCategory[];
+  } catch (err) {
+    console.warn('[wordpress] Using cached fallback categories:', err instanceof Error ? err.message : err);
+    return fallbackCategories as WPCategory[];
+  }
 }
 
 export async function getPostsByCategory(categoryId: number, perPage = 20): Promise<WPPost[]> {
-  const res = await fetch(`${BASE_URL}/posts?categories=${categoryId}&per_page=${perPage}&_embed`);
-  if (!res.ok) throw new Error('Failed to fetch posts');
-  return res.json();
+  const all = await getPosts(perPage);
+  return all.filter((p) => p.categories.includes(categoryId));
 }
 
 export function getMediaUrl(post: WPPost): string {
-  return post._embedded?.['wp:featuredmedia']?.[0]?.source_url ?? '/placeholder.jpg';
+  return post._embedded?.['wp:featuredmedia']?.[0]?.source_url ?? '/assets/Home/classroom.webp';
 }
 
 export function getPostCategories(post: WPPost): string[] {
@@ -59,9 +113,6 @@ export function getPostCategories(post: WPPost): string[] {
  * so they carry entities: every excerpt ends in `&hellip;` and titles use `&#8211;`
  * for en dashes. Rendering those as a React text child escapes the ampersand, so
  * the visitor literally reads "&#8211;". Decode before displaying.
- *
- * Deliberately a single pass: `&amp;#8211;` decodes to the text `&#8211;`, which is
- * what the author actually wrote, rather than being decoded twice into a dash.
  */
 const NAMED_ENTITIES: Record<string, string> = {
   amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
@@ -87,7 +138,6 @@ export function decodeEntities(input: string): string {
         const hex = body[1] === 'x' || body[1] === 'X';
         const code = parseInt(hex ? body.slice(2) : body.slice(1), hex ? 16 : 10);
         if (!Number.isFinite(code) || code < 0 || code > 0x10ffff) return match;
-        // lone surrogates would throw
         if (code >= 0xd800 && code <= 0xdfff) return match;
         try {
           return String.fromCodePoint(code);
