@@ -45,3 +45,9 @@ public/assets/Home/WhatsApp Video *.mp4
 
 # Brainstorm scratch files (visual companion sessions)
 .superpowers/
+
+# Rollback builds, backups and the CMS outbox kept on the live server
+/.next*/
+/.gtm-backup*/
+/.cms-outbox/
+

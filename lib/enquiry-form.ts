@@ -1,3 +1,5 @@
+import { copyLeadToCms } from "@/lib/cms-lead-client";
+
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxQxDh9kDCYD-SWIS_JIXYGtSf3F9Id8lESGKrqT9GJ4NT9fuqh63Gu1BW6lhYITjMR/exec";
 
 export interface EnquiryFormData {
@@ -10,6 +12,20 @@ export interface EnquiryFormData {
 }
 
 export async function submitEnquiryForm(data: EnquiryFormData): Promise<void> {
+  // Copy for the CMS lead inbox. Fire-and-forget: the Google Sheet submission
+  // below runs exactly as before whatever happens to this.
+  const path = typeof window !== "undefined" ? window.location.pathname : "";
+  copyLeadToCms({
+    formType: path.startsWith("/admissions") ? "admission-enquiry" : path.startsWith("/contact") ? "contact" : "enquiry",
+    formName: formNameForPath(path),
+    name: data.parentName,
+    phone: data.phone,
+    studentName: data.candidateName,
+    className: data.className,
+    message: data.message,
+    details: data.gender ? { gender: data.gender } : {},
+  });
+
   const body = new URLSearchParams({
     name: data.candidateName,
     class_name: data.className,
@@ -46,4 +62,11 @@ export function validateEnquiryForm(data: EnquiryFormData): Record<string, strin
   if (phoneError) errors.phone = phoneError
   if (!data.message.trim()) errors.message = "Please enter a message"
   return errors
+}
+
+function formNameForPath(pathname: string): string {
+  const first = pathname.split("/").filter(Boolean)[0];
+  if (!first) return "Home page";
+  const words = first.replace(/[-_]+/g, " ");
+  return `${words.charAt(0).toUpperCase()}${words.slice(1)} page`;
 }

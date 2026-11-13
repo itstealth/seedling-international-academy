@@ -5,6 +5,7 @@ import Script from "next/script";
 import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
 import "./globals.css";
+import LeadAttribution from '@/components/LeadAttribution';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -93,7 +94,7 @@ export default async function RootLayout({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KW7KS65V');`}
+})(window,document,'script','dataLayer','GTM-MS6FKS3S');`}
         </Script>
         <meta name="google-site-verification" content="LzKlHJhPde7RhG9zSVx4gbkk7ZuWP0GnfhcHhcK1Qe0" />
         <Script
@@ -111,9 +112,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `var npf_d='https://apply.seedlingschools.com';var npf_c='7260';var npf_m='1';var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://track.nopaperforms.com/js/track.js";document.body.appendChild(s);` }} />
+        <LeadAttribution />
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KW7KS65V"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MS6FKS3S"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}

@@ -1,9 +1,9 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Trophy, Users, Music, Medal, BookOpen, Award, Heart, Brain, ArrowUpRight, ArrowRight, CalendarDays, Camera, Pencil, Mail, Phone, ArrowDown, ChevronDown, ShieldCheck, Handshake, Compass, Lightbulb, Globe } from 'lucide-react';
-import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from '@/lib/enquiry-form';
+import NpfAdmissionsForm from '@/components/NpfAdmissionsForm';
 import HeroVideo from "@/components/ui/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
 import { homepageJsonLd } from "@/lib/homepage-jsonld";
@@ -13,92 +13,7 @@ type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
 
 // ─── Request a Callback Form ─────────────────────────────────────────────────
 function CallbackForm() {
-  const [formData, setFormData] = useState({ school: '', parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [field]: e.target.value }));
-    if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const data: EnquiryFormData = { parentName: formData.parentName, candidateName: formData.candidateName, phone: formData.phone, className: formData.className, gender: formData.gender, message: formData.message };
-    const errs = validateEnquiryForm(data);
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    setSubmitting(true);
-    try {
-      await submitEnquiryForm(data);
-      window.location.href = '/thank-you';
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const fieldCls = "w-full h-12 rounded-xl border border-[#cfcfcf] bg-white px-4 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors";
-  const errorCls = "text-crimson text-xs mt-1.5 pl-1";
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div>
-        <label htmlFor="f-school" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Campus *</label>
-        <select id="f-school" value={formData.school} onChange={handleChange('school')} className={`${fieldCls} appearance-none`}>
-          <option value="">Select campus</option>
-          <option value="SIA">Seedling International Academy (SIA) — Jawahar Nagar, Jaipur</option>
-          <option value="SMIA">Seedling Modern International Academy (SMIA) — Durgapura, Jaipur</option>
-        </select>
-        {errors.school && <p className={errorCls}>{errors.school}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-parent" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Parent&apos;s Name *</label>
-        <input id="f-parent" type="text" placeholder="e.g. Rohit Sharma" value={formData.parentName} onChange={handleChange('parentName')} className={fieldCls} />
-        {errors.parentName && <p className={errorCls}>{errors.parentName}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-student" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Student&apos;s Name *</label>
-        <input id="f-student" type="text" placeholder="e.g. Aarav Sharma" value={formData.candidateName} onChange={handleChange('candidateName')} className={fieldCls} />
-        {errors.candidateName && <p className={errorCls}>{errors.candidateName}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-phone" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Mobile Number *</label>
-        <input id="f-phone" type="tel" placeholder="10-digit mobile" value={formData.phone}
-          onChange={(e) => handleChange('phone')({ ...e, target: { ...e.target, value: e.target.value.replace(/\D/g, '').slice(0, 10) } } as React.ChangeEvent<HTMLInputElement>)}
-          className={fieldCls} />
-        {errors.phone && <p className={errorCls}>{errors.phone}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-grade" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Grade Applying For *</label>
-        <select id="f-grade" value={formData.className} onChange={handleChange('className')} className={`${fieldCls} appearance-none`}>
-          <option value="">Select grade</option>
-          <option>Nursery</option><option>LKG</option><option>UKG</option>
-          <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
-          <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
-          <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-          <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
-        </select>
-        {errors.className && <p className={errorCls}>{errors.className}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-gender" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Gender *</label>
-        <select id="f-gender" value={formData.gender} onChange={handleChange('gender')} className={`${fieldCls} appearance-none`}>
-          <option value="">Select gender</option>
-          <option>Male</option><option>Female</option>
-        </select>
-        {errors.gender && <p className={errorCls}>{errors.gender}</p>}
-      </div>
-      <div>
-        <label htmlFor="f-msg" className="block text-[11px] font-semibold uppercase tracking-wider text-ink-soft mb-1.5">Message (optional)</label>
-        <textarea id="f-msg" rows={3} placeholder="Anything you would like us to know" value={formData.message} onChange={handleChange('message')} className="w-full rounded-xl border border-[#cfcfcf] bg-white px-4 py-3 font-playfair text-base text-text-base placeholder:text-[#8c8c8c] focus:outline-none focus:border-navy transition-colors resize-none" />
-        {errors.message && <p className={errorCls}>{errors.message}</p>}
-      </div>
-      <button type="submit" disabled={submitting} className="w-full h-12 bg-claret hover:bg-claret/90 disabled:opacity-60 text-white rounded-[8px] font-playfair font-bold text-base uppercase tracking-wider transition-colors">
-        {submitting ? "Submitting..." : "Submit Enquiry"}
-      </button>
-    </form>
-  );
+  return <NpfAdmissionsForm />;
 }
 
 // Campus Life gallery images (new set)

@@ -273,6 +273,14 @@ function ApplyModal({
     experience: "", subject: "", board: "", classes: "", cvName: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  // Each time the form opens for a role, start from a fresh submit state.
+  useEffect(() => {
+    if (role) { setSubmitted(false); setError(""); }
+  }, [role]);
 
   useEffect(() => {
     if (!role) return;
@@ -288,9 +296,38 @@ function ApplyModal({
 
   if (!role) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Sends the application to /api/career (saved locally and copied to the
+  // CMS). "Thank you" is shown only once the server has confirmed it.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (submitting) return;
+    setError("");
+    setSubmitting(true);
+    try {
+      const data = new FormData();
+      data.append("name", form.name);
+      data.append("qualification", form.qualification);
+      data.append("email", form.email);
+      data.append("mobile", form.mobile);
+      data.append("experience", form.experience);
+      data.append("subject", form.subject);
+      data.append("board", form.board);
+      data.append("classes", form.classes);
+      data.append("role", role.title);
+      data.append("jobType", role.type);
+      if (cvFile) data.append("cv", cvFile);
+      const res = await fetch("/api/career", { method: "POST", body: data });
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        setError(body?.error || "We could not submit your application. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("We could not submit your application. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -480,16 +517,33 @@ function ApplyModal({
                   </div>
                   <input
                     type="file" accept=".pdf,.doc,.docx" className="hidden"
-                    onChange={(e) => setForm({ ...form, cvName: e.target.files?.[0]?.name || "" })}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] ?? null;
+                      const ext = file?.name.split(".").pop()?.toLowerCase() ?? "";
+                      if (file && (file.size > 5 * 1024 * 1024 || !["pdf", "doc", "docx"].includes(ext))) {
+                        setError("CV must be a PDF, DOC or DOCX file under 5MB");
+                        setCvFile(null);
+                        setForm({ ...form, cvName: "" });
+                        return;
+                      }
+                      setError("");
+                      setCvFile(file);
+                      setForm({ ...form, cvName: file?.name || "" });
+                    }}
                   />
                 </label>
               </div>
 
+              {error ? (
+                <p role="alert" className="text-sm text-red-600 font-medium">{error}</p>
+              ) : null}
+
               <button
                 type="submit"
-                className="w-full bg-[#133844] hover:bg-navy-dark text-white py-4 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#133844]/30 font-dm"
+                disabled={submitting}
+                className="w-full bg-[#133844] hover:bg-navy-dark text-white py-4 rounded-xl font-black text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#133844]/30 font-dm disabled:opacity-60 disabled:cursor-wait"
               >
-                Submit Interest Form →
+                {submitting ? "Submitting…" : "Submit Interest Form →"}
               </button>
               <p className="text-[#AAA] text-xs text-center">
                 We'll reach out as soon as we open our recruitments · No spam
