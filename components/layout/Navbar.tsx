@@ -787,7 +787,7 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-      <div className="fixed left-3 sm:left-6 bottom-[76px] sm:bottom-[96px] z-[110] flex flex-col items-start gap-2 sm:gap-3">
+      <div className="fixed left-3 sm:left-6 bottom-[76px] sm:bottom-[96px] z-[110] hidden sm:flex flex-col items-start gap-2 sm:gap-3">
         <a
           href="tel:+917413012351"
           className="group flex items-center justify-center gap-0 bg-[#133844] hover:bg-navy text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-xl transition-all duration-300 border border-white/10 overflow-hidden"
@@ -813,7 +813,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className={`fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : ""}`}>
+      <div className={`fixed left-3 sm:left-6 bottom-5 sm:bottom-8 z-[70] ${isOpen ? "hidden" : "hidden sm:block"}`}>
         <button
           onClick={() => setShowInquiryPopup(true)}
           className="group flex items-center justify-center gap-0 bg-crimson hover:bg-crimson-dark text-white h-11 w-11 hover:w-auto hover:px-5 rounded-full font-black text-xs tracking-widest uppercase shadow-2xl transition-all duration-300 border border-white/10 overflow-hidden"

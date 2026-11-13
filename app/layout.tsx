@@ -6,6 +6,7 @@ import NavbarWrapper from "@/components/layout/NavbarWrapper";
 import FooterWrapper from "@/components/layout/FooterWrapper";
 import "./globals.css";
 import LeadAttribution from '@/components/LeadAttribution';
+import MobileActionBar from '@/components/home/MobileActionBar';
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -111,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           `}
         </Script>
       </head>
-      <body className="min-h-full flex flex-col font-sans antialiased">
+      <body className="min-h-full flex flex-col pb-16 font-sans antialiased sm:pb-0">
         <script dangerouslySetInnerHTML={{ __html: `var npf_d='https://apply.seedlingschools.com';var npf_c='7260';var npf_m='1';var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://track.nopaperforms.com/js/track.js";document.body.appendChild(s);` }} />
         <LeadAttribution />
         <noscript>
@@ -123,6 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <NavbarWrapper />
+        <MobileActionBar />
         <main className="flex-1 flex flex-col">
           {children}
         </main>

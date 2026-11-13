@@ -1168,7 +1168,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
       </section>
 
       {/* ─── ADMISSION CTA ─── */}
-      <section className="relative pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-white">
+      <section id="home-enquiry" className="relative scroll-mt-24 pt-16 pb-16 md:pb-24 px-4 overflow-hidden bg-white">
         <div className="absolute inset-0 mesh-gradient opacity-[0.04]" />
         <div className="max-w-7xl mx-auto  relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">

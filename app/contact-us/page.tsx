@@ -1,23 +1,8 @@
-﻿"use client"
-
-import { useState } from 'react'
 import Image from 'next/image'
 import HeroWrapper from "@/components/layout/HeroWrapper";
-import { submitEnquiryForm, validateEnquiryForm, type EnquiryFormData } from "@/lib/enquiry-form";
+import NpfAdmissionsForm from "@/components/NpfAdmissionsForm";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-
-interface FormData {
-  parentName: string
-  candidateName: string
-  phone: string
-  className: string
-  gender: string
-  message: string
-}
-
-type FormErrors = Partial<Record<keyof FormData, string>>
-type SubmitStatus = 'idle' | 'loading' | 'success'
 
 // ─── Static Data ──────────────────────────────────────────────────────────────
 
@@ -71,20 +56,6 @@ const ClockIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const SendIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-    <line x1="22" y1="2" x2="11" y2="13" />
-    <polygon points="22 2 15 22 11 13 2 9 22 2" />
-  </svg>
-)
-
-const CheckIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-    <polyline points="22 4 12 14.01 9 11.01" />
-  </svg>
-)
-
 const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
     <line x1="5" y1="12" x2="19" y2="12" />
@@ -128,67 +99,9 @@ function ContactItem({ label, children }: { label: string; children: React.React
   )
 }
 
-function InputField({
-  label, required, error, children,
-}: {
-  label: string
-  required?: boolean
-  error?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div>
-      <label className="block text-[10px] font-black text-[#133844] mb-1.5 tracking-[0.2em] uppercase font-dm">
-        {label} {required && <span className="text-crimson">*</span>}
-      </label>
-      {children}
-      {error && <p className="mt-1.5 text-xs text-crimson font-dm">{error}</p>}
-    </div>
-  )
-}
-
-const inputCls = (hasError?: boolean) =>
-  `w-full rounded-xl px-4 py-3 text-text-base text-sm placeholder-sand border bg-white
-   transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-navy/10 font-dm
-   ${hasError
-    ? 'border-crimson bg-crimson/5'
-    : 'border-sand/40 hover:border-sand focus:border-navy'
-  }`
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
-
-  const [form, setForm] = useState<FormData>({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' })
-  const [errors, setErrors] = useState<FormErrors>({})
-  const [status, setStatus] = useState<SubmitStatus>('idle')
-
-  const setField = (key: keyof FormData) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-      setForm(prev => ({ ...prev, [key]: e.target.value }))
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const data: EnquiryFormData = { parentName: form.parentName, candidateName: form.candidateName, phone: form.phone, className: form.className, gender: form.gender, message: form.message }
-    const errs = validateEnquiryForm(data)
-    if (Object.keys(errs).length > 0) { setErrors(errs); return }
-    setStatus('loading')
-    try {
-      await submitEnquiryForm(data)
-      window.location.href = '/thank-you'
-    } catch {
-      window.location.href = '/thank-you'
-    }
-  }
-
-  const resetForm = () => {
-    setForm({ parentName: '', candidateName: '', phone: '', className: '', gender: '', message: '' })
-    setErrors({})
-    setStatus('idle')
-  }
-
-
-
   return (
     <div className="min-h-screen bg-off-white font-dm">
 
@@ -350,122 +263,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right form */}
-            {status === 'success' ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center mx-auto">
-                  <CheckIcon className="w-7 h-7 text-navy" />
-                </div>
-                <h3
-                  className="font-playfair text-2xl font-bold text-ink"
-                >
-                  Message received!
-                </h3>
-                <p className="text-text-light text-sm max-w-xs font-dm font-light">
-                  Thank you for reaching out. Our team will respond within one working day.
-                </p>
-                <button
-                  onClick={resetForm}
-                  className="mt-2 text-[10px] font-black text-navy uppercase tracking-widest underline underline-offset-4 hover:text-navy-dark transition-colors font-dm"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
-
-                <InputField label="Parent Name" required error={errors.parentName}>
-                  <input
-                    type="text"
-                    value={form.parentName}
-                    onChange={setField('parentName')}
-                    placeholder="Enter parent's name"
-                    className={inputCls(!!errors.parentName)}
-                  />
-                </InputField>
-
-                <InputField label="Student Name" required error={errors.candidateName}>
-                  <input
-                    type="text"
-                    value={form.candidateName}
-                    onChange={setField('candidateName')}
-                    placeholder="Enter student's name"
-                    className={inputCls(!!errors.candidateName)}
-                  />
-                </InputField>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <InputField label="Grade Applying For" required error={errors.className}>
-                    <select
-                      value={form.className}
-                      onChange={setField('className')}
-                      className={inputCls(!!errors.className) + ' cursor-pointer'}
-                    >
-                      <option value="">Select Grade</option>
-                      <option>Nursery</option><option>LKG</option><option>UKG</option>
-                      <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
-                      <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
-                      <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
-                      <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
-                    </select>
-                  </InputField>
-                  <InputField label="Gender" required error={errors.gender}>
-                    <select
-                      value={form.gender}
-                      onChange={setField('gender')}
-                      className={inputCls(!!errors.gender) + ' cursor-pointer'}
-                    >
-                      <option value="">Select Gender</option>
-                      <option>Male</option><option>Female</option>
-                    </select>
-                  </InputField>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <InputField label="Mob." required error={errors.phone}>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => {
-                        const val = e.target.value.replace(/\D/g, '').slice(0, 10)
-                        setForm(prev => ({ ...prev, phone: val }))
-                      }}
-                      placeholder="10-digit mobile"
-                      className={inputCls(!!errors.phone)}
-                    />
-                  </InputField>
-                </div>
-
-                <InputField label="Message" required error={errors.message}>
-                  <textarea
-                    rows={4}
-                    value={form.message}
-                    onChange={setField('message')}
-                    placeholder="Your message..."
-                    className={inputCls(!!errors.message) + ' resize-none'}
-                  />
-                </InputField>
-
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full flex items-center justify-center gap-2.5 font-black text-[11px] uppercase tracking-widest py-4 rounded-full bg-navy hover:bg-navy-dark text-white shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed font-dm"
-                >
-                  {status === 'loading' ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending…
-                    </>
-                  ) : (
-                    <>
-                      <SendIcon className="w-4 h-4" />
-                      Send Message
-                    </>
-                  )}
-                </button>
-
-              </form>
-            )}
+            <div className="min-h-[700px] rounded-2xl bg-white p-2 shadow-sm sm:p-4">
+              <NpfAdmissionsForm />
+            </div>
           </div>
         </div>
       </section>
