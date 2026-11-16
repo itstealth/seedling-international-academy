@@ -97,12 +97,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    {
-      url: `${BASE_URL}/academics/learning-support`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
 
     // ── About ─────────────────────────────────────────────────────────────
     {
@@ -122,18 +116,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/about/vision`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/about/legacy`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.6,
     },
     {
       url: `${BASE_URL}/about/affiliation`,

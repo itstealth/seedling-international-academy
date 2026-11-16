@@ -43,25 +43,11 @@ const SEARCH_INDEX: Array<{
   //   category: "About",
   // },
   {
-    title: "Vision",
-    description: "Our vision for the future of education at Seedling.",
-    href: "/about/vision",
-    keywords: ["vision", "future", "philosophy", "values"],
-    category: "About",
-  },
-  {
     title: "Affiliations & Accreditations",
     description: "Cambridge IGCSE and other official affiliations.",
     href: "/about/affiliation",
     keywords: ["affiliation", "accreditation", "cambridge", "igcse", "board"],
     category: "About",
-  },
-  {
-    title: "Academics",
-    description: "Cambridge curriculum, learning support, and academic excellence.",
-    href: "/academics/curriculum1",
-    keywords: ["academics", "curriculum", "cambridge", "syllabus", "subjects"],
-    category: "Academics",
   },
   {
     title: "Curriculum",
