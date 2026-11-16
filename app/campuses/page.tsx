@@ -45,11 +45,11 @@ const campuses: Campus[] = [
     badge: "SIA · Jawahar Nagar, Jaipur",
     heroImage: "/assets/Home/SIA_collage_v3.webp",
     introHeadline: "Where Cambridge meets <em class='font-semibold text-navy'>three decades of Seedling.</em>",
-    introLead: "Our Jawahar Nagar campus is the home of Seedling International Academy (SIA) — a five-acre green space where the Cambridge curriculum comes alive through joyful learning, caring teachers, and a community that treats every child as irreplaceable.",
+    introLead: "Our Jawahar Nagar campus is the home of Seedling International Academy (SIA) — a campus where the Cambridge curriculum comes alive through joyful learning, caring teachers, and a community that treats every child as irreplaceable.",
     established: "1993",
     studentTeacher: "20:1",
-    campusSize: "5 Acres",
-    results: "100%",
+    campusSize: "Jawahar Nagar",
+    results: "IGCSE & A Level",
     tagline: "Where Cambridge meets three decades of Seedling.",
     motto: "Holistic. Joyful. Rigorous.",
     facilities: [
@@ -81,8 +81,8 @@ const campuses: Campus[] = [
     introLead: "Seedling Modern International Academy (SMIA) at Durgapura brings the same globally benchmarked Cambridge education to central Jaipur — modern, vibrant and built for the next generation of learners.",
     established: "2012",
     studentTeacher: "20:1",
-    campusSize: "3 Acres",
-    results: "100%",
+    campusSize: "Durgapura",
+    results: "IGCSE & A Level",
     tagline: "Modern facilities. Timeless Seedling values.",
     motto: "Vibrant. Connected. Forward-looking.",
     facilities: [
@@ -172,7 +172,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
               { v: campus.established, l: "Established", palette: "purple" },
               { v: campus.studentTeacher, l: "Student : Teacher", palette: "blue" },
               { v: campus.campusSize, l: "Campus", palette: "green" },
-              { v: campus.results, l: "Cambridge Results", palette: "orange" },
+              { v: campus.results, l: "Cambridge Pathway", palette: "orange" },
             ].map((s) => {
               const paletteMap: Record<string, string> = {
                 purple: "bg-purple-100 border-purple-700",

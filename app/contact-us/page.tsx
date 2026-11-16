@@ -13,11 +13,11 @@ const SCHOOLS = [
 ]
 
 const STATS = [
-  { value: '10k+', label: 'Students' },
-  { value: '20:1', label: 'Student-Teacher Ratio' },
-  { value: '5,000+', label: 'Alumni Network' },
-  { value: '100%', label: 'Board Results' },
-  { value: '33+', label: 'Years of Excellence' },
+  { value: 'Two', label: 'Cambridge schools' },
+  { value: 'Jaipur', label: 'Campus location' },
+  { value: 'Alumni', label: 'Community' },
+  { value: 'Cambridge', label: 'Curriculum' },
+  { value: 'Student', label: 'Support' },
 ]
 
 const HOURS = [

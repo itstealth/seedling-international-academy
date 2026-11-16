@@ -1,24 +1,13 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "https://cambridge.seedlingschools.com/about/leadership" },
-  title: "Leadership & Director's Message | Seedling Cambridge Jaipur",
-  description:
-    "Meet the leadership of Seedling International Academy & SMIA Jaipur — Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
-  openGraph: {
-    title: "Leadership & Director's Message | Seedling Cambridge Jaipur",
-    description:
-      "Meet the leadership of Seedling International Academy & SMIA Jaipur — Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
-    url: "https://cambridge.seedlingschools.com/about/leadership",
-    images: [{ url: "/assets/about/about-banner.jpg", width: 1200, height: 630, alt: "Leadership at Seedling International Academy" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Leadership & Director's Message | Seedling Cambridge Jaipur",
-    description: "Meet the leadership team of Seedling International Academy & SMIA, Jaipur.",
-    images: ["/assets/about/about-banner.jpg"],
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  path: '/about/leadership',
+  title: 'Leadership Team | Cambridge Schools Jaipur',
+  description: "Meet the leaders of Seedling's international schools in Jaipur: Dr. Sandeep Bakshi, Dr. Preeti Bakshi, the Joint Directors and Principal Shruti Kukar.",
+  image: "/assets/about/about-banner.jpg",
+  imageAlt: 'Leadership at Seedling International Academy',
+});
 
 export default function LeadershipLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

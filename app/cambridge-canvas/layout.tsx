@@ -1,12 +1,11 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  path: "/cambridge-canvas",
-  title: "Why the Cambridge Curriculum? IGCSE & A Level in Jaipur",
-  description:
-    "How the Cambridge pathway works from Early Years to A-Level, why 1,400+ universities recognise it, and what it means for students in Jaipur.",
-  imageAlt: "Cambridge Canvas at Seedling International Academy",
+  path: '/cambridge-canvas',
+  title: 'Why Cambridge? IGCSE & A Levels in Jaipur | Seedling',
+  description: 'How the Cambridge curriculum works from Early Years to A-Level at Seedling, an IGCSE school in Jaipur, and why 1,400+ universities recognise it.',
+  imageAlt: 'Cambridge Canvas at Seedling International Academy',
 });
 
 export default function CambridgeCanvasLayout({ children }: { children: React.ReactNode }) {

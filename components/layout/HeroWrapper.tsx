@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { imageAltFor } from "@/lib/image-alt";
 import Link from "next/link";
 
 interface BreadcrumbItem {
@@ -30,7 +31,7 @@ export default function HeroWrapper({
   subtitle,
   badge,
   breadcrumbs = [],
-  imageAlt = "",
+  imageAlt,
   headingLevel = "h1",
 }: HeroWrapperProps): React.JSX.Element {
   const HeadingTag = headingLevel;
@@ -39,7 +40,7 @@ export default function HeroWrapper({
       {backgroundImage && (
         <Image
           src={backgroundImage}
-          alt={imageAlt}
+          alt={imageAlt ?? imageAltFor(backgroundImage, title)}
           fill
           style={{
     objectPosition: `center ${position}%`,

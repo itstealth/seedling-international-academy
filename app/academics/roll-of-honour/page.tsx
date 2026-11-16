@@ -19,10 +19,10 @@ import Link from "next/link";
 
 const achievements = [
   { 
-    title: "100% Board Success", 
-    desc: "A consistent track record of perfect results in Cambridge examinations.",
+    title: "Board Examination Achievements",
+    desc: "Student achievements and Cambridge examination results.",
     icon: Trophy,
-    stat: "100%",
+    stat: "Cambridge",
     color: "secondary"
   },
   { 
@@ -34,9 +34,9 @@ const achievements = [
   },
   { 
     title: "Global Reach", 
-    desc: "Our alumni are pursuing excellence in top-tier universities across 50+ nations.",
+    desc: "Our alumni continue their studies at universities in India and around the world.",
     icon: Globe,
-    stat: "5,000+",
+    stat: "Alumni",
     color: "accent"
   }
 ];

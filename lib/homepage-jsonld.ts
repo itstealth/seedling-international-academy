@@ -9,7 +9,7 @@ export const homepageJsonLd = {
       "@type": "Organization",
       "@id": organizationId,
       name: "Seedling International Academy",
-      alternateName: "Seedling Academy",
+      alternateName: "SIA & SMIA",
       url: `${siteUrl}/`,
       logo: {
         "@type": "ImageObject",

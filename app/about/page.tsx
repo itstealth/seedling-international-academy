@@ -157,12 +157,12 @@ const campusImages = [
 ];
 
 const stats = [
-  { value: "20,000+", label: "Students Enrolled" },
+  { value: "Four", label: "Schools in the group" },
   { value: "20:1", label: "Student–Teacher Ratio" },
-  { value: "5,000+", label: "Alumni Worldwide" },
-  { value: "100%", label: "Board Results" },
-  { value: "50+", label: "Nations Represented" },
-  { value: "1993", label: "Year Established" },
+  { value: "Alumni", label: "Community" },
+  { value: "Cambridge", label: "Curriculum" },
+  { value: "Jaipur", label: "School community" },
+  { value: "SIA & SMIA", label: "Cambridge schools" },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

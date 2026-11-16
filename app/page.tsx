@@ -258,7 +258,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
               "0 2px 28px rgba(0,0,0,0.65), 0 10px 50px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.55)",
           }}
         >
-          Cambridge IGCSE and A-Level<br />
+          Cambridge IGCSE and A-Level{" "}<br />
           Schools in Jaipur.
         </motion.h1>
 

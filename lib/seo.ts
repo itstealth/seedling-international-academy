@@ -31,25 +31,27 @@ export function pageMetadata({
   image = DEFAULT_IMAGE,
   imageAlt = title,
 }: PageSeo): Metadata {
+  const conciseTitle = title.length <= 60 ? title : `${title.slice(0, title.lastIndexOf(" ", 57))}…`;
+  const conciseDescription = description.length <= 158 ? description : `${description.slice(0, description.lastIndexOf(" ", 157))}…`;
   const url = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
   return {
-    title: { absolute: title },
-    description,
+    title: { absolute: conciseTitle },
+    description: conciseDescription,
     alternates: { canonical: url },
     openGraph: {
       type: "website",
       locale: "en_IN",
       siteName: SITE_NAME,
-      title,
-      description,
+      title: conciseTitle,
+      description: conciseDescription,
       url,
       // No width/height: the default collage is 1200x900 and pages may pass other images.
       images: [{ url: image, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: conciseTitle,
+      description: conciseDescription,
       images: [image],
     },
   };

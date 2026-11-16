@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -19,10 +19,10 @@ const facilities = [
 ];
 
 const stats = [
-  { value: "1993", label: "Established", palette: "purple" },
+  { value: "SIA", label: "Jawahar Nagar", palette: "purple" },
   { value: "20:1", label: "Student : Teacher", palette: "blue" },
-  { value: "5 Acres", label: "Campus", palette: "green" },
-  { value: "100%", label: "Cambridge Results", palette: "orange" },
+  { value: "Cambridge", label: "Curriculum", palette: "green" },
+  { value: "Jaipur", label: "School community", palette: "orange" },
 ];
 
 export default function SIAPage(): React.JSX.Element {
@@ -58,7 +58,7 @@ export default function SIAPage(): React.JSX.Element {
                   SIA · Jawahar Nagar, Jaipur
                 </span>
               </div>
-              <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
+                <h2 className="font-playfair text-4xl md:text-6xl font-light leading-[1.05] text-ink">
                 Seedling International Academy
                 <br />
                 <span className="text-xs md:text-sm font-black tracking-[0.3em] uppercase align-middle text-navy ml-2">
@@ -125,7 +125,7 @@ export default function SIAPage(): React.JSX.Element {
               className="md:sticky md:top-28 self-start"
             >
               <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg">
-                <img src="/assets/Home/SIA_collage_v3.webp" alt="Seedling International Academy" className="w-full h-full object-cover" />
+                <img src="/assets/Home/SIA_collage_v3.webp" alt="Collage of student activities at Seedling International Academy, Jaipur" className="w-full h-full object-cover" />
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
                   <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">SIA</span>
                 </div>

@@ -237,10 +237,10 @@ export default function CampusHighlightsPage() {
           {/* <Reveal delay={400}>
             <div className="mt-12 bg-orange-100 rounded-[2rem] border border-orange-700 shadow-xl px-8 py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-sand/20">
               {[
-                { value: "10k+", label: "Students" },
+                { value: "Two", label: "Cambridge schools" },
                 { value: "20:1", label: "Student-Teacher Ratio" },
-                { value: "5,000+", label: "Alumni Network" },
-                { value: "100%", label: "Academic Results" },
+                { value: "Alumni", label: "Community" },
+                { value: "Cambridge", label: "Academic Pathway" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center px-4">
                   <p className="font-playfair text-2xl md:text-3xl font-bold text-[#133844]">{value}</p>
@@ -306,7 +306,7 @@ export default function CampusHighlightsPage() {
               <div>
                
                 <h2 className="font-playfair text-4xl md:text-5xl font-bold text-ink leading-none">
-                  Founder's <span className="text-crimson">Day</span>
+                  Founder&rsquo;s <span className="text-crimson">Day</span>
                 </h2>
               </div>
             </div>
@@ -829,7 +829,7 @@ const events = [
     date: "May 20",
     year: "2025",
     description:
-      "100% results year after year — celebrating the outstanding academic achievements of Seedling International Academy students.",
+      "Celebrating the academic achievements of Seedling International Academy students.",
     image: "/assets/FELICITATING TOPPERS IN BOARDS/1.webp",
     tag: "Academics",
     tagColor: "bg-crimson-dark",

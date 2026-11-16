@@ -147,7 +147,7 @@ const whyWork = [
       </svg>
     ),
     title: "Trusted Institution",
-    desc: "Join one of Jaipur's most respected school groups — 2 schools, 2 campuses, Cambridge, and a community of over 10k+ students since 1993.",
+    desc: "Join the Cambridge schools at Seedling International Academy and contribute to learning across the SIA and SMIA campuses in Jaipur.",
   },
   {
     icon: (
@@ -609,10 +609,10 @@ export default function CareersPage() {
           <div className="grid grid-cols-3 md:grid-cols-5 divide-x divide-[#133844]/20">
             {[
               { value: "2", label: "Schools" },
-              { value: "10k+", label: "Students" },
-              { value: "20:1", label: "Teacher Ratio" },
-              { value: "100%", label: "Board Results" },
-              { value: "1993", label: "Est." },
+              { value: "Two", label: "Cambridge schools" },
+              { value: "Jaipur", label: "Campus location" },
+              { value: "Cambridge", label: "Curriculum" },
+              { value: "SIA & SMIA", label: "Schools" },
             ].map((s) => (
               <div key={s.label} className="px-4 py-4 text-center">
                 <p className="font-playfair text-3xl md:text-4xl font-semibold text-[#133844]">{s.value}</p>
@@ -951,7 +951,7 @@ export default function CareersPage() {
               {[
                 "🏫 2 Schools",
                 "🎓 Cambridge Board",
-                "🌿 Est. 1993",
+                "📍 Jaipur campuses",
               ].map((b) => (
                 <span
                   key={b}

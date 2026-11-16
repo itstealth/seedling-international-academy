@@ -80,7 +80,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 
 const whyUs = [
-  { icon: "🏅", title: "100% Board Results", desc: "Consistent 100% results in board examinations — every year, across all campuses — a track record built through steady, individual attention rather than last-minute exam drilling.", color: "red" },
+  { icon: "🏅", title: "Board Examination Results", desc: "Review recent Cambridge examination achievements and results for each school.", color: "red" },
   { icon: "📋", title: "NEP Aligned", desc: "Curriculum thoughtfully designed to align with the National Education Policy for a future-ready education, so families never have to choose between an international standard and domestic policy direction.", color: "blue" },
   { icon: "🌍", title: "Global Standards", desc: "Choose from Cambridge or International curricula — the same Seedling values, the same globally recognised credentials, whichever academic pathway fits your child best.", color: "green" },
   { icon: "👨‍👩‍👧", title: "20:1 Teacher Ratio", desc: "Small class sizes ensure every child receives personalised attention, honest feedback, and genuine care — not just a seat in a crowded classroom.", color: "purple" },
@@ -333,7 +333,7 @@ export default function AdmissionsPage() {
         breadcrumbs={[{ label: "Admissions" }]}
         height="large"
         overlayOpacity={0.4}
-        imageAlt="Students in a Seedling International Academy classroom"
+        imageAlt="Students in a classroom at Seedling Cambridge, Jaipur"
       />
 
       {/* ══════════════════════════════════════════════════
@@ -383,7 +383,7 @@ export default function AdmissionsPage() {
 
             <Reveal delay={480}>
               <div className="flex gap-4 flex-wrap mt-12">
-                {["100% Board Results", "Est. 1993", "10k+ Students", "Cambridge Board"].map((b) => (
+                {["Board Results", "Cambridge pathway", "Two Cambridge schools", "Cambridge Board"].map((b) => (
                   <span key={b} className="bg-white/10 border border-white/20 text-white text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md">
                     {b}
                   </span>
@@ -472,10 +472,10 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-6">
             {[
-              { value: "10k+", label: "Students" },
-              { value: "20:1", label: "Student–Teacher Ratio" },
+              { value: "Two", label: "Cambridge schools" },
+              { value: "Cambridge", label: "Curriculum" },
               { value: "10,000+", label: "Alumni Worldwide" },
-              { value: "100%", label: "Board Results" },
+              { value: "Jaipur", label: "Campus location" },
               { value: "50+", label: "Nations Represented" },
               { value: "1993", label: "Year Established" },
             ].map((s) => (
@@ -1024,7 +1024,7 @@ export default function AdmissionsPage() {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-16 flex flex-wrap justify-center gap-4">
-              {["🎓 Cambridge Board", "🌿 Est. 1993", "📍 2 Campuses in Jaipur", "❤️ 10k+ Students"].map((b) => (
+              {["🎓 Cambridge pathway", "📍 Two Jaipur campuses", "🏫 SIA and SMIA", "❤️ Student support"].map((b) => (
                 <span key={b} className="bg-white border border-[#133844]/15 text-[#133844] text-xs px-5 py-2 rounded-full">
                   {b}
                 </span>

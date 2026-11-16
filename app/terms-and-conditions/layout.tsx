@@ -1,11 +1,11 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  path: "/terms-and-conditions",
-  title: "Terms & Conditions | Seedling International Academy",
-  description:
-    "Terms and conditions for Seedling International Academy, Jaipur, covering admissions and fees, student data and privacy, website use and grievances.",
+  path: '/terms-and-conditions',
+  title: 'Terms & Conditions | Seedling International Academy',
+  description: 'Terms of use for the Seedling International Academy and SMIA website, Cambridge schools in Jawahar Nagar and Durgapura, Jaipur.',
+  imageAlt: 'Seedling International Academy',
 });
 
 export default function RouteMetadataLayout({ children }: { children: React.ReactNode }) {

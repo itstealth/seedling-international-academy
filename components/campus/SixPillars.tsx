@@ -13,7 +13,7 @@ const pillars = [
   { title: "Modern Facilities", desc: "Smart classrooms, dedicated STEM labs, library, performing arts spaces, and multi-sport zones — purpose-built for deep, joyful learning rather than designed purely for a prospectus photograph.", icon: "🏛️", color: "green" },
   { title: "Holistic Development", desc: "Beyond academics — sports, performing arts, clubs, leadership programmes and community service shape the complete learner, giving every student more than one way to find their strength.", icon: "🎨", color: "purple" },
   { title: "Safe & Nurturing", desc: "Secure campuses with trained counsellors, mentors, and a genuine culture of care that puts every child's emotional and physical well-being first, every single day.", icon: "❤️", color: "amber" },
-  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level cohorts with proven records of top grades, university placements and a global alumni network spread across 50+ nations.", icon: "🏆", color: "rose" },
+  { title: "Strong Results", desc: "Cambridge IGCSE and AS/A Level students build a record of achievement and continue to universities around the world.", icon: "🏆", color: "rose" },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; accent: string; iconBg: string }> = {

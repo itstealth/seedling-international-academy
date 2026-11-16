@@ -153,16 +153,16 @@ const programs = [
 ];
 
 const achievements = [
-  { value: "100%", label: "Board Results", sub: "Consistently every year", icon: "🏆" },
-  { value: "10k+", label: "Students Enrolled", sub: "Across 2 schools", icon: "👩‍🎓" },
-  { value: "20:1", label: "Student–Teacher Ratio", sub: "Personalised attention", icon: "📐" },
-  { value: "5,000+", label: "Alumni Network", sub: "Across 50+ nations", icon: "🌍" },
-  { value: "33+", label: "Years of Excellence", sub: "Since 1993", icon: "⭐" },
-  { value: "2", label: "Boards Offered", sub: " Cambridge", icon: "📜" },
+  { value: "Cambridge", label: "Curriculum", sub: "International pathway", icon: "🏆" },
+  { value: "Two", label: "Cambridge schools", sub: "Across two Jaipur campuses", icon: "👩‍🎓" },
+  { value: "Student", label: "Support", sub: "Personalised attention", icon: "📐" },
+  { value: "Alumni", label: "Community", sub: "A continuing school connection", icon: "🌍" },
+  { value: "Jaipur", label: "School community", sub: "SIA and SMIA campuses", icon: "⭐" },
+  { value: "Cambridge", label: "International Curriculum", sub: "At both Jaipur campuses", icon: "📜" },
 ];
 
 const learnerProfile = [
-  { trait: "Confident", desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum and IB curriculum, they gain confidence to face challenges and express ideas.", emoji: "💪", img: "/assets/SENIIOR INVESTITURE/1.webp" },
+  { trait: "Confident", desc: "We encourage our students to be confident in their abilities. Through the Cambridge curriculum, they gain confidence to face challenges and express ideas.", emoji: "💪", img: "/assets/SENIIOR INVESTITURE/1.webp" },
   { trait: "Reflective", desc: "We encourage students to be reflective thinkers — pondering their experiences, analysing outcomes, and adapting with informed decisions.", emoji: "🪞", img: "/assets/WHISPERS OF WELLNESS/2.webp" },
   { trait: "Responsible", desc: "Students are accountable for their actions. We foster integrity and prepare them to make wise decisions and shape a bright future.", emoji: "🤝", img: "/assets/ROAD SAFETY WEEK/1.webp" },
   { trait: "Innovative", desc: "We ignite the spark of innovation through exciting projects, cutting-edge technologies, and out-of-the-box problem-solving.", emoji: "💡", img: "/assets/DESIGN CAREER FAIR/2.webp" },
@@ -233,7 +233,7 @@ export default function AcademicsPage() {
                 Affiliated with the Cambridge Board, our Cambridge schools deliver a comprehensive, NEP-aligned curriculum. Our student-centric syllabus fosters holistic development and cultivates values, ethics, and leadership qualities — creating a stress-free environment that boosts self-esteem and confidence.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["NEP Aligned", "100% Board Results", "Personalised Learning"].map((h) => (
+                {["NEP Aligned", "Board Examination Results", "Personalised Learning"].map((h) => (
                   <span key={h} className="text-[10px] text-navy border border-navy/10 px-4 py-2 rounded-full font-black tracking-widest uppercase font-dm bg-white/50">{h}</span>
                 ))}
               </div>
@@ -294,8 +294,8 @@ export default function AcademicsPage() {
           <Reveal delay={500}>
             <div className="mt-8 md:mt-16 border-t border-[#133844]/10 pt-12 text-center">
               <blockquote className="font-playfair text-xl md:text-2xl text-[#133844] max-w-3xl mx-auto leading-relaxed">
-                "Part of the art of teaching is the ability to rearrange the world for students to guide them to see
-                things in a new way."
+                &ldquo;Part of the art of teaching is the ability to rearrange the world for students to guide them to see
+                things in a new way.&rdquo;
               </blockquote>
               <cite className="text-[#133844] text-[10px] font-black uppercase tracking-widest mt-4 block not-italic font-dm">
                 — Sunny Decker
@@ -468,13 +468,13 @@ export default function AcademicsPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-crimson/5 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
               <div className="relative z-10">
                 <p className="text-sand text-xs tracking-[0.4em] uppercase mb-4 font-black">Our Pride</p>
-                <h3 className="font-playfair text-4xl md:text-5xl font-semibold mb-6">100% Board Results</h3>
-                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Seedling Group of Schools has consistently achieved 100% results in both Cambridge and Cambridge board examinations — every year, across all campuses. Many students secure high scores and distinctions, with a strong track record of placements in top universities worldwide.</p>
+                <h3 className="font-playfair text-4xl md:text-5xl font-semibold mb-6">Cambridge Examination Results</h3>
+                <p className="text-white/70 mt-3 max-w-xl text-lg font-dm font-light leading-relaxed">Explore student achievements and recent Cambridge examination results.</p>
               </div>
               <div className="flex-shrink-0 relative z-10">
                 <div className="w-40 h-40 bg-sand/10 rounded-full flex flex-col items-center justify-center border-2 border-sand/30 group-hover:bg-sand group-hover:text-[#133844] transition-colors duration-500">
-                  <span className="font-playfair text-5xl font-bold">100%</span>
-                  <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Every Year</span>
+                  <span className="font-playfair text-5xl font-bold">Cambridge</span>
+                  <span className="text-[10px] tracking-widest uppercase mt-2 font-black">Examinations</span>
                 </div>
               </div>
             </div>

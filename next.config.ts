@@ -29,6 +29,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/sia", destination: "/campuses/sia", permanent: true },
+      { source: "/smia", destination: "/campuses/smia", permanent: true },
+      { source: "/mandatory-disclosures", destination: "/mandatory-disclosure", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

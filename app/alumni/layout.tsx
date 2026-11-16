@@ -5,7 +5,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/alumni",
   title: "Seedling Alumni: A Global Community | SIA & SMIA Jaipur",
   description:
-    "5,000+ Seedling alumni across 50+ nations. Discover where a Seedling education takes you — top universities worldwide and thriving global careers.",
+    "Discover Seedling alumni and the universities and careers they pursue around the world.",
   imageAlt: "Seedling Alumni Network",
 });
 

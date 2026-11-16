@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
@@ -19,10 +19,10 @@ const facilities = [
 ];
 
 const stats = [
-  { value: "1993", label: "Established", palette: "purple" },
+  { value: "SMIA", label: "Durgapura", palette: "purple" },
   { value: "20:1", label: "Student : Teacher", palette: "blue" },
   { value: "Modern", label: "Campus", palette: "green" },
-  { value: "100%", label: "Cambridge Results", palette: "orange" },
+  { value: "Cambridge", label: "Curriculum", palette: "orange" },
 ];
 
 export default function SMIAPage(): React.JSX.Element {
@@ -125,7 +125,7 @@ export default function SMIAPage(): React.JSX.Element {
               className="md:sticky md:top-28 self-start"
             >
               <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg">
-                <img src="/assets/Home/SMIA_collage_v3.webp" alt="Seedling Modern International Academy" className="w-full h-full object-cover" />
+                <img src="/assets/Home/SMIA_collage_v3.webp" alt="Collage of campus life at Seedling Modern International Academy, Jaipur" className="w-full h-full object-cover" />
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
                   <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">SMIA</span>
                 </div>
