@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Isolate generated route types when building a release beside the active build.
+  typescript: { tsconfigPath: process.env.NEXT_TSCONFIG_PATH || "tsconfig.json" },
   distDir: process.env.NEXT_BUILD_DIR || '.next',
   compress: true,
   poweredByHeader: false,
   experimental: {
+    cpus: 1,
     inlineCss: true,
   },
   images: {
@@ -31,9 +34,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/sia", destination: "/campuses/sia", permanent: true },
-      { source: "/smia", destination: "/campuses/smia", permanent: true },
-      { source: "/mandatory-disclosures", destination: "/mandatory-disclosure", permanent: true },
+      { source: "/sia", destination: "/campuses/sia", statusCode: 301 },
+      { source: "/smia", destination: "/campuses/smia", statusCode: 301 },
+      { source: "/mandatory-disclosure", destination: "/mandatory-disclosures", statusCode: 301 },
+      { source: "/academics/learning-support", destination: "/learning-support", statusCode: 301 },
     ];
   },
   async headers() {

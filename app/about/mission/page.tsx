@@ -285,7 +285,7 @@ export default function MissionAndValuesPage(): React.JSX.Element {
               points: [
                 "Cambridge IGCSE & AS/A Level cohorts",
                 "Top grades with proven university placements",
-                "Global alumni network across 50+ nations",
+                "Alumni pursuing education and careers around the world",
               ],
               footer: "Excellence that opens doors worldwide",
             },

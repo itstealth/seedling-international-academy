@@ -364,7 +364,7 @@ export default function AdmissionsPage() {
             </Reveal>
             <Reveal delay={240}>
               <p className="text-white/80 text-xl leading-relaxed mb-10 max-w-md font-dm font-light">
-                Seedling Group of Schools — 5 schools, 2 campuses, Cambridge board. Prioritising student well-being and community interests since 1993.
+                Seedling Group of Schools — four schools across two Jaipur campuses, offering CBSE and Cambridge pathways alongside Wonderland early years education.
               </p>
             </Reveal>
             <Reveal delay={360}>

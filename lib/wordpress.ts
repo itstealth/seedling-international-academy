@@ -27,14 +27,10 @@ export interface WPCategory {
 
 export async function getPosts(perPage = 50): Promise<WPPost[]> {
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000);
-
     const res = await fetch(`${BASE_URL}/posts?per_page=${perPage}&_embed`, {
-      signal: controller.signal,
+      signal: AbortSignal.timeout(6000),
       next: { revalidate: 600 },
     });
-    clearTimeout(timeoutId);
 
     if (!res.ok) throw new Error(`HTTP error ${res.status}`);
     const data = await res.json();
@@ -50,14 +46,10 @@ export async function getPosts(perPage = 50): Promise<WPPost[]> {
 
 export async function getPostBySlug(slug: string): Promise<WPPost | null> {
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000);
-
     const res = await fetch(`${BASE_URL}/posts?slug=${encodeURIComponent(slug)}&_embed`, {
-      signal: controller.signal,
+      signal: AbortSignal.timeout(6000),
       next: { revalidate: 600 },
     });
-    clearTimeout(timeoutId);
 
     if (!res.ok) throw new Error(`HTTP error ${res.status}`);
     const posts: WPPost[] = await res.json();
@@ -74,14 +66,10 @@ export async function getPostBySlug(slug: string): Promise<WPPost | null> {
 
 export async function getCategories(): Promise<WPCategory[]> {
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000);
-
     const res = await fetch(`${BASE_URL}/categories?per_page=50`, {
-      signal: controller.signal,
+      signal: AbortSignal.timeout(6000),
       next: { revalidate: 600 },
     });
-    clearTimeout(timeoutId);
 
     if (!res.ok) throw new Error(`HTTP error ${res.status}`);
     const data = await res.json();

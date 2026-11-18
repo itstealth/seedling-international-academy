@@ -75,12 +75,12 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
     'Admissions Open for 2026–27 Academic Session',
     'Scholarship Available for Meritorious Students in Academics & Sports',
     'Parent Counselling Available Online & Offline',
-    'Results 2024: 100% Pass Rate · Multiple School Toppers',
+    'Explore Cambridge student achievements and examination results',
     'Annual Sports Day – March 2025',
     'Admissions Open for 2026–27 Academic Session',
     'Scholarship Available for Meritorious Students in Academics & Sports',
     'Parent Counselling Available Online & Offline',
-    'Results 2024: 100% Pass Rate · Multiple School Toppers',
+    'Explore Cambridge student achievements and examination results',
     'Annual Sports Day – March 2025',
   ];
 

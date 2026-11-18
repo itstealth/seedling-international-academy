@@ -228,7 +228,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
     },
     {
-      url: `${BASE_URL}/mandatory-disclosure`,
+      url: `${BASE_URL}/mandatory-disclosures`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.4,
