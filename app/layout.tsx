@@ -29,6 +29,40 @@ const marcellus = Marcellus({
 });
 
 const BASE_URL = "https://cambridge.seedlingschools.com";
+const siteOrganizationJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Seedling International Academy",
+      alternateName: ["SIA", "Seedling Modern International Academy", "SMIA"],
+      url: BASE_URL,
+      logo: `${BASE_URL}/Logo%2005.png`,
+      areaServed: { "@type": "City", name: "Jaipur" },
+      contactPoint: [
+        { "@type": "ContactPoint", contactType: "admissions", telephone: "+91-7413012351" },
+        { "@type": "ContactPoint", contactType: "admissions", telephone: "+91-95877-72837" },
+      ],
+      sameAs: [
+        "https://www.instagram.com/seedlinginternational/",
+        "https://www.facebook.com/seedlinginternationalacademy",
+        "https://www.instagram.com/smiajaipur/",
+        "https://www.facebook.com/SMIAJaipur",
+        "https://www.youtube.com/@seedlinginternationalacade1802",
+        "https://www.linkedin.com/company/seedling-international-academy/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: "Seedling International Academy",
+      inLanguage: "en-IN",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -85,6 +119,12 @@ export default function RootLayout({
       className={`${geistMono.variable} ${sourceSans.variable} ${marcellus.variable} h-full antialiased`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteOrganizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <link
           rel="preload"
           as="image"

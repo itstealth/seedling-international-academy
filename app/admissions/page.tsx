@@ -57,6 +57,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <div className={`border border-sand/20 rounded-2xl overflow-hidden transition-all duration-300 ${open ? "shadow-xl border-sand/40" : "shadow-sm"}`}>
       <button
+        type="button"
+        aria-expanded={open}
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left bg-white hover:bg-off-white transition-colors duration-200"
       >
@@ -143,6 +145,35 @@ const steps = [
     icon: "🎉",
   },
 ];
+
+const admissionFaqs = [
+  {
+    q: "Which classes can I apply for?",
+    a: "Applications are open for Play Group to Class IX and Class XI for the 2026–27 session.",
+  },
+  {
+    q: "What happens after I submit the application?",
+    a: "The admissions counsellor will contact you to answer questions and guide you through the next steps, including an age-appropriate interaction or assessment and document submission.",
+  },
+  {
+    q: "Is an entrance examination required?",
+    a: "Applicants for Classes IX and XI complete an entrance examination in line with the school's admission process.",
+  },
+  {
+    q: "Can I get admission counselling online?",
+    a: "Yes. Parent counselling is available both online and offline.",
+  },
+];
+
+const admissionFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: admissionFaqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
 
 const documents = [
   { doc: "Transfer Certificate (TC)", note: "From previous school" },
@@ -296,6 +327,12 @@ export default function AdmissionsPage() {
 
   return (
     <div className="bg-off-white text-text-base overflow-x-clip font-dm">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(admissionFaqJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <style>{`
         .duration-400 { transition-duration: 400ms; }
         @keyframes fade-in {
@@ -950,6 +987,22 @@ export default function AdmissionsPage() {
                   </div>
                 </div>
               </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <Tag>Common Questions</Tag>
+            <h2 className="font-playfair text-4xl md:text-5xl font-black text-ink leading-tight">
+              Admissions <span className="text-crimson">FAQs</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {admissionFaqs.map((faq) => (
+              <FAQItem key={faq.q} q={faq.q} a={faq.a} />
             ))}
           </div>
         </div>

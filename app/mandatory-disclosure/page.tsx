@@ -5,10 +5,10 @@ import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = {
   ...pageMetadata({
-    path: '/mandatory-disclosure',
-    title: 'Mandatory Public Disclosure | Seedling International Academy',
+    path: '/mandatory-disclosures',
+    title: 'Mandatory Disclosures | Cambridge Schools Jaipur',
     description:
-      'Mandatory public disclosure for Seedling International Academy, Jawahar Nagar, Jaipur: school information, affiliation status, trust details and certificates.',
+      "Statutory and Cambridge accreditation disclosures for Seedling's international schools in Jawahar Nagar and Durgapura, Jaipur, with certificates and reports.",
   }),
   keywords: 'Seedling International School, Jaipur, Mandatory Disclosure, Cambridge Compliance, School Information, Affiliation Status',
 };

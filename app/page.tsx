@@ -7,6 +7,7 @@ import NpfAdmissionsForm from '@/components/NpfAdmissionsForm';
 import HeroVideo from "@/components/ui/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
 import { homepageJsonLd } from "@/lib/homepage-jsonld";
+import { imageAltFor } from "@/lib/image-alt";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type TabKey = 'campus' | 'labs' | 'sports' | 'arts';
@@ -338,7 +339,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                       {campus.images.length === 1 ? (
                         <img
                           src={campus.images[0]}
-                          alt={campus.name}
+                          alt={imageAltFor(campus.images[0], campus.name)}
                           loading="lazy"
                           decoding="async"
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
@@ -349,7 +350,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
                             <div key={idx} className="relative overflow-hidden w-full h-full bg-[#eee]">
                               <img
                                 src={imgSrc}
-                                alt={`${campus.name} student collage ${idx + 1}`}
+                                alt={imageAltFor(imgSrc, campus.name)}
                                 loading="lazy"
                                 decoding="async"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
@@ -756,7 +757,7 @@ export default function CambridgeInternationalSchoolPage(): React.JSX.Element {
         >
           {[
             { icon: CalendarDays, label: "Book a visit", href: "/admissions" },
-            { icon: Mail, label: "Email us", href: "mailto:seedlingacademy@hotmail.com" },
+            { icon: Mail, label: "Send an enquiry", href: "/contact-us#contact-form" },
             { icon: Phone, label: "Call us", href: "tel:+917413012351" },
           ].map(({ icon: Icon, label, href }, idx) => (
             <motion.a

@@ -653,9 +653,9 @@ return (
                 className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-[#133844] px-6 py-3.5 rounded-xl font-black text-sm transition-colors">
                 📞 +91-74130-12351
               </a>
-              <a href="mailto:seedlingacademy@hotmail.com"
+              <a href="/contact-us#contact-form"
                 className="flex items-center gap-3 text-[#133844]/60 hover:text-[#133844] text-sm font-dm transition-colors">
-                ✉️ seedlingacademy@hotmail.com
+                ✉️ Send an online enquiry
               </a>
             </div>
           </div>

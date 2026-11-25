@@ -22,6 +22,7 @@ interface HeroWrapperProps {
   /** Descriptive alt text for the hero background image. Leave empty for decorative images. */
   imageAlt?: string;
   headingLevel?: "h1" | "h2" | "p";
+  structuredData?: Record<string, unknown>;
 }
 
 export default function HeroWrapper({
@@ -33,10 +34,36 @@ export default function HeroWrapper({
   breadcrumbs = [],
   imageAlt,
   headingLevel = "h1",
+  structuredData,
 }: HeroWrapperProps): React.JSX.Element {
   const HeadingTag = headingLevel;
+  const visibleBreadcrumbs = breadcrumbs.filter(
+    (crumb, index) => !(index === 0 && crumb.label.toLowerCase() === "home")
+  );
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    ...(visibleBreadcrumbs.length > 0 ? visibleBreadcrumbs : [{ label: title }]),
+  ];
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.label,
+      ...(index < breadcrumbItems.length - 1 && crumb.href
+        ? { item: new URL(crumb.href, "https://cambridge.seedlingschools.com").toString() }
+        : {}),
+    })),
+  };
   return (
     <div className="relative h-[360px] md:h-[420px] lg:h-[500px] overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData ? [breadcrumbJsonLd, structuredData] : breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {backgroundImage && (
         <Image
           src={backgroundImage}

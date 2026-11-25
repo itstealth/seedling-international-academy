@@ -1,15 +1,23 @@
 import type { MetadataRoute } from "next";
+import { getPosts } from "@/lib/wordpress";
 
 const BASE_URL = "https://cambridge.seedlingschools.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+export const revalidate = 600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPosts(100);
+  const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   return [
     // ── Home ──────────────────────────────────────────────────────────────
     {
       url: BASE_URL,
-      lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
     },
@@ -17,19 +25,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Campuses ──────────────────────────────────────────────────────────
     {
       url: `${BASE_URL}/campuses`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/campuses/sia`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/campuses/smia`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -37,25 +42,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Admissions ────────────────────────────────────────────────────────
     {
       url: `${BASE_URL}/admissions`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/admissions/apply`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/admissions/process`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/admissions/fee-structure`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/admissions/transport`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
     },
@@ -63,37 +69,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Academics ─────────────────────────────────────────────────────────
     {
       url: `${BASE_URL}/academics/early-years`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/academics/primary`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/academics/lower-secondary`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/academics/upper-secondary`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/academics/advanced`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/academics/roll-of-honour`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -101,37 +101,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── About ─────────────────────────────────────────────────────────────
     {
       url: `${BASE_URL}/about`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/about/leadership`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/about/mission`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/about/affiliation`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.6,
     },
     {
       url: `${BASE_URL}/about/welcome-from-the-head`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${BASE_URL}/about/standards`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.6,
     },
@@ -139,37 +133,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── School Life & Other Top-Level Pages ───────────────────────────────
     {
       url: `${BASE_URL}/curriculum`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/school-life`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/cambridge-canvas`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/alumni`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/faculty`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/learning-support`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
     },
@@ -177,31 +165,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── News, Blog & Career ───────────────────────────────────────────────
     {
       url: `${BASE_URL}/news-and-events`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/news-and-events/news`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
       url: `${BASE_URL}/news-and-events/events`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
       url: `${BASE_URL}/career`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.6,
     },
@@ -209,7 +192,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Contact ───────────────────────────────────────────────────────────
     {
       url: `${BASE_URL}/contact-us`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -217,21 +199,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Legal / Compliance ────────────────────────────────────────────────
     {
       url: `${BASE_URL}/policies`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
       url: `${BASE_URL}/terms-and-conditions`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.4,
     },
     {
       url: `${BASE_URL}/mandatory-disclosures`,
-      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.4,
     },
+    ...blogPosts,
   ];
 }

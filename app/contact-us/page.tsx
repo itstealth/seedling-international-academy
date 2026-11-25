@@ -171,7 +171,7 @@ export default function ContactPage() {
 
             <InfoCard icon={<EmailIcon className="w-4 h-4" />} iconBg="bg-sand/10 text-[#133844]" accent="bg-sand" label="Email Us">
               <ContactItem label="SIA">
-                <a href="mailto:cambridgeacademy@hotmail.com" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">cambridgeacademy@hotmail.com</a>
+                <a href="#contact-form" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors">Online enquiry form</a>
               </ContactItem>
               <ContactItem label="SMIA">
                 <a href="mailto:smhsjaipur@jnujaipur.ac.in" className="text-text-base text-sm font-semibold hover:text-crimson transition-colors break-all">smhsjaipur@jnujaipur.ac.in</a>

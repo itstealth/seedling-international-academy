@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import SixPillars from "@/components/campus/SixPillars";
+import { imageAltFor } from "@/lib/image-alt";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
@@ -28,7 +29,6 @@ type Campus = {
   facilities: { name: string; desc: string }[];
   address: string;
   phones: { label: string; value: string; tel: string }[];
-  email: string;
   mapEmbed: string;
   mapHref: string;
   tagline: string;
@@ -65,7 +65,6 @@ const campuses: Campus[] = [
       { label: "Admission Helpline", value: "+91 74130 12351", tel: "+917413012351" },
       { label: "Office Landline", value: "0141 3623000", tel: "01413623000" },
     ],
-    email: "seedlingacademy@hotmail.com",
     mapEmbed: "https://www.google.com/maps?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur&output=embed",
     mapHref: "https://maps.google.com/?q=Seedling+International+Academy+Jawahar+Nagar+Jaipur",
     pageHref: "/campuses/sia",
@@ -95,7 +94,6 @@ const campuses: Campus[] = [
     ],
     address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
-    email: "seedlingacademy@hotmail.com",
     mapEmbed: "https://www.google.com/maps?q=Seedling+Modern+International+Academy+Durgapura+Jaipur&output=embed",
     mapHref: "https://maps.google.com/?q=Seedling+Modern+International+Academy+Durgapura+Jaipur",
     pageHref: "/campuses/smia",
@@ -201,7 +199,7 @@ function CampusBlock({ campus, index }: { campus: Campus; index: number }) {
             className="md:sticky md:top-28 self-start"
           >
             <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg">
-              <img src={campus.heroImage} alt={campus.fullName} className="w-full h-full object-cover" />
+              <img src={campus.heroImage} alt={imageAltFor(campus.heroImage, campus.fullName)} className="w-full h-full object-cover" />
               <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
                 <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">{campus.shortName}</span>
               </div>

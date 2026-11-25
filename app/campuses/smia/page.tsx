@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import HeroWrapper from "@/components/layout/HeroWrapper";
 import SixPillars from "@/components/campus/SixPillars";
+import { smiaSchoolJsonLd } from "@/lib/campus-jsonld";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
@@ -31,6 +32,7 @@ export default function SMIAPage(): React.JSX.Element {
       <HeroWrapper
         backgroundImage="/assets/Home/SMIA_collage_v3.webp"
         title="Seedling Modern International Academy (SMIA), Durgapura"
+        structuredData={smiaSchoolJsonLd}
         badge="SMIA · Durgapura, Jaipur"
         breadcrumbs={[{ label: "Campuses", href: "/campuses" }, { label: "SMIA" }]}
         height="large"
@@ -200,7 +202,7 @@ export default function SMIAPage(): React.JSX.Element {
               </div>
               <div className="flex items-start gap-3">
                 <span className="w-6 h-6 rounded-full bg-crimson text-white flex items-center justify-center flex-shrink-0 text-[10px]">✉</span>
-                <a href="mailto:seedlingacademy@hotmail.com" className="text-[#133844] font-semibold hover:text-crimson transition-colors break-all">seedlingacademy@hotmail.com</a>
+                <a href="/contact-us#contact-form" className="text-[#133844] font-semibold hover:text-crimson transition-colors">Send an online enquiry</a>
               </div>
             </div>
             <a href="https://maps.google.com/?q=Seedling+Modern+International+Academy+Durgapura+Jaipur" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-[11px] font-black tracking-[0.2em] uppercase text-crimson hover:text-[#133844] transition-colors">

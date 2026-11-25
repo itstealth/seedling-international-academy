@@ -84,7 +84,7 @@ const sections = [
     content: "Seedling International Academy is committed to addressing concerns from students, parents, and guardians promptly and fairly. The School maintains a formal Grievance Redressal process:",
     list: [
       "Stage 1 — Direct communication: Raise the matter with the relevant class teacher or department head",
-      "Stage 2 — Written complaint: Submit a written complaint to the School Administration at seedlingacademy@hotmail.com",
+      "Stage 2 — Written complaint: Submit a written complaint to the School Administration through the contact form or at the campus office",
       "Stage 3 — Principal review: Escalate to the School Principal if Stage 2 does not resolve the matter within 10 working days",
       "Stage 4 — Management review: Unresolved matters may be escalated to School Group Management in writing",
       "Complaints regarding the website or online content will be acknowledged within 5 working days",

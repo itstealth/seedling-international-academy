@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Instagram, Facebook, Linkedin, Youtube } from "@/components/icons/BrandIcons";
 
 const schools = [
@@ -9,7 +9,6 @@ const schools = [
     subtitle: "",
     logo: "/Logo%2005.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
-    email: "seedlingacademy@hotmail.com",
     phones: [
       { label: "Admission Helpline", value: "+91 7413012351", tel: "+917413012351" },
       { label: "Office Landline", value: "0141 3623000", tel: "01413623000" },
@@ -19,8 +18,6 @@ const schools = [
     socials: [
       { label: "Instagram", href: "https://www.instagram.com/seedlinginternational/", Icon: Instagram },
       { label: "Facebook", href: "https://www.facebook.com/seedlinginternationalacademy", Icon: Facebook },
-      { label: "YouTube", href: "https://www.youtube.com/@seedlinginternationalacade1802", Icon: Youtube },
-      { label: "LinkedIn", href: "https://www.linkedin.com/company/seedling-international-academy/", Icon: Linkedin },
     ],
   },
   {
@@ -28,17 +25,19 @@ const schools = [
     subtitle: "(SMIA)",
     logo: "/Logo%2006.png",
     logoHeight: "h-14 sm:h-16 md:h-20",
-    email: "seedlingacademy@hotmail.com",
     phones: [{ label: "Admission Helpline", value: "+91 95877 72837", tel: "+919587772837" }],
     address: "Ashok Marg, Mahaveer Nagar II, Durgapura, Jaipur - 302018",
     mapQuery: "SMIA Seedling Mahaveer Nagar Durgapura Jaipur",
     socials: [
       { label: "Instagram", href: "https://www.instagram.com/smiajaipur/", Icon: Instagram },
       { label: "Facebook", href: "https://www.facebook.com/SMIAJaipur", Icon: Facebook },
-      { label: "YouTube", href: "https://www.youtube.com/@seedlinginternationalacade1802", Icon: Youtube },
-      { label: "LinkedIn", href: "https://www.linkedin.com/company/seedling-international-academy/", Icon: Linkedin },
     ],
   },
+];
+
+const groupSocials = [
+  { label: "Seedling Group YouTube", href: "https://www.youtube.com/@seedlinginternationalacade1802", Icon: Youtube },
+  { label: "Seedling Group LinkedIn", href: "https://www.linkedin.com/company/seedling-international-academy/", Icon: Linkedin },
 ];
 
 export default function Footer() {
@@ -91,14 +90,6 @@ export default function Footer() {
 
                   {/* Contact Info */}
                   <div className="space-y-4">
-                    <a
-                      href={`mailto:${school.email}`}
-                      className="group flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors"
-                    >
-                      <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-sand" strokeWidth={2} />
-                      <span className="break-all">{school.email}</span>
-                    </a>
-
                     {school.phones.length > 0 && (
                       <div className={`grid gap-4 ${school.phones.length > 1 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
                         {school.phones.map((phone) => (
@@ -121,6 +112,12 @@ export default function Footer() {
                       <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-sand" strokeWidth={2} />
                       <span className="leading-snug">{school.address}</span>
                     </div>
+                    <Link
+                      href="/contact-us#contact-form"
+                      className="inline-flex text-sm font-semibold text-sand hover:text-white transition-colors"
+                    >
+                      Send an online enquiry
+                    </Link>
                   </div>
 
                   {/* Map + Social pushed to bottom */}
@@ -161,6 +158,23 @@ export default function Footer() {
                   </div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 pb-10 text-sm text-white/75">
+              <span className="font-semibold">Seedling Group updates</span>
+              {groupSocials.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 hover:bg-white hover:text-[#133844] transition-colors"
+                >
+                  <Icon className="size-4" />
+                  {label.replace("Seedling Group ", "")}
+                </a>
               ))}
             </div>
 

@@ -842,7 +842,7 @@ export default function CareersPage() {
                     address: "Sector-4, Park Lane, Jawahar Nagar, Jaipur – 302004",
                     phone: "+91 74130 12351",
                     landline: "0141-3623000",
-                    email: "cambridgeacademy@hotmail.com",
+                    enquiryHref: "/contact-us#contact-form",
                     color: "border-l-navy",
                   },
                   // {
@@ -851,7 +851,7 @@ export default function CareersPage() {
                   //   address: "Ashok Marg, Mahaveer Nagar-II, Durgapura, Jaipur – 302018",
                   //   phone: "+91 95877 72837",
                   //   landline: "0141-3624000",
-                  //   email: "smhsjaipur@jnujaipur.ac.in",
+                  //   enquiryHref: "/contact-us#contact-form",
                   //   color: "border-l-crimson",
                   // },
                 ].map((campus, i) => {
@@ -882,7 +882,7 @@ export default function CareersPage() {
                       </p>
                       <p className="flex gap-2 items-center">
                         <span>✉️</span>
-                        <a href={`mailto:${campus.email}`} className="text-navy hover:underline">{campus.email}</a>
+                        <a href={campus.enquiryHref} className="text-navy hover:underline">Online enquiry form</a>
                       </p>
                     </div>
                   </div>

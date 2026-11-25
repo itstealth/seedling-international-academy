@@ -45,13 +45,13 @@ export default function ThankYouPage() {
             +91 741301 2351
           </a>
           <span className="hidden sm:block text-[#133844]/20">|</span>
-          <a
-            href="mailto:seedlingacademy@hotmail.com"
+          <Link
+            href="/contact-us#contact-form"
             className="flex items-center gap-2 text-[#133844]/60 hover:text-[#133844] text-sm transition-colors"
           >
             <Mail className="w-4 h-4" />
-            seedlingacademy@hotmail.com
-          </a>
+            Send another enquiry
+          </Link>
         </div>
 
         {/* Action Button */}

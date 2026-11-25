@@ -915,8 +915,8 @@ function CTASection() {
             SMHS: +91 95877 72837
           </a> */}
           <span className="hidden sm:block text-white/20">|</span>
-          <a href="mailto:cambridgeacademy@hotmail.com" className="hover:text-sand transition-colors font-bold">
-            cambridgeacademy@hotmail.com
+          <a href="/contact-us#contact-form" className="hover:text-sand transition-colors font-bold">
+            Online enquiry form
           </a>
         </div>
       </div>

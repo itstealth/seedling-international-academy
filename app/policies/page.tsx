@@ -77,7 +77,7 @@ const sections = [
 
 Seedling International Academy, Jaipur
 
-Email: seedlingacademy@hotmail.com
+Online enquiries: https://cambridge.seedlingschools.com/contact-us#contact-form
 
 Website: https://cambridge.seedlingschools.com/
 
