@@ -81,11 +81,12 @@ export default function MissionAndValuesPage(): React.JSX.Element {
     <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
-        backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.39.55.jpeg"
+        backgroundImage="/assets/about/about-banner.jpg"
         title="Our Mission, Vision & Values"
         badge="What We Stand For"
         breadcrumbs={[{ label: "Mission & Values" }]}
         height="medium"
+        imageAlt="Seedling International Academy campus representing the school's mission, vision and values"
       />
 
       {/* ═══ INTRO / VISION ═══ */}

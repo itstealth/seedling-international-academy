@@ -2,6 +2,89 @@ const siteUrl = "https://cambridge.seedlingschools.com";
 const organizationId = `${siteUrl}/#organization`;
 const pathwayId = `${siteUrl}/#cambridge-pathway`;
 
+const campusLocations = [
+  {
+    "@type": "Place",
+    name: "Seedling International Academy",
+    url: `${siteUrl}/campuses/sia`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Sector 4, Park Lane, Jawahar Nagar",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      postalCode: "302004",
+      addressCountry: "IN",
+    },
+  },
+  {
+    "@type": "Place",
+    name: "Seedling Modern International Academy",
+    url: `${siteUrl}/campuses/smia`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Ashok Marg, Mahaveer Nagar II, Durgapura",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      postalCode: "302018",
+      addressCountry: "IN",
+    },
+  },
+];
+
+function courseListItem({
+  position,
+  name,
+  description,
+  path,
+  typicalAgeRange,
+}: {
+  position: number;
+  name: string;
+  description: string;
+  path: string;
+  typicalAgeRange: string;
+}) {
+  const url = `${siteUrl}${path}`;
+  const offerId = `${url}#admissions-offer`;
+
+  return {
+    "@type": "ListItem",
+    position,
+    url,
+    item: {
+      "@type": "Course",
+      "@id": `${url}#course`,
+      name,
+      description,
+      url,
+      typicalAgeRange,
+      provider: {
+        "@type": "EducationalOrganization",
+        "@id": organizationId,
+        name: "Seedling International Academy",
+        url: siteUrl,
+      },
+      offers: {
+        "@type": "Offer",
+        "@id": offerId,
+        category: "Paid",
+        priceCurrency: "INR",
+        url: `${siteUrl}/admissions/fee-structure`,
+        availability: "https://schema.org/InStock",
+        offeredBy: { "@id": organizationId },
+      },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        "@id": `${url}#on-campus-instance`,
+        name: `${name} — on-campus programme`,
+        courseMode: "onsite",
+        location: campusLocations,
+        offers: { "@id": offerId },
+      },
+    },
+  };
+}
+
 export const homepageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -155,38 +238,34 @@ export const homepageJsonLd = {
       "@id": pathwayId,
       name: "Cambridge Pathway (age 3 to 19)",
       itemListElement: [
-        {
-          "@type": "Course",
+        courseListItem({
+          position: 1,
           name: "Cambridge Primary",
-          description:
-            "Cambridge Primary for ages 5 to 11 provides a strong foundation and prepares students to progress through the Cambridge Pathway in an age-appropriate way.",
-          url: `${siteUrl}/academics/primary`,
-          provider: { "@id": organizationId },
-        },
-        {
-          "@type": "Course",
+          description: "Foundation learning within the Cambridge Pathway.",
+          path: "/academics/primary",
+          typicalAgeRange: "5-11",
+        }),
+        courseListItem({
+          position: 2,
           name: "Cambridge Lower Secondary",
-          description:
-            "Cambridge Lower Secondary for ages 11 to 14 prepares students for the next step of their education through an age-appropriate Cambridge Pathway.",
-          url: `${siteUrl}/academics/lower-secondary`,
-          provider: { "@id": organizationId },
-        },
-        {
-          "@type": "Course",
+          description: "Cambridge learning for the lower-secondary years.",
+          path: "/academics/lower-secondary",
+          typicalAgeRange: "11-14",
+        }),
+        courseListItem({
+          position: 3,
           name: "Cambridge Upper Secondary (IGCSE)",
-          description:
-            "Cambridge Upper Secondary for ages 14 to 16 offers broad, balanced study across a wide range of subjects using learner-centred, enquiry-based approaches.",
-          url: `${siteUrl}/academics/upper-secondary`,
-          provider: { "@id": organizationId },
-        },
-        {
-          "@type": "Course",
+          description: "Broad, balanced preparation for Cambridge IGCSE.",
+          path: "/academics/upper-secondary",
+          typicalAgeRange: "14-16",
+        }),
+        courseListItem({
+          position: 4,
           name: "Cambridge Advanced (AS & A Level)",
-          description:
-            "Cambridge International AS & A Levels offer more than 50 subjects for students aged 16 to 19.",
-          url: `${siteUrl}/academics/advanced`,
-          provider: { "@id": organizationId },
-        },
+          description: "Advanced subject study for AS and A Level learners.",
+          path: "/academics/advanced",
+          typicalAgeRange: "16-19",
+        }),
       ],
     },
   ],

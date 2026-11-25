@@ -101,11 +101,12 @@ export default function CambridgeEducationPage(): React.JSX.Element {
     <div className="bg-off-white text-text-base overflow-x-hidden font-dm">
       {/* ═══ HERO ═══ */}
       <HeroWrapper
-        backgroundImage="/WhatsApp%20Image%202026-08-01%20at%2009.35.12.jpeg"
+        backgroundImage="/assets/Home/cambridge_uk_building.webp"
         title="Why Choose the Cambridge Curriculum in Jaipur?"
         badge="A Global Standard"
         breadcrumbs={[{ label: "Cambridge Canvas" }]}
         height="large"
+        imageAlt="Architectural illustration representing the Cambridge educational tradition"
       />
 
       {/* ═══ INTRO ═══ */}
