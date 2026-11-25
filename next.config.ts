@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     cpus: 1,
-    inlineCss: true,
   },
   images: {
     formats: ['image/avif', 'image/webp'],

@@ -370,7 +370,7 @@ export default function AdmissionsPage() {
         breadcrumbs={[{ label: "Admissions" }]}
         height="large"
         overlayOpacity={0.4}
-        imageAlt="Students in a classroom at Seedling Cambridge, Jaipur"
+        imageAlt="Seedling Cambridge students learning in a Jaipur classroom"
       />
 
       {/* ══════════════════════════════════════════════════

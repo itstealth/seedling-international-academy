@@ -127,7 +127,7 @@ export default function SIAPage(): React.JSX.Element {
               className="md:sticky md:top-28 self-start"
             >
               <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-sand/40 shadow-lg">
-                <img src="/assets/Home/SIA_collage_v3.webp" alt="Collage of student activities at Seedling International Academy, Jaipur" className="w-full h-full object-cover" />
+                <img src="/assets/Home/SIA_collage_v3.webp" alt="Student activities at Seedling International Academy, Jaipur" className="w-full h-full object-cover" />
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow">
                   <span className="text-[10px] font-black tracking-[0.25em] uppercase text-navy">SIA</span>
                 </div>

@@ -1,5 +1,5 @@
-import { getMediaUrl, getPosts, getCategories, stripHtml } from "@/lib/wordpress";
-import BlogClient from "./BlogClient";
+import { getMediaUrl, getPostCategories, getPosts, getCategories, stripHtml } from "@/lib/wordpress";
+import BlogClient, { type BlogCategory, type BlogSummary } from "./BlogClient";
 
 export const revalidate = 600; // ISR: revalidate every 10 minutes in the background
 
@@ -35,6 +35,25 @@ export default async function BlogPage() {
     },
   };
 
+  // The WordPress response includes complete article bodies and extensive
+  // embedded API metadata. The listing only needs compact card data; passing
+  // the full objects to a Client Component bloats the HTML/RSC payload.
+  const postSummaries: BlogSummary[] = posts.map((post) => ({
+    id: post.id,
+    title: stripHtml(post.title.rendered),
+    slug: post.slug,
+    excerpt: stripHtml(post.excerpt.rendered),
+    date: post.date,
+    categoryIds: post.categories,
+    categoryNames: getPostCategories(post),
+    image: getMediaUrl(post),
+  }));
+
+  const categorySummaries: BlogCategory[] = categories.map(({ id, name }) => ({
+    id,
+    name: stripHtml(name),
+  }));
+
   return (
     <>
       <script
@@ -43,7 +62,7 @@ export default async function BlogPage() {
           __html: JSON.stringify(blogJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <BlogClient initialPosts={posts} initialCategories={categories} />
+      <BlogClient initialPosts={postSummaries} initialCategories={categorySummaries} />
     </>
   );
 }

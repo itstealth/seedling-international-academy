@@ -3,7 +3,30 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import HeroWrapper from "@/components/layout/HeroWrapper";
-import { getMediaUrl, getPostCategories, stripHtml, formatDate, type WPPost, type WPCategory } from "@/lib/wordpress";
+
+export interface BlogSummary {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  date: string;
+  categoryIds: number[];
+  categoryNames: string[];
+  image: string;
+}
+
+export interface BlogCategory {
+  id: number;
+  name: string;
+}
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
 
 // ─── Scroll Reveal ────────────────────────────────────────────────────────────
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -72,8 +95,8 @@ const CategoryBadge = ({ category, active, onClick }: { category: string; active
 const POSTS_PER_PAGE = 9;
 
 interface BlogClientProps {
-  initialPosts: WPPost[];
-  initialCategories: WPCategory[];
+  initialPosts: BlogSummary[];
+  initialCategories: BlogCategory[];
 }
 
 export default function BlogClient({ initialPosts, initialCategories }: BlogClientProps) {
@@ -84,7 +107,7 @@ export default function BlogClient({ initialPosts, initialCategories }: BlogClie
     if (activeCategory === "All") return initialPosts;
     const catObj = initialCategories.find(c => c.name === activeCategory);
     if (!catObj) return initialPosts;
-    return initialPosts.filter((p) => p.categories.includes(catObj.id));
+    return initialPosts.filter((p) => p.categoryIds.includes(catObj.id));
   }, [initialPosts, activeCategory, initialCategories]);
 
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
@@ -166,15 +189,15 @@ export default function BlogClient({ initialPosts, initialCategories }: BlogClie
                     >
                       <div className="relative aspect-[16/10] overflow-hidden bg-stone-200">
                         <img
-                          src={getMediaUrl(post)}
-                          alt={stripHtml(post.title.rendered)}
+                          src={post.image}
+                          alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                           onError={(e) => { (e.target as HTMLImageElement).src = '/assets/Home/classroom.jpg'; }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        {getPostCategories(post)[0] && (
+                        {post.categoryNames[0] && (
                           <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-[#133844] text-[8px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest">
-                            {getPostCategories(post)[0]}
+                            {post.categoryNames[0]}
                           </span>
                         )}
                       </div>
@@ -183,14 +206,14 @@ export default function BlogClient({ initialPosts, initialCategories }: BlogClie
                           <time className="text-text-light text-[10px] font-black uppercase tracking-widest">{formatDate(post.date)}</time>
                           <span className="w-1 h-1 rounded-full bg-sand/40" />
                           <span className="text-text-light text-[10px] font-black uppercase tracking-widest">
-                            {Math.max(1, Math.ceil(stripHtml(post.excerpt.rendered).split(' ').length / 200))} min read
+                            {Math.max(1, Math.ceil(post.excerpt.split(' ').length / 200))} min read
                           </span>
                         </div>
                         <h3 className="font-playfair text-lg md:text-xl font-bold text-ink leading-tight mb-3 group-hover:text-crimson transition-colors duration-300">
-                          {stripHtml(post.title.rendered)}
+                          {post.title}
                         </h3>
                         <p className="text-text-light text-sm leading-relaxed mb-6 font-light line-clamp-2 flex-1">
-                          {stripHtml(post.excerpt.rendered)}
+                          {post.excerpt}
                         </p>
                         <div className="inline-flex items-center gap-2 text-navy text-[10px] font-black uppercase tracking-widest group-hover:gap-3 transition-all duration-300 mt-auto">
                           Read More <ArrowRight size={12} />
